@@ -3,11 +3,20 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Glasgow Theatre — What's On</title>
-<meta name="description" content="Upcoming theatre events in Glasgow. Professional productions, new writing, scratch nights, and community events across Glasgow's best venues.">
+<title>Glasgow Theatre — What's On This Week | glasgowtheatre.com</title>
+<meta name="description" content="Discover theatre in Glasgow. Professional productions, new writing, scratch nights, and grassroots events across the city's best venues. Updated weekly.">
+<link rel="canonical" href="https://glasgowtheatre.com/">
+<meta property="og:title" content="Glasgow Theatre — What's On This Week | glasgowtheatre.com">
+<meta property="og:description" content="Discover theatre in Glasgow. Professional productions, new writing, scratch nights, and grassroots events across the city's best venues. Updated weekly.">
+<meta property="og:url" content="https://glasgowtheatre.com/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Glasgow Theatre">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Glasgow Theatre — What's On This Week | glasgowtheatre.com">
+<meta name="twitter:description" content="Discover theatre in Glasgow. Professional productions, new writing, scratch nights, and grassroots events across the city's best venues. Updated weekly.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;0,800;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 <!-- Umami Analytics -->
 <script defer src="https://cloud.umami.is/script.js" data-website-id="UMAMI_WEBSITE_ID"></script>
@@ -19,56 +28,70 @@
       <a href="/">
         <div class="site-title">Glasgow <span>Theatre</span></div>
       </a>
-      <div class="site-tagline">What's on in Glasgow's theatre scene</div>
     </div>
     <nav class="main-nav" aria-label="Main navigation">
-      <a href="/" class="active">Events</a>
+      <a href="/" class="active">What's On</a>
       <a href="/venues.html">Venues</a>
+      <a href="/submit.html">List Your Show</a>
       <a href="/about.html">About</a>
     </nav>
   </div>
 </header>
 <main>
   <section class="hero">
-    <div class="container">
-      <h1>What's on in Glasgow's <span>theatre</span> scene</h1>
-      <p>Professional productions, new writing, scratch nights, and grassroots events across the city's stages.</p>
+    <div class="hero-bg"></div>
+    <div class="container hero-content">
+      <h1>Glasgow <em>Theatre</em></h1>
+      <p class="hero-tagline">Your independent guide to what's on across the city's stages</p>
+      <div class="hero-stats">
+        <span class="hero-stat"><strong>15</strong> shows coming up across <strong>10</strong> venues</span>
+      </div>
     </div>
   </section>
 
-  <section class="filter-bar">
+
+  <section class="filter-bar" id="all-events">
     <div class="container">
+      <div class="section-header">
+        <h2>All Upcoming Events</h2>
+        <span class="results-count" id="results-count">15 events</span>
+      </div>
       <div class="filter-controls">
-        <div class="filter-group">
-          <label for="filter-venue">Venue</label>
-          <select id="filter-venue">
-            <option value="all">All Venues</option>
+        <div class="filter-pills-group">
+          <button class="filter-pill active" data-type="">All</button>
+            <button class="filter-pill" data-type="professional">Professional</button>
+            <button class="filter-pill" data-type="grassroots">Grassroots</button>
+            <button class="filter-pill" data-type="new-writing">New Writing</button>
+            <button class="filter-pill" data-type="scratch">Scratch Night</button>
+            <button class="filter-pill" data-type="community">Community</button>
+        </div>
+        <div class="filter-row">
+          <div class="filter-group">
+            <label for="filter-venue">Venue</label>
+            <select id="filter-venue">
+              <option value="">All Venues</option>
               <option value="citizens">Citizens Theatre</option>
+              <option value="cottiers">Cottiers</option>
+              <option value="kings">King's Theatre</option>
+              <option value="mono">Mono</option>
               <option value="oran-mor">Oran Mor</option>
               <option value="platform">Platform</option>
               <option value="glad-cafe">The Glad Cafe</option>
               <option value="old-hairdressers">The Old Hairdressers</option>
               <option value="tramway">Tramway</option>
               <option value="tron">Tron Theatre</option>
-          </select>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label for="filter-date-from">From</label>
+            <input type="date" id="filter-date-from">
+          </div>
+          <div class="filter-group">
+            <label for="filter-date-to">To</label>
+            <input type="date" id="filter-date-to">
+          </div>
+          <button class="filter-reset" id="filter-reset" type="button">Reset Filters</button>
         </div>
-        <div class="filter-group">
-          <label for="filter-type">Type</label>
-          <select id="filter-type">
-            <option value="all">All Types</option>
-              <option value="professional">Professional</option>
-              <option value="grassroots">Grassroots</option>
-              <option value="new-writing">New Writing</option>
-              <option value="scratch">Scratch</option>
-              <option value="community">Community</option>
-          </select>
-        </div>
-        <div class="filter-group">
-          <label for="filter-date">From Date</label>
-          <input type="date" id="filter-date">
-        </div>
-        <button class="filter-reset" type="button">Reset</button>
-        <span class="results-count">10 events</span>
       </div>
     </div>
   </section>
@@ -78,123 +101,183 @@
       <div class="events-grid" id="events-grid">
     <article class="event-card" data-venue="citizens" data-type="professional" data-date="2026-03-05">
   <div class="event-card-header">
-    <h3><a href="https://citz.co.uk" target="_blank" rel="noopener">Electra</a></h3>
     <span class="event-type-badge badge-professional">Professional</span>
   </div>
+  <h3 class="event-card-title"><a href="https://citz.co.uk" target="_blank" rel="noopener">Electra</a></h3>
   <div class="event-meta">
-    <span class="event-venue">Citizens Theatre</span>
-    <span class="event-date">Thu, 5 Mar 2026 &ndash; Sat, 28 Mar 2026, 7:30pm</span>
+    <span class="event-venue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="meta-icon"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Citizens Theatre</span>
+    <span class="event-date"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="meta-icon"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Thu, 5 Mar 2026 &ndash; Sat, 28 Mar 2026, 7:30pm</span>
   </div>
-  <p class="event-description">A visceral new staging of Sophocles' tragedy, set in a crumbling Glasgow tenement. Directed by Dominic Hill, this reimagining strips the myth to its raw emotional core.</p>
+  <p class="event-description">A visceral new staging of Sophocles' tragedy, set in a crumbling Glasgow tenement. Directed by Dominic Hill, this reimagining strips the myth to its raw emotional core — rage, grief, and the cost of revenge.</p>
   <div class="event-card-footer"><a href="https://citz.co.uk" class="ticket-link" target="_blank" rel="noopener">Tickets <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a></div>
 </article>
     <article class="event-card" data-venue="tron" data-type="new-writing" data-date="2026-03-12">
   <div class="event-card-header">
-    <h3><a href="https://tron.co.uk" target="_blank" rel="noopener">Salt</a></h3>
     <span class="event-type-badge badge-new-writing">New Writing</span>
   </div>
+  <h3 class="event-card-title"><a href="https://tron.co.uk" target="_blank" rel="noopener">Salt</a></h3>
   <div class="event-meta">
-    <span class="event-venue">Tron Theatre</span>
-    <span class="event-date">Thu, 12 Mar 2026 &ndash; Sun, 22 Mar 2026, 7:45pm</span>
+    <span class="event-venue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="meta-icon"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Tron Theatre</span>
+    <span class="event-date"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="meta-icon"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Thu, 12 Mar 2026 &ndash; Sun, 22 Mar 2026, 7:45pm</span>
   </div>
-  <p class="event-description">A searing debut from Glasgow playwright Rae Morrison about three generations of women on the Ayrshire coast, exploring grief, resilience, and the pull of home.</p>
+  <p class="event-description">A searing debut from Glasgow playwright Rae Morrison about three generations of women on the Ayrshire coast. Grief, resilience, and the tidal pull of home — sharp and deeply felt.</p>
   <div class="event-card-footer"><a href="https://tron.co.uk" class="ticket-link" target="_blank" rel="noopener">Tickets <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a></div>
+</article>
+    <article class="event-card" data-venue="old-hairdressers" data-type="scratch" data-date="2026-03-14">
+  <div class="event-card-header">
+    <span class="event-type-badge badge-scratch">Scratch Night</span>
+  </div>
+  <h3 class="event-card-title"><a href="https://theoldhairdressers.com" target="_blank" rel="noopener">NOISE: A Performance Evening</a></h3>
+  <div class="event-meta">
+    <span class="event-venue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="meta-icon"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>The Old Hairdressers</span>
+    <span class="event-date"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="meta-icon"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Sat, 14 Mar 2026, 7:00pm</span>
+  </div>
+  <p class="event-description">An evening of experimental performance and sound art in Glasgow's beloved Renfield Lane basement. Four artists blur the lines between theatre, music, and visual art. Pay what you can.</p>
+  <div class="event-card-footer"><a href="https://theoldhairdressers.com" class="ticket-link" target="_blank" rel="noopener">Tickets <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a></div>
 </article>
     <article class="event-card" data-venue="tramway" data-type="professional" data-date="2026-03-19">
   <div class="event-card-header">
-    <h3><a href="https://tramway.org" target="_blank" rel="noopener">Body of Work</a></h3>
     <span class="event-type-badge badge-professional">Professional</span>
   </div>
+  <h3 class="event-card-title"><a href="https://tramway.org" target="_blank" rel="noopener">Body of Work</a></h3>
   <div class="event-meta">
-    <span class="event-venue">Tramway</span>
-    <span class="event-date">Thu, 19 Mar 2026 &ndash; Sat, 21 Mar 2026, 8:00pm</span>
+    <span class="event-venue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="meta-icon"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Tramway</span>
+    <span class="event-date"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="meta-icon"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Thu, 19 Mar 2026 &ndash; Sat, 21 Mar 2026, 8:00pm</span>
   </div>
-  <p class="event-description">Award-winning choreographer Janice Parker returns with a mesmerising solo exploring ageing, memory, and the stories our bodies carry. A Tramway commission.</p>
+  <p class="event-description">Award-winning choreographer Janice Parker returns with a mesmerising solo exploring ageing, memory, and the stories our bodies carry. A Tramway commission in the vast space of T1.</p>
   <div class="event-card-footer"><a href="https://tramway.org" class="ticket-link" target="_blank" rel="noopener">Tickets <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a></div>
 </article>
     <article class="event-card" data-venue="oran-mor" data-type="new-writing" data-date="2026-03-23">
   <div class="event-card-header">
-    <h3><a href="https://oran-mor.co.uk" target="_blank" rel="noopener">The Chippers</a></h3>
     <span class="event-type-badge badge-new-writing">New Writing</span>
   </div>
+  <h3 class="event-card-title"><a href="https://oran-mor.co.uk" target="_blank" rel="noopener">The Chippers</a></h3>
   <div class="event-meta">
-    <span class="event-venue">Oran Mor</span>
-    <span class="event-date">Mon, 23 Mar 2026 &ndash; Sat, 28 Mar 2026, 1:00pm</span>
+    <span class="event-venue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="meta-icon"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Oran Mor</span>
+    <span class="event-date"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="meta-icon"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Mon, 23 Mar 2026 &ndash; Sat, 28 Mar 2026, 1:00pm</span>
   </div>
-  <p class="event-description">A Play, A Pie and A Pint presents this hilarious new comedy about two rival chip shop owners on the same Partick street. Lunch included.</p>
+  <p class="event-description">A Play, A Pie and A Pint. A hilarious new comedy about two rival chip shop owners on the same Partick street. When a food critic turns up unannounced, all bets are off. Lunch included.</p>
+  <div class="event-card-footer"><a href="https://oran-mor.co.uk" class="ticket-link" target="_blank" rel="noopener">Tickets <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a></div>
+</article>
+    <article class="event-card" data-venue="cottiers" data-type="grassroots" data-date="2026-03-28">
+  <div class="event-card-header">
+    <span class="event-type-badge badge-grassroots">Grassroots</span>
+  </div>
+  <h3 class="event-card-title"><a href="https://cottiers.com" target="_blank" rel="noopener">The Spontaneous Players</a></h3>
+  <div class="event-meta">
+    <span class="event-venue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="meta-icon"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Cottiers</span>
+    <span class="event-date"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="meta-icon"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Sat, 28 Mar 2026, 8:00pm</span>
+  </div>
+  <p class="event-description">Glasgow's longest-running improv troupe takes the stage at Cottiers for a night of completely unscripted comedy. Every show is different — audience suggestions drive the chaos.</p>
+  <div class="event-card-footer"><a href="https://cottiers.com" class="ticket-link" target="_blank" rel="noopener">Tickets <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a></div>
+</article>
+    <article class="event-card" data-venue="oran-mor" data-type="new-writing" data-date="2026-03-30">
+  <div class="event-card-header">
+    <span class="event-type-badge badge-new-writing">New Writing</span>
+  </div>
+  <h3 class="event-card-title"><a href="https://oran-mor.co.uk" target="_blank" rel="noopener">Night Shift</a></h3>
+  <div class="event-meta">
+    <span class="event-venue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="meta-icon"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Oran Mor</span>
+    <span class="event-date"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="meta-icon"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Mon, 30 Mar 2026 &ndash; Sat, 4 Apr 2026, 1:00pm</span>
+  </div>
+  <p class="event-description">A Play, A Pie and A Pint. Two nurses on the night shift at the Royal find their friendship tested when a controversial patient arrives. A taut two-hander about care, conscience, and what we owe each other.</p>
   <div class="event-card-footer"><a href="https://oran-mor.co.uk" class="ticket-link" target="_blank" rel="noopener">Tickets <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a></div>
 </article>
     <article class="event-card" data-venue="glad-cafe" data-type="scratch" data-date="2026-04-02">
   <div class="event-card-header">
-    <h3><a href="https://thegladcafe.co.uk" target="_blank" rel="noopener">Glad Scratch Night #14</a></h3>
-    <span class="event-type-badge badge-scratch">Scratch</span>
+    <span class="event-type-badge badge-scratch">Scratch Night</span>
   </div>
+  <h3 class="event-card-title"><a href="https://thegladcafe.co.uk" target="_blank" rel="noopener">Glad Scratch Night #14</a></h3>
   <div class="event-meta">
-    <span class="event-venue">The Glad Cafe</span>
-    <span class="event-date">Thu, 2 Apr 2026, 7:30pm</span>
+    <span class="event-venue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="meta-icon"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>The Glad Cafe</span>
+    <span class="event-date"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="meta-icon"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Thu, 2 Apr 2026, 7:30pm</span>
   </div>
-  <p class="event-description">Four emerging artists share 15-minute works-in-progress in a supportive environment. Featuring new pieces exploring identity, migration, and belonging. BYOB.</p>
+  <p class="event-description">Four emerging artists share 15-minute works-in-progress in a supportive Southside setting. This edition features new pieces exploring identity, migration, and belonging. BYOB.</p>
   <div class="event-card-footer"><a href="https://thegladcafe.co.uk" class="ticket-link" target="_blank" rel="noopener">Tickets <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a></div>
+</article>
+    <article class="event-card" data-venue="mono" data-type="grassroots" data-date="2026-04-05">
+  <div class="event-card-header">
+    <span class="event-type-badge badge-grassroots">Grassroots</span>
+  </div>
+  <h3 class="event-card-title"><a href="https://monocafebar.com" target="_blank" rel="noopener">Verse / Versus</a></h3>
+  <div class="event-meta">
+    <span class="event-venue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="meta-icon"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Mono</span>
+    <span class="event-date"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="meta-icon"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Sun, 5 Apr 2026, 7:30pm</span>
+  </div>
+  <p class="event-description">A spoken word and performance poetry night in the back room at Mono. Six poets, three rounds, one winner — decided by the audience. Plus open mic slots. Free entry.</p>
+  <div class="event-card-footer"><a href="https://monocafebar.com" class="ticket-link" target="_blank" rel="noopener">Tickets <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a></div>
+</article>
+    <article class="event-card" data-venue="kings" data-type="professional" data-date="2026-04-07">
+  <div class="event-card-header">
+    <span class="event-type-badge badge-professional">Professional</span>
+  </div>
+  <h3 class="event-card-title"><a href="https://atgtickets.com/venues/kings-theatre-glasgow" target="_blank" rel="noopener">Matilda The Musical</a></h3>
+  <div class="event-meta">
+    <span class="event-venue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="meta-icon"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>King's Theatre</span>
+    <span class="event-date"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="meta-icon"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Tue, 7 Apr 2026 &ndash; Sun, 19 Apr 2026, 7:30pm</span>
+  </div>
+  <p class="event-description">The RSC's multi-award-winning musical returns to Glasgow. Roald Dahl's beloved story of a little girl with extraordinary powers and an even more extraordinary imagination. Matinees available.</p>
+  <div class="event-card-footer"><a href="https://atgtickets.com/venues/kings-theatre-glasgow" class="ticket-link" target="_blank" rel="noopener">Tickets <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a></div>
 </article>
     <article class="event-card" data-venue="platform" data-type="community" data-date="2026-04-10">
   <div class="event-card-header">
-    <h3><a href="https://platform-online.co.uk" target="_blank" rel="noopener">Futures Festival</a></h3>
     <span class="event-type-badge badge-community">Community</span>
   </div>
+  <h3 class="event-card-title"><a href="https://platform-online.co.uk" target="_blank" rel="noopener">Futures Festival</a></h3>
   <div class="event-meta">
-    <span class="event-venue">Platform</span>
-    <span class="event-date">Fri, 10 Apr 2026 &ndash; Sun, 12 Apr 2026, 2:00pm</span>
+    <span class="event-venue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="meta-icon"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Platform</span>
+    <span class="event-date"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="meta-icon"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Fri, 10 Apr 2026 &ndash; Sun, 12 Apr 2026, 2:00pm</span>
   </div>
-  <p class="event-description">A weekend festival showcasing work by Glasgow's young theatre-makers aged 16-25. Performances, workshops, and panel discussions across three days.</p>
+  <p class="event-description">A weekend festival showcasing work by Glasgow's young theatre-makers aged 16-25. Performances, workshops, and panel discussions across three days in Easterhouse.</p>
   <div class="event-card-footer"><a href="https://platform-online.co.uk" class="ticket-link" target="_blank" rel="noopener">Tickets <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a></div>
 </article>
     <article class="event-card" data-venue="citizens" data-type="professional" data-date="2026-04-16">
   <div class="event-card-header">
-    <h3><a href="https://citz.co.uk" target="_blank" rel="noopener">Yerma</a></h3>
     <span class="event-type-badge badge-professional">Professional</span>
   </div>
+  <h3 class="event-card-title"><a href="https://citz.co.uk" target="_blank" rel="noopener">Yerma</a></h3>
   <div class="event-meta">
-    <span class="event-venue">Citizens Theatre</span>
-    <span class="event-date">Thu, 16 Apr 2026 &ndash; Sat, 9 May 2026, 7:30pm</span>
+    <span class="event-venue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="meta-icon"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Citizens Theatre</span>
+    <span class="event-date"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="meta-icon"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Thu, 16 Apr 2026 &ndash; Sat, 9 May 2026, 7:30pm</span>
   </div>
-  <p class="event-description">Lorca's devastating portrait of desire and societal expectation in a bold new translation by Jo Clifford, staged in the Citz's newly restored main auditorium.</p>
+  <p class="event-description">Lorca's devastating portrait of desire and societal expectation in a bold new translation by Jo Clifford. Staged in the Citz's newly restored main auditorium — unmissable.</p>
   <div class="event-card-footer"><a href="https://citz.co.uk" class="ticket-link" target="_blank" rel="noopener">Tickets <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a></div>
+</article>
+    <article class="event-card" data-venue="oran-mor" data-type="new-writing" data-date="2026-04-20">
+  <div class="event-card-header">
+    <span class="event-type-badge badge-new-writing">New Writing</span>
+  </div>
+  <h3 class="event-card-title"><a href="https://oran-mor.co.uk" target="_blank" rel="noopener">Bingo Wings</a></h3>
+  <div class="event-meta">
+    <span class="event-venue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="meta-icon"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Oran Mor</span>
+    <span class="event-date"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="meta-icon"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Mon, 20 Apr 2026 &ndash; Sat, 25 Apr 2026, 1:00pm</span>
+  </div>
+  <p class="event-description">A Play, A Pie and A Pint. Three regulars at a Maryhill bingo hall discover their beloved club is closing. Their plan to save it is ambitious, absurd, and surprisingly moving. A warm comedy with heart.</p>
+  <div class="event-card-footer"><a href="https://oran-mor.co.uk" class="ticket-link" target="_blank" rel="noopener">Tickets <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a></div>
 </article>
     <article class="event-card" data-venue="tron" data-type="scratch" data-date="2026-04-22">
   <div class="event-card-header">
-    <h3><a href="https://tron.co.uk" target="_blank" rel="noopener">Tron Scratch Series: Spring</a></h3>
-    <span class="event-type-badge badge-scratch">Scratch</span>
+    <span class="event-type-badge badge-scratch">Scratch Night</span>
   </div>
+  <h3 class="event-card-title"><a href="https://tron.co.uk" target="_blank" rel="noopener">Tron Scratch Series: Spring</a></h3>
   <div class="event-meta">
-    <span class="event-venue">Tron Theatre</span>
-    <span class="event-date">Wed, 22 Apr 2026, 8:00pm</span>
+    <span class="event-venue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="meta-icon"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Tron Theatre</span>
+    <span class="event-date"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="meta-icon"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Wed, 22 Apr 2026, 8:00pm</span>
   </div>
-  <p class="event-description">Three Scottish companies present 20-minute extracts of ambitious new work. This edition features pieces exploring queer joy, urban rewilding, and AI ethics.</p>
+  <p class="event-description">Three Scottish companies present 20-minute extracts of ambitious new work. This edition features pieces exploring queer joy, urban rewilding, and what it means to belong somewhere.</p>
   <div class="event-card-footer"><a href="https://tron.co.uk" class="ticket-link" target="_blank" rel="noopener">Tickets <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a></div>
 </article>
     <article class="event-card" data-venue="tramway" data-type="grassroots" data-date="2026-05-01">
   <div class="event-card-header">
-    <h3><a href="https://tramway.org" target="_blank" rel="noopener">Mother Tongues</a></h3>
     <span class="event-type-badge badge-grassroots">Grassroots</span>
   </div>
+  <h3 class="event-card-title"><a href="https://tramway.org" target="_blank" rel="noopener">Mother Tongues</a></h3>
   <div class="event-meta">
-    <span class="event-venue">Tramway</span>
-    <span class="event-date">Fri, 1 May 2026 &ndash; Sun, 3 May 2026, 7:30pm</span>
+    <span class="event-venue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="meta-icon"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Tramway</span>
+    <span class="event-date"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="meta-icon"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Fri, 1 May 2026 &ndash; Sun, 3 May 2026, 7:30pm</span>
   </div>
-  <p class="event-description">A multilingual devised performance created with Glasgow's refugee and immigrant communities, weaving together stories of language, loss, and new beginnings.</p>
+  <p class="event-description">A multilingual devised performance created with Glasgow's refugee and immigrant communities. Stories of language, loss, and new beginnings woven together in Tramway's T2 studio.</p>
   <div class="event-card-footer"><a href="https://tramway.org" class="ticket-link" target="_blank" rel="noopener">Tickets <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a></div>
-</article>
-    <article class="event-card" data-venue="old-hairdressers" data-type="grassroots" data-date="2026-05-08">
-  <div class="event-card-header">
-    <h3><a href="https://theoldhairdressers.com" target="_blank" rel="noopener">NOISE: A Performance Evening</a></h3>
-    <span class="event-type-badge badge-grassroots">Grassroots</span>
-  </div>
-  <div class="event-meta">
-    <span class="event-venue">The Old Hairdressers</span>
-    <span class="event-date">Fri, 8 May 2026, 7:00pm</span>
-  </div>
-  <p class="event-description">An evening of experimental performance and sound art in Glasgow's beloved DIY space. Four artists blur the lines between theatre, music, and visual art.</p>
-  <div class="event-card-footer"><a href="https://theoldhairdressers.com" class="ticket-link" target="_blank" rel="noopener">Tickets <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a></div>
 </article>
       </div>
       <div class="no-results" id="no-results" style="display:none">
@@ -202,36 +285,56 @@
       </div>
     </div>
   </section>
+
+  <section class="updated-section">
+    <div class="container">
+      <p class="last-updated">Last updated: 21 February 2026</p>
+    </div>
+  </section>
 </main>
 <footer class="site-footer">
   <div class="container">
     <div class="footer-inner">
       <div class="footer-about">
-        <div class="site-title" style="font-family:'Playfair Display',Georgia,serif;font-size:1.2rem;font-weight:700;">Glasgow <span style="color:#c9a84c;">Theatre</span></div>
-        <p>Your guide to Glasgow's theatre scene &mdash; from the big stages to the grassroots fringe.</p>
+        <div class="footer-brand">Glasgow <span>Theatre</span></div>
+        <p>Your independent guide to Glasgow's theatre scene &mdash; from the big stages to the grassroots fringe.</p>
       </div>
       <div class="footer-links">
-        <h4>Key Venues</h4>
+        <h4>Venues</h4>
         <ul>
-          <li><a href="https://citz.co.uk" target="_blank" rel="noopener">Citizens Theatre</a></li>
-          <li><a href="https://tron.co.uk" target="_blank" rel="noopener">Tron Theatre</a></li>
-          <li><a href="https://tramway.org" target="_blank" rel="noopener">Tramway</a></li>
-          <li><a href="https://oran-mor.co.uk" target="_blank" rel="noopener">Oran Mor</a></li>
-          <li><a href="https://thegladcafe.co.uk" target="_blank" rel="noopener">The Glad Cafe</a></li>
-          <li><a href="https://platform-online.co.uk" target="_blank" rel="noopener">Platform</a></li>
-          <li><a href="https://southsidefringe.org.uk" target="_blank" rel="noopener">Southside Fringe</a></li>
-          <li><a href="https://cottiers.com" target="_blank" rel="noopener">Cottiers</a></li>
-          <li><a href="https://atgtickets.com/venues/kings-theatre-glasgow" target="_blank" rel="noopener">King's Theatre</a></li>
-          <li><a href="https://atgtickets.com/venues/theatre-royal-glasgow" target="_blank" rel="noopener">Theatre Royal</a></li>
-          <li><a href="https://theoldhairdressers.com" target="_blank" rel="noopener">The Old Hairdressers</a></li>
-          <li><a href="https://monocafebar.com" target="_blank" rel="noopener">Mono</a></li>
+          <li><a href="/venues/citizens.html">Citizens Theatre</a></li>
+          <li><a href="/venues/tron.html">Tron Theatre</a></li>
+          <li><a href="/venues/tramway.html">Tramway</a></li>
+          <li><a href="/venues/oran-mor.html">Oran Mor</a></li>
+          <li><a href="/venues/glad-cafe.html">The Glad Cafe</a></li>
+          <li><a href="/venues/platform.html">Platform</a></li>
+          <li><a href="/venues/southside-fringe.html">Southside Fringe</a></li>
+          <li><a href="/venues/cottiers.html">Cottiers</a></li>
+          <li><a href="/venues/kings.html">King's Theatre</a></li>
+          <li><a href="/venues/theatre-royal.html">Theatre Royal</a></li>
+          <li><a href="/venues/old-hairdressers.html">The Old Hairdressers</a></li>
+          <li><a href="/venues/mono.html">Mono</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Pages</h4>
+        <ul>
+          <li><a href="/">What's On</a></li>
+          <li><a href="/venues.html">All Venues</a></li>
+          <li><a href="/submit.html">List Your Show</a></li>
+          <li><a href="/about.html">About</a></li>
         </ul>
       </div>
     </div>
-    <div class="footer-bottom">&copy; 2026 glasgowtheatre.com</div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 glasgowtheatre.com</span>
+      <span class="footer-updated">Last updated 21 February 2026</span>
+    </div>
   </div>
 </footer>
-<script>window.EVENTS = [{"id":"citz-electra","title":"Electra","venue":"Citizens Theatre","venueId":"citizens","date":"2026-03-05","time":"19:30","endDate":"2026-03-28","type":"professional","tags":["drama","greek","classic"],"description":"A visceral new staging of Sophocles' tragedy, set in a crumbling Glasgow tenement. Directed by Dominic Hill, this reimagining strips the myth to its raw emotional core.","ticketUrl":"https://citz.co.uk","image":null},{"id":"tron-salt","title":"Salt","venue":"Tron Theatre","venueId":"tron","date":"2026-03-12","time":"19:45","endDate":"2026-03-22","type":"new-writing","tags":["new-writing","scottish","drama"],"description":"A searing debut from Glasgow playwright Rae Morrison about three generations of women on the Ayrshire coast, exploring grief, resilience, and the pull of home.","ticketUrl":"https://tron.co.uk","image":null},{"id":"tramway-body","title":"Body of Work","venue":"Tramway","venueId":"tramway","date":"2026-03-19","time":"20:00","endDate":"2026-03-21","type":"professional","tags":["dance","physical-theatre","contemporary"],"description":"Award-winning choreographer Janice Parker returns with a mesmerising solo exploring ageing, memory, and the stories our bodies carry. A Tramway commission.","ticketUrl":"https://tramway.org","image":null},{"id":"oran-mor-pie","title":"The Chippers","venue":"Oran Mor","venueId":"oran-mor","date":"2026-03-23","time":"13:00","endDate":"2026-03-28","type":"new-writing","tags":["comedy","lunchtime","a-play-a-pie-a-pint"],"description":"A Play, A Pie and A Pint presents this hilarious new comedy about two rival chip shop owners on the same Partick street. Lunch included.","ticketUrl":"https://oran-mor.co.uk","image":null},{"id":"glad-scratch","title":"Glad Scratch Night #14","venue":"The Glad Cafe","venueId":"glad-cafe","date":"2026-04-02","time":"19:30","endDate":null,"type":"scratch","tags":["scratch","new-work","development"],"description":"Four emerging artists share 15-minute works-in-progress in a supportive environment. Featuring new pieces exploring identity, migration, and belonging. BYOB.","ticketUrl":"https://thegladcafe.co.uk","image":null},{"id":"platform-futures","title":"Futures Festival","venue":"Platform","venueId":"platform","date":"2026-04-10","time":"14:00","endDate":"2026-04-12","type":"community","tags":["festival","young-people","emerging"],"description":"A weekend festival showcasing work by Glasgow's young theatre-makers aged 16-25. Performances, workshops, and panel discussions across three days.","ticketUrl":"https://platform-online.co.uk","image":null},{"id":"citz-yerma","title":"Yerma","venue":"Citizens Theatre","venueId":"citizens","date":"2026-04-16","time":"19:30","endDate":"2026-05-09","type":"professional","tags":["drama","lorca","classic"],"description":"Lorca's devastating portrait of desire and societal expectation in a bold new translation by Jo Clifford, staged in the Citz's newly restored main auditorium.","ticketUrl":"https://citz.co.uk","image":null},{"id":"tron-scratch","title":"Tron Scratch Series: Spring","venue":"Tron Theatre","venueId":"tron","date":"2026-04-22","time":"20:00","endDate":null,"type":"scratch","tags":["scratch","new-work","development"],"description":"Three Scottish companies present 20-minute extracts of ambitious new work. This edition features pieces exploring queer joy, urban rewilding, and AI ethics.","ticketUrl":"https://tron.co.uk","image":null},{"id":"tramway-mother","title":"Mother Tongues","venue":"Tramway","venueId":"tramway","date":"2026-05-01","time":"19:30","endDate":"2026-05-03","type":"grassroots","tags":["multilingual","community","storytelling"],"description":"A multilingual devised performance created with Glasgow's refugee and immigrant communities, weaving together stories of language, loss, and new beginnings.","ticketUrl":"https://tramway.org","image":null},{"id":"old-hairdressers-noise","title":"NOISE: A Performance Evening","venue":"The Old Hairdressers","venueId":"old-hairdressers","date":"2026-05-08","time":"19:00","endDate":null,"type":"grassroots","tags":["experimental","performance-art","diy"],"description":"An evening of experimental performance and sound art in Glasgow's beloved DIY space. Four artists blur the lines between theatre, music, and visual art.","ticketUrl":"https://theoldhairdressers.com","image":null}];</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Glasgow Theatre","url":"https://glasgowtheatre.com","description":"Your independent guide to Glasgow's theatre scene"}</script>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"TheaterEvent","name":"Electra","description":"A visceral new staging of Sophocles' tragedy, set in a crumbling Glasgow tenement. Directed by Dominic Hill, this reimagining strips the myth to its raw emotional core — rage, grief, and the cost of revenge.","startDate":"2026-03-05T19:30:00","location":{"@type":"PerformingArtsTheater","name":"Citizens Theatre","address":{"@type":"PostalAddress","addressLocality":"Glasgow","addressCountry":"GB"}},"performer":{"@type":"PerformingGroup","name":"Citizens Theatre"},"endDate":"2026-03-28T19:30:00","offers":{"@type":"Offer","url":"https://citz.co.uk","availability":"https://schema.org/InStock"}},{"@context":"https://schema.org","@type":"TheaterEvent","name":"Salt","description":"A searing debut from Glasgow playwright Rae Morrison about three generations of women on the Ayrshire coast. Grief, resilience, and the tidal pull of home — sharp and deeply felt.","startDate":"2026-03-12T19:45:00","location":{"@type":"PerformingArtsTheater","name":"Tron Theatre","address":{"@type":"PostalAddress","addressLocality":"Glasgow","addressCountry":"GB"}},"performer":{"@type":"PerformingGroup","name":"Tron Theatre"},"endDate":"2026-03-22T19:45:00","offers":{"@type":"Offer","url":"https://tron.co.uk","availability":"https://schema.org/InStock"}},{"@context":"https://schema.org","@type":"TheaterEvent","name":"NOISE: A Performance Evening","description":"An evening of experimental performance and sound art in Glasgow's beloved Renfield Lane basement. Four artists blur the lines between theatre, music, and visual art. Pay what you can.","startDate":"2026-03-14T19:00:00","location":{"@type":"PerformingArtsTheater","name":"The Old Hairdressers","address":{"@type":"PostalAddress","addressLocality":"Glasgow","addressCountry":"GB"}},"performer":{"@type":"PerformingGroup","name":"The Old Hairdressers"},"offers":{"@type":"Offer","url":"https://theoldhairdressers.com","availability":"https://schema.org/InStock"}},{"@context":"https://schema.org","@type":"TheaterEvent","name":"Body of Work","description":"Award-winning choreographer Janice Parker returns with a mesmerising solo exploring ageing, memory, and the stories our bodies carry. A Tramway commission in the vast space of T1.","startDate":"2026-03-19T20:00:00","location":{"@type":"PerformingArtsTheater","name":"Tramway","address":{"@type":"PostalAddress","addressLocality":"Glasgow","addressCountry":"GB"}},"performer":{"@type":"PerformingGroup","name":"Tramway"},"endDate":"2026-03-21T20:00:00","offers":{"@type":"Offer","url":"https://tramway.org","availability":"https://schema.org/InStock"}},{"@context":"https://schema.org","@type":"TheaterEvent","name":"The Chippers","description":"A Play, A Pie and A Pint. A hilarious new comedy about two rival chip shop owners on the same Partick street. When a food critic turns up unannounced, all bets are off. Lunch included.","startDate":"2026-03-23T13:00:00","location":{"@type":"PerformingArtsTheater","name":"Oran Mor","address":{"@type":"PostalAddress","addressLocality":"Glasgow","addressCountry":"GB"}},"performer":{"@type":"PerformingGroup","name":"Oran Mor"},"endDate":"2026-03-28T13:00:00","offers":{"@type":"Offer","url":"https://oran-mor.co.uk","availability":"https://schema.org/InStock"}},{"@context":"https://schema.org","@type":"TheaterEvent","name":"The Spontaneous Players","description":"Glasgow's longest-running improv troupe takes the stage at Cottiers for a night of completely unscripted comedy. Every show is different — audience suggestions drive the chaos.","startDate":"2026-03-28T20:00:00","location":{"@type":"PerformingArtsTheater","name":"Cottiers","address":{"@type":"PostalAddress","addressLocality":"Glasgow","addressCountry":"GB"}},"performer":{"@type":"PerformingGroup","name":"Cottiers"},"offers":{"@type":"Offer","url":"https://cottiers.com","availability":"https://schema.org/InStock"}},{"@context":"https://schema.org","@type":"TheaterEvent","name":"Night Shift","description":"A Play, A Pie and A Pint. Two nurses on the night shift at the Royal find their friendship tested when a controversial patient arrives. A taut two-hander about care, conscience, and what we owe each other.","startDate":"2026-03-30T13:00:00","location":{"@type":"PerformingArtsTheater","name":"Oran Mor","address":{"@type":"PostalAddress","addressLocality":"Glasgow","addressCountry":"GB"}},"performer":{"@type":"PerformingGroup","name":"Oran Mor"},"endDate":"2026-04-04T13:00:00","offers":{"@type":"Offer","url":"https://oran-mor.co.uk","availability":"https://schema.org/InStock"}},{"@context":"https://schema.org","@type":"TheaterEvent","name":"Glad Scratch Night #14","description":"Four emerging artists share 15-minute works-in-progress in a supportive Southside setting. This edition features new pieces exploring identity, migration, and belonging. BYOB.","startDate":"2026-04-02T19:30:00","location":{"@type":"PerformingArtsTheater","name":"The Glad Cafe","address":{"@type":"PostalAddress","addressLocality":"Glasgow","addressCountry":"GB"}},"performer":{"@type":"PerformingGroup","name":"The Glad Cafe"},"offers":{"@type":"Offer","url":"https://thegladcafe.co.uk","availability":"https://schema.org/InStock"}},{"@context":"https://schema.org","@type":"TheaterEvent","name":"Verse / Versus","description":"A spoken word and performance poetry night in the back room at Mono. Six poets, three rounds, one winner — decided by the audience. Plus open mic slots. Free entry.","startDate":"2026-04-05T19:30:00","location":{"@type":"PerformingArtsTheater","name":"Mono","address":{"@type":"PostalAddress","addressLocality":"Glasgow","addressCountry":"GB"}},"performer":{"@type":"PerformingGroup","name":"Mono"},"offers":{"@type":"Offer","url":"https://monocafebar.com","availability":"https://schema.org/InStock"}},{"@context":"https://schema.org","@type":"TheaterEvent","name":"Matilda The Musical","description":"The RSC's multi-award-winning musical returns to Glasgow. Roald Dahl's beloved story of a little girl with extraordinary powers and an even more extraordinary imagination. Matinees available.","startDate":"2026-04-07T19:30:00","location":{"@type":"PerformingArtsTheater","name":"King's Theatre","address":{"@type":"PostalAddress","addressLocality":"Glasgow","addressCountry":"GB"}},"performer":{"@type":"PerformingGroup","name":"King's Theatre"},"endDate":"2026-04-19T19:30:00","offers":{"@type":"Offer","url":"https://atgtickets.com/venues/kings-theatre-glasgow","availability":"https://schema.org/InStock"}},{"@context":"https://schema.org","@type":"TheaterEvent","name":"Futures Festival","description":"A weekend festival showcasing work by Glasgow's young theatre-makers aged 16-25. Performances, workshops, and panel discussions across three days in Easterhouse.","startDate":"2026-04-10T14:00:00","location":{"@type":"PerformingArtsTheater","name":"Platform","address":{"@type":"PostalAddress","addressLocality":"Glasgow","addressCountry":"GB"}},"performer":{"@type":"PerformingGroup","name":"Platform"},"endDate":"2026-04-12T14:00:00","offers":{"@type":"Offer","url":"https://platform-online.co.uk","availability":"https://schema.org/InStock"}},{"@context":"https://schema.org","@type":"TheaterEvent","name":"Yerma","description":"Lorca's devastating portrait of desire and societal expectation in a bold new translation by Jo Clifford. Staged in the Citz's newly restored main auditorium — unmissable.","startDate":"2026-04-16T19:30:00","location":{"@type":"PerformingArtsTheater","name":"Citizens Theatre","address":{"@type":"PostalAddress","addressLocality":"Glasgow","addressCountry":"GB"}},"performer":{"@type":"PerformingGroup","name":"Citizens Theatre"},"endDate":"2026-05-09T19:30:00","offers":{"@type":"Offer","url":"https://citz.co.uk","availability":"https://schema.org/InStock"}},{"@context":"https://schema.org","@type":"TheaterEvent","name":"Bingo Wings","description":"A Play, A Pie and A Pint. Three regulars at a Maryhill bingo hall discover their beloved club is closing. Their plan to save it is ambitious, absurd, and surprisingly moving. A warm comedy with heart.","startDate":"2026-04-20T13:00:00","location":{"@type":"PerformingArtsTheater","name":"Oran Mor","address":{"@type":"PostalAddress","addressLocality":"Glasgow","addressCountry":"GB"}},"performer":{"@type":"PerformingGroup","name":"Oran Mor"},"endDate":"2026-04-25T13:00:00","offers":{"@type":"Offer","url":"https://oran-mor.co.uk","availability":"https://schema.org/InStock"}},{"@context":"https://schema.org","@type":"TheaterEvent","name":"Tron Scratch Series: Spring","description":"Three Scottish companies present 20-minute extracts of ambitious new work. This edition features pieces exploring queer joy, urban rewilding, and what it means to belong somewhere.","startDate":"2026-04-22T20:00:00","location":{"@type":"PerformingArtsTheater","name":"Tron Theatre","address":{"@type":"PostalAddress","addressLocality":"Glasgow","addressCountry":"GB"}},"performer":{"@type":"PerformingGroup","name":"Tron Theatre"},"offers":{"@type":"Offer","url":"https://tron.co.uk","availability":"https://schema.org/InStock"}},{"@context":"https://schema.org","@type":"TheaterEvent","name":"Mother Tongues","description":"A multilingual devised performance created with Glasgow's refugee and immigrant communities. Stories of language, loss, and new beginnings woven together in Tramway's T2 studio.","startDate":"2026-05-01T19:30:00","location":{"@type":"PerformingArtsTheater","name":"Tramway","address":{"@type":"PostalAddress","addressLocality":"Glasgow","addressCountry":"GB"}},"performer":{"@type":"PerformingGroup","name":"Tramway"},"endDate":"2026-05-03T19:30:00","offers":{"@type":"Offer","url":"https://tramway.org","availability":"https://schema.org/InStock"}}]</script>
+<script>window.EVENTS = [{"id":"citz-electra","title":"Electra","venue":"Citizens Theatre","venueId":"citizens","date":"2026-03-05","time":"19:30","endDate":"2026-03-28","type":"professional","tags":["drama","greek","classic"],"description":"A visceral new staging of Sophocles' tragedy, set in a crumbling Glasgow tenement. Directed by Dominic Hill, this reimagining strips the myth to its raw emotional core — rage, grief, and the cost of revenge.","ticketUrl":"https://citz.co.uk","image":null},{"id":"tron-salt","title":"Salt","venue":"Tron Theatre","venueId":"tron","date":"2026-03-12","time":"19:45","endDate":"2026-03-22","type":"new-writing","tags":["new-writing","scottish","drama"],"description":"A searing debut from Glasgow playwright Rae Morrison about three generations of women on the Ayrshire coast. Grief, resilience, and the tidal pull of home — sharp and deeply felt.","ticketUrl":"https://tron.co.uk","image":null},{"id":"old-hairdressers-noise","title":"NOISE: A Performance Evening","venue":"The Old Hairdressers","venueId":"old-hairdressers","date":"2026-03-14","time":"19:00","endDate":null,"type":"scratch","tags":["experimental","performance-art","diy"],"description":"An evening of experimental performance and sound art in Glasgow's beloved Renfield Lane basement. Four artists blur the lines between theatre, music, and visual art. Pay what you can.","ticketUrl":"https://theoldhairdressers.com","image":null},{"id":"tramway-body","title":"Body of Work","venue":"Tramway","venueId":"tramway","date":"2026-03-19","time":"20:00","endDate":"2026-03-21","type":"professional","tags":["dance","physical-theatre","contemporary"],"description":"Award-winning choreographer Janice Parker returns with a mesmerising solo exploring ageing, memory, and the stories our bodies carry. A Tramway commission in the vast space of T1.","ticketUrl":"https://tramway.org","image":null},{"id":"oran-mor-chippers","title":"The Chippers","venue":"Oran Mor","venueId":"oran-mor","date":"2026-03-23","time":"13:00","endDate":"2026-03-28","type":"new-writing","tags":["comedy","lunchtime","a-play-a-pie-a-pint"],"description":"A Play, A Pie and A Pint. A hilarious new comedy about two rival chip shop owners on the same Partick street. When a food critic turns up unannounced, all bets are off. Lunch included.","ticketUrl":"https://oran-mor.co.uk","image":null},{"id":"cottiers-improv","title":"The Spontaneous Players","venue":"Cottiers","venueId":"cottiers","date":"2026-03-28","time":"20:00","endDate":null,"type":"grassroots","tags":["improv","comedy","interactive"],"description":"Glasgow's longest-running improv troupe takes the stage at Cottiers for a night of completely unscripted comedy. Every show is different — audience suggestions drive the chaos.","ticketUrl":"https://cottiers.com","image":null},{"id":"oran-mor-night-shift","title":"Night Shift","venue":"Oran Mor","venueId":"oran-mor","date":"2026-03-30","time":"13:00","endDate":"2026-04-04","type":"new-writing","tags":["drama","lunchtime","a-play-a-pie-a-pint"],"description":"A Play, A Pie and A Pint. Two nurses on the night shift at the Royal find their friendship tested when a controversial patient arrives. A taut two-hander about care, conscience, and what we owe each other.","ticketUrl":"https://oran-mor.co.uk","image":null},{"id":"glad-scratch","title":"Glad Scratch Night #14","venue":"The Glad Cafe","venueId":"glad-cafe","date":"2026-04-02","time":"19:30","endDate":null,"type":"scratch","tags":["scratch","new-work","development"],"description":"Four emerging artists share 15-minute works-in-progress in a supportive Southside setting. This edition features new pieces exploring identity, migration, and belonging. BYOB.","ticketUrl":"https://thegladcafe.co.uk","image":null},{"id":"mono-spoken-word","title":"Verse / Versus","venue":"Mono","venueId":"mono","date":"2026-04-05","time":"19:30","endDate":null,"type":"grassroots","tags":["spoken-word","poetry","performance"],"description":"A spoken word and performance poetry night in the back room at Mono. Six poets, three rounds, one winner — decided by the audience. Plus open mic slots. Free entry.","ticketUrl":"https://monocafebar.com","image":null},{"id":"kings-matilda","title":"Matilda The Musical","venue":"King's Theatre","venueId":"kings","date":"2026-04-07","time":"19:30","endDate":"2026-04-19","type":"professional","tags":["musical","touring","family"],"description":"The RSC's multi-award-winning musical returns to Glasgow. Roald Dahl's beloved story of a little girl with extraordinary powers and an even more extraordinary imagination. Matinees available.","ticketUrl":"https://atgtickets.com/venues/kings-theatre-glasgow","image":null},{"id":"platform-futures","title":"Futures Festival","venue":"Platform","venueId":"platform","date":"2026-04-10","time":"14:00","endDate":"2026-04-12","type":"community","tags":["festival","young-people","emerging"],"description":"A weekend festival showcasing work by Glasgow's young theatre-makers aged 16-25. Performances, workshops, and panel discussions across three days in Easterhouse.","ticketUrl":"https://platform-online.co.uk","image":null},{"id":"citz-yerma","title":"Yerma","venue":"Citizens Theatre","venueId":"citizens","date":"2026-04-16","time":"19:30","endDate":"2026-05-09","type":"professional","tags":["drama","lorca","classic"],"description":"Lorca's devastating portrait of desire and societal expectation in a bold new translation by Jo Clifford. Staged in the Citz's newly restored main auditorium — unmissable.","ticketUrl":"https://citz.co.uk","image":null},{"id":"oran-mor-bingo-wings","title":"Bingo Wings","venue":"Oran Mor","venueId":"oran-mor","date":"2026-04-20","time":"13:00","endDate":"2026-04-25","type":"new-writing","tags":["comedy","lunchtime","a-play-a-pie-a-pint"],"description":"A Play, A Pie and A Pint. Three regulars at a Maryhill bingo hall discover their beloved club is closing. Their plan to save it is ambitious, absurd, and surprisingly moving. A warm comedy with heart.","ticketUrl":"https://oran-mor.co.uk","image":null},{"id":"tron-scratch-spring","title":"Tron Scratch Series: Spring","venue":"Tron Theatre","venueId":"tron","date":"2026-04-22","time":"20:00","endDate":null,"type":"scratch","tags":["scratch","new-work","development"],"description":"Three Scottish companies present 20-minute extracts of ambitious new work. This edition features pieces exploring queer joy, urban rewilding, and what it means to belong somewhere.","ticketUrl":"https://tron.co.uk","image":null},{"id":"tramway-mother","title":"Mother Tongues","venue":"Tramway","venueId":"tramway","date":"2026-05-01","time":"19:30","endDate":"2026-05-03","type":"grassroots","tags":["multilingual","community","storytelling"],"description":"A multilingual devised performance created with Glasgow's refugee and immigrant communities. Stories of language, loss, and new beginnings woven together in Tramway's T2 studio.","ticketUrl":"https://tramway.org","image":null}];</script>
 <script src="js/main.js"></script>
 </body>
 </html>

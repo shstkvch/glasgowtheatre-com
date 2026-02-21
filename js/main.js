@@ -4,15 +4,16 @@
   var events = window.EVENTS || [];
   var grid = document.getElementById('events-grid');
   var venueFilter = document.getElementById('filter-venue');
-  var typeFilter = document.getElementById('filter-type');
   var dateFromFilter = document.getElementById('filter-date-from');
   var dateToFilter = document.getElementById('filter-date-to');
   var resetBtn = document.getElementById('filter-reset');
   var resultsCount = document.getElementById('results-count');
+  var typePills = document.querySelectorAll('.filter-pill');
 
   if (!grid || !events.length) return;
 
   var today = new Date().toISOString().split('T')[0];
+  var activeType = '';
 
   function formatDate(dateStr) {
     var d = new Date(dateStr + 'T00:00:00');
@@ -39,7 +40,7 @@
       'professional': 'Professional',
       'grassroots': 'Grassroots',
       'new-writing': 'New Writing',
-      'scratch': 'Scratch',
+      'scratch': 'Scratch Night',
       'community': 'Community'
     };
     return labels[type] || type;
@@ -62,12 +63,12 @@
 
     return '<article class="event-card" data-venue="' + ev.venueId + '" data-type="' + ev.type + '" data-date="' + ev.date + '">' +
       '<div class="event-card-header">' +
-        '<h3>' + (ev.ticketUrl ? '<a href="' + escapeHTML(ev.ticketUrl) + '" target="_blank" rel="noopener">' + escapeHTML(ev.title) + '</a>' : escapeHTML(ev.title)) + '</h3>' +
         '<span class="event-type-badge badge-' + ev.type + '">' + typeLabel(ev.type) + '</span>' +
       '</div>' +
+      '<h3 class="event-card-title">' + (ev.ticketUrl ? '<a href="' + escapeHTML(ev.ticketUrl) + '" target="_blank" rel="noopener">' + escapeHTML(ev.title) + '</a>' : escapeHTML(ev.title)) + '</h3>' +
       '<div class="event-meta">' +
-        '<span class="event-venue">' + escapeHTML(ev.venue) + '</span>' +
-        '<span class="event-date">' + dateText + '</span>' +
+        '<span class="event-venue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="meta-icon"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>' + escapeHTML(ev.venue) + '</span>' +
+        '<span class="event-date"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="meta-icon"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>' + dateText + '</span>' +
       '</div>' +
       '<p class="event-description">' + escapeHTML(ev.description) + '</p>' +
       '<div class="event-card-footer">' +
@@ -89,16 +90,14 @@
 
   function applyFilters() {
     var venue = venueFilter ? venueFilter.value : '';
-    var type = typeFilter ? typeFilter.value : '';
     var dateFrom = dateFromFilter ? dateFromFilter.value : '';
     var dateTo = dateToFilter ? dateToFilter.value : '';
 
     var filtered = events.filter(function (ev) {
       var endDate = ev.endDate || ev.date;
-      // Hide past events
       if (endDate < today) return false;
       if (venue && ev.venueId !== venue) return false;
-      if (type && ev.type !== type) return false;
+      if (activeType && ev.type !== activeType) return false;
       if (dateFrom && ev.date < dateFrom) return false;
       if (dateTo && ev.date > dateTo) return false;
       return true;
@@ -107,17 +106,29 @@
     renderEvents(filtered);
   }
 
+  // Type pill click handlers
+  typePills.forEach(function (pill) {
+    pill.addEventListener('click', function () {
+      typePills.forEach(function (p) { p.classList.remove('active'); });
+      pill.classList.add('active');
+      activeType = pill.getAttribute('data-type') || '';
+      applyFilters();
+    });
+  });
+
   if (venueFilter) venueFilter.addEventListener('change', applyFilters);
-  if (typeFilter) typeFilter.addEventListener('change', applyFilters);
   if (dateFromFilter) dateFromFilter.addEventListener('change', applyFilters);
   if (dateToFilter) dateToFilter.addEventListener('change', applyFilters);
 
   if (resetBtn) {
     resetBtn.addEventListener('click', function () {
       if (venueFilter) venueFilter.value = '';
-      if (typeFilter) typeFilter.value = '';
       if (dateFromFilter) dateFromFilter.value = '';
       if (dateToFilter) dateToFilter.value = '';
+      activeType = '';
+      typePills.forEach(function (p) { p.classList.remove('active'); });
+      var allPill = document.querySelector('.filter-pill[data-type=""]');
+      if (allPill) allPill.classList.add('active');
       applyFilters();
     });
   }
