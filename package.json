@@ -1,0 +1,25 @@
+{
+  "name": "glasgowtheatre-com",
+  "version": "1.0.0",
+  "description": "**glasgowtheatre.com** — What's on in Glasgow's theatre scene.",
+  "main": "build.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shstkvch/glasgowtheatre-com.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/shstkvch/glasgowtheatre-com/issues"
+  },
+  "homepage": "https://github.com/shstkvch/glasgowtheatre-com#readme",
+  "dependencies": {
+    "cheerio": "^1.2.0",
+    "node-fetch": "^3.3.2"
+  }
+}

@@ -206,17 +206,21 @@ function eventCard(event, cssPath) {
     ? `<a href="${escapeHTML(event.ticketUrl)}" class="ticket-link" target="_blank" rel="noopener">Tickets <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>`
     : '';
 
+  const imageHtml = event.image
+    ? `<div class="event-card-image"><img src="${escapeHTML(event.image)}" alt="${escapeHTML(event.title)}" loading="lazy"><span class="event-type-badge badge-${event.type}">${typeLabel(event.type)}</span></div>`
+    : `<div class="event-card-image event-card-placeholder"><span class="placeholder-star">&#9733;</span><span class="placeholder-venue">${escapeHTML(event.venue)}</span><span class="event-type-badge badge-${event.type}">${typeLabel(event.type)}</span></div>`;
+
   return `<article class="event-card" data-venue="${escapeHTML(event.venueId)}" data-type="${escapeHTML(event.type)}" data-date="${escapeHTML(event.date)}">
-  <div class="event-card-header">
-    <span class="event-type-badge badge-${event.type}">${typeLabel(event.type)}</span>
+  ${imageHtml}
+  <div class="event-card-body">
+    <h3 class="event-card-title">${titleHtml}</h3>
+    <div class="event-meta">
+      <span class="event-venue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="meta-icon"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>${escapeHTML(event.venue)}</span>
+      <span class="event-date"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="meta-icon"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>${formatDateRange(event)}</span>
+    </div>
+    <p class="event-description">${escapeHTML(event.description)}</p>
+    <div class="event-card-footer">${ticketHtml}</div>
   </div>
-  <h3 class="event-card-title">${titleHtml}</h3>
-  <div class="event-meta">
-    <span class="event-venue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="meta-icon"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>${escapeHTML(event.venue)}</span>
-    <span class="event-date"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="meta-icon"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>${formatDateRange(event)}</span>
-  </div>
-  <p class="event-description">${escapeHTML(event.description)}</p>
-  <div class="event-card-footer">${ticketHtml}</div>
 </article>`;
 }
 
