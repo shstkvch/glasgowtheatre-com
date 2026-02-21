@@ -3,7 +3,7 @@
     "id": "citizens",
     "name": "Citizens Theatre",
     "area": "Gorbals",
-    "description": "One of Scotland's flagship theatres, renowned for bold reimaginings of classic and contemporary work. Recently reopened after a major redevelopment.",
+    "description": "One of Scotland's flagship producing theatres, the Citz has been making bold, uncompromising work in the Gorbals since 1945. Following a landmark restoration, it reopened with stunning new studio spaces alongside its iconic Victorian auditorium. Known for daring reimaginings of classic texts and championing new Scottish voices.",
     "website": "https://citz.co.uk",
     "instagram": "citizenstheatre"
   },
@@ -11,15 +11,15 @@
     "id": "tron",
     "name": "Tron Theatre",
     "area": "Merchant City",
-    "description": "A vital hub for new Scottish writing and independent theatre, housed in a converted church in the heart of the Merchant City.",
+    "description": "Housed in a beautiful converted church at the heart of the Merchant City, the Tron is Glasgow's home for new writing and independent theatre. With an intimate main stage and a buzzing bar venue, it programmes a mix of Scottish premieres, visiting companies, and its popular scratch series for works-in-development.",
     "website": "https://tron.co.uk",
     "instagram": "tikitronica"
   },
   {
     "id": "tramway",
     "name": "Tramway",
-    "area": "Southside",
-    "description": "An internationally renowned arts venue in a former tram depot, presenting cutting-edge theatre, dance, and visual art.",
+    "area": "Pollokshields",
+    "description": "An internationally renowned arts venue housed in a vast former tram depot on the Southside. Tramway's cavernous industrial spaces host cutting-edge theatre, dance, and visual art from Scotland and around the world. Its programme leans towards the experimental and the boundary-pushing — if it's adventurous, it belongs here.",
     "website": "https://tramway.org",
     "instagram": "tramwayart"
   },
@@ -27,7 +27,7 @@
     "id": "oran-mor",
     "name": "Oran Mor",
     "area": "West End",
-    "description": "A converted hilltop church hosting A Play, A Pie and A Pint — Glasgow's beloved lunchtime theatre series.",
+    "description": "A converted hilltop church at the top of Byres Road, Oran Mor is best known for A Play, A Pie and A Pint — Glasgow's beloved lunchtime theatre series running Monday to Saturday. In its auditorium beneath Alasdair Gray's extraordinary ceiling mural, you get a brand new short play and a pie every week. A Glasgow institution.",
     "website": "https://oran-mor.co.uk",
     "instagram": "oranmorglasgow"
   },
@@ -35,7 +35,7 @@
     "id": "glad-cafe",
     "name": "The Glad Cafe",
     "area": "Shawlands",
-    "description": "A community-focused cafe and arts venue championing grassroots music, comedy, and spoken word on the Southside.",
+    "description": "A warm, community-focused cafe and arts venue on Pollokshaws Road in the heart of Shawlands. The Glad champions grassroots music, spoken word, comedy, and theatre, with regular scratch nights giving emerging artists a supportive space to test new work. Great coffee, great community, great art.",
     "website": "https://thegladcafe.co.uk",
     "instagram": "thegladcafe"
   },
@@ -43,7 +43,7 @@
     "id": "platform",
     "name": "Platform",
     "area": "Easterhouse",
-    "description": "Glasgow's dedicated venue for emerging artists and young people, with a strong programme of new work and community engagement.",
+    "description": "Glasgow's dedicated venue for emerging artists and young people, located in Easterhouse on the city's east side. Platform runs a year-round programme of new theatre, dance, and performance, with a strong commitment to artists at the start of their careers and to its local community. Home of the annual Futures Festival.",
     "website": "https://platform-online.co.uk",
     "instagram": "platformglasgow"
   },
@@ -51,15 +51,15 @@
     "id": "southside-fringe",
     "name": "Southside Fringe",
     "area": "Southside",
-    "description": "An annual multi-venue festival celebrating the creativity and diversity of Glasgow's Southside communities.",
+    "description": "An annual multi-venue festival celebrating the creativity and diversity of Glasgow's Southside. For two weeks each May, the Fringe pops up in cafes, parks, community halls, and shop fronts across the Southside, with a programme spanning theatre, comedy, music, visual art, and family events. Community-powered and proudly local.",
     "website": "https://southsidefringe.org.uk",
     "instagram": "southsidefringe"
   },
   {
     "id": "cottiers",
     "name": "Cottiers",
-    "area": "West End",
-    "description": "A stunning converted church venue in Hyndland hosting theatre, comedy, music, and community events.",
+    "area": "Hyndland",
+    "description": "A stunning converted church in the leafy West End neighbourhood of Hyndland. Cottiers' intimate theatre space hosts a varied programme of comedy, music, theatre, and community events beneath original stained glass windows. The venue also houses a popular bar and restaurant — perfect for a pre-show drink.",
     "website": "https://cottiers.com",
     "instagram": "cottiersglasgow"
   },
@@ -67,7 +67,7 @@
     "id": "kings",
     "name": "King's Theatre",
     "area": "City Centre",
-    "description": "A grand Edwardian theatre presenting touring musicals, comedy, drama, and the city's legendary annual pantomime.",
+    "description": "A grand Edwardian theatre on Bath Street, the King's is Glasgow's home for touring West End musicals, big comedy names, and large-scale drama. With over 1,700 seats across stalls and three balconies, it's where Glasgow goes for the blockbusters — and it hosts the city's legendary annual pantomime every Christmas.",
     "website": "https://atgtickets.com/venues/kings-theatre-glasgow",
     "instagram": "kikitronica"
   },
@@ -75,7 +75,7 @@
     "id": "theatre-royal",
     "name": "Theatre Royal",
     "area": "City Centre",
-    "description": "Scotland's oldest theatre and home to Scottish Opera and Scottish Ballet, hosting world-class performances since 1867.",
+    "description": "Scotland's oldest theatre and the home of Scottish Opera and Scottish Ballet. The Theatre Royal on Hope Street has been hosting world-class performances since 1867 — opera, ballet, touring drama, and musicals in a beautifully restored Victorian auditorium. The grand dame of Glasgow's theatre scene.",
     "website": "https://atgtickets.com/venues/theatre-royal-glasgow",
     "instagram": "theatreroyalglasgow"
   },
@@ -83,7 +83,7 @@
     "id": "old-hairdressers",
     "name": "The Old Hairdressers",
     "area": "City Centre",
-    "description": "A DIY arts space in a former barber shop on Renfield Lane, hosting experimental performance, music, and artist-led events.",
+    "description": "A fiercely independent DIY arts space tucked away in a former barber shop on Renfield Lane. The Old Hairdressers programmes experimental performance, live art, music, and artist-led events in its intimate basement space. It's scrappy, it's vital, and it's been at the heart of Glasgow's underground arts scene for over a decade.",
     "website": "https://theoldhairdressers.com",
     "instagram": "theoldhairdressers"
   },
@@ -91,7 +91,7 @@
     "id": "mono",
     "name": "Mono",
     "area": "Merchant City",
-    "description": "A vegan cafe-bar, record shop, and live venue on King Street with a packed programme of gigs, spoken word, and performance.",
+    "description": "Part vegan cafe, part record shop, part live venue — Mono on King Street is a Merchant City institution. Its back room hosts a packed programme of gigs, spoken word, performance poetry, and experimental theatre. Independent to its core, with strong ties to Glasgow's DIY music and arts scenes.",
     "website": "https://monocafebar.com",
     "instagram": "monocafebar"
   }
