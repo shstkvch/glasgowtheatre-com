@@ -8,12 +8,12 @@
   var dateToFilter = document.getElementById('filter-date-to');
   var resetBtn = document.getElementById('filter-reset');
   var resultsCount = document.getElementById('results-count');
-  var typePills = document.querySelectorAll('.filter-pill');
+  var tagPills = document.querySelectorAll('.filter-pill');
 
   if (!grid || !events.length) return;
 
   var today = new Date().toISOString().split('T')[0];
-  var activeType = '';
+  var activeTags = new Set();
 
   function formatDate(dateStr) {
     var d = new Date(dateStr + 'T00:00:00');
@@ -35,15 +35,10 @@
     return hour + ':' + m + suffix;
   }
 
-  function typeLabel(type) {
-    var labels = {
-      'professional': 'Professional',
-      'grassroots': 'Grassroots',
-      'new-writing': 'New Writing',
-      'scratch': 'Scratch Night',
-      'community': 'Community'
-    };
-    return labels[type] || type;
+  function tagLabel(tag) {
+    return tag.split('-').map(function (w) {
+      return w.charAt(0).toUpperCase() + w.slice(1);
+    }).join(' ');
   }
 
   function escapeHTML(str) {
@@ -61,14 +56,19 @@
       dateText += ', ' + formatTime(ev.time);
     }
 
-    var imageHtml = ev.image
-      ? '<div class="event-card-image"><img src="' + escapeHTML(ev.image) + '" alt="' + escapeHTML(ev.title) + '" loading="lazy"><span class="event-type-badge badge-' + ev.type + '">' + typeLabel(ev.type) + '</span></div>'
-      : '<div class="event-card-image event-card-placeholder"><span class="placeholder-star">&#9733;</span><span class="placeholder-venue">' + escapeHTML(ev.venue) + '</span><span class="event-type-badge badge-' + ev.type + '">' + typeLabel(ev.type) + '</span></div>';
+    var tagsHtml = (ev.tags || []).map(function (tag) {
+      return '<span class="event-tag">' + tagLabel(tag) + '</span>';
+    }).join('');
 
-    return '<article class="event-card" data-venue="' + ev.venueId + '" data-type="' + ev.type + '" data-date="' + ev.date + '">' +
+    var imageHtml = ev.image
+      ? '<div class="event-card-image"><img src="' + escapeHTML(ev.image) + '" alt="' + escapeHTML(ev.title) + '" loading="lazy"></div>'
+      : '<div class="event-card-image event-card-placeholder"><span class="placeholder-star">&#9733;</span><span class="placeholder-venue">' + escapeHTML(ev.venue) + '</span></div>';
+
+    return '<article class="event-card" data-venue="' + ev.venueId + '" data-date="' + ev.date + '">' +
       imageHtml +
       '<div class="event-card-body">' +
         '<h3 class="event-card-title">' + (ev.ticketUrl ? '<a href="' + escapeHTML(ev.ticketUrl) + '" target="_blank" rel="noopener">' + escapeHTML(ev.title) + '</a>' : escapeHTML(ev.title)) + '</h3>' +
+        '<div class="event-tags">' + tagsHtml + '</div>' +
         '<div class="event-meta">' +
           '<span class="event-venue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="meta-icon"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>' + escapeHTML(ev.venue) + '</span>' +
           '<span class="event-date"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="meta-icon"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>' + dateText + '</span>' +
@@ -101,7 +101,17 @@
       var endDate = ev.endDate || ev.date;
       if (endDate < today) return false;
       if (venue && ev.venueId !== venue) return false;
-      if (activeType && ev.type !== activeType) return false;
+      if (activeTags.size > 0) {
+        var eventTags = ev.tags || [];
+        var hasMatch = false;
+        for (var i = 0; i < eventTags.length; i++) {
+          if (activeTags.has(eventTags[i])) {
+            hasMatch = true;
+            break;
+          }
+        }
+        if (!hasMatch) return false;
+      }
       if (dateFrom && ev.date < dateFrom) return false;
       if (dateTo && ev.date > dateTo) return false;
       return true;
@@ -110,12 +120,33 @@
     renderEvents(filtered);
   }
 
-  // Type pill click handlers
-  typePills.forEach(function (pill) {
+  // Tag pill click handlers
+  tagPills.forEach(function (pill) {
     pill.addEventListener('click', function () {
-      typePills.forEach(function (p) { p.classList.remove('active'); });
-      pill.classList.add('active');
-      activeType = pill.getAttribute('data-type') || '';
+      var tag = pill.getAttribute('data-tag') || '';
+      if (tag === '') {
+        // "All" button — clear all active tags
+        activeTags.clear();
+        tagPills.forEach(function (p) { p.classList.remove('active'); });
+        pill.classList.add('active');
+      } else {
+        // Toggle this tag
+        var allPill = document.querySelector('.filter-pill[data-tag=""]');
+        if (allPill) allPill.classList.remove('active');
+
+        if (activeTags.has(tag)) {
+          activeTags.delete(tag);
+          pill.classList.remove('active');
+        } else {
+          activeTags.add(tag);
+          pill.classList.add('active');
+        }
+
+        // If no tags selected, re-activate "All"
+        if (activeTags.size === 0 && allPill) {
+          allPill.classList.add('active');
+        }
+      }
       applyFilters();
     });
   });
@@ -129,9 +160,9 @@
       if (venueFilter) venueFilter.value = '';
       if (dateFromFilter) dateFromFilter.value = '';
       if (dateToFilter) dateToFilter.value = '';
-      activeType = '';
-      typePills.forEach(function (p) { p.classList.remove('active'); });
-      var allPill = document.querySelector('.filter-pill[data-type=""]');
+      activeTags.clear();
+      tagPills.forEach(function (p) { p.classList.remove('active'); });
+      var allPill = document.querySelector('.filter-pill[data-tag=""]');
       if (allPill) allPill.classList.add('active');
       applyFilters();
     });

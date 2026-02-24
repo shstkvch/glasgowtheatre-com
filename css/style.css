@@ -433,13 +433,6 @@ main {
   transition: transform var(--transition-slow);
 }
 
-.event-card-image .event-type-badge {
-  position: absolute;
-  top: 0.75rem;
-  left: 0.75rem;
-  z-index: 2;
-}
-
 .event-card-placeholder {
   display: flex;
   flex-direction: column;
@@ -488,47 +481,24 @@ main {
   color: var(--gold);
 }
 
-/* === Type Badges === */
-.event-type-badge {
+/* === Event Tags === */
+.event-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-bottom: 0.75rem;
+}
+
+.event-tag {
   font-size: 0.65rem;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  font-weight: 700;
-  padding: 0.3rem 0.65rem;
+  font-weight: 600;
+  padding: 0.2rem 0.55rem;
   border-radius: 100px;
+  background: var(--gold-glow);
+  color: var(--gold);
+  border: 1px solid rgba(201, 168, 76, 0.25);
   white-space: nowrap;
-  flex-shrink: 0;
-  line-height: 1;
-}
-
-.badge-professional {
-  background: rgba(139, 26, 26, 0.25);
-  color: #e85454;
-  border: 1px solid rgba(139, 26, 26, 0.4);
-}
-
-.badge-grassroots {
-  background: rgba(45, 90, 39, 0.25);
-  color: #6abf5e;
-  border: 1px solid rgba(45, 90, 39, 0.4);
-}
-
-.badge-new-writing {
-  background: rgba(26, 74, 107, 0.25);
-  color: #5ea8d4;
-  border: 1px solid rgba(26, 74, 107, 0.4);
-}
-
-.badge-scratch {
-  background: rgba(168, 126, 40, 0.2);
-  color: #d4a84e;
-  border: 1px solid rgba(168, 126, 40, 0.35);
-}
-
-.badge-community {
-  background: rgba(107, 45, 139, 0.2);
-  color: #b87cd4;
-  border: 1px solid rgba(107, 45, 139, 0.35);
+  line-height: 1.2;
 }
 
 /* === Event Meta === */
