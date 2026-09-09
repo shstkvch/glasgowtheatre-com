@@ -25,6 +25,10 @@ const EVENTS_FILE = path.join(DATA_DIR, 'events.json');
 const { londonDate } = require('../src/js/listings');
 const TODAY = londonDate();
 
+// Why a source produced nothing, keyed by venueId. Surfaced in
+// refresh-status.json so a stale venue explains itself without the build log.
+const FAILURES = {};
+
 let fetchFn;
 async function getFetch() {
   if (!fetchFn) {
@@ -395,6 +399,7 @@ async function scrapeCitizens() {
     return results;
   } catch (err) {
     console.error(`  ✗ Citizens Theatre scrape failed: ${err.message}`);
+    FAILURES['citizens'] = err.message;
     return [];
   }
 }
@@ -547,6 +552,7 @@ async function scrapeTron() {
     return results;
   } catch (err) {
     console.error(`  ✗ Tron Theatre scrape failed: ${err.message}`);
+    FAILURES['tron'] = err.message;
     return [];
   }
 }
@@ -672,6 +678,7 @@ async function scrapeTramway() {
     return results;
   } catch (err) {
     console.error(`  ✗ Tramway scrape failed: ${err.message}`);
+    FAILURES['tramway'] = err.message;
     return [];
   }
 }
@@ -791,6 +798,7 @@ async function scrapePlayPiePint() {
     return results;
   } catch (err) {
     console.error(`  ✗ PPAP scrape failed: ${err.message}`);
+    FAILURES['oran-mor'] = err.message;
     return [];
   }
 }
@@ -913,6 +921,7 @@ async function scrapeGladCafe() {
     return results;
   } catch (err) {
     console.error(`  ✗ The Glad Cafe scrape failed: ${err.message}`);
+    FAILURES['glad-cafe'] = err.message;
     return [];
   }
 }
@@ -983,6 +992,7 @@ async function scrapeEventbrite() {
     return events;
   } catch (err) {
     console.error(`  ✗ Eventbrite scrape failed: ${err.message}`);
+    FAILURES['various'] = err.message;
     console.error(
       '  Note: Eventbrite is heavily JS-rendered and may not scrape well with cheerio.'
     );
@@ -1056,7 +1066,7 @@ async function main() {
   const previous = JSON.parse(fs.readFileSync(EVENTS_FILE, 'utf8'));
   const refreshedVenues = new Set(deduped.map(e => e.venueId));
   const retained = previous.filter(e => !refreshedVenues.has(e.venueId) && isFutureEvent(e));
-  const report = { refreshedAt: new Date().toISOString(), counts: Object.fromEntries([...refreshedVenues].map(id => [id, deduped.filter(e => e.venueId === id).length])), retainedVenues: [...new Set(retained.map(e => e.venueId))] };
+  const report = { refreshedAt: new Date().toISOString(), counts: Object.fromEntries([...refreshedVenues].map(id => [id, deduped.filter(e => e.venueId === id).length])), retainedVenues: [...new Set(retained.map(e => e.venueId))], failures: FAILURES };
   if (!deduped.length) throw new Error('No sources returned events; keeping existing data.');
   deduped.forEach(e => { e.checkedAt = TODAY; e.id = makeId(e.venueId, e.title); });
   deduped.push(...retained);

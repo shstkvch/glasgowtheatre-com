@@ -242,6 +242,9 @@ write(
       venues: venueCount,
       sources: status.counts,
       retainedVenues: status.retainedVenues,
+      ...(status.failures && Object.keys(status.failures).length
+        ? { failures: status.failures }
+        : {}),
     },
     null,
     2,
