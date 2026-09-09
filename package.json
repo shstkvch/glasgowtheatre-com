@@ -9,7 +9,9 @@
     "test": "node --test tests/*.test.js",
     "test:browser": "playwright test",
     "preview": "python3 -m http.server 4173 --directory dist",
-    "tag": "node scripts/tag-events.js"
+    "tag": "node scripts/tag-events.js",
+    "build:cloudflare": "bash scripts/cloudflare-build.sh",
+    "report": "node scripts/report-new.js"
   },
   "repository": {
     "type": "git",

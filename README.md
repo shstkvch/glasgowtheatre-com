@@ -52,45 +52,63 @@ The build filters expired events in Europe/London time. The browser repeats that
 
 ## Publishing
 
-`.github/workflows/publish.yml` builds, tests and publishes `dist` on pushes to `main`. It also refreshes listings daily at 05:17 UTC and can be started manually in GitHub Actions. Scheduled runs commit refreshed data, cached images and generated pages before deploying. GitHub Pages must use the **GitHub Actions** build source, retaining the custom domain `glasgowtheatre.com`.
+Cloudflare Pages builds and serves the site, rebuilt daily by a Worker. See **Daily updates on Cloudflare** below for how it is wired and how to set it up.
 
-If a refresh completely fails, the workflow warns and builds the last saved data, removing expired shows. The footer reports the last successful data refresh, not the latest build time. The site covers a selection of current shows; the venue directory includes additional venues without automated programme feeds.
+`.github/workflows/publish.yml` is kept as a fallback: it does the same job through GitHub Actions and now passes `OPENROUTER_API_KEY` from repository secrets, but it cannot run while the account is billing-locked.
 
-The pre-redesign site is retained at the `pre-redesign-2026-09-09` tag. `netlify.toml` is no longer used.
+If a refresh completely fails, the build warns and uses the last saved data, removing expired shows. The footer reports the last successful data refresh, not the latest build time. The site covers a selection of current shows; the venue directory includes additional venues without automated programme feeds.
 
-## Daily updates without GitHub Actions
+The pre-redesign site is retained at the `pre-redesign-2026-09-09` tag.
 
-GitHub Actions cannot run while the account is billing-locked, but Pages still **serves** the `gh-pages` branch, so only the daily compute needs a new home.
+## Daily updates on Cloudflare
 
-`scripts/publish.sh` is that job in one place, independent of any CI: it syncs `main`, refreshes listings, tags them, caches images, runs both test suites, builds, commits the refreshed data, and pushes `dist` to `gh-pages`. It refuses to run on a dirty tree or a branch other than `main`, and skips the push when nothing changed. A failed refresh is survivable: it publishes the last saved listings with expired shows removed.
+The site is built and served by **Cloudflare Pages**, rebuilt daily by a Cloudflare Worker. Nothing needs a machine of yours to be awake, and it does not depend on GitHub Actions, which cannot run while the account is billing-locked.
 
-```sh
-./scripts/publish.sh --dry-run   # everything except the push
-./scripts/publish.sh             # the real thing
-./scripts/publish.sh --log       # append to logs/publish-YYYY-MM-DD.log
+```
+Worker (cron 05:17 UTC) ──POST──▶ Pages deploy hook
+                                        │
+                                        ▼
+                          npm run build:cloudflare
+                    refresh → tag → test → build → report
+                                        │
+                                        ▼
+                              deploy to glasgowtheatre.com
 ```
 
-Anything that can run a command daily can drive it. In rough order of least disruption:
+Run `./scripts/setup-cloudflare.sh` to do the setup. It is a ten-stage wizard that opens each page, says what to click, and saves the values it captures into `.env`: Cloudflare account and zone, the nameserver move from Porkbun, Resend, the Pages project and its environment variables, the domain cutover, the deploy hook, and deploying the Worker. It is safe to re-run; existing answers come back as defaults.
 
-| Option | Cost | Trade-off |
-| --- | --- | --- |
-| Fix the GitHub billing lock | Existing plan | Nothing to rebuild; the workflow is already written and now passes `OPENROUTER_API_KEY` |
-| `launchd` on a Mac | Free | Keeps hosting and the commit-back behaviour exactly as they are, but only runs while the machine is awake and online |
-| Cloudflare Pages or Netlify scheduled build | Free tier | Reliable and unattended, but hosting and the custom domain move off GitHub Pages, and refreshed data is no longer committed back to the repo |
-| A small always-on box (VPS, Raspberry Pi) with cron | Cheap or free | Full control, one more machine to maintain |
+The Pages project needs three environment variables: `OPENROUTER_API_KEY`, `RESEND_API_KEY` and `REPORT_TO`. Build command `npm run build:cloudflare`, output directory `dist`, Node from `.node-version`.
 
-For `launchd`, `scripts/com.glasgowtheatre.publish.plist` runs the job at 05:17 daily:
+Builds run from a fresh checkout, which is fine and is why no data is committed back: cached images are named by a hash of their source URL and committed, so only genuinely new artwork is downloaded, and the tag cache means only new shows are sent to the model. A venue that fails falls back to the last saved listings with expired shows removed.
+
+### The daily report
+
+`scripts/report-new.js` emails through Resend when new shows appear, and stays quiet otherwise. It needs no database and no state file: `build.js` publishes the listings as `/data/events.json`, so the currently live site is the baseline and today's deploy becomes tomorrow's comparison. It runs before the deploy, while the previous build is still live.
+
+A first run with no published feed sets the baseline silently. A failed report never fails a deploy. Preview it with `npm run report -- --dry-run`.
+
+Until a sending domain is verified, Resend delivers only to the account owner's address, from `onboarding@resend.dev`. To send from the site's own domain, verify it in Resend, add the DNS records in Cloudflare, and set `REPORT_FROM`.
+
+### The cron Worker
+
+`cloudflare/` holds the Worker that starts the daily build. It POSTs the deploy hook at 05:17 UTC and does nothing else.
 
 ```sh
-cp scripts/com.glasgowtheatre.publish.plist ~/Library/LaunchAgents/
-launchctl load ~/Library/LaunchAgents/com.glasgowtheatre.publish.plist
-launchctl start com.glasgowtheatre.publish   # run once now to check
+cd cloudflare
+npx wrangler deploy                 # after the wizard has set the secrets
+npx wrangler tail                   # watch it fire
+curl -X POST "https://glasgowtheatre-build.<subdomain>.workers.dev/trigger?key=$TRIGGER_KEY"
 ```
 
-It needs an SSH key that can push to the repo, and `.env` present for the tagging key. If the Mac is asleep at 05:17, launchd runs the job at the next wake.
+### Publishing by hand
+
+`scripts/publish.sh` still does the whole job locally — refresh, test, build, commit and push to `gh-pages` — for when you want to publish immediately rather than wait for the cron, or if Cloudflare is ever unavailable. It refuses to run on a dirty tree or a branch other than `main`.
+
 
 ### Publishing status, 9 September 2026
 
-GitHub rejected the custom Actions job before it started: “The job was not started because your account is locked due to a billing issue.” The tested build was instead pushed to `gh-pages` using the existing Pages publishing route. Pages currently uses `gh-pages` at `/`, with build type `legacy`. Daily refresh automation is configured but cannot run until the account billing lock is resolved.
+GitHub Actions cannot run: “The job was not started because your account is locked due to a billing issue.” Pages still serves the `gh-pages` branch, so hosting was never affected — only the daily compute.
 
-After resolving GitHub billing, switch Pages to **GitHub Actions** and run the **Refresh and publish theatre listings** workflow manually. This will verify the refresh and restore the scheduled publication path. The `github-pages` environment already permits `main` and `gh-pages` deployments.
+The listings-led redesign was published to `gh-pages` from a local build and is live. Daily automation is moving to Cloudflare Pages; run `./scripts/setup-cloudflare.sh` to complete it. Until that cutover finishes, the site keeps serving from GitHub Pages and updates only when `scripts/publish.sh` is run by hand.
+
+If GitHub billing is resolved first, the existing workflow is a complete alternative: add `OPENROUTER_API_KEY` as a repository secret, switch Pages to the **GitHub Actions** build source, and run the workflow manually once.

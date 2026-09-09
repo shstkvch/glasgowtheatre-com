@@ -1,0 +1,22 @@
+# Cron trigger that starts the daily Pages build.
+#
+#   cd cloudflare
+#   npx wrangler login
+#   npx wrangler secret put DEPLOY_HOOK    # the Pages deploy hook URL
+#   npx wrangler secret put TRIGGER_KEY    # any random string, for manual runs
+#   npx wrangler deploy
+#
+# Check it is alive:
+#   npx wrangler tail
+#   curl -X POST "https://glasgowtheatre-build.<subdomain>.workers.dev/trigger?key=<TRIGGER_KEY>"
+
+name = "glasgowtheatre-build"
+main = "src/worker.js"
+compatibility_date = "2026-09-01"
+
+# 05:17 UTC daily, matching the schedule the GitHub workflow used.
+[triggers]
+crons = ["17 5 * * *"]
+
+[observability]
+enabled = true

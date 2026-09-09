@@ -107,6 +107,26 @@ test("the homepage leads with listings, not a masthead", async ({ page }) => {
   await expect(card).toBeInViewport();
 });
 
+test("the thumbnail books the show without adding a second tab stop", async ({
+  page,
+}) => {
+  await page.goto("/?q=Thrice");
+  const card = page.locator("#events-grid .event-card:visible").first();
+  const thumb = card.locator(".event-card-thumb");
+  await expect(thumb).toHaveAttribute(
+    "href",
+    "https://www.tramway.org/event/328af962-85b1-4a39-9f3a-b43900ec12d2/",
+  );
+  // Same destination as the title, so it must stay out of the tab order.
+  await expect(thumb).toHaveAttribute("tabindex", "-1");
+  await expect(thumb).toHaveAttribute(
+    "href",
+    await card.locator("h3 a").getAttribute("href"),
+  );
+  // The date is announced from outside the thumbnail link.
+  await expect(card.locator(".date-stamp")).toBeVisible();
+});
+
 test("filters collapse on phones and stay open on desktop", async ({
   page,
 }, testInfo) => {

@@ -145,7 +145,7 @@ function page(
 }
 function card(event) {
   return `<article class="event-card" data-id="${e(event.id)}" data-date="${e(event.date)}" data-end-date="${e(event.endDate || event.date)}">
-<div class="event-card-image${event.image ? "" : " image-unavailable"}"><div class="image-fallback" aria-hidden="true"><span>ON STAGE AT</span><strong>${e(event.venue)}</strong></div>${event.image ? `<img src="${e(event.image)}" alt="${e(event.imageAlt || event.title)}" width="1100" height="688" loading="lazy">` : ""}<span class="date-stamp">${e(range(event))}</span></div>
+<div class="event-card-image${event.image ? "" : " image-unavailable"}"><a class="event-card-thumb" href="${e(event.ticketUrl)}" tabindex="-1"><div class="image-fallback" aria-hidden="true"><span>ON STAGE AT</span><strong>${e(event.venue)}</strong></div>${event.image ? `<img src="${e(event.image)}" alt="${e(event.imageAlt || event.title)}" width="1100" height="688" loading="lazy">` : ""}</a><span class="date-stamp">${e(range(event))}</span></div>
 <div class="event-card-body"><div class="card-topline"><a href="/venues/${e(event.venueId)}.html">${e(event.season || event.venue)}</a><span>${e((event.tags || []).slice(0, 2).map(label).join(" / "))}</span></div>
 <h3><a href="${e(event.ticketUrl)}">${e(event.title)}</a></h3><p class="event-description">${e(event.description)}</p>
 ${event.accessibility ? `<p class="accessibility"><span aria-hidden="true">✳</span> ${e(event.accessibility)}</p>` : ""}
@@ -227,6 +227,9 @@ write(
   "sitemap.xml",
   `<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${paths.map((p) => `<url><loc>${SITE}${p}</loc><lastmod>${today}</lastmod></url>`).join("")}</urlset>`,
 );
+// The published feed is what yesterday's build left behind, so the daily
+// report can diff against it without storing state anywhere.
+write("data/events.json", JSON.stringify(events, null, 2) + "\n");
 write("robots.txt", `User-agent: *\nAllow: /\nSitemap: ${SITE}/sitemap.xml\n`);
 write("CNAME", "glasgowtheatre.com\n");
 write(".nojekyll", "");
