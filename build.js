@@ -1,693 +1,211 @@
-const fs = require('fs');
-const path = require('path');
-
-const DIST = path.join(__dirname, 'dist');
-const DATA = path.join(__dirname, 'data');
-const SRC = path.join(__dirname, 'src');
-const SITE_URL = 'https://glasgowtheatre.com';
-const BUILD_TIME = new Date();
-const BUILD_TIMESTAMP = BUILD_TIME.toISOString();
-const BUILD_DATE_HUMAN = BUILD_TIME.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
-
-// --- Helpers ---
-
-function readJSON(file) {
-  return JSON.parse(fs.readFileSync(path.join(DATA, file), 'utf-8'));
+const fs = require("fs");
+const path = require("path");
+const {
+  londonDate,
+  filterEvents,
+  mergeListings,
+} = require("./src/js/listings");
+const DIST = path.join(__dirname, "dist");
+const SITE = "https://glasgowtheatre.com";
+const today = londonDate();
+const read = (name) =>
+  JSON.parse(fs.readFileSync(path.join(__dirname, "data", name), "utf8"));
+const venues = read("venues.json");
+const images = read("image-cache.json");
+const status = read("refresh-status.json");
+const events = filterEvents(
+  mergeListings(read("events.json"), read("manual-events.json")),
+).map((e) => ({
+  ...e,
+  image: e.image?.startsWith("/") ? e.image : images[e.image] || null,
+}));
+const e = (value) =>
+  String(value ?? "").replace(
+    /[&<>"']/g,
+    (c) =>
+      ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[
+        c
+      ],
+  );
+const json = (value) => JSON.stringify(value).replace(/</g, "\\u003c");
+const date = (value, year = false) =>
+  new Date(value + "T12:00:00Z").toLocaleDateString("en-GB", {
+    timeZone: "Europe/London",
+    day: "numeric",
+    month: "short",
+    ...(year ? { year: "numeric" } : {}),
+  });
+const time = (value) => {
+  const [h, m] = value.split(":").map(Number);
+  return `${h % 12 || 12}.${String(m).padStart(2, "0")}${h >= 12 ? "pm" : "am"}`;
+};
+const range = (event) =>
+  `${date(event.date)}${event.endDate && event.endDate !== event.date ? " – " + date(event.endDate) : ""} ${event.date.slice(0, 4)}`;
+const label = (value) =>
+  value
+    .split("-")
+    .map((word) => word[0].toUpperCase() + word.slice(1))
+    .join(" ");
+const arrow = '<span aria-hidden="true">↗</span>';
+function write(name, text) {
+  const target = path.join(DIST, name);
+  fs.mkdirSync(path.dirname(target), { recursive: true });
+  fs.writeFileSync(target, text);
 }
-
-function ensureDir(dir) {
-  fs.mkdirSync(dir, { recursive: true });
-}
-
-function copyDir(src, dest) {
-  ensureDir(dest);
-  for (const entry of fs.readdirSync(src, { withFileTypes: true })) {
-    const srcPath = path.join(src, entry.name);
-    const destPath = path.join(dest, entry.name);
-    if (entry.isDirectory()) {
-      copyDir(srcPath, destPath);
-    } else {
-      fs.copyFileSync(srcPath, destPath);
-    }
-  }
-}
-
-function formatDate(dateStr) {
-  const d = new Date(dateStr + 'T00:00:00');
-  return d.toLocaleDateString('en-GB', { weekday: 'short', day: 'numeric', month: 'short', year: 'numeric' });
-}
-
-function formatTime(timeStr) {
-  if (!timeStr) return '';
-  const [h, m] = timeStr.split(':').map(Number);
-  const suffix = h >= 12 ? 'pm' : 'am';
-  const hour = h > 12 ? h - 12 : h === 0 ? 12 : h;
-  return `${hour}:${String(m).padStart(2, '0')}${suffix}`;
-}
-
-function formatDateRange(event) {
-  let text = formatDate(event.date);
-  if (event.endDate && event.endDate !== event.date) {
-    text += ` &ndash; ${formatDate(event.endDate)}`;
-  }
-  if (event.time) {
-    text += `, ${formatTime(event.time)}`;
-  }
-  return text;
-}
-
-function typeLabel(type) {
-  const labels = {
-    'professional': 'Professional',
-    'grassroots': 'Grassroots',
-    'new-writing': 'New Writing',
-    'scratch': 'Scratch Night',
-    'community': 'Community'
-  };
-  return labels[type] || type;
-}
-
-function escapeHTML(str) {
-  return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
-}
-
-function truncateDescription(str, maxLen) {
-  if (str.length <= maxLen) return str;
-  var truncated = str.substring(0, maxLen);
-  var lastSpace = truncated.lastIndexOf(' ');
-  if (lastSpace > maxLen - 30) truncated = truncated.substring(0, lastSpace);
-  return truncated.replace(/[.,;:!?\s]+$/, '') + '...';
-}
-
-function slugify(str) {
-  return str.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
-}
-
-function getUpcomingEvents(events) {
-  const today = new Date().toISOString().split('T')[0];
-  return events.filter(e => {
-    const end = e.endDate || e.date;
-    return end >= today;
-  }).sort((a, b) => a.date.localeCompare(b.date));
-}
-
-function getThisWeekEvents(events) {
-  const today = new Date();
-  const todayStr = today.toISOString().split('T')[0];
-  const nextWeek = new Date(today.getTime() + 7 * 24 * 60 * 60 * 1000);
-  const nextWeekStr = nextWeek.toISOString().split('T')[0];
-  return events.filter(e => {
-    const end = e.endDate || e.date;
-    return end >= todayStr && e.date <= nextWeekStr;
-  }).sort((a, b) => a.date.localeCompare(b.date));
-}
-
-function getUniqueVenueCount(events) {
-  return new Set(events.map(e => e.venueId)).size;
-}
-
-// --- HTML Fragments ---
-
-const analytics = `<!-- Umami Analytics -->\n<script defer src="https://cloud.umami.is/script.js" data-website-id="UMAMI_WEBSITE_ID"></script>`;
-
-function htmlHead({ title, description, canonicalPath, ogType = 'website', cssPath = 'css/style.css' }) {
-  const canonical = `${SITE_URL}${canonicalPath}`;
-  return `<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>${escapeHTML(title)}</title>
-<meta name="description" content="${escapeHTML(description)}">
-<link rel="canonical" href="${canonical}">
-<meta property="og:title" content="${escapeHTML(title)}">
-<meta property="og:description" content="${escapeHTML(description)}">
-<meta property="og:url" content="${canonical}">
-<meta property="og:type" content="${ogType}">
-<meta property="og:site_name" content="Glasgow Theatre">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="${escapeHTML(title)}">
-<meta name="twitter:description" content="${escapeHTML(description)}">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;0,800;1,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="${cssPath}">
-${analytics}
-</head>`;
-}
-
-function header(activePage, pathPrefix = '') {
-  const nav = (page, label) => {
-    const active = activePage === page ? ' class="active"' : '';
-    const href = page === 'events' ? `${pathPrefix}/` : `${pathPrefix}/${page}.html`;
-    return `<a href="${href}"${active}>${label}</a>`;
-  };
-  return `<header class="site-header">
-  <div class="container header-inner">
-    <div class="site-brand">
-      <a href="${pathPrefix}/">
-        <div class="site-title">Glasgow <span>Theatre</span></div>
-      </a>
-    </div>
-    <nav class="main-nav" aria-label="Main navigation">
-      ${nav('events', 'What\'s On')}
-      ${nav('venues', 'Venues')}
-      ${nav('submit', 'List Your Show')}
-      ${nav('about', 'About')}
-    </nav>
-  </div>
-</header>`;
-}
-
-function footer(venues, pathPrefix = '') {
-  const venueLinks = venues.map(v =>
-    `<li><a href="${pathPrefix}/venues/${v.id}.html">${escapeHTML(v.name)}</a></li>`
-  ).join('\n          ');
-
-  return `<footer class="site-footer">
-  <div class="container">
-    <div class="footer-inner">
-      <div class="footer-about">
-        <div class="footer-brand">Glasgow <span>Theatre</span></div>
-        <p>Your independent guide to Glasgow's theatre scene &mdash; from the big stages to the grassroots fringe.</p>
-      </div>
-      <div class="footer-links">
-        <h4>Venues</h4>
-        <ul>
-          ${venueLinks}
-        </ul>
-      </div>
-      <div class="footer-links">
-        <h4>Pages</h4>
-        <ul>
-          <li><a href="${pathPrefix}/">What's On</a></li>
-          <li><a href="${pathPrefix}/venues.html">All Venues</a></li>
-          <li><a href="${pathPrefix}/submit.html">List Your Show</a></li>
-          <li><a href="${pathPrefix}/about.html">About</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <span>&copy; ${new Date().getFullYear()} glasgowtheatre.com</span>
-      <span class="footer-updated">Last updated ${BUILD_DATE_HUMAN}</span>
-    </div>
-  </div>
-</footer>`;
-}
-
-// --- Cards ---
-
-function eventCard(event, cssPath) {
-  const titleHtml = event.ticketUrl
-    ? `<a href="${escapeHTML(event.ticketUrl)}" target="_blank" rel="noopener">${escapeHTML(event.title)}</a>`
-    : escapeHTML(event.title);
-
-  const ticketHtml = event.ticketUrl
-    ? `<a href="${escapeHTML(event.ticketUrl)}" class="ticket-link" target="_blank" rel="noopener">Tickets <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>`
-    : '';
-
-  const imageHtml = event.image
-    ? `<div class="event-card-image"><img src="${escapeHTML(event.image)}" alt="${escapeHTML(event.title)}" loading="lazy"><span class="event-type-badge badge-${event.type}">${typeLabel(event.type)}</span></div>`
-    : `<div class="event-card-image event-card-placeholder"><span class="placeholder-star">&#9733;</span><span class="placeholder-venue">${escapeHTML(event.venue)}</span><span class="event-type-badge badge-${event.type}">${typeLabel(event.type)}</span></div>`;
-
-  return `<article class="event-card" data-venue="${escapeHTML(event.venueId)}" data-type="${escapeHTML(event.type)}" data-date="${escapeHTML(event.date)}">
-  ${imageHtml}
-  <div class="event-card-body">
-    <h3 class="event-card-title">${titleHtml}</h3>
-    <div class="event-meta">
-      <span class="event-venue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="meta-icon"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>${escapeHTML(event.venue)}</span>
-      <span class="event-date"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="meta-icon"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>${formatDateRange(event)}</span>
-    </div>
-    <p class="event-description">${escapeHTML(event.description)}</p>
-    <div class="event-card-footer">${ticketHtml}</div>
-  </div>
-</article>`;
-}
-
-function venueCardIndex(venue) {
-  return `<a href="/venues/${venue.id}.html" class="venue-card venue-card-link">
-  <h3>${escapeHTML(venue.name)}</h3>
-  <div class="venue-area">${escapeHTML(venue.area)}</div>
-  <p class="venue-description">${escapeHTML(venue.description)}</p>
-  <span class="venue-card-arrow">View venue &rarr;</span>
-</a>`;
-}
-
-// --- JSON-LD ---
-
-function eventJsonLd(event) {
-  const ld = {
-    '@context': 'https://schema.org',
-    '@type': 'TheaterEvent',
+function eventData(event) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "TheaterEvent",
     name: event.title,
     description: event.description,
-    startDate: event.time ? `${event.date}T${event.time}:00` : event.date,
+    startDate: event.date,
+    endDate: event.endDate || event.date,
+    url: event.ticketUrl,
+    ...(event.image ? { image: SITE + event.image } : {}),
+    ...(event.producer
+      ? { organizer: { "@type": "Organization", name: event.producer } }
+      : {}),
     location: {
-      '@type': 'PerformingArtsTheater',
+      "@type": "PerformingArtsTheater",
       name: event.venue,
       address: {
-        '@type': 'PostalAddress',
-        addressLocality: 'Glasgow',
-        addressCountry: 'GB'
-      }
+        "@type": "PostalAddress",
+        addressLocality: "Glasgow",
+        addressCountry: "GB",
+      },
     },
-    performer: {
-      '@type': 'PerformingGroup',
-      name: event.venue
-    }
-  };
-  if (event.endDate) {
-    ld.endDate = event.time ? `${event.endDate}T${event.time}:00` : event.endDate;
-  }
-  if (event.ticketUrl) {
-    ld.offers = {
-      '@type': 'Offer',
-      url: event.ticketUrl,
-      availability: 'https://schema.org/InStock'
-    };
-  }
-  return ld;
-}
-
-function websiteJsonLd() {
-  return {
-    '@context': 'https://schema.org',
-    '@type': 'WebSite',
-    name: 'Glasgow Theatre',
-    url: SITE_URL,
-    description: "Your independent guide to Glasgow's theatre scene"
   };
 }
-
-// --- Build Pages ---
-
-function buildEventsPage(events, venues) {
-  console.log('Building index.html (events)...');
-
-  const upcoming = getUpcomingEvents(events);
-  const thisWeek = getThisWeekEvents(events);
-  const venueCount = getUniqueVenueCount(upcoming);
-
-  const venueOptions = [...new Map(events.map(e => [e.venueId, e.venue])).entries()]
-    .sort((a, b) => a[1].localeCompare(b[1]))
-    .map(([id, name]) => `<option value="${escapeHTML(id)}">${escapeHTML(name)}</option>`)
-    .join('\n              ');
-
-  const types = ['professional', 'grassroots', 'new-writing', 'scratch', 'community'];
-  const typePills = types.map(t =>
-    `<button class="filter-pill" data-type="${t}">${typeLabel(t)}</button>`
-  ).join('\n            ');
-
-  const thisWeekCards = thisWeek.map(e => eventCard(e)).join('\n    ');
-  const allCards = upcoming.map(e => eventCard(e)).join('\n    ');
-
-  const allEventsLd = upcoming.map(e => eventJsonLd(e));
-  const jsonLdScript = `<script type="application/ld+json">${JSON.stringify(websiteJsonLd())}</script>
-<script type="application/ld+json">${JSON.stringify(allEventsLd)}</script>`;
-
-  const thisWeekSection = thisWeek.length > 0 ? `
-  <section class="this-week-section">
-    <div class="container">
-      <div class="section-header">
-        <h2>This Week</h2>
-        <span class="section-count">${thisWeek.length} show${thisWeek.length !== 1 ? 's' : ''}</span>
-      </div>
-      <div class="events-grid">
-    ${thisWeekCards}
-      </div>
-    </div>
-  </section>` : '';
-
-  const html = `${htmlHead({
-    title: "Glasgow Theatre \u2014 What's On This Week | glasgowtheatre.com",
-    description: "Discover theatre in Glasgow. Professional productions, new writing, scratch nights, and grassroots events across the city's best venues. Updated weekly.",
-    canonicalPath: '/'
-  })}
-<body>
-${header('events')}
-<main>
-  <section class="hero">
-    <div class="hero-bg"></div>
-    <div class="container hero-content">
-      <h1>Glasgow <em>Theatre</em></h1>
-      <p class="hero-tagline">Your independent guide to what's on across the city's stages</p>
-      <div class="hero-stats">
-        <span class="hero-stat"><strong>${upcoming.length}</strong> shows coming up across <strong>${venueCount}</strong> venues</span>
-      </div>
-    </div>
-  </section>
-${thisWeekSection}
-
-  <section class="filter-bar" id="all-events">
-    <div class="container">
-      <div class="section-header">
-        <h2>All Upcoming Events</h2>
-        <span class="results-count" id="results-count">${upcoming.length} events</span>
-      </div>
-      <div class="filter-controls">
-        <div class="filter-pills-group">
-          <button class="filter-pill active" data-type="">All</button>
-            ${typePills}
-        </div>
-        <div class="filter-row">
-          <div class="filter-group">
-            <label for="filter-venue">Venue</label>
-            <select id="filter-venue">
-              <option value="">All Venues</option>
-              ${venueOptions}
-            </select>
-          </div>
-          <div class="filter-group">
-            <label for="filter-date-from">From</label>
-            <input type="date" id="filter-date-from">
-          </div>
-          <div class="filter-group">
-            <label for="filter-date-to">To</label>
-            <input type="date" id="filter-date-to">
-          </div>
-          <button class="filter-reset" id="filter-reset" type="button">Reset Filters</button>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="events-section">
-    <div class="container">
-      <div class="events-grid" id="events-grid">
-    ${allCards}
-      </div>
-      <div class="no-results" id="no-results" style="display:none">
-        <p>No events match your filters.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="updated-section">
-    <div class="container">
-      <p class="last-updated">Last updated: ${BUILD_DATE_HUMAN}</p>
-    </div>
-  </section>
-</main>
-${footer(venues)}
-${jsonLdScript}
-<script>window.EVENTS = ${JSON.stringify(upcoming)};</script>
-<script src="js/main.js"></script>
-</body>
-</html>`;
-
-  fs.writeFileSync(path.join(DIST, 'index.html'), html);
-  console.log('  -> dist/index.html');
-}
-
-function buildVenuesPage(venues, events) {
-  console.log('Building venues.html...');
-
-  const venueCards = venues.map(v => venueCardIndex(v)).join('\n    ');
-
-  const html = `${htmlHead({
-    title: "Glasgow Theatre Venues \u2014 A Guide to the City's Stages",
-    description: "Explore Glasgow's theatre venues \u2014 from the Citizens and Tron to grassroots spaces like The Old Hairdressers and Mono. Find what's on at each venue.",
-    canonicalPath: '/venues.html'
-  })}
-<body>
-${header('venues')}
-<main>
-  <section class="page-hero">
-    <div class="container">
-      <h1>Venues</h1>
-      <p class="page-intro">Glasgow's theatre scene spans grand Victorian stages, converted churches, and artist-run DIY spaces. Here's where to find them.</p>
-    </div>
-  </section>
-
-  <section class="venues-section">
-    <div class="container">
-      <div class="venues-grid">
-    ${venueCards}
-      </div>
-    </div>
-  </section>
-</main>
-${footer(venues)}
-</body>
-</html>`;
-
-  fs.writeFileSync(path.join(DIST, 'venues.html'), html);
-  console.log('  -> dist/venues.html');
-}
-
-function buildVenuePage(venue, events, venues) {
-  const venueEvents = getUpcomingEvents(events.filter(e => e.venueId === venue.id));
-  const eventCards = venueEvents.map(e => eventCard(e, '../css/style.css')).join('\n    ');
-
-  const eventsSection = venueEvents.length > 0 ? `
-  <section class="venue-events-section">
-    <div class="container">
-      <h2>Upcoming at ${escapeHTML(venue.name)}</h2>
-      <div class="events-grid">
-    ${eventCards}
-      </div>
-    </div>
-  </section>` : `
-  <section class="venue-events-section">
-    <div class="container">
-      <h2>Upcoming at ${escapeHTML(venue.name)}</h2>
-      <p class="no-events-message">No upcoming events listed yet. <a href="/submit.html">Submit a listing</a> if you know of one.</p>
-    </div>
-  </section>`;
-
-  const venueJsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'PerformingArtsTheater',
-    name: venue.name,
-    description: venue.description,
-    url: venue.website,
-    address: {
-      '@type': 'PostalAddress',
-      addressLocality: 'Glasgow',
-      addressRegion: venue.area,
-      addressCountry: 'GB'
-    }
-  };
-
-  const html = `${htmlHead({
-    title: `${venue.name} \u2014 What's On | Glasgow Theatre`,
-    description: truncateDescription(venue.description, 155),
-    canonicalPath: `/venues/${venue.id}.html`,
-    cssPath: '../css/style.css'
-  })}
-<body>
-${header('venues', '..')}
-<main>
-  <section class="venue-hero">
-    <div class="container">
-      <div class="venue-hero-content">
-        <span class="venue-area-tag">${escapeHTML(venue.area)}</span>
-        <h1>${escapeHTML(venue.name)}</h1>
-        <p class="venue-hero-description">${escapeHTML(venue.description)}</p>
-        <div class="venue-hero-links">
-          <a href="${escapeHTML(venue.website)}" target="_blank" rel="noopener" class="btn btn-primary">Visit Website <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="btn-icon"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>
-          ${venue.instagram ? `<a href="https://instagram.com/${escapeHTML(venue.instagram)}" target="_blank" rel="noopener" class="btn btn-secondary">Instagram</a>` : ''}
-        </div>
-      </div>
-    </div>
-  </section>
-${eventsSection}
-</main>
-${footer(venues, '..')}
-<script type="application/ld+json">${JSON.stringify(venueJsonLd)}</script>
-</body>
-</html>`;
-
-  ensureDir(path.join(DIST, 'venues'));
-  fs.writeFileSync(path.join(DIST, 'venues', `${venue.id}.html`), html);
-}
-
-function buildVenuePages(venues, events) {
-  console.log('Building individual venue pages...');
-  for (const venue of venues) {
-    buildVenuePage(venue, events, venues);
-  }
-  console.log(`  -> dist/venues/ (${venues.length} pages)`);
-}
-
-function buildAboutPage(venues) {
-  console.log('Building about.html...');
-
-  const html = `${htmlHead({
-    title: "About Glasgow Theatre \u2014 An Independent Theatre Guide",
-    description: "glasgowtheatre.com is an independent resource for Glasgow's theatre scene. We list what's on across the city \u2014 professional, grassroots, and everything in between.",
-    canonicalPath: '/about.html'
-  })}
-<body>
-${header('about')}
-<main>
-  <section class="page-hero">
-    <div class="container">
-      <h1>About</h1>
-    </div>
-  </section>
-
-  <section class="about-section">
-    <div class="container">
-      <div class="about-content">
-        <p class="about-lead">glasgowtheatre.com is an independent guide to what's on across Glasgow's stages. We believe every show matters &mdash; from the main stage at the Citizens to a scratch night in a basement on Renfield Lane.</p>
-
-        <h2>Why we exist</h2>
-        <p>Glasgow has one of the most vibrant and diverse theatre ecosystems in the UK. Scotland's flagship producing theatres sit alongside fiercely independent artist-run spaces, lunchtime theatre in converted churches, and community festivals that pop up in parks and shopfronts. But finding out what's actually on &mdash; across all of it &mdash; isn't always easy.</p>
-        <p>That's what this site is for. One place to see what's happening, from professional productions to grassroots new writing to experimental scratch nights. No paywalls, no algorithms, no corporate sponsorship. Just a clear, honest listing of what's on.</p>
-
-        <h2>Who runs this</h2>
-        <p>This is an independent project, made by people who love Glasgow theatre. We're not affiliated with any venue or production company. We update the site regularly and aim to cover as much of the city's theatre scene as we can.</p>
-
-        <h2>How to get in touch</h2>
-        <div class="contact-block">
-          <p>Want to list a show, suggest a venue, flag an error, or just say hello? We'd love to hear from you.</p>
-          <p><a href="mailto:info@glasgowtheatre.com" class="contact-email">info@glasgowtheatre.com</a></p>
-        </div>
-
-        <h2>Listings are free</h2>
-        <p>We don't charge to list events. If you're putting on a show in Glasgow, <a href="/submit.html">send us the details</a> and we'll add it to the site.</p>
-      </div>
-    </div>
-  </section>
-</main>
-${footer(venues)}
-</body>
-</html>`;
-
-  fs.writeFileSync(path.join(DIST, 'about.html'), html);
-  console.log('  -> dist/about.html');
-}
-
-function buildSubmitPage(venues) {
-  console.log('Building submit.html...');
-
-  const html = `${htmlHead({
-    title: "List Your Show \u2014 Glasgow Theatre",
-    description: "Submit your theatre event to glasgowtheatre.com for free. We list professional productions, new writing, scratch nights, and community events across Glasgow.",
-    canonicalPath: '/submit.html'
-  })}
-<body>
-${header('submit')}
-<main>
-  <section class="page-hero">
-    <div class="container">
-      <h1>List Your Show</h1>
-      <p class="page-intro">Got a show coming up in Glasgow? We'd love to list it. It's free, always.</p>
-    </div>
-  </section>
-
-  <section class="submit-section">
-    <div class="container">
-      <div class="submit-content">
-        <div class="submit-info">
-          <h2>How it works</h2>
-          <p>Email us the details of your show and we'll add it to the site. We list everything &mdash; professional productions, new writing, scratch nights, community events, experimental work, lunchtime shows. If it's theatre and it's in Glasgow, it belongs here.</p>
-
-          <h2>What to include</h2>
-          <ul class="submit-checklist">
-            <li>Show name</li>
-            <li>Venue</li>
-            <li>Date(s) and time(s)</li>
-            <li>A short description (2-3 sentences is perfect)</li>
-            <li>Ticket link or booking info</li>
-            <li>Type of show (professional, grassroots, new writing, scratch night, community)</li>
-          </ul>
-
-          <p>Don't worry about getting everything perfect &mdash; send us what you have and we'll sort the rest.</p>
-
-          <div class="submit-cta">
-            <h2>Send your listing to</h2>
-            <a href="mailto:info@glasgowtheatre.com?subject=Show%20Listing" class="contact-email-large">info@glasgowtheatre.com</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-</main>
-${footer(venues)}
-</body>
-</html>`;
-
-  fs.writeFileSync(path.join(DIST, 'submit.html'), html);
-  console.log('  -> dist/submit.html');
-}
-
-function buildSitemap(venues) {
-  console.log('Building sitemap.xml...');
-  const today = BUILD_TIME.toISOString().split('T')[0];
-
-  const pages = [
-    { loc: '/', priority: '1.0', changefreq: 'daily' },
-    { loc: '/venues.html', priority: '0.8', changefreq: 'weekly' },
-    { loc: '/about.html', priority: '0.5', changefreq: 'monthly' },
-    { loc: '/submit.html', priority: '0.5', changefreq: 'monthly' },
+function page(
+  title,
+  description,
+  url,
+  body,
+  active = "events",
+  pageEvents = events,
+) {
+  const nav = [
+    ["events", "/", "What’s on"],
+    ["venues", "/venues.html", "Venues"],
+    ["about", "/about.html", "About"],
+    ["submit", "/submit.html", "List your show ↗"],
   ];
-
-  for (const venue of venues) {
-    pages.push({ loc: `/venues/${venue.id}.html`, priority: '0.7', changefreq: 'weekly' });
-  }
-
-  const urls = pages.map(p => `  <url>
-    <loc>${SITE_URL}${p.loc}</loc>
-    <lastmod>${today}</lastmod>
-    <changefreq>${p.changefreq}</changefreq>
-    <priority>${p.priority}</priority>
-  </url>`).join('\n');
-
-  const xml = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${urls}
-</urlset>`;
-
-  fs.writeFileSync(path.join(DIST, 'sitemap.xml'), xml);
-  console.log('  -> dist/sitemap.xml');
+  return `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>${e(title)} | Glasgow Theatre</title><meta name="description" content="${e(description)}"><link rel="canonical" href="${SITE}${url}">
+<meta property="og:title" content="${e(title)}"><meta property="og:description" content="${e(description)}"><meta property="og:url" content="${SITE}${url}"><meta property="og:type" content="website"><meta property="og:site_name" content="Glasgow Theatre"><meta property="og:image" content="${SITE}/images/thrice.webp"><meta name="twitter:card" content="summary_large_image"><meta name="theme-color" content="#303fce">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/css/style.css">
+<script defer src="/js/listings.js"></script><script defer src="/js/main.js"></script></head><body>
+<a class="skip-link" href="#main">Skip to content</a><header class="site-header"><div class="container header-inner"><a class="brand" href="/" aria-label="Glasgow Theatre home">GLASGOW<span>THEATRE<span class="brand-dot">●</span></span></a>
+<nav aria-label="Main navigation">${nav.map(([key, href, text]) => `<a href="${href}"${active === key ? ' aria-current="page"' : ""}>${text}</a>`).join("")}</nav></div></header>
+<main id="main">${body}</main>
+<footer class="site-footer"><div class="container"><div class="footer-top"><div><a class="brand" href="/">GLASGOW<span>THEATRE<span class="brand-dot">●</span></span></a><p>Big stages. Small rooms. A whole city of stories.</p></div><div><p class="eyebrow">Made for the audience</p><a href="/about.html">About this independent guide ${arrow}</a><a href="/submit.html">Get your show listed ${arrow}</a><a href="mailto:info@glasgowtheatre.com">Get in touch ${arrow}</a></div></div><div class="footer-bottom"><span>© ${today.slice(0, 4)} Glasgow Theatre</span><span>Listings refreshed ${date(londonDate(new Date(status.refreshedAt)), true)} · Always check details with the venue.</span></div></div></footer>
+<script type="application/ld+json">${json({ "@context": "https://schema.org", "@type": "WebSite", name: "Glasgow Theatre", url: SITE })}</script>${active === "events" ? `<script type="application/ld+json">${json(pageEvents.map(eventData))}</script>` : ""}
+<script>window.EVENTS = ${json(pageEvents)};</script></body></html>`;
 }
-
-function buildRobotsTxt() {
-  console.log('Building robots.txt...');
-  const txt = `User-agent: *
-Allow: /
-Sitemap: ${SITE_URL}/sitemap.xml
-`;
-  fs.writeFileSync(path.join(DIST, 'robots.txt'), txt);
-  console.log('  -> dist/robots.txt');
+function card(event) {
+  return `<article class="event-card" data-id="${e(event.id)}" data-date="${e(event.date)}" data-end-date="${e(event.endDate || event.date)}">
+<div class="event-card-image${event.image ? "" : " image-unavailable"}"><div class="image-fallback" aria-hidden="true"><span>ON STAGE AT</span><strong>${e(event.venue)}</strong></div>${event.image ? `<img src="${e(event.image)}" alt="${e(event.imageAlt || event.title)}" width="1100" height="688" loading="lazy">` : ""}<span class="date-stamp">${e(range(event))}</span></div>
+<div class="event-card-body"><div class="card-topline"><a href="/venues/${e(event.venueId)}.html">${e(event.venue)}</a><span>${e((event.tags || []).slice(0, 2).map(label).join(" / "))}</span></div>
+<h3><a href="${e(event.ticketUrl)}">${e(event.title)}</a></h3><p class="event-description">${e(event.description)}</p>
+${event.accessibility ? `<p class="accessibility"><span aria-hidden="true">✳</span> ${e(event.accessibility)}</p>` : ""}
+<div class="event-card-footer"><span>${event.time ? e(time(event.time)) : "Times & tickets at venue"}</span><a class="ticket-link" href="${e(event.ticketUrl)}" aria-label="Tickets for ${e(event.title)}">Tickets ${arrow}</a></div></div></article>`;
 }
-
-// --- Main ---
-
-console.log('Glasgow Theatre \u2014 Build');
-console.log('=======================\n');
-console.log(`Build time: ${BUILD_TIMESTAMP}\n`);
-
-const events = readJSON('events.json');
-const venues = readJSON('venues.json');
-console.log(`Loaded ${events.length} events, ${venues.length} venues.\n`);
-
-ensureDir(DIST);
-
-console.log('Copying static assets...');
-copyDir(path.join(SRC, 'css'), path.join(DIST, 'css'));
-copyDir(path.join(SRC, 'js'), path.join(DIST, 'js'));
-console.log('  -> dist/css/, dist/js/\n');
-
-buildEventsPage(events, venues);
-buildVenuesPage(venues, events);
-buildVenuePages(venues, events);
-buildAboutPage(venues);
-buildSubmitPage(venues);
-buildSitemap(venues);
-buildRobotsTxt();
-
-// Build summary
-const upcoming = getUpcomingEvents(events);
-const thisWeek = getThisWeekEvents(events);
-console.log('\n=======================');
-console.log('Build Summary');
-console.log('=======================');
-console.log(`Pages built: ${4 + venues.length} (index + venues index + ${venues.length} venue pages + about + submit)`);
-console.log(`Events: ${events.length} total, ${upcoming.length} upcoming, ${thisWeek.length} this week`);
-console.log(`Venues: ${venues.length}`);
-console.log(`Sitemap: ${4 + venues.length} URLs`);
-console.log(`Build time: ${BUILD_TIMESTAMP}`);
-console.log('\nBuild complete.');
+const featured = events.find((event) => event.featured);
+const venueCount = new Set(events.map((event) => event.venueId)).size;
+const feature = featured
+  ? `<article class="featured" data-expires="${featured.endDate}"><a class="feature-image" href="#featured-show" aria-label="Discover ${e(featured.title)}"><img src="${featured.image}" alt="${e(featured.imageAlt)}" width="600" height="850" fetchpriority="high"><div class="feature-title"><span class="eyebrow">In the spotlight · ${e(featured.producer || featured.venue)}</span><h2>${e(featured.title.toUpperCase())}</h2></div><span class="feature-credit">Photo: ${e(featured.imageCredit)}</span></a><div class="feature-strip"><span>${e(range(featured).toUpperCase())} <span>${e(featured.venue)}${featured.time ? " · " + time(featured.time) : ""}</span></span><a href="#featured-show" aria-label="Read about ${e(featured.title)}">${arrow}</a></div></article>`
+  : "";
+const spotlight = featured
+  ? `<section class="spotlight" id="featured-show" data-expires="${featured.endDate}"><div class="container spotlight-inner"><div><span class="eyebrow">In the spotlight</span><h2>${e(featured.title)}</h2><p class="spotlight-byline">${e(featured.producer)} · ${e(featured.venue)}</p></div><div><p class="spotlight-description">${e(featured.description)}</p><div class="performances">${featured.performances.map((p) => `<p><strong>${new Date(p.date + "T12:00:00Z").toLocaleDateString("en-GB", { weekday: "short", day: "numeric", month: "short", year: "numeric", timeZone: "Europe/London" })} · ${time(p.time)}</strong>${p.accessibility ? `<span class="accessibility">${e(p.accessibility)}</span>` : ""}</p>`).join("")}</div><a class="btn" href="${featured.ticketUrl}">Book ${e(featured.title)} at ${e(featured.venue)} ${arrow}</a><span class="spotlight-tags">${featured.tags.map(label).join(" / ")}</span></div></div></section>`
+  : "";
+const tags = [...new Set(events.flatMap((event) => event.tags || []))].sort();
+write(
+  "index.html",
+  page(
+    "What’s on across Glasgow’s stages",
+    "Find your next theatre night in Glasgow. Browse current shows, dance, new writing and experimental performance, with direct booking links.",
+    "/",
+    `
+<section class="hero"><div class="container hero-grid"><div class="hero-copy"><p class="eyebrow">Your independent guide to Glasgow’s stages</p><h1>MAKE A<br>NIGHT<br><span>OF IT.</span></h1><p class="hero-intro">Something that stays with you.<br>Find it on a Glasgow stage.</p><a class="btn" href="#all-events">Find your next show <span aria-hidden="true">↓</span></a><div class="hero-note"><span class="live-dot" aria-hidden="true"></span><span><strong data-upcoming-count>${events.length}</strong> shows coming up across <strong data-venue-count>${venueCount}</strong> venues</span></div></div>${feature}</div></section>
+<section class="listings-section" id="all-events"><div class="container"><div class="section-heading"><div><p class="eyebrow">The city is your stage</p><h2>What’s on.</h2></div><button class="text-button" id="this-week">Show the next 7 days <span aria-hidden="true">↘</span></button></div>
+<div class="filter-controls"><div class="filter-row"><label class="search-field">Search shows<input id="filter-search" type="search" placeholder="A show, a venue, a story…"></label><label>Venue<select id="filter-venue"><option value="">All venues</option>${venues
+      .filter((v) => events.some((event) => event.venueId === v.id))
+      .map((v) => `<option value="${v.id}">${e(v.name)}</option>`)
+      .join(
+        "",
+      )}</select></label><label>From<input id="filter-date-from" type="date"></label><label>To<input id="filter-date-to" type="date"></label></div><div class="filter-pills-group" aria-label="Filter by genre"><button class="filter-pill active" data-tag="" aria-pressed="true">All shows</button>${tags.map((tag) => `<button class="filter-pill" data-tag="${e(tag)}" aria-pressed="false">${e(label(tag))}</button>`).join("")}</div></div>
+<div class="results-bar"><span id="results-count" role="status" aria-live="polite">${events.length} shows</span><button class="text-button" data-reset>Clear filters <span aria-hidden="true">×</span></button></div>
+<div class="events-grid" id="events-grid">${events.map(card).join("")}</div><div class="no-results" id="no-results" hidden><h3>A different night, perhaps?</h3><p>No shows match these filters. Try another date, venue or genre.</p><button class="btn" data-reset>Clear filters</button></div></div></section>
+${spotlight}
+<section class="listing-invite"><div class="container"><div><p class="eyebrow">For the people making it happen</p><h2>Your show.<br>Our next night out.</h2><p>Putting on theatre in Glasgow? Let the city know.</p></div><a class="btn" href="/submit.html">List your show — it’s free ${arrow}</a></div></section>`,
+  ),
+);
+write(
+  "venues.html",
+  page(
+    "Glasgow theatre venues",
+    "Explore Glasgow’s theatre venues and find current shows.",
+    "/venues.html",
+    `<section class="page-hero container"><p class="eyebrow">Find your way to the stage</p><h1>Across the city.</h1><p>From the Gorbals to the West End. Grand auditoriums, intimate rooms and spaces to try something new.</p></section><section class="container venues-grid">${venues.map((v) => `<a class="venue-card" href="/venues/${v.id}.html"><span class="eyebrow">${e(v.area)}</span><h2>${e(v.name)}</h2><p>${e(v.description)}</p><span class="venue-card-footer">Explore venue ${arrow}</span></a>`).join("")}</section>`,
+    "venues",
+  ),
+);
+for (const venue of venues) {
+  const list = events.filter((event) => event.venueId === venue.id);
+  write(
+    `venues/${venue.id}.html`,
+    page(
+      venue.name,
+      venue.description,
+      `/venues/${venue.id}.html`,
+      `<section class="page-hero container"><a class="back-link" href="/venues.html">← All venues</a><p class="eyebrow">${e(venue.area)}</p><h1>${e(venue.name)}</h1><p>${e(venue.description)}</p><a class="btn" href="${e(venue.website)}">Visit venue website ${arrow}</a></section><section class="container venue-listings"><div class="section-heading"><h2>Coming up here.</h2><span id="results-count" role="status">${list.length} shows</span></div><div class="events-grid">${list.map(card).join("")}</div><div class="no-results" id="no-results" ${list.length ? "hidden" : ""}><p>No upcoming shows listed here yet. Check the venue’s website for its full programme.</p><a class="btn" href="${e(venue.website)}">See venue programme ${arrow}</a></div></section><script type="application/ld+json">${json(list.map(eventData))}</script>`,
+      "venues",
+      list,
+    ),
+  );
+}
+write(
+  "about.html",
+  page(
+    "About this independent theatre guide",
+    "An independent guide to theatre, dance and performance in Glasgow.",
+    "/about.html",
+    `<section class="page-hero container"><p class="eyebrow">Independent. Local. Live.</p><h1>For a love<br>of live theatre.</h1><p>Glasgow Theatre helps you find what’s on across the city, from established stages to independent performance spaces.</p></section><section class="prose container"><h2>A place to find your next show</h2><p>Browse productions by venue, date or genre, then book directly with the venue. Listings are free, and this guide is independent of the theatres it covers.</p><h2>About the listings</h2><p>We gather listings from venue programmes and accept submissions from companies and artists. This is a selection of what’s on, rather than a complete programme for every venue. Check the booking page for the latest performance times, prices, availability and access arrangements.</p><h2>Something missing or incorrect?</h2><p><a href="/submit.html">Send us a listing</a> or email <a href="mailto:info@glasgowtheatre.com">info@glasgowtheatre.com</a> with a correction.</p></section>`,
+    "about",
+  ),
+);
+write(
+  "submit.html",
+  page(
+    "List your show",
+    "Submit your Glasgow theatre, dance or performance listing for free.",
+    "/submit.html",
+    `<section class="page-hero container"><p class="eyebrow">A stage for your show</p><h1>Tell Glasgow.</h1><p>Putting on theatre, dance or live performance in Glasgow? Send us the details. It’s free to be listed.</p></section><section class="prose container"><h2>Send us your listing</h2><ul><li>Show title and company name</li><li>Venue, dates and performance times</li><li>A short description and genre</li><li>A direct booking link</li><li>A production image, with photo credit and permission to use it</li><li>Access information, including BSL, captioned, relaxed or audio-described performances</li></ul><div class="submit-box"><p>Ready when you are.</p><a class="btn" href="mailto:info@glasgowtheatre.com?subject=Show%20listing">Email your listing ${arrow}</a><a href="mailto:info@glasgowtheatre.com">info@glasgowtheatre.com</a></div></section>`,
+    "submit",
+  ),
+);
+const paths = [
+  "/",
+  "/venues.html",
+  "/about.html",
+  "/submit.html",
+  ...venues.map((v) => `/venues/${v.id}.html`),
+];
+write(
+  "sitemap.xml",
+  `<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${paths.map((p) => `<url><loc>${SITE}${p}</loc><lastmod>${today}</lastmod></url>`).join("")}</urlset>`,
+);
+write("robots.txt", `User-agent: *\nAllow: /\nSitemap: ${SITE}/sitemap.xml\n`);
+write("CNAME", "glasgowtheatre.com\n");
+write(".nojekyll", "");
+write(
+  "favicon.svg",
+  '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="10" fill="#303fce"/><text x="32" y="45" text-anchor="middle" font-family="sans-serif" font-weight="bold" font-size="42" fill="#e3ddfa">G</text></svg>',
+);
+for (const dir of ["css", "js", "images", "fonts"])
+  fs.cpSync(path.join(__dirname, "src", dir), path.join(DIST, dir), {
+    recursive: true,
+  });
+console.log(
+  `Built ${paths.length} pages with ${events.length} upcoming shows. Listings last refreshed ${status.refreshedAt}.`,
+);

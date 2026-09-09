@@ -1,1011 +1,716 @@
 [
   {
-    "id": "evt001",
-    "title": "Birds of Paradise Theatre Company - (We indulge in) a bit of roll play",
-    "venue": "Tramway",
-    "venueId": "tramway",
-    "date": "2026-02-19",
-    "time": "19:30",
-    "endDate": "2026-02-21",
-    "type": "professional",
-    "tags": [
-      "drama"
-    ],
-    "description": "Thursday 19 and Friday 20 February - 7.30pmSaturday 21 February - 2.30pm and 7.30pm (We indulge in) a bit of roll play is the captivating new accessible production from Birds of Paradise Theatre Company taking a fearless look at sex and disability. We wanted to call this show something else but the...",
-    "ticketUrl": "https://www.tramway.org/event/1cb0c0bc-c0ff-4501-b394-b3a60116cdc8/",
-    "image": "https://events.glasgowlife.org.uk/imageprocessor/8d871610-3485-40f3-ba1f-b3a800ae4cf3?mode=crop&center=0.426669682297751,0.50482466848273&width=672&height=379"
-  },
-  {
-    "id": "evt002",
-    "title": "Saint Joan",
+    "id": "citizens-1984",
+    "title": "1984",
     "venue": "Citizens Theatre",
     "venueId": "citizens",
-    "date": "2026-02-21",
-    "time": "19:30",
-    "endDate": "2026-02-28",
+    "date": "2026-08-29",
+    "time": null,
+    "endDate": "2026-09-26",
     "type": "professional",
     "tags": [
+      "drama",
       "classic"
     ],
-    "description": "Featuring Mandipa Kabanda as Joan. Saint Joan will reimagine George Bernard Shaw’s classic play for the 2020s, in a stripped-back, close-up staging, directed by Stewart Laing (formerly Untitled Projects), with a film sequence written and directed by Adura Onashile. Based on the extraordinary true...",
-    "ticketUrl": "https://citz.co.uk/whats-on/saint-joan-2/",
-    "image": "https://images.citz.co.uk/uploads/2025/07/SaintJoanFINAL300dpi-WIDESCREEN-scaled.jpg"
+    "description": "Big Brother is watching you. The Thought Police monitor every word you say. Children spy on their parents and the Party has abolished the truth. In this totally controlled world, Winston and Julia begin a love affair which catapults them into rebellion against the Party. The nightmare of a...",
+    "ticketUrl": "https://citz.co.uk/whats-on/1984-play/",
+    "image": "https://assets.citz.co.uk/uploads/2026/02/Citizens-Theatre-website.jpg?resize=1992%2C1245&gravity",
+    "checkedAt": "2026-09-09"
   },
   {
-    "id": "evt003",
-    "title": "Waiting for Godot",
-    "venue": "Citizens Theatre",
-    "venueId": "citizens",
-    "date": "2026-02-21",
-    "time": "19:30",
-    "endDate": "2026-03-14",
-    "type": "professional",
+    "id": "oran-mor-transparent",
+    "title": "Transparent",
+    "venue": "Òran Mór",
+    "venueId": "oran-mor",
+    "date": "2026-09-07",
+    "time": "13:00",
+    "endDate": "2026-09-12",
+    "type": "new-writing",
     "tags": [
-      "classic"
+      "new-writing",
+      "lunchtime",
+      "a-play-a-pie-a-pint"
     ],
-    "description": "Matthew Kelly and George Costigan star in a new staging of Samuel Beckett’s classic play – in which absolutely nothing happens. Set in a shifting, timeless landscape, Waiting for Godot follows two men, Vladimir and Estragon, as they wait for someone who may never come. As they pass the time with...",
-    "ticketUrl": "https://citz.co.uk/whats-on/waiting-for-godot/",
-    "image": "https://images.citz.co.uk/uploads/2025/07/W076-WFG-CITZ-333-1200mm-POSTER-V4.jpg"
+    "description": "“Do you ever get the feeling you dinnae really exist?” Barry feels like he’s slowly fading into the background of his own life. Clare, after a recent loss, feels like she’s unravelling in hers. A chance encounter in a crowded bar means they both end up on a night out together, where sparks fly...",
+    "ticketUrl": "https://playpiepint.com/whats-on/event/transparent/",
+    "image": "https://playpiepint.com/app/uploads/2026/07/Jo-Freer-and-Tom-McGovern-in-Transparent-Eoin-Carey-1024x683.jpg?theia_smart_thumbnails_file_version=2",
+    "checkedAt": "2026-09-09"
   },
   {
-    "id": "evt004",
-    "title": "The Events",
+    "id": "tron-community-ensemble-18-recruitment-workshop",
+    "title": "Community Ensemble 18+ | Recruitment Workshop",
     "venue": "Tron Theatre",
     "venueId": "tron",
-    "date": "2026-02-21",
-    "time": "19:30",
+    "date": "2026-09-10",
+    "time": "19:00",
     "endDate": null,
-    "type": "professional",
-    "tags": [
-      "drama"
-    ],
-    "description": "Recommended Age Guide 14+ | Contains violence, adult themes, strong language, audience interaction. My choir was Jesse and Mr. Aziz and Frank and Mrs Singh and Isaac and Sherrie and Corrine and Gisela and Kamal and…. That’s who it was. Now it’s just me. When Claire, a priest and choir … Continued",
-    "ticketUrl": "https://www.tron.co.uk/shows/the-events/",
-    "image": "https://www.tron.co.uk/wp-content/uploads/2025/11/The-Events-Social-Web-150px-8OCT253.png"
-  },
-  {
-    "id": "evt005",
-    "title": "medb & Friends - Charity Cabaret Sun, Feb 22 7:30 PM Tickets £8 / £10.50",
-    "venue": "The Glad Cafe",
-    "venueId": "glad-cafe",
-    "date": "2026-02-22",
-    "time": "19:30",
-    "endDate": null,
-    "type": "professional",
-    "tags": [
-      "scottish"
-    ],
-    "description": "medb & Friends - Charity Cabaret at The Glad Cafe, Glasgow",
-    "ticketUrl": "https://www.thegladcafe.co.uk/events/2026-02-22-medb-and-friends-charity-cabaret-the-glad-cafe",
-    "image": "https://musicglue-images-prod.global.ssl.fastly.net/the-glad-cafe/event/2026-02-21-document-international-human-rights-festival-day-1-the-glad-cafe?u=aHR0cHM6Ly9tdXNpY2dsdWUtdXNlci1hcHAtcC00LXAuczMuYW1hem9uYXdzLmNvbS9vcmlnaW5hbHMvYzY5MDE1ZjEtZDRhMy00ZGNlLTkwMDItZTRlM2MyNzc2ZDgw&height=500&width=500&v=2"
-  },
-  {
-    "id": "evt006",
-    "title": "Someone’s Knockin’ at the Door",
-    "venue": "Oran Mor",
-    "venueId": "oran-mor",
-    "date": "2026-02-23",
-    "time": "13:00",
-    "endDate": "2026-02-28",
-    "type": "new-writing",
-    "tags": [
-      "new-writing",
-      "lunchtime",
-      "a-play-a-pie-a-pint"
-    ],
-    "description": "In 1976, Jack and Kathy set out on a mission to find Paul McCartney’s house on the Mull of Kintyre, where he was living off-grid after The Beatles broke up. Now, fifty years later, they are telling their granddaughter the full story of what really happened. Did they ever get to meet their idol? Did...",
-    "ticketUrl": "https://playpiepint.com/whats-on/event/someones-knockin-at-the-door/",
-    "image": "https://playpiepint.com/app/uploads/2025/12/Someones-Knockins-at-the-Door-08_Tommy-Ga-Ken-Wan.jpg"
-  },
-  {
-    "id": "evt007",
-    "title": "A Celebration of Giles Havergal",
-    "venue": "Citizens Theatre",
-    "venueId": "citizens",
-    "date": "2026-03-01",
-    "time": "19:30",
-    "endDate": null,
-    "type": "professional",
-    "tags": [
-      "drama"
-    ],
-    "description": "If I’m remembered, I would like people to say: “Oh yes, we had some really good times, they did some really good shows.” Giles was Artistic Director of the Citizens Theatre from 1969 – 2003. He presided over one of the most celebrated periods in the theatre’s history, where, alongside his...",
-    "ticketUrl": "https://citz.co.uk/whats-on/a-celebration-of-giles-havergal/",
-    "image": "https://images.citz.co.uk/uploads/2025/10/Giles-Havergal-Chinchilla-1977_2-scaled-aspect-ratio-1600-1000-scaled.jpeg"
-  },
-  {
-    "id": "evt008",
-    "title": "The Legend of Davie McKenzie",
-    "venue": "Oran Mor",
-    "venueId": "oran-mor",
-    "date": "2026-03-02",
-    "time": "13:00",
-    "endDate": "2026-03-07",
-    "type": "new-writing",
-    "tags": [
-      "new-writing",
-      "lunchtime",
-      "a-play-a-pie-a-pint"
-    ],
-    "description": "When Sean’s best pal Davie tragically dies on the day of his release from prison, the system prepares to cremate him in a council funeral with no guests, no gravestone, and no story. From his prison cell, Sean makes a promise: Davie won’t go out like that. Haunted by Davie’s ghost and inspired by...",
-    "ticketUrl": "https://playpiepint.com/whats-on/event/the-legend-of-davie-mckenzie/",
-    "image": "https://playpiepint.com/app/uploads/2025/12/Davie-McKenzie.png"
-  },
-  {
-    "id": "evt009",
-    "title": "The Bacchae",
-    "venue": "Citizens Theatre",
-    "venueId": "citizens",
-    "date": "2026-03-04",
-    "time": "19:30",
-    "endDate": "2026-03-07",
-    "type": "professional",
-    "tags": [
-      "dance",
-      "scottish"
-    ],
-    "description": "An outcast god. A powerless king. A mother who kills her only son. Glasgow’s acclaimed Company of Wolves present an earth-shattering solo retelling of the myth of Dionysos: an epic of rejection, vengeance and rebirth told through story, dance and ancient song. Written and performed by Ewan Downie...",
-    "ticketUrl": "https://citz.co.uk/whats-on/the-bacchae/",
-    "image": "https://images.citz.co.uk/uploads/2025/10/companyofwolves-the-bacchae-ewan-downie-credit-louise-mather-for-citz.jpg"
-  },
-  {
-    "id": "evt010",
-    "title": "Cryptic Nights: Flutter // Aurora Engine",
-    "venue": "Tramway",
-    "venueId": "tramway",
-    "date": "2026-03-05",
-    "time": "19:30",
-    "endDate": null,
-    "type": "professional",
-    "tags": [
-      "touring"
-    ],
-    "description": "Cryptic Nights presents Flutter, an immersive audiovisual performance by musician Aurora Engine (Deborah Shaw) that explores the lived experience of Tourette’s syndrome through voice, harp and electronics. The work moves through moments of disruption and unpredictability alongside calm and release...",
-    "ticketUrl": "https://www.tramway.org/event/4cab456b-b4ad-4a91-8d54-b3ef01056a37/",
-    "image": "https://events.glasgowlife.org.uk/imageprocessor/7e38a60b-3685-4234-bb22-b3ef01056a37?mode=crop&center=0.394227215062792,0.50482466848273&width=672&height=379"
-  },
-  {
-    "id": "evt011",
-    "title": "The Trials",
-    "venue": "Tron Theatre",
-    "venueId": "tron",
-    "date": "2026-03-06",
-    "time": "19:30",
-    "endDate": "2026-03-14",
-    "type": "professional",
-    "tags": [
-      "drama"
-    ],
-    "description": "Recommended Age 12+ | Contains strong language. It’s easy for you to accuse me now but you don’t understand.Everyone lived like we did! Well maybe not everyone, everyone.But… I wasn’t any worse than anyone else. The not-too-distant future. A world where the air is unbreathable. A jury of twelve...",
-    "ticketUrl": "https://www.tron.co.uk/shows/the-trials/",
-    "image": "https://www.tron.co.uk/wp-content/uploads/2025/11/TRO-327_Trials-No-Text-1080x1920-1.jpg"
-  },
-  {
-    "id": "evt012",
-    "title": "Crossmylaff Comedy Sat, Mar 7 7:30 PM Tickets £16.50 in advance",
-    "venue": "The Glad Cafe",
-    "venueId": "glad-cafe",
-    "date": "2026-03-07",
-    "time": "19:30",
-    "endDate": null,
-    "type": "professional",
-    "tags": [
-      "comedy",
-      "scottish"
-    ],
-    "description": "Crossmylaff Comedy at The Glad Cafe, Glasgow",
-    "ticketUrl": "https://www.thegladcafe.co.uk/events/2026-03-07-crossmylaff-comedy-the-glad-cafe",
-    "image": "https://musicglue-images-prod.global.ssl.fastly.net/the-glad-cafe/event/2026-02-21-document-international-human-rights-festival-day-1-the-glad-cafe?u=aHR0cHM6Ly9tdXNpY2dsdWUtdXNlci1hcHAtcC00LXAuczMuYW1hem9uYXdzLmNvbS9vcmlnaW5hbHMvYzY5MDE1ZjEtZDRhMy00ZGNlLTkwMDItZTRlM2MyNzc2ZDgw&height=500&width=500&v=2"
-  },
-  {
-    "id": "evt013",
-    "title": "The Swansong",
-    "venue": "Oran Mor",
-    "venueId": "oran-mor",
-    "date": "2026-03-09",
-    "time": "13:00",
-    "endDate": "2026-03-14",
-    "type": "new-writing",
-    "tags": [
-      "new-writing",
-      "lunchtime",
-      "a-play-a-pie-a-pint"
-    ],
-    "description": "When you’ve lost all hope, can one night with an unlikely companion remind you what it means to be alive? And can you choose to stay, just one more day? Join two strangers on an extraordinary flight across Edinburgh’s starlit city skies and pulsing basement bars in this uplifting new musical...",
-    "ticketUrl": "https://playpiepint.com/whats-on/event/the-swansong/",
-    "image": "https://playpiepint.com/app/uploads/2025/12/The-Swansong.jpg"
-  },
-  {
-    "id": "evt014",
-    "title": "A Grain of Sand",
-    "venue": "Citizens Theatre",
-    "venueId": "citizens",
-    "date": "2026-03-13",
-    "time": "19:30",
-    "endDate": "2026-03-14",
-    "type": "professional",
-    "tags": [
-      "family"
-    ],
-    "description": "Renad, a young Gazan girl, embarks on a dangerous journey. Carrying only the echoes of her grandmother’s tales and the spark of her own imagination, she searches for her family and the ‘Anqaa’ – the mythical Palestinian Phoenix. A Grain of Sand is a one-woman show that takes an intimate look at war...",
-    "ticketUrl": "https://citz.co.uk/whats-on/a-grain-of-sand/",
-    "image": "https://images.citz.co.uk/uploads/2025/10/Hero-Image-A-Grain-of-Sand-c-Ellie-Kurttz-scaled.jpg"
-  },
-  {
-    "id": "evt015",
-    "title": "Joy",
-    "venue": "Oran Mor",
-    "venueId": "oran-mor",
-    "date": "2026-03-16",
-    "time": "13:00",
-    "endDate": "2026-03-21",
-    "type": "new-writing",
-    "tags": [
-      "new-writing",
-      "lunchtime",
-      "a-play-a-pie-a-pint"
-    ],
-    "description": "“My name is Joy and I’m a f*cking oxymoron” Joy, a self-identified spinster librarian, is sad most of the time. Why would her parents place the burden of such a name upon her? When a particularly disastrous date leads to her potential beau declaring she needs to find a sense of humour, Joy wonders…...",
-    "ticketUrl": "https://playpiepint.com/whats-on/event/joy/",
-    "image": "https://playpiepint.com/app/uploads/2025/12/Joy-1.jpg"
-  },
-  {
-    "id": "evt016",
-    "title": "Mark Simmons: Jest to Impress",
-    "venue": "Citizens Theatre",
-    "venueId": "citizens",
-    "date": "2026-03-18",
-    "time": "19:30",
-    "endDate": null,
-    "type": "professional",
-    "tags": [
-      "new-writing",
-      "touring"
-    ],
-    "description": "WINNER Dave’s Funniest Joke of the Fringe 2024 As Seen on Mock The Week, BT Sport and ITV, ‘Master of one-liners’ Mark Simmons had a groundbreaking 200+ date sell out debut tour lasting two years, spanning the UK, Ireland, Australia, and New Zealand. Mark is back on tour in 2026 with Jest To...",
-    "ticketUrl": "https://citz.co.uk/whats-on/mark-simmons-jest-to-impress/",
-    "image": "https://images.citz.co.uk/uploads/2025/09/Mark-Simmons-BLUE-Main-scaled-aspect-ratio-1600-1000-scaled.jpg"
-  },
-  {
-    "id": "evt017",
-    "title": "Mhairi Black: Difficult Second Album",
-    "venue": "Citizens Theatre",
-    "venueId": "citizens",
-    "date": "2026-03-19",
-    "time": "19:30",
-    "endDate": null,
-    "type": "professional",
-    "tags": [
-      "touring"
-    ],
-    "description": "Following her sold-out Fringe run and a smash-hit tour, MP-turned-comedian Mhairi Black returns with her Difficult Second Album. Come along for a laid-back look at the last year whilst Mhairi continued to work on her new show and her new prospects. In this preview performance, Mhairi will reflect...",
-    "ticketUrl": "https://citz.co.uk/whats-on/mhairi-black-difficult-second-album/",
-    "image": "https://images.citz.co.uk/uploads/2025/11/Mhairi-Black-1-scaled-aspect-ratio-1600-1000-scaled.jpg"
-  },
-  {
-    "id": "evt018",
-    "title": "Kim Blythe: Cowboy",
-    "venue": "Citizens Theatre",
-    "venueId": "citizens",
-    "date": "2026-03-20",
-    "time": "19:30",
-    "endDate": null,
-    "type": "professional",
-    "tags": [
-      "drama"
-    ],
-    "description": "Kim Blythe is a cowboy – not the rugged, western kind but more like a questionable tradesman. Unsure but thriving after a sold-out Fringe run, Kim brings her second show Cowboy to the GICF for one last rodeo as she tries to make sense of it all. If you feel like you’re constantly winging it through...",
-    "ticketUrl": "https://citz.co.uk/whats-on/kim-blythe-cowboy/",
-    "image": "https://images.citz.co.uk/uploads/2025/10/Kim-Blythe-Cowboy-aspect-ratio-1600-1000.jpg"
-  },
-  {
-    "id": "evt019",
-    "title": "balletLORENT - Snow White",
-    "venue": "Tramway",
-    "venueId": "tramway",
-    "date": "2026-03-20",
-    "time": "19:30",
-    "endDate": "2026-03-21",
-    "type": "professional",
-    "tags": [
-      "family"
-    ],
-    "description": "balletLORENT's family-friendly version of Snow White, for everyone aged 5+ Friday 20 March 2026 - 7pmSat 21 March 2026 - 2pm Seven courageous miners graft for a world of opulence enjoyed by the Queen and her beautiful daughter, Snow White. But the Queen's quest for eternal beauty leads her into...",
-    "ticketUrl": "https://www.tramway.org/event/34abf8cc-498c-48a8-aafc-b38a00d79cd8/",
-    "image": "https://events.glasgowlife.org.uk/imageprocessor/e682b9bb-0c02-4282-a1b4-b38a00d79cd8?mode=crop&center=0.393983644859813,0.636403615851151&width=672&height=379"
-  },
-  {
-    "id": "evt020",
-    "title": "Flight",
-    "venue": "Citizens Theatre",
-    "venueId": "citizens",
-    "date": "2026-03-21",
-    "time": "19:30",
-    "endDate": "2026-04-04",
-    "type": "professional",
-    "tags": [
-      "drama"
-    ],
-    "description": "Vox Motus’s groundbreaking international hit production in an exclusive presentation. Two orphaned brothers embark on a desperate odyssey to freedom and safety, in a heart-wrenching road story of terror, hope and survival. Combining unsettling themes with spellbinding images, Flight draws you into...",
-    "ticketUrl": "https://citz.co.uk/whats-on/flight/",
-    "image": "https://images.citz.co.uk/uploads/2025/07/MAIN-PROMO-SHOT-Flight-Athens-Copyright-Mihaela-Bodlovic-1-scaled.jpg"
-  },
-  {
-    "id": "evt021",
-    "title": "Mike Wozniak: The Bench",
-    "venue": "Citizens Theatre",
-    "venueId": "citizens",
-    "date": "2026-03-21",
-    "time": "19:30",
-    "endDate": null,
-    "type": "professional",
-    "tags": [
-      "comedy",
-      "touring"
-    ],
-    "description": "New stand-up tour show from Mike Wozniak in which a story about a bench will be prominent. Previous experience of or strong opinions about benches not required. Let Mike worry about that. As seen on Taskmaster, Man Down and Junior Taskmaster. As heard on Three Bean Salad podcast.",
-    "ticketUrl": "https://citz.co.uk/whats-on/mike-wozniak-the-bench/",
-    "image": "https://images.citz.co.uk/uploads/2025/10/MW_Bench_Clean-scaled-aspect-ratio-1600-1000-3-scaled.jpg"
-  },
-  {
-    "id": "evt022",
-    "title": "Miss Lockwood Isn’t Well",
-    "venue": "Oran Mor",
-    "venueId": "oran-mor",
-    "date": "2026-03-23",
-    "time": "13:00",
-    "endDate": "2026-03-28",
-    "type": "new-writing",
-    "tags": [
-      "new-writing",
-      "lunchtime",
-      "a-play-a-pie-a-pint"
-    ],
-    "description": "Miss Lockwood isn’t well. That’s what Alice’s pupils have been told, although the truth is she’s been suspended following strange goings-on in her classroom: appearances by mysterious figures only she can see, delivering cryptic messages only she can hear. And, of course, there was the unfortunate...",
-    "ticketUrl": "https://playpiepint.com/whats-on/event/miss-lockwood-isnt-well/",
-    "image": "https://playpiepint.com/app/uploads/2025/12/Miss-Lockwood-Isnt-In-1.jpg"
-  },
-  {
-    "id": "evt023",
-    "title": "Karen Dunbar – The Glesga Special",
-    "venue": "Citizens Theatre",
-    "venueId": "citizens",
-    "date": "2026-03-25",
-    "time": "19:30",
-    "endDate": null,
-    "type": "professional",
-    "tags": [
-      "comedy",
-      "scottish"
-    ],
-    "description": "Karen Dunbar is one of Scotland’s best-known comedy actors. Starting off in the sketch show Chewin’ the Fat, she then went on to star in her own show, The Karen Dunbar Show, which received various awards and nominations. Karen has trod the boards in everything from Glasgow Panto to West End...",
-    "ticketUrl": "https://citz.co.uk/whats-on/karen-dunbar-the-glesga-special/",
-    "image": "https://images.citz.co.uk/uploads/2025/11/p-1-aspect-ratio-1600-1000.jpeg"
-  },
-  {
-    "id": "evt024",
-    "title": "Medea",
-    "venue": "Tron Theatre",
-    "venueId": "tron",
-    "date": "2026-03-25",
-    "time": "19:30",
-    "endDate": "2026-03-28",
-    "type": "professional",
-    "tags": [
-      "drama"
-    ],
-    "description": "Recommended Age Guide 12+ | Contains scenes of emotional distress; scenes of marital breakdown and discussions and representations of child death. I am not a part of the story you tried to writeI am the storyAnd it ends when I say so Everyone knows how Jason won the Golden Fleece … Continued",
-    "ticketUrl": "https://www.tron.co.uk/shows/medea/",
-    "image": "https://www.tron.co.uk/wp-content/uploads/2025/11/medea-bard-tron-theatre-4x5-poster.jpg"
-  },
-  {
-    "id": "evt025",
-    "title": "Des Clarke: Life After Des",
-    "venue": "Citizens Theatre",
-    "venueId": "citizens",
-    "date": "2026-03-26",
-    "time": "19:30",
-    "endDate": null,
-    "type": "professional",
-    "tags": [
-      "comedy",
-      "touring"
-    ],
-    "description": "In his brand-new stand-up special, Des Clarke explores the comedy of hitting reset. Finding the funny in everything from personal meltdowns to unexpected comebacks. After more than ten years away from the touring circuit, Des returns to the stage with a show that’s as sharp, heartfelt and...",
-    "ticketUrl": "https://citz.co.uk/whats-on/des-clarke-life-after-des/",
-    "image": "https://images.citz.co.uk/uploads/2025/10/DES_Headshot075-scaled-aspect-ratio-1600-1000-scaled.jpg"
-  },
-  {
-    "id": "evt026",
-    "title": "Tim Key: Loganberry",
-    "venue": "Tramway",
-    "venueId": "tramway",
-    "date": "2026-03-26",
-    "time": "19:30",
-    "endDate": "2026-03-28",
-    "type": "professional",
-    "tags": [
-      "drama"
-    ],
-    "description": "Plosive Live in association with PBJ Management presents Tim Key: Loganberry TIM KEY (Alan Partridge, The Ballad of Wallis Island, Tim Key’s Late Night Poetry Programme) again pops his suit on, plods about, in a brand new show. Bit gutted he’s old. Guzzling continental lager. Magnetic lol. Decent...",
-    "ticketUrl": "https://www.tramway.org/event/5d9841e3-1684-4d9a-aced-b3a000cc6f61/",
-    "image": "https://events.glasgowlife.org.uk/imageprocessor/c9808063-a8a3-41c9-9ecf-b3a000cc6f61?mode=crop&center=0.28263726635514,0.462719405324836&width=672&height=379"
-  },
-  {
-    "id": "evt027",
-    "title": "Lubna Kerr - Chatterbox",
-    "venue": "Citizens Theatre",
-    "venueId": "citizens",
-    "date": "2026-03-27",
-    "time": "19:30",
-    "endDate": null,
-    "type": "professional",
-    "tags": [
-      "scottish"
-    ],
-    "description": "Chatterbox explores the power of language—how words shape identity, who gets heard, and who gets dismissed. Growing up in 1970s Glasgow, a five-year-old girl is called “stupid” simply because she can’t yet speak English by her teacher who cant speak any Urdu. That single label cuts deeply, though...",
-    "ticketUrl": "https://citz.co.uk/whats-on/lubna-kerr-chatterbox/",
-    "image": "https://images.citz.co.uk/uploads/2025/12/chatterbox-photo-mine-smiling-scaled-aspect-ratio-1600-1000-scaled.jpg"
-  },
-  {
-    "id": "evt028",
-    "title": "Ruby Wax: Absolutely Famous",
-    "venue": "Citizens Theatre",
-    "venueId": "citizens",
-    "date": "2026-03-27",
-    "time": "19:30",
-    "endDate": null,
-    "type": "professional",
-    "tags": [
-      "drama"
-    ],
-    "description": "It’s almost easier to say whom Ruby Wax DIDN’T meet, interview and coax fascinating insights from in her huge TV shows ‘Ruby Wax Meets’ and ‘Full Wax’. Donald Trump, OJ Simpson, Pamela Anderson, Madonna and many more. Her provocative, abrasive, incomparable style was – just about – kept in check by...",
-    "ticketUrl": "https://citz.co.uk/whats-on/ruby-wax-absolutely-famous/",
-    "image": "https://images.citz.co.uk/uploads/2025/11/102889762-scaled-aspect-ratio-1600-1000-scaled.jpg"
-  },
-  {
-    "id": "evt029",
-    "title": "When Billy Met Alasdair by Alan Bissett",
-    "venue": "Citizens Theatre",
-    "venueId": "citizens",
-    "date": "2026-03-28",
-    "time": "19:30",
-    "endDate": null,
-    "type": "professional",
-    "tags": [
-      "scottish"
-    ],
-    "description": "‘Allow me to give you some advice, Billy…’ Award-winning writer and performer Alan Bissett, creator of The Moira Monologues, takes on the dual roles of two Scottish cultural giants – Billy Connolly and Alasdair Gray – imagining what might have happened when Connolly attended the 1981 launch of...",
-    "ticketUrl": "https://citz.co.uk/whats-on/when-billy-met-alasdair-by-alan-bissett/",
-    "image": "https://images.citz.co.uk/uploads/2025/11/When-Billy-met-Alasdair-aspect-ratio-1600-1000.png"
-  },
-  {
-    "id": "evt030",
-    "title": "Outskirts",
-    "venue": "Oran Mor",
-    "venueId": "oran-mor",
-    "date": "2026-03-30",
-    "time": "13:00",
-    "endDate": "2026-04-04",
-    "type": "new-writing",
-    "tags": [
-      "new-writing",
-      "lunchtime",
-      "a-play-a-pie-a-pint"
-    ],
-    "description": "A lock-in. A few drinks. A bit of Kylie Minogue. What could go wrong? When Margaret enters a Glasgow gay bar for the very first time, she discovers a whole new world through the spiky bartender, chaotic kitchen porter, and a mysterious package waiting to be opened. Trapped inside by a thunderstorm...",
-    "ticketUrl": "https://playpiepint.com/whats-on/event/outskirts/",
-    "image": "https://playpiepint.com/app/uploads/2025/12/Outskirts.jpg"
-  },
-  {
-    "id": "evt031",
-    "title": "What I’m Here For",
-    "venue": "Tron Theatre",
-    "venueId": "tron",
-    "date": "2026-04-01",
-    "time": "19:30",
-    "endDate": "2026-04-04",
-    "type": "new-writing",
-    "tags": [
-      "new-writing"
-    ],
-    "description": "Recommended Age Guide 14+ | Contains adult themes. UK Premiere With bold theatrical innovation and immersive world-building typical of Vanishing Point and Katapult, What I’m Here For is a fast-moving fusion of new European writing and visual imagination, which explores the tragi-comic collateral of...",
-    "ticketUrl": "https://www.tron.co.uk/shows/what-im-here-for/",
-    "image": "https://www.tron.co.uk/wp-content/uploads/2025/11/WIHF4x5-1.jpg"
-  },
-  {
-    "id": "evt032",
-    "title": "Un-Expecting",
-    "venue": "Oran Mor",
-    "venueId": "oran-mor",
-    "date": "2026-04-06",
-    "time": "13:00",
-    "endDate": "2026-04-11",
-    "type": "new-writing",
-    "tags": [
-      "new-writing",
-      "lunchtime",
-      "a-play-a-pie-a-pint"
-    ],
-    "description": "A nightclub collision. A daft decision. A heartbeat caught between two strangers who can barely catch their breath. Told in a pulse of beat-poetry, barbed humour and bruising honesty, Scott and Jess ricochet through tests, scans, scares and the kind of arguments you only have when everything...",
-    "ticketUrl": "https://playpiepint.com/whats-on/event/un-expecting/",
-    "image": "https://playpiepint.com/app/uploads/2025/12/Un-expecting.jpg"
-  },
-  {
-    "id": "evt033",
-    "title": "I, Daniel Blake",
-    "venue": "Citizens Theatre",
-    "venueId": "citizens",
-    "date": "2026-04-07",
-    "time": "19:30",
-    "endDate": "2026-04-11",
-    "type": "professional",
-    "tags": [
-      "drama"
-    ],
-    "description": "Adapted by Dave Johns from the film directed by Ken Loach, written by Paul Laverty, and produced by Rebecca O’Brien for Sixteen Films. Dan is a carpenter. A Geordie through and through. Just on the mend after a heart attack. Katie has just arrived from London. Finally got a council house for her...",
-    "ticketUrl": "https://citz.co.uk/whats-on/i-daniel-blake/",
-    "image": "https://images.citz.co.uk/uploads/2025/11/2.-Spray-paint-scene-in-I-Daniel-Blake-scaled.jpg"
-  },
-  {
-    "id": "evt034",
-    "title": "FISH",
-    "venue": "Oran Mor",
-    "venueId": "oran-mor",
-    "date": "2026-04-13",
-    "time": "13:00",
-    "endDate": "2026-04-18",
-    "type": "new-writing",
-    "tags": [
-      "new-writing",
-      "lunchtime",
-      "a-play-a-pie-a-pint"
-    ],
-    "description": "A sparse gym in rural Donegal. Michael holds his breath and sticks his head under water, preparing to beat the world record after seven long years. His coach Pat watches on, drinking can after can, as they wait for yer man from Guinness to arrive. But when Pat’s daughter Grainne shows up hidden...",
-    "ticketUrl": "https://playpiepint.com/whats-on/event/fish/",
-    "image": "https://playpiepint.com/app/uploads/2025/12/FISH.jpg"
-  },
-  {
-    "id": "evt035",
-    "title": "There’s a Monster in Your Show",
-    "venue": "Citizens Theatre",
-    "venueId": "citizens",
-    "date": "2026-04-14",
-    "time": "19:30",
-    "endDate": "2026-04-15",
-    "type": "professional",
-    "tags": [
-      "musical",
-      "touring"
-    ],
-    "description": "4 star rating ‘The perfect first theatre outing’ Manchester Evening News Tom Fletcher’s interactive adventures for big imaginations are leaping from page to stage, as the beloved ‘Who’s in Your Book?’ series tours the UK in a brand-new musical show. A group of performers are preparing to start...",
-    "ticketUrl": "https://citz.co.uk/whats-on/theres-a-monster-in-your-show/",
-    "image": "https://images.citz.co.uk/uploads/2025/07/240517-Monster-no-text-2000x1250-1.jpg"
-  },
-  {
-    "id": "evt036",
-    "title": "BUZZCUT 2026: A festival of experimental performance",
-    "venue": "Tramway",
-    "venueId": "tramway",
-    "date": "2026-04-15",
-    "time": "19:30",
-    "endDate": "2026-04-19",
     "type": "community",
     "tags": [
-      "experimental"
+      "community"
     ],
-    "description": "*SAVE THE DATE - Wednesday 15 - Saturday 18 April 2026* Full programme to be announced February 2026 BUZZCUT Festival 2026 presents 26 artists and collectives across 3 venues - including Tramway - for 4 days this April. BUZZCUT 2026 presents performance experiments and Live Art from beyond the...",
-    "ticketUrl": "https://www.tramway.org/event/71149ad5-fc6f-42f8-81f2-b3d800bd0f51/",
-    "image": "https://events.glasgowlife.org.uk/imageprocessor/86fcecc5-83e2-4d5b-b802-b3d800bd4848?mode=crop&center=0.5,0.5&width=672&height=379"
+    "description": "Our Community Ensemble is for anyone interested in practically exploring the themes, content and creation of the shows which make up the Tron Theatre programme. Each term is fun and varied! Our activities this year has included attending a range of shows at the Tron, exploring the text from plays …...",
+    "ticketUrl": "https://www.tron.co.uk/shows/community-ensemble-18-recruitment-workshop-3/",
+    "image": "https://www.tron.co.uk/wp-content/uploads/2026/07/Community-Ensemble-18-recruitment-website.png",
+    "checkedAt": "2026-09-09"
   },
   {
-    "id": "evt037",
-    "title": "Off The Rails",
-    "venue": "Oran Mor",
-    "venueId": "oran-mor",
-    "date": "2026-04-20",
-    "time": "13:00",
-    "endDate": "2026-04-25",
-    "type": "new-writing",
-    "tags": [
-      "new-writing",
-      "lunchtime",
-      "a-play-a-pie-a-pint"
-    ],
-    "description": "Maggie has had enough. When her childhood nemesis appears at the door on the morning of her 30th birthday, she gives in to impulse and takes drastic action. Now, alone and inching towards Aberdeen on the relentlessly delayed 11:11am train, she has no choice but to ask herself some pressing...",
-    "ticketUrl": "https://playpiepint.com/whats-on/event/off-the-rails/",
-    "image": "https://playpiepint.com/app/uploads/2025/12/Off-the-Rails.jpg"
-  },
-  {
-    "id": "evt038",
-    "title": "Stand & Deliver: The Lee Jeans Sit-In",
-    "venue": "Tron Theatre",
-    "venueId": "tron",
-    "date": "2026-04-24",
-    "time": "19:30",
-    "endDate": "2026-05-09",
-    "type": "professional",
-    "tags": [
-      "family"
-    ],
-    "description": "Recommended Age 14+ In a factory like this, you’re part of a team. You’re a family. Greenock 1981. Faced with the threat of their factory closing, and with 240 jobs on the line, there’s no way the women of the Lee Jeans factory are going down without a fight. They … Continued",
-    "ticketUrl": "https://www.tron.co.uk/shows/stand-deliver-the-lee-jeans-sit-in/",
-    "image": "https://www.tron.co.uk/wp-content/uploads/2025/11/Stand-Deliver-web-image.png"
-  },
-  {
-    "id": "evt039",
-    "title": "Pothole Kingdom",
-    "venue": "Oran Mor",
-    "venueId": "oran-mor",
-    "date": "2026-04-27",
-    "time": "13:00",
-    "endDate": "2026-05-02",
-    "type": "new-writing",
-    "tags": [
-      "new-writing",
-      "lunchtime",
-      "a-play-a-pie-a-pint"
-    ],
-    "description": "Two politically polar-opposite councillors come together for a routine surgery, only for a desperate constituent Lenny to arrive with a homemade bomb timed to blow up. Well, a bit later than planned, as he forgot about the clocks going forward. With the trio trapped and time ticking down, the...",
-    "ticketUrl": "https://playpiepint.com/whats-on/event/pothole-kingdom/",
-    "image": "https://playpiepint.com/app/uploads/2025/12/Pothole-Kingdom.jpg"
-  },
-  {
-    "id": "evt040",
-    "title": "Sweat",
-    "venue": "Citizens Theatre",
-    "venueId": "citizens",
-    "date": "2026-05-02",
-    "time": "19:30",
-    "endDate": "2026-05-16",
-    "type": "professional",
-    "tags": [
-      "drama"
-    ],
-    "description": "Sweat is a powerful and deeply human portrait of America’s working class at the dawn of the 21st Century. In a small Rust Belt town in Pennsylvania, friendships are forged through sweat and laughter. For decades, Tracey and Cynthia have worked side by side—on the factory floor and at Stan’s...",
-    "ticketUrl": "https://citz.co.uk/whats-on/sweat/",
-    "image": "https://images.citz.co.uk/uploads/2025/06/Sweat-BarImage-Flat-1.jpg"
-  },
-  {
-    "id": "evt041",
-    "title": "Funeral for My Boobs",
-    "venue": "Oran Mor",
-    "venueId": "oran-mor",
-    "date": "2026-05-04",
-    "time": "13:00",
-    "endDate": "2026-05-09",
-    "type": "new-writing",
-    "tags": [
-      "new-writing",
-      "lunchtime",
-      "a-play-a-pie-a-pint"
-    ],
-    "description": "“Tonight is my girls’ last performance on earth. So, let’s show them a good time, shall we?” You are invited to a funeral like no other, as we gather together with acclaimed performer and singer Hannah Howie for a glorious send-off for her boobs before a double mastectomy. Dress accordingly. No...",
-    "ticketUrl": "https://playpiepint.com/whats-on/event/funeral-for-my-boobs/",
-    "image": "https://playpiepint.com/app/uploads/2025/12/Funeral-of-my-boobs.jpg"
-  },
-  {
-    "id": "evt042",
-    "title": "Kenmure Street",
-    "venue": "Oran Mor",
-    "venueId": "oran-mor",
-    "date": "2026-05-11",
-    "time": "13:00",
-    "endDate": "2026-05-16",
-    "type": "new-writing",
-    "tags": [
-      "new-writing",
-      "lunchtime",
-      "a-play-a-pie-a-pint"
-    ],
-    "description": "On May 13th 2021, two men were forcibly removed from their home in Kenmure Street and thrown into the back of an immigration van. Within the hour, thousands came to block the van from leaving, leading to an eight-hour stand-off between the police and peaceful protestors, before the two men were...",
-    "ticketUrl": "https://playpiepint.com/whats-on/event/kenmure-street/",
-    "image": "https://playpiepint.com/app/uploads/2025/12/Kenmure-Street.jpg"
-  },
-  {
-    "id": "evt043",
-    "title": "Night Waking",
-    "venue": "Citizens Theatre",
-    "venueId": "citizens",
-    "date": "2026-05-13",
-    "time": "19:30",
-    "endDate": "2026-05-16",
-    "type": "professional",
-    "tags": [
-      "comedy"
-    ],
-    "description": "Anna Bennett is this close to losing it. She’s not sleeping. She’s not writing. She’s barely mothering. And then she and her son find something in the garden—something small, something wrapped in secrets, something that makes the past feel very present. A darkly funny and unsettling one-woman play...",
-    "ticketUrl": "https://citz.co.uk/whats-on/night-waking/",
-    "image": "https://images.citz.co.uk/uploads/2025/10/Night-Waking-Artwork-300dpi-EXPANDED-FRAME-scaled.jpg"
-  },
-  {
-    "id": "evt044",
-    "title": "A Festival of Korean Dance 2026: Ryu and Friends - GRAVITY",
+    "id": "tramway-oidhche-nam-b-rd-poetry-in-art-and-sound",
+    "title": "Oidhche nam Bàrd - Poetry in Art and Sound",
     "venue": "Tramway",
     "venueId": "tramway",
-    "date": "2026-05-13",
+    "date": "2026-09-10",
     "time": "19:30",
     "endDate": null,
     "type": "professional",
     "tags": [
-      "dance"
+      "music"
     ],
-    "description": "A Festival of Korean Dance 2026 presents Ryu and Friends - GRAVITY Swept up by an invisible force, an eleven-strong company shakes, scatters and spins in a spectacular extra-terrestrial dance. GRAVITY is a work about relationships between all matter; the push and pull, the chaos, the harmony, the...",
-    "ticketUrl": "https://www.tramway.org/event/40033c12-8cc3-484f-9763-b3ec010a3b17/",
-    "image": "https://events.glasgowlife.org.uk/imageprocessor/34ecaaf8-9f1f-45fc-8688-b3ec010a3b17?mode=crop&center=0.5,0.5&width=672&height=379"
+    "description": "This unique event will weave together Gaelic voices of the past and the words of our greatest living poets, presented through live performance, music, and visual projection. Welcoming Gaelic speakers and non-Gaelic speakers alike, all poems read will be accompanied by on-screen english translations.",
+    "ticketUrl": "https://www.tramway.org/event/92566702-3c0b-4861-b502-b44e01077967/",
+    "image": "https://events.glasgowlife.org.uk/imageprocessor/23daa201-f899-4955-8944-b44e01077967?mode=crop&center=0.5,0.5&width=672&height=379",
+    "checkedAt": "2026-09-09"
   },
   {
-    "id": "evt045",
-    "title": "Baby Mash-up, what on Earth are you doing?",
-    "venue": "Tron Theatre",
-    "venueId": "tron",
-    "date": "2026-05-14",
-    "time": "19:30",
-    "endDate": "2026-05-16",
-    "type": "professional",
-    "tags": [
-      "drama"
-    ],
-    "description": "Recommended Age 14+ | Contains strong language, adult themes and suicide. Something’s wrong. Baby Mash-up knows there’s something adrift, but she can’t pin it down. The seams of time and space are splitting and she wants to figure out what’s going on and – most importantly – how she ended …...",
-    "ticketUrl": "https://www.tron.co.uk/shows/baby-mash-up-what-on-earth-are-you-doing/",
-    "image": "https://www.tron.co.uk/wp-content/uploads/2025/11/Baby-mash-up-web-image-temp.png"
-  },
-  {
-    "id": "evt046",
-    "title": "David and the Hedgehog: Readings and Discussions",
-    "venue": "Tron Theatre",
-    "venueId": "tron",
-    "date": "2026-05-16",
-    "time": "14:45",
+    "id": "glad-cafe-acid-cabaret",
+    "title": "Acid Cabaret",
+    "venue": "The Glad Cafe",
+    "venueId": "glad-cafe",
+    "date": "2026-09-12",
+    "time": null,
     "endDate": null,
     "type": "new-writing",
     "tags": [
-      "new-writing"
+      "scottish"
     ],
-    "description": "Using Baby Mash-up, what on Earth are you doing? as a starting point for discussion, stillpoint offers an opportunity to hear readings of work not often presented and to openly discuss innovation in new writing. Led by a presentation of Soz Redland’s ground-breaking David and the Hedgehog, we’ll be...",
-    "ticketUrl": "https://www.tron.co.uk/shows/david-and-the-hedgehog-readings-and-discussions/",
-    "image": "https://www.tron.co.uk/wp-content/uploads/2025/11/David-and-the-Hedgehog-credit-Svetlana-Tumina.jpg"
+    "description": "The Acid Cabaret returns this September, bringing another genre‑bending night of Glasgow’s most imaginative performers. Glasgow’s premiere utopian variety night descends on The Glad Cafe on 12 September with lyrical indie‑pop from Tom Coward, Indian‑Scottish fusion from Alexandra Shrinivas, and...",
+    "ticketUrl": "https://www.thegladcafe.co.uk/events/2026-09-12-acid-cabaret-the-glad-cafe",
+    "image": "https://musicglue-images-prod.global.ssl.fastly.net/the-glad-cafe/event/2026-09-12-acid-cabaret-the-glad-cafe?u=aHR0cHM6Ly9tdXNpY2dsdWUtdXNlci1hcHAtcC02LXAuczMuYW1hem9uYXdzLmNvbS9vcmlnaW5hbHMvOTc3NmM0M2ItZjk2OC00YThkLWI5ZjYtZmFkN2QzNGYwZWU0&mode=contain&width=800&v=2",
+    "checkedAt": "2026-09-09"
   },
   {
-    "id": "evt047",
-    "title": "Members Only",
-    "venue": "Oran Mor",
-    "venueId": "oran-mor",
-    "date": "2026-05-18",
-    "time": "13:00",
-    "endDate": "2026-05-23",
-    "type": "new-writing",
-    "tags": [
-      "new-writing",
-      "lunchtime",
-      "a-play-a-pie-a-pint"
-    ],
-    "description": "Cash-strapped best pals Linda and Angie live for the weekend buzz of bingo night. Their daughters, Stacey and Amy, however, think it’s just an old biddies’ game until they hear about the ‘big one’ with £40k up for grabs. When the two lassies scheme to sneak into the members only club for a chance...",
-    "ticketUrl": "https://playpiepint.com/whats-on/event/members-only/",
-    "image": "https://playpiepint.com/app/uploads/2025/12/Members-Only.jpg"
-  },
-  {
-    "id": "evt048",
-    "title": "Breakin’ Convention festival of hip hop theatre",
+    "id": "tramway-killing-me-softly-reflections-on-hiv-and-aids-in-sco",
+    "title": "Killing Me Softly: Reflections on HIV and AIDS in Scottish Theatre",
     "venue": "Tramway",
     "venueId": "tramway",
-    "date": "2026-05-23",
-    "time": "19:30",
+    "date": "2026-09-13",
+    "time": "16:00",
     "endDate": null,
     "type": "professional",
     "tags": [
       "scottish"
     ],
-    "description": "The world’s biggest festival of hip hop theatre from around the world and around the corner Breakin’ Convention is coming to Glasgow in 2026! Prepare to be blown away by high-energy, world-class performances from celebrated poppers, lockers, b-boys and b-girls. Get ready for the mighty TRAPLORD...",
-    "ticketUrl": "https://www.tramway.org/event/f1eb772a-ea09-4b69-ac7e-b39b009ba20e/",
-    "image": "https://events.glasgowlife.org.uk/imageprocessor/406bd88c-c2e4-448d-9fd5-b39b009ba20e?mode=crop&center=0.5,0.5&width=672&height=379"
+    "description": "Playwright John Binnie and original cast members of his 1987 play Killing Me Softly explore the ways in which Scottish theatre responded at the height of the AIDS crisis. Between performed extracts of the play, the discussion will reflect candidly on the experience of performing the work in...",
+    "ticketUrl": "https://www.tramway.org/event/28f66f18-b079-4402-83dc-b4ad00ca9619/",
+    "image": "https://events.glasgowlife.org.uk/imageprocessor/06691db4-d505-4d39-91c6-b4ad00cefcd2?mode=crop&center=0.5,0.5&width=672&height=379",
+    "checkedAt": "2026-09-09"
   },
   {
-    "id": "evt049",
-    "title": "Breathtaking Roads",
-    "venue": "Oran Mor",
+    "id": "oran-mor-feel-good",
+    "title": "Feel_Good",
+    "venue": "Òran Mór",
     "venueId": "oran-mor",
-    "date": "2026-05-25",
+    "date": "2026-09-14",
     "time": "13:00",
-    "endDate": "2026-05-30",
+    "endDate": "2026-09-19",
     "type": "new-writing",
     "tags": [
       "new-writing",
       "lunchtime",
       "a-play-a-pie-a-pint"
     ],
-    "description": "100 miles from the nearest Tesco, Ruari is working behind their dad’s bar in Ulinish as usual, when two leather-clad bikers, Helen and Jane, walk in and open Ruari’s eyes to a world far from their own. Over three years of spring-time hikes the three become fast friends, but as Ruari grows into...",
-    "ticketUrl": "https://playpiepint.com/whats-on/event/breathtaking-roads/",
-    "image": "https://playpiepint.com/app/uploads/2025/12/28.jpg"
+    "description": "After accidentally activating her, Henry finds himself drawn to an eerily lifelike machine that knows everything about him, anticipates his every need, and curates his memories to make him feel like the good man he’s always believed himself to be. From Amy Conway (The Haunting of Agnes Gilfrey)...",
+    "ticketUrl": "https://playpiepint.com/whats-on/event/feel_good/",
+    "image": "https://playpiepint.com/app/uploads/2026/07/FEEL_GOOD.png",
+    "checkedAt": "2026-09-09"
   },
   {
-    "id": "evt050",
-    "title": "The Corinthian",
-    "venue": "Oran Mor",
-    "venueId": "oran-mor",
-    "date": "2026-06-01",
-    "time": "13:00",
-    "endDate": "2026-06-06",
-    "type": "new-writing",
-    "tags": [
-      "new-writing",
-      "lunchtime",
-      "a-play-a-pie-a-pint"
-    ],
-    "description": "12 March 1881. England lost 1-6 in a record home defeat to a mighty Scotland team, captained by a forgotten name from history: Andrew Watson. Born into Caribbean privilege, Watson arrived in Scotland to discover that he was not welcome, but refused to be silenced and broke barriers by becoming the...",
-    "ticketUrl": "https://playpiepint.com/whats-on/event/the-corinthian/",
-    "image": "https://playpiepint.com/app/uploads/2025/12/30.jpg"
-  },
-  {
-    "id": "evt051",
-    "title": "The Long Drop",
+    "id": "citizens-the-singer",
+    "title": "The Singer",
     "venue": "Citizens Theatre",
     "venueId": "citizens",
-    "date": "2026-06-05",
-    "time": "19:30",
-    "endDate": "2026-06-20",
+    "date": "2026-09-15",
+    "time": null,
+    "endDate": "2026-09-19",
     "type": "professional",
     "tags": [
-      "family",
-      "scottish"
+      "music"
     ],
-    "description": "Glasgow, 1957. A family destroyed. A man who insists he knows why. Between whisky-soaked confessions and half-truths swirling in cigarette smoke, William Watt and Peter Manuel share a night that will change everything. Winding through stale-aired bars, shadowed backstreets and tangled lies –...",
-    "ticketUrl": "https://citz.co.uk/whats-on/the-long-drop/",
-    "image": "https://images.citz.co.uk/uploads/2025/07/mohammad-rahman-ZhHkeaWyKjM-unsplash-scaled.jpg"
+    "description": "The Singer is a bold, new, thrilling piece of gig-theatre about Joe, a deaf artist who “sings” with his hands, and Andy, a washed-up musician hungry for a comeback. Joe experiences music viscerally and physically, feeling rhythm through his body and crafting lyrics that pulse with life and...",
+    "ticketUrl": "https://citz.co.uk/whats-on/the-singer/",
+    "image": "https://assets.citz.co.uk/uploads/2026/01/WEB-LEAD-Press-image-Credit_-Tommy-Ga-Ken-Wan.-Pictured_-Jamie-Rea-and-Dylan-Wood-L-R.-5003-scaled.jpg?resize=1992%2C1245&gravity",
+    "checkedAt": "2026-09-09"
   },
   {
-    "id": "evt052",
-    "title": "My Romantic History",
+    "id": "glad-cafe-justyna-jablonska-unforeseen-improvising-life-and-",
+    "title": "Justyna Jablonska - Unforeseen: Improvising Life and Music",
+    "venue": "The Glad Cafe",
+    "venueId": "glad-cafe",
+    "date": "2026-09-17",
+    "time": null,
+    "endDate": null,
+    "type": "professional",
+    "tags": [
+      "scottish",
+      "music"
+    ],
+    "description": "Unforeseen: Improvising Life and Music draws on memories, field recordings, and conversations with Polish, Ukrainian, and Roma migrants living in Scotland.",
+    "ticketUrl": "https://www.thegladcafe.co.uk/events/2026-09-17-justyna-jablonska-unforeseen-improvising-life-and-music-the-glad-cafe",
+    "image": "https://musicglue-images-prod.global.ssl.fastly.net/the-glad-cafe/event/2026-09-17-justyna-jablonska-unforeseen-improvising-life-and-music-the-glad-cafe?u=aHR0cHM6Ly9tdXNpY2dsdWUtdXNlci1hcHAtcC00LXAuczMuYW1hem9uYXdzLmNvbS9vcmlnaW5hbHMvZTllMjY3ODMtZDQzMS00OTRjLWJkNDgtZjAwMGU3NTAyODMw&mode=contain&width=800&v=2",
+    "checkedAt": "2026-09-09"
+  },
+  {
+    "id": "tron-antigone",
+    "title": "Antigone",
     "venue": "Tron Theatre",
     "venueId": "tron",
-    "date": "2026-06-05",
+    "date": "2026-09-18",
     "time": "19:30",
-    "endDate": "2026-06-13",
+    "endDate": "2026-10-10",
+    "type": "professional",
+    "tags": [
+      "drama",
+      "classic"
+    ],
+    "description": "Recommended Age Guide 14+ The battle has been won; the soldiers have returned victorious and the dead have been buried. But not all of them. Antigone’s brother has been deemed a traitor and must be punished, even in death. Filled with rage and a powerful sense of justice, Antigone takes … Continued",
+    "ticketUrl": "https://www.tron.co.uk/shows/antigone/",
+    "image": "https://www.tron.co.uk/wp-content/uploads/2026/07/TRO-343-Antagone-Digital_Stories-1920x1080-1.jpg",
+    "checkedAt": "2026-09-09"
+  },
+  {
+    "id": "tron-glasgow-doors-open-days-festival-tours",
+    "title": "Glasgow Doors Open Days Festival Tours",
+    "venue": "Tron Theatre",
+    "venueId": "tron",
+    "date": "2026-09-20",
+    "time": "16:30",
+    "endDate": null,
+    "type": "professional",
+    "tags": [
+      "scottish"
+    ],
+    "description": "The Tron Theatre is delighted to be a part of this year’s Glasgow Doors Open Days Festival. With a theme of Glasgow Goes Out: The Places That Made Us, it seems only appropriate that we throw our stage doors open to the public. We will be offering short tours of … Continued",
+    "ticketUrl": "https://www.tron.co.uk/shows/glasgow-doors-open-days-festival-tours/",
+    "image": "https://www.tron.co.uk/wp-content/uploads/2026/07/GLASGOW-DOORS-OPEN-DAYS-FESTIVAL-web.png",
+    "checkedAt": "2026-09-09"
+  },
+  {
+    "id": "oran-mor-the-whaler-s-wife",
+    "title": "The Whaler’s Wife",
+    "venue": "Òran Mór",
+    "venueId": "oran-mor",
+    "date": "2026-09-21",
+    "time": "13:00",
+    "endDate": "2026-09-26",
+    "type": "new-writing",
+    "tags": [
+      "new-writing",
+      "lunchtime",
+      "a-play-a-pie-a-pint"
+    ],
+    "description": "At Hamnavoe harbour, Marion, Elsie and Bess are preparing to navigate the long months of hunting season as their husbands venture off into the Arctic wilderness to chase fortune across uncharted waters. The women keep their town alive through wit, enterprise and a few illicit schemes. But when a...",
+    "ticketUrl": "https://playpiepint.com/whats-on/event/the-whalers-wife/",
+    "image": "https://playpiepint.com/app/uploads/2026/07/The-Whalers-Wife.png",
+    "checkedAt": "2026-09-09"
+  },
+  {
+    "id": "citizens-queer-folks-tales-sep-2026",
+    "title": "Queer Folks' Tales: Sep 2026",
+    "venue": "Citizens Theatre",
+    "venueId": "citizens",
+    "date": "2026-09-25",
+    "time": null,
+    "endDate": null,
+    "type": "professional",
+    "tags": [
+      "scottish"
+    ],
+    "description": "Welcome to Queer Folks’ Tales, Scotland’s hugely popular, multi-award-winning and five-star-rated LGBTQ+ storytelling show. Queer Folks’ Tales tells the stories of LGBTQ+ lives past, present and future and is delighted to continue its 5th year of shows across Scotland by coming to the Citizens...",
+    "ticketUrl": "https://citz.co.uk/whats-on/queer-folks-tales-sep-26/",
+    "image": "https://assets.citz.co.uk/uploads/2026/08/Citizens-montage-line-up-no-text-with-border-aspect-ratio-1600-1000.jpg?resize=1992%2C1245&gravity",
+    "checkedAt": "2026-09-09"
+  },
+  {
+    "id": "oran-mor-a-slice-of-the-pie",
+    "title": "A Slice of The Pie",
+    "venue": "Òran Mór",
+    "venueId": "oran-mor",
+    "date": "2026-09-28",
+    "time": null,
+    "endDate": null,
+    "type": "new-writing",
+    "tags": [
+      "new-writing",
+      "scratch",
+      "a-play-a-pie-a-pint"
+    ],
+    "description": "A Slice of The Pie is A Play, A Pie and A Pint’s very own scratch night, hosted by our artistic team as part of our work to platform and champion exciting new artists in Scotland. The night consists of ‘slices’ of new work from incredible writers, directors and performers who we have never worked …...",
+    "ticketUrl": "https://playpiepint.com/whats-on/event/a-slice-of-the-pie-2/",
+    "image": "https://playpiepint.com/app/uploads/2026/05/A-Slice-of-the-Pie-.png",
+    "checkedAt": "2026-09-09"
+  },
+  {
+    "id": "oran-mor-whaur-s-yer-wullie-shakespeare-noo",
+    "title": "Whaur’s Yer Wullie Shakespeare Noo?",
+    "venue": "Òran Mór",
+    "venueId": "oran-mor",
+    "date": "2026-09-28",
+    "time": "13:00",
+    "endDate": "2026-10-03",
+    "type": "new-writing",
+    "tags": [
+      "new-writing",
+      "lunchtime",
+      "a-play-a-pie-a-pint"
+    ],
+    "description": "1756. The Scottish Enlightenment. Despite severe restrictions on all theatre, the minister John Home staged his play Douglas to much outrage within the Church of Scotland. What followed was a church stramash and a fierce debate amongst leading clergymen and philosophers. Was this Scotland’s answer...",
+    "ticketUrl": "https://playpiepint.com/whats-on/event/whaurs-yer-wullie-shakespeare-noo/",
+    "image": "https://playpiepint.com/app/uploads/2026/07/WYWSN.png",
+    "checkedAt": "2026-09-09"
+  },
+  {
+    "id": "citizens-tristan-yseult",
+    "title": "Tristan & Yseult",
+    "venue": "Citizens Theatre",
+    "venueId": "citizens",
+    "date": "2026-09-30",
+    "time": null,
+    "endDate": "2026-10-03",
     "type": "professional",
     "tags": [
       "drama"
     ],
-    "description": "Recommended Age Guide 14+ | Contains adult themes and strong language. Do you know how they get animals to breed in captivity?They put them in the same cage. Meet Tom. He’s single, sorted (so he thinks) and spectacularly uninterested in romance. Enter Amy. Six pints and a questionable kebab later...",
-    "ticketUrl": "https://www.tron.co.uk/shows/my-romantic-history/",
-    "image": "https://www.tron.co.uk/wp-content/uploads/2025/11/TRO-325-Romantic-History-Digital_Rom-History-1080x1920-NO-TEXT.jpg"
+    "description": "Experience the original, critically acclaimed production of Tristan & Yseult – one of the most influential theatre productions of the 21st century. Adapted and directed by Emma Rice, this iconic show returns to the UK for the first time in ten years, offering a rare chance to encounter a modern...",
+    "ticketUrl": "https://citz.co.uk/whats-on/tristan-yseult/",
+    "image": "https://assets.citz.co.uk/uploads/2026/04/ERC_TY26_Cast_1500x1500.png?resize=960%2C600&gravity",
+    "checkedAt": "2026-09-09"
   },
   {
-    "id": "evt053",
-    "title": "The Hen Night",
-    "venue": "Oran Mor",
+    "id": "citizens-we-will-hear-the-angels",
+    "title": "We Will Hear The Angels",
+    "venue": "Citizens Theatre",
+    "venueId": "citizens",
+    "date": "2026-10-02",
+    "time": null,
+    "endDate": "2026-10-03",
+    "type": "professional",
+    "tags": [
+      "music"
+    ],
+    "description": "A poignant and uplifting celebration of the power of sad music Bea is stunned by the revelation of her husband’s infidelity; she feels heartbroken and alone. If only she knew that her neighbours, Sonia, Van and Ian, were each also trying to get over the pain in their hearts, unable to articulate...",
+    "ticketUrl": "https://citz.co.uk/whats-on/we-will-hear-the-angels/",
+    "image": "https://assets.citz.co.uk/uploads/2026/05/WWHTA-Hero-Image-2500x3200-1-scaled.jpg?resize=1992%2C1245&gravity",
+    "checkedAt": "2026-09-09"
+  },
+  {
+    "id": "oran-mor-contact",
+    "title": "Contact",
+    "venue": "Òran Mór",
     "venueId": "oran-mor",
-    "date": "2026-06-08",
+    "date": "2026-10-05",
     "time": "13:00",
-    "endDate": "2026-06-13",
+    "endDate": "2026-10-10",
     "type": "new-writing",
     "tags": [
       "new-writing",
       "lunchtime",
       "a-play-a-pie-a-pint"
     ],
-    "description": "Jade, Amber and Lilac have been organising Coral’s hen night for the past six months and it’s going to be epic! But at the last minute, Coral’s cousin Luna rocks up uninvited. Perfect skin, a model, a poet, and a human rights lawyer…a total goddess. It’s too easy to hate her but little do they …...",
-    "ticketUrl": "https://playpiepint.com/whats-on/event/the-hen-night/",
-    "image": "https://playpiepint.com/app/uploads/2025/12/32.jpg"
+    "description": "A son turns up at his mother’s house. It’s the first time in months that they have seen each other. She remarks that he’s put on weight. He tells her that he is going to be a father, but he also has an ultimatum: fix their relationship or he will not speak to her ever … Continued",
+    "ticketUrl": "https://playpiepint.com/whats-on/event/contact/",
+    "image": "https://playpiepint.com/app/uploads/2026/07/Contact-1.png",
+    "checkedAt": "2026-09-09"
   },
   {
-    "id": "evt054",
-    "title": "Cry/Laugh",
-    "venue": "Oran Mor",
-    "venueId": "oran-mor",
-    "date": "2026-06-15",
-    "time": "13:00",
-    "endDate": "2026-06-20",
-    "type": "new-writing",
+    "id": "citizens-east-is-east",
+    "title": "East is East",
+    "venue": "Citizens Theatre",
+    "venueId": "citizens",
+    "date": "2026-10-07",
+    "time": null,
+    "endDate": "2026-10-17",
+    "type": "professional",
     "tags": [
-      "new-writing",
-      "lunchtime",
-      "a-play-a-pie-a-pint"
+      "drama"
     ],
-    "description": "Why do we tell stories? How do we build ourselves a future? What, or who, is in the way? A medieval Town Crier and a Court Jester have lost their jobs – by accidentally going to the future and leaving a rather important individual behind. They want to teach you how to tell a joke … Continued",
-    "ticketUrl": "https://playpiepint.com/whats-on/event/cry-laugh/",
-    "image": "https://playpiepint.com/app/uploads/2025/12/34.jpg"
+    "description": "Family can hold you together and tear you apart. Salford, 1971. The Khan family are living above a chip shop and on the fault line between two cultures. George Khan is determined the family is raised his Pakistani way. His English wife, Ella, just wants to keep the peace. Their seven children...",
+    "ticketUrl": "https://citz.co.uk/whats-on/east-is-east/",
+    "image": "https://assets.citz.co.uk/uploads/2026/04/Octagon_EastIsEast_Collage_NoType-1.jpg?resize=960%2C600&gravity",
+    "checkedAt": "2026-09-09"
   },
   {
-    "id": "evt055",
-    "title": "Outside Eyes",
-    "venue": "Tron Theatre",
-    "venueId": "tron",
-    "date": "2026-06-19",
-    "time": "19:30",
+    "id": "citizens-new-sauce-scratch-night",
+    "title": "New Sauce Scratch Night",
+    "venue": "Citizens Theatre",
+    "venueId": "citizens",
+    "date": "2026-10-08",
+    "time": null,
     "endDate": null,
     "type": "scratch",
     "tags": [
       "scratch"
     ],
-    "description": "Recommended Age 14+ Outside Eyes is the Tron’s bi-annual scratch night event that takes place in our Main Auditorium. Each event presents a curated selection of brand-new ideas from artists of all disciplines to an audience made up of peers, industry professionals and anyone who wants to see the...",
-    "ticketUrl": "https://www.tron.co.uk/shows/outside-eyes-6/",
-    "image": "https://www.tron.co.uk/wp-content/uploads/2023/04/Outside-Eyes-portrait.png"
+    "description": "An evening of fresh ideas and exciting new work from artists of South Asian heritage. This showcase brings together four artists presenting 10–15 minute pieces of work in development. With no restrictions on genre or theme, the evening celebrates artistic exploration and creates a space for artists...",
+    "ticketUrl": "https://citz.co.uk/whats-on/new-sauce-scratch-night/",
+    "image": "https://assets.citz.co.uk/uploads/2026/07/ScratchNight_260326_AndrewPerry_154-scaled.jpg?resize=1992%2C1245&gravity",
+    "checkedAt": "2026-09-09"
   },
   {
-    "id": "evt056",
-    "title": "Crocodile Rock",
-    "venue": "Oran Mor",
+    "id": "oran-mor-bottoms-dream",
+    "title": "Bottom's Dream",
+    "venue": "Òran Mór",
     "venueId": "oran-mor",
-    "date": "2026-06-22",
+    "date": "2026-10-12",
     "time": "13:00",
-    "endDate": "2026-06-27",
+    "endDate": "2026-10-17",
     "type": "new-writing",
     "tags": [
       "new-writing",
       "lunchtime",
       "a-play-a-pie-a-pint"
     ],
-    "description": "It’s 1997, it’s Millport and Steven McPhail is bored. He’s 17 and it’s now time to work out what to do with the rest of his life. The problem is, there are only so many options when you find yourself stuck on a Scottish island. Everything changes though when Steven has a chance encounter with …...",
-    "ticketUrl": "https://playpiepint.com/whats-on/event/crocodile-rock-2/",
-    "image": "https://playpiepint.com/app/uploads/2025/12/36.jpg"
+    "description": "“Ah hud a maist rare vision Ah hud a dream. Ah’ll write a ballad ae this dream: it sal be cried Bottom’s Dream. Because it disnae huv a bottom.” Blending the text of A Midsummer Night’s Dream with original Scots-language poetry, this new spoken word performance by Martin O’Connor (Through the...",
+    "ticketUrl": "https://playpiepint.com/whats-on/event/bottoms-dream/",
+    "image": "https://playpiepint.com/app/uploads/2026/07/Bottoms-Dream.png",
+    "checkedAt": "2026-09-09"
   },
   {
-    "id": "evt057",
-    "title": "Paul Black – Cash Cow",
+    "id": "citizens-these-are-our-neighbours",
+    "title": "These Are Our Neighbours",
     "venue": "Citizens Theatre",
     "venueId": "citizens",
-    "date": "2026-07-29",
-    "time": "19:30",
-    "endDate": "2026-08-01",
+    "date": "2026-10-14",
+    "time": null,
+    "endDate": "2026-10-17",
     "type": "professional",
     "tags": [
-      "comedy",
-      "scottish"
+      "dance"
     ],
-    "description": "Cash Cow marks Paul’s return to stand-up after his sell-out sketch show All Sorts. In this new show Paul delivers his trademark mix of sharp observations, colourful characters, impressions and Glaswegian charm. Sir Billy Connolly Spirit of Glasgow Award Nominee 2023 & 2025. RTS Scotland Comedy...",
-    "ticketUrl": "https://citz.co.uk/whats-on/paul-black-cash-cow/",
-    "image": "https://images.citz.co.uk/uploads/2025/12/Paul-Black-Cash-Cow-2026-aspect-ratio-1600-1000.png"
+    "description": "There’s a van on your street. It says IMMIGRATION ENFORCEMENT on the side. It’s here for your neighbours. What do you do? Fusing documentary with celebratory dance theatre, These Are Our Neighbours revisits the attempted raid on Kenmure Street in 2021 that became an eight-hour act of shared...",
+    "ticketUrl": "https://citz.co.uk/whats-on/these-are-our-neighbours/",
+    "image": "https://assets.citz.co.uk/uploads/2026/04/These-Are-Our-Neighbours_no-text-A3_hi-USE-ON-SOCIALS-scaled.jpg?resize=1992%2C1245&gravity",
+    "checkedAt": "2026-09-09"
   },
   {
-    "id": "evt058",
-    "title": "1984",
-    "venue": "Citizens Theatre",
-    "venueId": "citizens",
-    "date": "2026-08-29",
+    "id": "tron-it-walks-around-the-house-at-night",
+    "title": "It Walks Around The House At Night",
+    "venue": "Tron Theatre",
+    "venueId": "tron",
+    "date": "2026-10-15",
     "time": "19:30",
-    "endDate": "2026-09-26",
-    "type": "professional",
-    "tags": [
-      "family"
-    ],
-    "description": "Big Brother is watching you. The Thought Police monitor every word you say. Children spy on their parents and the Party has abolished the truth. In this totally controlled world, Winston and Julia begin a love affair which catapults them into rebellion against the Party. The nightmare of a...",
-    "ticketUrl": "https://citz.co.uk/whats-on/1984-play/",
-    "image": "https://images.citz.co.uk/uploads/2026/02/Untitled-design-3-aspect-ratio-1991-1914.png"
-  },
-  {
-    "id": "evt059",
-    "title": "The Singer",
-    "venue": "Citizens Theatre",
-    "venueId": "citizens",
-    "date": "2026-09-15",
-    "time": "19:30",
-    "endDate": "2026-09-19",
+    "endDate": "2026-10-17",
     "type": "professional",
     "tags": [
       "drama"
     ],
-    "description": "The Singer is a bold, new, thrilling piece of gig-theatre about Joe, a deaf artist who “sings” with his hands, and Andy, a washed-up musician hungry for a comeback. Joe experiences music viscerally and physically, feeling rhythm through his body and crafting lyrics that pulse with life and...",
-    "ticketUrl": "https://citz.co.uk/whats-on/the-singer/",
-    "image": "https://images.citz.co.uk/uploads/2026/01/Facebook-5.png"
+    "description": "Recommended Age Guide 14+ Unsettling, darkly comic and full of surprises, the stage is set… for terror. When an out-of-work actor takes a job playing a ghost at an old countryside manor, he expects nothing more than a few cheap scares. But as night after night unfolds, the role begins … Continued",
+    "ticketUrl": "https://www.tron.co.uk/shows/it-walks-around-the-house-at-night/",
+    "image": "https://www.tron.co.uk/wp-content/uploads/2026/06/IWATHAN_SQUARE_1080x1080_NO_TEXT-image-credit-Sean-Longmore.png",
+    "checkedAt": "2026-09-09"
   },
   {
-    "id": "evt060",
+    "id": "tramway-al-seed-productions-thrice",
+    "title": "Al Seed Productions - Thrice",
+    "venue": "Tramway",
+    "venueId": "tramway",
+    "date": "2026-10-16",
+    "time": "19:30",
+    "endDate": "2026-10-17",
+    "type": "professional",
+    "tags": [
+      "drama"
+    ],
+    "description": "The world at the conclusion of Macbeth is one steeped in fear; where the distinction between truth and delusion has buckled; where tyranny and violence thrive. This is where Thrice begins.",
+    "ticketUrl": "https://www.tramway.org/event/328af962-85b1-4a39-9f3a-b43900ec12d2/",
+    "image": "https://events.glasgowlife.org.uk/imageprocessor/29d60b51-d1c1-4fe3-b055-b4a600ceeac6?mode=crop&center=0.477266010485197,0.478009193821957&width=672&height=379",
+    "checkedAt": "2026-09-09"
+  },
+  {
+    "id": "tron-the-big-comedy-roadshow",
+    "title": "The Big Comedy Roadshow",
+    "venue": "Tron Theatre",
+    "venueId": "tron",
+    "date": "2026-10-18",
+    "time": "19:30",
+    "endDate": null,
+    "type": "professional",
+    "tags": [
+      "comedy"
+    ],
+    "description": "Recommended Age Guide 16+ A rip-roaring night of the very best live stand‑up comedy starring the TV names you know and love alongside some of the hottest up‑and‑coming talent. Breakout social media star Jack Skipper is the October headliner, with an impressive 19 million likes on TikTok under his...",
+    "ticketUrl": "https://www.tron.co.uk/shows/the-big-comedy-roadshow-3/",
+    "image": "https://www.tron.co.uk/wp-content/uploads/2026/07/OLD-bcr_oct_web_1080x1080_1x.webp",
+    "checkedAt": "2026-09-09"
+  },
+  {
+    "id": "oran-mor-lune",
+    "title": "Lune",
+    "venue": "Òran Mór",
+    "venueId": "oran-mor",
+    "date": "2026-10-19",
+    "time": "13:00",
+    "endDate": "2026-10-24",
+    "type": "new-writing",
+    "tags": [
+      "new-writing",
+      "lunchtime",
+      "a-play-a-pie-a-pint"
+    ],
+    "description": "Lune Bogaert heads to the Palace of Justice in Brussels to take the Belgian state to court for its inaction on discrimination against women. When she’s told her complaint will take months or even years to process, she decides to sit herself outside the court for as long as it takes. As Lune’s act...",
+    "ticketUrl": "https://playpiepint.com/whats-on/event/lune/",
+    "image": "https://playpiepint.com/app/uploads/2026/07/Lune-1.png",
+    "checkedAt": "2026-09-09"
+  },
+  {
+    "id": "citizens-the-prime-of-miss-jean-brodie",
     "title": "The Prime of Miss Jean Brodie",
     "venue": "Citizens Theatre",
     "venueId": "citizens",
     "date": "2026-10-21",
-    "time": "19:30",
+    "time": null,
     "endDate": "2026-10-24",
     "type": "professional",
     "tags": [
       "drama"
     ],
-    "description": "‘Give me a girl at an impressionable age, and she is mine for life’ At the Marcia Blaine School for Girls, junior-school teacher Miss Jean Brodie is famously, in her prime. Each year, Brodie selects her ‘set’. The crème de la crème of girls whom she will shape through art and politics, stories of...",
+    "description": "‘Give me a girl at an impressionable age, and she is mine for life’ At the Marcia Blaine School for Girls, junior-school teacher Miss Jean Brodie is famously in her prime. Each year, Brodie selects her ‘set’. The crème de la crème of girls whom she will shape through art and politics, stories of...",
     "ticketUrl": "https://citz.co.uk/whats-on/the-prime-of-miss-jean-brodie/",
-    "image": "https://images.citz.co.uk/uploads/2026/02/Brodie_NTS-Website-header_1920x795-aspect-ratio-812-795.webp"
+    "image": "https://assets.citz.co.uk/uploads/2026/02/Brodie_NTS-Website-header_1920x795-aspect-ratio-812-795.webp?resize=640%2C400&gravity",
+    "checkedAt": "2026-09-09"
   },
   {
-    "id": "evt061",
+    "id": "tron-thanks-for-being-here",
+    "title": "Thanks for Being Here",
+    "venue": "Tron Theatre",
+    "venueId": "tron",
+    "date": "2026-10-22",
+    "time": "19:30",
+    "endDate": "2026-10-23",
+    "type": "professional",
+    "tags": [
+      "drama"
+    ],
+    "description": "Recommended Age Guide 14+ In Thanks for Being Here, your presence is crucial. Ontroerend Goed, internationally renowned for their ground-breaking theatre, celebrates theatre’s most essential element: the audience. In this witty and ingenious play of video and viewpoints, they blur the boundaries...",
+    "ticketUrl": "https://www.tron.co.uk/shows/thanks-for-being-here/",
+    "image": "https://www.tron.co.uk/wp-content/uploads/2026/07/Thanks_copyright_Kurt_Van_der_Elst_pressYVDE1829-nw.jpg",
+    "checkedAt": "2026-09-09"
+  },
+  {
+    "id": "citizens-revel",
+    "title": "Revel",
+    "venue": "Citizens Theatre",
+    "venueId": "citizens",
+    "date": "2026-10-23",
+    "time": null,
+    "endDate": null,
+    "type": "professional",
+    "tags": [
+      "dance"
+    ],
+    "description": "This is the dressing room of every show Kally and Steinvör have ever been in – past, present and future. A 60+ coming-of-age story, Revel is a dance-theatre piece that combines physical theatre, dance, dialogue and music. We move between the real relationship in the dressing room as they get ready...",
+    "ticketUrl": "https://citz.co.uk/whats-on/revel/",
+    "image": "https://assets.citz.co.uk/uploads/2026/04/Revel-2-1-scaled.jpg?resize=1992%2C1245&gravity",
+    "checkedAt": "2026-09-09"
+  },
+  {
+    "id": "tron-in-tronversation-with-johnny-mcknight",
+    "title": "In Tronversation with Johnny McKnight",
+    "venue": "Tron Theatre",
+    "venueId": "tron",
+    "date": "2026-10-24",
+    "time": "19:30",
+    "endDate": null,
+    "type": "professional",
+    "tags": [
+      "scottish"
+    ],
+    "description": "Recommended Age Guide 14+ In Tronversation With… is a series of events the Tron host over the year that invites creative and cultural legends from Glasgow and beyond to come and talk to our audiences about their careers and their connections with the Tron. As we celebrate the Tron Panto’s …...",
+    "ticketUrl": "https://www.tron.co.uk/shows/in-tronversation-with-johnny-mcknight/",
+    "image": "https://www.tron.co.uk/wp-content/uploads/2026/07/Tronversation-Johnny-McKnight-Panto-website-2.png",
+    "checkedAt": "2026-09-09"
+  },
+  {
+    "id": "oran-mor-badhbh-shith-and-the-storytellers",
+    "title": "Badhbh-Shith and The Storytellers",
+    "venue": "Òran Mór",
+    "venueId": "oran-mor",
+    "date": "2026-10-26",
+    "time": "13:00",
+    "endDate": "2026-10-31",
+    "type": "new-writing",
+    "tags": [
+      "new-writing",
+      "lunchtime",
+      "a-play-a-pie-a-pint"
+    ],
+    "description": "Sorcha and Evander have a mountain to conquer, but when a Hebridean storm descends they are forced to take shelter in a lonely bothy. They decide to pass the time telling grim stories from Scottish folklore. But bothies are unusual places. You never never know who else might be there…as the pair...",
+    "ticketUrl": "https://playpiepint.com/whats-on/event/badhbh-shith-and-the-storytellers/",
+    "image": "https://playpiepint.com/app/uploads/2026/07/WEBSITE-HEADER-2.png",
+    "checkedAt": "2026-09-09"
+  },
+  {
+    "id": "citizens-othello",
+    "title": "Othello",
+    "venue": "Citizens Theatre",
+    "venueId": "citizens",
+    "date": "2026-10-27",
+    "time": null,
+    "endDate": "2026-11-07",
+    "type": "professional",
+    "tags": [
+      "drama",
+      "classic"
+    ],
+    "description": "A secret marriage. The brink of war. Fact and fiction. It’s not just black and white. Fear, passion and paranoia bubble beneath the surface of Othello and Desdemona’s newlywed life. Iago’s manipulations begin in whispers – and end in ruin. Director Anthony Almeida‘s new production looks afresh at...",
+    "ticketUrl": "https://citz.co.uk/whats-on/othello/",
+    "image": "https://assets.citz.co.uk/uploads/2026/04/8645_03_OthelloNS_Web_v4_2000x2000_AWOnly.jpg?resize=1992%2C1245&gravity",
+    "checkedAt": "2026-09-09"
+  },
+  {
+    "id": "citizens-talking-heritage-the-forgotten-story-of-spectacular",
+    "title": "Talking Heritage: the forgotten story of spectacular theatre (with Jamie Harrison)",
+    "venue": "Citizens Theatre",
+    "venueId": "citizens",
+    "date": "2026-10-29",
+    "time": null,
+    "endDate": null,
+    "type": "professional",
+    "tags": [
+      "drama"
+    ],
+    "description": "Step into a world of theatrical magic at the Citizens Theatre with Jamie Harrison, director, designer and illusion designer at Vox Motus. In this special talk Harrison explores the fascinating history of spectacular stage effects, illusion and daring scenic innovation. Harrison created the magic...",
+    "ticketUrl": "https://citz.co.uk/whats-on/talking-heritage-the-forgotten-story-of-spectacular-theatre-with-jamie-harrison/",
+    "image": "https://assets.citz.co.uk/uploads/2026/06/Screenshot-2026-04-29-at-13.08.05-aspect-ratio-1600-1000.png?resize=960%2C600&gravity",
+    "checkedAt": "2026-09-09"
+  },
+  {
+    "id": "citizens-i-ll-scratch-yours",
+    "title": "I’ll Scratch Yours",
+    "venue": "Citizens Theatre",
+    "venueId": "citizens",
+    "date": "2026-10-30",
+    "time": null,
+    "endDate": null,
+    "type": "scratch",
+    "tags": [
+      "new-writing",
+      "scottish",
+      "music"
+    ],
+    "description": "I’ll Scratch Yours is an evening of deliciously fresh new writing & performance. Your favorite sold out scratch night is back… and this time it’s extra tasty. I’ll Scratch Yours presents a night of 6 short scratch performances from Scotland’s most exciting artists. From theatre to music...",
+    "ticketUrl": "https://citz.co.uk/whats-on/ill-scratch-yours/",
+    "image": "https://assets.citz.co.uk/uploads/2026/08/illscratchyours-101-aspect-ratio-1600-1000.jpg?resize=960%2C600&gravity",
+    "checkedAt": "2026-09-09"
+  },
+  {
+    "id": "tramway-cade-macaskill-with-yas-clarke-tim-spooner-now-not-n",
+    "title": "Cade & MacAskill with Yas Clarke & Tim Spooner - NOW NOT NOW",
+    "venue": "Tramway",
+    "venueId": "tramway",
+    "date": "2026-10-30",
+    "time": "19:30",
+    "endDate": "2026-10-31",
+    "type": "professional",
+    "tags": [
+      "drama"
+    ],
+    "description": "Two performers and their uncanny video doubles spiral through a strange, looping morning, in a mind-bending performance exploring how we live, slip and stall in time.",
+    "ticketUrl": "https://www.tramway.org/event/b3780c07-1d30-4fde-b247-b42b00a44124/",
+    "image": "https://events.glasgowlife.org.uk/imageprocessor/e0e025f7-d1d9-457e-9a68-b42b00a44124?mode=crop&center=0.5,0.5&width=672&height=379",
+    "checkedAt": "2026-09-09"
+  },
+  {
+    "id": "citizens-queer-folks-tales-oct-2026",
+    "title": "Queer Folks' Tales: Oct 2026",
+    "venue": "Citizens Theatre",
+    "venueId": "citizens",
+    "date": "2026-10-31",
+    "time": null,
+    "endDate": null,
+    "type": "professional",
+    "tags": [
+      "scottish"
+    ],
+    "description": "Welcome to Queer Folks’ Tales, Scotland’s hugely popular, multi-award-winning and five-star-rated LGBTQ+ storytelling show. Queer Folks’ Tales tells the stories of LGBTQ+ lives past, present and future and is delighted to continue its 5th year of shows across Scotland by coming to the Citizens...",
+    "ticketUrl": "https://citz.co.uk/whats-on/queer-folks-tales-oct-26/",
+    "image": "https://assets.citz.co.uk/uploads/2026/08/Untitled-design-3-aspect-ratio-1600-1000.png?resize=480%2C300&gravity",
+    "checkedAt": "2026-09-09"
+  },
+  {
+    "id": "oran-mor-zamboni",
+    "title": "Zamboni",
+    "venue": "Òran Mór",
+    "venueId": "oran-mor",
+    "date": "2026-11-02",
+    "time": "13:00",
+    "endDate": "2026-11-07",
+    "type": "new-writing",
+    "tags": [
+      "new-writing",
+      "lunchtime",
+      "a-play-a-pie-a-pint"
+    ],
+    "description": "Skating instructors Donal, Noa and Gus would rather be at their local ice rink than anywhere else in the world. Joking, gossiping and watching over the ice below. But when they witness a horrific accident on shift, their safe haven is shattered, and their greatest passion becomes the very thing...",
+    "ticketUrl": "https://playpiepint.com/whats-on/event/zamboni/",
+    "image": "https://playpiepint.com/app/uploads/2026/07/Zamboni.png",
+    "checkedAt": "2026-09-09"
+  },
+  {
+    "id": "citizens-do-not-pass-go",
+    "title": "Do Not Pass Go",
+    "venue": "Citizens Theatre",
+    "venueId": "citizens",
+    "date": "2026-11-05",
+    "time": null,
+    "endDate": "2026-11-07",
+    "type": "professional",
+    "tags": [
+      "drama"
+    ],
+    "description": "We heart Lizzie Magie! Feminist, economist, disruptor, and games designer who wanted to show the world there was an alternative to capitalist greed. But her beautiful brainchild was stolen, repurposed, and made a man a millionaire. Discover the hidden truth behind one of the world’s most popular...",
+    "ticketUrl": "https://citz.co.uk/whats-on/do-not-pass-go/",
+    "image": "https://assets.citz.co.uk/uploads/2026/04/Do-Not-Pass-Go_Final_No-Title-scaled.jpg?resize=1584%2C990&gravity",
+    "checkedAt": "2026-09-09"
+  },
+  {
+    "id": "oran-mor-making-way",
+    "title": "Making Way",
+    "venue": "Òran Mór",
+    "venueId": "oran-mor",
+    "date": "2026-11-09",
+    "time": "13:00",
+    "endDate": "2026-11-14",
+    "type": "new-writing",
+    "tags": [
+      "new-writing",
+      "lunchtime",
+      "a-play-a-pie-a-pint"
+    ],
+    "description": "Scientists have discovered the elixir of youth. Whilst the older generation revel in their rejuvenated bodies, the young are leeched of their priceless blood and forced to fight for their future. A weary widower is injected with this new lease of life but discovers that immortality is not all that...",
+    "ticketUrl": "https://playpiepint.com/whats-on/event/making-way/",
+    "image": "https://playpiepint.com/app/uploads/2026/07/Making-Way-1.png",
+    "checkedAt": "2026-09-09"
+  },
+  {
+    "id": "oran-mor-dead-husbands-club",
+    "title": "Dead Husbands Club",
+    "venue": "Òran Mór",
+    "venueId": "oran-mor",
+    "date": "2026-11-16",
+    "time": "13:00",
+    "endDate": "2026-11-21",
+    "type": "new-writing",
+    "tags": [
+      "new-writing",
+      "lunchtime",
+      "a-play-a-pie-a-pint"
+    ],
+    "description": "Emily, Maya and Shelley all became widows after the same man killed each of their husbands. Now, they are the self–declared ‘Dead Husbands Club’. At their regular karaoke catch-up, the three women belt out hit songs and discuss why their husbands were targeted as the real truth comes out. In the...",
+    "ticketUrl": "https://playpiepint.com/whats-on/event/dead-husbands-club/",
+    "image": "https://playpiepint.com/app/uploads/2026/07/Dead-Husbands-Club.png",
+    "checkedAt": "2026-09-09"
+  },
+  {
+    "id": "tron-the-snaw-queen",
     "title": "The Snaw Queen",
     "venue": "Tron Theatre",
     "venueId": "tron",
@@ -1016,8 +721,130 @@
     "tags": [
       "community"
     ],
-    "description": "She’s no’ just frozen… she’s baltic! Christmas is running like a dream down in Santa’s (aka Kristine Cagney Kringle’s) workshop. All nice and naughty lists have been checked off. Nothing can go wrong. Until a broken magic mirror unleashes pure chaos and transforms Rudie The Red Nosed Reindeer into...",
+    "description": "Recommended age 7+ CELEBRATING 40 YEARS OF THE TRON PANTOShe’s no’ just frozen… she’s baltic! Christmas is running like a dream down in Santa’s (aka Kristine Cagney Kringle’s) workshop. All nice and naughty lists have been checked off. Nothing can go wrong. Until a broken magic mirror unleashes...",
     "ticketUrl": "https://www.tron.co.uk/shows/the-snaw-queen/",
-    "image": "https://www.tron.co.uk/wp-content/uploads/2026/01/TRO-332-blank_Panto-1080x1350-1.jpg"
+    "image": "https://www.tron.co.uk/wp-content/uploads/2026/07/TRO-342-S-Queen_Stories-1920x1080-1.jpg",
+    "checkedAt": "2026-09-09"
+  },
+  {
+    "id": "citizens-cinderella",
+    "title": "Cinderella",
+    "venue": "Citizens Theatre",
+    "venueId": "citizens",
+    "date": "2026-11-28",
+    "time": null,
+    "endDate": "2026-12-31",
+    "type": "professional",
+    "tags": [
+      "drama"
+    ],
+    "description": "You’re invited to celebrate Christmas at the Citz! Join us for a fun twist on the much-loved fairytale. It’s nearly time for the Prince’s ball, but poor Cinderella is working her fingers to the bone in the cold and dark kitchens thanks to her cruel and greedy step-sisters’ nasty tricks. Luckily...",
+    "ticketUrl": "https://citz.co.uk/whats-on/cinderella/",
+    "image": "https://assets.citz.co.uk/uploads/2026/04/Untitled-design-2.png?resize=1992%2C1245&gravity",
+    "checkedAt": "2026-09-09"
+  },
+  {
+    "id": "citizens-poggle-and-me",
+    "title": "Poggle and Me",
+    "venue": "Citizens Theatre",
+    "venueId": "citizens",
+    "date": "2026-12-10",
+    "time": null,
+    "endDate": "2026-12-11",
+    "type": "professional",
+    "tags": [
+      "dance"
+    ],
+    "description": "This sensory, inclusive dance-theatre performance is made especially for and with children with complex needs ages 7-15 years. Playfulness within the work creates space for live response between the audience and performers, with its adaptable approach allowing the individuality of each child to be...",
+    "ticketUrl": "https://citz.co.uk/whats-on/poggle-and-me/",
+    "image": "https://assets.citz.co.uk/uploads/2026/08/PoggleAndMe_190923_AndrewPerry_202-scaled.jpg?resize=1992%2C1245&gravity",
+    "checkedAt": "2026-09-09"
+  },
+  {
+    "id": "tron-when-prophecy-fails",
+    "title": "When Prophecy Fails",
+    "venue": "Tron Theatre",
+    "venueId": "tron",
+    "date": "2027-02-04",
+    "time": "19:30",
+    "endDate": "2027-02-06",
+    "type": "professional",
+    "tags": [
+      "drama"
+    ],
+    "description": "The end is nigh, and the saucers are coming. Step into a world of apocalyptic visions, clandestine observers and the faithful disciples of a suburban housewife. Award-winning ensemble Groupwork present When Prophecy Fails, a daring new work of physical theatre. Inspired by a 1954 study that...",
+    "ticketUrl": "https://www.tron.co.uk/shows/when-prophecy-fails/",
+    "image": "https://www.tron.co.uk/wp-content/uploads/2026/08/When-Prophecy-Fails-by-Groupwork.-©-Mihaela-Bodlovic-Portrait.jpg-3.jpg",
+    "checkedAt": "2026-09-09"
+  },
+  {
+    "id": "citizens-mary-queen-of-scots-got-her-head-chopped-off",
+    "title": "Mary Queen of Scots Got Her Head Chopped Off",
+    "venue": "Citizens Theatre",
+    "venueId": "citizens",
+    "date": "2027-02-13",
+    "time": null,
+    "endDate": "2027-03-06",
+    "type": "professional",
+    "tags": [
+      "drama"
+    ],
+    "description": "‘Once upon a time, there were twa queens on the wan green island, and the wan green island was split inty twa kingdoms. But no equal kingdoms . . .’ Celebrating the richly poetic Scots language, Liz Lochhead’s mighty text explores the deadly rivalry between two of history’s most fascinating women...",
+    "ticketUrl": "https://citz.co.uk/whats-on/mary-queen-of-scots-got-her-head-chopped-off/",
+    "image": "https://assets.citz.co.uk/uploads/2026/06/OST-CITZ-MQoS-Selected-Teaser-2000px.jpg?resize=1992%2C1245&gravity",
+    "checkedAt": "2026-09-09"
+  },
+  {
+    "id": "citizens-punch",
+    "title": "Punch",
+    "venue": "Citizens Theatre",
+    "venueId": "citizens",
+    "date": "2027-03-30",
+    "time": null,
+    "endDate": "2027-04-03",
+    "type": "professional",
+    "tags": [
+      "drama"
+    ],
+    "description": "Following sold-out runs at the Nottingham Playhouse and Young Vic, and simultaneous openings on Broadway and in the West End, Punch comes to the Citizens Theatre for one week only. Don’t miss your chance to see this critically acclaimed play in a ‘powerhouse of a production’ (WhatsOnStage). From...",
+    "ticketUrl": "https://citz.co.uk/whats-on/punch/",
+    "image": "https://assets.citz.co.uk/uploads/2026/07/Punch.webp?resize=1584%2C990&gravity",
+    "checkedAt": "2026-09-09"
+  },
+  {
+    "id": "citizens-death-of-a-salesman",
+    "title": "Death of a Salesman",
+    "venue": "Citizens Theatre",
+    "venueId": "citizens",
+    "date": "2027-04-07",
+    "time": null,
+    "endDate": "2027-05-01",
+    "type": "professional",
+    "tags": [
+      "drama",
+      "classic"
+    ],
+    "description": "“You can’t eat the orange and throw the peel away — a man is not a piece of fruit.” After thirty-four years on the road, Willy Loman returns home exhausted. A man who has sacrificed everything in pursuit of success and recognition. Yet the American Dream seems always just out of reach. As his...",
+    "ticketUrl": "https://citz.co.uk/whats-on/death-of-a-salesman/",
+    "image": "https://assets.citz.co.uk/uploads/2026/07/Death-of-a-Salesman-website-crop.jpg?resize=1992%2C1245&gravity",
+    "checkedAt": "2026-09-09"
+  },
+  {
+    "id": "citizens-guys-and-dolls",
+    "title": "Guys and Dolls",
+    "venue": "Citizens Theatre",
+    "venueId": "citizens",
+    "date": "2027-05-04",
+    "time": null,
+    "endDate": "2027-05-15",
+    "type": "professional",
+    "tags": [
+      "musical",
+      "classic"
+    ],
+    "description": "A Broadway classic packed with unforgettable songs, Guys and Dolls comes to life in a brand-new production directed by award-winning James Brining. From the streets of 1950s New York to the heat of Havana, follow gamblers, showgirls and dreamers as they chase luck, dodge commitment and discover...",
+    "ticketUrl": "https://citz.co.uk/whats-on/guys-and-dolls/",
+    "image": "https://assets.citz.co.uk/uploads/2026/06/Guys-dolls-square.png?resize=1992%2C1245&gravity",
+    "checkedAt": "2026-09-09"
   }
 ]

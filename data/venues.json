@@ -25,9 +25,9 @@
   },
   {
     "id": "oran-mor",
-    "name": "Oran Mor",
+    "name": "Òran Mór",
     "area": "West End",
-    "description": "A converted hilltop church at the top of Byres Road, Oran Mor is best known for A Play, A Pie and A Pint — Glasgow's beloved lunchtime theatre series running Monday to Saturday. In its auditorium beneath Alasdair Gray's extraordinary ceiling mural, you get a brand new short play and a pie every week. A Glasgow institution.",
+    "description": "A converted church at the top of Byres Road, home to A Play, A Pie and A Pint. The lunchtime theatre programme presents new short plays, with a pie and a drink included in the ticket.",
     "website": "https://oran-mor.co.uk",
     "instagram": "oranmorglasgow"
   },
@@ -43,7 +43,7 @@
     "id": "platform",
     "name": "Platform",
     "area": "Easterhouse",
-    "description": "Glasgow's dedicated venue for emerging artists and young people, located in Easterhouse on the city's east side. Platform runs a year-round programme of new theatre, dance, and performance, with a strong commitment to artists at the start of their careers and to its local community. Home of the annual Futures Festival.",
+    "description": "An arts centre at The Bridge in Easterhouse, with a programme of theatre, music, visual art and creative activities for different ages. Visit the venue website for performances and opportunities to take part.",
     "website": "https://platform-online.co.uk",
     "instagram": "platformglasgow"
   },
@@ -75,7 +75,7 @@
     "id": "theatre-royal",
     "name": "Theatre Royal",
     "area": "City Centre",
-    "description": "Scotland's oldest theatre and the home of Scottish Opera and Scottish Ballet. The Theatre Royal on Hope Street has been hosting world-class performances since 1867 — opera, ballet, touring drama, and musicals in a beautifully restored Victorian auditorium. The grand dame of Glasgow's theatre scene.",
+    "description": "Opened in 1867, the Theatre Royal on Hope Street hosts opera, ballet, touring drama and musicals in a Victorian auditorium. It is the Glasgow home of Scottish Opera and Scottish Ballet.",
     "website": "https://atgtickets.com/venues/theatre-royal-glasgow",
     "instagram": "theatreroyalglasgow"
   },
@@ -83,7 +83,7 @@
     "id": "old-hairdressers",
     "name": "The Old Hairdressers",
     "area": "City Centre",
-    "description": "A fiercely independent DIY arts space tucked away in a former barber shop on Renfield Lane. The Old Hairdressers programmes experimental performance, live art, music, and artist-led events in its intimate basement space. It's scrappy, it's vital, and it's been at the heart of Glasgow's underground arts scene for over a decade.",
+    "description": "An independent bar and arts venue on Renfield Lane, hosting live music, exhibitions and experimental performance. Check the venue programme for upcoming events.",
     "website": "https://theoldhairdressers.com",
     "instagram": "theoldhairdressers"
   },

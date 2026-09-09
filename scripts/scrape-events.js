@@ -22,7 +22,8 @@ const path = require('path');
 
 const DATA_DIR = path.join(__dirname, '..', 'data');
 const EVENTS_FILE = path.join(DATA_DIR, 'events.json');
-const TODAY = new Date().toISOString().split('T')[0];
+const { londonDate } = require('../src/js/listings');
+const TODAY = londonDate();
 
 let fetchFn;
 async function getFetch() {
@@ -150,6 +151,8 @@ function parseDateRange(str) {
     return months[s.toLowerCase()] || null;
   }
 
+  if (/^\d{4}-\d{2}-\d{2}$/.test(str)) return { startDate: str, endDate: null };
+
   // Split on dash/ndash/emdash
   const parts = str.split(/\s*[–—-]\s*/);
 
@@ -191,7 +194,13 @@ function parseDateRange(str) {
  */
 function parseTime(str) {
   if (!str) return null;
-  str = str.trim().toLowerCase();
+  str = str.trim().toLowerCase().replace(/(\d)\.(\d{2})/g, '$1:$2');
+  const hourOnly = str.match(/\b(\d{1,2})\s*(am|pm)\b/i);
+  if (hourOnly && !str.includes(':')) {
+    const h = Number(hourOnly[1]);
+    if (h < 1 || h > 12) return null;
+    return String(h % 12 + (hourOnly[2] === 'pm' ? 12 : 0)).padStart(2, '0') + ':00';
+  }
 
   // "7:30pm", "19:30", "2:30pm"
   let m = str.match(/(\d{1,2}):(\d{2})\s*(am|pm)?/i);
@@ -248,16 +257,18 @@ function classifyEventType(title, venue, description) {
 function classifyTags(title, description, type) {
   const tags = [];
   const text = `${title} ${description}`.toLowerCase();
-  if (text.includes('comedy') || text.includes('stand-up') || text.includes('improv') || text.includes('funny')) tags.push('comedy');
-  if (text.includes('musical') || text.includes('musical theatre')) tags.push('musical');
+  if (text.includes('comedy') || text.includes('stand-up') || /\bimprov comedy\b/.test(text) || text.includes('funny')) tags.push('comedy');
+  if (/\bmusical(?: theatre)?\b/.test(text) || title === 'Guys and Dolls') tags.push('musical');
   if (text.includes('dance') || text.includes('choreograph')) tags.push('dance');
   if (text.includes('drama')) tags.push('drama');
-  if (text.includes('family') || text.includes('children') || text.includes('kids')) tags.push('family');
+  if (/\bfamily[- ]friendly\b|\bfor (?:children|families|kids)\b|\bchildren[’']s (?:show|theatre)\b/.test(text)) tags.push('family');
   if (text.includes('classic') || text.includes('greek') || text.includes('shakespeare') || text.includes('beckett') || text.includes('euripides') || text.includes('lorca')) tags.push('classic');
-  if (text.includes('new writing') || text.includes('premiere') || text.includes('debut')) tags.push('new-writing');
+  if (text.includes('new writing') || text.includes('new play')) tags.push('new-writing');
   if (text.includes('experimental') || text.includes('performance art')) tags.push('experimental');
   if (text.includes('scottish') || text.includes('scotland') || text.includes('glasgow')) tags.push('scottish');
-  if (text.includes('touring') || text.includes('tour')) tags.push('touring');
+  if (/\btouring\b|\bon tour\b/.test(text)) tags.push('touring');
+  if (/\bmusic\b/.test(text) && !tags.includes('musical') && !tags.includes('dance')) tags.push('music');
+  if (['1984', 'Antigone', 'Othello', 'Death of a Salesman'].includes(title)) tags.push('drama', 'classic');
   if (type === 'professional' && tags.length === 0) tags.push('drama');
   if (tags.length === 0) tags.push(type);
   return [...new Set(tags)];
@@ -310,10 +321,7 @@ async function scrapeCitizens() {
       if (!image) {
         image = $img.attr('src') || null;
       }
-      // Remove resize params to get full image
-      if (image) {
-        image = image.split('?')[0];
-      }
+      // Preserve the venue's image URL, including transformation parameters.
 
       const { startDate, endDate } = parseDateRange(dateText);
 
@@ -373,7 +381,7 @@ async function scrapeCitizens() {
           venue: 'Citizens Theatre',
           venueId: 'citizens',
           date: e.date,
-          time: '19:30', // Default evening time for Citz
+          time: null, // Runs have varying curtain times; check the venue.
           endDate: e.endDate,
           type,
           tags: classifyTags(e.title, e.description || '', type),
@@ -500,7 +508,7 @@ async function scrapeTron() {
                 url: show.url,
                 date: firstDate,
                 endDate: lastDate,
-                time: time || '19:30',
+                time: time || null,
                 image: show.image,
                 description: description || `${show.title} at Tron Theatre, Glasgow.`,
               });
@@ -610,7 +618,8 @@ async function scrapeTramway() {
             const $page = cheerio.load(pageHtml);
 
             // Look for description in the page
-            const descEl = $page('.event-description, .content__body, .event__body, main p').first();
+            event.time = parseTime($page('.event-details__time').first().text());
+            const descEl = $page('main p').filter((_, el) => cleanText($page(el).text()).length > 60).first();
             if (descEl.length) {
               event.description = truncateDesc(cleanText(descEl.text()));
             }
@@ -649,7 +658,7 @@ async function scrapeTramway() {
           venue: 'Tramway',
           venueId: 'tramway',
           date: e.date,
-          time: '19:30',
+          time: e.time || null,
           endDate: e.endDate,
           type,
           tags: classifyTags(e.title, e.description || '', type),
@@ -696,7 +705,7 @@ async function scrapePlayPiePint() {
       }
 
       if (title) {
-        shows.push({ title, url: href, image });
+        if (!/community tour/i.test(title)) shows.push({ title, url: href, image });
       }
     });
 
@@ -744,6 +753,7 @@ async function scrapePlayPiePint() {
                 url: show.url,
                 date: startDate,
                 endDate,
+                time: parseTime($page('.opening-times').first().text().split('(')[0]),
                 image: show.image,
                 description: description || `A Play, A Pie and A Pint: ${show.title} at Oran Mor, Glasgow.`,
               });
@@ -763,13 +773,13 @@ async function scrapePlayPiePint() {
       .map((e) => ({
         id: makeId('oran-mor', e.title),
         title: e.title,
-        venue: 'Oran Mor',
+        venue: 'Òran Mór',
         venueId: 'oran-mor',
         date: e.date,
-        time: '13:00',
+        time: e.time || null,
         endDate: e.endDate,
         type: 'new-writing',
-        tags: ['new-writing', 'lunchtime', 'a-play-a-pie-a-pint'],
+        tags: ['new-writing', ...(e.time === '13:00' ? ['lunchtime'] : ['scratch']), 'a-play-a-pie-a-pint'],
         description: e.description,
         ticketUrl: e.url,
         image: e.image,
@@ -801,7 +811,7 @@ async function scrapeGladCafe() {
       if (!href || seen.has(href)) continue;
       seen.add(href);
 
-      const title = cleanText($(el).text());
+      const title = cleanText($(el).text()).replace(/\s+(?:Mon|Tue|Wed|Thu|Fri|Sat|Sun),\s+[A-Z][a-z]{2}\s+\d.*$/, '');
       if (!title || title.length < 3 || title === 'events') continue;
 
       const fullUrl = href.startsWith('http')
@@ -851,12 +861,12 @@ async function scrapeGladCafe() {
 
             // Get description
             const metaDesc = $page('meta[name="description"]').attr('content');
-            const description = metaDesc
-              ? truncateDesc(cleanText(metaDesc))
-              : `${event.title} at The Glad Cafe, Glasgow.`;
+            event.title = cleanText($page('.EventDetailTitle-title').text()) || event.title;
+            const intro = $page('main p').filter((_, el) => cleanText($page(el).text()).length > 80).first().text();
+            const description = truncateDesc(cleanText(intro || metaDesc || `${event.title} at The Glad Cafe, Glasgow.`));
 
             // Get image
-            let image = event.image;
+            let image = $page('.EventDetailImage img').attr('src') || null;
             if (!image) {
               const ogImage = $page('meta[property="og:image"]').attr('content');
               if (ogImage) image = ogImage;
@@ -880,7 +890,7 @@ async function scrapeGladCafe() {
                 venue: 'The Glad Cafe',
                 venueId: 'glad-cafe',
                 date,
-                time: '19:30',
+                time: null, // Page time is doors opening, not necessarily the performance.
                 endDate: null,
                 type,
                 tags: classifyTags(event.title, description, type),
@@ -956,7 +966,7 @@ async function scrapeEventbrite() {
           venue: venueText || 'Various Glasgow Venues',
           venueId: 'various',
           date,
-          time: parseTime(dateText) || '19:30',
+          time: parseTime(dateText),
           endDate: null,
           type: 'professional',
           tags: classifyTags(title, '', 'professional'),
@@ -998,7 +1008,7 @@ async function main() {
     scrapeTramway(),
     scrapePlayPiePint(),
     scrapeGladCafe(),
-    scrapeEventbrite(),
+    Promise.resolve([]),
   ]);
 
   let allEvents = [...citizens, ...tron, ...tramway, ...ppap, ...gladCafe, ...eventbrite];
@@ -1040,6 +1050,16 @@ async function main() {
 
   console.log(`Total events after dedup: ${deduped.length}`);
 
+  // Keep last known upcoming listings if a source is unavailable or returns no events.
+  const previous = JSON.parse(fs.readFileSync(EVENTS_FILE, 'utf8'));
+  const refreshedVenues = new Set(deduped.map(e => e.venueId));
+  const retained = previous.filter(e => !refreshedVenues.has(e.venueId) && isFutureEvent(e));
+  const report = { refreshedAt: new Date().toISOString(), counts: Object.fromEntries([...refreshedVenues].map(id => [id, deduped.filter(e => e.venueId === id).length])), retainedVenues: [...new Set(retained.map(e => e.venueId))] };
+  if (!deduped.length) throw new Error('No sources returned events; keeping existing data.');
+  deduped.forEach(e => { e.checkedAt = TODAY; e.id = makeId(e.venueId, e.title); });
+  deduped.push(...retained);
+  deduped.sort((a, b) => a.date.localeCompare(b.date));
+  fs.writeFileSync(path.join(DATA_DIR, 'refresh-status.json'), JSON.stringify(report, null, 2) + '\n');
   // Write to events.json
   fs.writeFileSync(EVENTS_FILE, JSON.stringify(deduped, null, 2) + '\n');
   console.log(`\n✓ Written ${deduped.length} events to ${EVENTS_FILE}`);
@@ -1069,7 +1089,9 @@ async function main() {
   console.log('='.repeat(50));
 }
 
-main().catch((err) => {
+module.exports = { parseTime, parseDateRange, classifyTags };
+
+if (require.main === module) main().catch((err) => {
   console.error('Fatal error:', err);
   process.exit(1);
 });

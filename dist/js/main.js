@@ -1,142 +1,124 @@
 (function () {
-  'use strict';
-
-  var events = window.EVENTS || [];
-  var grid = document.getElementById('events-grid');
-  var venueFilter = document.getElementById('filter-venue');
-  var dateFromFilter = document.getElementById('filter-date-from');
-  var dateToFilter = document.getElementById('filter-date-to');
-  var resetBtn = document.getElementById('filter-reset');
-  var resultsCount = document.getElementById('results-count');
-  var typePills = document.querySelectorAll('.filter-pill');
-
-  if (!grid || !events.length) return;
-
-  var today = new Date().toISOString().split('T')[0];
-  var activeType = '';
-
-  function formatDate(dateStr) {
-    var d = new Date(dateStr + 'T00:00:00');
-    return d.toLocaleDateString('en-GB', {
-      weekday: 'short',
-      day: 'numeric',
-      month: 'short',
-      year: 'numeric'
-    });
+  "use strict";
+  const { filterEvents, londonDate } = window.Listings;
+  function repairImage(image) {
+    image.hidden = true;
+    image
+      .closest(".event-card-image, .feature-image")
+      ?.classList.add("image-unavailable");
   }
-
-  function formatTime(timeStr) {
-    if (!timeStr) return '';
-    var parts = timeStr.split(':');
-    var h = parseInt(parts[0], 10);
-    var m = parts[1];
-    var suffix = h >= 12 ? 'pm' : 'am';
-    var hour = h > 12 ? h - 12 : h === 0 ? 12 : h;
-    return hour + ':' + m + suffix;
-  }
-
-  function typeLabel(type) {
-    var labels = {
-      'professional': 'Professional',
-      'grassroots': 'Grassroots',
-      'new-writing': 'New Writing',
-      'scratch': 'Scratch Night',
-      'community': 'Community'
-    };
-    return labels[type] || type;
-  }
-
-  function escapeHTML(str) {
-    var div = document.createElement('div');
-    div.textContent = str;
-    return div.innerHTML;
-  }
-
-  function buildCard(ev) {
-    var dateText = formatDate(ev.date);
-    if (ev.endDate && ev.endDate !== ev.date) {
-      dateText += ' \u2013 ' + formatDate(ev.endDate);
-    }
-    if (ev.time) {
-      dateText += ', ' + formatTime(ev.time);
-    }
-
-    var imageHtml = ev.image
-      ? '<div class="event-card-image"><img src="' + escapeHTML(ev.image) + '" alt="' + escapeHTML(ev.title) + '" loading="lazy"><span class="event-type-badge badge-' + ev.type + '">' + typeLabel(ev.type) + '</span></div>'
-      : '<div class="event-card-image event-card-placeholder"><span class="placeholder-star">&#9733;</span><span class="placeholder-venue">' + escapeHTML(ev.venue) + '</span><span class="event-type-badge badge-' + ev.type + '">' + typeLabel(ev.type) + '</span></div>';
-
-    return '<article class="event-card" data-venue="' + ev.venueId + '" data-type="' + ev.type + '" data-date="' + ev.date + '">' +
-      imageHtml +
-      '<div class="event-card-body">' +
-        '<h3 class="event-card-title">' + (ev.ticketUrl ? '<a href="' + escapeHTML(ev.ticketUrl) + '" target="_blank" rel="noopener">' + escapeHTML(ev.title) + '</a>' : escapeHTML(ev.title)) + '</h3>' +
-        '<div class="event-meta">' +
-          '<span class="event-venue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="meta-icon"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>' + escapeHTML(ev.venue) + '</span>' +
-          '<span class="event-date"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="meta-icon"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>' + dateText + '</span>' +
-        '</div>' +
-        '<p class="event-description">' + escapeHTML(ev.description) + '</p>' +
-        '<div class="event-card-footer">' +
-          (ev.ticketUrl ? '<a href="' + escapeHTML(ev.ticketUrl) + '" target="_blank" rel="noopener" class="ticket-link">Tickets <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>' : '') +
-        '</div>' +
-      '</div>' +
-    '</article>';
-  }
-
-  function renderEvents(filtered) {
-    if (filtered.length === 0) {
-      grid.innerHTML = '<div class="no-results"><p>No events match your filters. Try adjusting your search.</p></div>';
-    } else {
-      grid.innerHTML = filtered.map(buildCard).join('');
-    }
-    if (resultsCount) {
-      resultsCount.textContent = filtered.length + ' event' + (filtered.length !== 1 ? 's' : '');
-    }
-  }
-
-  function applyFilters() {
-    var venue = venueFilter ? venueFilter.value : '';
-    var dateFrom = dateFromFilter ? dateFromFilter.value : '';
-    var dateTo = dateToFilter ? dateToFilter.value : '';
-
-    var filtered = events.filter(function (ev) {
-      var endDate = ev.endDate || ev.date;
-      if (endDate < today) return false;
-      if (venue && ev.venueId !== venue) return false;
-      if (activeType && ev.type !== activeType) return false;
-      if (dateFrom && ev.date < dateFrom) return false;
-      if (dateTo && ev.date > dateTo) return false;
-      return true;
-    });
-
-    renderEvents(filtered);
-  }
-
-  // Type pill click handlers
-  typePills.forEach(function (pill) {
-    pill.addEventListener('click', function () {
-      typePills.forEach(function (p) { p.classList.remove('active'); });
-      pill.classList.add('active');
-      activeType = pill.getAttribute('data-type') || '';
-      applyFilters();
-    });
+  document.querySelectorAll("img").forEach((image) => {
+    image.addEventListener("error", () => repairImage(image));
+    if (image.complete && !image.naturalWidth) repairImage(image);
   });
-
-  if (venueFilter) venueFilter.addEventListener('change', applyFilters);
-  if (dateFromFilter) dateFromFilter.addEventListener('change', applyFilters);
-  if (dateToFilter) dateToFilter.addEventListener('change', applyFilters);
-
-  if (resetBtn) {
-    resetBtn.addEventListener('click', function () {
-      if (venueFilter) venueFilter.value = '';
-      if (dateFromFilter) dateFromFilter.value = '';
-      if (dateToFilter) dateToFilter.value = '';
-      activeType = '';
-      typePills.forEach(function (p) { p.classList.remove('active'); });
-      var allPill = document.querySelector('.filter-pill[data-type=""]');
-      if (allPill) allPill.classList.add('active');
-      applyFilters();
+  const cards = [...document.querySelectorAll(".event-card")];
+  const events = window.EVENTS || [];
+  const search = document.getElementById("filter-search");
+  const venue = document.getElementById("filter-venue");
+  const from = document.getElementById("filter-date-from");
+  const to = document.getElementById("filter-date-to");
+  const pills = [...document.querySelectorAll(".filter-pill")];
+  const count = document.getElementById("results-count");
+  const empty = document.getElementById("no-results");
+  const grid = document.getElementById("events-grid");
+  let tag = "";
+  const params = new URLSearchParams(location.search);
+  if (search) search.value = params.get("q") || "";
+  if (venue) venue.value = params.get("venue") || "";
+  if (from) from.value = params.get("from") || "";
+  if (to) to.value = params.get("to") || "";
+  if (pills.some((p) => p.dataset.tag === params.get("genre")))
+    tag = params.get("genre");
+  function applyFilters(syncURL = true) {
+    const today = londonDate();
+    const upcoming = filterEvents(events, { today });
+    const filtered = filterEvents(events, {
+      today,
+      query: search?.value,
+      venue: venue?.value,
+      from: from?.value,
+      to: to?.value,
+      tag,
     });
+    const ids = new Set(filtered.map((e) => e.id));
+    cards.forEach((card) => {
+      card.hidden = !ids.has(card.dataset.id);
+    });
+    pills.forEach((pill) => {
+      const active = (pill.dataset.tag || "") === tag;
+      pill.classList.toggle("active", active);
+      pill.setAttribute("aria-pressed", String(active));
+    });
+    if (count)
+      count.textContent = `${filtered.length} show${filtered.length === 1 ? "" : "s"}`;
+    if (empty) {
+      empty.hidden = filtered.length !== 0;
+      if (grid)
+        empty.querySelector("p").textContent =
+          from?.value && to?.value && from.value > to.value
+            ? "Choose an end date on or after the start date."
+            : "No shows match these filters. Try another date, venue or genre.";
+    }
+    document.querySelectorAll("[data-upcoming-count]").forEach((el) => {
+      el.textContent = upcoming.length;
+    });
+    document.querySelectorAll("[data-venue-count]").forEach((el) => {
+      el.textContent = new Set(upcoming.map((e) => e.venueId)).size;
+    });
+    document.querySelectorAll("[data-expires]").forEach((el) => {
+      el.hidden = el.dataset.expires < today;
+    });
+    if (syncURL && grid) {
+      const next = new URLSearchParams();
+      for (const [key, value] of Object.entries({
+        q: search?.value,
+        venue: venue?.value,
+        from: from?.value,
+        to: to?.value,
+        genre: tag,
+      }))
+        if (value) next.set(key, value);
+      history.replaceState(
+        null,
+        "",
+        location.pathname + (next.size ? "?" + next : "") + location.hash,
+      );
+    }
   }
-
-  // Initial render (hides past events)
-  applyFilters();
+  pills.forEach((pill) =>
+    pill.addEventListener("click", () => {
+      tag = pill.dataset.tag || "";
+      applyFilters();
+    }),
+  );
+  search?.addEventListener("input", () => applyFilters());
+  [venue, from, to].forEach((input) =>
+    input?.addEventListener("change", () => applyFilters()),
+  );
+  document.querySelectorAll("[data-reset]").forEach((button) =>
+    button.addEventListener("click", () => {
+      [search, venue, from, to].forEach((input) => {
+        if (input) input.value = "";
+      });
+      tag = "";
+      applyFilters();
+    }),
+  );
+  document.getElementById("this-week")?.addEventListener("click", () => {
+    [search, venue, from, to].forEach((input) => {
+      if (input) input.value = "";
+    });
+    tag = "";
+    from.value = londonDate();
+    const last = new Date(from.value + "T12:00:00Z");
+    last.setUTCDate(last.getUTCDate() + 6);
+    to.value = last.toISOString().slice(0, 10);
+    applyFilters();
+  });
+  applyFilters(false);
+  // Keep a tab left open overnight honest, even between scheduled builds.
+  setInterval(() => applyFilters(false), 60000);
+  document.addEventListener("visibilitychange", () => {
+    if (!document.hidden) applyFilters(false);
+  });
 })();
