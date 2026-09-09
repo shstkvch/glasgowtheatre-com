@@ -119,8 +119,8 @@ curl -X POST "https://glasgowtheatre-build.<subdomain>.workers.dev/trigger?key=$
 
 ### Publishing status, 9 September 2026
 
-GitHub Actions cannot run: “The job was not started because your account is locked due to a billing issue.” Pages still serves the `gh-pages` branch, so hosting was never affected — only the daily compute.
+The site is live on **Cloudflare Pages**, rebuilt daily by the Worker at 05:17 UTC. Nameservers moved from Porkbun to Cloudflare and the domain was cut over from GitHub Pages, so `gh-pages` is no longer what visitors see and the branch is now historical.
 
-The listings-led redesign was published to `gh-pages` from a local build and is live. Daily automation is moving to Cloudflare Pages; run `./scripts/setup-cloudflare.sh` to complete it. Until that cutover finishes, the site keeps serving from GitHub Pages and updates only when `scripts/publish.sh` is run by hand.
+GitHub Actions still cannot run — “The job was not started because your account is locked due to a billing issue.” `.github/workflows/publish.yml` is kept as a fallback only. Nothing depends on it.
 
-If GitHub billing is resolved first, the existing workflow is a complete alternative: add `OPENROUTER_API_KEY` as a repository secret, switch Pages to the **GitHub Actions** build source, and run the workflow manually once.
+Verified working end to end: the Worker triggers the deploy hook, Cloudflare builds and deploys in about a minute, and the scrape reaches the venues from Cloudflare's network.

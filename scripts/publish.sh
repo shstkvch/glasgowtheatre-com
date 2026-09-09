@@ -99,27 +99,20 @@ git -c user.name='glasgowtheatre-bot' \
     commit -m "Refresh venue listings and cached images ($(date +%F))"
 git push origin main
 
-# GitHub Pages serves the gh-pages branch, which holds the built site at its
-# root. Publish through a temporary worktree so the checkout here is untouched.
-say "Publishing dist to gh-pages"
-WORKTREE="$(mktemp -d)"
-cleanup() { git worktree remove --force "$WORKTREE" >/dev/null 2>&1 || true; }
-trap cleanup EXIT
-
-git fetch origin gh-pages
-git worktree add --force "$WORKTREE" gh-pages >/dev/null
-rsync -a --delete --exclude='.git' dist/ "$WORKTREE"/
-(
-  cd "$WORKTREE"
-  git add -A
-  if git diff --cached --quiet; then
-    echo "gh-pages already current"
+# Cloudflare Pages builds from main, so the push above is already the publish.
+# Trigger the deploy hook too, so it starts now rather than on Cloudflare's
+# own polling, and so this script works even if the Git integration is off.
+if [ -n "${DEPLOY_HOOK:-}" ]; then
+  say "Triggering the Cloudflare build"
+  if curl -fsS -X POST "$DEPLOY_HOOK" >/dev/null; then
+    say "Build triggered"
   else
-    git -c user.name='glasgowtheatre-bot' \
-        -c user.email='info@glasgowtheatre.com' \
-        commit -m "Publish site ($(date +%F))"
-    git push origin gh-pages
+    say "! Could not reach the deploy hook; the push to main will build anyway"
   fi
-)
+else
+  say "No DEPLOY_HOOK in .env; relying on the push to main to trigger a build"
+fi
+
+say "Watch it land:  curl -s https://glasgowtheatre.com/data/status.json"
 
 say "✓ Published"
