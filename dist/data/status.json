@@ -1,0 +1,14 @@
+{
+  "builtAt": "2026-09-09T14:32:07.219Z",
+  "refreshedAt": "2026-09-09T13:38:17.490Z",
+  "upcoming": 48,
+  "venues": 5,
+  "sources": {
+    "citizens": 21,
+    "oran-mor": 12,
+    "tron": 9,
+    "tramway": 4,
+    "glad-cafe": 2
+  },
+  "retainedVenues": []
+}

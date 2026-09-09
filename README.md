@@ -89,13 +89,25 @@ A first run with no published feed sets the baseline silently. A failed report n
 
 Until a sending domain is verified, Resend delivers only to the account owner's address, from `onboarding@resend.dev`. To send from the site's own domain, verify it in Resend, add the DNS records in Cloudflare, and set `REPORT_FROM`.
 
+### Checking it ran
+
+`/data/status.json` is published on every build, so you can tell from outside whether the unattended job worked:
+
+```sh
+curl -s https://glasgowtheatre.com/data/status.json
+```
+
+`builtAt` says when the site was last built and `refreshedAt` when the listings were last successfully pulled from the venues. If `builtAt` moves each morning but `refreshedAt` does not, the build is running but the scrape is failing. `retainedVenues` names any venue serving stale data.
+
 ### The cron Worker
 
 `cloudflare/` holds the Worker that starts the daily build. It POSTs the deploy hook at 05:17 UTC and does nothing else.
 
+Deploy it with `./scripts/deploy-worker.sh`, which handles the login, the secrets and the deploy. **Nothing runs on a schedule until this is done** — Cloudflare Pages only rebuilds when something tells it to.
+
 ```sh
+./scripts/deploy-worker.sh          # login, secrets, deploy
 cd cloudflare
-npx wrangler deploy                 # after the wizard has set the secrets
 npx wrangler tail                   # watch it fire
 curl -X POST "https://glasgowtheatre-build.<subdomain>.workers.dev/trigger?key=$TRIGGER_KEY"
 ```

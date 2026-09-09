@@ -8,6 +8,10 @@
 
 set -euo pipefail
 
+# Always work from the repository root, whatever directory this was run from.
+# Otherwise .env is written next to the caller and the values go missing.
+cd "$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+
 # ──────────────────────────────────────────────────────────────────────────
 # Wizard library — delightful, consistent UX. Identical across every wizard.
 # ──────────────────────────────────────────────────────────────────────────

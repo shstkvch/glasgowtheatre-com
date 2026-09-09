@@ -230,6 +230,23 @@ write(
 // The published feed is what yesterday's build left behind, so the daily
 // report can diff against it without storing state anywhere.
 write("data/events.json", JSON.stringify(events, null, 2) + "\n");
+// Lets you check from outside whether the unattended build actually ran, and
+// whether it reached the venues or fell back to the last saved listings.
+write(
+  "data/status.json",
+  JSON.stringify(
+    {
+      builtAt: new Date().toISOString(),
+      refreshedAt: status.refreshedAt,
+      upcoming: events.length,
+      venues: venueCount,
+      sources: status.counts,
+      retainedVenues: status.retainedVenues,
+    },
+    null,
+    2,
+  ) + "\n",
+);
 write("robots.txt", `User-agent: *\nAllow: /\nSitemap: ${SITE}/sitemap.xml\n`);
 write("CNAME", "glasgowtheatre.com\n");
 write(".nojekyll", "");
