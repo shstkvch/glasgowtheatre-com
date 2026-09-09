@@ -364,6 +364,19 @@ svg {
   object-fit: cover;
   position: relative;
 }
+/* The thumbnail repeats the title link, so it is out of the tab order:
+   keyboard users reach the show once, not twice. */
+.event-card-thumb {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.event-card-thumb img {
+  transition: transform 0.25s ease;
+}
+.event-card-thumb:hover img {
+  transform: scale(1.03);
+}
 .image-fallback {
   position: absolute;
   inset: 0;

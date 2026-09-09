@@ -3,9 +3,7 @@
   const { filterEvents, londonDate } = window.Listings;
   function repairImage(image) {
     image.hidden = true;
-    image
-      .closest(".event-card-image, .feature-image")
-      ?.classList.add("image-unavailable");
+    image.closest(".event-card-image")?.classList.add("image-unavailable");
   }
   document.querySelectorAll("img").forEach((image) => {
     image.addEventListener("error", () => repairImage(image));
