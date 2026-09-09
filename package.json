@@ -11,7 +11,9 @@
     "preview": "python3 -m http.server 4173 --directory dist",
     "tag": "node scripts/tag-events.js",
     "build:cloudflare": "bash scripts/cloudflare-build.sh",
-    "report": "node scripts/report-new.js"
+    "report": "node scripts/report-new.js",
+    "deploy:worker": "bash scripts/deploy-worker.sh",
+    "setup:cloudflare": "bash scripts/setup-cloudflare.sh"
   },
   "repository": {
     "type": "git",

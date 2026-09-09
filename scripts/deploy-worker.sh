@@ -28,7 +28,7 @@ set -a; . ./.env; set +a
 # A key for triggering a build by hand, so the wiring can be tested without
 # waiting for tomorrow's cron.
 if [ -z "${TRIGGER_KEY:-}" ]; then
-  TRIGGER_KEY="$(LC_ALL=C tr -dc 'a-zA-Z0-9' </dev/urandom | head -c 32)"
+  TRIGGER_KEY="$(node -e 'console.log(require("crypto").randomBytes(24).toString("base64url"))')"
   printf 'TRIGGER_KEY=%s\n' "$TRIGGER_KEY" >> .env
   green "Generated TRIGGER_KEY and saved it to .env"
 fi
