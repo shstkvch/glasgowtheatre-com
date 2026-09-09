@@ -28,8 +28,18 @@ test("all published images load and the page has no JavaScript errors", async ({
   });
 });
 
+/** On phones the filter panel starts collapsed, so open it before using it. */
+async function openFilters(page) {
+  const summary = page.locator(".filter-summary");
+  if (await summary.isVisible()) {
+    const panel = page.locator(".filter-controls");
+    if (!(await panel.evaluate((el) => el.open))) await summary.click();
+  }
+}
+
 test("search, genre, reset and empty state work together", async ({ page }) => {
   await page.goto("/");
+  await openFilters(page);
   const initial = await page
     .locator("#events-grid .event-card:visible")
     .count();
@@ -56,12 +66,12 @@ test("search, genre, reset and empty state work together", async ({ page }) => {
   );
 });
 
-test("Thrice has both dates, supplied image, BSL credit and direct booking link", async ({
+test("a manually submitted listing appears as a normal card with its supplied image and access details", async ({
   page,
 }) => {
   test.skip(
     londonDate() > "2026-10-17",
-    "Thrice has finished and must no longer be promoted.",
+    "Thrice has finished and must no longer be listed.",
   );
   await page.goto(
     "/?q=Thrice&venue=tramway&from=2026-10-17&to=2026-10-17&genre=dance",
@@ -82,21 +92,55 @@ test("Thrice has both dates, supplied image, BSL credit and direct booking link"
     "href",
     "https://www.tramway.org/event/328af962-85b1-4a39-9f3a-b43900ec12d2/",
   );
-  const spotlight = page.locator("#featured-show");
-  await expect(spotlight).toContainText("Fri, 16 Oct 2026 · 7.30pm");
-  await expect(spotlight).toContainText("Sat, 17 Oct 2026 · 7.30pm");
-  await page.getByRole("link", { name: "Discover Thrice" }).click();
-  await expect(page).toHaveURL(/#featured-show$/);
+  // Nothing is promoted above the listings any more.
+  await expect(page.locator(".featured, #featured-show, .spotlight")).toHaveCount(
+    0,
+  );
 });
 
-test("expired listings and spotlight disappear from an older static build", async ({
+test("the homepage leads with listings, not a masthead", async ({ page }) => {
+  await page.goto("/");
+  await expect(page.getByRole("heading", { level: 1 })).toHaveText("What’s on.");
+  await expect(page.locator(".hero, .featured, .spotlight")).toHaveCount(0);
+  // The first card must be reachable without hunting for it.
+  const card = page.locator(".event-card").first();
+  await expect(card).toBeInViewport();
+});
+
+test("filters collapse on phones and stay open on desktop", async ({
+  page,
+}, testInfo) => {
+  await page.goto("/");
+  const panel = page.locator(".filter-controls");
+  const mobile = testInfo.project.name === "mobile";
+  expect(await panel.evaluate((el) => el.open)).toBe(!mobile);
+  // Whatever the width, the controls must be reachable.
+  await openFilters(page);
+  await expect(page.getByLabel("Search shows")).toBeVisible();
+});
+
+test("Play, Pie and a Pint shows are labelled by their season, not the building", async ({
+  page,
+}) => {
+  await page.goto("/?venue=oran-mor");
+  const cards = page.locator("#events-grid .event-card:visible");
+  await expect(cards.first()).toBeVisible();
+  const labels = await cards.locator(".card-topline > a").allTextContents();
+  expect(labels.length).toBeGreaterThan(0);
+  expect([...new Set(labels)]).toEqual(["A Play, A Pie and A Pint"]);
+  // The label still leads to the venue it runs in.
+  await expect(cards.first().locator(".card-topline > a")).toHaveAttribute(
+    "href",
+    "/venues/oran-mor.html",
+  );
+});
+
+test("expired listings disappear from an older static build", async ({
   page,
 }) => {
   await page.clock.install({ time: new Date("2030-01-01T12:00:00Z") });
   await page.goto("/");
   await expect(page.locator("#events-grid .event-card:visible")).toHaveCount(0);
-  await expect(page.locator(".featured:visible")).toHaveCount(0);
-  await expect(page.locator("#featured-show:visible")).toHaveCount(0);
   await expect(page.locator("[data-upcoming-count]")).toHaveText("0");
   await page.goto("/venues/tramway.html");
   await expect(page.locator(".event-card:visible")).toHaveCount(0);

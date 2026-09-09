@@ -11,6 +11,18 @@
     image.addEventListener("error", () => repairImage(image));
     if (image.complete && !image.naturalWidth) repairImage(image);
   });
+  // The filter panel is taller than a phone screen, so it starts collapsed
+  // there and the listings begin near the top. Without JS it stays open.
+  const filters = document.querySelector(".filter-controls");
+  const narrow = window.matchMedia("(max-width: 720px)");
+  if (filters) {
+    if (narrow.matches) filters.open = false;
+    // The summary is hidden on desktop, so a closed panel must never survive
+    // a resize back to a wide screen.
+    narrow.addEventListener("change", () => {
+      if (!narrow.matches) filters.open = true;
+    });
+  }
   const cards = [...document.querySelectorAll(".event-card")];
   const events = window.EVENTS || [];
   const search = document.getElementById("filter-search");

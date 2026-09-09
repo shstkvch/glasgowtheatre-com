@@ -153,36 +153,6 @@ svg {
   border: 1px solid var(--ink);
   border-radius: 4px;
 }
-.hero {
-  background: var(--lilac);
-  padding: 38px 0 44px;
-}
-.hero-grid {
-  display: grid;
-  grid-template-columns: 1.1fr 1fr;
-  gap: 60px;
-  align-items: center;
-}
-.hero-copy {
-  padding: 14px 0;
-}
-.hero-copy .eyebrow {
-  margin-bottom: 27px;
-}
-.hero h1 {
-  font-size: clamp(84px, 9.8vw, 144px);
-  line-height: 0.84;
-  letter-spacing: -0.025em;
-  color: var(--blue);
-}
-.hero h1 span {
-  color: var(--ink);
-}
-.hero-intro {
-  font-size: 19px;
-  line-height: 1.5;
-  margin: 29px 0 23px;
-}
 .btn {
   display: inline-flex;
   align-items: center;
@@ -205,14 +175,6 @@ svg {
   font-size: 22px;
   line-height: 1;
 }
-.hero-note {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 11px;
-  margin-top: 27px;
-  color: var(--muted);
-}
 .live-dot {
   width: 7px;
   height: 7px;
@@ -220,76 +182,46 @@ svg {
   border-radius: 50%;
   flex-shrink: 0;
 }
-.featured {
-  background: var(--ink);
-  min-width: 0;
+.listings-section {
+  padding: 40px 0 72px;
 }
-.feature-image {
-  position: relative;
-  display: block;
-  aspect-ratio: 600/740;
-  overflow: hidden;
-  background: #020504;
+/* Homepage masthead replacement: the listings introduce themselves, briefly. */
+.listings-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 14px 32px;
+  padding-bottom: 20px;
+  margin-bottom: 26px;
+  border-bottom: 2px solid var(--ink);
 }
-.feature-image > img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center bottom;
+.listings-title .eyebrow {
+  margin-bottom: 8px;
 }
-.feature-title {
-  position: absolute;
-  top: 27px;
-  left: 30px;
-  right: 24px;
-  color: var(--paper);
+.listings-header h1 {
+  font-size: clamp(52px, 7vw, 86px);
+  line-height: 0.9;
+  letter-spacing: -0.025em;
+  color: var(--blue);
+  margin: 0;
 }
-.feature-title .eyebrow {
-  font-size: 9px;
-  letter-spacing: 0.12em;
-}
-.feature-title h2 {
-  font-size: clamp(70px, 7.1vw, 104px);
-  margin-top: 9px;
-  letter-spacing: 0.015em;
-}
-.feature-credit {
-  position: absolute;
-  bottom: 10px;
-  right: 12px;
-  font-size: 8px;
-  color: var(--paper);
-  background: #20202ca8;
-  padding: 3px 5px;
-}
-.feature-strip {
+.listings-count {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 15px 23px;
-  background: var(--blue);
-  color: var(--paper);
-  font-size: 15px;
-  font-weight: 700;
-  letter-spacing: 0.02em;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 6px;
+  font-size: 13px;
+  color: var(--muted);
 }
-.feature-strip > span > span {
-  display: block;
-  font-weight: 400;
-  font-size: 11px;
-  letter-spacing: 0;
-  margin-top: 2px;
+.listings-count strong {
+  color: var(--ink);
 }
-.feature-strip > a {
-  font-size: 31px;
-  width: 44px;
-  text-align: right;
-}
-.feature-image:hover img {
-  opacity: 0.93;
-}
-.listings-section {
-  padding: 65px 0 72px;
+.listings-count .text-button {
+  margin-left: 10px;
+  padding-left: 14px;
+  border-left: 1px solid var(--line);
 }
 .section-heading {
   display: flex;
@@ -323,6 +255,31 @@ svg {
   padding: 23px;
   background: var(--lilac);
   border-radius: 5px;
+}
+/* The filters open as a panel on desktop and collapse to a row on phones,
+   where they would otherwise fill the screen ahead of the listings. */
+.filter-summary {
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  list-style: none;
+}
+.filter-summary::-webkit-details-marker {
+  display: none;
+}
+.filter-summary span {
+  font-size: 15px;
+  transition: transform 0.15s ease;
+}
+.filter-controls[open] .filter-summary {
+  margin-bottom: 18px;
+}
+.filter-controls[open] .filter-summary span {
+  transform: rotate(180deg);
 }
 .filter-row {
   display: grid;
@@ -522,44 +479,6 @@ svg {
   max-width: 520px;
   color: var(--muted);
 }
-.spotlight {
-  background: var(--lilac);
-  padding: 56px 0;
-  scroll-margin-top: 24px;
-}
-.spotlight-inner {
-  display: grid;
-  grid-template-columns: 1fr 1.7fr;
-  gap: 65px;
-}
-.spotlight h2 {
-  font-size: 100px;
-  color: var(--blue);
-  margin: 14px 0 10px;
-}
-.spotlight-byline {
-  font-size: 13px;
-}
-.spotlight-description {
-  font-size: 20px;
-  line-height: 1.65;
-  max-width: 700px;
-}
-.performances {
-  display: flex;
-  gap: 30px;
-  margin: 26px 0 23px;
-  font-size: 12px;
-}
-.performances .accessibility {
-  display: block;
-  margin: 7px 0 0;
-  background: var(--peach);
-}
-.spotlight-tags {
-  font-size: 11px;
-  margin-left: 20px;
-}
 .listing-invite {
   padding: 65px 0;
 }
@@ -721,48 +640,9 @@ svg {
 .image-unavailable .date-stamp {
   z-index: 2;
 }
-@media (min-width: 1450px) {
-  .feature-image {
-    max-height: 645px;
-    aspect-ratio: auto;
-  }
-  .feature-image > img {
-    height: 645px;
-    object-fit: contain;
-  }
-  .hero-grid {
-    gap: 95px;
-    grid-template-columns: 1.1fr 1fr;
-  }
-}
 @media (max-width: 1050px) {
   .container {
     width: calc(100% - 56px);
-  }
-  .hero-grid {
-    gap: 30px;
-  }
-  .hero h1 {
-    font-size: 100px;
-  }
-  .hero-copy .eyebrow {
-    max-width: 230px;
-  }
-  .hero-intro {
-    font-size: 17px;
-  }
-  .feature-title {
-    left: 20px;
-    top: 20px;
-  }
-  .feature-title h2 {
-    font-size: 70px;
-  }
-  .feature-title .eyebrow {
-    font-size: 8px;
-  }
-  .feature-image {
-    aspect-ratio: 600/850;
   }
   .filter-row {
     grid-template-columns: 1.5fr 1.2fr 1fr 1fr;
@@ -780,13 +660,6 @@ svg {
   }
   .prose {
     margin-left: 28px;
-  }
-  .spotlight-inner {
-    gap: 35px;
-  }
-  .performances {
-    flex-direction: column;
-    gap: 12px;
   }
   .venues-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -819,52 +692,31 @@ svg {
   .site-header nav a:last-child {
     padding: 5px 8px;
   }
-  .hero {
-    padding: 27px 0 30px;
-  }
-  .hero-grid {
-    grid-template-columns: 1fr;
-    gap: 30px;
-  }
-  .hero-copy .eyebrow {
-    max-width: none;
-    font-size: 9px;
-    margin-bottom: 23px;
-  }
-  .hero h1 {
-    font-size: clamp(96px, 22vw, 148px);
-    line-height: 0.86;
-  }
-  .hero-intro {
-    font-size: 18px;
-    margin: 22px 0;
-  }
-  .hero-note {
-    margin-top: 20px;
-  }
-  .featured {
-    width: 100%;
-    max-width: 500px;
-    margin: 0 auto;
-  }
-  .feature-image {
-    aspect-ratio: 600/700;
-  }
-  .feature-title {
-    top: 24px;
-    left: 24px;
-  }
-  .feature-title .eyebrow {
-    font-size: 9px;
-  }
-  .feature-title h2 {
-    font-size: 88px;
-  }
-  .feature-strip {
-    padding: 14px 20px;
-  }
   .listings-section {
-    padding: 40px 0;
+    padding: 28px 0 40px;
+  }
+  .listings-header {
+    align-items: flex-start;
+    gap: 10px;
+    padding-bottom: 16px;
+    margin-bottom: 20px;
+  }
+  .listings-count {
+    font-size: 12px;
+    margin-bottom: 0;
+  }
+  .listings-count .text-button {
+    margin-left: 0;
+    padding-left: 0;
+    border-left: 0;
+    flex-basis: 100%;
+    text-align: left;
+  }
+  .filter-controls {
+    padding: 16px 18px;
+  }
+  .filter-summary {
+    display: flex;
   }
   .section-heading {
     align-items: flex-start;
@@ -929,23 +781,6 @@ svg {
   .ticket-link {
     padding-left: 0;
   }
-  .spotlight {
-    padding: 38px 0;
-  }
-  .spotlight-inner {
-    grid-template-columns: 1fr;
-    gap: 25px;
-  }
-  .spotlight h2 {
-    font-size: 78px;
-  }
-  .spotlight-description {
-    font-size: 17px;
-  }
-  .spotlight-tags {
-    display: block;
-    margin: 17px 0 0;
-  }
   .listing-invite {
     padding: 42px 0;
   }
@@ -991,9 +826,6 @@ svg {
   .submit-box > a:last-child {
     font-size: 14px;
     overflow-wrap: anywhere;
-  }
-  .performances {
-    margin-top: 20px;
   }
   .venue-listings .section-heading h2 {
     font-size: 43px;
@@ -1042,18 +874,6 @@ svg {
   .site-header nav a {
     font-size: 10px;
   }
-  .hero-copy .eyebrow {
-    font-size: 8px;
-  }
-  .feature-title h2 {
-    font-size: 78px;
-  }
-  .feature-title .eyebrow {
-    font-size: 8px;
-  }
-  .spotlight .btn {
-    gap: 20px;
-  }
   .image-fallback strong {
     font-size: 44px;
   }
@@ -1068,14 +888,6 @@ svg {
   }
 }
 @media print {
-  .site-header,
-  .filter-controls,
-  .site-footer,
-  .listing-invite,
-  .hero,
-  .results-bar {
-    display: none;
-  }
   body {
     background: white;
     color: black;
@@ -1096,7 +908,4 @@ svg {
     display: block;
     overflow: visible;
   }
-}
-.hero-grid:not(:has(.featured:not([hidden]))) {
-  grid-template-columns: 1fr;
 }

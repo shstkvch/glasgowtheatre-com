@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+  Daily listings refresh and publish.
+
+  Install:
+    cp scripts/com.glasgowtheatre.publish.plist ~/Library/LaunchAgents/
+    launchctl load ~/Library/LaunchAgents/com.glasgowtheatre.publish.plist
+
+  Edit WorkingDirectory below if the repository moves.
+-->
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.glasgowtheatre.publish</string>
+
+  <key>ProgramArguments</key>
+  <array>
+    <string>/bin/bash</string>
+    <string>-lc</string>
+    <string>./scripts/publish.sh --log</string>
+  </array>
+
+  <key>WorkingDirectory</key>
+  <string>/Users/david/Documents/code/glasgowtheatre/site</string>
+
+  <key>StartCalendarInterval</key>
+  <dict>
+    <key>Hour</key>
+    <integer>5</integer>
+    <key>Minute</key>
+    <integer>17</integer>
+  </dict>
+
+  <!-- If the machine was asleep at 05:17, run once it wakes. -->
+  <key>RunAtLoad</key>
+  <false/>
+
+  <key>StandardOutPath</key>
+  <string>/Users/david/Documents/code/glasgowtheatre/site/logs/launchd.out.log</string>
+  <key>StandardErrorPath</key>
+  <string>/Users/david/Documents/code/glasgowtheatre/site/logs/launchd.err.log</string>
+</dict>
+</plist>

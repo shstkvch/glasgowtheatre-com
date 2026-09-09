@@ -22,11 +22,13 @@
     "title": "Transparent",
     "venue": "Òran Mór",
     "venueId": "oran-mor",
+    "season": "A Play, A Pie and A Pint",
     "date": "2026-09-07",
     "time": "13:00",
     "endDate": "2026-09-12",
     "type": "new-writing",
     "tags": [
+      "drama",
       "new-writing",
       "lunchtime",
       "a-play-a-pie-a-pint"
@@ -46,7 +48,7 @@
     "endDate": null,
     "type": "community",
     "tags": [
-      "community"
+      "workshop"
     ],
     "description": "Our Community Ensemble is for anyone interested in practically exploring the themes, content and creation of the shows which make up the Tron Theatre programme. Each term is fun and varied! Our activities this year has included attending a range of shows at the Tron, exploring the text from plays …...",
     "ticketUrl": "https://www.tron.co.uk/shows/community-ensemble-18-recruitment-workshop-3/",
@@ -63,6 +65,7 @@
     "endDate": null,
     "type": "professional",
     "tags": [
+      "spoken-word",
       "music"
     ],
     "description": "This unique event will weave together Gaelic voices of the past and the words of our greatest living poets, presented through live performance, music, and visual projection. Welcoming Gaelic speakers and non-Gaelic speakers alike, all poems read will be accompanied by on-screen english translations.",
@@ -80,7 +83,7 @@
     "endDate": null,
     "type": "new-writing",
     "tags": [
-      "scottish"
+      "cabaret"
     ],
     "description": "The Acid Cabaret returns this September, bringing another genre‑bending night of Glasgow’s most imaginative performers. Glasgow’s premiere utopian variety night descends on The Glad Cafe on 12 September with lyrical indie‑pop from Tom Coward, Indian‑Scottish fusion from Alexandra Shrinivas, and...",
     "ticketUrl": "https://www.thegladcafe.co.uk/events/2026-09-12-acid-cabaret-the-glad-cafe",
@@ -97,7 +100,7 @@
     "endDate": null,
     "type": "professional",
     "tags": [
-      "scottish"
+      "talk"
     ],
     "description": "Playwright John Binnie and original cast members of his 1987 play Killing Me Softly explore the ways in which Scottish theatre responded at the height of the AIDS crisis. Between performed extracts of the play, the discussion will reflect candidly on the experience of performing the work in...",
     "ticketUrl": "https://www.tramway.org/event/28f66f18-b079-4402-83dc-b4ad00ca9619/",
@@ -109,11 +112,13 @@
     "title": "Feel_Good",
     "venue": "Òran Mór",
     "venueId": "oran-mor",
+    "season": "A Play, A Pie and A Pint",
     "date": "2026-09-14",
     "time": "13:00",
     "endDate": "2026-09-19",
     "type": "new-writing",
     "tags": [
+      "drama",
       "new-writing",
       "lunchtime",
       "a-play-a-pie-a-pint"
@@ -133,7 +138,8 @@
     "endDate": "2026-09-19",
     "type": "professional",
     "tags": [
-      "music"
+      "musical",
+      "new-writing"
     ],
     "description": "The Singer is a bold, new, thrilling piece of gig-theatre about Joe, a deaf artist who “sings” with his hands, and Andy, a washed-up musician hungry for a comeback. Joe experiences music viscerally and physically, feeling rhythm through his body and crafting lyrics that pulse with life and...",
     "ticketUrl": "https://citz.co.uk/whats-on/the-singer/",
@@ -150,8 +156,8 @@
     "endDate": null,
     "type": "professional",
     "tags": [
-      "scottish",
-      "music"
+      "music",
+      "spoken-word"
     ],
     "description": "Unforeseen: Improvising Life and Music draws on memories, field recordings, and conversations with Polish, Ukrainian, and Roma migrants living in Scotland.",
     "ticketUrl": "https://www.thegladcafe.co.uk/events/2026-09-17-justyna-jablonska-unforeseen-improvising-life-and-music-the-glad-cafe",
@@ -186,7 +192,7 @@
     "endDate": null,
     "type": "professional",
     "tags": [
-      "scottish"
+      "tour"
     ],
     "description": "The Tron Theatre is delighted to be a part of this year’s Glasgow Doors Open Days Festival. With a theme of Glasgow Goes Out: The Places That Made Us, it seems only appropriate that we throw our stage doors open to the public. We will be offering short tours of … Continued",
     "ticketUrl": "https://www.tron.co.uk/shows/glasgow-doors-open-days-festival-tours/",
@@ -198,11 +204,13 @@
     "title": "The Whaler’s Wife",
     "venue": "Òran Mór",
     "venueId": "oran-mor",
+    "season": "A Play, A Pie and A Pint",
     "date": "2026-09-21",
     "time": "13:00",
     "endDate": "2026-09-26",
     "type": "new-writing",
     "tags": [
+      "drama",
       "new-writing",
       "lunchtime",
       "a-play-a-pie-a-pint"
@@ -222,7 +230,8 @@
     "endDate": null,
     "type": "professional",
     "tags": [
-      "scottish"
+      "spoken-word",
+      "new-writing"
     ],
     "description": "Welcome to Queer Folks’ Tales, Scotland’s hugely popular, multi-award-winning and five-star-rated LGBTQ+ storytelling show. Queer Folks’ Tales tells the stories of LGBTQ+ lives past, present and future and is delighted to continue its 5th year of shows across Scotland by coming to the Citizens...",
     "ticketUrl": "https://citz.co.uk/whats-on/queer-folks-tales-sep-26/",
@@ -230,41 +239,45 @@
     "checkedAt": "2026-09-09"
   },
   {
-    "id": "oran-mor-a-slice-of-the-pie",
-    "title": "A Slice of The Pie",
-    "venue": "Òran Mór",
-    "venueId": "oran-mor",
-    "date": "2026-09-28",
-    "time": null,
-    "endDate": null,
-    "type": "new-writing",
-    "tags": [
-      "new-writing",
-      "scratch",
-      "a-play-a-pie-a-pint"
-    ],
-    "description": "A Slice of The Pie is A Play, A Pie and A Pint’s very own scratch night, hosted by our artistic team as part of our work to platform and champion exciting new artists in Scotland. The night consists of ‘slices’ of new work from incredible writers, directors and performers who we have never worked …...",
-    "ticketUrl": "https://playpiepint.com/whats-on/event/a-slice-of-the-pie-2/",
-    "image": "https://playpiepint.com/app/uploads/2026/05/A-Slice-of-the-Pie-.png",
-    "checkedAt": "2026-09-09"
-  },
-  {
     "id": "oran-mor-whaur-s-yer-wullie-shakespeare-noo",
     "title": "Whaur’s Yer Wullie Shakespeare Noo?",
     "venue": "Òran Mór",
     "venueId": "oran-mor",
+    "season": "A Play, A Pie and A Pint",
     "date": "2026-09-28",
     "time": "13:00",
     "endDate": "2026-10-03",
     "type": "new-writing",
     "tags": [
-      "new-writing",
+      "drama",
+      "classic",
       "lunchtime",
       "a-play-a-pie-a-pint"
     ],
     "description": "1756. The Scottish Enlightenment. Despite severe restrictions on all theatre, the minister John Home staged his play Douglas to much outrage within the Church of Scotland. What followed was a church stramash and a fierce debate amongst leading clergymen and philosophers. Was this Scotland’s answer...",
     "ticketUrl": "https://playpiepint.com/whats-on/event/whaurs-yer-wullie-shakespeare-noo/",
     "image": "https://playpiepint.com/app/uploads/2026/07/WYWSN.png",
+    "checkedAt": "2026-09-09"
+  },
+  {
+    "id": "oran-mor-a-slice-of-the-pie",
+    "title": "A Slice of The Pie",
+    "venue": "Òran Mór",
+    "venueId": "oran-mor",
+    "season": "A Play, A Pie and A Pint",
+    "date": "2026-09-28",
+    "time": null,
+    "endDate": null,
+    "type": "new-writing",
+    "tags": [
+      "new-writing",
+      "drama",
+      "scratch",
+      "a-play-a-pie-a-pint"
+    ],
+    "description": "A Slice of The Pie is A Play, A Pie and A Pint’s very own scratch night, hosted by our artistic team as part of our work to platform and champion exciting new artists in Scotland. The night consists of ‘slices’ of new work from incredible writers, directors and performers who we have never worked …...",
+    "ticketUrl": "https://playpiepint.com/whats-on/event/a-slice-of-the-pie-2/",
+    "image": "https://playpiepint.com/app/uploads/2026/05/A-Slice-of-the-Pie-.png",
     "checkedAt": "2026-09-09"
   },
   {
@@ -277,7 +290,8 @@
     "endDate": "2026-10-03",
     "type": "professional",
     "tags": [
-      "drama"
+      "drama",
+      "classic"
     ],
     "description": "Experience the original, critically acclaimed production of Tristan & Yseult – one of the most influential theatre productions of the 21st century. Adapted and directed by Emma Rice, this iconic show returns to the UK for the first time in ten years, offering a rare chance to encounter a modern...",
     "ticketUrl": "https://citz.co.uk/whats-on/tristan-yseult/",
@@ -294,6 +308,7 @@
     "endDate": "2026-10-03",
     "type": "professional",
     "tags": [
+      "drama",
       "music"
     ],
     "description": "A poignant and uplifting celebration of the power of sad music Bea is stunned by the revelation of her husband’s infidelity; she feels heartbroken and alone. If only she knew that her neighbours, Sonia, Van and Ian, were each also trying to get over the pain in their hearts, unable to articulate...",
@@ -306,12 +321,13 @@
     "title": "Contact",
     "venue": "Òran Mór",
     "venueId": "oran-mor",
+    "season": "A Play, A Pie and A Pint",
     "date": "2026-10-05",
     "time": "13:00",
     "endDate": "2026-10-10",
     "type": "new-writing",
     "tags": [
-      "new-writing",
+      "drama",
       "lunchtime",
       "a-play-a-pie-a-pint"
     ],
@@ -330,7 +346,8 @@
     "endDate": "2026-10-17",
     "type": "professional",
     "tags": [
-      "drama"
+      "drama",
+      "classic"
     ],
     "description": "Family can hold you together and tear you apart. Salford, 1971. The Khan family are living above a chip shop and on the fault line between two cultures. George Khan is determined the family is raised his Pakistani way. His English wife, Ella, just wants to keep the peace. Their seven children...",
     "ticketUrl": "https://citz.co.uk/whats-on/east-is-east/",
@@ -347,6 +364,8 @@
     "endDate": null,
     "type": "scratch",
     "tags": [
+      "new-writing",
+      "drama",
       "scratch"
     ],
     "description": "An evening of fresh ideas and exciting new work from artists of South Asian heritage. This showcase brings together four artists presenting 10–15 minute pieces of work in development. With no restrictions on genre or theme, the evening celebrates artistic exploration and creates a space for artists...",
@@ -359,12 +378,15 @@
     "title": "Bottom's Dream",
     "venue": "Òran Mór",
     "venueId": "oran-mor",
+    "season": "A Play, A Pie and A Pint",
     "date": "2026-10-12",
     "time": "13:00",
     "endDate": "2026-10-17",
     "type": "new-writing",
     "tags": [
+      "spoken-word",
       "new-writing",
+      "classic",
       "lunchtime",
       "a-play-a-pie-a-pint"
     ],
@@ -383,7 +405,8 @@
     "endDate": "2026-10-17",
     "type": "professional",
     "tags": [
-      "dance"
+      "dance",
+      "new-writing"
     ],
     "description": "There’s a van on your street. It says IMMIGRATION ENFORCEMENT on the side. It’s here for your neighbours. What do you do? Fusing documentary with celebratory dance theatre, These Are Our Neighbours revisits the attempted raid on Kenmure Street in 2021 that became an eight-hour act of shared...",
     "ticketUrl": "https://citz.co.uk/whats-on/these-are-our-neighbours/",
@@ -400,7 +423,8 @@
     "endDate": "2026-10-17",
     "type": "professional",
     "tags": [
-      "drama"
+      "drama",
+      "comedy"
     ],
     "description": "Recommended Age Guide 14+ Unsettling, darkly comic and full of surprises, the stage is set… for terror. When an out-of-work actor takes a job playing a ghost at an old countryside manor, he expects nothing more than a few cheap scares. But as night after night unfolds, the role begins … Continued",
     "ticketUrl": "https://www.tron.co.uk/shows/it-walks-around-the-house-at-night/",
@@ -417,7 +441,8 @@
     "endDate": "2026-10-17",
     "type": "professional",
     "tags": [
-      "drama"
+      "drama",
+      "classic"
     ],
     "description": "The world at the conclusion of Macbeth is one steeped in fear; where the distinction between truth and delusion has buckled; where tyranny and violence thrive. This is where Thrice begins.",
     "ticketUrl": "https://www.tramway.org/event/328af962-85b1-4a39-9f3a-b43900ec12d2/",
@@ -446,11 +471,13 @@
     "title": "Lune",
     "venue": "Òran Mór",
     "venueId": "oran-mor",
+    "season": "A Play, A Pie and A Pint",
     "date": "2026-10-19",
     "time": "13:00",
     "endDate": "2026-10-24",
     "type": "new-writing",
     "tags": [
+      "drama",
       "new-writing",
       "lunchtime",
       "a-play-a-pie-a-pint"
@@ -470,7 +497,8 @@
     "endDate": "2026-10-24",
     "type": "professional",
     "tags": [
-      "drama"
+      "drama",
+      "classic"
     ],
     "description": "‘Give me a girl at an impressionable age, and she is mine for life’ At the Marcia Blaine School for Girls, junior-school teacher Miss Jean Brodie is famously in her prime. Each year, Brodie selects her ‘set’. The crème de la crème of girls whom she will shape through art and politics, stories of...",
     "ticketUrl": "https://citz.co.uk/whats-on/the-prime-of-miss-jean-brodie/",
@@ -487,6 +515,7 @@
     "endDate": "2026-10-23",
     "type": "professional",
     "tags": [
+      "experimental",
       "drama"
     ],
     "description": "Recommended Age Guide 14+ In Thanks for Being Here, your presence is crucial. Ontroerend Goed, internationally renowned for their ground-breaking theatre, celebrates theatre’s most essential element: the audience. In this witty and ingenious play of video and viewpoints, they blur the boundaries...",
@@ -504,7 +533,8 @@
     "endDate": null,
     "type": "professional",
     "tags": [
-      "dance"
+      "dance",
+      "physical-theatre"
     ],
     "description": "This is the dressing room of every show Kally and Steinvör have ever been in – past, present and future. A 60+ coming-of-age story, Revel is a dance-theatre piece that combines physical theatre, dance, dialogue and music. We move between the real relationship in the dressing room as they get ready...",
     "ticketUrl": "https://citz.co.uk/whats-on/revel/",
@@ -521,7 +551,7 @@
     "endDate": null,
     "type": "professional",
     "tags": [
-      "scottish"
+      "talk"
     ],
     "description": "Recommended Age Guide 14+ In Tronversation With… is a series of events the Tron host over the year that invites creative and cultural legends from Glasgow and beyond to come and talk to our audiences about their careers and their connections with the Tron. As we celebrate the Tron Panto’s …...",
     "ticketUrl": "https://www.tron.co.uk/shows/in-tronversation-with-johnny-mcknight/",
@@ -533,11 +563,13 @@
     "title": "Badhbh-Shith and The Storytellers",
     "venue": "Òran Mór",
     "venueId": "oran-mor",
+    "season": "A Play, A Pie and A Pint",
     "date": "2026-10-26",
     "time": "13:00",
     "endDate": "2026-10-31",
     "type": "new-writing",
     "tags": [
+      "drama",
       "new-writing",
       "lunchtime",
       "a-play-a-pie-a-pint"
@@ -575,7 +607,7 @@
     "endDate": null,
     "type": "professional",
     "tags": [
-      "drama"
+      "talk"
     ],
     "description": "Step into a world of theatrical magic at the Citizens Theatre with Jamie Harrison, director, designer and illusion designer at Vox Motus. In this special talk Harrison explores the fascinating history of spectacular stage effects, illusion and daring scenic innovation. Harrison created the magic...",
     "ticketUrl": "https://citz.co.uk/whats-on/talking-heritage-the-forgotten-story-of-spectacular-theatre-with-jamie-harrison/",
@@ -593,8 +625,7 @@
     "type": "scratch",
     "tags": [
       "new-writing",
-      "scottish",
-      "music"
+      "drama"
     ],
     "description": "I’ll Scratch Yours is an evening of deliciously fresh new writing & performance. Your favorite sold out scratch night is back… and this time it’s extra tasty. I’ll Scratch Yours presents a night of 6 short scratch performances from Scotland’s most exciting artists. From theatre to music...",
     "ticketUrl": "https://citz.co.uk/whats-on/ill-scratch-yours/",
@@ -611,7 +642,8 @@
     "endDate": "2026-10-31",
     "type": "professional",
     "tags": [
-      "drama"
+      "experimental",
+      "physical-theatre"
     ],
     "description": "Two performers and their uncanny video doubles spiral through a strange, looping morning, in a mind-bending performance exploring how we live, slip and stall in time.",
     "ticketUrl": "https://www.tramway.org/event/b3780c07-1d30-4fde-b247-b42b00a44124/",
@@ -628,7 +660,8 @@
     "endDate": null,
     "type": "professional",
     "tags": [
-      "scottish"
+      "spoken-word",
+      "new-writing"
     ],
     "description": "Welcome to Queer Folks’ Tales, Scotland’s hugely popular, multi-award-winning and five-star-rated LGBTQ+ storytelling show. Queer Folks’ Tales tells the stories of LGBTQ+ lives past, present and future and is delighted to continue its 5th year of shows across Scotland by coming to the Citizens...",
     "ticketUrl": "https://citz.co.uk/whats-on/queer-folks-tales-oct-26/",
@@ -640,12 +673,13 @@
     "title": "Zamboni",
     "venue": "Òran Mór",
     "venueId": "oran-mor",
+    "season": "A Play, A Pie and A Pint",
     "date": "2026-11-02",
     "time": "13:00",
     "endDate": "2026-11-07",
     "type": "new-writing",
     "tags": [
-      "new-writing",
+      "drama",
       "lunchtime",
       "a-play-a-pie-a-pint"
     ],
@@ -676,12 +710,13 @@
     "title": "Making Way",
     "venue": "Òran Mór",
     "venueId": "oran-mor",
+    "season": "A Play, A Pie and A Pint",
     "date": "2026-11-09",
     "time": "13:00",
     "endDate": "2026-11-14",
     "type": "new-writing",
     "tags": [
-      "new-writing",
+      "drama",
       "lunchtime",
       "a-play-a-pie-a-pint"
     ],
@@ -695,12 +730,14 @@
     "title": "Dead Husbands Club",
     "venue": "Òran Mór",
     "venueId": "oran-mor",
+    "season": "A Play, A Pie and A Pint",
     "date": "2026-11-16",
     "time": "13:00",
     "endDate": "2026-11-21",
     "type": "new-writing",
     "tags": [
-      "new-writing",
+      "drama",
+      "comedy",
       "lunchtime",
       "a-play-a-pie-a-pint"
     ],
@@ -719,7 +756,8 @@
     "endDate": "2026-12-31",
     "type": "community",
     "tags": [
-      "community"
+      "family",
+      "comedy"
     ],
     "description": "Recommended age 7+ CELEBRATING 40 YEARS OF THE TRON PANTOShe’s no’ just frozen… she’s baltic! Christmas is running like a dream down in Santa’s (aka Kristine Cagney Kringle’s) workshop. All nice and naughty lists have been checked off. Nothing can go wrong. Until a broken magic mirror unleashes...",
     "ticketUrl": "https://www.tron.co.uk/shows/the-snaw-queen/",
@@ -736,7 +774,8 @@
     "endDate": "2026-12-31",
     "type": "professional",
     "tags": [
-      "drama"
+      "family",
+      "comedy"
     ],
     "description": "You’re invited to celebrate Christmas at the Citz! Join us for a fun twist on the much-loved fairytale. It’s nearly time for the Prince’s ball, but poor Cinderella is working her fingers to the bone in the cold and dark kitchens thanks to her cruel and greedy step-sisters’ nasty tricks. Luckily...",
     "ticketUrl": "https://citz.co.uk/whats-on/cinderella/",
@@ -753,7 +792,8 @@
     "endDate": "2026-12-11",
     "type": "professional",
     "tags": [
-      "dance"
+      "dance",
+      "family"
     ],
     "description": "This sensory, inclusive dance-theatre performance is made especially for and with children with complex needs ages 7-15 years. Playfulness within the work creates space for live response between the audience and performers, with its adaptable approach allowing the individuality of each child to be...",
     "ticketUrl": "https://citz.co.uk/whats-on/poggle-and-me/",
@@ -770,7 +810,8 @@
     "endDate": "2027-02-06",
     "type": "professional",
     "tags": [
-      "drama"
+      "physical-theatre",
+      "new-writing"
     ],
     "description": "The end is nigh, and the saucers are coming. Step into a world of apocalyptic visions, clandestine observers and the faithful disciples of a suburban housewife. Award-winning ensemble Groupwork present When Prophecy Fails, a daring new work of physical theatre. Inspired by a 1954 study that...",
     "ticketUrl": "https://www.tron.co.uk/shows/when-prophecy-fails/",
@@ -787,7 +828,8 @@
     "endDate": "2027-03-06",
     "type": "professional",
     "tags": [
-      "drama"
+      "drama",
+      "classic"
     ],
     "description": "‘Once upon a time, there were twa queens on the wan green island, and the wan green island was split inty twa kingdoms. But no equal kingdoms . . .’ Celebrating the richly poetic Scots language, Liz Lochhead’s mighty text explores the deadly rivalry between two of history’s most fascinating women...",
     "ticketUrl": "https://citz.co.uk/whats-on/mary-queen-of-scots-got-her-head-chopped-off/",

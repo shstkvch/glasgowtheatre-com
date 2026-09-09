@@ -8,6 +8,7 @@ Requires Node 22+, npm and Python 3 for the local preview server.
 
 ```sh
 npm ci
+cp .env.example .env   # then add your OpenRouter key
 npm run refresh
 npm run build
 npm test
@@ -19,11 +20,27 @@ Local browser tests use installed Google Chrome. CI installs Playwright Chromium
 
 ## Add or correct a listing
 
-Edit `data/manual-events.json`. These entries override scraped listings with the same booking URL, so refreshes preserve submitted copy, access details and images. Thrice is a complete example with separate performances and a photo credit.
+Listings that arrive by email are added by hand to `data/manual-events.json`. There is no database: the file is the record, and it is version controlled with everything else.
 
-Include a stable `id`, `title`, `venue`, `venueId` matching `data/venues.json`, ISO `date` and optional `endDate`, `tags`, `description`, and HTTPS `ticketUrl`. Only enter `time` when confirmed by the venue. Add `performances` and `accessibility` for performance-specific access arrangements. Put supplied images in `src/images` and use `/images/filename.webp`.
+An entry overrides any scraped listing with the same booking URL, so a refresh never overwrites copy, access details or images that someone sent in. An entry for a show no venue feed carries simply appears on its own.
 
-Set `featured: true` on one manual entry with `producer`, `performances`, `imageAlt` and `imageCredit` to use it as the homepage spotlight. The feature automatically disappears after its final day.
+Required fields are `id`, `title`, `venue`, `venueId` (matching `data/venues.json`), ISO `date` and an HTTPS `ticketUrl`. Optional: `endDate`, `time` (24-hour `HH:MM`, only when the venue has confirmed it), `tags`, `description`, `producer`, `accessibility` and `performances`. Put supplied images in `src/images` and reference them as `/images/filename.webp`, with `imageAlt` and `imageCredit`.
+
+`npm run build` validates the file and fails with a list of problems rather than publishing a broken card. Thrice is a complete worked example.
+
+Tags on manual entries are kept as written. The tagger only touches scraped listings, so a hand-picked tag is never overwritten.
+
+## Tagging
+
+`scripts/tag-events.js` assigns genre tags with a cheap LLM through OpenRouter, replacing keyword matching that used to tag any listing containing the word "improv" as comedy. Tags come from a fixed vocabulary in the script, so the filter pills stay a stable set and the model cannot invent one.
+
+Results are cached in `data/tag-cache.json`, keyed by a hash of the text the model sees. Each listing is sent once: a daily refresh costs nothing for shows already tagged, and re-running is free. Editing a description re-tags that listing on the next run. Tagging 48 listings from scratch costs about \$0.001.
+
+`talk`, `workshop` and `tour` mark events that are not performances to watch, and are exclusive: a discussion about a play is a talk, not a talk and a drama. `a-play-a-pie-a-pint`, `lunchtime` and `scratch` come from the source rather than the text, and the tagger preserves them.
+
+Set `OPENROUTER_API_KEY` in `.env` (see `.env.example`), or `OPENROUTER_MODEL` to use a different model. Without a key, or if the API fails, tagging falls back to keyword matching and exits successfully — it never breaks a build. Run `npm run tag -- --dry-run` to preview changes, or `--retag` to ignore the cache.
+
+Òran Mór's lunchtime season carries `season: "A Play, A Pie and A Pint"`, which is what a card shows instead of the building name. The label still links to the Òran Mór venue page.
 
 ## Refreshing and images
 
@@ -40,6 +57,37 @@ The build filters expired events in Europe/London time. The browser repeats that
 If a refresh completely fails, the workflow warns and builds the last saved data, removing expired shows. The footer reports the last successful data refresh, not the latest build time. The site covers a selection of current shows; the venue directory includes additional venues without automated programme feeds.
 
 The pre-redesign site is retained at the `pre-redesign-2026-09-09` tag. `netlify.toml` is no longer used.
+
+## Daily updates without GitHub Actions
+
+GitHub Actions cannot run while the account is billing-locked, but Pages still **serves** the `gh-pages` branch, so only the daily compute needs a new home.
+
+`scripts/publish.sh` is that job in one place, independent of any CI: it syncs `main`, refreshes listings, tags them, caches images, runs both test suites, builds, commits the refreshed data, and pushes `dist` to `gh-pages`. It refuses to run on a dirty tree or a branch other than `main`, and skips the push when nothing changed. A failed refresh is survivable: it publishes the last saved listings with expired shows removed.
+
+```sh
+./scripts/publish.sh --dry-run   # everything except the push
+./scripts/publish.sh             # the real thing
+./scripts/publish.sh --log       # append to logs/publish-YYYY-MM-DD.log
+```
+
+Anything that can run a command daily can drive it. In rough order of least disruption:
+
+| Option | Cost | Trade-off |
+| --- | --- | --- |
+| Fix the GitHub billing lock | Existing plan | Nothing to rebuild; the workflow is already written and now passes `OPENROUTER_API_KEY` |
+| `launchd` on a Mac | Free | Keeps hosting and the commit-back behaviour exactly as they are, but only runs while the machine is awake and online |
+| Cloudflare Pages or Netlify scheduled build | Free tier | Reliable and unattended, but hosting and the custom domain move off GitHub Pages, and refreshed data is no longer committed back to the repo |
+| A small always-on box (VPS, Raspberry Pi) with cron | Cheap or free | Full control, one more machine to maintain |
+
+For `launchd`, `scripts/com.glasgowtheatre.publish.plist` runs the job at 05:17 daily:
+
+```sh
+cp scripts/com.glasgowtheatre.publish.plist ~/Library/LaunchAgents/
+launchctl load ~/Library/LaunchAgents/com.glasgowtheatre.publish.plist
+launchctl start com.glasgowtheatre.publish   # run once now to check
+```
+
+It needs an SSH key that can push to the repo, and `.env` present for the tagging key. If the Mac is asleep at 05:17, launchd runs the job at the next wake.
 
 ### Publishing status, 9 September 2026
 

@@ -30,7 +30,7 @@
           (!venue || e.venueId === venue) &&
           (!tag || (e.tags || []).includes(tag)) &&
           (!search ||
-            [e.title, e.venue, e.description, ...(e.tags || [])]
+            [e.title, e.venue, e.season, e.description, ...(e.tags || [])]
               .join(" ")
               .toLocaleLowerCase()
               .includes(search)),

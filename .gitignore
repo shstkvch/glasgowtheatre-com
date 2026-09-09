@@ -4,3 +4,8 @@ test-results/
 playwright-report/
 
 .DS_Store
+
+.env
+.env.local
+shot*.tmp.js
+logs/

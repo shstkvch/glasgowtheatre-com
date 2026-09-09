@@ -31,6 +31,9 @@ jobs:
         id: refresh
         continue-on-error: true
         run: npm run refresh
+        env:
+          # Without this, tagging falls back to keywords and the build still passes.
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
       - name: Report source failure
         if: steps.refresh.outcome == 'failure'
         run: echo '::warning::Refresh failed. Publishing the last saved listings with expired shows removed. Check refresh logs.'

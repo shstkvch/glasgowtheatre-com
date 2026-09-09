@@ -5,10 +5,11 @@
   "main": "build.js",
   "scripts": {
     "build": "node build.js",
-    "refresh": "node scripts/scrape-events.js && node scripts/cache-images.js",
+    "refresh": "node scripts/scrape-events.js && node scripts/tag-events.js && node scripts/cache-images.js",
     "test": "node --test tests/*.test.js",
     "test:browser": "playwright test",
-    "preview": "python3 -m http.server 4173 --directory dist"
+    "preview": "python3 -m http.server 4173 --directory dist",
+    "tag": "node scripts/tag-events.js"
   },
   "repository": {
     "type": "git",

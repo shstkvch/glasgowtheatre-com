@@ -775,6 +775,8 @@ async function scrapePlayPiePint() {
         title: e.title,
         venue: 'Òran Mór',
         venueId: 'oran-mor',
+        // The audience knows this season by name, not by the building it runs in.
+        season: 'A Play, A Pie and A Pint',
         date: e.date,
         time: e.time || null,
         endDate: e.endDate,

@@ -13,8 +13,49 @@ const read = (name) =>
 const venues = read("venues.json");
 const images = read("image-cache.json");
 const status = read("refresh-status.json");
+/**
+ * Manual entries are hand-edited, so a typo here is a broken card in
+ * production. Fail the build loudly instead of publishing something odd.
+ */
+function checkManual(entries) {
+  const ids = new Set(venues.map((v) => v.id));
+  const problems = entries.flatMap((entry, i) => {
+    const where = entry.id || entry.title || `entry ${i + 1}`;
+    const need = ["id", "title", "venue", "venueId", "date", "ticketUrl"];
+    return [
+      ...need.filter((f) => !entry[f]).map((f) => `${where}: missing "${f}"`),
+      ...(entry.venueId && !ids.has(entry.venueId)
+        ? [`${where}: venueId "${entry.venueId}" is not in venues.json`]
+        : []),
+      ...(entry.date && !/^\d{4}-\d{2}-\d{2}$/.test(entry.date)
+        ? [`${where}: date "${entry.date}" is not YYYY-MM-DD`]
+        : []),
+      ...(entry.endDate && !/^\d{4}-\d{2}-\d{2}$/.test(entry.endDate)
+        ? [`${where}: endDate "${entry.endDate}" is not YYYY-MM-DD`]
+        : []),
+      ...(entry.endDate && entry.date && entry.endDate < entry.date
+        ? [`${where}: endDate is before date`]
+        : []),
+      ...(entry.ticketUrl && !entry.ticketUrl.startsWith("https://")
+        ? [`${where}: ticketUrl must be https`]
+        : []),
+      ...(entry.time && !/^\d{2}:\d{2}$/.test(entry.time)
+        ? [`${where}: time "${entry.time}" is not 24-hour HH:MM`]
+        : []),
+    ];
+  });
+  if (problems.length) {
+    console.error(
+      `\n✗ data/manual-events.json has ${problems.length} problem(s):`,
+    );
+    for (const problem of problems) console.error(`  - ${problem}`);
+    console.error("");
+    process.exit(1);
+  }
+  return entries;
+}
 const events = filterEvents(
-  mergeListings(read("events.json"), read("manual-events.json")),
+  mergeListings(read("events.json"), checkManual(read("manual-events.json"))),
 ).map((e) => ({
   ...e,
   image: e.image?.startsWith("/") ? e.image : images[e.image] || null,
@@ -105,19 +146,12 @@ function page(
 function card(event) {
   return `<article class="event-card" data-id="${e(event.id)}" data-date="${e(event.date)}" data-end-date="${e(event.endDate || event.date)}">
 <div class="event-card-image${event.image ? "" : " image-unavailable"}"><div class="image-fallback" aria-hidden="true"><span>ON STAGE AT</span><strong>${e(event.venue)}</strong></div>${event.image ? `<img src="${e(event.image)}" alt="${e(event.imageAlt || event.title)}" width="1100" height="688" loading="lazy">` : ""}<span class="date-stamp">${e(range(event))}</span></div>
-<div class="event-card-body"><div class="card-topline"><a href="/venues/${e(event.venueId)}.html">${e(event.venue)}</a><span>${e((event.tags || []).slice(0, 2).map(label).join(" / "))}</span></div>
+<div class="event-card-body"><div class="card-topline"><a href="/venues/${e(event.venueId)}.html">${e(event.season || event.venue)}</a><span>${e((event.tags || []).slice(0, 2).map(label).join(" / "))}</span></div>
 <h3><a href="${e(event.ticketUrl)}">${e(event.title)}</a></h3><p class="event-description">${e(event.description)}</p>
 ${event.accessibility ? `<p class="accessibility"><span aria-hidden="true">✳</span> ${e(event.accessibility)}</p>` : ""}
 <div class="event-card-footer"><span>${event.time ? e(time(event.time)) : "Times & tickets at venue"}</span><a class="ticket-link" href="${e(event.ticketUrl)}" aria-label="Tickets for ${e(event.title)}">Tickets ${arrow}</a></div></div></article>`;
 }
-const featured = events.find((event) => event.featured);
 const venueCount = new Set(events.map((event) => event.venueId)).size;
-const feature = featured
-  ? `<article class="featured" data-expires="${featured.endDate}"><a class="feature-image" href="#featured-show" aria-label="Discover ${e(featured.title)}"><img src="${featured.image}" alt="${e(featured.imageAlt)}" width="600" height="850" fetchpriority="high"><div class="feature-title"><span class="eyebrow">In the spotlight · ${e(featured.producer || featured.venue)}</span><h2>${e(featured.title.toUpperCase())}</h2></div><span class="feature-credit">Photo: ${e(featured.imageCredit)}</span></a><div class="feature-strip"><span>${e(range(featured).toUpperCase())} <span>${e(featured.venue)}${featured.time ? " · " + time(featured.time) : ""}</span></span><a href="#featured-show" aria-label="Read about ${e(featured.title)}">${arrow}</a></div></article>`
-  : "";
-const spotlight = featured
-  ? `<section class="spotlight" id="featured-show" data-expires="${featured.endDate}"><div class="container spotlight-inner"><div><span class="eyebrow">In the spotlight</span><h2>${e(featured.title)}</h2><p class="spotlight-byline">${e(featured.producer)} · ${e(featured.venue)}</p></div><div><p class="spotlight-description">${e(featured.description)}</p><div class="performances">${featured.performances.map((p) => `<p><strong>${new Date(p.date + "T12:00:00Z").toLocaleDateString("en-GB", { weekday: "short", day: "numeric", month: "short", year: "numeric", timeZone: "Europe/London" })} · ${time(p.time)}</strong>${p.accessibility ? `<span class="accessibility">${e(p.accessibility)}</span>` : ""}</p>`).join("")}</div><a class="btn" href="${featured.ticketUrl}">Book ${e(featured.title)} at ${e(featured.venue)} ${arrow}</a><span class="spotlight-tags">${featured.tags.map(label).join(" / ")}</span></div></div></section>`
-  : "";
 const tags = [...new Set(events.flatMap((event) => event.tags || []))].sort();
 write(
   "index.html",
@@ -126,17 +160,15 @@ write(
     "Find your next theatre night in Glasgow. Browse current shows, dance, new writing and experimental performance, with direct booking links.",
     "/",
     `
-<section class="hero"><div class="container hero-grid"><div class="hero-copy"><p class="eyebrow">Your independent guide to Glasgow’s stages</p><h1>MAKE A<br>NIGHT<br><span>OF IT.</span></h1><p class="hero-intro">Something that stays with you.<br>Find it on a Glasgow stage.</p><a class="btn" href="#all-events">Find your next show <span aria-hidden="true">↓</span></a><div class="hero-note"><span class="live-dot" aria-hidden="true"></span><span><strong data-upcoming-count>${events.length}</strong> shows coming up across <strong data-venue-count>${venueCount}</strong> venues</span></div></div>${feature}</div></section>
-<section class="listings-section" id="all-events"><div class="container"><div class="section-heading"><div><p class="eyebrow">The city is your stage</p><h2>What’s on.</h2></div><button class="text-button" id="this-week">Show the next 7 days <span aria-hidden="true">↘</span></button></div>
-<div class="filter-controls"><div class="filter-row"><label class="search-field">Search shows<input id="filter-search" type="search" placeholder="A show, a venue, a story…"></label><label>Venue<select id="filter-venue"><option value="">All venues</option>${venues
+<section class="listings-section" id="all-events"><div class="container"><div class="listings-header"><div class="listings-title"><p class="eyebrow">Your independent guide to Glasgow’s stages</p><h1>What’s on.</h1></div><p class="listings-count"><span class="live-dot" aria-hidden="true"></span><strong data-upcoming-count>${events.length}</strong> shows on across <strong data-venue-count>${venueCount}</strong> venues<button class="text-button" id="this-week">Just the next 7 days <span aria-hidden="true">↘</span></button></p></div>
+<details class="filter-controls" open><summary class="filter-summary">Search and filter<span aria-hidden="true">▾</span></summary><div class="filter-row"><label class="search-field">Search shows<input id="filter-search" type="search" placeholder="A show, a venue, a story…"></label><label>Venue<select id="filter-venue"><option value="">All venues</option>${venues
       .filter((v) => events.some((event) => event.venueId === v.id))
       .map((v) => `<option value="${v.id}">${e(v.name)}</option>`)
       .join(
         "",
-      )}</select></label><label>From<input id="filter-date-from" type="date"></label><label>To<input id="filter-date-to" type="date"></label></div><div class="filter-pills-group" aria-label="Filter by genre"><button class="filter-pill active" data-tag="" aria-pressed="true">All shows</button>${tags.map((tag) => `<button class="filter-pill" data-tag="${e(tag)}" aria-pressed="false">${e(label(tag))}</button>`).join("")}</div></div>
+      )}</select></label><label>From<input id="filter-date-from" type="date"></label><label>To<input id="filter-date-to" type="date"></label></div><div class="filter-pills-group" aria-label="Filter by genre"><button class="filter-pill active" data-tag="" aria-pressed="true">All shows</button>${tags.map((tag) => `<button class="filter-pill" data-tag="${e(tag)}" aria-pressed="false">${e(label(tag))}</button>`).join("")}</div></details>
 <div class="results-bar"><span id="results-count" role="status" aria-live="polite">${events.length} shows</span><button class="text-button" data-reset>Clear filters <span aria-hidden="true">×</span></button></div>
 <div class="events-grid" id="events-grid">${events.map(card).join("")}</div><div class="no-results" id="no-results" hidden><h3>A different night, perhaps?</h3><p>No shows match these filters. Try another date, venue or genre.</p><button class="btn" data-reset>Clear filters</button></div></div></section>
-${spotlight}
 <section class="listing-invite"><div class="container"><div><p class="eyebrow">For the people making it happen</p><h2>Your show.<br>Our next night out.</h2><p>Putting on theatre in Glasgow? Let the city know.</p></div><a class="btn" href="/submit.html">List your show — it’s free ${arrow}</a></div></section>`,
   ),
 );
@@ -170,7 +202,7 @@ write(
     "About this independent theatre guide",
     "An independent guide to theatre, dance and performance in Glasgow.",
     "/about.html",
-    `<section class="page-hero container"><p class="eyebrow">Independent. Local. Live.</p><h1>For a love<br>of live theatre.</h1><p>Glasgow Theatre helps you find what’s on across the city, from established stages to independent performance spaces.</p></section><section class="prose container"><h2>A place to find your next show</h2><p>Browse productions by venue, date or genre, then book directly with the venue. Listings are free, and this guide is independent of the theatres it covers.</p><h2>About the listings</h2><p>We gather listings from venue programmes and accept submissions from companies and artists. This is a selection of what’s on, rather than a complete programme for every venue. Check the booking page for the latest performance times, prices, availability and access arrangements.</p><h2>Something missing or incorrect?</h2><p><a href="/submit.html">Send us a listing</a> or email <a href="mailto:info@glasgowtheatre.com">info@glasgowtheatre.com</a> with a correction.</p></section>`,
+    `<section class="page-hero container"><p class="eyebrow">Independent. Local. Live.</p><h1>For a love<br>of live theatre.</h1><p>Glasgow Theatre helps you find what’s on across the city, from established stages to independent performance spaces.</p></section><section class="prose container"><h2>A place to find your next show</h2><p>Browse productions by venue, date or genre, then book directly with the venue. Listings are free, and this guide is independent of the theatres it covers.</p><h2>About the listings</h2><p>We gather listings from venue programmes and accept submissions from companies and artists. This is a selection of what’s on, rather than a complete programme for every venue. Check the booking page for the latest performance times, prices, availability and access arrangements.</p><h2>Something missing or incorrect?</h2><p><a href="/submit.html">Send us a listing</a> or email <a href="mailto:info@glasgowtheatre.com">info@glasgowtheatre.com</a> with a correction.</p><h2>Who runs this</h2><p>Glasgow Theatre is maintained by David Hewitson.</p></section>`,
     "about",
   ),
 );
