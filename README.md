@@ -39,4 +39,10 @@ The build filters expired events in Europe/London time. The browser repeats that
 
 If a refresh completely fails, the workflow warns and builds the last saved data, removing expired shows. The footer reports the last successful data refresh, not the latest build time. The site covers a selection of current shows; the venue directory includes additional venues without automated programme feeds.
 
-The old `gh-pages` branch is retained as a pre-redesign rollback snapshot. `netlify.toml` is no longer used.
+The pre-redesign site is retained at the `pre-redesign-2026-09-09` tag. `netlify.toml` is no longer used.
+
+### Publishing status, 9 September 2026
+
+GitHub rejected the custom Actions job before it started: “The job was not started because your account is locked due to a billing issue.” The tested build was instead pushed to `gh-pages` using the existing Pages publishing route. Pages currently uses `gh-pages` at `/`, with build type `legacy`. Daily refresh automation is configured but cannot run until the account billing lock is resolved.
+
+After resolving GitHub billing, switch Pages to **GitHub Actions** and run the **Refresh and publish theatre listings** workflow manually. This will verify the refresh and restore the scheduled publication path. The `github-pages` environment already permits `main` and `gh-pages` deployments.
