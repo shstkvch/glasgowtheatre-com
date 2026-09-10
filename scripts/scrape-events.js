@@ -21,6 +21,14 @@ const fs = require('fs');
 const path = require('path');
 
 const DATA_DIR = path.join(__dirname, '..', 'data');
+// ATG publishes almost a year ahead. Listing that far out buries what is on
+// this week, so the horizon is capped for every source alike.
+const HORIZON_MONTHS = 6;
+// Every source that should produce listings, so a silent zero can be spotted.
+const ALL_SOURCES = [
+  'citizens', 'tron', 'tramway', 'oran-mor', 'glad-cafe',
+  'kings', 'theatre-royal', 'pavilion', 'platform', 'cottiers', 'old-hairdressers',
+];
 const EVENTS_FILE = path.join(DATA_DIR, 'events.json');
 const { londonDate } = require('../src/js/listings');
 const TODAY = londonDate();
@@ -157,6 +165,14 @@ function parseDateRange(str) {
 
   if (/^\d{4}-\d{2}-\d{2}$/.test(str)) return { startDate: str, endDate: null };
 
+  // "Until Sat 19 Sep" is a run that opened before today and closes on that
+  // date. Read literally it would list a show as opening on its closing night.
+  const until = str.match(/^(?:until|to)\s+(.+)$/i);
+  if (until) {
+    const endDate = parseDate(until[1]);
+    if (endDate) return { startDate: TODAY, endDate };
+  }
+
   // Split on dash/ndash/emdash
   const parts = str.split(/\s*[–—-]\s*/);
 
@@ -224,7 +240,14 @@ function parseTime(str) {
 
 function cleanText(text) {
   if (!text) return '';
-  return text.replace(/\s+/g, ' ').trim();
+  return (
+    text
+      // Titles pulled out of an RSC payload still carry JSON escapes, so
+      // "Piff \\u0026 Pop" would otherwise reach a card exactly like that.
+      .replace(/\\u([0-9a-fA-F]{4})/g, (_, hex) => String.fromCharCode(parseInt(hex, 16)))
+      .replace(/\s+/g, ' ')
+      .trim()
+  );
 }
 
 function truncateDesc(text, max = 300) {
@@ -846,18 +869,15 @@ async function scrapeGladCafe() {
       });
     }
 
+    canary('glad-cafe', 'no /events/ links on the what\'s-on page', events.length > 0);
     console.log(`  Found ${events.length} event links`);
 
-    // Filter for theatre/comedy/performance events
-    const theatreKeywords = [
-      'theatre', 'comedy', 'cabaret', 'spoken word', 'scratch', 'performance',
-      'improv', 'drama', 'play', 'crossmylaff',
-    ];
-
-    const theatreEvents = events.filter((e) => {
-      const text = e.title.toLowerCase();
-      return theatreKeywords.some((k) => text.includes(k));
-    });
+    // Every event is fetched and then judged on its description by the scope
+    // check in tag-events.js. The keyword whitelist this replaces matched on
+    // the title alone, before any description had been fetched, so it let in
+    // anything containing "improv" — including a music improvisation night —
+    // while dropping every play whose title happened not to say so.
+    const theatreEvents = events;
 
     // Fetch individual pages for details
     const results = [];
@@ -902,6 +922,8 @@ async function scrapeGladCafe() {
                 date,
                 time: null, // Page time is doors opening, not necessarily the performance.
                 endDate: null,
+                // The Glad publishes no category, so every listing is ambiguous.
+                sourceGenre: null,
                 type,
                 tags: classifyTags(event.title, description, type),
                 description,
@@ -917,11 +939,544 @@ async function scrapeGladCafe() {
       if (i + 3 < theatreEvents.length) await sleep(500);
     }
 
-    console.log(`  ✓ ${results.length} theatre events from The Glad Cafe`);
+    console.log(`  ✓ ${results.length} candidate events from The Glad Cafe`);
     return results;
   } catch (err) {
     console.error(`  ✗ The Glad Cafe scrape failed: ${err.message}`);
     FAILURES['glad-cafe'] = err.message;
+    return [];
+  }
+}
+
+/**
+ * Structural checks on each source page.
+ *
+ * A scraper that returns nothing is easy to spot. A scraper that quietly
+ * returns half of what it should, because a venue renamed one class, is not:
+ * the site keeps building and the listings just get thinner. Each scraper
+ * declares the markers it depends on, and a missing marker is reported through
+ * refresh-status.json into the daily email, whether or not events came back.
+ */
+const CANARIES = {};
+
+function canary(venueId, label, ok) {
+  if (ok) return true;
+  (CANARIES[venueId] = CANARIES[venueId] || []).push(label);
+  console.log(`  ⚠ canary failed: ${label}`);
+  return false;
+}
+
+// --- Cottiers ---
+
+/**
+ * A WP Event Manager install, so the markup is the plugin's and the listing
+ * type is published as a class. "concert-or-performance" covers both a gig and
+ * a piece of theatre, so it is left for the scope check to settle.
+ */
+async function scrapeCottiers() {
+  console.log('\n🎭 Scraping Cottiers...');
+  const results = [];
+
+  try {
+    const $ = cheerio.load(await fetchPage('https://cottiers.com/whats-on-at-cottiers/'));
+    const items = $('.event_listing');
+
+    canary('cottiers', 'no .event_listing items on the what\'s-on page', items.length > 0);
+    canary('cottiers', '.wpem-event-title missing', $('.wpem-event-title').length > 0);
+    canary('cottiers', '.wpem-event-date-time-text missing', $('.wpem-event-date-time-text').length > 0);
+
+    for (const el of items.toArray()) {
+      const $item = $(el);
+      const title = cleanText($item.find('.wpem-event-title').first().text());
+      const ticketUrl = $item.find('a.wpem-event-action-url').first().attr('href');
+      if (!title || !ticketUrl) continue;
+
+      // "17th September 2026 @ 06:00 PM - 08:00 PM"
+      const dateTime = cleanText($item.find('.wpem-event-date-time-text').first().text());
+      const [datePart, timePart] = dateTime.split('@').map((s) => (s || '').trim());
+      const { startDate, endDate } = parseDateRange(datePart);
+      if (!startDate) {
+        console.log(`  Skipping "${title}": no date in "${dateTime}"`);
+        continue;
+      }
+
+      const typeClass = String($item.attr('class') || '')
+        .split(/\s+/)
+        .find((c) => c.startsWith('event_listing_type-'));
+      const sourceGenre = typeClass ? typeClass.slice('event_listing_type-'.length) : null;
+
+      const style = $item.find('.wpem-event-banner-img').first().attr('style') || '';
+      const image = (style.match(/url\(([^)]+)\)/) || [])[1] || null;
+
+      const description = await describe(ticketUrl, `${title} at Cottiers, Glasgow.`);
+      const type = classifyEventType(title, 'Cottiers', description);
+
+      results.push({
+        id: makeId('cottiers', title),
+        title,
+        venue: 'Cottiers',
+        venueId: 'cottiers',
+        date: startDate,
+        endDate: endDate && endDate > startDate ? endDate : null,
+        time: parseTime(timePart),
+        sourceGenre,
+        type,
+        tags: classifyTags(title, description, type),
+        description,
+        ticketUrl,
+        image,
+      });
+    }
+
+    console.log(`  ✓ ${results.length} candidate events from Cottiers`);
+    return results;
+  } catch (err) {
+    console.error(`  ✗ Cottiers scrape failed: ${err.message}`);
+    FAILURES.cottiers = err.message;
+    return [];
+  }
+}
+
+// --- The Old Hairdressers ---
+
+/**
+ * Mostly a music venue, with theatre, comedy and poetry in among the gigs, so
+ * every listing goes to the scope check. Dates read "Date Sunday August 30th,
+ * 2026" and times "Time 7.30pm", both with the label glued to the front.
+ */
+async function scrapeOldHairdressers() {
+  console.log('\n🎭 Scraping The Old Hairdressers...');
+  const results = [];
+
+  try {
+    const $ = cheerio.load(await fetchPage('http://www.theoldhairdressers.com/'));
+    const rows = $('.ptb_events-_row');
+
+    canary('old-hairdressers', 'no .ptb_events-_row items on the homepage', rows.length > 0);
+    canary('old-hairdressers', '.ptb_events__date_ missing', $('.ptb_events__date_').length > 0);
+
+    for (const el of rows.toArray()) {
+      const $row = $(el);
+      const link = $row.find('.ptb_post_title a').first();
+      const title = cleanText(link.text());
+      const permalink = link.attr('href');
+      if (!title || !permalink) continue;
+
+      const dateText = cleanText($row.find('.ptb_events__date_').first().text()).replace(/^Date\s*/i, '');
+      const timeText = cleanText($row.find('.ptb_events__time_').first().text()).replace(/^Time\s*/i, '');
+      const { startDate } = parseDateRange(dateText);
+      if (!startDate) {
+        console.log(`  Skipping "${title}": no date in "${dateText}"`);
+        continue;
+      }
+
+      let image = $row.find('.ptb_post_image img').first().attr('src') || null;
+      if (image && image.startsWith('//')) image = `http:${image}`;
+
+      const description = await describe(
+        permalink,
+        `${title} at The Old Hairdressers, Glasgow.`,
+      );
+      const type = classifyEventType(title, 'The Old Hairdressers', description);
+
+      results.push({
+        id: makeId('old-hairdressers', title),
+        title,
+        venue: 'The Old Hairdressers',
+        venueId: 'old-hairdressers',
+        date: startDate,
+        endDate: null,
+        time: parseTime(timeText),
+        // The venue publishes no category, so every listing is ambiguous.
+        sourceGenre: null,
+        type,
+        tags: classifyTags(title, description, type),
+        description,
+        ticketUrl: $row.find('.ptb_events__buy_tickets a').first().attr('href') || permalink,
+        image,
+      });
+    }
+
+    console.log(`  ✓ ${results.length} candidate events from The Old Hairdressers`);
+    return results;
+  } catch (err) {
+    console.error(`  ✗ The Old Hairdressers scrape failed: ${err.message}`);
+    FAILURES['old-hairdressers'] = err.message;
+    return [];
+  }
+}
+
+// --- Description cache ---
+
+/**
+ * Show pages carry the only real description these two platforms publish, but
+ * fetching one per listing on every refresh is ninety requests a day for copy
+ * that rarely changes. Cached by ticket URL, like the tag cache: a show costs
+ * one fetch the first time it is seen and nothing afterwards.
+ */
+const DESCRIPTION_CACHE_FILE = path.join(DATA_DIR, 'description-cache.json');
+
+function readDescriptionCache() {
+  try {
+    return JSON.parse(fs.readFileSync(DESCRIPTION_CACHE_FILE, 'utf8'));
+  } catch {
+    return {};
+  }
+}
+
+const descriptionCache = readDescriptionCache();
+let descriptionCacheDirty = false;
+
+/**
+ * Some venues paste markup into their own copy, which survives .text() as
+ * literal angle brackets. Applied on the way out as well as the way in, so a
+ * value cached before this existed is cleaned up too.
+ */
+function tidyDescription(text) {
+  if (!text) return null;
+  const stripped = cleanText(String(text).replace(/<[^>]*>/g, ' '));
+  return stripped ? truncateDesc(stripped) : null;
+}
+
+async function describe(url, fallback) {
+  if (Object.prototype.hasOwnProperty.call(descriptionCache, url)) {
+    return tidyDescription(descriptionCache[url]) || fallback;
+  }
+  let description = null;
+  try {
+    const $ = cheerio.load(await fetchPage(url));
+    description =
+      $('meta[property="og:description"]').attr('content') ||
+      $('meta[name="description"]').attr('content') ||
+      null;
+
+    // Some venues publish neither meta tag, and the copy is only in the page.
+    // The longest paragraph is a crude but reliable stand-in for the blurb.
+    if (!description) {
+      let longest = '';
+      $('p').each((_, el) => {
+        const text = cleanText($(el).text());
+        if (text.length > longest.length) longest = text;
+      });
+      if (longest.length > 80) description = longest;
+    }
+
+    description = tidyDescription(description);
+  } catch (err) {
+    // A missing description is not worth failing a listing over.
+    console.log(`  Warning: no description for ${url}: ${err.message}`);
+    return fallback;
+  }
+  descriptionCache[url] = description;
+  descriptionCacheDirty = true;
+  return description || fallback;
+}
+
+function saveDescriptionCache() {
+  if (!descriptionCacheDirty) return;
+  fs.writeFileSync(DESCRIPTION_CACHE_FILE, JSON.stringify(descriptionCache, null, 2) + '\n');
+}
+
+// --- ATG venues (King's Theatre, Theatre Royal) ---
+
+const ATG_VENUES = [
+  { slug: 'kings-theatre-glasgow', venueId: 'kings', venue: "King's Theatre" },
+  { slug: 'theatre-royal-glasgow', venueId: 'theatre-royal', venue: 'Theatre Royal' },
+];
+
+const ATG_ACCESS_LABELS = {
+  audioDescribed: 'Audio-described performances available',
+  signed: 'BSL-interpreted performances available',
+  captioned: 'Captioned performances available',
+  relaxed: 'Relaxed performances available',
+  touchTour: 'Touch tours available',
+};
+
+/** Cloudinary serves whatever width is asked for; the cards ask for thumbnails. */
+function atgImage(window) {
+  const match = window.match(/https:\/\/res\.cloudinary\.com\/[^"\\]+/);
+  return match ? match[0].replace(/w_\d+/, 'w_800') : null;
+}
+
+/**
+ * ATG renders its listings into the React Server Component payload rather than
+ * into the HTML, so the cards are read out of the embedded JSON. robots.txt
+ * explicitly allows the paginated what's-on URLs this walks.
+ */
+async function scrapeATG({ slug, venueId, venue }) {
+  console.log(`\n🎭 Scraping ${venue}...`);
+  const results = [];
+
+  try {
+    for (let page = 1; page <= 6; page++) {
+      const url = `https://www.atgtickets.com/venues/${slug}/whats-on/${page > 1 ? `?page=${page}` : ''}`;
+      let payload;
+      try {
+        payload = (await fetchPage(url)).replace(/\\"/g, '"');
+      } catch (err) {
+        // ATG answers 404 for the page after the last one, which is how the
+        // walk ends. On the first page it is a real failure.
+        if (page > 1 && /HTTP 404/.test(err.message)) break;
+        throw err;
+      }
+
+      const windows = [];
+      const idRe = /"id":"show_[0-9a-f-]+"/g;
+      let match;
+      while ((match = idRe.exec(payload))) {
+        windows.push(payload.slice(match.index, match.index + 6000));
+      }
+      if (page === 1) {
+        canary(venueId, 'no show objects in the ATG payload', windows.length > 0);
+        canary(venueId, '"buyTickets" missing from the ATG payload', payload.includes('"buyTickets"'));
+        canary(venueId, '"dates" missing from the ATG payload', payload.includes('"dates"'));
+      }
+      if (!windows.length) break;
+
+      for (const window of windows) {
+        const title = cleanText((window.match(/"title":"((?:[^"\\]|\\.)*)"/) || [])[1] || '');
+        const dates = (window.match(/"dates":"((?:[^"\\]|\\.)*)"/) || [])[1];
+        const ticketPath = (window.match(/"buyTickets":\{[^}]*?"url":"([^"]+)"/) || [])[1];
+        if (!title || !dates || !ticketPath) continue;
+
+        const { startDate, endDate } = parseDateRange(dates);
+        if (!startDate) {
+          console.log(`  Warning: unparsed dates "${dates}" for ${title}`);
+          continue;
+        }
+
+        const genre = (window.match(/"genre":\[([^\]]*)\]/) || [])[1];
+        const sourceGenre = genre ? cleanText(genre.replace(/"/g, '').split(',')[0]) : null;
+
+        // The access icons are the only structured accessibility data any of
+        // these venues publish, so they are worth carrying through.
+        const access = [...window.matchAll(/"type":"([a-zA-Z]+)","tooltip"/g)]
+          .map((m) => ATG_ACCESS_LABELS[m[1]])
+          .filter(Boolean);
+
+        results.push({
+          title,
+          venue,
+          venueId,
+          date: startDate,
+          endDate,
+          time: null,
+          sourceGenre,
+          ticketUrl: `https://www.atgtickets.com${ticketPath}`,
+          moreInfoUrl: (window.match(/"moreInfo":\{[^}]*?"url":"([^"]+)"/) || [])[1] || null,
+          image: atgImage(window),
+          accessibility: [...new Set(access)],
+        });
+      }
+
+      await sleep(500);
+    }
+
+    // Descriptions come from the show pages, one fetch per show, then cached.
+    for (const event of results) {
+      const fallback = `${event.title} at ${event.venue}, Glasgow.`;
+      event.description = event.moreInfoUrl
+        ? await describe(`https://www.atgtickets.com${event.moreInfoUrl}`, fallback)
+        : fallback;
+      delete event.moreInfoUrl;
+      event.type = classifyEventType(event.title, event.venue, event.description);
+      event.tags = classifyTags(event.title, event.description, event.type);
+      event.id = makeId(event.venueId, event.title);
+      if (!event.accessibility.length) delete event.accessibility;
+    }
+
+    console.log(`  ✓ ${results.length} events from ${venue}`);
+    return results;
+  } catch (err) {
+    console.error(`  ✗ ${venue} scrape failed: ${err.message}`);
+    FAILURES[venueId] = err.message;
+    return [];
+  }
+}
+
+// --- Pavilion Theatre (Trafalgar Tickets) ---
+
+/**
+ * The Pavilion's own domain redirects to Trafalgar's ticketing platform, which
+ * embeds the whole programme in one page as event cards, with a machine
+ * readable startDate. No pagination and no date parsing needed. Card hrefs are
+ * relative to the venue's own path, not to the domain root.
+ */
+const PAVILION_BASE = 'https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB';
+
+async function scrapePavilion() {
+  console.log('\n🎭 Scraping Pavilion Theatre...');
+
+  try {
+    const payload = (await fetchPage(`${PAVILION_BASE}/whats-on`)).replace(/\\"/g, '"');
+
+    const windows = [];
+    const idRe = /"eventGroupId":\d+/g;
+    let match;
+    while ((match = idRe.exec(payload))) {
+      windows.push(payload.slice(match.index, match.index + 4000));
+    }
+
+    canary('pavilion', 'no event cards in the Trafalgar payload', windows.length > 0);
+    canary('pavilion', 'eventCards missing', payload.includes('eventCards'));
+    canary('pavilion', 'startDate missing from the Trafalgar payload', payload.includes('"startDate"'));
+
+    const seen = new Set();
+    const results = [];
+
+    for (const window of windows) {
+      const title = cleanText((window.match(/"title":"((?:[^"\\]|\\.)*)"/) || [])[1] || '');
+      const href = (window.match(/"href":"([^"]+)"/) || [])[1];
+      const start = (window.match(/"startDate":"\$D([^"]+)"/) || [])[1];
+      if (!title || !href || !start || seen.has(href)) continue;
+      seen.add(href);
+
+      // The card's own dates string is the only place a run's closing date appears.
+      const dates = cleanText(((window.match(/"dates":"((?:[^"\\]|\\.)*)"/) || [])[1] || '').replace(/\\n/g, ' '));
+      const { endDate } = parseDateRange(dates);
+
+      const date = start.slice(0, 10);
+      const category = (window.match(/"categories":\["([^"]+)"/) || [])[1] || null;
+      const image =
+        (window.match(/"heroImageUrl":\{"src":"([^"]+)"/) || [])[1] ||
+        (window.match(/"image":\{"src":"([^"]+)"/) || [])[1] ||
+        null;
+
+      results.push({
+        title,
+        venue: 'Pavilion Theatre',
+        venueId: 'pavilion',
+        date,
+        endDate: endDate && endDate > date ? endDate : null,
+        time: null,
+        sourceGenre: category,
+        ticketUrl: `${PAVILION_BASE}${href}`,
+        image,
+      });
+    }
+
+    for (const event of results) {
+      const fallback = `${event.title} at the Pavilion Theatre, Glasgow.`;
+      event.description = await describe(event.ticketUrl, fallback);
+      event.type = classifyEventType(event.title, event.venue, event.description);
+      event.tags = classifyTags(event.title, event.description, event.type);
+      event.id = makeId(event.venueId, event.title);
+    }
+
+    console.log(`  ✓ ${results.length} events from Pavilion Theatre`);
+    return results;
+  } catch (err) {
+    console.error(`  ✗ Pavilion scrape failed: ${err.message}`);
+    FAILURES.pavilion = err.message;
+    return [];
+  }
+}
+
+// --- Platform, Easterhouse ---
+
+/**
+ * Platform publishes no year on a listing: the date reads "Sat 19 Sep - Sat 28
+ * Nov" and the year lives in the item's own class names, as evmon-October-2026.
+ * Those classes are the only reliable year source, so they are read first and
+ * grafted onto the date text before it is parsed.
+ */
+function platformMonthYears($item) {
+  const years = {};
+  for (const cls of String($item.attr('class') || '').split(/\s+/)) {
+    const m = cls.match(/^evmon-([A-Za-z]+)-(\d{4})$/);
+    if (m) years[m[1].toLowerCase().slice(0, 3)] = m[2];
+  }
+  return years;
+}
+
+/**
+ * The first line of the excerpt is the date, in whatever shape the listing was
+ * typed in: arrows for ranges, "@" or "|" before times, and sometimes no date
+ * at all ("Fridays", "Various dates & times"), which returns null.
+ */
+function platformDates(dateText, monthYears) {
+  let text = dateText.replace(/[→–—]/g, '-').replace(/\s+/g, ' ').trim();
+  text = text.split(/[|@]/)[0].trim();
+  if (!/\d/.test(text)) return { startDate: null, endDate: null };
+
+  text = text.replace(/(\d{1,2})\s+([A-Za-z]{3,9})(?!\s+\d{4})/g, (whole, day, month) => {
+    const year = monthYears[month.toLowerCase().slice(0, 3)];
+    return year ? `${day} ${month} ${year}` : whole;
+  });
+
+  return parseDateRange(text);
+}
+
+async function scrapePlatform() {
+  console.log('\n🎭 Scraping Platform...');
+  const results = [];
+
+  try {
+    const $ = cheerio.load(await fetchPage('https://www.platform-online.co.uk/whats-on'));
+
+    canary('platform', 'no .listings__item--event items', $('.listings__item--event').length > 0);
+    canary('platform', 'no evmon- year classes, so no year to infer',
+      /evmon-[A-Za-z]+-\d{4}/.test($.html()));
+
+    for (const el of $('.listings__item--event').toArray()) {
+      const $item = $(el);
+      const link = $item.find('.listings__header a').first();
+      const title = cleanText(link.text());
+      const ticketUrl = link.attr('href');
+      if (!title || !ticketUrl) continue;
+
+      const excerptHtml = $item.find('.listings__excerpt').html() || '';
+      const dateText = cleanText(cheerio.load(`<div>${excerptHtml.split(/<br\s*\/?>/i)[0]}</div>`).text());
+      const { startDate, endDate } = platformDates(dateText, platformMonthYears($item));
+      if (!startDate) {
+        console.log(`  Skipping "${title}": no date in "${dateText}"`);
+        continue;
+      }
+
+      // Platform tags its own listings; Performance is the one that needs no
+      // second opinion. Wellbeing, Visual and the rest go to the scope check.
+      const categories = String($item.attr('class') || '')
+        .split(/\s+/)
+        .filter((c) => /^cat-/.test(c))
+        .map((c) => c.slice(4))
+        .filter((c) => !/^mie-/.test(c));
+      const sourceGenre = categories.includes('Performance')
+        ? 'Performance'
+        : categories[0] || null;
+
+      let image = $item.find('img[data-src]').first().attr('data-src') || null;
+      if (image && !image.startsWith('http')) {
+        image = `https://www.platform-online.co.uk${image}`;
+      }
+
+      const description = truncateDesc(
+        cleanText($item.find('.listings__excerpt').text()) ||
+          `${title} at Platform, Easterhouse.`,
+      );
+      const type = classifyEventType(title, 'Platform', description);
+
+      results.push({
+        id: makeId('platform', title),
+        title,
+        venue: 'Platform',
+        venueId: 'platform',
+        date: startDate,
+        endDate: endDate && endDate > startDate ? endDate : null,
+        time: parseTime(dateText),
+        sourceGenre,
+        type,
+        tags: classifyTags(title, description, type),
+        description,
+        ticketUrl,
+        image,
+      });
+    }
+
+    console.log(`  ✓ ${results.length} candidate events from Platform`);
+    return results;
+  } catch (err) {
+    console.error(`  ✗ Platform scrape failed: ${err.message}`);
+    FAILURES.platform = err.message;
     return [];
   }
 }
@@ -1014,16 +1569,38 @@ async function main() {
   console.log(`Filtering for events from: ${TODAY}`);
 
   // Run all scrapers
-  const [citizens, tron, tramway, ppap, gladCafe, eventbrite] = await Promise.all([
-    scrapeCitizens(),
-    scrapeTron(),
-    scrapeTramway(),
-    scrapePlayPiePint(),
-    scrapeGladCafe(),
-    Promise.resolve([]),
-  ]);
+  const [
+    citizens, tron, tramway, ppap, gladCafe,
+    kings, theatreRoyal, pavilion, platform, cottiers, oldHairdressers,
+  ] = await Promise.all([
+      scrapeCitizens(),
+      scrapeTron(),
+      scrapeTramway(),
+      scrapePlayPiePint(),
+      scrapeGladCafe(),
+      scrapeATG(ATG_VENUES[0]),
+      scrapeATG(ATG_VENUES[1]),
+      scrapePavilion(),
+      scrapePlatform(),
+      scrapeCottiers(),
+      scrapeOldHairdressers(),
+    ]);
 
-  let allEvents = [...citizens, ...tron, ...tramway, ...ppap, ...gladCafe, ...eventbrite];
+  saveDescriptionCache();
+
+  let allEvents = [
+    ...citizens,
+    ...tron,
+    ...tramway,
+    ...ppap,
+    ...gladCafe,
+    ...kings,
+    ...theatreRoyal,
+    ...pavilion,
+    ...platform,
+    ...cottiers,
+    ...oldHairdressers,
+  ];
 
   console.log('\n' + '='.repeat(50));
   console.log('Deduplication & Cleanup');
@@ -1036,20 +1613,39 @@ async function main() {
 
   // Sort by venue priority (prefer main venues over Eventbrite)
   allEvents.sort((a, b) => {
-    const priority = { citizens: 0, tron: 1, tramway: 2, 'oran-mor': 3, 'glad-cafe': 4, various: 5 };
+    const priority = {
+      citizens: 0, tron: 1, tramway: 2, 'oran-mor': 3, 'glad-cafe': 4,
+      kings: 5, 'theatre-royal': 6, pavilion: 7, platform: 8,
+      cottiers: 9, 'old-hairdressers': 10, various: 11,
+    };
     return (priority[a.venueId] ?? 99) - (priority[b.venueId] ?? 99);
   });
 
+  // Keyed by venue as well as title: a touring show plays more than one house,
+  // and "Building And Heritage Tours" runs at both ATG venues under one name.
+  // Keying on the title alone silently dropped the second listing.
   for (const event of allEvents) {
-    const key = event.title
-      .toLowerCase()
-      .replace(/[^a-z0-9]/g, '');
+    const key = `${event.venueId}|${event.title.toLowerCase().replace(/[^a-z0-9]/g, '')}`;
     if (seenTitles.has(key)) {
       console.log(`  Removing duplicate: "${event.title}" (${event.venue})`);
       continue;
     }
     seenTitles.add(key);
     deduped.push(event);
+  }
+
+  // Applied here rather than per scraper so every venue is cut off alike.
+  const horizon = (() => {
+    const d = new Date(`${TODAY}T00:00:00Z`);
+    d.setUTCMonth(d.getUTCMonth() + HORIZON_MONTHS);
+    return d.toISOString().slice(0, 10);
+  })();
+  const beyond = deduped.filter((e) => e.date > horizon);
+  if (beyond.length) {
+    console.log(`  Beyond the ${HORIZON_MONTHS}-month horizon (${horizon}): ${beyond.length}`);
+  }
+  for (let i = deduped.length - 1; i >= 0; i--) {
+    if (deduped[i].date > horizon) deduped.splice(i, 1);
   }
 
   // Sort by date
@@ -1066,7 +1662,23 @@ async function main() {
   const previous = JSON.parse(fs.readFileSync(EVENTS_FILE, 'utf8'));
   const refreshedVenues = new Set(deduped.map(e => e.venueId));
   const retained = previous.filter(e => !refreshedVenues.has(e.venueId) && isFutureEvent(e));
-  const report = { refreshedAt: new Date().toISOString(), counts: Object.fromEntries([...refreshedVenues].map(id => [id, deduped.filter(e => e.venueId === id).length])), retainedVenues: [...new Set(retained.map(e => e.venueId))], failures: FAILURES };
+  // A source that neither threw nor returned anything is a silent breakage:
+  // the page loaded and parsed, and yielded nothing. Worth saying so.
+  for (const id of ALL_SOURCES) {
+    if (!refreshedVenues.has(id) && !FAILURES[id]) {
+      canary(id, 'the scrape returned no events at all');
+    }
+  }
+
+  const report = {
+    refreshedAt: new Date().toISOString(),
+    counts: Object.fromEntries(
+      [...refreshedVenues].map((id) => [id, deduped.filter((e) => e.venueId === id).length]),
+    ),
+    retainedVenues: [...new Set(retained.map((e) => e.venueId))],
+    failures: FAILURES,
+    canaries: CANARIES,
+  };
   if (!deduped.length) throw new Error('No sources returned events; keeping existing data.');
   deduped.forEach(e => { e.checkedAt = TODAY; e.id = makeId(e.venueId, e.title); });
   deduped.push(...retained);
@@ -1101,7 +1713,7 @@ async function main() {
   console.log('='.repeat(50));
 }
 
-module.exports = { parseTime, parseDateRange, classifyTags };
+module.exports = { parseTime, parseDateRange, classifyTags, platformDates };
 
 if (require.main === module) main().catch((err) => {
   console.error('Fatal error:', err);

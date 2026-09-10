@@ -37,7 +37,8 @@
     "area": "Shawlands",
     "description": "A warm, community-focused cafe and arts venue on Pollokshaws Road in the heart of Shawlands. The Glad champions grassroots music, spoken word, comedy, and theatre, with regular scratch nights giving emerging artists a supportive space to test new work. Great coffee, great community, great art.",
     "website": "https://thegladcafe.co.uk",
-    "instagram": "thegladcafe"
+    "instagram": "thegladcafe",
+    "mixedProgramme": true
   },
   {
     "id": "platform",
@@ -45,7 +46,8 @@
     "area": "Easterhouse",
     "description": "An arts centre at The Bridge in Easterhouse, with a programme of theatre, music, visual art and creative activities for different ages. Visit the venue website for performances and opportunities to take part.",
     "website": "https://platform-online.co.uk",
-    "instagram": "platformglasgow"
+    "instagram": "platformglasgow",
+    "mixedProgramme": true
   },
   {
     "id": "southside-fringe",
@@ -61,7 +63,8 @@
     "area": "Hyndland",
     "description": "A stunning converted church in the leafy West End neighbourhood of Hyndland. Cottiers' intimate theatre space hosts a varied programme of comedy, music, theatre, and community events beneath original stained glass windows. The venue also houses a popular bar and restaurant — perfect for a pre-show drink.",
     "website": "https://cottiers.com",
-    "instagram": "cottiersglasgow"
+    "instagram": "cottiersglasgow",
+    "mixedProgramme": true
   },
   {
     "id": "kings",
@@ -69,7 +72,8 @@
     "area": "City Centre",
     "description": "A grand Edwardian theatre on Bath Street, the King's is Glasgow's home for touring West End musicals, big comedy names, and large-scale drama. With over 1,700 seats across stalls and three balconies, it's where Glasgow goes for the blockbusters — and it hosts the city's legendary annual pantomime every Christmas.",
     "website": "https://atgtickets.com/venues/kings-theatre-glasgow",
-    "instagram": "kikitronica"
+    "instagram": "kikitronica",
+    "mixedProgramme": true
   },
   {
     "id": "theatre-royal",
@@ -77,7 +81,17 @@
     "area": "City Centre",
     "description": "Opened in 1867, the Theatre Royal on Hope Street hosts opera, ballet, touring drama and musicals in a Victorian auditorium. It is the Glasgow home of Scottish Opera and Scottish Ballet.",
     "website": "https://atgtickets.com/venues/theatre-royal-glasgow",
-    "instagram": "theatreroyalglasgow"
+    "instagram": "theatreroyalglasgow",
+    "mixedProgramme": true
+  },
+  {
+    "id": "pavilion",
+    "name": "Pavilion Theatre",
+    "area": "City Centre",
+    "description": "An Edwardian variety house on Renfield Street, unrestored and unapologetic, and the last of Glasgow's theatres still run as an independent family business. The Pavilion has never taken public subsidy, and programmes to its own audience rather than to a funder: Scottish comedy, panto that runs for months, tribute nights and homegrown plays that sell out without ever troubling a broadsheet critic.",
+    "website": "https://www.paviliontheatre.co.uk",
+    "instagram": "paviliontheatre",
+    "mixedProgramme": true
   },
   {
     "id": "old-hairdressers",
@@ -85,7 +99,8 @@
     "area": "City Centre",
     "description": "An independent bar and arts venue on Renfield Lane, hosting live music, exhibitions and experimental performance. Check the venue programme for upcoming events.",
     "website": "https://theoldhairdressers.com",
-    "instagram": "theoldhairdressers"
+    "instagram": "theoldhairdressers",
+    "mixedProgramme": true
   },
   {
     "id": "mono",

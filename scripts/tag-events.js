@@ -27,6 +27,9 @@ const { classifyTags } = require("./scrape-events");
 const DATA_DIR = path.join(__dirname, "..", "data");
 const EVENTS_FILE = path.join(DATA_DIR, "events.json");
 const CACHE_FILE = path.join(DATA_DIR, "tag-cache.json");
+// What this run spent and what it dropped, so the daily report can say so.
+// Written on every run, including the usual one that changes nothing.
+const USAGE_FILE = path.join(DATA_DIR, "tag-usage.json");
 
 const MODEL = process.env.OPENROUTER_MODEL || "deepseek/deepseek-v4-flash";
 const API_URL = "https://openrouter.ai/api/v1/chat/completions";
@@ -82,7 +85,17 @@ const readJSON = (file, fallback) => {
 
 /** The text the model sees, and the cache key derived from it. */
 const promptText = (event) =>
-  [event.title, event.venue, event.description].filter(Boolean).join("\n").trim();
+  [
+    // Part of the cache key as well as the prompt, so a listing that becomes
+    // gated is re-judged rather than served a verdict-free cache entry.
+    needsScopeCheck(event) ? "[SCOPE]" : null,
+    event.title,
+    event.venue,
+    event.description,
+  ]
+    .filter(Boolean)
+    .join("\n")
+    .trim();
 
 const cacheKey = (event) =>
   crypto
@@ -90,6 +103,42 @@ const cacheKey = (event) =>
     .update(`${MODEL}\n${promptText(event)}`)
     .digest("hex")
     .slice(0, 16);
+
+/**
+ * Venues that programme more than theatre. Their listings have to earn a place
+ * on the site; a dedicated theatre's do not, because everything it stages is
+ * in scope by definition.
+ */
+const VENUES_FILE = path.join(DATA_DIR, "venues.json");
+const MIXED_PROGRAMME = new Set(
+  (() => {
+    try {
+      return JSON.parse(fs.readFileSync(VENUES_FILE, "utf8"))
+        .filter((venue) => venue.mixedProgramme)
+        .map((venue) => venue.id);
+    } catch {
+      return [];
+    }
+  })(),
+);
+
+/**
+ * Categories the source itself publishes that settle the question without
+ * asking the model. Everything else at a mixed-programme venue is ambiguous:
+ * a Concert at the King's might be a staged song cycle or might be a tribute
+ * band, and only the description says which.
+ */
+const CLEAR_GENRES = new Set([
+  "musicals", "plays", "play", "musical", "pantomime", "dance", "opera",
+  "ballet", "comedy", "performance", "theatre",
+]);
+
+/** Whether this listing needs the model's opinion on belonging here at all. */
+function needsScopeCheck(event) {
+  if (!MIXED_PROGRAMME.has(event.venueId)) return false;
+  const genre = (event.sourceGenre || "").toLowerCase().trim();
+  return !CLEAR_GENRES.has(genre);
+}
 
 /** Keyword tags, narrowed to the current vocabulary, used when the API is unavailable. */
 function fallbackTags(event) {
@@ -128,7 +177,30 @@ Rules:
 - Only use "drama" for a play performed by actors. A discussion, panel or Q&A about a play is "talk" alone, even when extracts are performed during it.
 - An event whose purpose is to look round the building is "tour" alone.
 - Prefer the specific tag over the general one. Use "drama" when nothing more specific fits a performed play.
-- Judge from the whole listing. Ignore marketing hyperbole.`;
+- Judge from the whole listing. Ignore marketing hyperbole.
+
+Some listings are marked [SCOPE]. Those come from venues that programme more
+than theatre, and for those you must also decide whether the event belongs on a
+theatre and live performance listings site at all.
+
+In scope: plays, musicals, opera, dance, pantomime, comedy and stand-up,
+cabaret, variety, drag, burlesque, spoken word, poetry and storytelling,
+physical theatre, clown, circus and puppetry, and the talks, tours and
+workshops a venue runs alongside that work.
+
+Out of scope: gigs, concerts and club nights where the music itself is the
+event, including tribute acts and covers bands; karaoke, quizzes, bingo and
+open-decks nights; film screenings; visual art exhibitions; markets, fairs and
+conventions; sport; and classes with no performing-arts content, such as
+knitting, crafts, fitness or wellbeing groups.
+
+The distinction is what the audience is there to do. A show built around music
+but staged as theatre is in scope. A band playing its own songs is not, however
+theatrical the staging. When a listing is genuinely too thin to judge, treat it
+as in scope and say so in the reason.
+
+For a listing not marked [SCOPE], return inScope true and an empty reason.
+Keep every reason under eight words.`;
 
 const SCHEMA = {
   name: "listing_tags",
@@ -150,8 +222,10 @@ const SCHEMA = {
               maxItems: MAX_TAGS,
               items: { type: "string", enum: Object.keys(TAGS) },
             },
+            inScope: { type: "boolean" },
+            scopeReason: { type: "string" },
           },
-          required: ["index", "tags"],
+          required: ["index", "tags", "inScope", "scopeReason"],
           additionalProperties: false,
         },
       },
@@ -209,10 +283,12 @@ async function tagBatch(batch, apiKey) {
   const results = Array.isArray(parsed) ? parsed : parsed.results;
   if (!Array.isArray(results)) throw new Error("Response had no results array");
 
-  const byIndex = new Map(results.map((r) => [r.index, r.tags || []]));
+  const byIndex = new Map(results.map((r) => [r.index, r]));
   return {
-    tags: batch.map((_, i) => byIndex.get(i) || []),
+    verdicts: batch.map((_, i) => byIndex.get(i) || null),
     cost: body.usage?.cost || 0,
+    promptTokens: body.usage?.prompt_tokens || 0,
+    completionTokens: body.usage?.completion_tokens || 0,
   };
 }
 
@@ -231,12 +307,20 @@ async function main() {
 
   console.log(`\n🏷  Tagging ${events.length} listings with ${MODEL}`);
 
-  const pending = events.filter((event) => !cache[cacheKey(event)]);
+  // A cached entry from before the scope check existed carries tags but no
+  // verdict, so a gated listing with one still has to be asked about.
+  const pending = events.filter((event) => {
+    const hit = cache[cacheKey(event)];
+    if (!hit) return true;
+    return needsScopeCheck(event) && typeof hit.inScope !== "boolean";
+  });
   console.log(
     `  ${events.length - pending.length} already tagged, ${pending.length} to tag`,
   );
 
   let cost = 0;
+  let promptTokens = 0;
+  let completionTokens = 0;
   let failed = false;
 
   if (pending.length && !apiKey) {
@@ -251,12 +335,21 @@ async function main() {
       try {
         const result = await tagBatch(batch, apiKey);
         batch.forEach((event, j) => {
-          const tags = result.tags[j].filter((tag) => ALLOWED.has(tag));
-          if (tags.length) {
-            cache[cacheKey(event)] = { tags, model: MODEL, taggedAt: TODAY_ISO };
-          }
+          const verdict = result.verdicts[j];
+          if (!verdict) return;
+          const tags = (verdict.tags || []).filter((tag) => ALLOWED.has(tag));
+          if (!tags.length) return;
+          cache[cacheKey(event)] = {
+            tags,
+            inScope: verdict.inScope !== false,
+            scopeReason: (verdict.scopeReason || "").trim(),
+            model: MODEL,
+            taggedAt: TODAY_ISO,
+          };
         });
         cost += result.cost;
+        promptTokens += result.promptTokens;
+        completionTokens += result.completionTokens;
         console.log(`${label} ✓ ${batch.length} listings`);
       } catch (err) {
         failed = true;
@@ -274,6 +367,29 @@ async function main() {
     return { ...event, tags: combine(event, hit ? hit.tags : fallbackTags(event)) };
   });
 
+  // Fail open. A listing with no verdict — the API was down, the response was
+  // malformed, the venue is not gated — stays on the site. An outage must never
+  // quietly empty the listings.
+  const excluded = [];
+  const listed = tagged.filter((event) => {
+    if (!needsScopeCheck(event)) return true;
+    const hit = cache[cacheKey(event)];
+    if (!hit || typeof hit.inScope !== "boolean" || hit.inScope) return true;
+    excluded.push({
+      title: event.title,
+      venue: event.season || event.venue,
+      reason: hit.scopeReason || "not theatre",
+    });
+    return false;
+  });
+
+  if (excluded.length) {
+    console.log(`\n  ${excluded.length} listings out of scope:`);
+    for (const item of excluded) {
+      console.log(`    - ${item.title.slice(0, 44).padEnd(44)} ${item.venue} — ${item.reason}`);
+    }
+  }
+
   const changed = tagged.filter(
     (event, i) => (events[i].tags || []).join() !== event.tags.join(),
   );
@@ -289,17 +405,28 @@ async function main() {
     );
   }
   if (changed.length > 15) console.log(`    …and ${changed.length - 15} more`);
-  if (cost) console.log(`  cost: $${cost.toFixed(5)}`);
+  const usage = {
+    at: new Date().toISOString(),
+    model: MODEL,
+    listingsTagged: apiKey ? pending.length : 0,
+    promptTokens,
+    completionTokens,
+    totalTokens: promptTokens + completionTokens,
+    costUsd: cost,
+    excluded,
+  };
+  console.log(`  ${usage.totalTokens} tokens, cost: $${cost.toFixed(5)}`);
 
   if (dryRun) {
     console.log("\n  (dry run — nothing written)");
     return;
   }
 
-  fs.writeFileSync(EVENTS_FILE, JSON.stringify(tagged, null, 2) + "\n");
+  fs.writeFileSync(EVENTS_FILE, JSON.stringify(listed, null, 2) + "\n");
   fs.writeFileSync(CACHE_FILE, JSON.stringify(cache, null, 2) + "\n");
+  fs.writeFileSync(USAGE_FILE, JSON.stringify(usage, null, 2) + "\n");
   console.log(
-    `\n  ✓ Wrote ${path.basename(EVENTS_FILE)} and ${path.basename(CACHE_FILE)}`,
+    `\n  ✓ Wrote ${listed.length} listings to ${path.basename(EVENTS_FILE)}`,
   );
   if (failed) {
     console.log(
@@ -318,4 +445,4 @@ if (require.main === module) {
   });
 }
 
-module.exports = { TAGS, STRUCTURAL, combine, fallbackTags, cacheKey };
+module.exports = { TAGS, STRUCTURAL, combine, fallbackTags, cacheKey, needsScopeCheck };

@@ -13,6 +13,14 @@ const read = (name) =>
 const venues = read("venues.json");
 const images = read("image-cache.json");
 const status = read("refresh-status.json");
+// Absent when tagging has never run; the daily report treats that as no spend.
+const tagUsage = (() => {
+  try {
+    return read("tag-usage.json");
+  } catch {
+    return null;
+  }
+})();
 /**
  * Manual entries are hand-edited, so a typo here is a broken card in
  * production. Fail the build loudly instead of publishing something odd.
@@ -242,8 +250,12 @@ write(
       venues: venueCount,
       sources: status.counts,
       retainedVenues: status.retainedVenues,
+      ...(tagUsage ? { tagging: tagUsage } : {}),
       ...(status.failures && Object.keys(status.failures).length
         ? { failures: status.failures }
+        : {}),
+      ...(status.canaries && Object.keys(status.canaries).length
+        ? { canaries: status.canaries }
         : {}),
     },
     null,

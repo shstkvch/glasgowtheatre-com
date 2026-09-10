@@ -36,6 +36,14 @@ Tags on manual entries are kept as written. The tagger only touches scraped list
 
 Results are cached in `data/tag-cache.json`, keyed by a hash of the text the model sees. Each listing is sent once: a daily refresh costs nothing for shows already tagged, and re-running is free. Editing a description re-tags that listing on the next run. Tagging 48 listings from scratch costs about \$0.001.
 
+### What belongs on the site
+
+Most of these venues programme more than theatre: the Old Hairdressers and the Glad Café are mostly music, the Pavilion sells a lot of tribute acts, and Platform runs knitting groups. Those venues are marked `mixedProgramme` in `data/venues.json`, and their listings have to earn a place. A dedicated theatre's do not, because everything it stages is in scope.
+
+The decision is made by the same model call that assigns tags, which returns `inScope` and a short reason alongside them. Where the source publishes a category that settles it — ATG filing something under Musicals, the Pavilion under Play — no verdict is asked for; only the genuinely ambiguous ones cost anything. This replaced a keyword whitelist on the Glad Café scraper that ran on the title alone, before any description had been fetched, so it admitted anything containing "improv" while dropping every play whose title happened not to say so.
+
+It fails open. A listing with no verdict — the API was down, the response was malformed — stays on the site; an outage must never quietly empty the listings. Every exclusion is logged with its reason and reported in the daily email, so a wrong call surfaces the next morning rather than vanishing. A wrongly dropped show can be forced back through `data/manual-events.json`, which overrides everything.
+
 `talk`, `workshop` and `tour` mark events that are not performances to watch, and are exclusive: a discussion about a play is a talk, not a talk and a drama. `a-play-a-pie-a-pint`, `lunchtime` and `scratch` come from the source rather than the text, and the tagger preserves them.
 
 Set `OPENROUTER_API_KEY` in `.env` (see `.env.example`), or `OPENROUTER_MODEL` to use a different model. Without a key, or if the API fails, tagging falls back to keyword matching and exits successfully — it never breaks a build. Run `npm run tag -- --dry-run` to preview changes, or `--retag` to ignore the cache.
@@ -44,7 +52,17 @@ Set `OPENROUTER_API_KEY` in `.env` (see `.env.example`), or `OPENROUTER_MODEL` t
 
 ## Refreshing and images
 
-`scripts/scrape-events.js` reads Citizens Theatre, Tron, Tramway, A Play, A Pie and A Pint and The Glad Café. It keeps the last saved upcoming entries for a source returning no events, reports retained venues in `data/refresh-status.json`, and refuses to overwrite data when every source fails. Inspect the logs after a partial failure. A successful response containing some events is treated as that venue's current programme.
+`scripts/scrape-events.js` reads eleven sources: Citizens Theatre, Tron, Tramway, A Play, A Pie and A Pint, The Glad Café, the King's, Theatre Royal, the Pavilion, Platform, Cottiers and The Old Hairdressers.
+
+The King's and Theatre Royal are both ATG houses and share one parser, `scrapeATG`, which walks the paginated what's-on URLs that ATG's robots.txt explicitly allows and reads the listings out of the React Server Component payload. The Pavilion's own domain redirects to Trafalgar's platform, whose payload carries an ISO `startDate`. Platform publishes no year on a listing, so the year is read from the `evmon-October-2026` class names on each item. Cottiers is a WP Event Manager install. The Old Hairdressers publishes neither meta description nor category, so its blurb comes from the longest paragraph on the event page.
+
+Listings are capped at a six-month horizon (`HORIZON_MONTHS`), applied once in `main()` so every source is cut off alike — ATG publishes nearly a year ahead, which would otherwise bury what is on this week. Deduplication keys on venue *and* title: a touring show plays more than one house, and Building And Heritage Tours runs at both ATG venues under one name.
+
+Show descriptions are cached in `data/description-cache.json`, keyed by URL, so a listing costs one fetch the first time it is seen and nothing afterwards. It keeps the last saved upcoming entries for a source returning no events, reports retained venues in `data/refresh-status.json`, and refuses to overwrite data when every source fails.
+
+### Canaries
+
+A scraper that returns nothing is easy to spot. A scraper that quietly returns half of what it should, because a venue renamed one CSS class, is not: the site keeps building and the listings just get thinner. Each scraper declares the structural markers it depends on — `.listings__item--event` at Platform, `eventCards` in the Trafalgar payload, `"buyTickets"` in ATG's — and a missing marker is recorded in `refresh-status.json` under `canaries`, published in `/data/status.json`, and named in the daily email. A source that neither threw nor returned anything trips a canary too. Inspect the logs after a partial failure. A successful response containing some events is treated as that venue's current programme.
 
 `scripts/cache-images.js` downloads and optimises production images into local WebP files. `data/image-cache.json` maps source URLs to local files. Failed downloads use a venue placeholder; a browser fallback also handles missing image files. The original Thrice photograph was supplied for this listing. Fonts are locally hosted with licenses in `src/fonts`.
 
@@ -83,7 +101,9 @@ Builds run from a fresh checkout, which is fine and is why no data is committed 
 
 ### The daily report
 
-`scripts/report-new.js` emails through Resend when new shows appear, and stays quiet otherwise. It needs no database and no state file: `build.js` publishes the listings as `/data/events.json`, so the currently live site is the baseline and today's deploy becomes tomorrow's comparison. It runs before the deploy, while the previous build is still live.
+`scripts/report-new.js` emails through Resend on every run. When new shows appear it lists them; when nothing has changed it sends a short confirmation instead, so a morning with no email means the job did not run rather than that there was nothing to say. It needs no database and no state file: `build.js` publishes the listings as `/data/events.json`, so the currently live site is the baseline and today's deploy becomes tomorrow's comparison. It runs before the deploy, while the previous build is still live.
+
+Every email ends with the run summary: how many shows are listed, when the listings were last refreshed, any venue serving saved listings, and what tagging spent. Most days nothing needs tagging and that line reads £0.00. `scripts/tag-events.js` writes `data/tag-usage.json` on each run and `build.js` copies it into `/data/status.json`, so the spend is also visible from outside. OpenRouter bills in dollars and the report converts at an approximate rate; set `GBP_PER_USD` to change it.
 
 A first run with no published feed sets the baseline silently. A failed report never fails a deploy. Preview it with `npm run report -- --dry-run`.
 
