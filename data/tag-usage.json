@@ -1,0 +1,486 @@
+{
+  "at": "2026-09-10T12:05:23.844Z",
+  "model": "deepseek/deepseek-v4-flash",
+  "listingsTagged": 4,
+  "promptTokens": 1204,
+  "completionTokens": 159,
+  "totalTokens": 1363,
+  "costUsd": 0.00021308,
+  "excluded": [
+    {
+      "title": "Music Space: Drum Lessons",
+      "venue": "Platform",
+      "reason": "music class, not performance"
+    },
+    {
+      "title": "Clack and Yak: Knitting Group",
+      "venue": "Platform",
+      "reason": "craft group, not performance"
+    },
+    {
+      "title": "Art Factory",
+      "venue": "Platform",
+      "reason": "art class, not performance"
+    },
+    {
+      "title": "Painting Club",
+      "venue": "Platform",
+      "reason": "art class, not performance"
+    },
+    {
+      "title": "Nu Gen: Art Group for 11yrs +",
+      "venue": "Platform",
+      "reason": "art class, not performance"
+    },
+    {
+      "title": "The Blue Kanues + Charlie Butler + Craggyland",
+      "venue": "The Old Hairdressers",
+      "reason": "Gig by a band playing original songs"
+    },
+    {
+      "title": "Music Classes: Platform Singers",
+      "venue": "Platform",
+      "reason": "singing class, not performance"
+    },
+    {
+      "title": "NAPPY NINA x SWARVY, support from ladé",
+      "venue": "The Old Hairdressers",
+      "reason": "Rap and hip-hop concert"
+    },
+    {
+      "title": "Saturday Art Club",
+      "venue": "Platform",
+      "reason": "art class, not performance"
+    },
+    {
+      "title": "Restricted Code",
+      "venue": "The Old Hairdressers",
+      "reason": "Post-punk band concert"
+    },
+    {
+      "title": "HOLE DWELLER, DRAGON KEEP, MOUNTAINFOG, PRIORY SPECTRE",
+      "venue": "The Old Hairdressers",
+      "reason": "Multiple bands playing a gig"
+    },
+    {
+      "title": "Central Belters Karaoke: COUNTRYOKE!",
+      "venue": "The Glad Cafe",
+      "reason": "Karaoke is out of scope"
+    },
+    {
+      "title": "Celebrating Celine",
+      "venue": "Pavilion Theatre",
+      "reason": "Tribute concert, not theatre."
+    },
+    {
+      "title": "Drook + Half Time + Kelpie",
+      "venue": "The Glad Cafe",
+      "reason": "Gig, out of scope"
+    },
+    {
+      "title": "Endless Love The Show - A Tribute To Diana Ross & Lionel Richie",
+      "venue": "Pavilion Theatre",
+      "reason": "Tribute act concert, not theatre"
+    },
+    {
+      "title": "The Goth Moth, Boxie, Eric Ledev (DJ)",
+      "venue": "The Old Hairdressers",
+      "reason": "Singer-songwriter gig"
+    },
+    {
+      "title": "Tomorrow Syndicate (matinee)",
+      "venue": "The Glad Cafe",
+      "reason": "Gig, out of scope"
+    },
+    {
+      "title": "Ceremony East Coast + test plan",
+      "venue": "The Glad Cafe",
+      "reason": "Gig by a band"
+    },
+    {
+      "title": "Todd Rundgren",
+      "venue": "Theatre Royal",
+      "reason": "Concert by a musician"
+    },
+    {
+      "title": "Ward Thomas: Celebrating 10 Years Of Cartwheels",
+      "venue": "Pavilion Theatre",
+      "reason": "Album anniversary concert"
+    },
+    {
+      "title": "Second Sunday Sipping Sounds",
+      "venue": "The Old Hairdressers",
+      "reason": "Ukulele residency concert"
+    },
+    {
+      "title": "Trash Cinema presents: Raising Cain",
+      "venue": "The Old Hairdressers",
+      "reason": "Film screening, not live performance"
+    },
+    {
+      "title": "SCORE 09",
+      "venue": "The Glad Cafe",
+      "reason": "Film screening with live music"
+    },
+    {
+      "title": "Thompson Twins' Tom Bailey + Blancmange",
+      "venue": "Pavilion Theatre",
+      "reason": "Concert by musicians"
+    },
+    {
+      "title": "BAKED BEANS ON THE DOORSTEP: SEPTEMBER",
+      "venue": "The Old Hairdressers",
+      "reason": "Likely a gig series, no details"
+    },
+    {
+      "title": "Bad Co Legacy",
+      "venue": "Cottiers",
+      "reason": "Tribute band concert"
+    },
+    {
+      "title": "Jason Riddell + Moonsoup + Dayydream",
+      "venue": "The Glad Cafe",
+      "reason": "EP launch gig, out of scope"
+    },
+    {
+      "title": "An Evening with Chris Thomson, Paul McGeechan, and friends",
+      "venue": "Cottiers",
+      "reason": "Songwriters performing their songs"
+    },
+    {
+      "title": "Adam Ross (full band) + Xan Tyler",
+      "venue": "The Glad Cafe",
+      "reason": "Indie-folk gig, out of scope"
+    },
+    {
+      "title": "The Album Club + Niall Connolly (matinee)",
+      "venue": "The Glad Cafe",
+      "reason": "Album club event, out of scope"
+    },
+    {
+      "title": "Glaswegians",
+      "venue": "Platform",
+      "reason": "Photography exhibition, out of scope"
+    },
+    {
+      "title": "Vickie Paxton + Charlie Clark",
+      "venue": "The Glad Cafe",
+      "reason": "Alt-folk gig, out of scope"
+    },
+    {
+      "title": "Siskin Green – Living in the Echo",
+      "venue": "Cottiers",
+      "reason": "Concert by a folk trio"
+    },
+    {
+      "title": "Jazz at the Glad: Rachel Lightbody & Band",
+      "venue": "The Glad Cafe",
+      "reason": "Concert, not theatre"
+    },
+    {
+      "title": "Sing at The King's",
+      "venue": "King's Theatre",
+      "reason": "Likely a choir concert"
+    },
+    {
+      "title": "La Tène + Suzan Peeters",
+      "venue": "The Glad Cafe",
+      "reason": "Concert, not theatre"
+    },
+    {
+      "title": "A celebration of the life of Cami Morlotti",
+      "venue": "Cottiers",
+      "reason": "Tribute night with music"
+    },
+    {
+      "title": "UNHOLY COMMUNION: URU GANA + THINNERS + THE TV CASUALTIES",
+      "venue": "The Old Hairdressers",
+      "reason": "Gig with punk/horror rock bands"
+    },
+    {
+      "title": "Family Stereo + Kathi Deakin",
+      "venue": "The Glad Cafe",
+      "reason": "Concert, not theatre"
+    },
+    {
+      "title": "Copacabana Magic - The Barry Manilow Show",
+      "venue": "Pavilion Theatre",
+      "reason": "Tribute concert, not theatre"
+    },
+    {
+      "title": "The Best of Buble featuring Josh Hindle",
+      "venue": "Cottiers",
+      "reason": "Tribute act concert"
+    },
+    {
+      "title": "Normal Service + The Seep + Jeux d'eau",
+      "venue": "The Glad Cafe",
+      "reason": "Band gig, not theatre"
+    },
+    {
+      "title": "A Country Night in Nashville",
+      "venue": "King's Theatre",
+      "reason": "Tribute concert, not theatre"
+    },
+    {
+      "title": "Matty J - Live at the Pavilion",
+      "venue": "Pavilion Theatre",
+      "reason": "Variety performance by BGT act"
+    },
+    {
+      "title": "Stephanie Lamprea + Feargus Hetherington",
+      "venue": "The Old Hairdressers",
+      "reason": "Concert of contemporary classical pieces"
+    },
+    {
+      "title": "James Walsh & Ben Ottewell",
+      "venue": "Cottiers",
+      "reason": "Double bill concert by two singers"
+    },
+    {
+      "title": "T. Rextasy - The Greatest Hits Tour",
+      "venue": "Pavilion Theatre",
+      "reason": "Tribute concert, not theatre"
+    },
+    {
+      "title": "Robyn Hitchcock",
+      "venue": "Cottiers",
+      "reason": "Concert by a rock musician"
+    },
+    {
+      "title": "Nadia Reid – live with strings",
+      "venue": "Cottiers",
+      "reason": "Concert by a singer-songwriter"
+    },
+    {
+      "title": "The Dr Hook Songbook",
+      "venue": "Pavilion Theatre",
+      "reason": "Tribute band concert"
+    },
+    {
+      "title": "Glasgow Americana: Dar Williams & Heather Maloney",
+      "venue": "Cottiers",
+      "reason": "Concert by Americana musicians"
+    },
+    {
+      "title": "BAKED BEANS ON THE DOORSTEP OCTOBER",
+      "venue": "The Old Hairdressers",
+      "reason": "Experimental music gig"
+    },
+    {
+      "title": "Tarab Night",
+      "venue": "Cottiers",
+      "reason": "Concert of classical Arabic music."
+    },
+    {
+      "title": "Andy Fairweather Low",
+      "venue": "Pavilion Theatre",
+      "reason": "Concert by a singer"
+    },
+    {
+      "title": "The Blow Monkeys with special guest Pete Williams",
+      "venue": "Cottiers",
+      "reason": "Band concert, not staged theatre."
+    },
+    {
+      "title": "Queen By Candlelight",
+      "venue": "Pavilion Theatre",
+      "reason": "Tribute concert"
+    },
+    {
+      "title": "ULI JON ROTH – VIRGIN KILLER 50TH ANNIVERSARY TOUR 2026",
+      "venue": "Cottiers",
+      "reason": "Rock concert, not theatre."
+    },
+    {
+      "title": "REGHOSTER, ROTTER OTTER",
+      "venue": "The Old Hairdressers",
+      "reason": "Music release event, not performance."
+    },
+    {
+      "title": "Country Hits Live",
+      "venue": "Pavilion Theatre",
+      "reason": "Concert of cover songs"
+    },
+    {
+      "title": "Core. Presents: Joe & The Shitboys with Kidney FLowers",
+      "venue": "The Old Hairdressers",
+      "reason": "Gig with two bands."
+    },
+    {
+      "title": "October Holiday Food & Activities Club",
+      "venue": "Platform",
+      "reason": "Craft activities, not performance"
+    },
+    {
+      "title": "Greg Koch band",
+      "venue": "Cottiers",
+      "reason": "Blues-rock band concert."
+    },
+    {
+      "title": "An Evening with Kristin Hersh Kristin Hersh",
+      "venue": "Cottiers",
+      "reason": "Singer-songwriter concert."
+    },
+    {
+      "title": "Pop Mutations & Freakender present: Dead Finks",
+      "venue": "The Old Hairdressers",
+      "reason": "Band tour, not theatre."
+    },
+    {
+      "title": "Fastlove: The Tribute To George Michael",
+      "venue": "Pavilion Theatre",
+      "reason": "Tribute concert, music is the event"
+    },
+    {
+      "title": "STROOM NIGHT: Sergeant, Daisy Ray, Gichard",
+      "venue": "The Old Hairdressers",
+      "reason": "Gig by a band"
+    },
+    {
+      "title": "Made in Easterhouse Celebration Day",
+      "venue": "Platform",
+      "reason": "Celebration event, out of scope"
+    },
+    {
+      "title": "The Story of Guitar Heroes",
+      "venue": "Pavilion Theatre",
+      "reason": "Concert of cover songs"
+    },
+    {
+      "title": "Francis Rossi",
+      "venue": "Pavilion Theatre",
+      "reason": "Concert by musician"
+    },
+    {
+      "title": "Boyzlife - Featuring Keith Duffy & Brian McFadden + Support",
+      "venue": "Pavilion Theatre",
+      "reason": "Boyband hits concert, not theatre"
+    },
+    {
+      "title": "Pop Mutations & Divided By Language presents: Maria BC plus special guests",
+      "venue": "The Old Hairdressers",
+      "reason": "Concert by singer-songwriter"
+    },
+    {
+      "title": "FHEADAIN",
+      "venue": "The Old Hairdressers",
+      "reason": "Too thin to judge, treat as gig"
+    },
+    {
+      "title": "Rosie Frater-Taylor (Up Close)",
+      "venue": "The Old Hairdressers",
+      "reason": "Concert by musician"
+    },
+    {
+      "title": "Man In The Mirror - A Tribute To Michael Jackson",
+      "venue": "Pavilion Theatre",
+      "reason": "Tribute concert"
+    },
+    {
+      "title": "Helen McCookerybook and Lorraine Lucas",
+      "venue": "The Old Hairdressers",
+      "reason": "Too thin to judge, treat as gig"
+    },
+    {
+      "title": "POP MUTATIONS x TINY CHANGES",
+      "venue": "The Old Hairdressers",
+      "reason": "Concert by musicians"
+    },
+    {
+      "title": "ABBA-Merry Christmas",
+      "venue": "Pavilion Theatre",
+      "reason": "Tribute concert"
+    },
+    {
+      "title": "re-charge",
+      "venue": "The Old Hairdressers",
+      "reason": "Too thin to judge, treat as gig"
+    },
+    {
+      "title": "Paul Simon's Graceland: 40th Anniversary Celebration by the London African Gospel Choir",
+      "venue": "Pavilion Theatre",
+      "reason": "Concert by a choir, not staged theatre"
+    },
+    {
+      "title": "The Morning Early - Live (With Elgin And The Marbles)",
+      "venue": "The Old Hairdressers",
+      "reason": "Gig by a band"
+    },
+    {
+      "title": "The Hogmanay Ceilidh at Theatre Royal",
+      "venue": "Theatre Royal",
+      "reason": "Music event, not theatre"
+    },
+    {
+      "title": "The Magic of the Beatles",
+      "venue": "King's Theatre",
+      "reason": "Tribute concert, out of scope"
+    },
+    {
+      "title": "Celtic Legends Live",
+      "venue": "King's Theatre",
+      "reason": "Sport event, out of scope"
+    },
+    {
+      "title": "Let The Music Play: THE LEGEND OF BARRY WHITE",
+      "venue": "Pavilion Theatre",
+      "reason": "Tribute concert, out of scope"
+    },
+    {
+      "title": "Celtic Connections 2027 Proudly Presents The Milk Carton Kids And Vera Sola",
+      "venue": "Pavilion Theatre",
+      "reason": "Concert, out of scope"
+    },
+    {
+      "title": "Nashville Live",
+      "venue": "Pavilion Theatre",
+      "reason": "Tribute concert, out of scope"
+    },
+    {
+      "title": "Go Your Own Way - The Fleetwood Mac Legacy",
+      "venue": "King's Theatre",
+      "reason": "Tribute band concert"
+    },
+    {
+      "title": "A Night at the Musicals",
+      "venue": "King's Theatre",
+      "reason": "Medley concert of songs"
+    },
+    {
+      "title": "80s Live",
+      "venue": "Pavilion Theatre",
+      "reason": "80s tribute party show"
+    },
+    {
+      "title": "The Big Pants Party",
+      "venue": "King's Theatre",
+      "reason": "Concert of pop songs"
+    },
+    {
+      "title": "The Ultimate Classic Rock Show",
+      "venue": "Pavilion Theatre",
+      "reason": "Classic rock tribute concert"
+    },
+    {
+      "title": "Defying Gravity - West End Women",
+      "venue": "Pavilion Theatre",
+      "reason": "Concert of musical songs, not staged theatre"
+    },
+    {
+      "title": "Talon - The Best Of Eagles: Busy Being Fabulous",
+      "venue": "Pavilion Theatre",
+      "reason": "tribute band concert"
+    },
+    {
+      "title": "Uptown Funk",
+      "venue": "Pavilion Theatre",
+      "reason": "tribute act gig"
+    },
+    {
+      "title": "Pop Mutations & Freakender present: Black Doldrums",
+      "venue": "The Old Hairdressers",
+      "reason": "Concert by a band"
+    }
+  ]
+}

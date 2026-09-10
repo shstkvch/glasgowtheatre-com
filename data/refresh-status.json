@@ -1,12 +1,19 @@
 {
-  "refreshedAt": "2026-09-09T14:55:08.145Z",
+  "refreshedAt": "2026-09-10T12:05:20.282Z",
   "counts": {
-    "citizens": 21,
+    "platform": 19,
+    "citizens": 18,
+    "old-hairdressers": 26,
     "oran-mor": 12,
     "tron": 9,
     "tramway": 4,
-    "glad-cafe": 2
+    "glad-cafe": 16,
+    "kings": 31,
+    "pavilion": 70,
+    "theatre-royal": 29,
+    "cottiers": 21
   },
   "retainedVenues": [],
-  "failures": {}
+  "failures": {},
+  "canaries": {}
 }
