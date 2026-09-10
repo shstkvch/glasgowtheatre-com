@@ -2041,37 +2041,6 @@
     "form": "stand-up"
   },
   {
-    "id": "oran-mor-a-slice-of-the-pie",
-    "title": "A Slice of The Pie",
-    "venue": "Òran Mór",
-    "venueId": "oran-mor",
-    "season": "A Play, A Pie and A Pint",
-    "date": "2026-09-28",
-    "time": null,
-    "endDate": null,
-    "type": "new-writing",
-    "tags": [
-      "play",
-      "scratch",
-      "a-play-a-pie-a-pint"
-    ],
-    "description": "A Slice of The Pie is A Play, A Pie and A Pint’s very own scratch night, hosted by our artistic team as part of our work to platform and champion exciting new artists in Scotland. The night consists of ‘slices’ of new work from incredible writers, directors and performers who we have never worked …...",
-    "ticketUrl": "https://playpiepint.com/whats-on/event/a-slice-of-the-pie-2/",
-    "image": "https://playpiepint.com/app/uploads/2026/05/A-Slice-of-the-Pie-.png",
-    "pricing": {
-      "from": 9,
-      "to": null,
-      "concession": null,
-      "concessionTo": null,
-      "free": false,
-      "payWhatYouLike": false,
-      "text": "£9 (inc. booking fee)",
-      "read": "model"
-    },
-    "checkedAt": "2026-09-10",
-    "form": "play"
-  },
-  {
     "id": "oran-mor-whaur-s-yer-wullie-shakespeare-noo",
     "title": "Whaur’s Yer Wullie Shakespeare Noo?",
     "venue": "Òran Mór",
@@ -2135,6 +2104,37 @@
       }
     ],
     "scheduleRead": "model",
+    "form": "play"
+  },
+  {
+    "id": "oran-mor-a-slice-of-the-pie",
+    "title": "A Slice of The Pie",
+    "venue": "Òran Mór",
+    "venueId": "oran-mor",
+    "season": "A Play, A Pie and A Pint",
+    "date": "2026-09-28",
+    "time": null,
+    "endDate": null,
+    "type": "new-writing",
+    "tags": [
+      "play",
+      "scratch",
+      "a-play-a-pie-a-pint"
+    ],
+    "description": "A Slice of The Pie is A Play, A Pie and A Pint’s very own scratch night, hosted by our artistic team as part of our work to platform and champion exciting new artists in Scotland. The night consists of ‘slices’ of new work from incredible writers, directors and performers who we have never worked …...",
+    "ticketUrl": "https://playpiepint.com/whats-on/event/a-slice-of-the-pie-2/",
+    "image": "https://playpiepint.com/app/uploads/2026/05/A-Slice-of-the-Pie-.png",
+    "pricing": {
+      "from": 9,
+      "to": null,
+      "concession": null,
+      "concessionTo": null,
+      "free": false,
+      "payWhatYouLike": false,
+      "text": "£9 (inc. booking fee)",
+      "read": "model"
+    },
+    "checkedAt": "2026-09-10",
     "form": "play"
   },
   {
@@ -2227,9 +2227,6 @@
     "sourceGenre": "Musicals",
     "ticketUrl": "https://www.atgtickets.com/shows/six/theatre-royal-glasgow/calendar/",
     "image": "https://res.cloudinary.com/dwzhqvxaz/image/upload/w_800,q_auto,f_auto/v1762447297/Titles/Six/Six_Title6_1920x1080.jpg",
-    "accessibility": [
-      "BSL-interpreted performances available"
-    ],
     "description": "The crowning glory of Broadway, the West End and beyond, the international smash hit musical SIX makes its royal return following its previous sold out success!",
     "performances": [
       {
@@ -4445,9 +4442,6 @@
     "sourceGenre": null,
     "ticketUrl": "https://www.atgtickets.com/shows/scottish-opera-turandot-touch-tour/theatre-royal-glasgow/calendar/",
     "image": "https://res.cloudinary.com/dwzhqvxaz/image/upload/w_800,q_auto,f_auto/v1779968418/Titles/Scottish%20Opera%202026-27/Turandot/Turandot_TOUCH_TOUR_Theatre_Royal_Glasgow_1920x1080px.jpg",
-    "accessibility": [
-      "Audio-described performances available"
-    ],
     "description": "Our free touch tours provide an opportunity to become more familiar with the set, scenery, props and costumes. This aims to help audience members living with sight loss to immerse themselves in the world presented on stage, with audio describers, stage management and wardrobe staff present to...",
     "performances": [
       {
@@ -6264,11 +6258,6 @@
     "sourceGenre": "Musicals",
     "ticketUrl": "https://www.atgtickets.com/shows/matilda-the-musical/theatre-royal-glasgow/calendar/",
     "image": "https://res.cloudinary.com/dwzhqvxaz/image/upload/w_800,q_auto,f_auto/v1728048039/Titles/Matilda%20The%20Musical/Matilda_Title_2025_1920x1080.jpg",
-    "accessibility": [
-      "Captioned performances available",
-      "Audio-described performances available",
-      "BSL-interpreted performances available"
-    ],
     "description": "Matilda The Musical, the multi-award winning musical from the Royal Shakespeare Company is inspired by the beloved book by Roald Dahl. Buy one and get one under 16s half price on selected seats at Tue – Thu performances.",
     "performances": [
       {
@@ -7294,11 +7283,6 @@
     "sourceGenre": "Musicals",
     "ticketUrl": "https://www.atgtickets.com/shows/cats/theatre-royal-glasgow/calendar/",
     "image": "https://res.cloudinary.com/dwzhqvxaz/image/upload/w_800,q_auto,f_auto/v1783700982/Titles/Cats/8500_73_CATS_MOON_Social_Tagline_1920x1080px_V2.jpg",
-    "accessibility": [
-      "Captioned performances available",
-      "Audio-described performances available",
-      "BSL-interpreted performances available"
-    ],
     "description": "A spectacular new production of Andrew Lloyd Webber’s multi award-winning musical CATS is coming to the Theatre Royal.",
     "performances": [
       {
@@ -7474,9 +7458,6 @@
     "sourceGenre": "Dance",
     "ticketUrl": "https://www.atgtickets.com/shows/scottish-ballet-cinders/theatre-royal-glasgow/calendar/",
     "image": "https://res.cloudinary.com/dwzhqvxaz/image/upload/w_800,q_auto,f_auto/v1772639737/Titles/Scottish%20Ballet%20%E2%80%93%20Cinders!/Cinders_Header_1920x1080_title___gird.jpg",
-    "accessibility": [
-      "Audio-described performances available"
-    ],
     "description": "A dazzling Cinderella story - Scottish Ballet's playful retelling of the Cinderella story returns to surprise and delight audiences.",
     "performances": [
       {
@@ -8101,9 +8082,6 @@
     "sourceGenre": "Opera",
     "ticketUrl": "https://www.atgtickets.com/shows/scottish-opera-alcina/theatre-royal-glasgow/calendar/",
     "image": "https://res.cloudinary.com/dwzhqvxaz/image/upload/w_800,q_auto,f_auto/v1778250414/Titles/Scottish%20Opera%202026-27/Alcina/Alcina_TITLE_-_Theatre_Royal_Glasgow_1920x1080px.jpg",
-    "accessibility": [
-      "Audio-described performances available"
-    ],
     "description": "There are worse places to find yourself trapped than Club Amnesia. Here, Alcina – performance artist extraordinaire – captivates the men who swarm around her, bending their minds, and reality, to her will. But when she meets Ruggiero, her heart finally softens. Then Ruggiero’s fiancée – disguised...",
     "performances": [
       {
