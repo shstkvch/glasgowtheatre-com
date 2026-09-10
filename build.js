@@ -1,5 +1,6 @@
 const fs = require("fs");
 const path = require("path");
+const crypto = require("crypto");
 const {
   londonDate,
   filterEvents,
@@ -120,6 +121,30 @@ const label = (value) =>
     .map((word) => word[0].toUpperCase() + word.slice(1))
     .join(" ");
 const arrow = '<span aria-hidden="true">↗</span>';
+/**
+ * A content hash on every stylesheet and script URL.
+ *
+ * Cloudflare serves these with `max-age=14400` and the HTML with none, so a
+ * visitor who came yesterday gets today's markup styled by yesterday's CSS —
+ * and every class added since renders unstyled for four hours. A hash in the
+ * URL makes a changed file a different file, so the browser has to fetch it.
+ *
+ * style.css `@import`s fonts.css, which the browser caches under its own URL,
+ * so a change to either has to move the hash.
+ */
+const IMPORTED = { "css/style.css": ["css/fonts.css"] };
+const asset = (file) =>
+  `/${file}?v=${crypto
+    .createHash("sha1")
+    .update(
+      Buffer.concat(
+        [file, ...(IMPORTED[file] || [])].map((part) =>
+          fs.readFileSync(path.join(__dirname, "src", part)),
+        ),
+      ),
+    )
+    .digest("hex")
+    .slice(0, 8)}`;
 /* ------------------------------------------------- tickets, times, prices */
 /** The venue's own concession schemes, where it publishes any. */
 const scheme = (event) => concessions[event.venueId] || null;
@@ -197,8 +222,8 @@ function page(
   return `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>${e(title)} | Glasgow Theatre</title><meta name="description" content="${e(description)}"><link rel="canonical" href="${SITE}${url}">
 <meta property="og:title" content="${e(title)}"><meta property="og:description" content="${e(description)}"><meta property="og:url" content="${SITE}${url}"><meta property="og:type" content="website"><meta property="og:site_name" content="Glasgow Theatre"><meta property="og:image" content="${SITE}/images/thrice.webp"><meta name="twitter:card" content="summary_large_image"><meta name="theme-color" content="#303fce">
-<link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/css/style.css">
-<script defer src="/js/listings.js"></script><script defer src="/js/main.js"></script></head><body>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="${asset("css/style.css")}">
+<script defer src="${asset("js/listings.js")}"></script><script defer src="${asset("js/main.js")}"></script></head><body>
 <a class="skip-link" href="#main">Skip to content</a><header class="site-header"><div class="container header-inner"><a class="brand" href="/" aria-label="Glasgow Theatre home">GLASGOW<span>THEATRE<span class="brand-dot">●</span></span></a>
 <nav aria-label="Main navigation">${nav.map(([key, href, text]) => `<a href="${href}"${active === key ? ' aria-current="page"' : ""}>${text}</a>`).join("")}</nav></div></header>
 <main id="main">${body}</main>

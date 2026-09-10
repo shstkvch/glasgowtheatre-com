@@ -567,3 +567,38 @@ test("show pages fit a phone and keep their columns on a desktop", async ({
     fullPage: true,
   });
 });
+
+test("stylesheet and script URLs change when the file does", async ({
+  page,
+  request,
+}) => {
+  await page.goto("/");
+  const assets = await page.evaluate(() =>
+    [
+      ...document.querySelectorAll('link[rel="stylesheet"], script[src]'),
+    ].map((el) => el.getAttribute("href") || el.getAttribute("src")),
+  );
+  expect(assets.length).toBeGreaterThan(0);
+  for (const url of assets) {
+    // Cloudflare caches these for four hours and the HTML not at all, so an
+    // unversioned URL means a returning visitor gets new markup with old CSS
+    // and every class added since renders unstyled.
+    expect(url, url).toMatch(/\?v=[a-f0-9]{8}$/);
+    expect((await request.get(url)).ok(), url).toBe(true);
+  }
+  // The hash has to follow the contents, not just be present.
+  const built = fs.readFileSync("dist/index.html", "utf8");
+  const stamped = built.match(/\/css\/style\.css\?v=([a-f0-9]{8})/)[1];
+  const crypto = require("crypto");
+  const expected = crypto
+    .createHash("sha1")
+    .update(
+      Buffer.concat([
+        fs.readFileSync("src/css/style.css"),
+        fs.readFileSync("src/css/fonts.css"),
+      ]),
+    )
+    .digest("hex")
+    .slice(0, 8);
+  expect(stamped).toBe(expected);
+});

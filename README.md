@@ -29,6 +29,8 @@ Local browser tests use installed Google Chrome. CI installs Playwright Chromium
 - **Lane names.** Where every listing in a lane shares a season the lane takes the season's name and the venue drops to the line below — the Òran Mór lane reads "A Play, A Pie and A Pint".
 - **Colour.** Each venue wears its own brand colour, listed with its source in `VENUE_COLOURS` in `build.js`. Bar titles are drawn in whichever house ink is legible on that colour, and a colour that clears neither is nudged the smallest step towards black or white that works. The build fails rather than publish a title nobody can read, and a browser test measures the rendered contrast.
 
+Stylesheet and script URLs carry a hash of their own contents — `/css/style.css?v=a57394f1`. Cloudflare serves those files with a four-hour cache and the HTML with none, so without it a returning visitor gets today's markup styled by yesterday's CSS and every class added since renders unstyled until the cache expires. A browser test checks the hash is present and follows the file.
+
 Everything above works without JavaScript. Script adds the hover preview, the month buttons, drag-to-scroll and the jump to today.
 
 ## Add or correct a listing
