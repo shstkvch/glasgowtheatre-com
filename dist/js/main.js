@@ -196,8 +196,10 @@
     card.innerHTML =
       '<span class="cal-pop-media"><img alt="" width="320" height="200"></span>' +
       '<span class="cal-pop-meta"></span><strong class="cal-pop-title"></strong>' +
-      '<span class="cal-pop-dates"></span><span class="cal-pop-summary"></span>' +
-      '<span class="cal-pop-cta">Open the venue \u2192</span>';
+      '<span class="cal-pop-dates"></span>' +
+      '<span class="cal-pop-facts"><span class="fact-time"></span><span class="fact-price"></span></span>' +
+      '<span class="cal-pop-summary"></span>' +
+      '<span class="cal-pop-cta">Prices, times and concessions \u2192</span>';
     document.body.append(card);
     const media = card.querySelector(".cal-pop-media");
     const thumb = card.querySelector("img");
@@ -213,6 +215,15 @@
         show.venue + " · " + show.form;
       card.querySelector(".cal-pop-title").textContent = show.title;
       card.querySelector(".cal-pop-dates").textContent = show.dates;
+      // A bar is a title's width and no more, so when it starts and what it
+      // costs are only ever visible here or in the tooltip.
+      const time = card.querySelector(".cal-pop-facts .fact-time");
+      const price = card.querySelector(".cal-pop-facts .fact-price");
+      time.textContent = show.when || "";
+      time.hidden = !show.when;
+      price.textContent = show.price || "";
+      price.hidden = !show.price;
+      card.querySelector(".cal-pop-facts").hidden = !show.when && !show.price;
       card.querySelector(".cal-pop-summary").textContent = show.summary;
       media.hidden = !show.image;
       if (show.image) thumb.src = show.image;

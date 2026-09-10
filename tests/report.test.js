@@ -97,3 +97,30 @@ test("retained venues are called out in the summary", () => {
   const lines = summaryLines(48, status({ retainedVenues: ["tron"] }));
   assert.ok(lines.some((line) => /Serving saved listings for: tron/.test(line)));
 });
+
+const { ticketsLine } = require("../scripts/report-new");
+test("the report says what reading ticket prices cost, including nothing", () => {
+  const refreshedAt = "2026-09-10T05:20:00.000Z";
+  assert.match(ticketsLine({ refreshedAt }), /did not run — £0\.00$/);
+  assert.match(
+    ticketsLine({ refreshedAt, tickets: { at: "2026-09-10T05:25:00.000Z", totalTokens: 0 } }),
+    /nothing new to read — £0\.00$/,
+  );
+  assert.match(
+    ticketsLine({
+      refreshedAt,
+      tickets: {
+        at: "2026-09-10T05:25:00.000Z",
+        totalTokens: 1601,
+        listingsRead: 2,
+        costUsd: 0.000257,
+      },
+    }),
+    /^Ticket prices: 1,601 tokens for 2 listings — £0\.000\d$/,
+  );
+  // Yesterday's file left behind by a run that fell over is not this run.
+  assert.match(
+    ticketsLine({ refreshedAt, tickets: { at: "2026-09-09T05:25:00.000Z", totalTokens: 900 } }),
+    /did not run/,
+  );
+});

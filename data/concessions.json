@@ -1,0 +1,226 @@
+{
+  "citizens": {
+    "url": "https://citz.co.uk/visit/pricing/",
+    "checkedAt": "2026-09-10",
+    "summary": "Standard prices run £14–£55 in the Main Theatre and £12.50–£23.50 in the Studio. Four free memberships carry a reduced price; each needs a one-off sign-up, and none asks for ID.",
+    "schemes": [
+      {
+        "name": "Gorbals Pass",
+        "price": 5,
+        "broad": true,
+        "eligibility": "Residents with a G5 postcode. Two tickets per household.",
+        "how": "Free membership, signed up for once."
+      },
+      {
+        "name": "Low Income Pass",
+        "price": 5,
+        "broad": true,
+        "eligibility": "Audience members on a low household income, unemployed, or receiving low-income benefits.",
+        "how": "Free membership, signed up for once. No ID required."
+      },
+      {
+        "name": "Under 30s Pass",
+        "price": 10,
+        "broad": true,
+        "eligibility": "Ages 16–29, on standard shows. 50% off Christmas and selected productions.",
+        "how": "Free membership, signed up for once."
+      },
+      {
+        "name": "Access Pass",
+        "saving": "50% off full price, plus a free companion ticket",
+        "broad": true,
+        "eligibility": "Audience members with additional access needs.",
+        "how": "Free membership, signed up for once."
+      },
+      {
+        "name": "Children",
+        "price": 10,
+        "broad": false,
+        "eligibility": "Under 16s on standard shows, unless age restrictions apply. 50% off Christmas and selected productions."
+      },
+      {
+        "name": "Schools",
+        "price": 10,
+        "broad": false,
+        "eligibility": "School groups, booked through the Box Office."
+      },
+      {
+        "name": "Groups",
+        "saving": "One free ticket in every ten",
+        "broad": false,
+        "eligibility": "Groups of ten or more, booked through the Box Office."
+      }
+    ],
+    "offers": [
+      {
+        "name": "First Look",
+        "saving": "40% off top prices",
+        "detail": "Preview performances early in a run."
+      },
+      {
+        "name": "Weekday performances",
+        "saving": "20% off weekend prices",
+        "detail": "Selected Main Theatre shows."
+      },
+      {
+        "name": "Lucky Dip",
+        "saving": "At least 50% off standard top prices",
+        "detail": "Main Theatre only. Bought in advance, seat allocated on the day, maximum two per booking."
+      },
+      {
+        "name": "Theatre Pass",
+        "saving": "Up to 20% off, and no booking fees",
+        "detail": "An annual pass; tickets get cheaper the more you visit."
+      }
+    ],
+    "fees": "£1.50 booking fee per transaction, waived for Theatre Pass members. £1.50 of every full-price ticket is a redevelopment levy, already included in the published price and excluded from the Gorbals, Low Income, Access and Under 30s prices."
+  },
+  "platform": {
+    "url": "https://www.platform-online.co.uk/page/local-links",
+    "checkedAt": "2026-09-10",
+    "summary": "Most shows are priced in three tiers — standard, concession, and the Local Links rate for people living nearby. Classes and workshops are pay-what-you-like.",
+    "schemes": [
+      {
+        "name": "Local Links",
+        "price": 5,
+        "broad": true,
+        "eligibility": "Residents of G1 1, G1 5, G4 0, G31 1–5, G32 0, G32 6–9, G33 1–6, G34 0, G34 9, G40 1–4, G69 6–8 and G71 7. Shows are as little as £5.",
+        "how": "Free, with no advance registration: choose Local Links when booking online and enter your postcode, or give your address when booking by phone or in person."
+      },
+      {
+        "name": "Concession",
+        "broad": false,
+        "eligibility": "Published per show alongside the standard price."
+      },
+      {
+        "name": "Pay-What-You-Like",
+        "broad": false,
+        "eligibility": "Classes and participatory activities. You decide what to pay; Platform suggests around £5 a class, payable online, by card or in cash at the class."
+      }
+    ],
+    "fees": null
+  },
+  "tron": {
+    "url": "https://www.tron.co.uk/booking-information/",
+    "checkedAt": "2026-09-10",
+    "summary": "The Tron has scrapped concession types altogether. Every show is sold at three price points and you choose which to pay — so the lowest price on a listing here is the lowest price anyone pays, with no eligibility to prove.",
+    "schemes": [
+      {
+        "name": "Choose what you pay",
+        "broad": false,
+        "eligibility": "Open to everyone. Pick from the three price points shown when booking."
+      },
+      {
+        "name": "Groups",
+        "broad": false,
+        "eligibility": "Groups may be eligible for a discount — contact the Box Office on 0141 552 4267."
+      }
+    ],
+    "fees": "No booking fees."
+  },
+  "tramway": {
+    "url": "https://www.glasgowlife.org.uk/the-small-print/tickets-glasgow-tickets-purchase-policy",
+    "checkedAt": "2026-09-10",
+    "summary": "Tramway sells through Glasgow Life, whose concession rate is published per show — usually as the second figure in a listing such as £20/£12.",
+    "schemes": [
+      {
+        "name": "Concession",
+        "broad": false,
+        "eligibility": "Full-time students; people aged 60 and over; and recipients of Jobseeker's Allowance, Disability Living Allowance, Personal Independence Payment or Employment & Support Allowance. Photographic proof of entitlement may be asked for.",
+        "how": "Chosen at the time of booking. One concession or discount per ticket."
+      }
+    ],
+    "fees": "Transaction fees apply: £1.50 online, £1.75 by phone. Exchanges, where allowed, are £1 per ticket."
+  },
+  "oran-mor": {
+    "url": "https://playpiepint.com/",
+    "checkedAt": "2026-09-10",
+    "summary": "A Play, A Pie and A Pint tickets include a drink and a pie. Prices rise across the week, from Monday to Saturday, and a cheaper play-only ticket is held back for midweek performances.",
+    "schemes": [
+      {
+        "name": "Play-only ticket",
+        "broad": false,
+        "eligibility": "Tuesday to Thursday, for students, arts workers, and audience members who are unemployed or on a low income or household benefits. The ticket covers the play without the pie and drink.",
+        "how": "Chosen when booking."
+      }
+    ],
+    "fees": "Published prices include a £1.50 booking fee. A small extra fee applies when booking online through Universe."
+  },
+  "kings": {
+    "url": "https://www.atgtickets.com/access/access-scheme/",
+    "checkedAt": "2026-09-10",
+    "summary": "An ATG house. Concessions are set per production rather than by the venue, so the booking page is the only place they appear; two memberships run across every ATG theatre.",
+    "schemes": [
+      {
+        "name": "Access Membership Scheme",
+        "broad": false,
+        "eligibility": "Free, and open to all Deaf and disabled customers and people with long-term health conditions. Unlocks accessible seats online, any Access concessions on a show, and personal assistant tickets.",
+        "how": "Register once at atgtickets.com/access."
+      },
+      {
+        "name": "ATG+",
+        "broad": false,
+        "eligibility": "A paid membership: no booking fees on most ATG shows, priority booking and member discounts across 35+ venues."
+      }
+    ],
+    "fees": "Booking fees apply and vary by show; ATG+ members pay none."
+  },
+  "theatre-royal": {
+    "url": "https://www.atgtickets.com/access/access-scheme/",
+    "checkedAt": "2026-09-10",
+    "summary": "An ATG house. Concessions are set per production rather than by the venue, so the booking page is the only place they appear; two memberships run across every ATG theatre.",
+    "schemes": [
+      {
+        "name": "Access Membership Scheme",
+        "broad": false,
+        "eligibility": "Free, and open to all Deaf and disabled customers and people with long-term health conditions. Unlocks accessible seats online, any Access concessions on a show, and personal assistant tickets.",
+        "how": "Register once at atgtickets.com/access."
+      },
+      {
+        "name": "ATG+",
+        "broad": false,
+        "eligibility": "A paid membership: no booking fees on most ATG shows, priority booking and member discounts across 35+ venues."
+      }
+    ],
+    "fees": "Booking fees apply and vary by show; ATG+ members pay none."
+  },
+  "pavilion": {
+    "url": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/terms-and-conditions",
+    "checkedAt": "2026-09-10",
+    "summary": "Concessions are set per show and applied at the point of purchase. Access tickets, including companion seats, are arranged with the theatre directly rather than online.",
+    "schemes": [
+      {
+        "name": "Concession",
+        "broad": false,
+        "eligibility": "Where a show offers one. Must be claimed at the time of purchase — it cannot be added afterwards — and proof of entitlement may be asked for. Only one discount applies per ticket; where several would, you get the cheapest single one."
+      },
+      {
+        "name": "Access and companion tickets",
+        "broad": false,
+        "eligibility": "Wheelchair spaces and essential companion tickets are booked by phone, in person, or through the theatre's enquiry form."
+      }
+    ],
+    "fees": "Some events include a venue levy of up to £2 in the ticket price."
+  },
+  "cottiers": {
+    "url": "https://cottiers.com/",
+    "checkedAt": "2026-09-10",
+    "summary": "Cottiers publishes a single standard price per event and no venue-wide concession scheme. Ticket queries go to the theatre directly.",
+    "schemes": [],
+    "fees": null
+  },
+  "glad-cafe": {
+    "url": "https://www.thegladcafe.co.uk/",
+    "checkedAt": "2026-09-10",
+    "summary": "A single advance price per event, with no published concession scheme. Some nights are free or pay-what-you-like — the event page says which.",
+    "schemes": [],
+    "fees": null
+  },
+  "old-hairdressers": {
+    "url": "http://www.theoldhairdressers.com/",
+    "checkedAt": "2026-09-10",
+    "summary": "Prices are not published on the venue's own listings; they appear on the ticket seller's page, and some nights are free or on the door.",
+    "schemes": [],
+    "fees": null
+  }
+}

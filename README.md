@@ -43,6 +43,34 @@ Required fields are `id`, `title`, `venue`, `venueId` (matching `data/venues.jso
 
 Art forms on manual entries are kept as written. The tagger only touches scraped listings, so a hand-picked form is never overwritten.
 
+## A show's own page
+
+Every listing has a page at `/shows/<id>.html` that collects what it costs and when it is on: the price band as the venue publishes it, word for word; that venue's concession schemes and who qualifies for them; and a table of every performance with its curtain time, its access provision and, where the venue prices by the night, what the cheapest seat costs that night.
+
+The card title and the calendar bar both open it. The **Tickets** button and the calendar's hover card still go straight to the venue's booking page: nobody who only wants a ticket is made to travel through us to get one.
+
+## Prices and performance times
+
+A card and a calendar bar each carry one line — "From £18 (conc. from £5)" and "7.30pm & matinees". Both come from what the venue published, and where nothing was published the site says so rather than leaving a gap that reads as free.
+
+**Where the numbers come from.** Four venues publish machine-readable prices and times, and those are used in preference to anything else: the Citizens' schedule lists every performance with its time, its access provision and what is happening around it; ATG and Trafalgar emit one structured-data block per performance carrying the cheapest seat still on sale; the Tron's prices live in its Spektrix box office rather than on its website, where the price column in the performance table is commented out and reads "From £0.00". Tramway, Òran Mór, Platform, Cottiers and the Glad Café publish a sentence instead.
+
+**Live prices.** ATG and Trafalgar quote the cheapest seat *still on sale*, fees included, which moves as a run sells — a nearly sold-out night can read £110. That is true and worth knowing, so it is published, with the show page saying which day the figure was read.
+
+**Concessions** are a property of the building, not the show. `data/concessions.json` is hand-maintained: each venue's schemes, what each costs, who qualifies, the page it was read from and the date it was checked. Nothing here is scraped, because none of these venues publishes it in a form a scraper could trust. The Citz's Gorbals Pass turns on a G5 postcode and its Low Income Pass on household income; Platform's Local Links turns on a list of east-end postcodes. Where a show publishes no concession of its own, the card borrows the cheapest scheme that runs across the whole programme and the show page names it — "The £5 is Citizens Theatre's Gorbals Pass and Low Income Pass, not a price set for this show."
+
+### Reading what a venue wrote
+
+`scripts/read-tickets.js` turns a published sentence into numbers, using the same cheap model that assigns art forms.
+
+There is no shared format to parse. Eleven venues write eleven ways: `£14 - £43.50`, `£20/£12`, `Previews: £16 | Main Run: £19, £23 or £26`, `£10.50 (standard) | £7 (concession) | £6`, `Monday: £17 / Tuesday-Friday: £19 / Saturday: £22.50`, `Tickets £5-£20 (sliding scale)`, `Pay-What-You-Like`. A regular expression can be made to fit all seven, and then a venue rewrites one line and it quietly returns the wrong number — which is worse than none, because a wrong price is a promise the site cannot keep.
+
+It reads times the same way. "Monday – Saturday 1pm" against a Monday-to-Saturday run names every performance in it without listing one, so A Play, A Pie and A Pint gets a date for each day with that day's own price against it. "Fri 2 Oct @ 7pm & Sat 3 Oct @ 2pm & 7pm" is three performances on two days, and the second day was missing from Platform's own date range until the reading found it. "Day & evening shows" names nothing, and produces nothing.
+
+Nothing the model returns is trusted on sight. A concession dearer than the full price, a range that runs backwards, a price no Glasgow theatre would charge, a date the run cannot reach, anything that is not a 24-hour time — all dropped rather than corrected. A pattern is never expanded across a run with no end date, because one lonely Thursday would read as a whole term. And the venue's own wording is never rewritten: `pricing.text` is what a show page quotes.
+
+Results are cached in `data/ticket-cache.json`, keyed by a hash of the exact text the model saw, so a listing costs one call the first time and nothing afterwards. Reading all 96 listings from scratch costs about \$0.002. It fails open like the tagger: without a key, or if the API is down, the deterministic reader in `scripts/tickets.js` stands and every listing keeps the price it had. Preview with `npm run tickets -- --dry-run`, or re-read everything with `--reread`.
+
 ## Tagging
 
 `scripts/tag-events.js` assigns one art form per listing with a cheap LLM through OpenRouter, replacing keyword matching that used to tag any listing containing the word "improv" as comedy. Art forms come from a fixed vocabulary in `scripts/art-forms.js`, including play, musical, opera, dance and stand-up. Cards and filters show only the art form; genres and subgenres are deferred.
@@ -65,7 +93,7 @@ Set `OPENROUTER_API_KEY` in `.env` (see `.env.example`), or `OPENROUTER_MODEL` t
 
 ## Refreshing and images
 
-`scripts/scrape-events.js` reads eleven sources: Citizens Theatre, Tron, Tramway, A Play, A Pie and A Pint, The Glad Café, the King's, Theatre Royal, the Pavilion, Platform, Cottiers and The Old Hairdressers.
+`scripts/scrape-events.js` reads eleven sources, collecting each listing's dates, blurb, artwork and — where the source publishes them in a machine-readable form — its prices and performance times: Citizens Theatre, Tron, Tramway, A Play, A Pie and A Pint, The Glad Café, the King's, Theatre Royal, the Pavilion, Platform, Cottiers and The Old Hairdressers.
 
 The King's and Theatre Royal are both ATG houses and share one parser, `scrapeATG`, which walks the paginated what's-on URLs that ATG's robots.txt explicitly allows and reads the listings out of the React Server Component payload. The Pavilion's own domain redirects to Trafalgar's platform, whose payload carries an ISO `startDate`. Platform publishes no year on a listing, so the year is read from the `evmon-October-2026` class names on each item. Cottiers is a WP Event Manager install. The Old Hairdressers publishes neither meta description nor category, so its blurb comes from the longest paragraph on the event page.
 
@@ -100,7 +128,7 @@ Worker (cron 05:17 UTC) ──POST──▶ Pages deploy hook
                                         │
                                         ▼
                           npm run build:cloudflare
-                    refresh → tag → test → build → report
+              refresh → read tickets → tag → test → build → report
                                         │
                                         ▼
                               deploy to glasgowtheatre.com
@@ -116,7 +144,7 @@ Builds run from a fresh checkout, which is fine and is why no data is committed 
 
 `scripts/report-new.js` emails through Resend on every run. When new shows appear it lists them; when nothing has changed it sends a short confirmation instead, so a morning with no email means the job did not run rather than that there was nothing to say. It needs no database and no state file: `build.js` publishes the listings as `/data/events.json`, so the currently live site is the baseline and today's deploy becomes tomorrow's comparison. It runs before the deploy, while the previous build is still live.
 
-Every email ends with the run summary: how many shows are listed, when the listings were last refreshed, any venue serving saved listings, and what tagging spent. Most days nothing needs tagging and that line reads £0.00. `scripts/tag-events.js` writes `data/tag-usage.json` on each run and `build.js` copies it into `/data/status.json`, so the spend is also visible from outside. OpenRouter bills in dollars and the report converts at an approximate rate; set `GBP_PER_USD` to change it.
+Every email ends with the run summary: how many shows are listed, when the listings were last refreshed, any venue serving saved listings, and what each model pass spent — tagging and reading ticket prices. Most days nothing needs tagging and that line reads £0.00. `scripts/tag-events.js` and `scripts/read-tickets.js` each write a usage file on every run and `build.js` copies both into `/data/status.json`, so the spend is also visible from outside. OpenRouter bills in dollars and the report converts at an approximate rate; set `GBP_PER_USD` to change it.
 
 A first run with no published feed sets the baseline silently. A failed report never fails a deploy. Preview it with `npm run report -- --dry-run`.
 

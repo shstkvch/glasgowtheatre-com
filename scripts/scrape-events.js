@@ -238,6 +238,140 @@ function parseTime(str) {
   return null;
 }
 
+/* --- Prices and performance times ------------------------------------- */
+
+const {
+  readPricing,
+  headlineTime,
+  readDuration,
+  mergePricing,
+} = require('./tickets');
+
+/** Every date in a run, inclusive of both ends. */
+function datesBetween(from, to) {
+  const days = [];
+  for (let at = Date.parse(`${from}T00:00:00Z`); at <= Date.parse(`${to}T00:00:00Z`); at += 86400000)
+    days.push(new Date(at).toISOString().slice(0, 10));
+  return days;
+}
+
+/**
+ * A moment as Glasgow experiences it.
+ *
+ * Half these sources publish performance times in UTC: ATG's structured data
+ * says a 7.30pm October curtain is "18:30Z", which is true and useless on a
+ * listing. A datetime with no zone is already local and is taken as written.
+ */
+function londonMoment(value) {
+  const text = String(value || '').trim();
+  if (!text) return null;
+  const zoned = /(Z|[+-]\d{2}:?\d{2})$/.test(text);
+  const naive = text.match(/^(\d{4}-\d{2}-\d{2})[T ](\d{2}):(\d{2})/);
+  if (!zoned) return naive ? { date: naive[1], time: `${naive[2]}:${naive[3]}` } : null;
+  const at = new Date(text);
+  if (Number.isNaN(at.getTime())) return null;
+  const parts = new Intl.DateTimeFormat('en-GB', {
+    timeZone: 'Europe/London',
+    year: 'numeric', month: '2-digit', day: '2-digit',
+    hour: '2-digit', minute: '2-digit', hour12: false,
+  }).formatToParts(at);
+  const get = (type) => parts.find((p) => p.type === type)?.value;
+  const hour = get('hour') === '24' ? '00' : get('hour');
+  return { date: `${get('year')}-${get('month')}-${get('day')}`, time: `${hour}:${get('minute')}` };
+}
+
+/**
+ * Hang a schedule on a listing.
+ *
+ * The performances are the record — a detail page lists them one by one — and
+ * the listing's own `time` becomes whichever curtain the run uses most, so a
+ * card showing a single time shows the usual one rather than the first. A run
+ * whose opening night is a 2pm preview no longer reads as a matinee season.
+ */
+function attachSchedule(event, performances, { partial = false } = {}) {
+  const clean = (performances || [])
+    .filter((p) => p && /^\d{4}-\d{2}-\d{2}$/.test(p.date))
+    .map((p) => ({
+      date: p.date,
+      ...(p.time && /^\d{2}:\d{2}$/.test(p.time) ? { time: p.time } : {}),
+      ...(p.note ? { note: p.note } : {}),
+      ...(p.access && p.access.length ? { access: p.access } : {}),
+      ...(p.url ? { url: p.url } : {}),
+      ...(p.price != null ? { price: p.price } : {}),
+    }))
+    .sort((a, b) => `${a.date}${a.time || ''}`.localeCompare(`${b.date}${b.time || ''}`));
+  if (!clean.length) return event;
+  event.performances = clean;
+  if (partial) event.performancesPartial = true;
+  event.time = headlineTime(clean) || event.time || null;
+  return event;
+}
+
+/**
+ * The text of an element with its line breaks intact.
+ *
+ * `.text()` welds a `<br>`-separated price list into "Monday: £17Tuesday-
+ * Friday: £19", which reads as one number. Keeping the breaks keeps each
+ * price its own line, which is how the venue wrote it and how it is parsed.
+ */
+function blockText($, selection) {
+  const el = selection.first();
+  if (!el.length) return '';
+  const html = (el.html() || '').replace(/<br\s*\/?>/gi, '\n').replace(/<\/p>/gi, '\n');
+  return cheerio
+    .load(`<div>${html}</div>`)('div')
+    .text()
+    .split('\n')
+    .map((line) => cleanText(line))
+    .filter(Boolean)
+    .join('\n');
+}
+
+/**
+ * Every schema.org event a page declares.
+ *
+ * Four of these venues publish their performance times and prices as
+ * structured data and nowhere else a scraper can reach: ATG emits one block
+ * per performance with the cheapest seat as its offer, Trafalgar one block
+ * with an offer per performance, and the Glad and Cottiers one block each.
+ * Reading it is both more honest and more robust than reading their layout.
+ */
+function jsonLdEvents(html) {
+  const found = [];
+  const walk = (node) => {
+    if (Array.isArray(node)) return node.forEach(walk);
+    if (!node || typeof node !== 'object') return;
+    if (/Event$/.test(String(node['@type'] || ''))) found.push(node);
+    if (Array.isArray(node['@graph'])) walk(node['@graph']);
+  };
+  for (const [, body] of String(html).matchAll(
+    /<script[^>]+type=["']application\/ld\+json["'][^>]*>([\s\S]*?)<\/script>/gi,
+  )) {
+    try {
+      walk(JSON.parse(body));
+    } catch {
+      // A malformed block is one venue's bad day, not a reason to lose the rest.
+    }
+  }
+  return found;
+}
+
+/** Offers as a list, however the page chose to write them. */
+const offersOf = (event) =>
+  [event && event.offers].flat().filter((o) => o && typeof o === 'object');
+
+/** Drop the empty fields rather than publish `"pricing": null` 150 times. */
+function attachPricing(event, pricing, extra = {}) {
+  const merged = pricing && (pricing.from != null || pricing.text) ? pricing : null;
+  if (merged) {
+    if (extra.notes) merged.notes = extra.notes;
+    event.pricing = merged;
+  }
+  if (extra.duration) event.duration = extra.duration;
+  if (extra.scheduleText) event.scheduleText = extra.scheduleText;
+  return event;
+}
+
 function cleanText(text) {
   if (!text) return '';
   return (
@@ -288,6 +422,45 @@ function classifyTags(title, description) {
 }
 
 // --- Scrapers ---
+
+/**
+ * The Citz publishes more than anyone else: a price band, a running time, and
+ * a schedule listing every performance with its curtain time, its access
+ * provision and whatever is happening around it. All of it is read here.
+ *
+ * The discount copy is picked out of the important-information block by the
+ * paragraph that mentions discounts, rather than taking the whole block, which
+ * also carries age guidance and content warnings that belong elsewhere.
+ */
+function citizensTickets($page) {
+  const performances = $page('.c-event-instance')
+    .toArray()
+    .map((el) => {
+      const $item = $page(el);
+      const date = $item.find('.c-event-instance__date time').attr('datetime');
+      return {
+        date: /^\d{4}-\d{2}-\d{2}$/.test(String(date)) ? date : null,
+        time: parseTime($item.find('.c-event-instance__time time').attr('datetime') || ''),
+        note: cleanText($item.find('.c-event-instance__note').text()) || null,
+        access: cleanText($item.find('.c-event-instance__access-list').text())
+          .split(/\s*[,;]\s*|\s{2,}/)
+          .map((s) => s.trim())
+          .filter(Boolean),
+        url: $item.find('.c-event-instance__booking a').attr('href') || null,
+      };
+    });
+
+  // The Citz's own discount copy is deliberately not scraped: it is the same
+  // four passes as data/concessions.json, written as one unpunctuated run
+  // with "More about our discounts" welded to the end where the link was.
+  // The hand-checked version says it better and says who qualifies.
+  const out = {};
+  attachSchedule(out, performances);
+  attachPricing(out, readPricing(cleanText($page('.c-event__price-label').first().text())), {
+    duration: readDuration(cleanText($page('.c-event__duration-label').first().text())),
+  });
+  return out;
+}
 
 async function scrapeCitizens() {
   console.log('\n🎭 Scraping Citizens Theatre...');
@@ -375,6 +548,7 @@ async function scrapeCitizens() {
                 event.description = truncateDesc(cleanText(masthead.text()));
               }
             }
+            Object.assign(event, citizensTickets($page));
           } catch (err) {
             console.log(`  Warning: Could not fetch ${event.url}: ${err.message}`);
           }
@@ -394,13 +568,18 @@ async function scrapeCitizens() {
           venue: 'Citizens Theatre',
           venueId: 'citizens',
           date: e.date,
-          time: null, // Runs have varying curtain times; check the venue.
+          // Curtain times vary across a run, so the schedule is the record and
+          // this is whichever time that run uses most often.
+          time: e.time || null,
           endDate: e.endDate,
           type,
           tags: classifyTags(e.title, e.description || '', type),
           description: e.description || `${e.title} at Citizens Theatre, Glasgow.`,
           ticketUrl: e.url,
           image: e.image,
+          ...(e.performances ? { performances: e.performances } : {}),
+          ...(e.pricing ? { pricing: e.pricing } : {}),
+          ...(e.duration ? { duration: e.duration } : {}),
         };
       });
 
@@ -413,9 +592,49 @@ async function scrapeCitizens() {
   }
 }
 
+/**
+ * Tron prices come from Spektrix, not from the website.
+ *
+ * The Tron's own show pages have a prices column in the performance table and
+ * it is commented out in the markup, left reading "From £0.00". The box office
+ * behind it publishes the real thing — "Previews: £16 | Main Run: £19, £23 or
+ * £26" — through the open web API every Spektrix client exposes, along with
+ * the running time. One request covers the whole programme.
+ *
+ * It fails open, like everything else here: no API, no prices, and the rest of
+ * the listing is unaffected.
+ */
+async function spektrixEvents(client) {
+  try {
+    const events = JSON.parse(await fetchPage(`https://system.spektrix.com/${client}/api/v3/events`));
+    if (!Array.isArray(events)) throw new Error('not a list of events');
+    return new Map(events.map((e) => [cleanText(e.name).toLowerCase(), e]));
+  } catch (err) {
+    console.log(`  Warning: no Spektrix prices for ${client}: ${err.message}`);
+    return new Map();
+  }
+}
+
+/** Every performance the Tron lists, with the label it puts on the night. */
+function tronPerformances($page) {
+  return $page('#performances tr')
+    .toArray()
+    .map((row) => {
+      const $row = $page(row);
+      const { startDate } = parseDateRange(cleanText($row.find('.cell_date').first().text()));
+      return {
+        date: startDate,
+        time: parseTime(cleanText($row.find('.cell_time').first().text())),
+        note: cleanText($row.find('.cell_details .instance_message').first().text()) || null,
+        url: $row.find('.cell_button a').attr('href') || null,
+      };
+    });
+}
+
 async function scrapeTron() {
   console.log('\n🎭 Scraping Tron Theatre...');
   const events = [];
+  const prices = await spektrixEvents('tron');
 
   try {
     const html = await fetchPage('https://www.tron.co.uk/whats-on/');
@@ -518,7 +737,7 @@ async function scrapeTron() {
             if (timeMatch) time = parseTime(timeMatch[0]);
 
             if (firstDate) {
-              events.push({
+              const listing = {
                 title: show.title,
                 url: show.url,
                 date: firstDate,
@@ -526,7 +745,14 @@ async function scrapeTron() {
                 time: time || null,
                 image: show.image,
                 description: description || `${show.title} at Tron Theatre, Glasgow.`,
+              };
+              attachSchedule(listing, tronPerformances($page));
+              const sold = prices.get(show.title.toLowerCase());
+              attachPricing(listing, readPricing(sold?.attribute_Prices), {
+                notes: cleanText(sold?.attribute_TicketInformation || '') || null,
+                duration: readDuration(sold?.duration),
               });
+              events.push(listing);
             } else {
               console.log(`  Warning: No dates found for "${show.title}"`);
             }
@@ -555,6 +781,9 @@ async function scrapeTron() {
           description: e.description,
           ticketUrl: e.url,
           image: e.image,
+          ...(e.performances ? { performances: e.performances } : {}),
+          ...(e.pricing ? { pricing: e.pricing } : {}),
+          ...(e.duration ? { duration: e.duration } : {}),
         };
       });
 
@@ -633,8 +862,20 @@ async function scrapeTramway() {
             const pageHtml = await fetchPage(event.url);
             const $page = cheerio.load(pageHtml);
 
-            // Look for description in the page
-            event.time = parseTime($page('.event-details__time').first().text());
+            // Glasgow Life prints one line each for the date, the time and the
+            // price: "7.30pm - 9.00pm" and "£20/£12", the second figure being
+            // the concession. A Tramway listing is a single performance, so
+            // that time and the listing's date are the whole schedule.
+            const timeText = cleanText($page('.event-details__time').first().text());
+            event.time = parseTime(timeText);
+            event.scheduleText = timeText || null;
+            attachPricing(
+              event,
+              readPricing(cleanText($page('.event-details__price').first().text())),
+              { notes: cleanText($page('.event-details__category').first().text()) || null },
+            );
+            if (event.time && !event.endDate)
+              attachSchedule(event, [{ date: event.date, time: event.time }]);
             const descEl = $page('main p').filter((_, el) => cleanText($page(el).text()).length > 60).first();
             if (descEl.length) {
               event.description = truncateDesc(cleanText(descEl.text()));
@@ -681,6 +922,9 @@ async function scrapeTramway() {
           description: e.description || `${e.title} at Tramway, Glasgow.`,
           ticketUrl: e.url,
           image: e.image,
+          ...(e.performances ? { performances: e.performances } : {}),
+          ...(e.pricing ? { pricing: e.pricing } : {}),
+          ...(e.scheduleText ? { scheduleText: e.scheduleText } : {}),
         };
       });
 
@@ -765,7 +1009,12 @@ async function scrapePlayPiePint() {
             const { startDate, endDate } = parseDateRange(eventDateText);
 
             if (startDate) {
-              events.push({
+              // A Play, A Pie and A Pint prices by the day of the week and
+              // says so in prose — "Monday: £17 / Tuesday-Friday: £19 /
+              // Saturday: £22.50" — with the pie and the drink in the price.
+              const times = blockText($page, $page('.opening-times')) || null;
+              const priceText = blockText($page, $page('.prices'));
+              const listing = {
                 title: show.title,
                 url: show.url,
                 date: startDate,
@@ -773,7 +1022,12 @@ async function scrapePlayPiePint() {
                 time: parseTime($page('.opening-times').first().text().split('(')[0]),
                 image: show.image,
                 description: description || `A Play, A Pie and A Pint: ${show.title} at Oran Mor, Glasgow.`,
+                scheduleText: times,
+              };
+              attachPricing(listing, readPricing(priceText), {
+                notes: blockText($page, $page('.general-ticket-info')) || null,
               });
+              events.push(listing);
             } else {
               console.log(`  Warning: No dates for "${show.title}" (text: "${eventDateText}")`);
             }
@@ -802,6 +1056,8 @@ async function scrapePlayPiePint() {
         description: e.description,
         ticketUrl: e.url,
         image: e.image,
+        ...(e.pricing ? { pricing: e.pricing } : {}),
+        ...(e.scheduleText ? { scheduleText: e.scheduleText } : {}),
       }));
 
     console.log(`  ✓ ${results.length} PPAP shows from Oran Mor`);
@@ -853,6 +1109,13 @@ async function scrapeGladCafe() {
         url: fullUrl,
         dateText,
         image,
+        // The Glad's own card is the only place it prints a price: the show
+        // page is a Music Glue app that fetches its prices after loading.
+        // Read from inside this card's link, not from the container around
+        // it — the container holds every card, so every listing would take
+        // the price of whichever one happened to come first.
+        priceText: cleanText($(el).find('.EventBlock-tickets').first().text()),
+        timeText: cleanText($(el).find('.EventBlock-time').first().text()),
       });
     }
 
@@ -901,13 +1164,21 @@ async function scrapeGladCafe() {
 
             if (date && date >= TODAY) {
               const type = classifyEventType(event.title, 'The Glad Cafe', description);
-              results.push({
+              // The card on the what's-on page prints the door time; the show
+              // page's structured data carries the same moment in UTC. The
+              // card is preferred because it is what the Glad says out loud,
+              // and the structured data is the fallback.
+              const [structured] = jsonLdEvents(pageHtml);
+              const doors = londonMoment(structured?.doorTime || structured?.startDate);
+              const listing = {
                 id: makeId('glad-cafe', event.title),
                 title: event.title,
                 venue: 'The Glad Cafe',
                 venueId: 'glad-cafe',
                 date,
-                time: null, // Page time is doors opening, not necessarily the performance.
+                // Doors, not curtain: the Glad is a room with a bar in it and
+                // publishes nothing finer, so the schedule says as much.
+                time: parseTime(event.timeText) || doors?.time || null,
                 endDate: null,
                 // The Glad publishes no category, so every listing is ambiguous.
                 sourceGenre: null,
@@ -916,7 +1187,13 @@ async function scrapeGladCafe() {
                 description,
                 ticketUrl: event.url,
                 image,
-              });
+              };
+              if (listing.time)
+                attachSchedule(listing, [
+                  { date, time: listing.time, note: 'Doors' },
+                ]);
+              attachPricing(listing, readPricing(event.priceText));
+              results.push(listing);
             }
           } catch (err) {
             console.log(`  Warning: Could not fetch ${event.url}: ${err.message}`);
@@ -975,6 +1252,26 @@ function canary(venueId, label, ok) {
  * type is published as a class. "concert-or-performance" covers both a gig and
  * a piece of theatre, so it is left for the scope check to settle.
  */
+/**
+ * Cottiers prints its price as a page heading — "Standard Price : 12.50" —
+ * with no currency symbol and no concession band. A zero there is a free
+ * event, which is most of what the building's tours and talks are.
+ */
+async function cottiersTickets(url) {
+  try {
+    const $ = cheerio.load(await fetchShared(url));
+    const heading = $('.elementor-heading-title')
+      .toArray()
+      .map((el) => cleanText($(el).text()))
+      .find((text) => /price/i.test(text));
+    const pricing = readPricing(heading);
+    return pricing && (pricing.from != null || pricing.text) ? { pricing } : {};
+  } catch (err) {
+    console.log(`  Warning: no price for ${url}: ${err.message}`);
+    return {};
+  }
+}
+
 async function scrapeCottiers() {
   console.log('\n🎭 Scraping Cottiers...');
   const results = [];
@@ -1014,7 +1311,7 @@ async function scrapeCottiers() {
       const description = await describe(ticketUrl, `${title} at Cottiers, Glasgow.`);
       const type = classifyEventType(title, 'Cottiers', description);
 
-      results.push({
+      const listing = {
         id: makeId('cottiers', title),
         title,
         venue: 'Cottiers',
@@ -1028,7 +1325,13 @@ async function scrapeCottiers() {
         description,
         ticketUrl,
         image,
-      });
+        // "17th September 2026 @ 06:00 PM - 08:00 PM" is start and finish, and
+        // the finish is worth keeping: Cottiers programmes a lot of one-offs.
+        scheduleText: timePart || null,
+      };
+      if (listing.time) attachSchedule(listing, [{ date: startDate, time: listing.time }]);
+      Object.assign(listing, await cottiersTickets(ticketUrl));
+      results.push(listing);
     }
 
     console.log(`  ✓ ${results.length} candidate events from Cottiers`);
@@ -1083,6 +1386,7 @@ async function scrapeOldHairdressers() {
       );
       const type = classifyEventType(title, 'The Old Hairdressers', description);
 
+      const time = parseTime(timeText);
       results.push({
         id: makeId('old-hairdressers', title),
         title,
@@ -1090,7 +1394,10 @@ async function scrapeOldHairdressers() {
         venueId: 'old-hairdressers',
         date: startDate,
         endDate: null,
-        time: parseTime(timeText),
+        time,
+        // A single night, so the time is the whole schedule. Prices live with
+        // whoever is selling the tickets, which is rarely the venue.
+        ...(time ? { performances: [{ date: startDate, time }] } : {}),
         // The venue publishes no category, so every listing is ambiguous.
         sourceGenre: null,
         type,
@@ -1142,13 +1449,30 @@ function tidyDescription(text) {
   return stripped ? truncateDesc(stripped) : null;
 }
 
+/**
+ * A page a couple of readers want in a row.
+ *
+ * An ATG show page is read twice: once for the blurb, once for the prices and
+ * the performance dates. It is 300KB and there are fifty of them, so the two
+ * readers share a fetch. Only the last few pages are held, because they are
+ * only ever wanted back to back and a refresh reads a hundred and fifty.
+ */
+const recentPages = new Map();
+async function fetchShared(url) {
+  if (recentPages.has(url)) return recentPages.get(url);
+  const html = await fetchPage(url);
+  recentPages.set(url, html);
+  for (const stale of [...recentPages.keys()].slice(0, -4)) recentPages.delete(stale);
+  return html;
+}
+
 async function describe(url, fallback) {
   if (Object.prototype.hasOwnProperty.call(descriptionCache, url)) {
     return tidyDescription(descriptionCache[url]) || fallback;
   }
   let description = null;
   try {
-    const $ = cheerio.load(await fetchPage(url));
+    const $ = cheerio.load(await fetchShared(url));
     description =
       $('meta[property="og:description"]').attr('content') ||
       $('meta[name="description"]').attr('content') ||
@@ -1227,6 +1551,70 @@ function atgImage(window) {
  * into the HTML, so the cards are read out of the embedded JSON. robots.txt
  * explicitly allows the paginated what's-on URLs this walks.
  */
+/**
+ * Prices and performances from an ATG show page.
+ *
+ * ATG's what's-on payload carries no price and no time at all — only a run's
+ * opening and closing dates. The show page emits one TheaterEvent per
+ * performance, each with the cheapest seat on sale for that night, which is
+ * exactly the "from" price a listing wants, and it varies: a Friday is £39.50
+ * where the Tuesday is £19.
+ *
+ * It publishes only the next nine or so performances of a long run, so a
+ * pantomime's January dates are missing. The schedule is marked partial and
+ * the page says so rather than implying the run ends when the list does.
+ */
+async function atgTickets(url) {
+  const out = {};
+  try {
+    const shows = jsonLdEvents(await fetchShared(url));
+    const performances = [];
+    const prices = [];
+    let duration = null;
+    for (const show of shows) {
+      const when = londonMoment(show.startDate);
+      if (!when) continue;
+      duration = duration || readDuration(show.duration);
+      const cheapest = offersOf(show)
+        .map((o) => Number(o.price))
+        .filter((n) => Number.isFinite(n) && n > 0);
+      const price = cheapest.length ? Math.min(...cheapest) : null;
+      if (price != null) prices.push(price);
+      performances.push({ ...when, url: offersOf(show)[0]?.url || null, price });
+    }
+    // Nine on the nose is ATG's page limit, not a nine-performance run.
+    attachSchedule(out, performances, { partial: performances.length >= 9 });
+    if (prices.length) {
+      const from = Math.min(...prices);
+      const to = Math.max(...prices);
+      attachPricing(
+        out,
+        {
+          from,
+          to: to > from ? to : null,
+          concession: null,
+          concessionTo: null,
+          free: false,
+          payWhatYouLike: false,
+          text: null,
+          // Not a face value: ATG prices dynamically and quotes what is left,
+          // fees included. A page showing this has to date it.
+          live: true,
+        },
+        {
+          notes: 'The cheapest seat still on sale for each performance, fees included. ATG prices by demand, so this moves as a run sells and a weekend costs more than a midweek night.',
+          duration,
+        },
+      );
+    } else if (duration) {
+      out.duration = duration;
+    }
+  } catch (err) {
+    console.log(`  Warning: no prices or times for ${url}: ${err.message}`);
+  }
+  return out;
+}
+
 async function scrapeATG({ slug, venueId, venue }) {
   console.log(`\n🎭 Scraping ${venue}...`);
   const results = [];
@@ -1297,6 +1685,8 @@ async function scrapeATG({ slug, venueId, venue }) {
       event.description = event.moreInfoUrl
         ? await describe(`https://www.atgtickets.com${event.moreInfoUrl}`, fallback)
         : fallback;
+      if (event.moreInfoUrl)
+        Object.assign(event, await atgTickets(`https://www.atgtickets.com${event.moreInfoUrl}`));
       delete event.moreInfoUrl;
       event.type = classifyEventType(event.title, event.venue, event.description);
       event.tags = classifyTags(event.title, event.description, event.type);
@@ -1322,6 +1712,58 @@ async function scrapeATG({ slug, venueId, venue }) {
  * relative to the venue's own path, not to the domain root.
  */
 const PAVILION_BASE = 'https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB';
+
+/**
+ * Prices and performances from a Trafalgar show page.
+ *
+ * One structured-data block per show, with an offer per performance. The
+ * performance time is the offer's `validThrough` — selling for a night stops
+ * when its curtain goes up — which is the only place a Pavilion time appears
+ * at all.
+ *
+ * With one performance there is nothing to distinguish, and Trafalgar closes
+ * that single offer at the end of the show instead: a 7.30pm tribute night
+ * reads as 10pm. So a `validThrough` that lands exactly on the event's own
+ * end is not a curtain time, and the show's start is used instead.
+ */
+async function pavilionTickets(url) {
+  const out = {};
+  try {
+    const [show] = jsonLdEvents(await fetchShared(url));
+    if (!show) return out;
+    const performances = [];
+    const prices = [];
+    for (const offer of offersOf(show)) {
+      const closes = offer.validThrough && offer.validThrough !== show.endDate ? offer.validThrough : null;
+      const when = londonMoment(closes) || londonMoment(show.startDate);
+      const price = Number(offer.price);
+      if (Number.isFinite(price) && price > 0) prices.push(price);
+      if (when) performances.push({ ...when, url: offer.url || null, price: Number.isFinite(price) ? price : null });
+    }
+    attachSchedule(out, performances);
+    if (prices.length) {
+      const from = Math.min(...prices);
+      const to = Math.max(...prices);
+      attachPricing(
+        out,
+        {
+          from,
+          to: to > from ? to : null,
+          concession: null,
+          concessionTo: null,
+          free: false,
+          payWhatYouLike: false,
+          text: null,
+          live: true,
+        },
+        { notes: 'The cheapest seat still on sale for each performance. Some shows include a venue levy of up to £2 in the ticket price.' },
+      );
+    }
+  } catch (err) {
+    console.log(`  Warning: no prices or times for ${url}: ${err.message}`);
+  }
+  return out;
+}
 
 async function scrapePavilion() {
   console.log('\n🎭 Scraping Pavilion Theatre...');
@@ -1376,6 +1818,7 @@ async function scrapePavilion() {
     for (const event of results) {
       const fallback = `${event.title} at the Pavilion Theatre, Glasgow.`;
       event.description = await describe(event.ticketUrl, fallback);
+      Object.assign(event, await pavilionTickets(event.ticketUrl));
       event.type = classifyEventType(event.title, event.venue, event.description);
       event.tags = classifyTags(event.title, event.description, event.type);
       event.id = makeId(event.venueId, event.title);
@@ -1446,7 +1889,11 @@ async function scrapePlatform() {
       if (!title || !ticketUrl) continue;
 
       const excerptHtml = $item.find('.listings__excerpt').html() || '';
-      const dateText = cleanText(cheerio.load(`<div>${excerptHtml.split(/<br\s*\/?>/i)[0]}</div>`).text());
+      const lines = excerptHtml
+        .split(/<br\s*\/?>/i)
+        .map((part) => cleanText(cheerio.load(`<div>${part}</div>`).text()))
+        .filter(Boolean);
+      const dateText = lines[0] || '';
       const { startDate, endDate } = platformDates(dateText, platformMonthYears($item));
       if (!startDate) {
         console.log(`  Skipping "${title}": no date in "${dateText}"`);
@@ -1469,13 +1916,26 @@ async function scrapePlatform() {
         image = `https://www.platform-online.co.uk${image}`;
       }
 
+      // Platform's excerpt is a fixed little stack: when, then who it is for,
+      // then what it costs, then the blurb. The price line is whichever one
+      // carries money or says the activity is free or pay-what-you-like —
+      // never the age line, which is full of numbers that are not prices.
+      const priceLine = lines
+        .slice(1)
+        .find((line) => /£|\bfree\b|pay[- ]what[- ]you/i.test(line) && line.length < 90);
+
+      // The first three lines now have places of their own on the page, so
+      // the description is what follows them. Leaving them in printed a
+      // show's dates and prices three times over on one page.
+      const blurb = lines.slice(priceLine ? lines.indexOf(priceLine) + 1 : 1);
       const description = truncateDesc(
-        cleanText($item.find('.listings__excerpt').text()) ||
+        cleanText(blurb.join(' ')) ||
+          cleanText($item.find('.listings__excerpt').text()) ||
           `${title} at Platform, Easterhouse.`,
       );
       const type = classifyEventType(title, 'Platform', description);
 
-      results.push({
+      const listing = {
         id: makeId('platform', title),
         title,
         venue: 'Platform',
@@ -1489,7 +1949,12 @@ async function scrapePlatform() {
         description,
         ticketUrl,
         image,
-      });
+        // "Tue 1 Dec - Thu 24 Dec | Day & evening shows" says more about when
+        // a Platform show runs than any single time could.
+        scheduleText: dateText || null,
+      };
+      attachPricing(listing, readPricing(priceLine));
+      results.push(listing);
     }
 
     console.log(`  ✓ ${results.length} candidate events from Platform`);
@@ -1733,7 +2198,7 @@ async function main() {
   console.log('='.repeat(50));
 }
 
-module.exports = { parseTime, parseDateRange, classifyTags, platformDates };
+module.exports = { parseTime, parseDateRange, classifyTags, platformDates, londonMoment, jsonLdEvents };
 
 if (require.main === module) main().catch((err) => {
   console.error('Fatal error:', err);

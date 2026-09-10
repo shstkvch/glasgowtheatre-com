@@ -107,21 +107,26 @@ test("the homepage leads with listings, not a masthead", async ({ page }) => {
   await expect(card).toBeInViewport();
 });
 
-test("the thumbnail books the show without adding a second tab stop", async ({
+test("the thumbnail opens the show without adding a second tab stop", async ({
   page,
 }) => {
   await page.goto("/?q=Thrice");
   const card = page.locator("#events-grid .event-card:visible").first();
   const thumb = card.locator(".event-card-thumb");
-  await expect(thumb).toHaveAttribute(
-    "href",
-    "https://www.tramway.org/event/328af962-85b1-4a39-9f3a-b43900ec12d2/",
-  );
+  // The title and the artwork both open the show's own page, where the
+  // prices, the times and the concessions are collected.
+  await expect(thumb).toHaveAttribute("href", /^\/shows\/.+\.html$/);
   // Same destination as the title, so it must stay out of the tab order.
   await expect(thumb).toHaveAttribute("tabindex", "-1");
   await expect(thumb).toHaveAttribute(
     "href",
     await card.locator("h3 a").getAttribute("href"),
+  );
+  // Booking still goes straight to the venue: nobody who only wants a ticket
+  // is made to travel through us to get one.
+  await expect(card.locator(".ticket-link")).toHaveAttribute(
+    "href",
+    "https://www.tramway.org/event/328af962-85b1-4a39-9f3a-b43900ec12d2/",
   );
   // The date is announced from outside the thumbnail link.
   await expect(card.locator(".date-stamp")).toBeVisible();
@@ -230,6 +235,7 @@ test("all internal links and local assets exist", async ({ request }) => {
     "about.html",
     "submit.html",
     ...fs.readdirSync("dist/venues").map((name) => "venues/" + name),
+    ...fs.readdirSync("dist/shows").map((name) => "shows/" + name),
   ];
   const paths = new Set();
   for (const file of pages) {
@@ -245,12 +251,16 @@ test("pages have no automated WCAG A or AA accessibility violations", async ({
   page,
 }) => {
   const AxeBuilder = require("@axe-core/playwright").default;
+  // A show page carries a table, a definition list and two panels nothing
+  // else on the site uses, so it is swept along with the rest.
+  const showUrl = "/shows/" + fs.readdirSync("dist/shows")[0];
   for (const url of [
     "/",
     "/calendar.html",
     "/venues.html",
     "/venues/tramway.html",
     "/submit.html",
+    showUrl,
   ]) {
     await page.goto(url);
     const results = await new AxeBuilder({ page })
@@ -335,7 +345,7 @@ test("the timeline lanes a venue's shows and opens on today", async ({
   }));
   expect(bar.span).toBeGreaterThan(0);
   expect(bar.room).toBeGreaterThanOrEqual(bar.span);
-  expect(bar.href).toMatch(/^\/venues\/[a-z-]+\.html#/);
+  expect(bar.href).toMatch(/^\/shows\/[a-z0-9-]+\.html$/);
   expect(today).toMatch(/^\d{4}-\d{2}-\d{2}$/);
   expect(errors).toEqual([]);
   await page.screenshot({
@@ -354,22 +364,22 @@ test("a month button scrolls the chart and lights up", async ({ page }) => {
   expect(await chart.evaluate((el) => el.scrollLeft)).toBeGreaterThan(1000);
 });
 
-test("picking a show from the timeline lands on its venue page, highlighted", async ({
+test("picking a show from the timeline opens its prices and times", async ({
   page,
 }) => {
   await page.goto("/calendar.html");
   const item = page.locator(".cal-item").first();
   const id = await item.getAttribute("data-show");
+  const title = await item.locator(".cal-item-label").textContent();
   await item.click();
-  await expect(page).toHaveURL(new RegExp(`/venues/.+\\.html#${id}$`));
-  const card = page.locator(`[id="${id}"]`);
-  await expect(card).toBeVisible();
-  // The highlight is a panel behind the card, not an outline over the rule.
-  expect(
-    await card.evaluate(
-      (el) => getComputedStyle(el, "::before").backgroundColor,
-    ),
-  ).not.toBe("rgba(0, 0, 0, 0)");
+  await expect(page).toHaveURL(`/shows/${id}.html`);
+  await expect(page.getByRole("heading", { level: 1 })).toHaveText(title);
+  await expect(page.locator(".ticket-panel")).toBeVisible();
+  // The venue the run is at is still one click away.
+  await expect(page.locator(".show-hero .eyebrow a")).toHaveAttribute(
+    "href",
+    /^\/venues\/[a-z-]+\.html$/,
+  );
 });
 
 test("every bar's title is readable against its own venue colour", async ({
@@ -397,4 +407,163 @@ test("every bar's title is readable against its own venue colour", async ({
     return lowest;
   });
   expect(worst).toBeGreaterThanOrEqual(4.5);
+});
+
+/* ------------------------------------------- prices, times and show pages */
+
+/** The listings the build actually published, which is what the pages were
+    made from — so a test picks its example the same way the build did. */
+const published = () =>
+  JSON.parse(fs.readFileSync("dist/data/events.json", "utf8"));
+
+test("a card carries when the show starts and what it costs", async ({
+  page,
+}) => {
+  await page.goto("/");
+  // Not every venue publishes a price, so this is a floor rather than a total:
+  // the point is that the figures reach the listing at all.
+  const priced = page.locator("#events-grid .event-card .fact-price");
+  expect(await priced.count()).toBeGreaterThan(20);
+  const timed = page.locator("#events-grid .event-card .fact-time");
+  expect(await timed.count()).toBeGreaterThan(20);
+  // Every price shown is a real one: money, "Free", or pay what you like.
+  for (const text of await priced.allTextContents())
+    expect(text).toMatch(/^(£\d|From £\d|Free$|Pay what you like)/);
+  // No card claims a price the data does not carry.
+  const honest = await page.evaluate(() => {
+    const ids = [...document.querySelectorAll(".event-card")]
+      .filter((card) => card.querySelector(".fact-price"))
+      .map((card) => card.dataset.id);
+    const priced = new Set(
+      window.EVENTS.filter(
+        (e) => e.pricing && (e.pricing.from != null || e.pricing.payWhatYouLike),
+      ).map((e) => e.id),
+    );
+    return ids.every((id) => priced.has(id));
+  });
+  expect(honest).toBe(true);
+});
+
+test("a concession quoted on a card is explained on the show page", async ({
+  page,
+}) => {
+  await page.goto("/?venue=citizens");
+  const card = page
+    .locator("#events-grid .event-card:visible")
+    .filter({ has: page.locator(".fact-price", { hasText: "conc." }) })
+    .first();
+  await expect(card).toBeVisible();
+  const quoted = await card.locator(".fact-price").textContent();
+  const concession = quoted.match(/conc\. from (£[\d.]+)/)[1];
+  await card.locator("h3 a").click();
+  await expect(page).toHaveURL(/\/shows\/citizens-/);
+  // The panel names whose scheme the figure belongs to rather than letting it
+  // read as a price set for this production.
+  await expect(page.locator(".ticket-source")).toContainText(concession);
+  const panel = page.locator(".conc-panel");
+  await expect(panel).toContainText("Gorbals Pass");
+  await expect(panel).toContainText("G5 postcode");
+  await expect(panel).toContainText("Low Income Pass");
+  await expect(panel.locator(".conc-price").first()).toHaveText(concession);
+  // And it says where it was read from, so a stale figure can be checked.
+  await expect(panel.locator(".conc-source a")).toHaveAttribute(
+    "href",
+    /citz\.co\.uk/,
+  );
+});
+
+test("Platform's postcode scheme reaches its own shows", async ({ page }) => {
+  const platform = published().find((e) => e.venueId === "platform");
+  await page.goto(`/shows/${platform.id}.html`);
+  const panel = page.locator(".conc-panel");
+  await expect(panel).toContainText("Local Links");
+  await expect(panel).toContainText("G34 9");
+  await expect(panel).toContainText("enter your postcode");
+});
+
+test("a show page lists every performance the venue published", async ({
+  page,
+}) => {
+  const run = published()
+    .filter((e) => (e.performances || []).length > 4)
+    .sort((a, b) => b.performances.length - a.performances.length)[0];
+  await page.goto(`/shows/${run.id}.html`);
+  await expect(page.getByRole("heading", { level: 1 })).toHaveText(run.title);
+  await expect(page.locator(".perf-table tbody tr")).toHaveCount(
+    run.performances.length,
+  );
+  // Times are printed as a person would say them, not as 24-hour clock.
+  const times = await page.locator(".perf-time").allTextContents();
+  expect(times.every((t) => /^(\d{1,2}(\.\d{2})?(am|pm)|noon|—)$/.test(t))).toBe(
+    true,
+  );
+  // The table scrolls inside its own box rather than widening the page.
+  expect(
+    await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth),
+  ).toBe(true);
+});
+
+test("a show page books at the venue and never invents a price", async ({
+  page,
+}) => {
+  const unpriced = published().find((e) => !e.pricing);
+  test.skip(!unpriced, "Every listing currently carries a price.");
+  await page.goto(`/shows/${unpriced.id}.html`);
+  await expect(page.locator(".ticket-headline")).toHaveText(
+    "Prices not published",
+  );
+  // The Old Hairdressers is still on http, so the test asks for an absolute
+  // link out to the venue rather than for a scheme it does not offer.
+  await expect(page.locator(".ticket-panel .btn")).toHaveAttribute(
+    "href",
+    /^https?:\/\//,
+  );
+});
+
+test("the timeline says when and how much without opening anything", async ({
+  page,
+}, testInfo) => {
+  test.skip(testInfo.project.name === "mobile", "The preview needs a mouse.");
+  await page.goto("/calendar.html");
+  const item = page
+    .locator(".cal-item")
+    .filter({ hasNot: page.locator(".nothing") })
+    .first();
+  // The tooltip carries it for a mouse and for assistive technology alike.
+  const title = await item.getAttribute("title");
+  expect(title).toMatch(/·/);
+  await item.hover();
+  const pop = page.locator(".cal-pop");
+  await expect(pop).toBeVisible();
+  await expect(pop.locator(".cal-pop-title")).not.toBeEmpty();
+  const facts = pop.locator(".cal-pop-facts");
+  // At least one of the two is known for the first bar on the chart.
+  expect(
+    (await facts.locator(".fact-time").textContent()) +
+      (await facts.locator(".fact-price").textContent()),
+  ).not.toBe("");
+  await page.screenshot({
+    path: `test-results/calendar-preview-${testInfo.project.name}.png`,
+  });
+});
+
+test("show pages fit a phone and keep their columns on a desktop", async ({
+  page,
+}, testInfo) => {
+  const listings = published();
+  const show =
+    listings.find((e) => e.venueId === "citizens" && e.pricing) || listings[0];
+  await page.goto(`/shows/${show.id}.html`);
+  await page.evaluate(() => document.fonts.ready);
+  expect(
+    await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth),
+  ).toBe(true);
+  const columns = await page
+    .locator(".show-columns")
+    .evaluate((el) => getComputedStyle(el).gridTemplateColumns.split(" ").length);
+  expect(columns).toBe(testInfo.project.name === "mobile" ? 1 : 2);
+  await page.screenshot({
+    path: `test-results/show-${testInfo.project.name}.png`,
+    fullPage: true,
+  });
 });

@@ -1,0 +1,11 @@
+{
+  "at": "2026-09-10T16:46:04.797Z",
+  "model": "deepseek/deepseek-v4-flash",
+  "listingsRead": 62,
+  "listingsWithWording": 62,
+  "promptTokens": 14614,
+  "completionTokens": 5758,
+  "totalTokens": 20372,
+  "costUsd": 0.0026749473600000003,
+  "failed": false
+}

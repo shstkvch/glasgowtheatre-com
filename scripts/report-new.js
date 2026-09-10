@@ -107,6 +107,22 @@ function taggingLine(status) {
 }
 
 /**
+ * What reading the venues' ticket wording spent. Most mornings nothing new
+ * has appeared and the answer is nothing, because the reading is cached by
+ * the exact words the model saw.
+ */
+function ticketsLine(status) {
+  const usage = status?.tickets;
+  const stale = usage && status?.refreshedAt && usage.at < status.refreshedAt;
+  if (!usage || stale) return "Ticket prices: did not run \u2014 \u00a30.00";
+  const tokens = usage.totalTokens || 0;
+  if (!tokens) return "Ticket prices: nothing new to read \u2014 \u00a30.00";
+  return `Ticket prices: ${tokens.toLocaleString("en-GB")} tokens for ${usage.listingsRead} listing${
+    usage.listingsRead === 1 ? "" : "s"
+  } \u2014 ${money(usage.costUsd)}`;
+}
+
+/**
  * Scrapes that threw, and structural checks that failed. A canary failing
  * without an error means the page loaded and parsed but no longer looks the
  * way the scraper expects, which is how a venue's redesign shows up: quietly,
@@ -143,6 +159,7 @@ function summaryLines(total, status) {
     );
   }
   lines.push(taggingLine(status));
+  lines.push(ticketsLine(status));
 
   // On a first run this list is a hundred long, so it is summarised by venue
   // and only a handful are named. The full list is in the build log.
@@ -327,4 +344,4 @@ if (require.main === module) {
   });
 }
 
-module.exports = { emailBody, quietBody, summaryLines, taggingLine, troubleLines, money, when };
+module.exports = { emailBody, quietBody, summaryLines, taggingLine, ticketsLine, troubleLines, money, when };

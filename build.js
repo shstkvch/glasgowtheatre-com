@@ -8,6 +8,14 @@ const {
 } = require("./src/js/listings");
 const { buildTimeline } = require("./scripts/calendar");
 const { FORMS, fallbackForm, combine } = require("./scripts/art-forms");
+const {
+  priceLabel,
+  timesLabel,
+  clockTime,
+  durationLabel,
+  money,
+  concessionSource,
+} = require("./scripts/tickets");
 const DIST = path.join(__dirname, "dist");
 const SITE = "https://glasgowtheatre.com";
 const today = londonDate();
@@ -16,14 +24,22 @@ const read = (name) =>
 const venues = read("venues.json");
 const images = read("image-cache.json");
 const status = read("refresh-status.json");
-// Absent when tagging has never run; the daily report treats that as no spend.
-const tagUsage = (() => {
+// Hand-maintained: what each venue's own concession schemes actually are,
+// with the page they were read from and the date they were checked. Nothing
+// here is scraped, because none of these venues publishes it in a form a
+// scraper could trust, and a wrong price is worse than no price.
+const concessions = read("concessions.json");
+// Absent when a model pass has never run; the daily report treats a missing
+// file as no spend rather than as a failure.
+const usage = (name) => {
   try {
-    return read("tag-usage.json");
+    return read(name);
   } catch {
     return null;
   }
-})();
+};
+const tagUsage = usage("tag-usage.json");
+const ticketUsage = usage("ticket-usage.json");
 /**
  * Manual entries are hand-edited, so a typo here is a broken card in
  * production. Fail the build loudly instead of publishing something odd.
@@ -104,6 +120,22 @@ const label = (value) =>
     .map((word) => word[0].toUpperCase() + word.slice(1))
     .join(" ");
 const arrow = '<span aria-hidden="true">↗</span>';
+/* ------------------------------------------------- tickets, times, prices */
+/** The venue's own concession schemes, where it publishes any. */
+const scheme = (event) => concessions[event.venueId] || null;
+/** Every show has a page of its own, and this is where it lives. */
+const showPath = (event) => `/shows/${event.id}.html`;
+/** "From £18 (conc. from £5)", or nothing at all when nobody published a price. */
+const price = (event) => priceLabel(event.pricing, scheme(event));
+/**
+ * When the curtain goes up, in as few words as the run allows. A venue that
+ * publishes its times as a sentence — "Monday – Saturday 1pm", "Day & evening
+ * shows" — gets to keep the sentence, because summarising it would lose the
+ * only thing it says.
+ */
+const when = (event) =>
+  timesLabel(event.performances, event.time) ||
+  (event.scheduleText && event.scheduleText.length <= 46 ? event.scheduleText : null);
 function write(name, text) {
   const target = path.join(DIST, name);
   fs.mkdirSync(path.dirname(target), { recursive: true });
@@ -115,9 +147,23 @@ function eventData(event) {
     "@type": "TheaterEvent",
     name: event.title,
     description: event.description,
-    startDate: event.date,
+    // A performance time makes the start a moment rather than a day, which is
+    // what a search result needs to show "7.30pm" beside the date.
+    startDate: event.time ? `${event.date}T${event.time}` : event.date,
     endDate: event.endDate || event.date,
-    url: event.ticketUrl,
+    url: SITE + showPath(event),
+    ...(event.duration ? { duration: `PT${event.duration}M` } : {}),
+    ...(event.pricing && event.pricing.from != null
+      ? {
+          offers: {
+            "@type": "Offer",
+            url: event.ticketUrl,
+            price: event.pricing.from,
+            priceCurrency: "GBP",
+            availability: "https://schema.org/InStock",
+          },
+        }
+      : {}),
     ...(event.image ? { image: SITE + event.image } : {}),
     ...(event.producer
       ? { organizer: { "@type": "Organization", name: event.producer } }
@@ -160,13 +206,25 @@ function page(
 <script type="application/ld+json">${json({ "@context": "https://schema.org", "@type": "WebSite", name: "Glasgow Theatre", url: SITE })}</script>${active === "events" ? `<script type="application/ld+json">${json(pageEvents.map(eventData))}</script>` : ""}
 <script>window.EVENTS = ${json(pageEvents)};</script></body></html>`;
 }
+/**
+ * A show on the listings.
+ *
+ * The title and the thumbnail open the show's own page, where the prices, the
+ * concessions and every performance are collected; the ticket link still goes
+ * straight to the venue, so nobody who only wants to book is made to travel
+ * through us to do it.
+ */
 function card(event) {
+  const cost = price(event);
+  const times = when(event);
   return `<article class="event-card" id="${e(event.id)}" data-id="${e(event.id)}" data-date="${e(event.date)}" data-end-date="${e(event.endDate || event.date)}">
-<div class="event-card-image${event.image ? "" : " image-unavailable"}"><a class="event-card-thumb" href="${e(event.ticketUrl)}" tabindex="-1"><div class="image-fallback" aria-hidden="true"><span>ON STAGE AT</span><strong>${e(event.venue)}</strong></div>${event.image ? `<img src="${e(event.image)}" alt="${e(event.imageAlt || event.title)}" width="1100" height="688" loading="lazy">` : ""}</a><span class="date-stamp">${e(range(event))}</span></div>
+<div class="event-card-image${event.image ? "" : " image-unavailable"}"><a class="event-card-thumb" href="${e(showPath(event))}" tabindex="-1"><div class="image-fallback" aria-hidden="true"><span>ON STAGE AT</span><strong>${e(event.venue)}</strong></div>${event.image ? `<img src="${e(event.image)}" alt="${e(event.imageAlt || event.title)}" width="1100" height="688" loading="lazy">` : ""}</a><span class="date-stamp">${e(range(event))}</span></div>
 <div class="event-card-body"><div class="card-topline"><a href="/venues/${e(event.venueId)}.html">${e(event.season || event.venue)}</a><span>${e(label(event.form))}</span></div>
-<h3><a href="${e(event.ticketUrl)}">${e(event.title)}</a></h3><p class="event-description">${e(event.description)}</p>
+<h3><a href="${e(showPath(event))}">${e(event.title)}</a></h3>
+<p class="card-when">${times ? `<span class="fact-time">${e(times)}</span>` : ""}${cost ? `<span class="fact-price">${e(cost)}</span>` : `<span class="fact-unknown">Prices at the venue</span>`}</p>
+<p class="event-description">${e(event.description)}</p>
 ${event.accessibility ? `<p class="accessibility"><span aria-hidden="true">✳</span> ${e(event.accessibility)}</p>` : ""}
-<div class="event-card-footer"><span>${event.time ? e(time(event.time)) : "Times & tickets at venue"}</span><a class="ticket-link" href="${e(event.ticketUrl)}" aria-label="Tickets for ${e(event.title)}">Tickets ${arrow}</a></div></div></article>`;
+<div class="event-card-footer"><a class="detail-link" href="${e(showPath(event))}">Prices &amp; times</a><a class="ticket-link" href="${e(event.ticketUrl)}" aria-label="Tickets for ${e(event.title)}">Tickets ${arrow}</a></div></div></article>`;
 }
 const venueCount = new Set(events.map((event) => event.venueId)).size;
 const formCounts = countArtForms(events);
@@ -296,6 +354,9 @@ const preview = Object.fromEntries(
         form: label(event.form),
         image: event.image || null,
         summary: (event.description || "").slice(0, 180),
+        when: when(event),
+        price: price(event),
+        tickets: event.ticketUrl,
       },
     ]),
   ),
@@ -309,8 +370,14 @@ const preview = Object.fromEntries(
 function laneItem(item) {
   const event = item.event;
   const inside = item.span >= 5;
-  const detail = `${event.title} — ${event.venue}, ${range(event)} · ${label(event.form)}`;
-  return `<a class="cal-item${inside ? " label-inside" : ""}${item.openStart ? " open-start" : ""}${item.openEnd ? " open-end" : ""}" href="/venues/${e(event.venueId)}.html#${e(event.id)}" data-show="${e(event.id)}" style="--start:${item.start};--span:${item.span};--room:${item.room}" title="${e(detail)}"><span class="cal-bar" aria-hidden="true"></span><span class="cal-item-label">${e(event.title)}</span><span class="cal-item-dates">${e(range(event))} at ${e(event.venue)}</span></a>`;
+  // The bar itself has room for a title and nothing else, so the times and the
+  // price ride in the tooltip, where a mouse and a screen reader both find
+  // them. The hover card repeats them for anyone who waits.
+  const facts = [when(event), price(event)].filter(Boolean).join(" · ");
+  const detail =
+    `${event.title} — ${event.venue}, ${range(event)} · ${label(event.form)}` +
+    (facts ? ` · ${facts}` : "");
+  return `<a class="cal-item${inside ? " label-inside" : ""}${item.openStart ? " open-start" : ""}${item.openEnd ? " open-end" : ""}" href="${e(showPath(event))}" data-show="${e(event.id)}" style="--start:${item.start};--span:${item.span};--room:${item.room}" title="${e(detail)}"><span class="cal-bar" aria-hidden="true"></span><span class="cal-item-label">${e(event.title)}</span><span class="cal-item-dates">${e(range(event))} at ${e(event.venue)}${facts ? `, ${e(facts)}` : ""}</span></a>`;
 }
 function calendar(view) {
   const head = `<div class="cal-corner"><span class="eyebrow">Venue</span><span class="cal-corner-range">${e(date(view.from))} – ${e(date(view.to, true))}</span></div>
@@ -389,6 +456,148 @@ for (const venue of venues) {
     ),
   );
 }
+/* ------------------------------------------------------------ show pages */
+/** Venue copy arrives as several lines in one string; keep them as lines. */
+const paras = (text, className = "") =>
+  String(text)
+    .split("\n")
+    .map((line) => line.trim())
+    .filter(Boolean)
+    .map((line) => `<p${className ? ` class="${className}"` : ""}>${e(line)}</p>`)
+    .join("");
+const weekday = (iso) =>
+  new Date(iso + "T12:00:00Z").toLocaleDateString("en-GB", {
+    timeZone: "Europe/London",
+    weekday: "short",
+  });
+/**
+ * What a ticket costs, said three ways: the number a card can carry, the
+ * venue's own wording underneath it, and whatever the venue added about fees
+ * and offers. Where nobody published a price the panel says so plainly rather
+ * than leaving a gap that reads as free.
+ */
+function ticketPanel(event) {
+  const pricing = event.pricing;
+  const cost = price(event);
+  const source = concessionSource(pricing, scheme(event));
+  const band =
+    pricing && pricing.from != null && pricing.to != null && pricing.to > pricing.from
+      ? `${money(pricing.from)} – ${money(pricing.to)}`
+      : pricing && pricing.from != null && !pricing.free
+        ? money(pricing.from)
+        : null;
+  return `<div class="ticket-panel">
+<h2>Tickets</h2>
+${cost ? `<p class="ticket-headline">${e(cost)}</p>` : `<p class="ticket-headline ticket-unknown">Prices not published</p>`}
+${band && cost !== band && !(pricing && pricing.text) ? `<p class="ticket-band">Across the run: ${e(band)}</p>` : ""}
+${pricing && pricing.text ? `<div class="ticket-quote"><p class="eyebrow">As ${e(event.venue)} lists it</p>${paras(pricing.text)}</div>` : ""}
+${pricing && pricing.live ? `<p class="ticket-live">A live price: the cheapest seat still on sale when these listings were last refreshed, on ${e(date(londonDate(new Date(status.refreshedAt)), true))}. It moves as the run sells.</p>` : ""}
+${source ? `<p class="ticket-source">The ${e(money(source.price))} is ${e(event.venue)}'s ${e(source.schemes.join(" and "))}, not a price set for this show. Eligibility is below.</p>` : ""}
+${pricing && pricing.notes ? paras(pricing.notes, "ticket-note") : ""}
+${!cost ? `<p class="ticket-note">${e(event.venue)} does not publish a price on its listing for this show. The booking page will have it.</p>` : ""}
+<a class="btn" href="${e(event.ticketUrl)}">Book at ${e(event.venue)} ${arrow}</a>
+</div>`;
+}
+/**
+ * The venue's concession schemes, which are a property of the building rather
+ * than of the show — the Citz's Gorbals and Low Income passes, Platform's
+ * Local Links — with what each one costs and who can use it. Both of those
+ * turn on where you live or what you earn rather than on any show, so they
+ * belong on every one of that venue's pages.
+ */
+function concessionPanel(event) {
+  const here = scheme(event);
+  if (!here) return "";
+  const row = (item) => `<div class="conc-row">
+<div class="conc-name"><strong>${e(item.name)}</strong>${
+    item.price != null
+      ? `<span class="conc-price">${e(money(item.price))}</span>`
+      : item.saving
+        ? `<span class="conc-price conc-saving">${e(item.saving)}</span>`
+        : ""
+  }</div>
+<p>${e(item.eligibility || "")}</p>${item.how ? `<p class="conc-how">${e(item.how)}</p>` : ""}</div>`;
+  return `<div class="conc-panel">
+<h2>Concessions at ${e(event.venue)}</h2>
+${here.summary ? `<p class="conc-summary">${e(here.summary)}</p>` : ""}
+${here.schemes && here.schemes.length ? here.schemes.map(row).join("") : `<p class="conc-summary">No venue-wide concession scheme is published. Any reduction for this show will be on the booking page.</p>`}
+${
+  here.offers && here.offers.length
+    ? `<h3>Open to everyone</h3>${here.offers
+        .map(
+          (offer) =>
+            `<div class="conc-row"><div class="conc-name"><strong>${e(offer.name)}</strong><span class="conc-price conc-saving">${e(offer.saving)}</span></div><p>${e(offer.detail || "")}</p></div>`,
+        )
+        .join("")}`
+    : ""
+}
+${here.fees ? `<h3>Fees</h3><p class="conc-summary">${e(here.fees)}</p>` : ""}
+<p class="conc-source">Read from <a href="${e(here.url)}">${e(event.venue)}'s own pages</a>, checked ${e(date(here.checkedAt, true))}. Always confirm with the venue before booking.</p>
+</div>`;
+}
+/**
+ * Every performance the venue lists, with its curtain time, whatever it has
+ * laid on around it and — where the venue prices by the night — what the
+ * cheapest seat costs. A source that only publishes the next few dates says
+ * so rather than letting a pantomime look as though it closes in November.
+ */
+function performancePanel(event) {
+  const list = event.performances || [];
+  if (!list.length)
+    return event.scheduleText
+      ? `<div class="perf-panel"><h2>When</h2>${paras(event.scheduleText)}<p class="perf-note">${e(event.venue)} publishes its times as a description rather than a list of dates.</p></div>`
+      : "";
+  const row = (p) => `<tr>
+<th scope="row"><span class="perf-dow">${e(weekday(p.date))}</span> ${e(date(p.date, p.date.slice(0, 4) !== event.date.slice(0, 4)))}</th>
+<td class="perf-time">${p.time ? e(clockTime(p.time)) : "—"}</td>
+<td class="perf-note-cell">${[p.note, ...(p.access || [])].filter(Boolean).map((n) => `<span class="perf-tag">${e(n)}</span>`).join("")}</td>
+<td class="perf-price">${p.price != null ? e(money(p.price)) : ""}</td>
+</tr>`;
+  return `<div class="perf-panel"><h2>Performances</h2>
+${event.scheduleText ? paras(event.scheduleText, "perf-lede") : ""}
+<div class="perf-scroll"><table class="perf-table"><caption class="visually-hidden">Performance dates and times for ${e(event.title)}</caption>
+<thead><tr><th scope="col">Date</th><th scope="col">Time</th><th scope="col">Notes</th><th scope="col">From</th></tr></thead>
+<tbody>${list.map(row).join("")}</tbody></table></div>
+${event.performancesPartial ? `<p class="perf-note">${e(event.venue)} publishes only the next few dates of a long run. This run continues to ${e(range(event).replace(/^.*– /, ""))} — see the venue for the rest.</p>` : ""}
+</div>`;
+}
+function showPage(event) {
+  const cost = price(event);
+  const times = when(event);
+  const facts = [
+    ["Dates", range(event)],
+    ["Times", times],
+    ["Running time", durationLabel(event.duration)],
+    ["Tickets", cost],
+    ["Art form", label(event.form)],
+  ].filter(([, value]) => value);
+  return page(
+    `${event.title} — ${event.venue}`,
+    `${event.title} at ${event.venue}, ${range(event)}.${cost ? ` Tickets ${cost}.` : ""} Performance times, prices and concessions.`,
+    showPath(event),
+    `<section class="show-hero"><div class="container">
+<a class="back-link" href="/">← What's on</a>
+<div class="show-hero-grid">
+<div class="show-hero-text"><p class="eyebrow"><a href="/venues/${e(event.venueId)}.html">${e(event.season || event.venue)}</a> · ${e(label(event.form))}</p>
+<h1>${e(event.title)}</h1>
+<dl class="show-facts">${facts.map(([term, value]) => `<div><dt>${e(term)}</dt><dd>${e(value)}</dd></div>`).join("")}</dl>
+<a class="btn" href="${e(event.ticketUrl)}">Book at ${e(event.venue)} ${arrow}</a></div>
+${event.image ? `<figure class="show-hero-image"><img src="${e(event.image)}" alt="${e(event.imageAlt || event.title)}" width="1100" height="688">${event.imageCredit ? `<figcaption>${e(event.imageCredit)}</figcaption>` : ""}</figure>` : ""}
+</div></div></section>
+<section class="show-body"><div class="container show-columns">
+<div class="show-main"><h2>About the show</h2><p class="show-description">${e(event.description)}</p>
+${event.producer ? `<p class="show-producer">Produced by ${e(event.producer)}</p>` : ""}
+${event.accessibility ? `<div class="accessibility show-access"><span aria-hidden="true">✳</span> ${e(event.accessibility)}</div>` : ""}
+${performancePanel(event)}
+</div>
+<aside class="show-aside">${ticketPanel(event)}${concessionPanel(event)}</aside>
+</div></section>
+<script type="application/ld+json">${json(eventData(event))}</script>`,
+    "events",
+    [event],
+  );
+}
+for (const event of events) write(`shows/${event.id}.html`, showPage(event));
 write(
   "about.html",
   page(
@@ -416,6 +625,7 @@ const paths = [
   "/about.html",
   "/submit.html",
   ...venues.map((v) => `/venues/${v.id}.html`),
+  ...events.map(showPath),
 ];
 write(
   "sitemap.xml",
@@ -437,6 +647,7 @@ write(
       sources: status.counts,
       retainedVenues: status.retainedVenues,
       ...(tagUsage ? { tagging: tagUsage } : {}),
+      ...(ticketUsage ? { tickets: ticketUsage } : {}),
       ...(status.failures && Object.keys(status.failures).length
         ? { failures: status.failures }
         : {}),
