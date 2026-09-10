@@ -281,24 +281,10 @@ function classifyEventType(title, venue, description) {
   return 'professional';
 }
 
-function classifyTags(title, description, type) {
-  const tags = [];
-  const text = `${title} ${description}`.toLowerCase();
-  if (text.includes('comedy') || text.includes('stand-up') || /\bimprov comedy\b/.test(text) || text.includes('funny')) tags.push('comedy');
-  if (/\bmusical(?: theatre)?\b/.test(text) || title === 'Guys and Dolls') tags.push('musical');
-  if (text.includes('dance') || text.includes('choreograph')) tags.push('dance');
-  if (text.includes('drama')) tags.push('drama');
-  if (/\bfamily[- ]friendly\b|\bfor (?:children|families|kids)\b|\bchildren[’']s (?:show|theatre)\b/.test(text)) tags.push('family');
-  if (text.includes('classic') || text.includes('greek') || text.includes('shakespeare') || text.includes('beckett') || text.includes('euripides') || text.includes('lorca')) tags.push('classic');
-  if (text.includes('new writing') || text.includes('new play')) tags.push('new-writing');
-  if (text.includes('experimental') || text.includes('performance art')) tags.push('experimental');
-  if (text.includes('scottish') || text.includes('scotland') || text.includes('glasgow')) tags.push('scottish');
-  if (/\btouring\b|\bon tour\b/.test(text)) tags.push('touring');
-  if (/\bmusic\b/.test(text) && !tags.includes('musical') && !tags.includes('dance')) tags.push('music');
-  if (['1984', 'Antigone', 'Othello', 'Death of a Salesman'].includes(title)) tags.push('drama', 'classic');
-  if (type === 'professional' && tags.length === 0) tags.push('drama');
-  if (tags.length === 0) tags.push(type);
-  return [...new Set(tags)];
+const { fallbackForm } = require('./art-forms');
+
+function classifyTags(title, description) {
+  return [fallbackForm({ title, description })];
 }
 
 // --- Scrapers ---
@@ -812,7 +798,7 @@ async function scrapePlayPiePint() {
         time: e.time || null,
         endDate: e.endDate,
         type: 'new-writing',
-        tags: ['new-writing', ...(e.time === '13:00' ? ['lunchtime'] : ['scratch']), 'a-play-a-pie-a-pint'],
+        tags: ['play', ...(e.time === '13:00' ? ['lunchtime'] : ['scratch']), 'a-play-a-pie-a-pint'],
         description: e.description,
         ticketUrl: e.url,
         image: e.image,

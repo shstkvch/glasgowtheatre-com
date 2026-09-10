@@ -1,68 +1,50 @@
 const { test } = require("node:test");
 const assert = require("node:assert/strict");
 const {
-  TAGS,
+  FORMS,
   STRUCTURAL,
   combine,
-  fallbackTags,
+  fallbackForm,
   cacheKey,
+  needsScopeCheck,
 } = require("../scripts/tag-events.js");
 const { filterEvents } = require("../src/js/listings.js");
 
-test("a discussion about a play is a talk, not a drama", () => {
-  // The model kept pairing these; combine() is what actually guarantees it.
-  assert.deepEqual(combine({ tags: [] }, ["talk", "drama"]), ["talk"]);
-  assert.deepEqual(combine({ tags: [] }, ["drama", "talk"]), ["talk"]);
+test("a listing carries exactly one art form", () => {
+  // The old vocabulary let a listing be a comedy and a musical and a drama at
+  // once, which is what made the filter pills meaningless.
+  const tags = combine({ title: "Six", tags: [] }, "musical");
+  assert.deepEqual(tags, ["musical"]);
 });
 
-test("workshops and tours crowd out performance genres too", () => {
-  assert.deepEqual(combine({ tags: [] }, ["workshop", "drama"]), ["workshop"]);
-  assert.deepEqual(combine({ tags: [] }, ["tour", "spoken-word"]), ["tour"]);
+test("the form leads, and the scraper's structural tags follow it", () => {
+  const tags = combine(
+    { title: "Transparent", tags: ["lunchtime", "a-play-a-pie-a-pint"] },
+    "play",
+  );
+  assert.equal(tags[0], "play");
+  assert.ok(tags.includes("lunchtime"));
+  assert.ok(tags.includes("a-play-a-pie-a-pint"));
 });
 
-test("a performance keeps every genre the model chose", () => {
-  assert.deepEqual(combine({ tags: [] }, ["drama", "classic"]), [
-    "drama",
-    "classic",
-  ]);
+test("an invented form is replaced rather than published", () => {
+  const tags = combine({ title: "Antigone", description: "A Greek tragedy", tags: [] }, "tragedy");
+  assert.ok(FORMS[tags[0]], tags[0]);
 });
 
-test("tags the scraper set from the source survive retagging", () => {
-  const event = { tags: ["a-play-a-pie-a-pint", "lunchtime", "scottish"] };
-  const tags = combine(event, ["drama", "new-writing"]);
-  assert.deepEqual(tags, [
-    "drama",
-    "new-writing",
-    "a-play-a-pie-a-pint",
-    "lunchtime",
-  ]);
-  // "scottish" is no longer in the vocabulary and must not come back.
-  assert.ok(!tags.includes("scottish"));
+test("structural tags are outside the form vocabulary", () => {
+  // Otherwise the model could pick one as a form and lose the real answer.
+  for (const tag of STRUCTURAL) assert.ok(!(tag in FORMS), tag);
 });
 
-test("invented tags are discarded", () => {
-  assert.deepEqual(combine({ tags: [] }, ["immersive", "drama", "vibes"]), [
-    "drama",
-  ]);
+test("stand-up and pantomime are separate forms", () => {
+  // They were both "comedy" before, so filtering for a night of stand-up
+  // returned a children's pantomime.
+  assert.ok("stand-up" in FORMS);
+  assert.ok("pantomime" in FORMS);
 });
 
-test("no more than three genre tags reach a card", () => {
-  const tags = combine({ tags: [] }, [
-    "drama",
-    "classic",
-    "new-writing",
-    "comedy",
-    "dance",
-  ]);
-  assert.equal(tags.length, 3);
-});
-
-test("every structural tag is outside the model's vocabulary", () => {
-  // Otherwise the model could silently drop one by not repeating it.
-  for (const tag of STRUCTURAL) assert.ok(!(tag in TAGS), tag);
-});
-
-test("the keyword fallback only ever returns tags in the vocabulary", () => {
+test("the keyword fallback always yields one real form", () => {
   const events = [
     { title: "Improv Comedy Night", description: "Funny stuff", type: "professional" },
     { title: "Antigone", description: "A Greek tragedy", type: "professional" },
@@ -70,13 +52,17 @@ test("the keyword fallback only ever returns tags in the vocabulary", () => {
     { title: "Untitled", description: "", type: "community" },
   ];
   for (const event of events) {
-    const tags = fallbackTags(event);
-    assert.ok(tags.length > 0, event.title);
-    for (const tag of tags) assert.ok(tag in TAGS, `${event.title}: ${tag}`);
+    const form = fallbackForm(event);
+    assert.ok(FORMS[form], `${event.title}: ${form}`);
   }
 });
 
-test("the cache key follows the text, so an edited description is retagged", () => {
+test("only mixed-programme venues are asked whether they belong", () => {
+  assert.equal(needsScopeCheck({ venueId: "citizens", sourceGenre: null }), false);
+  assert.equal(needsScopeCheck({ venueId: "old-hairdressers", sourceGenre: null }), true);
+});
+
+test("the cache key follows the text, so an edited description is reclassified", () => {
   const event = { title: "A", venue: "B", description: "C" };
   assert.equal(cacheKey(event), cacheKey({ ...event }));
   assert.notEqual(cacheKey(event), cacheKey({ ...event, description: "D" }));
@@ -90,11 +76,38 @@ test("a season name is searchable, so 'play pie' finds the lunchtime shows", () 
     venueId: "oran-mor",
     season: "A Play, A Pie and A Pint",
     date: "2026-10-01",
-    tags: ["drama"],
+    tags: ["play", "lunchtime", "a-play-a-pie-a-pint"],
   };
-  const found = filterEvents([event], {
-    today: "2026-09-01",
-    query: "a play, a pie",
-  });
+  const found = filterEvents([event], { today: "2026-09-01", query: "a play, a pie" });
   assert.equal(found.length, 1);
+});
+
+test("fallback separates forms without reviving genre tags", () => {
+  const { classifyTags } = require("../scripts/scrape-events");
+  for (const [title, description, expected] of [
+    ["A funny musical", "A comedy with songs carrying the story", "musical"],
+    ["Cinderella", "A funny family pantomime", "pantomime"],
+    ["Turandot", "Puccini's opera", "opera"],
+    ["Comedy night", "Stand-up from three comedians", "stand-up"],
+    ["1984", "A play about a family under surveillance", "play"],
+    ["Workshop", "A participatory dance workshop", "workshop"],
+    ["Building and Heritage Tours", "Explore backstage", "tour"],
+    ["Scottish Opera - Alcina Pre Show Talk", "Meet the production team", "talk"],
+    ["Scottish Opera - Fidelio - Touch Tour", "Explore the set", "tour"],
+  ]) {
+    assert.equal(fallbackForm({ title, description }), expected, title);
+    assert.deepEqual(classifyTags(title, description), [expected], title);
+  }
+});
+
+test("fallback preserves an existing classification during an API outage", () => {
+  assert.equal(fallbackForm({ title: "A funny musical", form: "pantomime" }), "pantomime");
+});
+
+test("all saved listings have one form and only source metadata alongside it", () => {
+  const events = [...require("../data/events.json"), ...require("../data/manual-events.json")];
+  for (const event of events) {
+    assert.ok(Object.hasOwn(FORMS, event.form), event.title);
+    assert.deepEqual(event.tags, combine(event, event.form), event.title);
+  }
 });

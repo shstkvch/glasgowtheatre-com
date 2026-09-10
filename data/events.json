@@ -15,7 +15,8 @@
     "description": "Mon 31 Aug - Mon 14 Dec | 5.30pm - 7pm 8 → 16yrs Pay-What-You-Like Monday Night Drama is a place for young people to develop their skills and confidence through performance.",
     "ticketUrl": "https://www.platform-online.co.uk/index.php/whats-on/event/87",
     "image": "https://www.platform-online.co.uk/images/uploads/_small/20220523_Monday_Night_Drama_015_1.jpg",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "workshop"
   },
   {
     "id": "platform-play-caf",
@@ -33,7 +34,8 @@
     "description": "Sat 5 Sep - Sat 19 Dec | 11.15am - 12pm 0 - 5 yrs Pay-What-You-Like Bring your wee ones along and enjoy some creative activities - refreshments provided.",
     "ticketUrl": "https://www.platform-online.co.uk/index.php/whats-on/event/89",
     "image": "https://www.platform-online.co.uk/images/uploads/_small/PlayCafeMay2017_5.jpg",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "workshop"
   },
   {
     "id": "citizens-1984",
@@ -45,13 +47,13 @@
     "endDate": "2026-09-26",
     "type": "professional",
     "tags": [
-      "drama",
-      "classic"
+      "play"
     ],
     "description": "Big Brother is watching you. The Thought Police monitor every word you say. Children spy on their parents and the Party has abolished the truth. In this totally controlled world, Winston and Julia begin a love affair which catapults them into rebellion against the Party. The nightmare of a...",
     "ticketUrl": "https://citz.co.uk/whats-on/1984-play/",
     "image": "https://assets.citz.co.uk/uploads/2026/02/Citizens-Theatre-website.jpg?resize=1992%2C1245&gravity",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "play"
   },
   {
     "id": "platform-people-s-company",
@@ -69,7 +71,8 @@
     "description": "Thu 3 Sep - Thu 17 Dec | 5.30pm - 7.30pm 16yrs + Pay-What-You-Like People’s Company is new artist-led theatre group for adults, running on Thursday evenings.",
     "ticketUrl": "https://www.platform-online.co.uk/index.php/whats-on/event/1261",
     "image": "https://www.platform-online.co.uk/images/uploads/_small/20220514_Platform_Young_Company_033.jpg",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "workshop"
   },
   {
     "id": "oran-mor-transparent",
@@ -82,15 +85,15 @@
     "endDate": "2026-09-12",
     "type": "new-writing",
     "tags": [
-      "drama",
-      "new-writing",
+      "play",
       "lunchtime",
       "a-play-a-pie-a-pint"
     ],
     "description": "“Do you ever get the feeling you dinnae really exist?” Barry feels like he’s slowly fading into the background of his own life. Clare, after a recent loss, feels like she’s unravelling in hers. A chance encounter in a crowded bar means they both end up on a night out together, where sparks fly...",
     "ticketUrl": "https://playpiepint.com/whats-on/event/transparent/",
     "image": "https://playpiepint.com/app/uploads/2026/07/Jo-Freer-and-Tom-McGovern-in-Transparent-Eoin-Carey-1024x683.jpg?theia_smart_thumbnails_file_version=2",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "play"
   },
   {
     "id": "tron-community-ensemble-18-recruitment-workshop",
@@ -107,7 +110,8 @@
     "description": "Our Community Ensemble is for anyone interested in practically exploring the themes, content and creation of the shows which make up the Tron Theatre programme. Each term is fun and varied! Our activities this year has included attending a range of shows at the Tron, exploring the text from plays …...",
     "ticketUrl": "https://www.tron.co.uk/shows/community-ensemble-18-recruitment-workshop-3/",
     "image": "https://www.tron.co.uk/wp-content/uploads/2026/07/Community-Ensemble-18-recruitment-website.png",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "workshop"
   },
   {
     "id": "tramway-oidhche-nam-b-rd-poetry-in-art-and-sound",
@@ -119,13 +123,13 @@
     "endDate": null,
     "type": "professional",
     "tags": [
-      "spoken-word",
-      "music"
+      "spoken-word"
     ],
     "description": "This unique event will weave together Gaelic voices of the past and the words of our greatest living poets, presented through live performance, music, and visual projection. Welcoming Gaelic speakers and non-Gaelic speakers alike, all poems read will be accompanied by on-screen english translations.",
     "ticketUrl": "https://www.tramway.org/event/92566702-3c0b-4861-b502-b44e01077967/",
     "image": "https://events.glasgowlife.org.uk/imageprocessor/23daa201-f899-4955-8944-b44e01077967?mode=crop&center=0.5,0.5&width=672&height=379",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "spoken-word"
   },
   {
     "title": "Burlesque The Musical",
@@ -147,7 +151,8 @@
       "musical"
     ],
     "id": "kings-burlesque-the-musical",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "musical"
   },
   {
     "id": "glad-cafe-acid-cabaret",
@@ -165,7 +170,8 @@
     "description": "The Acid Cabaret returns this September, bringing another genre‑bending night of Glasgow’s most imaginative performers. Glasgow’s premiere utopian variety night descends on The Glad Cafe on 12 September with lyrical indie‑pop from Tom Coward, Indian‑Scottish fusion from Alexandra Shrinivas, and...",
     "ticketUrl": "https://www.thegladcafe.co.uk/events/2026-09-12-acid-cabaret-the-glad-cafe",
     "image": "https://musicglue-images-prod.global.ssl.fastly.net/the-glad-cafe/event/2026-09-12-acid-cabaret-the-glad-cafe?u=aHR0cHM6Ly9tdXNpY2dsdWUtdXNlci1hcHAtcC02LXAuczMuYW1hem9uYXdzLmNvbS9vcmlnaW5hbHMvOTc3NmM0M2ItZjk2OC00YThkLWI5ZjYtZmFkN2QzNGYwZWU0&mode=contain&width=800&v=2",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "cabaret"
   },
   {
     "title": "When We Were Young",
@@ -180,10 +186,11 @@
     "description": "The public and critically acclaimed Multi-award-winning WHEN WE WERE YOUNG is back for 2026. This five star show goes beyond the tabloid stereotype of ‘Neds’ to tell a powerful and hilarious story about the realities of gang culture and young team mentality in Glasgow during the 90’s as we follow...",
     "type": "professional",
     "tags": [
-      "drama"
+      "play"
     ],
     "id": "pavilion-when-we-were-young",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "play"
   },
   {
     "id": "platform-glasgow-east-comicon-2026-featuring-frank-quitely",
@@ -196,12 +203,13 @@
     "sourceGenre": "Performance",
     "type": "professional",
     "tags": [
-      "talk"
+      "community-event"
     ],
     "description": "Sat 12 Sep | 12pm - 4pm All ages Free Join us for another celebration of all things film and comics, as the Glasgow East Comicon returns to Platform for a second outing!",
     "ticketUrl": "https://www.platform-online.co.uk/index.php/whats-on/event/1232",
     "image": "https://www.platform-online.co.uk/images/uploads/_small/Platform_Comicon_102529_1.jpg",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "community-event"
   },
   {
     "id": "tramway-killing-me-softly-reflections-on-hiv-and-aids-in-sco",
@@ -218,7 +226,8 @@
     "description": "Playwright John Binnie and original cast members of his 1987 play Killing Me Softly explore the ways in which Scottish theatre responded at the height of the AIDS crisis. Between performed extracts of the play, the discussion will reflect candidly on the experience of performing the work in...",
     "ticketUrl": "https://www.tramway.org/event/28f66f18-b079-4402-83dc-b4ad00ca9619/",
     "image": "https://events.glasgowlife.org.uk/imageprocessor/06691db4-d505-4d39-91c6-b4ad00cefcd2?mode=crop&center=0.5,0.5&width=672&height=379",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "talk"
   },
   {
     "id": "glad-cafe-first-stages-free-songwriting-workshop-for-ages-14",
@@ -236,7 +245,8 @@
     "description": "These nurturing workshops will focus on form, melody, lyric and every element that’s involved in making a song. You can be working at any level and no experience is necessary; you don’t need to play an instrument.",
     "ticketUrl": "https://www.thegladcafe.co.uk/events/2026-09-13-first-stages-free-songwriting-workshop-for-ages-14-30-the-glad-cafe",
     "image": "https://musicglue-images-prod.global.ssl.fastly.net/the-glad-cafe/event/2026-09-13-first-stages-free-songwriting-workshop-for-ages-14-30-the-glad-cafe?u=aHR0cHM6Ly9tdXNpY2dsdWUtdXNlci1hcHAtcC0yLXAuczMuYW1hem9uYXdzLmNvbS9vcmlnaW5hbHMvM2Q3ODJmYWYtMThmMi00ZDA3LWE5MGQtOTQwMDdiOTI1N2Iy&mode=contain&width=800&v=2",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "workshop"
   },
   {
     "id": "oran-mor-feel-good",
@@ -249,15 +259,15 @@
     "endDate": "2026-09-19",
     "type": "new-writing",
     "tags": [
-      "drama",
-      "new-writing",
+      "play",
       "lunchtime",
       "a-play-a-pie-a-pint"
     ],
     "description": "After accidentally activating her, Henry finds himself drawn to an eerily lifelike machine that knows everything about him, anticipates his every need, and curates his memories to make him feel like the good man he’s always believed himself to be. From Amy Conway (The Haunting of Agnes Gilfrey)...",
     "ticketUrl": "https://playpiepint.com/whats-on/event/feel_good/",
     "image": "https://playpiepint.com/app/uploads/2026/07/FEEL_GOOD.png",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "play"
   },
   {
     "id": "citizens-the-singer",
@@ -269,13 +279,13 @@
     "endDate": "2026-09-19",
     "type": "professional",
     "tags": [
-      "musical",
-      "new-writing"
+      "play"
     ],
     "description": "The Singer is a bold, new, thrilling piece of gig-theatre about Joe, a deaf artist who “sings” with his hands, and Andy, a washed-up musician hungry for a comeback. Joe experiences music viscerally and physically, feeling rhythm through his body and crafting lyrics that pulse with life and...",
     "ticketUrl": "https://citz.co.uk/whats-on/the-singer/",
     "image": "https://assets.citz.co.uk/uploads/2026/01/WEB-LEAD-Press-image-Credit_-Tommy-Ga-Ken-Wan.-Pictured_-Jamie-Rea-and-Dylan-Wood-L-R.-5003-scaled.jpg?resize=1992%2C1245&gravity",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "play"
   },
   {
     "id": "glad-cafe-justyna-jablonska-unforeseen-improvising-life-and-",
@@ -288,13 +298,13 @@
     "sourceGenre": null,
     "type": "professional",
     "tags": [
-      "spoken-word",
-      "music"
+      "spoken-word"
     ],
     "description": "Unforeseen: Improvising Life and Music draws on memories, field recordings, and conversations with Polish, Ukrainian, and Roma migrants living in Scotland.",
     "ticketUrl": "https://www.thegladcafe.co.uk/events/2026-09-17-justyna-jablonska-unforeseen-improvising-life-and-music-the-glad-cafe",
     "image": "https://musicglue-images-prod.global.ssl.fastly.net/the-glad-cafe/event/2026-09-17-justyna-jablonska-unforeseen-improvising-life-and-music-the-glad-cafe?u=aHR0cHM6Ly9tdXNpY2dsdWUtdXNlci1hcHAtcC00LXAuczMuYW1hem9uYXdzLmNvbS9vcmlnaW5hbHMvZTllMjY3ODMtZDQzMS00OTRjLWJkNDgtZjAwMGU3NTAyODMw&mode=contain&width=800&v=2",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "spoken-word"
   },
   {
     "id": "cottiers-women-who-built-scotland",
@@ -312,7 +322,8 @@
     "description": "Explore some of the women who help to shape, design and build Scotland. Our speakers will include Dr Karen Mailley and Phyllida Shaw. Karen will be giving a short talk on Maude Webster, wife of the stained glass artist Alf Webster. Through new research she has delved into Maude’s background and...",
     "ticketUrl": "https://cottiers.com/event/women-who-build-scotland/",
     "image": "https://cottiers.com/wp-content/uploads/2026/08/Women-who-build.jpg",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "talk"
   },
   {
     "id": "tron-antigone",
@@ -324,13 +335,13 @@
     "endDate": "2026-10-10",
     "type": "professional",
     "tags": [
-      "drama",
-      "classic"
+      "play"
     ],
     "description": "Recommended Age Guide 14+ The battle has been won; the soldiers have returned victorious and the dead have been buried. But not all of them. Antigone’s brother has been deemed a traitor and must be punished, even in death. Filled with rage and a powerful sense of justice, Antigone takes … Continued",
     "ticketUrl": "https://www.tron.co.uk/shows/antigone/",
     "image": "https://www.tron.co.uk/wp-content/uploads/2026/07/TRO-343-Antagone-Digital_Stories-1920x1080-1.jpg",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "play"
   },
   {
     "title": "Russell Howard - Don't Tell The Algorithm",
@@ -345,10 +356,11 @@
     "description": "Russell Howard is back with a brand-new stand-up tour in 2026. After breaking records with sold-out shows across the globe, ‘one of the world’s top comedians’ (The Sunday Times) is inviting you back into the room: no phones, no distractions, just humans and jokes. Don’t tell the algorithm.",
     "type": "professional",
     "tags": [
-      "comedy"
+      "stand-up"
     ],
     "id": "pavilion-russell-howard-dont-tell-the-algorithm",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "stand-up"
   },
   {
     "id": "cottiers-window-conservation-visit",
@@ -366,7 +378,8 @@
     "description": "Open invitation at The Kelvin for the opportunity to view the newly conserved windows. To view the windows, please come to The Kelvin Bar where the staff will direct you to go to view the windows. This event is part of Doors Open Day 2026.’ 12-4pm",
     "ticketUrl": "https://cottiers.com/event/window-conservation-visit/",
     "image": "https://cottiers.com/wp-content/uploads/2026/08/Websters-stained-glass.png",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "tour"
   },
   {
     "title": "Tam Cowan",
@@ -381,10 +394,11 @@
     "description": "Tam Cowan – writer, broadcaster and comedian – has enjoyed a successful career in newspapers, radio, television and stand-up for more than 35 years. Most notably as co-presenter of BBC Radio Scotland’s award winning Off The Ball that celebrates its 32nd anniversary in 2026. Tam is also a popular...",
     "type": "professional",
     "tags": [
-      "comedy"
+      "stand-up"
     ],
     "id": "pavilion-tam-cowan",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "stand-up"
   },
   {
     "id": "tron-glasgow-doors-open-days-festival-tours",
@@ -401,7 +415,8 @@
     "description": "The Tron Theatre is delighted to be a part of this year’s Glasgow Doors Open Days Festival. With a theme of Glasgow Goes Out: The Places That Made Us, it seems only appropriate that we throw our stage doors open to the public. We will be offering short tours of … Continued",
     "ticketUrl": "https://www.tron.co.uk/shows/glasgow-doors-open-days-festival-tours/",
     "image": "https://www.tron.co.uk/wp-content/uploads/2026/07/GLASGOW-DOORS-OPEN-DAYS-FESTIVAL-web.png",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "tour"
   },
   {
     "title": "Gary Delaney: Gary On Laughing",
@@ -416,10 +431,11 @@
     "description": "Gary Delaney’s last UK tour ran for two and a half years across 378 dates.",
     "type": "professional",
     "tags": [
-      "comedy"
+      "stand-up"
     ],
     "id": "theatre-royal-gary-delaney-gary-on-laughing",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "stand-up"
   },
   {
     "id": "cottiers-visit-cottiers-as-part-of-doors-open-day",
@@ -437,7 +453,8 @@
     "description": "Formerly a church, this unique building stands tall and proud as one of Glasgow’s most unique and magical venues. Cottiers in Glasgow’s West End contains a unique interior of stained glass and decoration by Daniel Cottier. Join us for tours of this beautiful building. You will learn about our...",
     "ticketUrl": "https://cottiers.com/event/visit-cottiers-theatre/",
     "image": "https://cottiers.com/wp-content/uploads/2026/08/Cottiers-window.jpg",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "tour"
   },
   {
     "id": "oran-mor-the-whaler-s-wife",
@@ -450,15 +467,15 @@
     "endDate": "2026-09-26",
     "type": "new-writing",
     "tags": [
-      "drama",
-      "new-writing",
+      "play",
       "lunchtime",
       "a-play-a-pie-a-pint"
     ],
     "description": "At Hamnavoe harbour, Marion, Elsie and Bess are preparing to navigate the long months of hunting season as their husbands venture off into the Arctic wilderness to chase fortune across uncharted waters. The women keep their town alive through wit, enterprise and a few illicit schemes. But when a...",
     "ticketUrl": "https://playpiepint.com/whats-on/event/the-whalers-wife/",
     "image": "https://playpiepint.com/app/uploads/2026/07/The-Whalers-Wife.png",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "play"
   },
   {
     "title": "Off The Hook presents... Daz and Will Unhooked",
@@ -473,10 +490,11 @@
     "description": "Daz Black (Daz Games) and Will, of the successful YouTube channel Off The Hook, are hitting the road for the first time, bringing their Unhooked show to a theatre near you!",
     "type": "professional",
     "tags": [
-      "comedy"
+      "stand-up"
     ],
     "id": "kings-off-the-hook-presents-daz-and-will-unhooked",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "stand-up"
   },
   {
     "title": "Piff & Pop's Magic Shoppe",
@@ -491,11 +509,11 @@
     "description": "This unique show is the result of the pairing of legendary magician Penn Jillette, of world-renowned duo Penn & Teller, (who will tour the UK for the first time without his 50-year companion Teller) teaming up with comedy-magician phenomenon Piff the Magic Dragon, star and fan-favourite from...",
     "type": "professional",
     "tags": [
-      "comedy",
       "cabaret"
     ],
     "id": "pavilion-piff-pops-magic-shoppe",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "cabaret"
   },
   {
     "title": "Paranormal Activity",
@@ -513,11 +531,11 @@
     "description": "THE SELL-OUT WEST END & INTERNATIONAL PHENOMENON, DIRECT FROM LONDON WITH BRAND-NEW SPECIAL EFFECTS.",
     "type": "professional",
     "tags": [
-      "physical-theatre",
-      "comedy"
+      "play"
     ],
     "id": "theatre-royal-paranormal-activity",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "play"
   },
   {
     "title": "Maisie Adam: Whatsherface",
@@ -532,10 +550,11 @@
     "description": "Straight off the back of Taskmaster, A League Of Their Own, and Last One Laughing, Maisie Adam is back with her brand new show Whatsherface. Join the 'tall, chaotic one with the weird hair'* as she returns with her trademark wit, firecracker gags, and probably a few angry outbursts along the way...",
     "type": "professional",
     "tags": [
-      "comedy"
+      "stand-up"
     ],
     "id": "pavilion-maisie-adam-whatsherface",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "stand-up"
   },
   {
     "title": "Vittorio Angelone: you can't Say Nothing any more",
@@ -550,10 +569,11 @@
     "description": "Vittorio Angelone has always denied any involvement in stand-up comedy or stand-up comedy related activities.",
     "type": "professional",
     "tags": [
-      "comedy"
+      "stand-up"
     ],
     "id": "kings-vittorio-angelone-you-cant-say-nothing-any-more",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "stand-up"
   },
   {
     "id": "citizens-queer-folks-tales-sep-2026",
@@ -565,13 +585,13 @@
     "endDate": null,
     "type": "professional",
     "tags": [
-      "spoken-word",
-      "new-writing"
+      "spoken-word"
     ],
     "description": "Welcome to Queer Folks’ Tales, Scotland’s hugely popular, multi-award-winning and five-star-rated LGBTQ+ storytelling show. Queer Folks’ Tales tells the stories of LGBTQ+ lives past, present and future and is delighted to continue its 5th year of shows across Scotland by coming to the Citizens...",
     "ticketUrl": "https://citz.co.uk/whats-on/queer-folks-tales-sep-26/",
     "image": "https://assets.citz.co.uk/uploads/2026/08/Citizens-montage-line-up-no-text-with-border-aspect-ratio-1600-1000.jpg?resize=1992%2C1245&gravity",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "spoken-word"
   },
   {
     "title": "Wallace",
@@ -586,11 +606,11 @@
     "description": "The William Wallace story like you've never heard it before! Get ready for a fast-paced, cleverly crafted musical featuring a sensational soundtrack of rap, folk, pop and rock, all performed in a distinctly Scottish voice. The whip-smart cast go head-to-head in electrifying and witty rap battles...",
     "type": "professional",
     "tags": [
-      "musical",
-      "new-writing"
+      "musical"
     ],
     "id": "pavilion-wallace",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "musical"
   },
   {
     "title": "Sam Campbell: Kid Giblet",
@@ -605,10 +625,11 @@
     "description": "With a signature style that marries absurdist loops and razor-sharp observational wit—from surreal YouTube shorts to mainstream TV and podcast success—Sam continues to evolve as one of the UK’s most distinctive and boundary-pushing comedic talents.",
     "type": "professional",
     "tags": [
-      "comedy"
+      "stand-up"
     ],
     "id": "kings-sam-campbell-kid-giblet",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "stand-up"
   },
   {
     "title": "Building And Heritage Tours",
@@ -626,7 +647,8 @@
       "tour"
     ],
     "id": "theatre-royal-building-and-heritage-tours",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "tour"
   },
   {
     "title": "Nish Kumar: Angry Humour From a Really Nice Guy",
@@ -644,10 +666,11 @@
     "description": "The world is in chaos. Inequality is widening, autocracy is rising and political parties are collapsing. In these divided times, what this country desperately needs is Angry Humour From a Really Nice Guy (in many ways it's actually the last thing this country needs, but it's what it's getting so...",
     "type": "professional",
     "tags": [
-      "comedy"
+      "stand-up"
     ],
     "id": "theatre-royal-nish-kumar-angry-humour-from-a-really-nice-guy",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "stand-up"
   },
   {
     "id": "cottiers-darren-connell-i-know-what-you-re-thinking",
@@ -660,12 +683,13 @@
     "sourceGenre": null,
     "type": "professional",
     "tags": [
-      "comedy"
+      "stand-up"
     ],
     "description": "Darren Connell is back with a brand-new special that leans even further into the chaos. I Know What You’re Thinking is a fearless, fast-moving hour where nothing is off-limits and no thought goes unexamined. Fresh from the success of Cancelled, Darren doubles down on what sets him apart...",
     "ticketUrl": "https://cottiers.com/event/darren-connell-i-know-what-youre-thinking/",
     "image": "https://cottiers.com/wp-content/uploads/2026/04/I-KNOW-WHAT-YOURE-THINKING.jpg",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "stand-up"
   },
   {
     "id": "oran-mor-whaur-s-yer-wullie-shakespeare-noo",
@@ -678,15 +702,15 @@
     "endDate": "2026-10-03",
     "type": "new-writing",
     "tags": [
-      "drama",
-      "classic",
+      "play",
       "lunchtime",
       "a-play-a-pie-a-pint"
     ],
     "description": "1756. The Scottish Enlightenment. Despite severe restrictions on all theatre, the minister John Home staged his play Douglas to much outrage within the Church of Scotland. What followed was a church stramash and a fierce debate amongst leading clergymen and philosophers. Was this Scotland’s answer...",
     "ticketUrl": "https://playpiepint.com/whats-on/event/whaurs-yer-wullie-shakespeare-noo/",
     "image": "https://playpiepint.com/app/uploads/2026/07/WYWSN.png",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "play"
   },
   {
     "id": "oran-mor-a-slice-of-the-pie",
@@ -699,15 +723,15 @@
     "endDate": null,
     "type": "new-writing",
     "tags": [
-      "new-writing",
-      "drama",
+      "play",
       "scratch",
       "a-play-a-pie-a-pint"
     ],
     "description": "A Slice of The Pie is A Play, A Pie and A Pint’s very own scratch night, hosted by our artistic team as part of our work to platform and champion exciting new artists in Scotland. The night consists of ‘slices’ of new work from incredible writers, directors and performers who we have never worked …...",
     "ticketUrl": "https://playpiepint.com/whats-on/event/a-slice-of-the-pie-2/",
     "image": "https://playpiepint.com/app/uploads/2026/05/A-Slice-of-the-Pie-.png",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "play"
   },
   {
     "title": "The Pantheon Club presents Dear Evan Hansen",
@@ -725,7 +749,8 @@
       "musical"
     ],
     "id": "kings-the-pantheon-club-presents-dear-evan-hansen",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "musical"
   },
   {
     "title": "Six",
@@ -746,7 +771,8 @@
       "musical"
     ],
     "id": "theatre-royal-six",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "musical"
   },
   {
     "id": "citizens-tristan-yseult",
@@ -758,13 +784,13 @@
     "endDate": "2026-10-03",
     "type": "professional",
     "tags": [
-      "drama",
-      "classic"
+      "play"
     ],
     "description": "Experience the original, critically acclaimed production of Tristan & Yseult – one of the most influential theatre productions of the 21st century. Adapted and directed by Emma Rice, this iconic show returns to the UK for the first time in ten years, offering a rare chance to encounter a modern...",
     "ticketUrl": "https://citz.co.uk/whats-on/tristan-yseult/",
     "image": "https://assets.citz.co.uk/uploads/2026/04/ERC_TY26_Cast_1500x1500.png?resize=960%2C600&gravity",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "play"
   },
   {
     "title": "Adam Garcia's Emerald Storm",
@@ -782,7 +808,8 @@
       "dance"
     ],
     "id": "pavilion-adam-garcias-emerald-storm",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "dance"
   },
   {
     "id": "citizens-we-will-hear-the-angels",
@@ -794,13 +821,13 @@
     "endDate": "2026-10-03",
     "type": "professional",
     "tags": [
-      "drama",
-      "music"
+      "play"
     ],
     "description": "A poignant and uplifting celebration of the power of sad music Bea is stunned by the revelation of her husband’s infidelity; she feels heartbroken and alone. If only she knew that her neighbours, Sonia, Van and Ian, were each also trying to get over the pain in their hearts, unable to articulate...",
     "ticketUrl": "https://citz.co.uk/whats-on/we-will-hear-the-angels/",
     "image": "https://assets.citz.co.uk/uploads/2026/05/WWHTA-Hero-Image-2500x3200-1-scaled.jpg?resize=1992%2C1245&gravity",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "play"
   },
   {
     "title": "Serena Terry: Therapy",
@@ -815,10 +842,11 @@
     "description": "Serena Terry, comedian, author and creator of online sensation ‘Mammy Banter’ is bringing ‘Therapy’ her biggest stand-up comedy tour to date to a city near you in 2026. After selling out her previous two UK and Ireland comedy tours and becoming the first ever female to sell out Belfast’s SSE...",
     "type": "professional",
     "tags": [
-      "comedy"
+      "stand-up"
     ],
     "id": "pavilion-serena-terry-therapy",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "stand-up"
   },
   {
     "id": "platform-do-not-pass-go",
@@ -831,13 +859,13 @@
     "sourceGenre": "Performance",
     "type": "professional",
     "tags": [
-      "physical-theatre",
-      "comedy"
+      "physical-theatre"
     ],
     "description": "Fri 2 Oct @ 7pm & Sat 3 Oct @ 2pm & 7pm 14+ yrs £9.50 (standard) | £6 (concession) | £5 Award-winning theatre company Jordan & Skinner bring their irreverent physical theatre style to Platform this October!",
     "ticketUrl": "https://www.platform-online.co.uk/index.php/whats-on/event/1237",
     "image": "https://www.platform-online.co.uk/images/uploads/_small/1080x680.jpg",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "physical-theatre"
   },
   {
     "title": "Gone But Not Forgotten",
@@ -852,28 +880,11 @@
     "description": "This hysterical Glasgow comedy is back by popular demand! The Deans Family home has been upturned very suddenly with the loss of the dearly departed head of the household Mr Deans. But all is not as it may seem. No-one can understand what has happened, the family are confused, The neighbours are...",
     "type": "professional",
     "tags": [
-      "comedy"
+      "play"
     ],
     "id": "pavilion-gone-but-not-forgotten",
-    "checkedAt": "2026-09-10"
-  },
-  {
-    "title": "The Archers: Live at 75",
-    "venue": "King's Theatre",
-    "venueId": "kings",
-    "date": "2026-10-04",
-    "endDate": null,
-    "time": null,
-    "sourceGenre": "Talk",
-    "ticketUrl": "https://www.atgtickets.com/shows/the-archers-live-at-75/kings-theatre-glasgow/calendar/",
-    "image": "https://res.cloudinary.com/dwzhqvxaz/image/upload/w_800,q_auto,f_auto/v1784292648/Titles/The%20Archers:%20Live%20at%2075/ARCHERS-1920x1080-TENT.jpg",
-    "description": "Don your best hat, dust off your prize-winning jam recipe and join us for an unforgettable celebration of 75 glorious years of BBC Radio 4's The Archers.",
-    "type": "professional",
-    "tags": [
-      "talk"
-    ],
-    "id": "kings-the-archers-live-at-75",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "play"
   },
   {
     "title": "Miriam's Full English LIVE",
@@ -891,10 +902,11 @@
     "description": "Following three bestselling memoirs and sold-out tours that left audiences in stitches, Britain's most outspoken national treasure is back on the road—and she's not holding back. Expect memories & mammaries, Arsenal, politics, filth, and absolutely everything in between.",
     "type": "professional",
     "tags": [
-      "comedy"
+      "stand-up"
     ],
     "id": "kings-miriams-full-english-live",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "stand-up"
   },
   {
     "id": "old-hairdressers-hormonally-yours",
@@ -907,12 +919,13 @@
     "sourceGenre": null,
     "type": "professional",
     "tags": [
-      "experimental"
+      "physical-theatre"
     ],
     "description": "Speculum Bunny’s practise spans and incorporates performance, sound, video, and embodied ritual. She draws inspiration from her background as a bodyworker, somatic sound artist, and magickal practitioner. She loves working with repetition, endurance, and sensory layering to explore emotional...",
     "ticketUrl": "http://www.theoldhairdressers.com/?events=hormonally-yours",
     "image": "http://www.theoldhairdressers.com/wp-content/uploads/2026/09/8390022A-D238-4F8A-AB92-AFA4E2274D88-124x175.png",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "physical-theatre"
   },
   {
     "id": "oran-mor-contact",
@@ -925,14 +938,15 @@
     "endDate": "2026-10-10",
     "type": "new-writing",
     "tags": [
-      "drama",
+      "play",
       "lunchtime",
       "a-play-a-pie-a-pint"
     ],
     "description": "A son turns up at his mother’s house. It’s the first time in months that they have seen each other. She remarks that he’s put on weight. He tells her that he is going to be a father, but he also has an ultimatum: fix their relationship or he will not speak to her ever … Continued",
     "ticketUrl": "https://playpiepint.com/whats-on/event/contact/",
     "image": "https://playpiepint.com/app/uploads/2026/07/Contact-1.png",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "play"
   },
   {
     "title": "Waitress",
@@ -953,7 +967,8 @@
       "musical"
     ],
     "id": "kings-waitress",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "musical"
   },
   {
     "title": "Young Theatre Royal Juniors",
@@ -971,7 +986,8 @@
       "workshop"
     ],
     "id": "theatre-royal-young-theatre-royal-juniors",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "workshop"
   },
   {
     "title": "Young Theatre Royal Seniors",
@@ -989,25 +1005,8 @@
       "workshop"
     ],
     "id": "theatre-royal-young-theatre-royal-seniors",
-    "checkedAt": "2026-09-10"
-  },
-  {
-    "title": "Psychic Sally",
-    "venue": "Pavilion Theatre",
-    "venueId": "pavilion",
-    "date": "2026-10-06",
-    "endDate": null,
-    "time": null,
-    "sourceGenre": null,
-    "ticketUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/other/psychic-sally-tickets",
-    "image": "https://images.ctfassets.net/le9bkneeoxws/1Mxx0RSmqVxcC0nG9nmtmX/ccf61ee2ebdf6a7f6f424f822a4ebc81/1200x600.jpg",
-    "description": "The nation’s favourite psychic is back on tour! Sally has been wowing theatre audiences young and old around the world for over 12 years. Her show will have you on the edge of your seat, as she continues to bring mediumship into the 21st century. Whether you know her from her hit TV series...",
-    "type": "professional",
-    "tags": [
-      "talk"
-    ],
-    "id": "pavilion-psychic-sally",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "workshop"
   },
   {
     "id": "citizens-east-is-east",
@@ -1019,13 +1018,13 @@
     "endDate": "2026-10-17",
     "type": "professional",
     "tags": [
-      "drama",
-      "classic"
+      "play"
     ],
     "description": "Family can hold you together and tear you apart. Salford, 1971. The Khan family are living above a chip shop and on the fault line between two cultures. George Khan is determined the family is raised his Pakistani way. His English wife, Ella, just wants to keep the peace. Their seven children...",
     "ticketUrl": "https://citz.co.uk/whats-on/east-is-east/",
     "image": "https://assets.citz.co.uk/uploads/2026/04/Octagon_EastIsEast_Collage_NoType-1.jpg?resize=960%2C600&gravity",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "play"
   },
   {
     "id": "citizens-new-sauce-scratch-night",
@@ -1037,32 +1036,14 @@
     "endDate": null,
     "type": "scratch",
     "tags": [
-      "new-writing",
-      "drama",
+      "cabaret",
       "scratch"
     ],
     "description": "An evening of fresh ideas and exciting new work from artists of South Asian heritage. This showcase brings together four artists presenting 10–15 minute pieces of work in development. With no restrictions on genre or theme, the evening celebrates artistic exploration and creates a space for artists...",
     "ticketUrl": "https://citz.co.uk/whats-on/new-sauce-scratch-night/",
     "image": "https://assets.citz.co.uk/uploads/2026/07/ScratchNight_260326_AndrewPerry_154-scaled.jpg?resize=1992%2C1245&gravity",
-    "checkedAt": "2026-09-10"
-  },
-  {
-    "id": "old-hairdressers-dead-ends-losers-and-inventions",
-    "title": "Dead Ends, Losers, and Inventions",
-    "venue": "The Old Hairdressers",
-    "venueId": "old-hairdressers",
-    "date": "2026-10-08",
-    "endDate": null,
-    "time": "19:30",
-    "sourceGenre": null,
-    "type": "professional",
-    "tags": [
-      "experimental"
-    ],
-    "description": "Invisible Creatures industrial noise, sample culture and cut-up techniques. Using modified 16mm projectors, contact mics, and multiple guitar effects pedals, to craft layered, and dissonant sound and visual installations. Invisible Creatures is interdisciplinary artist and musician Jennifer Wicks...",
-    "ticketUrl": "http://www.theoldhairdressers.com/?events=dead-ends-losers-and-inventions",
-    "image": "http://www.theoldhairdressers.com/wp-content/uploads/2026/08/JENNY-WICKS_WEB-124x175.jpg",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "cabaret"
   },
   {
     "id": "platform-shuffle-festival-community-jam",
@@ -1075,14 +1056,13 @@
     "sourceGenre": "Performance",
     "type": "community",
     "tags": [
-      "dance",
-      "new-writing",
-      "music"
+      "community-event"
     ],
     "description": "Fri 9 Oct @ 7pm | Sat 10 Oct @ 2pm | Community Jam @ 4pm All ages £9.50 (standard) | £6 (concession) | £5 Shuffle Festival brings together artists, audiences and communities for celebration of Hip-Hop theatre, street dance and culture!",
     "ticketUrl": "https://www.platform-online.co.uk/index.php/whats-on/event/1258",
     "image": "https://www.platform-online.co.uk/images/uploads/_small/Square_Main_Poster_DIGITAL_ONLY_Shuffle_2026.png",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "community-event"
   },
   {
     "title": "Building And Heritage Tours",
@@ -1100,7 +1080,8 @@
       "tour"
     ],
     "id": "kings-building-and-heritage-tours",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "tour"
   },
   {
     "title": "Mary Beard - The Secret Histories of Ancient Rome",
@@ -1118,7 +1099,8 @@
       "talk"
     ],
     "id": "kings-mary-beard-the-secret-histories-of-ancient-rome",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "talk"
   },
   {
     "title": "John Barrowman: My Life In Musicals",
@@ -1133,11 +1115,11 @@
     "description": "John Barrowman is back with his brand new show - My Life In Musicals, a glittering evening celebrating the greatest West End and Broadway musicals. With a career spanning over three decades on stage and screen, John has played an astonishing 22 leading male roles across the West End and Broadway...",
     "type": "professional",
     "tags": [
-      "musical",
-      "cabaret"
+      "musical"
     ],
     "id": "pavilion-john-barrowman-my-life-in-musicals",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "musical"
   },
   {
     "id": "oran-mor-bottoms-dream",
@@ -1151,34 +1133,14 @@
     "type": "new-writing",
     "tags": [
       "spoken-word",
-      "new-writing",
-      "classic",
       "lunchtime",
       "a-play-a-pie-a-pint"
     ],
     "description": "“Ah hud a maist rare vision Ah hud a dream. Ah’ll write a ballad ae this dream: it sal be cried Bottom’s Dream. Because it disnae huv a bottom.” Blending the text of A Midsummer Night’s Dream with original Scots-language poetry, this new spoken word performance by Martin O’Connor (Through the...",
     "ticketUrl": "https://playpiepint.com/whats-on/event/bottoms-dream/",
     "image": "https://playpiepint.com/app/uploads/2026/07/Bottoms-Dream.png",
-    "checkedAt": "2026-09-10"
-  },
-  {
-    "title": "Artie's Singing Kettle - Halloween",
-    "venue": "Pavilion Theatre",
-    "venueId": "pavilion",
-    "date": "2026-10-12",
-    "endDate": null,
-    "time": null,
-    "sourceGenre": null,
-    "ticketUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/family/arties-singing-kettle-halloween-tickets",
-    "image": "https://images.ctfassets.net/le9bkneeoxws/4yLrkHruaVNBWGkjuT4201/4b1d4a4f1a0fb64df02a61fe25dfedec/1200x600.jpg",
-    "description": "Join Artie’s Singing Kettle - Halloween show for a spooktacular extravaganza! Bring your Halloween spirit and don your most creative costume for a show bursting with magic and merriment. This year, solve brand-new spooky Singing Kettle mysteries, and sing along with favourites like Bunny Fou Fou...",
-    "type": "professional",
-    "tags": [
-      "family",
-      "music"
-    ],
-    "id": "pavilion-arties-singing-kettle-halloween",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "spoken-word"
   },
   {
     "id": "cottiers-the-giant-bubble-show",
@@ -1191,13 +1153,13 @@
     "sourceGenre": null,
     "type": "professional",
     "tags": [
-      "family",
       "physical-theatre"
     ],
     "description": "Bubble Inc presents… THE GIANT BUBBLE SHOW! A fast-paced, high-impact bubble spectacle starring the one and only Bubble Wizard! Expect jaw-dropping giant bubbles, swirling bubble storms, and shimmering shapes that stretch your imagination across the stage in a riot of colour and light. Have you...",
     "ticketUrl": "https://cottiers.com/event/the-giant-bubble-show/",
     "image": "https://cottiers.com/wp-content/uploads/2026/04/Giant-Bubble-Show-Poster-Cottiers-A5-2026-Wizard-scaled.jpg",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "physical-theatre"
   },
   {
     "title": "Dirty Dancing",
@@ -1212,11 +1174,11 @@
     "description": "Dirty Dancing returns to Glasgow as part of a UK and Irish tour. Exploding with heart-pounding music, breath-taking emotion and sensationally sexy dancing.",
     "type": "professional",
     "tags": [
-      "dance",
-      "musical"
+      "play"
     ],
     "id": "kings-dirty-dancing",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "play"
   },
   {
     "id": "citizens-these-are-our-neighbours",
@@ -1228,13 +1190,13 @@
     "endDate": "2026-10-17",
     "type": "professional",
     "tags": [
-      "dance",
-      "new-writing"
+      "dance"
     ],
     "description": "There’s a van on your street. It says IMMIGRATION ENFORCEMENT on the side. It’s here for your neighbours. What do you do? Fusing documentary with celebratory dance theatre, These Are Our Neighbours revisits the attempted raid on Kenmure Street in 2021 that became an eight-hour act of shared...",
     "ticketUrl": "https://citz.co.uk/whats-on/these-are-our-neighbours/",
     "image": "https://assets.citz.co.uk/uploads/2026/04/These-Are-Our-Neighbours_no-text-A3_hi-USE-ON-SOCIALS-scaled.jpg?resize=1992%2C1245&gravity",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "dance"
   },
   {
     "title": "Rollers Forever",
@@ -1252,7 +1214,8 @@
       "musical"
     ],
     "id": "pavilion-rollers-forever",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "musical"
   },
   {
     "id": "tron-it-walks-around-the-house-at-night",
@@ -1264,13 +1227,13 @@
     "endDate": "2026-10-17",
     "type": "professional",
     "tags": [
-      "drama",
-      "comedy"
+      "play"
     ],
     "description": "Recommended Age Guide 14+ Unsettling, darkly comic and full of surprises, the stage is set… for terror. When an out-of-work actor takes a job playing a ghost at an old countryside manor, he expects nothing more than a few cheap scares. But as night after night unfolds, the role begins … Continued",
     "ticketUrl": "https://www.tron.co.uk/shows/it-walks-around-the-house-at-night/",
     "image": "https://www.tron.co.uk/wp-content/uploads/2026/06/IWATHAN_SQUARE_1080x1080_NO_TEXT-image-credit-Sean-Longmore.png",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "play"
   },
   {
     "id": "platform-concerned-others",
@@ -1283,13 +1246,13 @@
     "sourceGenre": "Performance",
     "type": "professional",
     "tags": [
-      "new-writing",
       "physical-theatre"
     ],
     "description": "Thu 15 Oct | 7pm Age 14yrs+ £9.50 (standard) | £6 (concession) | £5 A new intimate tabletop performance, from award-winning theatre company Tortoise in a Nutshell, presents the stories of critically underheard voices,",
     "ticketUrl": "https://www.platform-online.co.uk/index.php/whats-on/event/1225",
     "image": "https://www.platform-online.co.uk/images/uploads/_small/IMG_5091_POSTER_.png",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "physical-theatre"
   },
   {
     "id": "tramway-al-seed-productions-thrice",
@@ -1301,13 +1264,13 @@
     "endDate": "2026-10-17",
     "type": "professional",
     "tags": [
-      "drama",
-      "classic"
+      "play"
     ],
     "description": "The world at the conclusion of Macbeth is one steeped in fear; where the distinction between truth and delusion has buckled; where tyranny and violence thrive. This is where Thrice begins.",
     "ticketUrl": "https://www.tramway.org/event/328af962-85b1-4a39-9f3a-b43900ec12d2/",
     "image": "https://events.glasgowlife.org.uk/imageprocessor/29d60b51-d1c1-4fe3-b055-b4a600ceeac6?mode=crop&center=0.477266010485197,0.478009193821957&width=672&height=379",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "play"
   },
   {
     "id": "tron-the-big-comedy-roadshow",
@@ -1319,12 +1282,13 @@
     "endDate": null,
     "type": "professional",
     "tags": [
-      "comedy"
+      "stand-up"
     ],
     "description": "Recommended Age Guide 16+ A rip-roaring night of the very best live stand‑up comedy starring the TV names you know and love alongside some of the hottest up‑and‑coming talent. Breakout social media star Jack Skipper is the October headliner, with an impressive 19 million likes on TikTok under his...",
     "ticketUrl": "https://www.tron.co.uk/shows/the-big-comedy-roadshow-3/",
     "image": "https://www.tron.co.uk/wp-content/uploads/2026/07/OLD-bcr_oct_web_1080x1080_1x.webp",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "stand-up"
   },
   {
     "title": "Kyle MacLachlan – Fictional Selves",
@@ -1342,7 +1306,8 @@
       "talk"
     ],
     "id": "kings-kyle-maclachlan-fictional-selves",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "talk"
   },
   {
     "title": "An Audience with Christian Horner",
@@ -1360,7 +1325,8 @@
       "talk"
     ],
     "id": "pavilion-an-audience-with-christian-horner",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "talk"
   },
   {
     "id": "cottiers-turn-a-different-corner",
@@ -1373,13 +1339,13 @@
     "sourceGenre": "concert-or-performance",
     "type": "community",
     "tags": [
-      "drama",
-      "new-writing"
+      "play"
     ],
     "description": "At 17, Charlie Murphy thought community service at a Glasgow homeless drop-in centre would be easy. Just kill time and get out. He didn’t expect the people he would meet there. A veteran broken by Basra. A grandmother too ashamed to face her grandchildren. A young woman fighting her way back from...",
     "ticketUrl": "https://cottiers.com/event/turn-a-different-corner/",
     "image": "https://cottiers.com/wp-content/uploads/2026/01/TADC-1600-x-700-px-multiple-placements-1.jpg",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "play"
   },
   {
     "id": "oran-mor-lune",
@@ -1392,15 +1358,15 @@
     "endDate": "2026-10-24",
     "type": "new-writing",
     "tags": [
-      "drama",
-      "new-writing",
+      "play",
       "lunchtime",
       "a-play-a-pie-a-pint"
     ],
     "description": "Lune Bogaert heads to the Palace of Justice in Brussels to take the Belgian state to court for its inaction on discrimination against women. When she’s told her complaint will take months or even years to process, she decides to sit herself outside the court for as long as it takes. As Lune’s act...",
     "ticketUrl": "https://playpiepint.com/whats-on/event/lune/",
     "image": "https://playpiepint.com/app/uploads/2026/07/Lune-1.png",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "play"
   },
   {
     "title": "Alice Cooper - Devil On My Shoulder Book Tour",
@@ -1418,7 +1384,8 @@
       "talk"
     ],
     "id": "pavilion-alice-cooper-devil-on-my-shoulder-book-tour",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "talk"
   },
   {
     "id": "cottiers-the-seven-witches-of-torryburn",
@@ -1431,14 +1398,13 @@
     "sourceGenre": null,
     "type": "professional",
     "tags": [
-      "drama",
-      "new-writing",
-      "classic"
+      "play"
     ],
     "description": "In 17th Century Torryburn, as the Scottish Witch Trials reach a fevered peak, seven ordinary women are accused of the unthinkable. It’s 1666 and as fear turns neighbour against neighbour, the seven women must risk everything to defend themselves. The Seven Witches of Torryburn is a stark, lyrical...",
     "ticketUrl": "https://cottiers.com/event/7-witches-of-torryburn/",
     "image": "https://cottiers.com/wp-content/uploads/2026/03/Seven-Witches.jpeg",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "play"
   },
   {
     "title": "Dr John Cooper Clarke",
@@ -1456,7 +1422,8 @@
       "spoken-word"
     ],
     "id": "pavilion-dr-john-cooper-clarke",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "spoken-word"
   },
   {
     "id": "citizens-the-prime-of-miss-jean-brodie",
@@ -1468,13 +1435,13 @@
     "endDate": "2026-10-24",
     "type": "professional",
     "tags": [
-      "drama",
-      "classic"
+      "play"
     ],
     "description": "‘Give me a girl at an impressionable age, and she is mine for life’ At the Marcia Blaine School for Girls, junior-school teacher Miss Jean Brodie is famously in her prime. Each year, Brodie selects her ‘set’. The crème de la crème of girls whom she will shape through art and politics, stories of...",
     "ticketUrl": "https://citz.co.uk/whats-on/the-prime-of-miss-jean-brodie/",
     "image": "https://assets.citz.co.uk/uploads/2026/02/Brodie_NTS-Website-header_1920x795-aspect-ratio-812-795.webp?resize=640%2C400&gravity",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "play"
   },
   {
     "title": "GLOC presents 42nd Street",
@@ -1489,11 +1456,11 @@
     "description": "Come and meet GLOC’s dancing feet!",
     "type": "professional",
     "tags": [
-      "musical",
-      "dance"
+      "musical"
     ],
     "id": "kings-gloc-presents-42nd-street",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "musical"
   },
   {
     "title": "The Scottish Comedians",
@@ -1508,10 +1475,11 @@
     "description": "‘The Scottish Comedians’ is packed with amazing Scottish comedy talent! For our visit to the Glasgow Pavilion, we have an unbelievable line up of talent for you and we would go as far as saying this is probably the best comedy show you will see - with an amazing variety of comedians, all worthy...",
     "type": "professional",
     "tags": [
-      "comedy"
+      "stand-up"
     ],
     "id": "pavilion-the-scottish-comedians",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "stand-up"
   },
   {
     "id": "tron-thanks-for-being-here",
@@ -1523,13 +1491,13 @@
     "endDate": "2026-10-23",
     "type": "professional",
     "tags": [
-      "experimental",
-      "drama"
+      "play"
     ],
     "description": "Recommended Age Guide 14+ In Thanks for Being Here, your presence is crucial. Ontroerend Goed, internationally renowned for their ground-breaking theatre, celebrates theatre’s most essential element: the audience. In this witty and ingenious play of video and viewpoints, they blur the boundaries...",
     "ticketUrl": "https://www.tron.co.uk/shows/thanks-for-being-here/",
     "image": "https://www.tron.co.uk/wp-content/uploads/2026/07/Thanks_copyright_Kurt_Van_der_Elst_pressYVDE1829-nw.jpg",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "play"
   },
   {
     "title": "Scottish Opera - Turandot",
@@ -1550,7 +1518,8 @@
       "opera"
     ],
     "id": "theatre-royal-scottish-opera-turandot",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "opera"
   },
   {
     "title": "It's Not Where You Start By Scott Kyle",
@@ -1565,11 +1534,11 @@
     "description": "Based on the award-winning bestselling memoir of the same name, the It’s Not Where You Start live show is a powerful, uplifting, and deeply personal storytelling experience that blends theatre, autobiography, and live performance with projected animation and film. It tells the extraordinary true...",
     "type": "professional",
     "tags": [
-      "spoken-word",
-      "new-writing"
+      "spoken-word"
     ],
     "id": "pavilion-its-not-where-you-start-by-scott-kyle",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "spoken-word"
   },
   {
     "id": "citizens-revel",
@@ -1581,13 +1550,13 @@
     "endDate": null,
     "type": "professional",
     "tags": [
-      "dance",
-      "physical-theatre"
+      "dance"
     ],
     "description": "This is the dressing room of every show Kally and Steinvör have ever been in – past, present and future. A 60+ coming-of-age story, Revel is a dance-theatre piece that combines physical theatre, dance, dialogue and music. We move between the real relationship in the dressing room as they get ready...",
     "ticketUrl": "https://citz.co.uk/whats-on/revel/",
     "image": "https://assets.citz.co.uk/uploads/2026/04/Revel-2-1-scaled.jpg?resize=1992%2C1245&gravity",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "dance"
   },
   {
     "title": "Billy & Tim - The Widescreen Edition",
@@ -1602,11 +1571,11 @@
     "description": "'Force adversaries to talk and you may achieve peace.' What happens when you lock up two sworn rivals on the day of the big match? Fireworks… then something extraordinary. Winner of the coveted Stage Award for Acting Excellence and hailed with multiple five-star reviews at the Edinburgh Festival...",
     "type": "professional",
     "tags": [
-      "drama",
-      "comedy"
+      "play"
     ],
     "id": "pavilion-billy-tim-the-widescreen-edition",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "play"
   },
   {
     "id": "tron-in-tronversation-with-johnny-mcknight",
@@ -1623,7 +1592,8 @@
     "description": "Recommended Age Guide 14+ In Tronversation With… is a series of events the Tron host over the year that invites creative and cultural legends from Glasgow and beyond to come and talk to our audiences about their careers and their connections with the Tron. As we celebrate the Tron Panto’s …...",
     "ticketUrl": "https://www.tron.co.uk/shows/in-tronversation-with-johnny-mcknight/",
     "image": "https://www.tron.co.uk/wp-content/uploads/2026/07/Tronversation-Johnny-McKnight-Panto-website-2.png",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "talk"
   },
   {
     "id": "platform-starcatchers-play-day",
@@ -1636,13 +1606,13 @@
     "sourceGenre": "Performance",
     "type": "professional",
     "tags": [
-      "family",
-      "music"
+      "community-event"
     ],
     "description": "Sat 24 Oct | 12pm Families £5 | £3 Starcatchers celebrate its 20 birthday at Platform with live music and performance for early years audiences and the rest of the family.",
     "ticketUrl": "https://www.platform-online.co.uk/index.php/whats-on/event/1239",
     "image": "https://www.platform-online.co.uk/images/uploads/_small/Starcatchers_Project.webp",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "community-event"
   },
   {
     "title": "Scottish Opera - Turandot - Touch Tour",
@@ -1663,7 +1633,8 @@
       "tour"
     ],
     "id": "theatre-royal-scottish-opera-turandot-touch-tour",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "tour"
   },
   {
     "title": "Chris Ramsey: Here, Man!",
@@ -1678,10 +1649,11 @@
     "description": "Following a rapid and complete sell-out spring tour, Chris has added a limited run of extra dates this autumn. Despite initially (and repeatedly) vowing not to add any extra dates, the opportunity to continue touring ‘Here Man’ and tell audiences all about all the stuff that he can't say on his...",
     "type": "professional",
     "tags": [
-      "comedy"
+      "stand-up"
     ],
     "id": "pavilion-chris-ramsey-here-man",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "stand-up"
   },
   {
     "id": "oran-mor-badhbh-shith-and-the-storytellers",
@@ -1694,15 +1666,15 @@
     "endDate": "2026-10-31",
     "type": "new-writing",
     "tags": [
-      "drama",
-      "new-writing",
+      "play",
       "lunchtime",
       "a-play-a-pie-a-pint"
     ],
     "description": "Sorcha and Evander have a mountain to conquer, but when a Hebridean storm descends they are forced to take shelter in a lonely bothy. They decide to pass the time telling grim stories from Scottish folklore. But bothies are unusual places. You never never know who else might be there…as the pair...",
     "ticketUrl": "https://playpiepint.com/whats-on/event/badhbh-shith-and-the-storytellers/",
     "image": "https://playpiepint.com/app/uploads/2026/07/WEBSITE-HEADER-2.png",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "play"
   },
   {
     "title": "Dr Richard Shepherd: Time of Death - More Unnatural Causes",
@@ -1720,7 +1692,8 @@
       "talk"
     ],
     "id": "pavilion-dr-richard-shepherd-time-of-death-more-unnatural-ca",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "talk"
   },
   {
     "id": "citizens-othello",
@@ -1732,13 +1705,13 @@
     "endDate": "2026-11-07",
     "type": "professional",
     "tags": [
-      "drama",
-      "classic"
+      "play"
     ],
     "description": "A secret marriage. The brink of war. Fact and fiction. It’s not just black and white. Fear, passion and paranoia bubble beneath the surface of Othello and Desdemona’s newlywed life. Iago’s manipulations begin in whispers – and end in ruin. Director Anthony Almeida‘s new production looks afresh at...",
     "ticketUrl": "https://citz.co.uk/whats-on/othello/",
     "image": "https://assets.citz.co.uk/uploads/2026/04/8645_03_OthelloNS_Web_v4_2000x2000_AWOnly.jpg?resize=1992%2C1245&gravity",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "play"
   },
   {
     "title": "Matthew Bourne's The Car Man",
@@ -1756,11 +1729,11 @@
     "description": "Matthew Bourne’s award-winning The Car Man is back! Loosely based on Bizet’s ever-popular opera, The Car Man has one of the most thrilling and instantly recognisable scores in New Adventures’ repertoire.",
     "type": "professional",
     "tags": [
-      "dance",
-      "musical"
+      "dance"
     ],
     "id": "kings-matthew-bournes-the-car-man",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "dance"
   },
   {
     "title": "The Blindboy Podcast Live",
@@ -1778,7 +1751,8 @@
       "spoken-word"
     ],
     "id": "pavilion-the-blindboy-podcast-live",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "spoken-word"
   },
   {
     "id": "citizens-talking-heritage-the-forgotten-story-of-spectacular",
@@ -1795,7 +1769,8 @@
     "description": "Step into a world of theatrical magic at the Citizens Theatre with Jamie Harrison, director, designer and illusion designer at Vox Motus. In this special talk Harrison explores the fascinating history of spectacular stage effects, illusion and daring scenic innovation. Harrison created the magic...",
     "ticketUrl": "https://citz.co.uk/whats-on/talking-heritage-the-forgotten-story-of-spectacular-theatre-with-jamie-harrison/",
     "image": "https://assets.citz.co.uk/uploads/2026/06/Screenshot-2026-04-29-at-13.08.05-aspect-ratio-1600-1000.png?resize=960%2C600&gravity",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "talk"
   },
   {
     "title": "Hen Night Horror",
@@ -1810,11 +1785,11 @@
     "description": "Hen Night Horror is back! The riotous original musical comedy-horror that’s had audiences screaming with laughter returns this Autumn. This witty production stars Dani Heron, best known for playing Lydia in the Emmy award winning drama Crime, and Scotland's West End legend Matthew Mckenna - fresh...",
     "type": "professional",
     "tags": [
-      "musical",
-      "comedy"
+      "musical"
     ],
     "id": "pavilion-hen-night-horror",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "musical"
   },
   {
     "id": "citizens-i-ll-scratch-yours",
@@ -1826,13 +1801,13 @@
     "endDate": null,
     "type": "scratch",
     "tags": [
-      "new-writing",
-      "drama"
+      "play"
     ],
     "description": "I’ll Scratch Yours is an evening of deliciously fresh new writing & performance. Your favorite sold out scratch night is back… and this time it’s extra tasty. I’ll Scratch Yours presents a night of 6 short scratch performances from Scotland’s most exciting artists. From theatre to music...",
     "ticketUrl": "https://citz.co.uk/whats-on/ill-scratch-yours/",
     "image": "https://assets.citz.co.uk/uploads/2026/09/CITZ-Website-Logo-ILL-SCRATCH-YOURS-aspect-ratio-1600-1000.jpg?resize=1584%2C990&gravity",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "play"
   },
   {
     "id": "tramway-cade-macaskill-with-yas-clarke-tim-spooner-now-not-n",
@@ -1844,13 +1819,13 @@
     "endDate": "2026-10-31",
     "type": "professional",
     "tags": [
-      "experimental",
       "physical-theatre"
     ],
     "description": "Two performers and their uncanny video doubles spiral through a strange, looping morning, in a mind-bending performance exploring how we live, slip and stall in time.",
     "ticketUrl": "https://www.tramway.org/event/b3780c07-1d30-4fde-b247-b42b00a44124/",
     "image": "https://events.glasgowlife.org.uk/imageprocessor/e0e025f7-d1d9-457e-9a68-b42b00a44124?mode=crop&center=0.5,0.5&width=672&height=379",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "physical-theatre"
   },
   {
     "id": "citizens-queer-folks-tales-oct-2026",
@@ -1862,13 +1837,13 @@
     "endDate": null,
     "type": "professional",
     "tags": [
-      "spoken-word",
-      "new-writing"
+      "spoken-word"
     ],
     "description": "Welcome to Queer Folks’ Tales, Scotland’s hugely popular, multi-award-winning and five-star-rated LGBTQ+ storytelling show. Queer Folks’ Tales tells the stories of LGBTQ+ lives past, present and future and is delighted to continue its 5th year of shows across Scotland by coming to the Citizens...",
     "ticketUrl": "https://citz.co.uk/whats-on/queer-folks-tales-oct-26/",
     "image": "https://assets.citz.co.uk/uploads/2026/08/Untitled-design-3-aspect-ratio-1600-1000.png?resize=480%2C300&gravity",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "spoken-word"
   },
   {
     "title": "Adam Rowe: Fashionism",
@@ -1883,10 +1858,11 @@
     "description": "Adam Rowe, host of the Have A Word Podcast and star of Live At The Apollo is back with his best ever hour of stand-up; Fashionism.",
     "type": "professional",
     "tags": [
-      "comedy"
+      "stand-up"
     ],
     "id": "kings-adam-rowe-fashionism",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "stand-up"
   },
   {
     "title": "Fin Taylor: The Pre-emptive Comeback Special",
@@ -1901,10 +1877,11 @@
     "description": "Men want to be him, Women want their boyfriends to stop showing them his videos. The King of the Internet Jungle is back where he belongs, doing stand-up in front of a live audience. After the whirlwind success of his chart-topping podcast Fin vs History and interview series Fin vs the Internet...",
     "type": "professional",
     "tags": [
-      "comedy"
+      "stand-up"
     ],
     "id": "pavilion-fin-taylor-the-pre-emptive-comeback-special",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "stand-up"
   },
   {
     "id": "old-hairdressers-harp-and-carp-doom-creeps-in",
@@ -1917,13 +1894,13 @@
     "sourceGenre": null,
     "type": "professional",
     "tags": [
-      "spoken-word",
-      "music"
+      "spoken-word"
     ],
     "description": "Harp and Carp are the brainchild of Storyteller Daniel Serridge and Harper Neil Wood. Drawing on their interest in folk and ceilidh culture Harp and Carp share stories and music from the folk tradition, inspired by each others’ rhythms, pace and power, Daniel and Neil combine traditional folk...",
     "ticketUrl": "https://www.eventbrite.co.uk/e/harp-and-carp-doom-creeps-in-tickets-1998953966123?aff=oddtdtcreator",
     "image": "http://www.theoldhairdressers.com/wp-content/uploads/2026/09/WhatsApp-Image-2026-09-01-at-11.25.37-124x175.jpeg",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "spoken-word"
   },
   {
     "id": "oran-mor-zamboni",
@@ -1936,14 +1913,15 @@
     "endDate": "2026-11-07",
     "type": "new-writing",
     "tags": [
-      "drama",
+      "play",
       "lunchtime",
       "a-play-a-pie-a-pint"
     ],
     "description": "Skating instructors Donal, Noa and Gus would rather be at their local ice rink than anywhere else in the world. Joking, gossiping and watching over the ice below. But when they witness a horrific accident on shift, their safe haven is shattered, and their greatest passion becomes the very thing...",
     "ticketUrl": "https://playpiepint.com/whats-on/event/zamboni/",
     "image": "https://playpiepint.com/app/uploads/2026/07/Zamboni.png",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "play"
   },
   {
     "title": "Tony Roper's The Steamie",
@@ -1958,11 +1936,11 @@
     "description": "Step inside a 1950s Glasgow washhouse on Hogmanay, where the water’s hot and the gossips even hotter.",
     "type": "professional",
     "tags": [
-      "drama",
-      "classic"
+      "play"
     ],
     "id": "kings-tony-ropers-the-steamie",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "play"
   },
   {
     "title": "Chris Packham's World of Wonder: A Planet on the Edge",
@@ -1980,7 +1958,8 @@
       "talk"
     ],
     "id": "pavilion-chris-packhams-world-of-wonder-a-planet-on-the-edge",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "talk"
   },
   {
     "title": "W*nkernomics",
@@ -1995,10 +1974,11 @@
     "description": "Presented by Gag Reflex in association with Fane Productions After, two sell-out runs at the Edinburgh Fringe, 50 million+ views online and a Sunday Times best-selling book, Australia’s favourite workplace wankers are finally coming to Glasgow. Wankernomics are masters at skewering the buzzwords...",
     "type": "professional",
     "tags": [
-      "comedy"
+      "stand-up"
     ],
     "id": "pavilion-w-nkernomics",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "stand-up"
   },
   {
     "id": "citizens-do-not-pass-go",
@@ -2010,12 +1990,13 @@
     "endDate": "2026-11-07",
     "type": "professional",
     "tags": [
-      "drama"
+      "play"
     ],
     "description": "We heart Lizzie Magie! Feminist, economist, disruptor, and games designer who wanted to show the world there was an alternative to capitalist greed. But her beautiful brainchild was stolen, repurposed, and made a man a millionaire. Discover the hidden truth behind one of the world’s most popular...",
     "ticketUrl": "https://citz.co.uk/whats-on/do-not-pass-go/",
     "image": "https://assets.citz.co.uk/uploads/2026/04/Do-Not-Pass-Go_Final_No-Title-scaled.jpg?resize=1584%2C990&gravity",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "play"
   },
   {
     "title": "Jonathan Pie",
@@ -2030,10 +2011,11 @@
     "description": "Jonathan Pie, the UK's angriest news reporter returns for a brand-new live show touring the UK. Jonathan Pie is coming to terms with the horror of Keir Starmer’s Labour and the fact that he voted for it. Meanwhile, Reform are waiting in the wings and Elon Musk is pulling the strings. The...",
     "type": "professional",
     "tags": [
-      "comedy"
+      "play"
     ],
     "id": "pavilion-jonathan-pie",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "play"
   },
   {
     "title": "Stuart Mitchell's Patter at The Pavilion",
@@ -2048,10 +2030,11 @@
     "description": "Following on from his SOLD OUT debut performance at the Pavilion and first UK tour, join the local lad with over 100M views on TikTok, star of social media, Radio 4 funny man and 8 tipped wonder STUART MITCHELL for a very special night of jokes, audience patter and an all new extended set from...",
     "type": "professional",
     "tags": [
-      "comedy"
+      "stand-up"
     ],
     "id": "pavilion-stuart-mitchells-patter-at-the-pavilion",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "stand-up"
   },
   {
     "id": "oran-mor-making-way",
@@ -2064,14 +2047,15 @@
     "endDate": "2026-11-14",
     "type": "new-writing",
     "tags": [
-      "drama",
+      "play",
       "lunchtime",
       "a-play-a-pie-a-pint"
     ],
     "description": "Scientists have discovered the elixir of youth. Whilst the older generation revel in their rejuvenated bodies, the young are leeched of their priceless blood and forced to fight for their future. A weary widower is injected with this new lease of life but discovers that immortality is not all that...",
     "ticketUrl": "https://playpiepint.com/whats-on/event/making-way/",
     "image": "https://playpiepint.com/app/uploads/2026/07/Making-Way-1.png",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "play"
   },
   {
     "title": "Uncovering Ancient Egypt With Bettany Hughes",
@@ -2086,10 +2070,11 @@
     "description": "Step into the golden sands of Ancient Egypt with award-winning historian Bettany Hughes as she brings the land of the pharaohs vividly to life. With over 50 documentaries seen by 250 million viewers worldwide and bestselling books including The Seven Wonders of the Ancient World and Venus &...",
     "type": "professional",
     "tags": [
-      "talk"
+      "play"
     ],
     "id": "pavilion-uncovering-ancient-egypt-with-bettany-hughes",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "play"
   },
   {
     "title": "Operation Mincemeat: A New Musical",
@@ -2104,11 +2089,11 @@
     "description": "Operation Mincemeat is the 2024 Olivier Award-winning Best New Musical, a Tony Award®-winning musical on Broadway, and it's now coming to Theatre Royal Glasgow for one week!",
     "type": "professional",
     "tags": [
-      "musical",
-      "new-writing"
+      "musical"
     ],
     "id": "theatre-royal-operation-mincemeat-a-new-musical",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "musical"
   },
   {
     "title": "Flo And Joan: With Feeling",
@@ -2123,11 +2108,11 @@
     "description": "The time has come for critically acclaimed musical comedy duo Flo & Joan to write another bio as they make their highly anticipated return to the stage with a brand-new show. “Gosh, they are almost like a real band” (Bruce Dessau, Beyond a Joke). The pair will try and take up as much of the stage...",
     "type": "professional",
     "tags": [
-      "comedy",
-      "music"
+      "stand-up"
     ],
     "id": "pavilion-flo-and-joan-with-feeling",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "stand-up"
   },
   {
     "title": "Susan Calman: Tall Tales",
@@ -2142,10 +2127,11 @@
     "description": "Susan Calman hasn’t been on tour in ten years, but now she’s back with a brand-new show. A decade older, but not necessarily wiser, Susan has found herself in some improbable situations over the years. Tall ales is a show about Cruising, driving tanks, cats and getting older. You might have seen...",
     "type": "professional",
     "tags": [
-      "comedy"
+      "play"
     ],
     "id": "pavilion-susan-calman-tall-tales",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "play"
   },
   {
     "title": "Phil Wang: UH OH",
@@ -2160,10 +2146,11 @@
     "description": "UH OH. Phil Wang’s back with a new stand - up show, and he’s older than ever before.",
     "type": "professional",
     "tags": [
-      "comedy"
+      "play"
     ],
     "id": "theatre-royal-phil-wang-uh-oh",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "play"
   },
   {
     "title": "Jason Byrne: 30 Years Byrning",
@@ -2178,10 +2165,11 @@
     "description": "Jason Byrne is back and “Byrning” brighter than ever, celebrating 30 glorious years of stand-up with his brand-new show, 30 Years Byrning. Byrne delivers a riotous night of high-energy storytelling, surreal tangents and unstoppable laughter. From razor-sharp observations to gloriously unhinged...",
     "type": "professional",
     "tags": [
-      "comedy"
+      "stand-up"
     ],
     "id": "pavilion-jason-byrne-30-years-byrning",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "stand-up"
   },
   {
     "id": "oran-mor-dead-husbands-club",
@@ -2194,15 +2182,15 @@
     "endDate": "2026-11-21",
     "type": "new-writing",
     "tags": [
-      "drama",
-      "comedy",
+      "play",
       "lunchtime",
       "a-play-a-pie-a-pint"
     ],
     "description": "Emily, Maya and Shelley all became widows after the same man killed each of their husbands. Now, they are the self–declared ‘Dead Husbands Club’. At their regular karaoke catch-up, the three women belt out hit songs and discuss why their husbands were targeted as the real truth comes out. In the...",
     "ticketUrl": "https://playpiepint.com/whats-on/event/dead-husbands-club/",
     "image": "https://playpiepint.com/app/uploads/2026/07/Dead-Husbands-Club.png",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "play"
   },
   {
     "id": "tron-the-snaw-queen",
@@ -2214,13 +2202,13 @@
     "endDate": "2026-12-31",
     "type": "community",
     "tags": [
-      "family",
-      "comedy"
+      "play"
     ],
     "description": "Recommended age 7+ CELEBRATING 40 YEARS OF THE TRON PANTOShe’s no’ just frozen… she’s baltic! Christmas is running like a dream down in Santa’s (aka Kristine Cagney Kringle’s) workshop. All nice and naughty lists have been checked off. Nothing can go wrong. Until a broken magic mirror unleashes...",
     "ticketUrl": "https://www.tron.co.uk/shows/the-snaw-queen/",
     "image": "https://www.tron.co.uk/wp-content/uploads/2026/07/TRO-342-S-Queen_Stories-1920x1080-1.jpg",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "play"
   },
   {
     "title": "Matilda The Musical",
@@ -2240,11 +2228,11 @@
     "description": "Matilda The Musical, the multi-award winning musical from the Royal Shakespeare Company is inspired by the beloved book by Roald Dahl. Buy one and get one under 16s half price on selected seats at Tue – Thu performances.",
     "type": "professional",
     "tags": [
-      "musical",
-      "family"
+      "musical"
     ],
     "id": "theatre-royal-matilda-the-musical",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "musical"
   },
   {
     "title": "Aladdin (Pantomime)",
@@ -2264,11 +2252,11 @@
     "description": "Aladdin (Pantomime) at King's Theatre, Glasgow.",
     "type": "professional",
     "tags": [
-      "comedy",
-      "family"
+      "pantomime"
     ],
     "id": "kings-aladdin-pantomime",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "pantomime"
   },
   {
     "title": "Goldilocks and the Three Bonnie Bears",
@@ -2283,11 +2271,11 @@
     "description": "Bringing Glasgow together once again for the laugh-out-loud spectacular Goldilocks and the Three Bonnie Bears. Joining the already‑announced funny man Liam Dolan are returning favourites Grado, Stephen Purdon, Scott Fletcher, Jack Jester, Jennifer Neil, Valissa Scott and Craig Glover — a team...",
     "type": "professional",
     "tags": [
-      "comedy",
-      "family"
+      "pantomime"
     ],
     "id": "pavilion-goldilocks-and-the-three-bonnie-bears",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "pantomime"
   },
   {
     "id": "citizens-cinderella",
@@ -2299,13 +2287,13 @@
     "endDate": "2026-12-31",
     "type": "professional",
     "tags": [
-      "family",
-      "comedy"
+      "pantomime"
     ],
     "description": "You’re invited to celebrate Christmas at the Citz! Join us for a fun twist on the much-loved fairytale. It’s nearly time for the Prince’s ball, but poor Cinderella is working her fingers to the bone in the cold and dark kitchens thanks to her cruel and greedy step-sisters’ nasty tricks. Luckily...",
     "ticketUrl": "https://citz.co.uk/whats-on/cinderella/",
     "image": "https://assets.citz.co.uk/uploads/2026/04/Untitled-design-2.png?resize=1992%2C1245&gravity",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "pantomime"
   },
   {
     "title": "Ice Dragon",
@@ -2320,11 +2308,11 @@
     "description": "Travel through the seasons in Ice Dragon, an interactive musical adventure for babies and children under six years.",
     "type": "professional",
     "tags": [
-      "family",
       "musical"
     ],
     "id": "theatre-royal-ice-dragon",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "musical"
   },
   {
     "id": "platform-christmas-show-hansel-gretel",
@@ -2337,13 +2325,13 @@
     "sourceGenre": "Performance",
     "type": "professional",
     "tags": [
-      "comedy",
-      "family"
+      "play"
     ],
     "description": "Tue 1 Dec - Thu 24 Dec | Day & evening shows All ages £10.50 (standard) | £7 (concession) | £6 Join us for a gripping, festive story, groovy songs and plenty of silly jokes this Christmas!",
     "ticketUrl": "https://www.platform-online.co.uk/index.php/whats-on/event/1233",
     "image": "https://www.platform-online.co.uk/images/uploads/_small/Screenshot_2026-07-21_122255.png",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "play"
   },
   {
     "title": "CATS",
@@ -2366,7 +2354,8 @@
       "musical"
     ],
     "id": "theatre-royal-cats",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "musical"
   },
   {
     "id": "citizens-poggle-and-me",
@@ -2378,13 +2367,13 @@
     "endDate": "2026-12-11",
     "type": "professional",
     "tags": [
-      "dance",
-      "family"
+      "physical-theatre"
     ],
     "description": "This sensory, inclusive dance-theatre performance is made especially for and with children with complex needs ages 7-15 years. Playfulness within the work creates space for live response between the audience and performers, with its adaptable approach allowing the individuality of each child to be...",
     "ticketUrl": "https://citz.co.uk/whats-on/poggle-and-me/",
     "image": "https://assets.citz.co.uk/uploads/2026/08/PoggleAndMe_190923_AndrewPerry_202-scaled.jpg?resize=1992%2C1245&gravity",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "physical-theatre"
   },
   {
     "title": "Aladdin (Pantomime) - Relaxed Performance",
@@ -2402,11 +2391,11 @@
     "description": "Aladdin (Pantomime) - Relaxed Performance at King's Theatre, Glasgow.",
     "type": "professional",
     "tags": [
-      "comedy",
-      "family"
+      "pantomime"
     ],
     "id": "kings-aladdin-pantomime-relaxed-performance",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "pantomime"
   },
   {
     "title": "Scottish Ballet – Cinders!",
@@ -2424,11 +2413,11 @@
     "description": "A dazzling Cinderella story - Scottish Ballet's playful retelling of the Cinderella story returns to surprise and delight audiences.",
     "type": "professional",
     "tags": [
-      "dance",
-      "family"
+      "dance"
     ],
     "id": "theatre-royal-scottish-ballet-cinders",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "dance"
   },
   {
     "title": "Romesh Ranganathan Will Change Your Life",
@@ -2443,10 +2432,11 @@
     "description": "Hi. I’m Romesh Ranganathan and I Will Change Your Life.",
     "type": "professional",
     "tags": [
-      "comedy"
+      "stand-up"
     ],
     "id": "kings-romesh-ranganathan-will-change-your-life",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "stand-up"
   },
   {
     "title": "Scottish Ballet – Cinders!: Talk Ballet",
@@ -2464,7 +2454,8 @@
       "talk"
     ],
     "id": "theatre-royal-scottish-ballet-cinders-talk-ballet",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "talk"
   },
   {
     "title": "Mrs. Doubtfire The Musical",
@@ -2484,11 +2475,11 @@
     "description": "Helloooo, poppets! MRS. DOUBTFIRE, the West End's hit comedy musical based on the beloved film, is heading to Glasgow in January 2027.",
     "type": "professional",
     "tags": [
-      "musical",
-      "comedy"
+      "musical"
     ],
     "id": "kings-mrs-doubtfire-the-musical",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "musical"
   },
   {
     "title": "P*rno",
@@ -2503,11 +2494,11 @@
     "description": "Stage adaptation of the follow up novel to TRAINSPOTTING. Set 20 years after TRAINSPOTTING, what has become of RENTON, SICKBOY, SPUD & BEGBIE? The WEST END SMASH HIT is coming to the Pavilion on 15th & 16th January ’27. A must see for all Irvine Welsh fans. Contains swearing, drug use, language...",
     "type": "professional",
     "tags": [
-      "drama",
-      "new-writing"
+      "play"
     ],
     "id": "pavilion-p-rno",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "play"
   },
   {
     "title": "Shine Productions present Titanic The Musical",
@@ -2525,7 +2516,8 @@
       "musical"
     ],
     "id": "theatre-royal-shine-productions-present-titanic-the-musical",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "musical"
   },
   {
     "title": "'A Toast Fae The Lassies'",
@@ -2540,11 +2532,11 @@
     "description": "Written and directed by John Binnie Musical arrangements and additional music by Alyson Orr Songs and poetry by Robert Burns Following on from its sell-out success at Pitlochry Festival Theatre, this dynamic musical play explores the life of Robert Burns through the eyes of the three women who...",
     "type": "professional",
     "tags": [
-      "musical",
-      "new-writing"
+      "play"
     ],
     "id": "pavilion-a-toast-fae-the-lassies",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "play"
   },
   {
     "title": "Myra's Story",
@@ -2559,11 +2551,11 @@
     "description": "Direct from London’s West End and the four-time smash-hit at the Edinburgh Fringe, Myra’s Story is the tour-de-force performance that you’ll never forget. Meet Myra (played by the acclaimed actor Fionna Hewitt-Twamley). Myra has fallen on hard times and is now homeless living on the streets of...",
     "type": "professional",
     "tags": [
-      "drama",
-      "new-writing"
+      "play"
     ],
     "id": "pavilion-myras-story",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "play"
   },
   {
     "title": "Larry Dean: Hellbent",
@@ -2578,10 +2570,11 @@
     "description": "Recently married, emotionally feral.",
     "type": "professional",
     "tags": [
-      "comedy"
+      "stand-up"
     ],
     "id": "kings-larry-dean-hellbent",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "stand-up"
   },
   {
     "title": "Al Murray: All You Need Is Guv",
@@ -2596,10 +2589,11 @@
     "description": "Hey cool cats! Hot on the heels of a sold-out first leg of his brand-new stand-up show across 2026, The Guv's extending his tour of these green and groovy isles into 2027. Time for another round, wouldn’t you say? There’s no denying the world’s a mess daddio, but there is a glimmer of hope as the...",
     "type": "professional",
     "tags": [
-      "comedy"
+      "stand-up"
     ],
     "id": "pavilion-al-murray-all-you-need-is-guv",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "stand-up"
   },
   {
     "id": "tron-when-prophecy-fails",
@@ -2611,13 +2605,13 @@
     "endDate": "2027-02-06",
     "type": "professional",
     "tags": [
-      "physical-theatre",
-      "new-writing"
+      "physical-theatre"
     ],
     "description": "The end is nigh, and the saucers are coming. Step into a world of apocalyptic visions, clandestine observers and the faithful disciples of a suburban housewife. Award-winning ensemble Groupwork present When Prophecy Fails, a daring new work of physical theatre. Inspired by a 1954 study that...",
     "ticketUrl": "https://www.tron.co.uk/shows/when-prophecy-fails/",
     "image": "https://www.tron.co.uk/wp-content/uploads/2026/08/When-Prophecy-Fails-by-Groupwork.-©-Mihaela-Bodlovic-Portrait.jpg-3.jpg",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "physical-theatre"
   },
   {
     "title": "Scottish Opera - Alcina",
@@ -2638,7 +2632,8 @@
       "opera"
     ],
     "id": "theatre-royal-scottish-opera-alcina",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "opera"
   },
   {
     "title": "Scottish Opera - Alcina Pre Show Talk",
@@ -2656,7 +2651,8 @@
       "talk"
     ],
     "id": "theatre-royal-scottish-opera-alcina-pre-show-talk",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "talk"
   },
   {
     "title": "Operation MI6",
@@ -2674,7 +2670,8 @@
       "talk"
     ],
     "id": "pavilion-operation-mi6",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "talk"
   },
   {
     "id": "citizens-mary-queen-of-scots-got-her-head-chopped-off",
@@ -2686,13 +2683,13 @@
     "endDate": "2027-03-06",
     "type": "professional",
     "tags": [
-      "drama",
-      "classic"
+      "play"
     ],
     "description": "‘Once upon a time, there were twa queens on the wan green island, and the wan green island was split inty twa kingdoms. But no equal kingdoms . . .’ Celebrating the richly poetic Scots language, Liz Lochhead’s mighty text explores the deadly rivalry between two of history’s most fascinating women...",
     "ticketUrl": "https://citz.co.uk/whats-on/mary-queen-of-scots-got-her-head-chopped-off/",
     "image": "https://assets.citz.co.uk/uploads/2026/06/OST-CITZ-MQoS-Selected-Teaser-2000px.jpg?resize=1992%2C1245&gravity",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "play"
   },
   {
     "title": "All Killa No Filla - Live At Valentine's Day!",
@@ -2707,10 +2704,11 @@
     "description": "True love is out. True crime is in.",
     "type": "professional",
     "tags": [
-      "talk"
+      "stand-up"
     ],
     "id": "kings-all-killa-no-filla-live-at-valentines-day",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "stand-up"
   },
   {
     "title": "Scottish Opera - Alcina - Touch Tour",
@@ -2731,7 +2729,8 @@
       "tour"
     ],
     "id": "theatre-royal-scottish-opera-alcina-touch-tour",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "tour"
   },
   {
     "title": "Million Dollar Quartet",
@@ -2746,11 +2745,11 @@
     "description": "Following its return to London, the West End and Broadway smash-hit musical, Million Dollar Quartet is hitting the road! On the night of December 4, 1956, four musical icons entered a recording studio in Memphis and made music history. Johnny Cash, Jerry Lee Lewis, Carl Perkins and Elvis Presley...",
     "type": "professional",
     "tags": [
-      "musical",
-      "drama"
+      "musical"
     ],
     "id": "pavilion-million-dollar-quartet",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "musical"
   },
   {
     "title": "Jersey Boys",
@@ -2768,11 +2767,11 @@
     "description": "The boys are back as the original Tony®-winning sensation returns for its 20th Anniversary Tour!",
     "type": "professional",
     "tags": [
-      "musical",
-      "drama"
+      "musical"
     ],
     "id": "kings-jersey-boys",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "musical"
   },
   {
     "title": "Scottish Opera - Fidelio",
@@ -2790,11 +2789,11 @@
     "description": "To mark the 200th anniversary of Beethoven’s death, in 2027 Scotland’s orchestras and national opera company unite for an extraordinary exploration of the composer’s music.",
     "type": "professional",
     "tags": [
-      "opera",
-      "music"
+      "opera"
     ],
     "id": "theatre-royal-scottish-opera-fidelio",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "opera"
   },
   {
     "title": "Scottish Opera - Fidelio - Touch Tour",
@@ -2815,7 +2814,8 @@
       "tour"
     ],
     "id": "theatre-royal-scottish-opera-fidelio-touch-tour",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "tour"
   },
   {
     "title": "Scottish Opera - National Opera Studio",
@@ -2830,10 +2830,11 @@
     "description": "As one of the National Opera Studio’s partners, Scottish Opera is delighted to host the 2026/27 NOS cohort – a group of the brightest rising star singers and repetiteurs from around the world – for a one-week residency of coaching with the Company’s Music Department, working with The Orchestra of...",
     "type": "professional",
     "tags": [
-      "workshop"
+      "talk"
     ],
     "id": "theatre-royal-scottish-opera-national-opera-studio",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "talk"
   },
   {
     "title": "Jack And His Big Beanstalk",
@@ -2848,11 +2849,11 @@
     "description": "Following the sell-out success of The Wizard Wae The Big Bawz, Patter Productions returns with a brand-new adults-only pantomime. Jack and His Big Beanstalk is a riotous 18+ twist on the classic fairytale, packed with outrageous comedy, cheek and charm, audience banter, and more innuendo than you...",
     "type": "professional",
     "tags": [
-      "comedy",
-      "cabaret"
+      "pantomime"
     ],
     "id": "pavilion-jack-and-his-big-beanstalk",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "pantomime"
   },
   {
     "title": "Strangers on a Train",
@@ -2867,11 +2868,11 @@
     "description": "Based on the novel by Patricia Highsmith and inspired by Hitchcock’s iconic film, Strangers on a Train arrives on stage in a thrilling new production directed by Roxana Silbert.",
     "type": "professional",
     "tags": [
-      "drama",
-      "classic"
+      "play"
     ],
     "id": "theatre-royal-strangers-on-a-train",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "play"
   },
   {
     "title": "Mike Bubbins: IDEASMAN",
@@ -2886,10 +2887,11 @@
     "description": "Mike Bubbins: IDEASMAN plus special guests Ideas Man, noun : 'A person who is particularly good at thinking of new or original ideas.' That's what Mike Bubbins is. Not an admin man. Not an organised man. Not an especially dedicated man. This comedy tour, for instance, is a case in point. Mike has...",
     "type": "professional",
     "tags": [
-      "comedy"
+      "stand-up"
     ],
     "id": "pavilion-mike-bubbins-ideasman",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "stand-up"
   },
   {
     "title": "Annie",
@@ -2904,11 +2906,11 @@
     "description": "THE SMASH-HIT WEST END PRODUCTION OF ANNIE, THE WORLD'S FAVOURITE FAMILY MUSICAL, RETURNS WITH A NEW UK AND IRELAND TOUR, STARRING CLAIRE SWEENEY AS THE TYRANNICAL MISS HANNIGAN!",
     "type": "professional",
     "tags": [
-      "musical",
-      "family"
+      "musical"
     ],
     "id": "kings-annie",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "musical"
   },
   {
     "title": "Go Dance 2027 - Celebrating 20 years!",
@@ -2926,7 +2928,8 @@
       "dance"
     ],
     "id": "theatre-royal-go-dance-2027-celebrating-20-years",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "dance"
   },
   {
     "title": "Sunshine On Leith",
@@ -2944,7 +2947,8 @@
       "musical"
     ],
     "id": "pavilion-sunshine-on-leith",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "musical"
   },
   {
     "title": "Layton Live",
@@ -2959,11 +2963,11 @@
     "description": "Olivier Award winner, and Tony Award nominee, Layton Williams is taking to the stage for his nationwide tour. Marking the upcoming 20th anniversary of his stage debut, Layton will take you on a whistle stop musical tour of his journey from Billy Elliot to Titanique, via Cabaret, Hairspray...",
     "type": "professional",
     "tags": [
-      "cabaret",
-      "musical"
+      "cabaret"
     ],
     "id": "pavilion-layton-live",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "cabaret"
   },
   {
     "title": "The Curious Incident of the Dog in the Night-Time",
@@ -2978,11 +2982,11 @@
     "description": "The internationally celebrated novel that captivated 10 million readers is coming in a brand-new staging more thrilling than ever.",
     "type": "professional",
     "tags": [
-      "drama",
-      "new-writing"
+      "play"
     ],
     "id": "theatre-royal-the-curious-incident-of-the-dog-in-the-night-t",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "play"
   },
   {
     "title": "Lucy Beaumont - Bad At Quiz Shows, Good With Weirdos",
@@ -2997,9 +3001,10 @@
     "description": "Lucy Beaumont has had quite the year. She lost a contestant £79,000 on The Wheel, forgot to revise for Mastermind, and generally confirmed she's terrible at quiz shows. So she's sticking with what she does best - this autumn, she's back on the road with a brand new show. Following the success of...",
     "type": "professional",
     "tags": [
-      "comedy"
+      "stand-up"
     ],
     "id": "pavilion-lucy-beaumont-bad-at-quiz-shows-good-with-weirdos",
-    "checkedAt": "2026-09-10"
+    "checkedAt": "2026-09-10",
+    "form": "stand-up"
   }
 ]

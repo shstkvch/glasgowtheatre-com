@@ -10,8 +10,7 @@
     "time": "19:30",
     "type": "professional",
     "tags": [
-      "dance",
-      "experimental"
+      "dance"
     ],
     "description": "Al Seed Productions' visual and physical theatre response to Macbeth. Nine women, three trios, standing in the aftermath of the play and taking the words of soldiers and tyrants into their own mouths.",
     "ticketUrl": "https://www.tramway.org/event/328af962-85b1-4a39-9f3a-b43900ec12d2/",
@@ -30,6 +29,7 @@
       }
     ],
     "accessibility": "Sat 17 Oct, 7.30pm · BSL interpreted by Lisa Li",
-    "checkedAt": "2026-09-09"
+    "checkedAt": "2026-09-09",
+    "form": "dance"
   }
 ]

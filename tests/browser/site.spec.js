@@ -37,7 +37,7 @@ async function openFilters(page) {
   }
 }
 
-test("search, genre, reset and empty state work together", async ({ page }) => {
+test("search, art form, reset and empty state work together", async ({ page }) => {
   await page.goto("/");
   await openFilters(page);
   const initial = await page
@@ -53,14 +53,14 @@ test("search, genre, reset and empty state work together", async ({ page }) => {
   await expect(page.locator("#events-grid .event-card:visible")).toHaveCount(
     initial,
   );
-  await page.locator('[data-tag="dance"]').click();
-  await expect(page.locator('[data-tag="dance"]')).toHaveAttribute(
+  await page.locator('[data-form="dance"]').click();
+  await expect(page.locator('[data-form="dance"]')).toHaveAttribute(
     "aria-pressed",
     "true",
   );
-  await expect(page).toHaveURL(/genre=dance/);
+  await expect(page).toHaveURL(/form=dance/);
   await page.reload();
-  await expect(page.locator('[data-tag="dance"]')).toHaveAttribute(
+  await expect(page.locator('[data-form="dance"]')).toHaveAttribute(
     "aria-pressed",
     "true",
   );
@@ -74,7 +74,7 @@ test("a manually submitted listing appears as a normal card with its supplied im
     "Thrice has finished and must no longer be listed.",
   );
   await page.goto(
-    "/?q=Thrice&venue=tramway&from=2026-10-17&to=2026-10-17&genre=dance",
+    "/?q=Thrice&venue=tramway&from=2026-10-17&to=2026-10-17&form=dance",
   );
   const card = page.locator("#events-grid .event-card:visible");
   await expect(card).toHaveCount(1);
@@ -257,4 +257,23 @@ test("pages have no automated WCAG A or AA accessibility violations", async ({
       })),
     ).toEqual([]);
   }
+});
+
+test("only art forms are offered and opera filters the matching cards", async ({ page }) => {
+  const { FORMS } = require("../../scripts/art-forms");
+  await page.goto("/");
+  await openFilters(page);
+  const forms = await page.locator(".filter-pill[data-form]").evaluateAll(
+    (pills) => pills.map((pill) => pill.dataset.form).filter(Boolean),
+  );
+  expect(forms.length).toBeGreaterThan(0);
+  expect(forms.every((form) => Object.hasOwn(FORMS, form))).toBe(true);
+  await expect(page.locator(".filter-pills-group")).toHaveAttribute("aria-label", "Filter by art form");
+  await page.getByRole("button", { name: "Opera", exact: true }).click();
+  await expect(page).toHaveURL(/form=opera/);
+  const cards = page.locator("#events-grid .event-card:visible");
+  const expected = await page.evaluate(() => window.Listings.filterEvents(window.EVENTS, { form: "opera" }).length);
+  expect(expected).toBeGreaterThan(0);
+  await expect(cards).toHaveCount(expected);
+  expect(await cards.locator(".card-topline > span").allTextContents()).toEqual(Array(expected).fill("Opera"));
 });

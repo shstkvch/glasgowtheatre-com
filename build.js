@@ -5,6 +5,7 @@ const {
   filterEvents,
   mergeListings,
 } = require("./src/js/listings");
+const { FORMS, fallbackForm, combine } = require("./scripts/art-forms");
 const DIST = path.join(__dirname, "dist");
 const SITE = "https://glasgowtheatre.com";
 const today = londonDate();
@@ -29,8 +30,11 @@ function checkManual(entries) {
   const ids = new Set(venues.map((v) => v.id));
   const problems = entries.flatMap((entry, i) => {
     const where = entry.id || entry.title || `entry ${i + 1}`;
-    const need = ["id", "title", "venue", "venueId", "date", "ticketUrl"];
+    const need = ["id", "title", "venue", "venueId", "date", "ticketUrl", "form"];
     return [
+      ...(entry.form && !Object.hasOwn(FORMS, entry.form)
+        ? [`${where}: unknown art form "${entry.form}"`]
+        : []),
       ...need.filter((f) => !entry[f]).map((f) => `${where}: missing "${f}"`),
       ...(entry.venueId && !ids.has(entry.venueId)
         ? [`${where}: venueId "${entry.venueId}" is not in venues.json`]
@@ -66,6 +70,8 @@ const events = filterEvents(
   mergeListings(read("events.json"), checkManual(read("manual-events.json"))),
 ).map((e) => ({
   ...e,
+  form: fallbackForm(e),
+  tags: combine(e, e.form),
   image: e.image?.startsWith("/") ? e.image : images[e.image] || null,
 }));
 const e = (value) =>
@@ -154,13 +160,13 @@ function page(
 function card(event) {
   return `<article class="event-card" data-id="${e(event.id)}" data-date="${e(event.date)}" data-end-date="${e(event.endDate || event.date)}">
 <div class="event-card-image${event.image ? "" : " image-unavailable"}"><a class="event-card-thumb" href="${e(event.ticketUrl)}" tabindex="-1"><div class="image-fallback" aria-hidden="true"><span>ON STAGE AT</span><strong>${e(event.venue)}</strong></div>${event.image ? `<img src="${e(event.image)}" alt="${e(event.imageAlt || event.title)}" width="1100" height="688" loading="lazy">` : ""}</a><span class="date-stamp">${e(range(event))}</span></div>
-<div class="event-card-body"><div class="card-topline"><a href="/venues/${e(event.venueId)}.html">${e(event.season || event.venue)}</a><span>${e((event.tags || []).slice(0, 2).map(label).join(" / "))}</span></div>
+<div class="event-card-body"><div class="card-topline"><a href="/venues/${e(event.venueId)}.html">${e(event.season || event.venue)}</a><span>${e(label(event.form))}</span></div>
 <h3><a href="${e(event.ticketUrl)}">${e(event.title)}</a></h3><p class="event-description">${e(event.description)}</p>
 ${event.accessibility ? `<p class="accessibility"><span aria-hidden="true">✳</span> ${e(event.accessibility)}</p>` : ""}
 <div class="event-card-footer"><span>${event.time ? e(time(event.time)) : "Times & tickets at venue"}</span><a class="ticket-link" href="${e(event.ticketUrl)}" aria-label="Tickets for ${e(event.title)}">Tickets ${arrow}</a></div></div></article>`;
 }
 const venueCount = new Set(events.map((event) => event.venueId)).size;
-const tags = [...new Set(events.flatMap((event) => event.tags || []))].sort();
+const forms = [...new Set(events.map((event) => event.form))].sort();
 write(
   "index.html",
   page(
@@ -174,9 +180,9 @@ write(
       .map((v) => `<option value="${v.id}">${e(v.name)}</option>`)
       .join(
         "",
-      )}</select></label><label>From<input id="filter-date-from" type="date"></label><label>To<input id="filter-date-to" type="date"></label></div><div class="filter-pills-group" aria-label="Filter by genre"><button class="filter-pill active" data-tag="" aria-pressed="true">All shows</button>${tags.map((tag) => `<button class="filter-pill" data-tag="${e(tag)}" aria-pressed="false">${e(label(tag))}</button>`).join("")}</div></details>
+      )}</select></label><label>From<input id="filter-date-from" type="date"></label><label>To<input id="filter-date-to" type="date"></label></div><div class="filter-pills-group" aria-label="Filter by art form"><button class="filter-pill active" data-form="" aria-pressed="true">All shows</button>${forms.map((form) => `<button class="filter-pill" data-form="${e(form)}" aria-pressed="false">${e(label(form))}</button>`).join("")}</div></details>
 <div class="results-bar"><span id="results-count" role="status" aria-live="polite">${events.length} shows</span><button class="text-button" data-reset>Clear filters <span aria-hidden="true">×</span></button></div>
-<div class="events-grid" id="events-grid">${events.map(card).join("")}</div><div class="no-results" id="no-results" hidden><h3>A different night, perhaps?</h3><p>No shows match these filters. Try another date, venue or genre.</p><button class="btn" data-reset>Clear filters</button></div></div></section>
+<div class="events-grid" id="events-grid">${events.map(card).join("")}</div><div class="no-results" id="no-results" hidden><h3>A different night, perhaps?</h3><p>No shows match these filters. Try another date, venue or art form.</p><button class="btn" data-reset>Clear filters</button></div></div></section>
 <section class="listing-invite"><div class="container"><div><p class="eyebrow">For the people making it happen</p><h2>Your show.<br>Our next night out.</h2><p>Putting on theatre in Glasgow? Let the city know.</p></div><a class="btn" href="/submit.html">List your show — it’s free ${arrow}</a></div></section>`,
   ),
 );
@@ -210,7 +216,7 @@ write(
     "About this independent theatre guide",
     "An independent guide to theatre, dance and performance in Glasgow.",
     "/about.html",
-    `<section class="page-hero container"><p class="eyebrow">Independent. Local. Live.</p><h1>For a love<br>of live theatre.</h1><p>Glasgow Theatre helps you find what’s on across the city, from established stages to independent performance spaces.</p></section><section class="prose container"><h2>A place to find your next show</h2><p>Browse productions by venue, date or genre, then book directly with the venue. Listings are free, and this guide is independent of the theatres it covers.</p><h2>About the listings</h2><p>We gather listings from venue programmes and accept submissions from companies and artists. This is a selection of what’s on, rather than a complete programme for every venue. Check the booking page for the latest performance times, prices, availability and access arrangements.</p><h2>Something missing or incorrect?</h2><p><a href="/submit.html">Send us a listing</a> or email <a href="mailto:info@glasgowtheatre.com">info@glasgowtheatre.com</a> with a correction.</p><h2>Who runs this</h2><p>Glasgow Theatre is maintained by David Hewitson.</p></section>`,
+    `<section class="page-hero container"><p class="eyebrow">Independent. Local. Live.</p><h1>For a love<br>of live theatre.</h1><p>Glasgow Theatre helps you find what’s on across the city, from established stages to independent performance spaces.</p></section><section class="prose container"><h2>A place to find your next show</h2><p>Browse productions by venue, date or art form, then book directly with the venue. Listings are free, and this guide is independent of the theatres it covers.</p><h2>About the listings</h2><p>We gather listings from venue programmes and accept submissions from companies and artists. This is a selection of what’s on, rather than a complete programme for every venue. Check the booking page for the latest performance times, prices, availability and access arrangements.</p><h2>Something missing or incorrect?</h2><p><a href="/submit.html">Send us a listing</a> or email <a href="mailto:info@glasgowtheatre.com">info@glasgowtheatre.com</a> with a correction.</p><h2>Who runs this</h2><p>Glasgow Theatre is maintained by David Hewitson.</p></section>`,
     "about",
   ),
 );
@@ -220,7 +226,7 @@ write(
     "List your show",
     "Submit your Glasgow theatre, dance or performance listing for free.",
     "/submit.html",
-    `<section class="page-hero container"><p class="eyebrow">A stage for your show</p><h1>Tell Glasgow.</h1><p>Putting on theatre, dance or live performance in Glasgow? Send us the details. It’s free to be listed.</p></section><section class="prose container"><h2>Send us your listing</h2><ul><li>Show title and company name</li><li>Venue, dates and performance times</li><li>A short description and genre</li><li>A direct booking link</li><li>A production image, with photo credit and permission to use it</li><li>Access information, including BSL, captioned, relaxed or audio-described performances</li></ul><div class="submit-box"><p>Ready when you are.</p><a class="btn" href="mailto:info@glasgowtheatre.com?subject=Show%20listing">Email your listing ${arrow}</a><a href="mailto:info@glasgowtheatre.com">info@glasgowtheatre.com</a></div></section>`,
+    `<section class="page-hero container"><p class="eyebrow">A stage for your show</p><h1>Tell Glasgow.</h1><p>Putting on theatre, dance or live performance in Glasgow? Send us the details. It’s free to be listed.</p></section><section class="prose container"><h2>Send us your listing</h2><ul><li>Show title and company name</li><li>Venue, dates and performance times</li><li>A short description and art form</li><li>A direct booking link</li><li>A production image, with photo credit and permission to use it</li><li>Access information, including BSL, captioned, relaxed or audio-described performances</li></ul><div class="submit-box"><p>Ready when you are.</p><a class="btn" href="mailto:info@glasgowtheatre.com?subject=Show%20listing">Email your listing ${arrow}</a><a href="mailto:info@glasgowtheatre.com">info@glasgowtheatre.com</a></div></section>`,
     "submit",
   ),
 );

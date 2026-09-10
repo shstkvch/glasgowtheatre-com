@@ -31,14 +31,14 @@
   const count = document.getElementById("results-count");
   const empty = document.getElementById("no-results");
   const grid = document.getElementById("events-grid");
-  let tag = "";
+  let form = "";
   const params = new URLSearchParams(location.search);
   if (search) search.value = params.get("q") || "";
   if (venue) venue.value = params.get("venue") || "";
   if (from) from.value = params.get("from") || "";
   if (to) to.value = params.get("to") || "";
-  if (pills.some((p) => p.dataset.tag === params.get("genre")))
-    tag = params.get("genre");
+  if (pills.some((p) => p.dataset.form === params.get("form")))
+    form = params.get("form");
   function applyFilters(syncURL = true) {
     const today = londonDate();
     const upcoming = filterEvents(events, { today });
@@ -48,14 +48,14 @@
       venue: venue?.value,
       from: from?.value,
       to: to?.value,
-      tag,
+      form,
     });
     const ids = new Set(filtered.map((e) => e.id));
     cards.forEach((card) => {
       card.hidden = !ids.has(card.dataset.id);
     });
     pills.forEach((pill) => {
-      const active = (pill.dataset.tag || "") === tag;
+      const active = (pill.dataset.form || "") === form;
       pill.classList.toggle("active", active);
       pill.setAttribute("aria-pressed", String(active));
     });
@@ -67,7 +67,7 @@
         empty.querySelector("p").textContent =
           from?.value && to?.value && from.value > to.value
             ? "Choose an end date on or after the start date."
-            : "No shows match these filters. Try another date, venue or genre.";
+            : "No shows match these filters. Try another date, venue or art form.";
     }
     document.querySelectorAll("[data-upcoming-count]").forEach((el) => {
       el.textContent = upcoming.length;
@@ -85,7 +85,7 @@
         venue: venue?.value,
         from: from?.value,
         to: to?.value,
-        genre: tag,
+        form: form,
       }))
         if (value) next.set(key, value);
       history.replaceState(
@@ -97,7 +97,7 @@
   }
   pills.forEach((pill) =>
     pill.addEventListener("click", () => {
-      tag = pill.dataset.tag || "";
+      form = pill.dataset.form || "";
       applyFilters();
     }),
   );
@@ -110,7 +110,7 @@
       [search, venue, from, to].forEach((input) => {
         if (input) input.value = "";
       });
-      tag = "";
+      form = "";
       applyFilters();
     }),
   );
@@ -118,7 +118,7 @@
     [search, venue, from, to].forEach((input) => {
       if (input) input.value = "";
     });
-    tag = "";
+    form = "";
     from.value = londonDate();
     const last = new Date(from.value + "T12:00:00Z");
     last.setUTCDate(last.getUTCDate() + 6);

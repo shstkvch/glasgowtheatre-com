@@ -3,10 +3,10 @@
 /**
  * Glasgow Theatre Event Tagger
  *
- * Assigns genre tags to scraped listings with a cheap LLM, replacing the
+ * Assigns an art form to scraped listings with a cheap LLM, replacing the
  * keyword matching that used to guess from substrings like "improv".
  *
- * Tags come from a fixed vocabulary (TAGS) so the homepage filter pills stay
+ * Forms come from a fixed vocabulary (FORMS) so the homepage filter pills stay
  * a stable, meaningful set. The model never invents a tag.
  *
  * Results are cached in data/tag-cache.json, keyed by a hash of the text the
@@ -22,7 +22,7 @@
 const fs = require("fs");
 const path = require("path");
 const crypto = require("crypto");
-const { classifyTags } = require("./scrape-events");
+const { FORMS, STRUCTURAL, ALLOWED, fallbackForm, combine } = require("./art-forms");
 
 const DATA_DIR = path.join(__dirname, "..", "data");
 const EVENTS_FILE = path.join(DATA_DIR, "events.json");
@@ -34,47 +34,6 @@ const USAGE_FILE = path.join(DATA_DIR, "tag-usage.json");
 const MODEL = process.env.OPENROUTER_MODEL || "deepseek/deepseek-v4-flash";
 const API_URL = "https://openrouter.ai/api/v1/chat/completions";
 const BATCH_SIZE = 12;
-const MAX_TAGS = 3;
-
-/**
- * The complete tag vocabulary. Anything the model returns that is not in this
- * list is discarded. Keep this list short: every tag becomes a filter pill.
- */
-const TAGS = {
-  drama: "A play, serious or dramatic in tone.",
-  comedy: "Comedy, stand-up, or a play whose main purpose is to be funny.",
-  musical: "Musical theatre, where songs carry the story.",
-  opera: "Opera or operetta.",
-  dance: "Dance or choreographed movement as the main form.",
-  "physical-theatre": "Physical, visual, circus, puppetry or mime-led work.",
-  "new-writing": "A new play or premiere of a recently written work.",
-  classic: "An established repertoire text: Shakespeare, Greek tragedy, Ibsen, Beckett and the like.",
-  experimental: "Experimental, avant-garde, live art or performance art.",
-  family: "Explicitly aimed at children or family audiences.",
-  music: "A concert or gig, where live music is the event itself.",
-  "spoken-word": "Poetry, storytelling or spoken word performed to an audience.",
-  talk: "A discussion, panel, Q&A, lecture or post-show conversation about a subject.",
-  cabaret: "Cabaret, variety, drag or burlesque.",
-  workshop: "A class, workshop, audition or participatory session rather than a performance to watch.",
-  tour: "A guided tour of the building or a behind-the-scenes visit.",
-};
-
-/**
- * Tags the scrapers assign from the source itself, not from the text. These
- * describe how or where a show runs, so the model never sets or removes them.
- */
-const STRUCTURAL = new Set(["a-play-a-pie-a-pint", "lunchtime", "scratch"]);
-
-/**
- * These describe events that are not performances to watch. They are exclusive:
- * a discussion about a play is a talk, not a talk AND a drama. Enforced in
- * combine() rather than left to the prompt, because the model kept pairing
- * them with a genre.
- */
-const NON_PERFORMANCE = ["talk", "workshop", "tour"];
-
-const ALLOWED = new Set(Object.keys(TAGS));
-
 const readJSON = (file, fallback) => {
   try {
     return JSON.parse(fs.readFileSync(file, "utf8"));
@@ -140,43 +99,35 @@ function needsScopeCheck(event) {
   return !CLEAR_GENRES.has(genre);
 }
 
-/** Keyword tags, narrowed to the current vocabulary, used when the API is unavailable. */
-function fallbackTags(event) {
-  const guessed = classifyTags(
-    event.title,
-    event.description || "",
-    event.type || "professional",
-  );
-  const kept = guessed.filter((tag) => ALLOWED.has(tag));
-  return kept.length ? kept.slice(0, MAX_TAGS) : ["drama"];
-}
+const SYSTEM_PROMPT = `You classify theatre and live performance listings for a Glasgow listings site.
 
-/** Merge model tags with the structural tags the scraper already set. */
-function combine(event, tags) {
-  const structural = (event.tags || []).filter((tag) => STRUCTURAL.has(tag));
-  const valid = tags.filter((tag) => ALLOWED.has(tag));
-  const exclusive = valid.filter((tag) => NON_PERFORMANCE.includes(tag));
-  const genre = (exclusive.length ? exclusive : valid).slice(0, MAX_TAGS);
-  return [...new Set([...genre, ...structural])];
-}
+Choose the ART FORM: what kind of thing the event is. Exactly one, from this
+list and never anything else:
 
-const SYSTEM_PROMPT = `You tag theatre and live performance listings for a Glasgow listings site.
-
-For each listing, choose between 1 and ${MAX_TAGS} tags from this list, most important first:
-
-${Object.entries(TAGS)
-  .map(([tag, meaning]) => `- ${tag}: ${meaning}`)
+${Object.entries(FORMS)
+  .map(([form, meaning]) => `- ${form}: ${meaning}`)
   .join("\n")}
 
 Rules:
-- Only use tags from the list. Never invent one.
-- Tag what the event IS, not what it mentions. A play about a musician is not "music". A drama where a family falls apart is not "family".
-- "family" means the show is for children or families to attend together.
-- "talk", "workshop" and "tour" describe events that are not performances to watch. When one of them fits, it is the ONLY tag you return.
-- "workshop" is for sessions the audience takes part in: classes, auditions, recruitment calls. A scratch night, showcase or work-in-progress that people sit and watch is a performance, not a workshop.
-- Only use "drama" for a play performed by actors. A discussion, panel or Q&A about a play is "talk" alone, even when extracts are performed during it.
-- An event whose purpose is to look round the building is "tour" alone.
-- Prefer the specific tag over the general one. Use "drama" when nothing more specific fits a performed play.
+- Exactly one form. Pick the one a person would name if asked "what kind of
+  thing is it?" - not the one the marketing copy shouts loudest.
+- Classify what the event IS, not what it is about. A play about a musician is
+  a play, not music. A musical about a boxer is a musical.
+- A stand-up hour is "stand-up", even when the comedian is famous for
+  television. A bill of several comedians is also "stand-up".
+- A pantomime is "pantomime", not "musical" and not "stand-up", however funny
+  or however many songs it has.
+- "workshop" is for sessions the audience takes part in: classes, auditions,
+  recruitment calls. A scratch night or work-in-progress that people sit and
+  watch is a performance - use the form of the work being shown.
+- A discussion, panel or Q&A about a play is "talk", even when extracts are
+  performed during it. An event whose purpose is to look round the building is
+  "tour".
+- "community-event" is for a festival, fair or celebration made of many
+  activities, not for a single performance that happens to involve a community
+  cast.
+- Where two forms could fit, prefer the more specific: "pantomime" over
+  "musical", "opera" over "musical", "stand-up" over "cabaret".
 - Judge from the whole listing. Ignore marketing hyperbole.
 
 Some listings are marked [SCOPE]. Those come from venues that programme more
@@ -203,7 +154,7 @@ For a listing not marked [SCOPE], return inScope true and an empty reason.
 Keep every reason under eight words.`;
 
 const SCHEMA = {
-  name: "listing_tags",
+  name: "listing_form",
   strict: true,
   schema: {
     type: "object",
@@ -214,18 +165,11 @@ const SCHEMA = {
           type: "object",
           properties: {
             index: { type: "integer" },
-            // The bounds matter: without maxItems the model will happily
-            // repeat tags until it runs out of tokens.
-            tags: {
-              type: "array",
-              minItems: 1,
-              maxItems: MAX_TAGS,
-              items: { type: "string", enum: Object.keys(TAGS) },
-            },
+            form: { type: "string", enum: Object.keys(FORMS) },
             inScope: { type: "boolean" },
             scopeReason: { type: "string" },
           },
-          required: ["index", "tags", "inScope", "scopeReason"],
+          required: ["index", "form", "inScope", "scopeReason"],
           additionalProperties: false,
         },
       },
@@ -311,7 +255,7 @@ async function main() {
   // verdict, so a gated listing with one still has to be asked about.
   const pending = events.filter((event) => {
     const hit = cache[cacheKey(event)];
-    if (!hit) return true;
+    if (!hit || !ALLOWED.has(hit.form)) return true;
     return needsScopeCheck(event) && typeof hit.inScope !== "boolean";
   });
   console.log(
@@ -336,11 +280,9 @@ async function main() {
         const result = await tagBatch(batch, apiKey);
         batch.forEach((event, j) => {
           const verdict = result.verdicts[j];
-          if (!verdict) return;
-          const tags = (verdict.tags || []).filter((tag) => ALLOWED.has(tag));
-          if (!tags.length) return;
+          if (!verdict || !ALLOWED.has(verdict.form)) return;
           cache[cacheKey(event)] = {
-            tags,
+            form: verdict.form,
             inScope: verdict.inScope !== false,
             scopeReason: (verdict.scopeReason || "").trim(),
             model: MODEL,
@@ -362,9 +304,10 @@ async function main() {
   let fromKeywords = 0;
   const tagged = events.map((event) => {
     const hit = cache[cacheKey(event)];
-    if (hit) fromModel++;
+    if (hit && ALLOWED.has(hit.form)) fromModel++;
     else fromKeywords++;
-    return { ...event, tags: combine(event, hit ? hit.tags : fallbackTags(event)) };
+    const form = hit && ALLOWED.has(hit.form) ? hit.form : fallbackForm(event);
+    return { ...event, form, tags: combine(event, form) };
   });
 
   // Fail open. A listing with no verdict — the API was down, the response was
@@ -390,18 +333,16 @@ async function main() {
     }
   }
 
-  const changed = tagged.filter(
-    (event, i) => (events[i].tags || []).join() !== event.tags.join(),
-  );
+  const changed = tagged.filter((event, i) => events[i].form !== event.form);
 
   console.log(
-    `\n  ${fromModel} tagged by model, ${fromKeywords} by keyword fallback`,
+    `\n  ${fromModel} classified by model, ${fromKeywords} by keyword fallback`,
   );
-  console.log(`  ${changed.length} listings changed tags`);
+  console.log(`  ${changed.length} listings changed form`);
   for (const event of changed.slice(0, 15)) {
     const before = events.find((e) => e.id === event.id);
     console.log(
-      `    ${event.title.slice(0, 42).padEnd(42)} ${(before.tags || []).join("/") || "—"} → ${event.tags.join("/")}`,
+      `    ${event.title.slice(0, 42).padEnd(42)} ${before.form || "—"} → ${event.form}`,
     );
   }
   if (changed.length > 15) console.log(`    …and ${changed.length - 15} more`);
@@ -445,4 +386,4 @@ if (require.main === module) {
   });
 }
 
-module.exports = { TAGS, STRUCTURAL, combine, fallbackTags, cacheKey, needsScopeCheck };
+module.exports = { FORMS, STRUCTURAL, combine, fallbackForm, cacheKey, needsScopeCheck };

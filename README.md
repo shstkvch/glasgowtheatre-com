@@ -24,15 +24,15 @@ Listings that arrive by email are added by hand to `data/manual-events.json`. Th
 
 An entry overrides any scraped listing with the same booking URL, so a refresh never overwrites copy, access details or images that someone sent in. An entry for a show no venue feed carries simply appears on its own.
 
-Required fields are `id`, `title`, `venue`, `venueId` (matching `data/venues.json`), ISO `date` and an HTTPS `ticketUrl`. Optional: `endDate`, `time` (24-hour `HH:MM`, only when the venue has confirmed it), `tags`, `description`, `producer`, `accessibility` and `performances`. Put supplied images in `src/images` and reference them as `/images/filename.webp`, with `imageAlt` and `imageCredit`.
+Required fields are `id`, `title`, `venue`, `venueId` (matching `data/venues.json`), ISO `date`, an HTTPS `ticketUrl` and `form` (one of the art forms in `scripts/art-forms.js`). Optional: `endDate`, `time` (24-hour `HH:MM`, only when the venue has confirmed it), `tags`, `description`, `producer`, `accessibility` and `performances`. Put supplied images in `src/images` and reference them as `/images/filename.webp`, with `imageAlt` and `imageCredit`.
 
 `npm run build` validates the file and fails with a list of problems rather than publishing a broken card. Thrice is a complete worked example.
 
-Tags on manual entries are kept as written. The tagger only touches scraped listings, so a hand-picked tag is never overwritten.
+Art forms on manual entries are kept as written. The tagger only touches scraped listings, so a hand-picked form is never overwritten.
 
 ## Tagging
 
-`scripts/tag-events.js` assigns genre tags with a cheap LLM through OpenRouter, replacing keyword matching that used to tag any listing containing the word "improv" as comedy. Tags come from a fixed vocabulary in the script, so the filter pills stay a stable set and the model cannot invent one.
+`scripts/tag-events.js` assigns one art form per listing with a cheap LLM through OpenRouter, replacing keyword matching that used to tag any listing containing the word "improv" as comedy. Art forms come from a fixed vocabulary in `scripts/art-forms.js`, including play, musical, opera, dance and stand-up. Cards and filters show only the art form; genres and subgenres are deferred.
 
 Results are cached in `data/tag-cache.json`, keyed by a hash of the text the model sees. Each listing is sent once: a daily refresh costs nothing for shows already tagged, and re-running is free. Editing a description re-tags that listing on the next run. Tagging 48 listings from scratch costs about \$0.001.
 
@@ -44,7 +44,7 @@ The decision is made by the same model call that assigns tags, which returns `in
 
 It fails open. A listing with no verdict — the API was down, the response was malformed — stays on the site; an outage must never quietly empty the listings. Every exclusion is logged with its reason and reported in the daily email, so a wrong call surfaces the next morning rather than vanishing. A wrongly dropped show can be forced back through `data/manual-events.json`, which overrides everything.
 
-`talk`, `workshop` and `tour` mark events that are not performances to watch, and are exclusive: a discussion about a play is a talk, not a talk and a drama. `a-play-a-pie-a-pint`, `lunchtime` and `scratch` come from the source rather than the text, and the tagger preserves them.
+`talk`, `workshop` and `tour` are forms for events that are not performances to watch: a discussion about a play is a talk. `a-play-a-pie-a-pint`, `lunchtime` and `scratch` remain searchable source metadata, but do not appear as art-form filters.
 
 Set `OPENROUTER_API_KEY` in `.env` (see `.env.example`), or `OPENROUTER_MODEL` to use a different model. Without a key, or if the API fails, tagging falls back to keyword matching and exits successfully — it never breaks a build. Run `npm run tag -- --dry-run` to preview changes, or `--retag` to ignore the cache.
 

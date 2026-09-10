@@ -15,7 +15,7 @@
       from = "",
       to = "",
       venue = "",
-      tag = "",
+      form = "",
       query = "",
     } = {},
   ) {
@@ -28,9 +28,9 @@
           (!from || (e.endDate || e.date) >= from) &&
           (!to || e.date <= to) &&
           (!venue || e.venueId === venue) &&
-          (!tag || (e.tags || []).includes(tag)) &&
+          (!form || e.form === form) &&
           (!search ||
-            [e.title, e.venue, e.season, e.description, ...(e.tags || [])]
+            [e.title, e.venue, e.season, e.description, e.form, ...(e.tags || [])]
               .join(" ")
               .toLocaleLowerCase()
               .includes(search)),

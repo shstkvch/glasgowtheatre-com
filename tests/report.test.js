@@ -16,7 +16,8 @@ const show = {
   date: "2026-10-01",
   endDate: "2026-10-11",
   ticketUrl: "https://example.com/t",
-  tags: ["drama"],
+  form: "play",
+  tags: ["play"],
 };
 
 const status = (extra = {}) => ({

@@ -11,7 +11,8 @@ const run = {
   venueId: "tramway",
   date: "2026-10-16",
   endDate: "2026-10-17",
-  tags: ["dance", "experimental"],
+  form: "dance",
+  tags: ["dance"],
   ticketUrl: "https://example.com/thrice",
 };
 test("a date search includes a production already in progress", () => {
@@ -30,7 +31,7 @@ test("filters compose and unknown queries have no results", () => {
       today: "2026-09-09",
       query: "thrice",
       venue: "tramway",
-      tag: "dance",
+      form: "dance",
     }).length,
     1,
   );
@@ -39,7 +40,7 @@ test("filters compose and unknown queries have no results", () => {
     0,
   );
   assert.equal(
-    filterEvents([run], { today: "2026-09-09", tag: "comedy" }).length,
+    filterEvents([run], { today: "2026-09-09", form: "stand-up" }).length,
     0,
   );
 });
@@ -85,9 +86,4 @@ test("a reversed date interval never returns a long-running show", () => {
     }),
     [],
   );
-});
-test('genre classification does not confuse a family in the story with a family show', () => {
-  const { classifyTags } = require('../scripts/scrape-events');
-  assert.equal(classifyTags('1984', 'Children spy on their parents. A family under surveillance.', 'professional').includes('family'), false);
-  assert.equal(classifyTags('Improvising Life and Music', 'Music for a Scottish audience.', 'professional').includes('comedy'), false);
 });
