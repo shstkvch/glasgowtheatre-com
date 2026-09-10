@@ -21,6 +21,28 @@
       if (!narrow.matches) filters.open = true;
     });
   }
+  // The nav is the same bargain as the filters: rendered open so the links
+  // are there without script, collapsed behind the hamburger on a phone once
+  // script can reopen it. On a wide screen the toggle is hidden, so a closed
+  // menu must never survive a resize back.
+  const menu = document.querySelector(".nav-menu");
+  if (menu) {
+    if (narrow.matches) menu.open = false;
+    narrow.addEventListener("change", () => {
+      menu.open = !narrow.matches;
+    });
+    // An open menu covers the page beneath it, so anything that means "I am
+    // done with this" closes it: Escape, or a tap anywhere outside.
+    document.addEventListener("keydown", (event) => {
+      if (event.key !== "Escape" || !menu.open || !narrow.matches) return;
+      menu.open = false;
+      menu.querySelector(".nav-toggle")?.focus();
+    });
+    document.addEventListener("pointerdown", (event) => {
+      if (narrow.matches && menu.open && !menu.contains(event.target))
+        menu.open = false;
+    });
+  }
   const cards = [...document.querySelectorAll(".event-card")];
   const events = window.EVENTS || [];
   const search = document.getElementById("filter-search");

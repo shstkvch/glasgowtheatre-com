@@ -132,6 +132,18 @@ svg {
 .brand:hover {
   text-decoration: none;
 }
+/* The nav is a disclosure so it can collapse to a hamburger on a phone
+   without JavaScript, the same way the filter panel does. On a wide screen
+   the disclosure itself is not a box at all: `display: contents` drops it out
+   of the layout so the nav is a flex child of the header row, exactly as it
+   was before, and the toggle is hidden. It is rendered open, so the links are
+   there whether or not script runs. */
+.nav-menu {
+  display: contents;
+}
+.nav-toggle {
+  display: none;
+}
 .site-header nav {
   display: flex;
   align-items: center;
@@ -1490,6 +1502,105 @@ svg {
   .container {
     width: calc(100% - 36px);
   }
+  /* Five links shrunk to 10px and wrapped into a 205px box is not a menu
+     anyone can hit with a thumb. Below this width they collapse behind a
+     hamburger and open as a full-width panel under the header, at a size
+     meant for fingers rather than for fitting. */
+  .site-header {
+    position: relative;
+  }
+  .nav-menu {
+    display: block;
+  }
+  .nav-toggle {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    /* 44px tall including the border: the smallest target a thumb finds
+       reliably, which the old 10px links were nowhere near. */
+    padding: 14px 14px 14px 12px;
+    margin-right: -3px;
+    border: 1px solid var(--ink);
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1;
+    cursor: pointer;
+    list-style: none;
+  }
+  .nav-toggle::-webkit-details-marker {
+    display: none;
+  }
+  .nav-toggle:focus-visible {
+    outline: 2px solid var(--blue);
+    outline-offset: 3px;
+  }
+  /* Three bars, drawn rather than fetched: the middle one is the element and
+     the outer two are its own corners. */
+  .nav-bars,
+  .nav-bars::before,
+  .nav-bars::after {
+    display: block;
+    width: 19px;
+    height: 2px;
+    background: var(--ink);
+    transition: transform 0.18s ease, opacity 0.18s ease;
+  }
+  .nav-bars {
+    position: relative;
+  }
+  .nav-bars::before,
+  .nav-bars::after {
+    content: "";
+    position: absolute;
+    left: 0;
+  }
+  .nav-bars::before {
+    top: -6px;
+  }
+  .nav-bars::after {
+    top: 6px;
+  }
+  .nav-menu[open] .nav-bars {
+    background: transparent;
+  }
+  .nav-menu[open] .nav-bars::before {
+    transform: translateY(6px) rotate(45deg);
+  }
+  .nav-menu[open] .nav-bars::after {
+    transform: translateY(-6px) rotate(-45deg);
+  }
+  .site-header nav {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    z-index: 30;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    max-width: none;
+    padding: 2px 18px 16px;
+    font-size: 16px;
+    background: var(--paper);
+    border-bottom: 1px solid var(--line);
+    box-shadow: 0 20px 30px -24px rgba(32, 32, 44, 0.7);
+  }
+  .site-header nav a {
+    padding: 15px 2px;
+    border-top: 1px solid var(--line);
+  }
+  .site-header nav a[aria-current] {
+    text-decoration: none;
+    color: var(--blue);
+  }
+  .site-header nav a:last-child {
+    margin-top: 14px;
+    padding: 14px 17px;
+    text-align: center;
+    border: 1px solid var(--ink);
+    border-radius: 4px;
+  }
   /* On a phone the show page is one column: the artwork, then the show, then
      the prices — so the thing the page is for is never below the ticketing. */
   .show-hero-grid,
@@ -1564,7 +1675,7 @@ svg {
     outline-offset: 5px;
   }
   .header-inner {
-    min-height: 96px;
+    min-height: 84px;
     gap: 18px;
   }
   .brand {
@@ -1572,19 +1683,6 @@ svg {
   }
   .brand-dot {
     font-size: 13px;
-  }
-  .site-header nav {
-    gap: 17px;
-    flex-wrap: wrap;
-    justify-content: flex-end;
-    font-size: 11px;
-    max-width: 250px;
-  }
-  .site-header nav a {
-    padding: 3px 0;
-  }
-  .site-header nav a:last-child {
-    padding: 5px 8px;
   }
   .listings-section {
     padding: 28px 0 40px;
@@ -1760,13 +1858,6 @@ svg {
   }
   .header-inner {
     gap: 10px;
-  }
-  .site-header nav {
-    gap: 11px;
-    max-width: 205px;
-  }
-  .site-header nav a {
-    font-size: 10px;
   }
   .image-fallback strong {
     font-size: 44px;

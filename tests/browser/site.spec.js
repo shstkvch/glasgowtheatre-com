@@ -192,7 +192,13 @@ test("a missing image has a venue fallback and booking remains usable", async ({
 
 test("page layouts fit small screens and navigation reaches each page", async ({
   page,
-}) => {
+}, testInfo) => {
+  const mobile = testInfo.project.name === "mobile";
+  /** On a phone the nav lives behind the hamburger, so open it first. */
+  async function openNav() {
+    const toggle = page.locator(".nav-toggle");
+    if (await toggle.isVisible()) await toggle.click();
+  }
   for (const url of [
     "/",
     "/calendar.html",
@@ -209,12 +215,17 @@ test("page layouts fit small screens and navigation reaches each page", async ({
       ),
     ).toBe(true);
     await expect(page.locator("h1")).toBeVisible();
+    // Every page must offer a way out of itself: the nav on a wide screen,
+    // the hamburger that holds it on a narrow one.
     await expect(
-      page.getByRole("navigation", { name: "Main navigation" }),
+      mobile
+        ? page.locator(".nav-toggle")
+        : page.getByRole("navigation", { name: "Main navigation" }),
     ).toBeVisible();
   }
+  await openNav();
   await page
-    .getByRole("navigation")
+    .getByRole("navigation", { name: "Main navigation" })
     .getByRole("link", { name: "Venues", exact: true })
     .click();
   await expect(page).toHaveURL(/\/venues.html$/);
@@ -601,4 +612,73 @@ test("stylesheet and script URLs change when the file does", async ({
     .digest("hex")
     .slice(0, 8);
   expect(stamped).toBe(expected);
+});
+
+test("the nav is a hamburger on a phone and a row on a desktop", async ({
+  page,
+}, testInfo) => {
+  const mobile = testInfo.project.name === "mobile";
+  await page.goto("/");
+  const toggle = page.locator(".nav-toggle");
+  const links = page.locator(".site-header nav a");
+  await expect(links).toHaveCount(5);
+
+  if (!mobile) {
+    // On a wide screen there is no hamburger at all and the links are a row.
+    await expect(toggle).toBeHidden();
+    await expect(links.first()).toBeVisible();
+    return;
+  }
+
+  await expect(toggle).toBeVisible();
+  await expect(links.first()).toBeHidden();
+  // A thumb has to be able to hit it.
+  const hit = await toggle.boundingBox();
+  expect(hit.height).toBeGreaterThanOrEqual(40);
+
+  await toggle.click();
+  await expect(links.first()).toBeVisible();
+  // Big enough to read, and each row big enough to tap.
+  const size = await links
+    .first()
+    .evaluate((el) => parseFloat(getComputedStyle(el).fontSize));
+  expect(size).toBeGreaterThanOrEqual(15);
+  for (const box of await links.evaluateAll((all) =>
+    all.map((el) => el.getBoundingClientRect().height),
+  ))
+    expect(box).toBeGreaterThanOrEqual(40);
+  // The panel must not push the page sideways.
+  expect(
+    await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth),
+  ).toBe(true);
+  await page.screenshot({ path: "test-results/nav-open-mobile.png" });
+
+  await page.keyboard.press("Escape");
+  await expect(links.first()).toBeHidden();
+  await toggle.click();
+  await expect(links.first()).toBeVisible();
+  // A tap on the page behind it means "I am done with this" — below the
+  // panel, and in the gutter so nothing else takes the tap.
+  const panel = await page.locator(".site-header nav").boundingBox();
+  await page.mouse.click(8, panel.y + panel.height + 40);
+  await expect(links.first()).toBeHidden();
+
+  // And it still navigates.
+  await toggle.click();
+  await links.filter({ hasText: "Calendar" }).click();
+  await expect(page).toHaveURL(/calendar/);
+});
+
+test("without JavaScript every nav link is still reachable", async ({
+  browser,
+}) => {
+  const context = await browser.newContext({ javaScriptEnabled: false });
+  const page = await context.newPage();
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto("/");
+  // The menu is rendered open, so script collapsing it is an enhancement
+  // rather than the only way in.
+  await expect(page.locator(".site-header nav a").first()).toBeVisible();
+  await expect(page.locator(".nav-menu")).toHaveAttribute("open", "");
+  await context.close();
 });
