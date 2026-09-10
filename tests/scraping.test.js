@@ -119,3 +119,26 @@ test("a long exclusion list is summarised rather than dumped", () => {
   // The whole list must not end up in the email.
   assert.ok(lines.length < 15);
 });
+
+const { isInterstitial } = require("../scripts/scrape-events");
+test("a bot-protection holding page is not mistaken for the venue's own", () => {
+  // What the Tron, Platform and Cottiers actually served after too many
+  // refreshes in one afternoon: 12kB, 200 OK, and not the listings.
+  const holding =
+    '<html><head><title>One moment, please...</title></head><body>' +
+    "<p>We are checking your browser.</p>".repeat(200) +
+    "</body></html>";
+  assert.ok(isInterstitial(holding));
+  assert.ok(isInterstitial('<title>Just a moment...</title><p>ddos-guard</p>'));
+  assert.ok(
+    isInterstitial('<title>Attention Required! | Cloudflare</title><p>Sorry</p>'),
+  );
+  // The real page is never mistaken for one, however it is titled: a listings
+  // page is tens of kilobytes and a holding page is never close.
+  assert.ok(!isInterstitial('<title>What&#039;s On - Tron Theatre</title>' + "x".repeat(40000)));
+  assert.ok(!isInterstitial('<title>Platform</title>' + "x".repeat(60000)));
+  assert.ok(!isInterstitial(""));
+  assert.ok(!isInterstitial(null));
+  // A short page that is genuinely the venue's is still the venue's.
+  assert.ok(!isInterstitial('<title>What&#039;s On - Cottiers</title><p>No events.</p>'));
+});

@@ -4410,25 +4410,25 @@
         "date": "2026-10-27",
         "time": "19:30",
         "url": "https://www.atgtickets.com/shows/matthew-bournes-the-car-man/kings-theatre-glasgow/tickets/575C377B-FCD3-4C73-9673-AA0D0D2991EB",
-        "price": 15.6
+        "price": 31.72
       },
       {
         "date": "2026-10-28",
         "time": "19:30",
         "url": "https://www.atgtickets.com/shows/matthew-bournes-the-car-man/kings-theatre-glasgow/tickets/7B6BF2D3-B936-4532-A345-3AFA24B87347",
-        "price": 15.6
+        "price": 43.68
       },
       {
         "date": "2026-10-29",
         "time": "14:30",
         "url": "https://www.atgtickets.com/shows/matthew-bournes-the-car-man/kings-theatre-glasgow/tickets/4C1EE7A7-AA2C-477F-BF6A-CB6E0180EB40",
-        "price": 15.6
+        "price": 46
       },
       {
         "date": "2026-10-29",
         "time": "19:30",
         "url": "https://www.atgtickets.com/shows/matthew-bournes-the-car-man/kings-theatre-glasgow/tickets/560FE74F-5F12-4566-AD6A-CAFEC1B7C361",
-        "price": 15.6
+        "price": 31.2
       },
       {
         "date": "2026-10-30",
@@ -4451,7 +4451,7 @@
     ],
     "pricing": {
       "from": 15.6,
-      "to": 17,
+      "to": 46,
       "concession": null,
       "concessionTo": null,
       "free": false,

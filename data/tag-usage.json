@@ -1,5 +1,5 @@
 {
-  "at": "2026-09-10T17:18:30.367Z",
+  "at": "2026-09-10T17:26:45.768Z",
   "model": "deepseek/deepseek-v4-flash",
   "listingsTagged": 0,
   "promptTokens": 0,
@@ -143,14 +143,14 @@
       "reason": "Songwriters' music night"
     },
     {
-      "title": "Adam Ross (full band) + Xan Tyler",
-      "venue": "The Glad Cafe",
-      "reason": "Indie-folk gig"
-    },
-    {
       "title": "The Album Club + Niall Connolly (matinee)",
       "venue": "The Glad Cafe",
       "reason": "Album club music event"
+    },
+    {
+      "title": "Adam Ross (full band) + Xan Tyler",
+      "venue": "The Glad Cafe",
+      "reason": "Indie-folk gig"
     },
     {
       "title": "Vickie Paxton + Charlie Clark",

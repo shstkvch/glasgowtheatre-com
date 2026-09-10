@@ -48,6 +48,28 @@ async function getFetch() {
 
 // --- Helpers ---
 
+/**
+ * A page that answered 200 without being the page.
+ *
+ * Three of these venues sit behind bot protection that serves a small holding
+ * page — "One moment, please..." — while it decides about you, and serves it
+ * with a 200. Nothing downstream can tell that from the real page having lost
+ * a CSS class, so a run of refreshes in one afternoon reported itself as three
+ * venues redesigning their sites on the same day.
+ *
+ * Recognising it turns a confusing canary into a true one, and makes the wait
+ * worth doing: the block is rate limiting and lifts by itself, so backing off
+ * and asking again usually works where an immediate retry does not.
+ */
+const INTERSTITIAL = /one moment,? please|just a moment|checking your browser|ddos-guard|attention required|verifying you are human|enable javascript and cookies to continue/i;
+
+function isInterstitial(html) {
+  // Only ever a holding page: the real listing pages are 25kB and up.
+  if (!html || html.length > 20000) return false;
+  const title = (html.match(/<title[^>]*>([^<]{0,120})/i) || [])[1] || '';
+  return INTERSTITIAL.test(title) || INTERSTITIAL.test(html.slice(0, 4000));
+}
+
 async function fetchPage(url, retries = 2) {
   const fetch = await getFetch();
   for (let i = 0; i <= retries; i++) {
@@ -64,10 +86,16 @@ async function fetchPage(url, retries = 2) {
       });
       clearTimeout(timeout);
       if (!res.ok) throw new Error(`HTTP ${res.status} for ${url}`);
-      return await res.text();
+      const html = await res.text();
+      if (isInterstitial(html))
+        throw new Error(`blocked by bot protection at ${url} (${pageShape(html)})`);
+      return html;
     } catch (err) {
       if (i === retries) throw err;
-      await sleep(1000 * (i + 1));
+      // A block lifts on its own time, not ours, so it is waited out rather
+      // than hammered: seconds, where an ordinary flake gets milliseconds.
+      const blocked = /blocked by bot protection/.test(err.message);
+      await sleep(blocked ? 15000 * (i + 1) : 1000 * (i + 1));
     }
   }
 }
@@ -2198,7 +2226,7 @@ async function main() {
   console.log('='.repeat(50));
 }
 
-module.exports = { parseTime, parseDateRange, classifyTags, platformDates, londonMoment, jsonLdEvents };
+module.exports = { parseTime, parseDateRange, classifyTags, platformDates, londonMoment, jsonLdEvents, isInterstitial };
 
 if (require.main === module) main().catch((err) => {
   console.error('Fatal error:', err);

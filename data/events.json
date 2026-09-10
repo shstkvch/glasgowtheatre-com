@@ -2039,37 +2039,6 @@
     "form": "stand-up"
   },
   {
-    "id": "oran-mor-a-slice-of-the-pie",
-    "title": "A Slice of The Pie",
-    "venue": "Òran Mór",
-    "venueId": "oran-mor",
-    "season": "A Play, A Pie and A Pint",
-    "date": "2026-09-28",
-    "time": null,
-    "endDate": null,
-    "type": "new-writing",
-    "tags": [
-      "play",
-      "scratch",
-      "a-play-a-pie-a-pint"
-    ],
-    "description": "A Slice of The Pie is A Play, A Pie and A Pint’s very own scratch night, hosted by our artistic team as part of our work to platform and champion exciting new artists in Scotland. The night consists of ‘slices’ of new work from incredible writers, directors and performers who we have never worked …...",
-    "ticketUrl": "https://playpiepint.com/whats-on/event/a-slice-of-the-pie-2/",
-    "image": "https://playpiepint.com/app/uploads/2026/05/A-Slice-of-the-Pie-.png",
-    "pricing": {
-      "from": 9,
-      "to": null,
-      "concession": null,
-      "concessionTo": null,
-      "free": false,
-      "payWhatYouLike": false,
-      "text": "£9 (inc. booking fee)",
-      "read": "model"
-    },
-    "checkedAt": "2026-09-10",
-    "form": "play"
-  },
-  {
     "id": "oran-mor-whaur-s-yer-wullie-shakespeare-noo",
     "title": "Whaur’s Yer Wullie Shakespeare Noo?",
     "venue": "Òran Mór",
@@ -2133,6 +2102,37 @@
       }
     ],
     "scheduleRead": "model",
+    "form": "play"
+  },
+  {
+    "id": "oran-mor-a-slice-of-the-pie",
+    "title": "A Slice of The Pie",
+    "venue": "Òran Mór",
+    "venueId": "oran-mor",
+    "season": "A Play, A Pie and A Pint",
+    "date": "2026-09-28",
+    "time": null,
+    "endDate": null,
+    "type": "new-writing",
+    "tags": [
+      "play",
+      "scratch",
+      "a-play-a-pie-a-pint"
+    ],
+    "description": "A Slice of The Pie is A Play, A Pie and A Pint’s very own scratch night, hosted by our artistic team as part of our work to platform and champion exciting new artists in Scotland. The night consists of ‘slices’ of new work from incredible writers, directors and performers who we have never worked …...",
+    "ticketUrl": "https://playpiepint.com/whats-on/event/a-slice-of-the-pie-2/",
+    "image": "https://playpiepint.com/app/uploads/2026/05/A-Slice-of-the-Pie-.png",
+    "pricing": {
+      "from": 9,
+      "to": null,
+      "concession": null,
+      "concessionTo": null,
+      "free": false,
+      "payWhatYouLike": false,
+      "text": "£9 (inc. booking fee)",
+      "read": "model"
+    },
+    "checkedAt": "2026-09-10",
     "form": "play"
   },
   {
@@ -4739,25 +4739,25 @@
         "date": "2026-10-27",
         "time": "19:30",
         "url": "https://www.atgtickets.com/shows/matthew-bournes-the-car-man/kings-theatre-glasgow/tickets/575C377B-FCD3-4C73-9673-AA0D0D2991EB",
-        "price": 15.6
+        "price": 31.72
       },
       {
         "date": "2026-10-28",
         "time": "19:30",
         "url": "https://www.atgtickets.com/shows/matthew-bournes-the-car-man/kings-theatre-glasgow/tickets/7B6BF2D3-B936-4532-A345-3AFA24B87347",
-        "price": 15.6
+        "price": 43.68
       },
       {
         "date": "2026-10-29",
         "time": "14:30",
         "url": "https://www.atgtickets.com/shows/matthew-bournes-the-car-man/kings-theatre-glasgow/tickets/4C1EE7A7-AA2C-477F-BF6A-CB6E0180EB40",
-        "price": 15.6
+        "price": 46
       },
       {
         "date": "2026-10-29",
         "time": "19:30",
         "url": "https://www.atgtickets.com/shows/matthew-bournes-the-car-man/kings-theatre-glasgow/tickets/560FE74F-5F12-4566-AD6A-CAFEC1B7C361",
-        "price": 15.6
+        "price": 31.2
       },
       {
         "date": "2026-10-30",
@@ -4780,7 +4780,7 @@
     ],
     "pricing": {
       "from": 15.6,
-      "to": 17,
+      "to": 46,
       "concession": null,
       "concessionTo": null,
       "free": false,
