@@ -287,7 +287,7 @@
     "time": null,
     "sourceGenre": null,
     "ticketUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/comedy/russell-howard-dont-tell-the-algorithm-tickets",
-    "image": "/images/edbb59910e15c8c4cedc.webp",
+    "image": "/images/fff88525aac6ff5f1afa.webp",
     "description": "Russell Howard is back with a brand-new stand-up tour in 2026. After breaking records with sold-out shows across the globe, ‘one of the world’s top comedians’ (The Sunday Times) is inviting you back into the room: no phones, no distractions, just humans and jokes. Don’t tell the algorithm.",
     "type": "professional",
     "tags": [
@@ -1429,9 +1429,6 @@
     "sourceGenre": "Musicals",
     "ticketUrl": "https://www.atgtickets.com/shows/gloc-presents-42nd-street/kings-theatre-glasgow/calendar/",
     "image": "/images/b7be056a4cc5f3c71e17.webp",
-    "accessibility": [
-      "Audio-described performances available"
-    ],
     "description": "Come and meet GLOC’s dancing feet!",
     "type": "professional",
     "tags": [
@@ -2139,10 +2136,6 @@
     "sourceGenre": "Comedy",
     "ticketUrl": "https://www.atgtickets.com/shows/phil-wang-uh-oh/theatre-royal-glasgow/calendar/",
     "image": "/images/41c6d8ba63eb3531b621.webp",
-    "accessibility": [
-      "Captioned performances available",
-      "Audio-described performances available"
-    ],
     "description": "UH OH. Phil Wang’s back with a new stand - up show, and he’s older than ever before.",
     "type": "professional",
     "tags": [
@@ -2285,10 +2278,6 @@
     "sourceGenre": "Events",
     "ticketUrl": "https://www.atgtickets.com/shows/ice-dragon/theatre-royal-glasgow/calendar/",
     "image": "/images/41af3ac1d0bb8fda377f.webp",
-    "accessibility": [
-      "Captioned performances available",
-      "Audio-described performances available"
-    ],
     "description": "Travel through the seasons in Ice Dragon, an interactive musical adventure for babies and children under six years.",
     "type": "professional",
     "tags": [
@@ -2756,6 +2745,9 @@
     "sourceGenre": "Opera",
     "ticketUrl": "https://www.atgtickets.com/shows/scottish-opera-fidelio/theatre-royal-glasgow/calendar/",
     "image": "/images/0143eb71b96ba115047b.webp",
+    "accessibility": [
+      "Audio-described performances available"
+    ],
     "description": "To mark the 200th anniversary of Beethoven’s death, in 2027 Scotland’s orchestras and national opera company unite for an extraordinary exploration of the composer’s music.",
     "type": "professional",
     "tags": [
@@ -2775,6 +2767,9 @@
     "sourceGenre": "Events",
     "ticketUrl": "https://www.atgtickets.com/shows/scottish-opera-fidelio-touch-tour/theatre-royal-glasgow/calendar/",
     "image": "/images/1ea2c17f028818a5c467.webp",
+    "accessibility": [
+      "Audio-described performances available"
+    ],
     "description": "Our free touch tours provide an opportunity to become more familiar with the set, scenery, props and costumes. This aims to help audience members living with sight loss to immerse themselves in the world presented on stage, with audio describers, stage management and wardrobe staff present to...",
     "type": "professional",
     "tags": [
@@ -2848,7 +2843,7 @@
     "time": null,
     "sourceGenre": null,
     "ticketUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/comedy/mike-bubbins-ideasman-tickets",
-    "image": "/images/bd2286dc72a5498fbe23.webp",
+    "image": "/images/2e18ee231ccc6a3a70e2.webp",
     "description": "Mike Bubbins: IDEASMAN plus special guests Ideas Man, noun : 'A person who is particularly good at thinking of new or original ideas.' That's what Mike Bubbins is. Not an admin man. Not an organised man. Not an especially dedicated man. This comedy tour, for instance, is a case in point. Mike has...",
     "type": "professional",
     "tags": [

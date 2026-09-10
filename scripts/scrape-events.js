@@ -439,6 +439,7 @@ async function scrapeTron() {
     // and match by index (they appear in the same order in the DOM).
     const titleLinks = $('.event_title a');
     const imageDivs = $('div.event-image.loop-image');
+    canary('tron', `no .event_title links (${pageShape(html)})`, titleLinks.length > 0);
     console.log(`  Found ${titleLinks.length} shows on listing page`);
 
     const showUrls = [];
@@ -959,6 +960,21 @@ async function scrapeGladCafe() {
  */
 const CANARIES = {};
 
+/**
+ * What a page looked like when it did not look like itself.
+ *
+ * A structural check that fails only says a class is missing, which is the
+ * same message whether the venue redesigned or a bot wall served a challenge
+ * page. The title and size distinguish them: "Just a moment..." in 2kB is
+ * Cloudflare, "Attention Required" is Wordfence, and the real page at its
+ * usual size is a genuine redesign.
+ */
+function pageShape(html) {
+  if (!html) return 'no response body';
+  const title = (html.match(/<title[^>]*>([^<]{0,80})/i) || [])[1] || 'untitled';
+  return `${Math.round(html.length / 1024)}kB, title "${title.trim()}"`;
+}
+
 function canary(venueId, label, ok) {
   if (ok) return true;
   (CANARIES[venueId] = CANARIES[venueId] || []).push(label);
@@ -978,10 +994,11 @@ async function scrapeCottiers() {
   const results = [];
 
   try {
-    const $ = cheerio.load(await fetchPage('https://cottiers.com/whats-on-at-cottiers/'));
+    const html = await fetchPage('https://cottiers.com/whats-on-at-cottiers/');
+    const $ = cheerio.load(html);
     const items = $('.event_listing');
 
-    canary('cottiers', 'no .event_listing items on the what\'s-on page', items.length > 0);
+    canary('cottiers', `no .event_listing items (${pageShape(html)})`, items.length > 0);
     canary('cottiers', '.wpem-event-title missing', $('.wpem-event-title').length > 0);
     canary('cottiers', '.wpem-event-date-time-text missing', $('.wpem-event-date-time-text').length > 0);
 
@@ -1049,10 +1066,11 @@ async function scrapeOldHairdressers() {
   const results = [];
 
   try {
-    const $ = cheerio.load(await fetchPage('http://www.theoldhairdressers.com/'));
+    const html = await fetchPage('http://www.theoldhairdressers.com/');
+    const $ = cheerio.load(html);
     const rows = $('.ptb_events-_row');
 
-    canary('old-hairdressers', 'no .ptb_events-_row items on the homepage', rows.length > 0);
+    canary('old-hairdressers', `no .ptb_events-_row items (${pageShape(html)})`, rows.length > 0);
     canary('old-hairdressers', '.ptb_events__date_ missing', $('.ptb_events__date_').length > 0);
 
     for (const el of rows.toArray()) {
@@ -1177,6 +1195,26 @@ function saveDescriptionCache() {
   fs.writeFileSync(DESCRIPTION_CACHE_FILE, JSON.stringify(descriptionCache, null, 2) + '\n');
 }
 
+/**
+ * Slice a payload into one window per record.
+ *
+ * Windows used to be a fixed number of characters, which is only safe while
+ * every record is longer than the window. Neither of these payloads is: the
+ * Pavilion's is half real cards and half compact analytics blocks carrying the
+ * same eventGroupId, so a fixed window read straight through its own record
+ * into the next few and took whichever field it found first. That is how
+ * Russell Howard ended up with Tam Cowan's artwork.
+ */
+function payloadWindows(payload, anchor) {
+  const starts = [];
+  const re = new RegExp(anchor, 'g');
+  let match;
+  while ((match = re.exec(payload))) starts.push(match.index);
+  return starts.map((start, i) =>
+    payload.slice(start, i + 1 < starts.length ? starts[i + 1] : payload.length),
+  );
+}
+
 // --- ATG venues (King's Theatre, Theatre Royal) ---
 
 const ATG_VENUES = [
@@ -1220,12 +1258,7 @@ async function scrapeATG({ slug, venueId, venue }) {
         throw err;
       }
 
-      const windows = [];
-      const idRe = /"id":"show_[0-9a-f-]+"/g;
-      let match;
-      while ((match = idRe.exec(payload))) {
-        windows.push(payload.slice(match.index, match.index + 6000));
-      }
+      const windows = payloadWindows(payload, '"id":"show_[0-9a-f-]+"');
       if (page === 1) {
         canary(venueId, 'no show objects in the ATG payload', windows.length > 0);
         canary(venueId, '"buyTickets" missing from the ATG payload', payload.includes('"buyTickets"'));
@@ -1310,12 +1343,11 @@ async function scrapePavilion() {
   try {
     const payload = (await fetchPage(`${PAVILION_BASE}/whats-on`)).replace(/\\"/g, '"');
 
-    const windows = [];
-    const idRe = /"eventGroupId":\d+/g;
-    let match;
-    while ((match = idRe.exec(payload))) {
-      windows.push(payload.slice(match.index, match.index + 4000));
-    }
+    // Half of these carry the same eventGroupId but are tracking payloads with
+    // no artwork, link or date. A card is the one with somewhere to click.
+    const windows = payloadWindows(payload, '"eventGroupId":\\d+').filter(
+      (window) => window.includes('"href":"/event/') && window.includes('"startDate"'),
+    );
 
     canary('pavilion', 'no event cards in the Trafalgar payload', windows.length > 0);
     canary('pavilion', 'eventCards missing', payload.includes('eventCards'));
@@ -1412,11 +1444,13 @@ async function scrapePlatform() {
   const results = [];
 
   try {
-    const $ = cheerio.load(await fetchPage('https://www.platform-online.co.uk/whats-on'));
+    const html = await fetchPage('https://www.platform-online.co.uk/whats-on');
+    const $ = cheerio.load(html);
 
-    canary('platform', 'no .listings__item--event items', $('.listings__item--event').length > 0);
+    canary('platform', `no .listings__item--event items (${pageShape(html)})`,
+      $('.listings__item--event').length > 0);
     canary('platform', 'no evmon- year classes, so no year to infer',
-      /evmon-[A-Za-z]+-\d{4}/.test($.html()));
+      /evmon-[A-Za-z]+-\d{4}/.test(html));
 
     for (const el of $('.listings__item--event').toArray()) {
       const $item = $(el);

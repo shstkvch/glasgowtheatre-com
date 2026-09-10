@@ -341,7 +341,7 @@
     "time": null,
     "sourceGenre": null,
     "ticketUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/comedy/russell-howard-dont-tell-the-algorithm-tickets",
-    "image": "https://images.ctfassets.net/le9bkneeoxws/2LZAXMIlFRvqgOViwcYYSv/6daccaa09df35ca68f07e57b0919bd8f/tam_cown.jpg",
+    "image": "https://images.ctfassets.net/le9bkneeoxws/Z6LfFzLKzUpOyXqEDQ0qO/cdc09bc787c78836010bd60c2cefba2a/Russell_Howard_600x600.jpg",
     "description": "Russell Howard is back with a brand-new stand-up tour in 2026. After breaking records with sold-out shows across the globe, ‘one of the world’s top comedians’ (The Sunday Times) is inviting you back into the room: no phones, no distractions, just humans and jokes. Don’t tell the algorithm.",
     "type": "professional",
     "tags": [
@@ -366,24 +366,6 @@
     "description": "Open invitation at The Kelvin for the opportunity to view the newly conserved windows. To view the windows, please come to The Kelvin Bar where the staff will direct you to go to view the windows. This event is part of Doors Open Day 2026.’ 12-4pm",
     "ticketUrl": "https://cottiers.com/event/window-conservation-visit/",
     "image": "https://cottiers.com/wp-content/uploads/2026/08/Websters-stained-glass.png",
-    "checkedAt": "2026-09-10"
-  },
-  {
-    "title": "Doors Open Day: Building and Heritage Tours",
-    "venue": "Theatre Royal",
-    "venueId": "theatre-royal",
-    "date": "2026-09-19",
-    "endDate": null,
-    "time": null,
-    "sourceGenre": "Events",
-    "ticketUrl": "https://www.atgtickets.com/shows/gary-delaney-gary-on-laughing/theatre-royal-glasgow/calendar/",
-    "image": "https://res.cloudinary.com/dwzhqvxaz/image/upload/w_800,q_auto,f_auto/v1773065782/Titles/ATGGenericImages/genericATG1920X1080.jpg",
-    "description": "We are proud to participate in Glasgow Doors Open Days Festival 2026.",
-    "type": "professional",
-    "tags": [
-      "tour"
-    ],
-    "id": "theatre-royal-doors-open-day-building-and-heritage-tours",
     "checkedAt": "2026-09-10"
   },
   {
@@ -686,27 +668,6 @@
     "checkedAt": "2026-09-10"
   },
   {
-    "id": "oran-mor-a-slice-of-the-pie",
-    "title": "A Slice of The Pie",
-    "venue": "Òran Mór",
-    "venueId": "oran-mor",
-    "season": "A Play, A Pie and A Pint",
-    "date": "2026-09-28",
-    "time": null,
-    "endDate": null,
-    "type": "new-writing",
-    "tags": [
-      "new-writing",
-      "drama",
-      "scratch",
-      "a-play-a-pie-a-pint"
-    ],
-    "description": "A Slice of The Pie is A Play, A Pie and A Pint’s very own scratch night, hosted by our artistic team as part of our work to platform and champion exciting new artists in Scotland. The night consists of ‘slices’ of new work from incredible writers, directors and performers who we have never worked …...",
-    "ticketUrl": "https://playpiepint.com/whats-on/event/a-slice-of-the-pie-2/",
-    "image": "https://playpiepint.com/app/uploads/2026/05/A-Slice-of-the-Pie-.png",
-    "checkedAt": "2026-09-10"
-  },
-  {
     "id": "oran-mor-whaur-s-yer-wullie-shakespeare-noo",
     "title": "Whaur’s Yer Wullie Shakespeare Noo?",
     "venue": "Òran Mór",
@@ -725,6 +686,27 @@
     "description": "1756. The Scottish Enlightenment. Despite severe restrictions on all theatre, the minister John Home staged his play Douglas to much outrage within the Church of Scotland. What followed was a church stramash and a fierce debate amongst leading clergymen and philosophers. Was this Scotland’s answer...",
     "ticketUrl": "https://playpiepint.com/whats-on/event/whaurs-yer-wullie-shakespeare-noo/",
     "image": "https://playpiepint.com/app/uploads/2026/07/WYWSN.png",
+    "checkedAt": "2026-09-10"
+  },
+  {
+    "id": "oran-mor-a-slice-of-the-pie",
+    "title": "A Slice of The Pie",
+    "venue": "Òran Mór",
+    "venueId": "oran-mor",
+    "season": "A Play, A Pie and A Pint",
+    "date": "2026-09-28",
+    "time": null,
+    "endDate": null,
+    "type": "new-writing",
+    "tags": [
+      "new-writing",
+      "drama",
+      "scratch",
+      "a-play-a-pie-a-pint"
+    ],
+    "description": "A Slice of The Pie is A Play, A Pie and A Pint’s very own scratch night, hosted by our artistic team as part of our work to platform and champion exciting new artists in Scotland. The night consists of ‘slices’ of new work from incredible writers, directors and performers who we have never worked …...",
+    "ticketUrl": "https://playpiepint.com/whats-on/event/a-slice-of-the-pie-2/",
+    "image": "https://playpiepint.com/app/uploads/2026/05/A-Slice-of-the-Pie-.png",
     "checkedAt": "2026-09-10"
   },
   {
@@ -1504,9 +1486,6 @@
     "sourceGenre": "Musicals",
     "ticketUrl": "https://www.atgtickets.com/shows/gloc-presents-42nd-street/kings-theatre-glasgow/calendar/",
     "image": "https://res.cloudinary.com/dwzhqvxaz/image/upload/w_800,q_auto,f_auto/v1775751299/Titles/42nd%20Street/landscape_new_title_aw.png",
-    "accessibility": [
-      "Audio-described performances available"
-    ],
     "description": "Come and meet GLOC’s dancing feet!",
     "type": "professional",
     "tags": [
@@ -2178,10 +2157,6 @@
     "sourceGenre": "Comedy",
     "ticketUrl": "https://www.atgtickets.com/shows/phil-wang-uh-oh/theatre-royal-glasgow/calendar/",
     "image": "https://res.cloudinary.com/dwzhqvxaz/image/upload/w_800,q_auto,f_auto/v1764325979/Titles/Phil%20Wang:%20UH%20OH/PW_SEE_1000_x_584_V02_1.jpg",
-    "accessibility": [
-      "Captioned performances available",
-      "Audio-described performances available"
-    ],
     "description": "UH OH. Phil Wang’s back with a new stand - up show, and he’s older than ever before.",
     "type": "professional",
     "tags": [
@@ -2342,10 +2317,6 @@
     "sourceGenre": "Events",
     "ticketUrl": "https://www.atgtickets.com/shows/ice-dragon/theatre-royal-glasgow/calendar/",
     "image": "https://res.cloudinary.com/dwzhqvxaz/image/upload/w_800,q_auto,f_auto/v1783523573/Titles/Ice%20Dragon/1920_x_1080_px_Ice_DRAGON_GLASGOW_2026.png",
-    "accessibility": [
-      "Captioned performances available",
-      "Audio-described performances available"
-    ],
     "description": "Travel through the seasons in Ice Dragon, an interactive musical adventure for babies and children under six years.",
     "type": "professional",
     "tags": [
@@ -2813,6 +2784,9 @@
     "sourceGenre": "Opera",
     "ticketUrl": "https://www.atgtickets.com/shows/scottish-opera-fidelio/theatre-royal-glasgow/calendar/",
     "image": "https://res.cloudinary.com/dwzhqvxaz/image/upload/w_800,q_auto,f_auto/v1778512165/Titles/Scottish%20Opera%202026-27/Fidelio/Fidelio_TITLE_-_Theatre_Royal_Glasgow_1920x1080px.jpg",
+    "accessibility": [
+      "Audio-described performances available"
+    ],
     "description": "To mark the 200th anniversary of Beethoven’s death, in 2027 Scotland’s orchestras and national opera company unite for an extraordinary exploration of the composer’s music.",
     "type": "professional",
     "tags": [
@@ -2832,6 +2806,9 @@
     "sourceGenre": "Events",
     "ticketUrl": "https://www.atgtickets.com/shows/scottish-opera-fidelio-touch-tour/theatre-royal-glasgow/calendar/",
     "image": "https://res.cloudinary.com/dwzhqvxaz/image/upload/w_800,q_auto,f_auto/v1779968417/Titles/Scottish%20Opera%202026-27/Fidelio/Fidelio_TOUCH_TOUR_Theatre_Royal_Glasgow_1920x1080px.jpg",
+    "accessibility": [
+      "Audio-described performances available"
+    ],
     "description": "Our free touch tours provide an opportunity to become more familiar with the set, scenery, props and costumes. This aims to help audience members living with sight loss to immerse themselves in the world presented on stage, with audio describers, stage management and wardrobe staff present to...",
     "type": "professional",
     "tags": [
@@ -2905,7 +2882,7 @@
     "time": null,
     "sourceGenre": null,
     "ticketUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/comedy/mike-bubbins-ideasman-tickets",
-    "image": "https://images.ctfassets.net/le9bkneeoxws/3zEXePdi1pe6BA9HVzewKM/6764fe0f692db02b5bd7e20bf27d0922/1200_x_600.jpg",
+    "image": "https://images.ctfassets.net/le9bkneeoxws/3vdvZwoSM0MK0z1AN2p2My/51af4f5f8a22bdc939630ac70c6641d2/Mike_Bubbins_Ideasman_600x600_copy.png",
     "description": "Mike Bubbins: IDEASMAN plus special guests Ideas Man, noun : 'A person who is particularly good at thinking of new or original ideas.' That's what Mike Bubbins is. Not an admin man. Not an organised man. Not an especially dedicated man. This comedy tour, for instance, is a case in point. Mike has...",
     "type": "professional",
     "tags": [

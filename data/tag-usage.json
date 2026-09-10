@@ -1,11 +1,11 @@
 {
-  "at": "2026-09-10T12:05:23.844Z",
+  "at": "2026-09-10T12:17:32.201Z",
   "model": "deepseek/deepseek-v4-flash",
-  "listingsTagged": 4,
-  "promptTokens": 1204,
-  "completionTokens": 159,
-  "totalTokens": 1363,
-  "costUsd": 0.00021308,
+  "listingsTagged": 0,
+  "promptTokens": 0,
+  "completionTokens": 0,
+  "totalTokens": 0,
+  "costUsd": 0,
   "excluded": [
     {
       "title": "Music Space: Drum Lessons",
@@ -148,14 +148,14 @@
       "reason": "Songwriters performing their songs"
     },
     {
-      "title": "Adam Ross (full band) + Xan Tyler",
-      "venue": "The Glad Cafe",
-      "reason": "Indie-folk gig, out of scope"
-    },
-    {
       "title": "The Album Club + Niall Connolly (matinee)",
       "venue": "The Glad Cafe",
       "reason": "Album club event, out of scope"
+    },
+    {
+      "title": "Adam Ross (full band) + Xan Tyler",
+      "venue": "The Glad Cafe",
+      "reason": "Indie-folk gig, out of scope"
     },
     {
       "title": "Glaswegians",
