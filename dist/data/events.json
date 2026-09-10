@@ -325,8 +325,7 @@
     "performances": [
       {
         "date": "2026-09-10",
-        "time": "19:00",
-        "url": "https://www.tron.co.uk/book-online/567191AHHPCMJQDPDGMVSVSBKQPDVPPGP"
+        "time": "19:00"
       }
     ],
     "pricing": {
@@ -864,8 +863,7 @@
       },
       {
         "date": "2026-09-30",
-        "time": "14:30",
-        "url": "https://www.tron.co.uk/book-online/560391AJJVVNBPSTPJSSLJTHHSDPMNSCB"
+        "time": "14:30"
       },
       {
         "date": "2026-09-30",
@@ -1931,6 +1929,9 @@
     "sourceGenre": "Musicals",
     "ticketUrl": "https://www.atgtickets.com/shows/six/theatre-royal-glasgow/calendar/",
     "image": "/images/4ff18c3fa6947bb06149.webp",
+    "accessibility": [
+      "BSL-interpreted performances available"
+    ],
     "description": "The crowning glory of Broadway, the West End and beyond, the international smash hit musical SIX makes its royal return following its previous sold out success!",
     "performances": [
       {
@@ -4267,6 +4268,9 @@
     "sourceGenre": null,
     "ticketUrl": "https://www.atgtickets.com/shows/scottish-opera-turandot-touch-tour/theatre-royal-glasgow/calendar/",
     "image": "/images/37fb870bfff7f3e969e5.webp",
+    "accessibility": [
+      "Audio-described performances available"
+    ],
     "description": "Our free touch tours provide an opportunity to become more familiar with the set, scenery, props and costumes. This aims to help audience members living with sight loss to immerse themselves in the world presented on stage, with audio describers, stage management and wardrobe staff present to...",
     "performances": [
       {
@@ -5674,6 +5678,11 @@
     "sourceGenre": "Musicals",
     "ticketUrl": "https://www.atgtickets.com/shows/matilda-the-musical/theatre-royal-glasgow/calendar/",
     "image": "/images/12603bd62ae24984881d.webp",
+    "accessibility": [
+      "Captioned performances available",
+      "Audio-described performances available",
+      "BSL-interpreted performances available"
+    ],
     "description": "Matilda The Musical, the multi-award winning musical from the Royal Shakespeare Company is inspired by the beloved book by Roald Dahl. Buy one and get one under 16s half price on selected seats at Tue – Thu performances.",
     "performances": [
       {
@@ -7070,6 +7079,11 @@
     "sourceGenre": "Musicals",
     "ticketUrl": "https://www.atgtickets.com/shows/cats/theatre-royal-glasgow/calendar/",
     "image": "/images/d920e04fa0224ba41450.webp",
+    "accessibility": [
+      "Captioned performances available",
+      "Audio-described performances available",
+      "BSL-interpreted performances available"
+    ],
     "description": "A spectacular new production of Andrew Lloyd Webber’s multi award-winning musical CATS is coming to the Theatre Royal.",
     "performances": [
       {
@@ -7245,6 +7259,9 @@
     "sourceGenre": "Dance",
     "ticketUrl": "https://www.atgtickets.com/shows/scottish-ballet-cinders/theatre-royal-glasgow/calendar/",
     "image": "/images/54416c6f7207286d85e5.webp",
+    "accessibility": [
+      "Audio-described performances available"
+    ],
     "description": "A dazzling Cinderella story - Scottish Ballet's playful retelling of the Cinderella story returns to surprise and delight audiences.",
     "performances": [
       {
@@ -7869,6 +7886,9 @@
     "sourceGenre": "Opera",
     "ticketUrl": "https://www.atgtickets.com/shows/scottish-opera-alcina/theatre-royal-glasgow/calendar/",
     "image": "/images/54fdeccfd3a9e4d36a56.webp",
+    "accessibility": [
+      "Audio-described performances available"
+    ],
     "description": "There are worse places to find yourself trapped than Club Amnesia. Here, Alcina – performance artist extraordinaire – captivates the men who swarm around her, bending their minds, and reality, to her will. But when she meets Ruggiero, her heart finally softens. Then Ruggiero’s fiancée – disguised...",
     "performances": [
       {
@@ -8389,9 +8409,6 @@
     "sourceGenre": "Opera",
     "ticketUrl": "https://www.atgtickets.com/shows/scottish-opera-fidelio/theatre-royal-glasgow/calendar/",
     "image": "/images/0143eb71b96ba115047b.webp",
-    "accessibility": [
-      "Audio-described performances available"
-    ],
     "description": "To mark the 200th anniversary of Beethoven’s death, in 2027 Scotland’s orchestras and national opera company unite for an extraordinary exploration of the composer’s music.",
     "performances": [
       {
@@ -8437,9 +8454,6 @@
     "sourceGenre": "Events",
     "ticketUrl": "https://www.atgtickets.com/shows/scottish-opera-fidelio-touch-tour/theatre-royal-glasgow/calendar/",
     "image": "/images/1ea2c17f028818a5c467.webp",
-    "accessibility": [
-      "Audio-described performances available"
-    ],
     "description": "Our free touch tours provide an opportunity to become more familiar with the set, scenery, props and costumes. This aims to help audience members living with sight loss to immerse themselves in the world presented on stage, with audio describers, stage management and wardrobe staff present to...",
     "performances": [
       {
