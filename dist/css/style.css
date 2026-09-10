@@ -315,6 +315,9 @@ svg {
   margin-top: 19px;
 }
 .filter-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
   border-radius: 20px;
   border: 1px solid #bcb5d3;
   background: transparent;
@@ -322,6 +325,24 @@ svg {
   line-height: 1.5;
   padding: 7px 12px;
   color: var(--ink);
+}
+.filter-pill-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  width: 23px;
+  height: 23px;
+  border-radius: 50%;
+  background: #cbc4ea;
+  font-size: 10px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+}
+.filter-pill.active .filter-pill-count {
+  background: var(--paper);
+  color: var(--blue);
 }
 .filter-pill:hover {
   background: var(--paper);

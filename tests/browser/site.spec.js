@@ -162,6 +162,9 @@ test("expired listings disappear from an older static build", async ({
   await page.goto("/");
   await expect(page.locator("#events-grid .event-card:visible")).toHaveCount(0);
   await expect(page.locator("[data-upcoming-count]")).toHaveText("0");
+  expect(await page.locator(".filter-pill-count").allTextContents()).toEqual(
+    Array(await page.locator(".filter-pill-count").count()).fill("0"),
+  );
   await page.goto("/venues/tramway.html");
   await expect(page.locator(".event-card:visible")).toHaveCount(0);
   await expect(page.locator("#no-results")).toBeVisible();
@@ -269,11 +272,38 @@ test("only art forms are offered and opera filters the matching cards", async ({
   expect(forms.length).toBeGreaterThan(0);
   expect(forms.every((form) => Object.hasOwn(FORMS, form))).toBe(true);
   await expect(page.locator(".filter-pills-group")).toHaveAttribute("aria-label", "Filter by art form");
-  await page.getByRole("button", { name: "Opera", exact: true }).click();
+  await page.getByRole("button", { name: /^Opera \d+$/ }).click();
   await expect(page).toHaveURL(/form=opera/);
   const cards = page.locator("#events-grid .event-card:visible");
   const expected = await page.evaluate(() => window.Listings.filterEvents(window.EVENTS, { form: "opera" }).length);
   expect(expected).toBeGreaterThan(0);
   await expect(cards).toHaveCount(expected);
   expect(await cards.locator(".card-topline > span").allTextContents()).toEqual(Array(expected).fill("Opera"));
+});
+
+
+test("art form pills show circular counts in descending popularity", async ({ page }) => {
+  await page.goto("/");
+  await openFilters(page);
+  const pills = page.locator(".filter-pill");
+  const values = await pills.evaluateAll((buttons) => buttons.map((button) => ({
+    form: button.dataset.form,
+    count: Number(button.querySelector(".filter-pill-count").textContent),
+  })));
+  const expected = await page.evaluate(() => {
+    const counts = {};
+    for (const event of window.Listings.filterEvents(window.EVENTS)) {
+      counts[event.form] = (counts[event.form] || 0) + 1;
+    }
+    return Object.entries(counts).map(([form, count]) => ({ form, count }))
+      .sort((a, b) => b.count - a.count || a.form.localeCompare(b.form));
+  });
+  expect(values).toEqual([{ form: "", count: expected.reduce((sum, item) => sum + item.count, 0) }, ...expected]);
+  const badge = pills.first().locator(".filter-pill-count");
+  const size = await badge.boundingBox();
+  expect(size.width).toBe(size.height);
+  await expect(badge).toHaveCSS("border-radius", "50%");
+  await page.locator('[data-form="opera"]').click();
+  expect(await pills.locator(".filter-pill-count").allTextContents()).toEqual(values.map((item) => String(item.count)));
+  await page.screenshot({ path: `test-results/pills-${test.info().project.name}.png` });
 });

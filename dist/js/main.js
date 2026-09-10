@@ -1,6 +1,6 @@
 (function () {
   "use strict";
-  const { filterEvents, londonDate } = window.Listings;
+  const { filterEvents, londonDate, countArtForms } = window.Listings;
   function repairImage(image) {
     image.hidden = true;
     image.closest(".event-card-image")?.classList.add("image-unavailable");
@@ -54,7 +54,18 @@
     cards.forEach((card) => {
       card.hidden = !ids.has(card.dataset.id);
     });
-    pills.forEach((pill) => {
+    // Popularity reflects all upcoming listings, independent of active filters.
+    const formCounts = countArtForms(upcoming);
+    const pillCount = (pill) => pill.dataset.form ? formCounts[pill.dataset.form] || 0 : upcoming.length;
+    pills.sort((a, b) => {
+      if (!a.dataset.form) return -1;
+      if (!b.dataset.form) return 1;
+      return pillCount(b) - pillCount(a) || a.dataset.form.localeCompare(b.dataset.form);
+    });
+    pills.forEach((pill, index) => {
+      pill.querySelector(".filter-pill-count").textContent = pillCount(pill);
+      const group = pill.parentElement;
+      if (group.children[index] !== pill) group.insertBefore(pill, group.children[index]);
       const active = (pill.dataset.form || "") === form;
       pill.classList.toggle("active", active);
       pill.setAttribute("aria-pressed", String(active));

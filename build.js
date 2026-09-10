@@ -3,6 +3,7 @@ const path = require("path");
 const {
   londonDate,
   filterEvents,
+  countArtForms,
   mergeListings,
 } = require("./src/js/listings");
 const { FORMS, fallbackForm, combine } = require("./scripts/art-forms");
@@ -166,7 +167,10 @@ ${event.accessibility ? `<p class="accessibility"><span aria-hidden="true">✳</
 <div class="event-card-footer"><span>${event.time ? e(time(event.time)) : "Times & tickets at venue"}</span><a class="ticket-link" href="${e(event.ticketUrl)}" aria-label="Tickets for ${e(event.title)}">Tickets ${arrow}</a></div></div></article>`;
 }
 const venueCount = new Set(events.map((event) => event.venueId)).size;
-const forms = [...new Set(events.map((event) => event.form))].sort();
+const formCounts = countArtForms(events);
+const forms = Object.keys(formCounts).sort(
+  (a, b) => formCounts[b] - formCounts[a] || a.localeCompare(b),
+);
 write(
   "index.html",
   page(
@@ -180,7 +184,7 @@ write(
       .map((v) => `<option value="${v.id}">${e(v.name)}</option>`)
       .join(
         "",
-      )}</select></label><label>From<input id="filter-date-from" type="date"></label><label>To<input id="filter-date-to" type="date"></label></div><div class="filter-pills-group" aria-label="Filter by art form"><button class="filter-pill active" data-form="" aria-pressed="true">All shows</button>${forms.map((form) => `<button class="filter-pill" data-form="${e(form)}" aria-pressed="false">${e(label(form))}</button>`).join("")}</div></details>
+      )}</select></label><label>From<input id="filter-date-from" type="date"></label><label>To<input id="filter-date-to" type="date"></label></div><div class="filter-pills-group" aria-label="Filter by art form"><button class="filter-pill active" data-form="" aria-pressed="true">All shows <span class="filter-pill-count">${events.length}</span></button>${forms.map((form) => `<button class="filter-pill" data-form="${e(form)}" aria-pressed="false">${e(label(form))} <span class="filter-pill-count">${formCounts[form]}</span></button>`).join("")}</div></details>
 <div class="results-bar"><span id="results-count" role="status" aria-live="polite">${events.length} shows</span><button class="text-button" data-reset>Clear filters <span aria-hidden="true">×</span></button></div>
 <div class="events-grid" id="events-grid">${events.map(card).join("")}</div><div class="no-results" id="no-results" hidden><h3>A different night, perhaps?</h3><p>No shows match these filters. Try another date, venue or art form.</p><button class="btn" data-reset>Clear filters</button></div></div></section>
 <section class="listing-invite"><div class="container"><div><p class="eyebrow">For the people making it happen</p><h2>Your show.<br>Our next night out.</h2><p>Putting on theatre in Glasgow? Let the city know.</p></div><a class="btn" href="/submit.html">List your show — it’s free ${arrow}</a></div></section>`,

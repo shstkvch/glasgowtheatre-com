@@ -40,13 +40,18 @@
           a.date.localeCompare(b.date) || a.title.localeCompare(b.title),
       );
   }
+  function countArtForms(events) {
+    const counts = {};
+    for (const event of events) counts[event.form] = (counts[event.form] || 0) + 1;
+    return counts;
+  }
   function mergeListings(scraped, manual) {
     const key = (e) => (e.ticketUrl ? e.ticketUrl.replace(/\/$/, "") : e.id);
     const entries = new Map(scraped.map((e) => [key(e), e]));
     manual.forEach((e) => entries.set(key(e), e));
     return [...entries.values()];
   }
-  const api = { londonDate, filterEvents, mergeListings };
+  const api = { londonDate, filterEvents, countArtForms, mergeListings };
   if (typeof module !== "undefined") module.exports = api;
   else root.Listings = api;
 })(typeof window !== "undefined" ? window : globalThis);
