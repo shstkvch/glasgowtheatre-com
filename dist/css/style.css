@@ -674,9 +674,451 @@ svg {
 .image-unavailable .date-stamp {
   z-index: 2;
 }
+/* --------------------------------------------- calendar (venue swim lanes) */
+.container-wide {
+  width: min(1720px, 100% - 96px);
+  margin-inline: auto;
+}
+.cal-section {
+  padding: 44px 0 74px;
+}
+.cal-intro {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px 48px;
+  padding-bottom: 22px;
+  margin-bottom: 22px;
+  border-bottom: 2px solid var(--ink);
+}
+.cal-intro h1 {
+  font-size: clamp(52px, 6.4vw, 86px);
+  line-height: 0.9;
+  letter-spacing: -0.025em;
+  color: var(--blue);
+  margin-top: 9px;
+}
+.cal-lede {
+  max-width: 470px;
+  margin-bottom: 5px;
+  font-size: 14px;
+  line-height: 1.75;
+  color: var(--muted);
+}
+.cal-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+  margin-bottom: 16px;
+}
+.cal-stat {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--muted);
+}
+.cal-stat strong {
+  color: var(--ink);
+}
+.cal-jump {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.cal-chip {
+  border: 1px solid #bcb5d3;
+  border-radius: 20px;
+  background: transparent;
+  padding: 7px 13px;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.5;
+  color: var(--ink);
+}
+.cal-chip:hover {
+  background: var(--lilac);
+}
+.cal-chip.active {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--paper);
+}
+.cal-chip-today {
+  background: var(--blue);
+  border-color: var(--blue);
+  color: var(--paper);
+}
+.cal-chip-today:hover {
+  background: var(--ink);
+  border-color: var(--ink);
+}
+/* The timeline scrolls in both directions inside its own frame, which is what
+   lets the date header and the venue column stay pinned while you travel. */
+.cal-scroll {
+  --day: 40px;
+  --lane-w: 238px;
+  --track-h: 30px;
+  --head-h: 66px;
+  overflow: auto;
+  max-height: min(768px, 78vh);
+  overscroll-behavior-x: contain;
+  scroll-padding-left: var(--lane-w);
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  background: var(--paper);
+}
+.cal-scroll:focus-visible {
+  outline: 3px solid var(--blue);
+  outline-offset: 3px;
+}
+.cal-scroll.dragging {
+  cursor: grabbing;
+  user-select: none;
+}
+.cal-grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: var(--lane-w) calc(var(--day) * var(--cols));
+  width: max-content;
+}
+.cal-corner {
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  height: var(--head-h);
+  padding: 0 16px;
+  background: var(--lilac);
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--ink);
+  box-shadow: 7px 0 14px -10px rgba(32, 32, 44, 0.5);
+}
+.cal-corner-range {
+  font-size: 11px;
+  color: var(--muted);
+}
+.cal-head {
+  position: sticky;
+  top: 0;
+  z-index: 3;
+  background: var(--paper);
+  border-bottom: 1px solid var(--ink);
+}
+.cal-months {
+  position: relative;
+  height: 30px;
+  border-bottom: 1px solid var(--line);
+}
+.cal-month {
+  position: absolute;
+  top: 0;
+  left: calc(var(--start) * var(--day));
+  width: calc(var(--span) * var(--day));
+  height: 100%;
+  display: flex;
+  align-items: center;
+  border-left: 1px solid #c6c3d6;
+}
+.cal-month:first-child {
+  border-left: 0;
+}
+/* The month name rides along as you scroll so you always know where you are. */
+.cal-month span {
+  position: sticky;
+  left: var(--lane-w);
+  max-width: calc(var(--span) * var(--day));
+  padding: 0 12px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.cal-days {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: var(--day);
+  height: calc(var(--head-h) - 31px);
+}
+.cal-day {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1px;
+  border-left: 1px solid var(--line);
+  font-variant-numeric: tabular-nums;
+}
+.cal-day.weekend {
+  background: #e9e7f2;
+}
+.cal-dow {
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+}
+.cal-dom {
+  font-size: 11px;
+  font-weight: 600;
+}
+.cal-day.is-today {
+  background: var(--blue);
+  color: var(--paper);
+}
+.cal-day.is-today .cal-dow {
+  color: #c2c7f4;
+}
+.cal-lane-head {
+  position: sticky;
+  left: 0;
+  z-index: 2;
+  display: flex;
+  background: var(--paper);
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  box-shadow: 7px 0 14px -10px rgba(32, 32, 44, 0.5);
+}
+.cal-lane-head > a {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+  width: 100%;
+  padding: 13px 16px;
+  border-left: 5px solid var(--lane);
+}
+.cal-lane-head > a:hover {
+  background: var(--lilac);
+  text-decoration: none;
+}
+.cal-lane-name {
+  font: 700 21px/1.05 var(--display);
+  letter-spacing: -0.01em;
+}
+.cal-lane-meta {
+  font-size: 10px;
+  color: var(--muted);
+}
+/* Day rules, a heavier line each Monday, and shaded weekends — painted as
+   gradients so a six-month grid costs no extra elements. */
+.cal-lane {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 7px 0;
+  border-bottom: 1px solid var(--line);
+  background-image: repeating-linear-gradient(
+      90deg,
+      #c6c3d6 0 1px,
+      transparent 1px calc(var(--day) * 7)
+    ),
+    repeating-linear-gradient(90deg, var(--line) 0 1px, transparent 1px var(--day)),
+    repeating-linear-gradient(
+      90deg,
+      transparent 0 calc(var(--day) * 5),
+      #eae8f3 calc(var(--day) * 5) calc(var(--day) * 7)
+    );
+}
+.cal-track {
+  position: relative;
+  height: var(--track-h);
+}
+/* The bar is exactly as wide as the run; the link box extends to wherever the
+   next show starts, so a short run's title has room to sit beside it. */
+.cal-item {
+  position: absolute;
+  top: 0;
+  left: calc(var(--start) * var(--day));
+  width: calc(var(--room) * var(--day) - 4px);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 3px;
+}
+.cal-bar {
+  flex: 0 0 auto;
+  width: calc(var(--span) * var(--day) - 4px);
+  min-width: 7px;
+  height: 100%;
+  border-radius: 3px;
+  background: var(--lane);
+}
+.cal-item-label {
+  min-width: 0;
+  padding-left: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.cal-item.label-inside .cal-item-label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: calc(var(--span) * var(--day) - 4px);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  color: var(--lane-ink);
+}
+.cal-item-dates {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+.cal-item:hover {
+  text-decoration: none;
+}
+.cal-item:hover .cal-bar {
+  filter: brightness(1.22);
+}
+.cal-item:hover .cal-item-label {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.cal-item:focus-visible {
+  outline: 3px solid var(--blue);
+  outline-offset: 0;
+}
+/* A run that began before the window, or carries on past it, loses the cap on
+   that edge so the bar reads as continuing rather than starting here. */
+.cal-item.open-start .cal-bar {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  background-image: linear-gradient(90deg, #ffffff66, transparent 22px);
+}
+.cal-item.open-end .cal-bar {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.cal-now {
+  position: absolute;
+  z-index: 1;
+  top: var(--head-h);
+  bottom: 0;
+  left: calc(var(--lane-w) + var(--today) * var(--day));
+  width: 2px;
+  background: var(--blue);
+  pointer-events: none;
+}
+/* A preview on hover, so the chart can stay a chart: the bar says when, the
+   card says what. Pointer events pass through it so it can never eat a click
+   meant for the bar underneath. */
+.cal-pop {
+  position: fixed;
+  z-index: 40;
+  width: 296px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 13px;
+  background: var(--paper);
+  border: 1px solid var(--ink);
+  border-radius: 5px;
+  box-shadow: 0 18px 34px -18px rgba(32, 32, 44, 0.55);
+  pointer-events: none;
+}
+.cal-pop-media {
+  display: block;
+  aspect-ratio: 1.6;
+  margin-bottom: 5px;
+  overflow: hidden;
+  border-radius: 3px;
+  background: var(--lilac);
+}
+.cal-pop-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.cal-pop-meta {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--blue);
+}
+.cal-pop-title {
+  font: 700 25px/1.05 var(--display);
+  letter-spacing: -0.015em;
+}
+.cal-pop-dates {
+  font-size: 11px;
+  font-weight: 600;
+}
+.cal-pop-summary {
+  font-size: 12px;
+  line-height: 1.6;
+  color: var(--muted);
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.cal-pop-cta {
+  margin-top: 6px;
+  padding-top: 9px;
+  border-top: 1px solid var(--line);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--blue);
+}
+.cal-hint {
+  margin-top: 12px;
+  font-size: 11px;
+  color: var(--muted);
+}
+/* Arriving from the timeline: light up the listing the link was pointing at.
+   A panel behind the card, rather than an outline that would cut across the
+   rule between it and the card above. */
+.event-card {
+  scroll-margin-top: 48px;
+}
+.event-card:target {
+  position: relative;
+  border-bottom-color: transparent;
+}
+.event-card:target::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: -16px -14px -12px;
+  border-radius: 6px;
+  background: var(--lilac);
+  box-shadow: inset 0 0 0 2px var(--blue);
+}
 @media (max-width: 1050px) {
   .container {
     width: calc(100% - 56px);
+  }
+  .container-wide {
+    width: calc(100% - 56px);
+  }
+  .cal-scroll {
+    --day: 34px;
+    --lane-w: 196px;
+  }
+  .cal-lane-name {
+    font-size: 19px;
   }
   .filter-row {
     grid-template-columns: 1.5fr 1.2fr 1fr 1fr;
@@ -703,6 +1145,49 @@ svg {
   .container {
     width: calc(100% - 36px);
   }
+  .container-wide {
+    width: calc(100% - 36px);
+  }
+  .cal-section {
+    padding: 28px 0 44px;
+  }
+  .cal-intro {
+    align-items: flex-start;
+    gap: 12px;
+    padding-bottom: 16px;
+    margin-bottom: 18px;
+  }
+  .cal-lede {
+    font-size: 13px;
+  }
+  .cal-scroll {
+    --day: 26px;
+    --lane-w: 118px;
+    --track-h: 27px;
+    max-height: min(560px, 74vh);
+  }
+  .cal-lane-name {
+    font-size: 16px;
+  }
+  .cal-lane-head > a {
+    padding: 10px 11px;
+    border-left-width: 4px;
+  }
+  .cal-corner {
+    padding: 0 11px;
+  }
+  .cal-corner-range {
+    font-size: 9px;
+  }
+  .cal-item-label {
+    font-size: 11px;
+  }
+  .cal-pop {
+    width: min(296px, calc(100vw - 24px));
+  }
+  .event-card:target {
+    outline-offset: 5px;
+  }
   .header-inner {
     min-height: 96px;
     gap: 18px;
@@ -718,7 +1203,7 @@ svg {
     flex-wrap: wrap;
     justify-content: flex-end;
     font-size: 11px;
-    max-width: 215px;
+    max-width: 250px;
   }
   .site-header nav a {
     padding: 3px 0;
@@ -902,8 +1387,8 @@ svg {
     gap: 10px;
   }
   .site-header nav {
-    gap: 12px;
-    max-width: 192px;
+    gap: 11px;
+    max-width: 205px;
   }
   .site-header nav a {
     font-size: 10px;

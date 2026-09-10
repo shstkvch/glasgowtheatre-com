@@ -6,6 +6,7 @@ const {
   countArtForms,
   mergeListings,
 } = require("./src/js/listings");
+const { buildTimeline } = require("./scripts/calendar");
 const { FORMS, fallbackForm, combine } = require("./scripts/art-forms");
 const DIST = path.join(__dirname, "dist");
 const SITE = "https://glasgowtheatre.com";
@@ -142,6 +143,7 @@ function page(
 ) {
   const nav = [
     ["events", "/", "What’s on"],
+    ["calendar", "/calendar.html", "Calendar"],
     ["venues", "/venues.html", "Venues"],
     ["about", "/about.html", "About"],
     ["submit", "/submit.html", "List your show ↗"],
@@ -159,7 +161,7 @@ function page(
 <script>window.EVENTS = ${json(pageEvents)};</script></body></html>`;
 }
 function card(event) {
-  return `<article class="event-card" data-id="${e(event.id)}" data-date="${e(event.date)}" data-end-date="${e(event.endDate || event.date)}">
+  return `<article class="event-card" id="${e(event.id)}" data-id="${e(event.id)}" data-date="${e(event.date)}" data-end-date="${e(event.endDate || event.date)}">
 <div class="event-card-image${event.image ? "" : " image-unavailable"}"><a class="event-card-thumb" href="${e(event.ticketUrl)}" tabindex="-1"><div class="image-fallback" aria-hidden="true"><span>ON STAGE AT</span><strong>${e(event.venue)}</strong></div>${event.image ? `<img src="${e(event.image)}" alt="${e(event.imageAlt || event.title)}" width="1100" height="688" loading="lazy">` : ""}</a><span class="date-stamp">${e(range(event))}</span></div>
 <div class="event-card-body"><div class="card-topline"><a href="/venues/${e(event.venueId)}.html">${e(event.season || event.venue)}</a><span>${e(label(event.form))}</span></div>
 <h3><a href="${e(event.ticketUrl)}">${e(event.title)}</a></h3><p class="event-description">${e(event.description)}</p>
@@ -188,6 +190,179 @@ write(
 <div class="results-bar"><span id="results-count" role="status" aria-live="polite">${events.length} shows</span><button class="text-button" data-reset>Clear filters <span aria-hidden="true">×</span></button></div>
 <div class="events-grid" id="events-grid">${events.map(card).join("")}</div><div class="no-results" id="no-results" hidden><h3>A different night, perhaps?</h3><p>No shows match these filters. Try another date, venue or art form.</p><button class="btn" data-reset>Clear filters</button></div></div></section>
 <section class="listing-invite"><div class="container"><div><p class="eyebrow">For the people making it happen</p><h2>Your show.<br>Our next night out.</h2><p>Putting on theatre in Glasgow? Let the city know.</p></div><a class="btn" href="/submit.html">List your show — it’s free ${arrow}</a></div></section>`,
+  ),
+);
+/* ---------------------------------------------------------------- calendar */
+/** Each venue wears its own house colour, taken from its own branding: the
+    Citz's black, the Tron's pink, ATG's electric purple at the King's, Òran
+    Mór's orange. Where a venue has no colour of its own — a black-and-white
+    identity, or no site to read one from — it gets one from the reserve that
+    nothing else has claimed, and the reason is noted beside it. */
+const VENUE_COLOURS = {
+  citizens: "#111111", // black-and-white typographic identity
+  tron: "#e91d75", // the Tron's pink, from its own stylesheet
+  tramway: "#4a4f57", // monochrome too — graphite, so it is not the Citz
+  "oran-mor": "#e74825", // Òran Mór's orange, over its deep green
+  "glad-cafe": "#f0bd0f", // the Glad's yellow
+  platform: "#6626ff", // its own purple, close to the King's ATG violet
+  "southside-fringe": "#0051c3",
+  cottiers: "#314e42", // the green Cottiers builds its site on
+  kings: "#5a00ff", // ATG electric purple
+  "theatre-royal": "#d0202d", // ATG red, and the auditorium's own
+  pavilion: "#256d58", // its accent green; the masthead navy reads as black
+  "old-hairdressers": "#6f7f3a", // the olive running through its artwork
+  mono: "#0e7c8c", // no colour of its own: reserve teal
+};
+const RESERVE = ["#b039d8", "#ff9500", "#2ad4c8", "#8c1c5a", "#3e6815"];
+const luminance = (hex) =>
+  [1, 3, 5]
+    .map((i) => parseInt(hex.slice(i, i + 2), 16) / 255)
+    .map((v) => (v <= 0.03928 ? v / 12.92 : ((v + 0.055) / 1.055) ** 2.4))
+    .reduce((sum, v, i) => sum + [0.2126, 0.7152, 0.0722][i] * v, 0);
+const contrast = (a, b) => {
+  const [x, y] = [luminance(a), luminance(b)].sort((m, n) => n - m);
+  return (x + 0.05) / (y + 0.05);
+};
+/** Whichever of the two house inks the title will actually be legible in. */
+const barInk = (colour) =>
+  contrast(colour, "#ffffff") >= contrast(colour, "#20202c")
+    ? "#ffffff"
+    : "#20202c";
+const legible = (colour) => contrast(colour, barInk(colour)) >= 4.5;
+/** Moves a colour towards black or white, keeping its hue and saturation. */
+function shade(hex, amount) {
+  const towards = amount < 0 ? 0 : 255;
+  const mix = Math.abs(amount);
+  return (
+    "#" +
+    [1, 3, 5]
+      .map((i) => parseInt(hex.slice(i, i + 2), 16))
+      .map((v) => Math.round(v + (towards - v) * mix))
+      .map((v) => v.toString(16).padStart(2, "0"))
+      .join("")
+  );
+}
+/**
+ * A few brand colours land in the band where neither white nor near-black
+ * text quite clears WCAG AA on them. Rather than pick a different colour, the
+ * bar takes the smallest step towards black or white that makes its own title
+ * readable — the Tron is still the Tron's pink.
+ */
+function readable(colour) {
+  if (legible(colour)) return colour;
+  for (let step = 0.02; step <= 0.5; step += 0.02)
+    for (const shifted of [shade(colour, -step), shade(colour, step)])
+      if (legible(shifted)) return shifted;
+  return colour;
+}
+/** A venue with no colour anywhere is still a lane, so nothing goes unpainted. */
+function laneColour(venue, index) {
+  return readable(
+    VENUE_COLOURS[venue.id] || RESERVE[index % RESERVE.length],
+  );
+}
+function checkPalette() {
+  const weak = Object.entries(VENUE_COLOURS)
+    .map(([id, colour]) => [id, readable(colour)])
+    .filter(([, colour]) => !legible(colour));
+  if (weak.length) {
+    console.error(
+      `\n\u2717 Venue colours no title can be read on: ${weak
+        .map(([id, colour]) => `${id} (${colour})`)
+        .join(", ")}\n`,
+    );
+    process.exit(1);
+  }
+}
+checkPalette();
+const DOW = ["M", "T", "W", "T", "F", "S", "S"];
+const monthName = (key) =>
+  new Date(key + "-01T12:00:00Z").toLocaleDateString("en-GB", {
+    timeZone: "Europe/London",
+    month: "long",
+    year: "numeric",
+  });
+const timeline = buildTimeline(events, venues, { today });
+/** What the hover card needs, and nothing else — the chart already carries
+    152 links, so the preview payload stays lean. */
+const preview = Object.fromEntries(
+  timeline.lanes.flatMap((lane) =>
+    lane.tracks.flat().map(({ event }) => [
+      event.id,
+      {
+        title: event.title,
+        venue: event.venue,
+        dates: range(event),
+        form: label(event.form),
+        image: event.image || null,
+        summary: (event.description || "").slice(0, 180),
+      },
+    ]),
+  ),
+);
+/**
+ * A show on its lane. The bar is exactly as wide as the run, so the timeline
+ * stays honest; the title sits on the bar when the run is long enough to hold
+ * it and beside the bar when it is not, clipped to the gap before whatever
+ * comes next.
+ */
+function laneItem(item) {
+  const event = item.event;
+  const inside = item.span >= 5;
+  const detail = `${event.title} — ${event.venue}, ${range(event)} · ${label(event.form)}`;
+  return `<a class="cal-item${inside ? " label-inside" : ""}${item.openStart ? " open-start" : ""}${item.openEnd ? " open-end" : ""}" href="/venues/${e(event.venueId)}.html#${e(event.id)}" data-show="${e(event.id)}" style="--start:${item.start};--span:${item.span};--room:${item.room}" title="${e(detail)}"><span class="cal-bar" aria-hidden="true"></span><span class="cal-item-label">${e(event.title)}</span><span class="cal-item-dates">${e(range(event))} at ${e(event.venue)}</span></a>`;
+}
+function calendar(view) {
+  const head = `<div class="cal-corner"><span class="eyebrow">Venue</span><span class="cal-corner-range">${e(date(view.from))} – ${e(date(view.to, true))}</span></div>
+<div class="cal-head"><div class="cal-months">${view.months
+    .map(
+      (month) =>
+        `<div class="cal-month" data-month="${month.key}" style="--start:${month.start};--span:${month.span}"><span>${e(monthName(month.key))}</span></div>`,
+    )
+    .join("")}</div>
+<div class="cal-days">${view.days
+    .map(
+      (day) =>
+        `<div class="cal-day${day.weekend ? " weekend" : ""}${day.today ? " is-today" : ""}"><span class="cal-dow">${DOW[day.weekday]}</span><span class="cal-dom">${day.date}</span></div>`,
+    )
+    .join("")}</div></div>`;
+  const lanes = view.lanes
+    .map((lane) => {
+      const colour = laneColour(
+        lane.venue,
+        venues.findIndex((v) => v.id === lane.venue.id),
+      );
+      const paint = `--lane:${colour};--lane-ink:${barInk(colour)}`;
+      // Where a venue's whole lane is one programme — every Òran Mór listing
+      // is A Play, A Pie and A Pint — that is the name people know it by, so
+      // it leads and the venue moves to the line beneath.
+      const seasons = new Set(lane.tracks.flat().map((item) => item.event.season));
+      const season = seasons.size === 1 ? [...seasons][0] : null;
+      return `<div class="cal-lane-head" style="${paint}"><a href="/venues/${e(lane.venue.id)}.html"><span class="cal-lane-name">${e(season || lane.venue.name)}</span><span class="cal-lane-meta">${e(season ? lane.venue.name : lane.venue.area)} · ${lane.count} show${lane.count === 1 ? "" : "s"}</span></a></div>
+<div class="cal-lane" style="${paint}">${lane.tracks.map((track) => `<div class="cal-track">${track.map(laneItem).join("")}</div>`).join("")}</div>`;
+    })
+    .join("");
+  return `<div class="cal-scroll" id="cal-scroll" tabindex="0" role="region" aria-label="Timeline of shows by venue">
+<div class="cal-grid" style="--cols:${view.columns};--today:${view.todayIndex}">${head}${lanes}<div class="cal-now" aria-hidden="true"></div></div></div>`;
+}
+write(
+  "calendar.html",
+  page(
+    "Theatre calendar — what’s on, week by week",
+    "A swim-lane timeline of Glasgow theatre. See which shows are running at every venue, how long each one runs, and jump straight to the venue.",
+    "/calendar.html",
+    `<section class="cal-section"><div class="container-wide">
+<div class="cal-intro"><div><p class="eyebrow">Every stage, side by side</p><h1>The season<br>at a glance.</h1></div>
+<p class="cal-lede">One lane per theatre, one column per day. Bars show how long a run lasts — scroll sideways to travel forward in time, and pick any show to see the venue behind it.</p></div>
+<div class="cal-toolbar"><p class="cal-stat"><span class="live-dot" aria-hidden="true"></span><strong>${timeline.shows}</strong> runs across <strong>${timeline.lanes.length}</strong> venues, ${e(date(timeline.from))} to ${e(date(timeline.to, true))}</p>
+<div class="cal-jump" id="cal-jump"><button class="cal-chip cal-chip-today" data-scroll-today>Today</button></div></div>
+${calendar(timeline)}
+<p class="cal-hint">Drag or scroll the chart in any direction; the arrow keys move a week at a time. Hover a show for a preview, or pick one to open its venue.</p>
+<script>window.CAL_SHOWS = ${json(preview)};</script>
+</div></section>
+<section class="listing-invite"><div class="container"><div><p class="eyebrow">Not on the chart?</p><h2>Add your run<br>to the timeline.</h2><p>Listings are free for anyone putting on live work in Glasgow.</p></div><a class="btn" href="/submit.html">List your show ${arrow}</a></div></section>`,
+    "calendar",
+    [],
   ),
 );
 write(
@@ -236,6 +411,7 @@ write(
 );
 const paths = [
   "/",
+  "/calendar.html",
   "/venues.html",
   "/about.html",
   "/submit.html",

@@ -18,6 +18,19 @@ npm run preview
 
 Local browser tests use installed Google Chrome. CI installs Playwright Chromium. The preview is at http://localhost:4173.
 
+## The calendar
+
+`/calendar.html` is a swim-lane timeline: a lane per venue, a column per day, and a bar per run whose width is exactly how long that run lasts. It opens on today and scrolls sideways through roughly six months.
+
+`scripts/calendar.js` builds the model and `build.js` renders it. The parts worth knowing:
+
+- **Packing.** Overlapping runs at one venue stack onto extra tracks within the same lane. A run reserves at least five days of its track even if it is a single night, so a one-night show's title has somewhere to sit; that is why a lane can have more tracks than a naive reading of the dates suggests.
+- **Clipping.** A run that started before the window, or carries on past its far edge, is drawn to the edge with a flat end rather than a rounded one, so a bar never claims to begin or finish where it does not.
+- **Lane names.** Where every listing in a lane shares a season the lane takes the season's name and the venue drops to the line below — the Òran Mór lane reads "A Play, A Pie and A Pint".
+- **Colour.** Each venue wears its own brand colour, listed with its source in `VENUE_COLOURS` in `build.js`. Bar titles are drawn in whichever house ink is legible on that colour, and a colour that clears neither is nudged the smallest step towards black or white that works. The build fails rather than publish a title nobody can read, and a browser test measures the rendered contrast.
+
+Everything above works without JavaScript. Script adds the hover preview, the month buttons, drag-to-scroll and the jump to today.
+
 ## Add or correct a listing
 
 Listings that arrive by email are added by hand to `data/manual-events.json`. There is no database: the file is the record, and it is version controlled with everything else.

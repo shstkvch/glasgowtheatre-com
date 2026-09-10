@@ -136,6 +136,150 @@
     to.value = last.toISOString().slice(0, 10);
     applyFilters();
   });
+  // -------------------------------------------------- calendar swim lanes
+  const timeline = document.getElementById("cal-scroll");
+  if (timeline) {
+    const chart = timeline.querySelector(".cal-grid");
+    const columnWidth = () =>
+      parseFloat(getComputedStyle(timeline).getPropertyValue("--day")) || 40;
+    /** Put a day column just past the pinned venue names, not underneath. */
+    function scrollToColumn(index, behavior = "smooth") {
+      timeline.scrollTo({
+        left: Math.max(0, index * columnWidth() - 12),
+        behavior,
+      });
+    }
+    const todayColumn = Number(chart.style.getPropertyValue("--today")) || 0;
+    // The page is built overnight, so it opens where the visitor actually is.
+    scrollToColumn(todayColumn, "auto");
+    const jump = document.getElementById("cal-jump");
+    document
+      .querySelector("[data-scroll-today]")
+      ?.addEventListener("click", () => scrollToColumn(todayColumn));
+    // Month chips only work with script, so they are only added with script.
+    const chips = [...chart.querySelectorAll(".cal-month")].map((month) => {
+      const start = Number(month.style.getPropertyValue("--start"));
+      const chip = document.createElement("button");
+      chip.className = "cal-chip";
+      chip.type = "button";
+      chip.setAttribute("aria-pressed", "false");
+      chip.textContent = month.textContent.split(" ")[0].slice(0, 3);
+      chip.addEventListener("click", () => scrollToColumn(start));
+      jump?.append(chip);
+      return { chip, start };
+    });
+    /** The lit chip is whichever month the chart has actually arrived at, so
+        dragging and the arrow keys keep it honest, not only the chips. It is
+        read from the middle of the visible dates rather than the left edge,
+        because the last month is never wide enough to reach that edge. */
+    function markMonth() {
+      const lane =
+        parseFloat(getComputedStyle(timeline).getPropertyValue("--lane-w")) || 0;
+      const middle =
+        timeline.scrollLeft + (timeline.clientWidth - lane) / 2;
+      const column = Math.round(middle / columnWidth());
+      let current = chips[0];
+      for (const month of chips) if (month.start <= column) current = month;
+      for (const month of chips) {
+        const on = month === current;
+        month.chip.classList.toggle("active", on);
+        month.chip.setAttribute("aria-pressed", String(on));
+      }
+    }
+    markMonth();
+    // ------------------------------------------------ hover preview card
+    const shows = window.CAL_SHOWS || {};
+    const card = document.createElement("div");
+    card.className = "cal-pop";
+    card.hidden = true;
+    card.setAttribute("aria-hidden", "true");
+    card.innerHTML =
+      '<span class="cal-pop-media"><img alt="" width="320" height="200"></span>' +
+      '<span class="cal-pop-meta"></span><strong class="cal-pop-title"></strong>' +
+      '<span class="cal-pop-dates"></span><span class="cal-pop-summary"></span>' +
+      '<span class="cal-pop-cta">Open the venue \u2192</span>';
+    document.body.append(card);
+    const media = card.querySelector(".cal-pop-media");
+    const thumb = card.querySelector("img");
+    let pending;
+    function hideCard() {
+      clearTimeout(pending);
+      card.hidden = true;
+    }
+    function showCard(item) {
+      const show = shows[item.dataset.show];
+      if (!show) return;
+      card.querySelector(".cal-pop-meta").textContent =
+        show.venue + " · " + show.form;
+      card.querySelector(".cal-pop-title").textContent = show.title;
+      card.querySelector(".cal-pop-dates").textContent = show.dates;
+      card.querySelector(".cal-pop-summary").textContent = show.summary;
+      media.hidden = !show.image;
+      if (show.image) thumb.src = show.image;
+      card.hidden = false;
+      // Measure once visible, then keep the card on screen: above the bar if
+      // there is room, below if not, and never past either edge.
+      const bar = item.getBoundingClientRect();
+      const box = card.getBoundingClientRect();
+      const gap = 10;
+      const above = bar.top - box.height - gap;
+      card.style.top =
+        (above > 8 ? above : Math.min(bar.bottom + gap, innerHeight - box.height - 8)) +
+        "px";
+      card.style.left =
+        Math.max(8, Math.min(bar.left, innerWidth - box.width - 8)) + "px";
+    }
+    thumb.addEventListener("error", () => {
+      media.hidden = true;
+    });
+    chart.addEventListener("pointerover", (event) => {
+      if (event.pointerType !== "mouse") return;
+      const item = event.target.closest(".cal-item");
+      clearTimeout(pending);
+      if (!item) return hideCard();
+      pending = setTimeout(() => showCard(item), 90);
+    });
+    chart.addEventListener("pointerleave", hideCard);
+    timeline.addEventListener("pointerleave", hideCard);
+    chart.addEventListener("focusin", (event) => {
+      const item = event.target.closest(".cal-item");
+      if (item) showCard(item);
+      else hideCard();
+    });
+    chart.addEventListener("focusout", hideCard);
+    // Dragging the chart is the quickest way through six months of dates.
+    let dragging = null;
+    timeline.addEventListener("pointerdown", (event) => {
+      if (event.button !== 0 || event.target.closest("a, button")) return;
+      hideCard();
+      dragging = { x: event.clientX, left: timeline.scrollLeft };
+      timeline.setPointerCapture(event.pointerId);
+    });
+    timeline.addEventListener("pointermove", (event) => {
+      if (!dragging) return;
+      const moved = event.clientX - dragging.x;
+      if (Math.abs(moved) > 3) timeline.classList.add("dragging");
+      timeline.scrollLeft = dragging.left - moved;
+    });
+    const endDrag = () => {
+      dragging = null;
+      timeline.classList.remove("dragging");
+    };
+    timeline.addEventListener("scroll", () => {
+      markMonth();
+      hideCard();
+    });
+    addEventListener("scroll", hideCard, { passive: true });
+    timeline.addEventListener("pointerup", endDrag);
+    timeline.addEventListener("pointercancel", endDrag);
+    // A week at a time with the arrow keys, once the chart has focus.
+    timeline.addEventListener("keydown", (event) => {
+      const step = { ArrowLeft: -1, ArrowRight: 1 }[event.key];
+      if (!step || event.target !== timeline) return;
+      event.preventDefault();
+      timeline.scrollBy({ left: step * columnWidth() * 7, behavior: "smooth" });
+    });
+  }
   applyFilters(false);
   // Keep a tab left open overnight honest, even between scheduled builds.
   setInterval(() => applyFilters(false), 60000);

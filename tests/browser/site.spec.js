@@ -190,6 +190,7 @@ test("page layouts fit small screens and navigation reaches each page", async ({
 }) => {
   for (const url of [
     "/",
+    "/calendar.html",
     "/venues.html",
     "/venues/tramway.html",
     "/about.html",
@@ -224,6 +225,7 @@ test("page layouts fit small screens and navigation reaches each page", async ({
 test("all internal links and local assets exist", async ({ request }) => {
   const pages = [
     "index.html",
+    "calendar.html",
     "venues.html",
     "about.html",
     "submit.html",
@@ -245,6 +247,7 @@ test("pages have no automated WCAG A or AA accessibility violations", async ({
   const AxeBuilder = require("@axe-core/playwright").default;
   for (const url of [
     "/",
+    "/calendar.html",
     "/venues.html",
     "/venues/tramway.html",
     "/submit.html",
@@ -306,4 +309,92 @@ test("art form pills show circular counts in descending popularity", async ({ pa
   await page.locator('[data-form="opera"]').click();
   expect(await pills.locator(".filter-pill-count").allTextContents()).toEqual(values.map((item) => String(item.count)));
   await page.screenshot({ path: `test-results/pills-${test.info().project.name}.png` });
+});
+
+test("the timeline lanes a venue's shows and opens on today", async ({
+  page,
+}) => {
+  const errors = [];
+  page.on("pageerror", (error) => errors.push(error.message));
+  await page.goto("/calendar.html");
+  const chart = page.locator("#cal-scroll");
+  await expect(chart).toBeVisible();
+  // One lane per venue with something on, each led by its own name.
+  const lanes = page.locator(".cal-lane-head");
+  expect(await lanes.count()).toBeGreaterThan(3);
+  await expect(lanes.first().locator(".cal-lane-name")).not.toBeEmpty();
+  // Today is both marked in the header and where the chart has scrolled to.
+  const today = londonDate();
+  await expect(page.locator(".cal-day.is-today")).toHaveCount(1);
+  expect(await chart.evaluate((el) => el.scrollLeft)).toBeGreaterThan(0);
+  // A run is drawn as many day columns wide as it actually lasts.
+  const bar = await page.locator(".cal-item").first().evaluate((el) => ({
+    span: Number(getComputedStyle(el).getPropertyValue("--span")),
+    room: Number(getComputedStyle(el).getPropertyValue("--room")),
+    href: el.getAttribute("href"),
+  }));
+  expect(bar.span).toBeGreaterThan(0);
+  expect(bar.room).toBeGreaterThanOrEqual(bar.span);
+  expect(bar.href).toMatch(/^\/venues\/[a-z-]+\.html#/);
+  expect(today).toMatch(/^\d{4}-\d{2}-\d{2}$/);
+  expect(errors).toEqual([]);
+  await page.screenshot({
+    path: `test-results/calendar-${test.info().project.name}.png`,
+  });
+});
+
+test("a month button scrolls the chart and lights up", async ({ page }) => {
+  await page.goto("/calendar.html");
+  const chart = page.locator("#cal-scroll");
+  const chips = page.locator("#cal-jump .cal-chip:not(.cal-chip-today)");
+  const last = chips.last();
+  await last.click();
+  await expect(last).toHaveAttribute("aria-pressed", "true", { timeout: 4000 });
+  await expect(chips.first()).toHaveAttribute("aria-pressed", "false");
+  expect(await chart.evaluate((el) => el.scrollLeft)).toBeGreaterThan(1000);
+});
+
+test("picking a show from the timeline lands on its venue page, highlighted", async ({
+  page,
+}) => {
+  await page.goto("/calendar.html");
+  const item = page.locator(".cal-item").first();
+  const id = await item.getAttribute("data-show");
+  await item.click();
+  await expect(page).toHaveURL(new RegExp(`/venues/.+\\.html#${id}$`));
+  const card = page.locator(`[id="${id}"]`);
+  await expect(card).toBeVisible();
+  // The highlight is a panel behind the card, not an outline over the rule.
+  expect(
+    await card.evaluate(
+      (el) => getComputedStyle(el, "::before").backgroundColor,
+    ),
+  ).not.toBe("rgba(0, 0, 0, 0)");
+});
+
+test("every bar's title is readable against its own venue colour", async ({
+  page,
+}) => {
+  await page.goto("/calendar.html");
+  const worst = await page.evaluate(() => {
+    const channel = (v) =>
+      v <= 0.03928 ? v / 12.92 : ((v + 0.055) / 1.055) ** 2.4;
+    const luminance = (colour) => {
+      const [r, g, b] = colour.match(/\d+/g).map((n) => channel(n / 255));
+      return 0.2126 * r + 0.7152 * g + 0.0722 * b;
+    };
+    let lowest = 21;
+    for (const label of document.querySelectorAll(
+      ".label-inside .cal-item-label",
+    )) {
+      const bar = label.previousElementSibling;
+      const [a, b] = [
+        luminance(getComputedStyle(label).color),
+        luminance(getComputedStyle(bar).backgroundColor),
+      ].sort((x, y) => y - x);
+      lowest = Math.min(lowest, (a + 0.05) / (b + 0.05));
+    }
+    return lowest;
+  });
+  expect(worst).toBeGreaterThanOrEqual(4.5);
 });
