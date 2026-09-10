@@ -72,7 +72,7 @@ The build filters expired events in Europe/London time. The browser repeats that
 
 Cloudflare Pages builds and serves the site, rebuilt daily by a Worker. See **Daily updates on Cloudflare** below for how it is wired and how to set it up.
 
-`.github/workflows/publish.yml` is kept as a fallback: it does the same job through GitHub Actions and now passes `OPENROUTER_API_KEY` from repository secrets, but it cannot run while the account is billing-locked.
+`.github/workflows/publish.yml` no longer deploys anything. It used to publish to GitHub Pages on every push, which would now be publishing to a place nobody visits and racing the build Cloudflare has already started for the same commit. It is a manual trigger for the Cloudflare deploy hook and nothing else, for when the Worker is broken and you are not at a machine with the repo checked out. It needs a `DEPLOY_HOOK` repository secret, and still cannot run while the account is billing-locked.
 
 If a refresh completely fails, the build warns and uses the last saved data, removing expired shows. The footer reports the last successful data refresh, not the latest build time. The site covers a selection of current shows; the venue directory includes additional venues without automated programme feeds.
 
@@ -134,7 +134,14 @@ curl -X POST "https://glasgowtheatre-build.<subdomain>.workers.dev/trigger?key=$
 
 ### Publishing by hand
 
-`scripts/publish.sh` still does the whole job locally — refresh, test, build, commit and push to `gh-pages` — for when you want to publish immediately rather than wait for the cron, or if Cloudflare is ever unavailable. It refuses to run on a dirty tree or a branch other than `main`.
+A push to `main` is already a deploy: the Pages project is connected to the repo and starts a build within seconds of the push, taking about a minute. The cron Worker and the deploy hook are for rebuilding *without* a push, to pick up new listings from the venues.
+
+`scripts/publish.sh` does the whole job locally — refresh, test, build, commit, push to `main` and then POST the deploy hook — for when you want to publish immediately rather than wait for the cron. It refuses to run on a dirty tree or a branch other than `main`. To rebuild from the current commit without changing anything:
+
+```sh
+set -a; . ./.env; set +a
+curl -fsS -X POST "$DEPLOY_HOOK"
+```
 
 
 ### Publishing status, 9 September 2026

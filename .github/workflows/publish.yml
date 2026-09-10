@@ -1,66 +1,38 @@
-name: Refresh and publish theatre listings
+# Fallback trigger for the Cloudflare build.
+#
+# The site is served by Cloudflare Pages, which builds from main on its own:
+# a push to main is already a deploy, and the cron Worker in cloudflare/ starts
+# the daily rebuild at 05:17 UTC. Neither needs GitHub Actions, which cannot run
+# while the account is billing-locked.
+#
+# This workflow exists only as a way to start a Cloudflare build by hand if the
+# Worker is ever broken and you are not at a machine with the repo checked out.
+# It runs on request, never on a push: an automatic run here would race the
+# build Cloudflare has already started for the same commit.
+#
+# Needs a DEPLOY_HOOK repository secret holding the Pages deploy hook URL, the
+# same value that is in .env locally.
+#
+# This used to deploy to GitHub Pages. It does not any more — the domain was cut
+# over to Cloudflare and gh-pages is not what visitors see.
+name: Trigger a Cloudflare build
 on:
-  push:
-    branches: [main]
-  schedule:
-    - cron: "17 5 * * *"
   workflow_dispatch:
 permissions:
-  contents: write
-  pages: write
-  id-token: write
-concurrency:
-  group: pages
-  cancel-in-progress: false
+  contents: read
 jobs:
-  publish:
+  trigger:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+    timeout-minutes: 5
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: "22"
-          cache: npm
-      - run: npm ci
-      - name: Refresh venue listings and cache images
-        if: github.event_name != 'push'
-        id: refresh
-        continue-on-error: true
-        run: npm run refresh
+      - name: Start the Pages build
         env:
-          # Without this, tagging falls back to keywords and the build still passes.
-          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
-      - name: Report source failure
-        if: steps.refresh.outcome == 'failure'
-        run: echo '::warning::Refresh failed. Publishing the last saved listings with expired shows removed. Check refresh logs.'
-      - run: npm test
-      - run: npm run build
-      - run: npx playwright install --with-deps chromium
-      - run: npm run test:browser
-      - name: Save refreshed listings
-        if: github.event_name != 'push'
+          DEPLOY_HOOK: ${{ secrets.DEPLOY_HOOK }}
         run: |
-          git config user.name 'github-actions[bot]'
-          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add data src/images dist
-          if ! git diff --cached --quiet; then
-            git commit -m 'Refresh venue listings and cached images'
-            git push origin HEAD:main
+          if [ -z "$DEPLOY_HOOK" ]; then
+            echo "No DEPLOY_HOOK secret set. Add it in Settings → Secrets → Actions."
+            exit 1
           fi
-      - uses: actions/configure-pages@v5
-      - uses: actions/upload-pages-artifact@v3
-        with:
-          path: dist
-      - name: Publish
-        id: deployment
-        uses: actions/deploy-pages@v4
-      - uses: actions/upload-artifact@v4
-        if: failure()
-        with:
-          name: browser-test-results
-          path: test-results
-          retention-days: 7
+          curl -fsS -X POST "$DEPLOY_HOOK" > /dev/null
+          echo "Triggered. Watch it land:"
+          echo "  curl -s https://glasgowtheatre.com/data/status.json"
