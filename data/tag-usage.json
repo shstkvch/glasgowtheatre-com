@@ -1,11 +1,11 @@
 {
-  "at": "2026-09-10T16:44:11.362Z",
+  "at": "2026-09-10T16:54:53.855Z",
   "model": "deepseek/deepseek-v4-flash",
-  "listingsTagged": 19,
-  "promptTokens": 2436,
-  "completionTokens": 649,
-  "totalTokens": 3085,
-  "costUsd": 0.00044565999999999996,
+  "listingsTagged": 0,
+  "promptTokens": 0,
+  "completionTokens": 0,
+  "totalTokens": 0,
+  "costUsd": 0,
   "excluded": [
     {
       "title": "Music Space: Drum Lessons",

@@ -2640,5 +2640,571 @@
     "byDay": null,
     "model": "deepseek/deepseek-v4-flash",
     "readAt": "2026-09-10"
+  },
+  "49b476eb64aa8d80": {
+    "from": null,
+    "to": null,
+    "concession": null,
+    "concessionTo": null,
+    "free": false,
+    "payWhatYouLike": true,
+    "performances": [],
+    "days": [
+      1
+    ],
+    "time": "16:30",
+    "byDay": null,
+    "model": "deepseek/deepseek-v4-flash",
+    "readAt": "2026-09-10"
+  },
+  "7d36c724cbcfcb2f": {
+    "from": null,
+    "to": null,
+    "concession": null,
+    "concessionTo": null,
+    "free": false,
+    "payWhatYouLike": true,
+    "performances": [],
+    "days": [
+      1
+    ],
+    "time": "11:00",
+    "byDay": null,
+    "model": "deepseek/deepseek-v4-flash",
+    "readAt": "2026-09-10"
+  },
+  "2135b2546eea2c71": {
+    "from": null,
+    "to": null,
+    "concession": null,
+    "concessionTo": null,
+    "free": false,
+    "payWhatYouLike": true,
+    "performances": [],
+    "days": [
+      2
+    ],
+    "time": "14:45",
+    "byDay": null,
+    "model": "deepseek/deepseek-v4-flash",
+    "readAt": "2026-09-10"
+  },
+  "8dadee86d182f448": {
+    "from": null,
+    "to": null,
+    "concession": null,
+    "concessionTo": null,
+    "free": false,
+    "payWhatYouLike": true,
+    "performances": [],
+    "days": [
+      2
+    ],
+    "time": "13:00",
+    "byDay": null,
+    "model": "deepseek/deepseek-v4-flash",
+    "readAt": "2026-09-10"
+  },
+  "f95d9fca029e5765": {
+    "from": null,
+    "to": null,
+    "concession": null,
+    "concessionTo": null,
+    "free": false,
+    "payWhatYouLike": true,
+    "performances": [],
+    "days": [
+      2
+    ],
+    "time": "17:00",
+    "byDay": null,
+    "model": "deepseek/deepseek-v4-flash",
+    "readAt": "2026-09-10"
+  },
+  "f91615ffc7d5e928": {
+    "from": null,
+    "to": null,
+    "concession": null,
+    "concessionTo": null,
+    "free": false,
+    "payWhatYouLike": true,
+    "performances": [],
+    "days": [
+      5
+    ],
+    "time": "14:30",
+    "byDay": null,
+    "model": "deepseek/deepseek-v4-flash",
+    "readAt": "2026-09-10"
+  },
+  "375d73c9125abd23": {
+    "from": null,
+    "to": null,
+    "concession": null,
+    "concessionTo": null,
+    "free": false,
+    "payWhatYouLike": true,
+    "performances": [],
+    "days": [
+      6
+    ],
+    "time": "11:00",
+    "byDay": null,
+    "model": "deepseek/deepseek-v4-flash",
+    "readAt": "2026-09-10"
+  },
+  "6cb8b5dd623ec030": {
+    "from": null,
+    "to": null,
+    "concession": null,
+    "concessionTo": null,
+    "free": true,
+    "payWhatYouLike": false,
+    "performances": [],
+    "days": [],
+    "time": null,
+    "byDay": null,
+    "model": "deepseek/deepseek-v4-flash",
+    "readAt": "2026-09-10"
+  },
+  "fadaffc8a679c2f4": {
+    "from": 12,
+    "to": null,
+    "concession": null,
+    "concessionTo": null,
+    "free": false,
+    "payWhatYouLike": false,
+    "performances": [],
+    "days": [],
+    "time": null,
+    "byDay": null,
+    "model": "deepseek/deepseek-v4-flash",
+    "readAt": "2026-09-10"
+  },
+  "814dee019fd4bc4c": {
+    "from": 10,
+    "to": null,
+    "concession": null,
+    "concessionTo": null,
+    "free": false,
+    "payWhatYouLike": false,
+    "performances": [],
+    "days": [],
+    "time": null,
+    "byDay": null,
+    "model": "deepseek/deepseek-v4-flash",
+    "readAt": "2026-09-10"
+  },
+  "9449a1ceb0c7d148": {
+    "from": 15,
+    "to": null,
+    "concession": null,
+    "concessionTo": null,
+    "free": false,
+    "payWhatYouLike": false,
+    "performances": [],
+    "days": [],
+    "time": null,
+    "byDay": null,
+    "model": "deepseek/deepseek-v4-flash",
+    "readAt": "2026-09-10"
+  },
+  "9e53d1935c01033e": {
+    "from": 9,
+    "to": null,
+    "concession": 7,
+    "concessionTo": null,
+    "free": false,
+    "payWhatYouLike": false,
+    "performances": [],
+    "days": [],
+    "time": null,
+    "byDay": null,
+    "model": "deepseek/deepseek-v4-flash",
+    "readAt": "2026-09-10"
+  },
+  "71972a9e1a973220": {
+    "from": 27,
+    "to": null,
+    "concession": null,
+    "concessionTo": null,
+    "free": false,
+    "payWhatYouLike": false,
+    "performances": [],
+    "days": [],
+    "time": "19:45",
+    "byDay": null,
+    "model": "deepseek/deepseek-v4-flash",
+    "readAt": "2026-09-10"
+  },
+  "bde27088d0df89f2": {
+    "from": 10,
+    "to": null,
+    "concession": null,
+    "concessionTo": null,
+    "free": false,
+    "payWhatYouLike": false,
+    "performances": [],
+    "days": [],
+    "time": null,
+    "byDay": null,
+    "model": "deepseek/deepseek-v4-flash",
+    "readAt": "2026-09-10"
+  },
+  "51e296ccef003ba7": {
+    "from": 15,
+    "to": 17,
+    "concession": null,
+    "concessionTo": null,
+    "free": false,
+    "payWhatYouLike": false,
+    "performances": [],
+    "days": [],
+    "time": null,
+    "byDay": null,
+    "model": "deepseek/deepseek-v4-flash",
+    "readAt": "2026-09-10"
+  },
+  "157ceb23d5431b17": {
+    "from": 12,
+    "to": 14,
+    "concession": 5,
+    "concessionTo": null,
+    "free": false,
+    "payWhatYouLike": false,
+    "performances": [],
+    "days": [],
+    "time": null,
+    "byDay": null,
+    "model": "deepseek/deepseek-v4-flash",
+    "readAt": "2026-09-10"
+  },
+  "acf58fde652e9782": {
+    "from": 10,
+    "to": null,
+    "concession": null,
+    "concessionTo": null,
+    "free": false,
+    "payWhatYouLike": false,
+    "performances": [],
+    "days": [],
+    "time": null,
+    "byDay": null,
+    "model": "deepseek/deepseek-v4-flash",
+    "readAt": "2026-09-10"
+  },
+  "3051e51a6ef47403": {
+    "from": 20,
+    "to": null,
+    "concession": null,
+    "concessionTo": null,
+    "free": false,
+    "payWhatYouLike": false,
+    "performances": [],
+    "days": [],
+    "time": "19:30",
+    "byDay": null,
+    "model": "deepseek/deepseek-v4-flash",
+    "readAt": "2026-09-10"
+  },
+  "c8f22850b68fd72e": {
+    "from": 8,
+    "to": 12,
+    "concession": null,
+    "concessionTo": null,
+    "free": false,
+    "payWhatYouLike": false,
+    "performances": [],
+    "days": [],
+    "time": null,
+    "byDay": null,
+    "model": "deepseek/deepseek-v4-flash",
+    "readAt": "2026-09-10"
+  },
+  "5e062d0ce965a239": {
+    "from": 17,
+    "to": null,
+    "concession": null,
+    "concessionTo": null,
+    "free": false,
+    "payWhatYouLike": false,
+    "performances": [],
+    "days": [],
+    "time": null,
+    "byDay": null,
+    "model": "deepseek/deepseek-v4-flash",
+    "readAt": "2026-09-10"
+  },
+  "a75f5fdc9c4351dc": {
+    "from": 12,
+    "to": null,
+    "concession": null,
+    "concessionTo": null,
+    "free": false,
+    "payWhatYouLike": false,
+    "performances": [],
+    "days": [],
+    "time": null,
+    "byDay": null,
+    "model": "deepseek/deepseek-v4-flash",
+    "readAt": "2026-09-10"
+  },
+  "e671a253bd5ae203": {
+    "from": 27,
+    "to": null,
+    "concession": null,
+    "concessionTo": null,
+    "free": false,
+    "payWhatYouLike": false,
+    "performances": [],
+    "days": [],
+    "time": "19:30",
+    "byDay": null,
+    "model": "deepseek/deepseek-v4-flash",
+    "readAt": "2026-09-10"
+  },
+  "b2c9187519cd45f6": {
+    "from": 10,
+    "to": null,
+    "concession": null,
+    "concessionTo": null,
+    "free": false,
+    "payWhatYouLike": false,
+    "performances": [],
+    "days": [],
+    "time": null,
+    "byDay": null,
+    "model": "deepseek/deepseek-v4-flash",
+    "readAt": "2026-09-10"
+  },
+  "872a859c4cf93855": {
+    "from": 30,
+    "to": null,
+    "concession": null,
+    "concessionTo": null,
+    "free": false,
+    "payWhatYouLike": false,
+    "performances": [],
+    "days": [],
+    "time": "19:30",
+    "byDay": null,
+    "model": "deepseek/deepseek-v4-flash",
+    "readAt": "2026-09-10"
+  },
+  "69cfbccb87f54c1f": {
+    "from": 27,
+    "to": null,
+    "concession": null,
+    "concessionTo": null,
+    "free": false,
+    "payWhatYouLike": false,
+    "performances": [],
+    "days": [],
+    "time": "19:30",
+    "byDay": null,
+    "model": "deepseek/deepseek-v4-flash",
+    "readAt": "2026-09-10"
+  },
+  "232675edc5da7172": {
+    "from": 22,
+    "to": null,
+    "concession": null,
+    "concessionTo": null,
+    "free": false,
+    "payWhatYouLike": false,
+    "performances": [],
+    "days": [],
+    "time": "20:00",
+    "byDay": null,
+    "model": "deepseek/deepseek-v4-flash",
+    "readAt": "2026-09-10"
+  },
+  "bcbe307c4e489e8b": {
+    "from": 20.5,
+    "to": null,
+    "concession": null,
+    "concessionTo": null,
+    "free": false,
+    "payWhatYouLike": false,
+    "performances": [],
+    "days": [],
+    "time": "19:30",
+    "byDay": null,
+    "model": "deepseek/deepseek-v4-flash",
+    "readAt": "2026-09-10"
+  },
+  "ba178a4dddb6ae7b": {
+    "from": 9.5,
+    "to": null,
+    "concession": 5,
+    "concessionTo": 6,
+    "free": false,
+    "payWhatYouLike": false,
+    "performances": [
+      {
+        "date": "2026-10-02",
+        "time": "19:00"
+      },
+      {
+        "date": "2026-10-03",
+        "time": "14:00"
+      },
+      {
+        "date": "2026-10-03",
+        "time": "19:00"
+      }
+    ],
+    "days": [],
+    "time": "19:00",
+    "byDay": null,
+    "model": "deepseek/deepseek-v4-flash",
+    "readAt": "2026-09-10"
+  },
+  "b67b748e0b8726b2": {
+    "from": 20,
+    "to": null,
+    "concession": null,
+    "concessionTo": null,
+    "free": false,
+    "payWhatYouLike": false,
+    "performances": [],
+    "days": [],
+    "time": "19:30",
+    "byDay": null,
+    "model": "deepseek/deepseek-v4-flash",
+    "readAt": "2026-09-10"
+  },
+  "2e85fabedf6efd4d": {
+    "from": 31.5,
+    "to": null,
+    "concession": null,
+    "concessionTo": null,
+    "free": false,
+    "payWhatYouLike": false,
+    "performances": [],
+    "days": [],
+    "time": "19:30",
+    "byDay": null,
+    "model": "deepseek/deepseek-v4-flash",
+    "readAt": "2026-09-10"
+  },
+  "fc4dbf697fd4d095": {
+    "from": 32,
+    "to": null,
+    "concession": null,
+    "concessionTo": null,
+    "free": false,
+    "payWhatYouLike": false,
+    "performances": [
+      {
+        "date": "2026-10-07",
+        "time": "19:30"
+      }
+    ],
+    "days": [],
+    "time": "19:30",
+    "byDay": null,
+    "model": "deepseek/deepseek-v4-flash",
+    "readAt": "2026-09-10"
+  },
+  "12bb28b61c4f09e7": {
+    "from": 9.5,
+    "to": null,
+    "concession": 5,
+    "concessionTo": 6,
+    "free": false,
+    "payWhatYouLike": false,
+    "performances": [
+      {
+        "date": "2026-10-09",
+        "time": "19:00"
+      },
+      {
+        "date": "2026-10-10",
+        "time": "14:00"
+      }
+    ],
+    "days": [],
+    "time": null,
+    "byDay": null,
+    "model": "deepseek/deepseek-v4-flash",
+    "readAt": "2026-09-10"
+  },
+  "35e1ab84712789be": {
+    "from": null,
+    "to": null,
+    "concession": null,
+    "concessionTo": null,
+    "free": true,
+    "payWhatYouLike": false,
+    "performances": [],
+    "days": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "time": "10:00",
+    "byDay": null,
+    "model": "deepseek/deepseek-v4-flash",
+    "readAt": "2026-09-10"
+  },
+  "127483dee1e67bb4": {
+    "from": 22,
+    "to": null,
+    "concession": null,
+    "concessionTo": null,
+    "free": false,
+    "payWhatYouLike": false,
+    "performances": [
+      {
+        "date": "2026-10-12",
+        "time": "19:45"
+      }
+    ],
+    "days": [],
+    "time": "19:45",
+    "byDay": null,
+    "model": "deepseek/deepseek-v4-flash",
+    "readAt": "2026-09-10"
+  },
+  "9ffc8db7e0e040f0": {
+    "from": 28.5,
+    "to": null,
+    "concession": null,
+    "concessionTo": null,
+    "free": false,
+    "payWhatYouLike": false,
+    "performances": [
+      {
+        "date": "2026-10-14",
+        "time": "19:30"
+      }
+    ],
+    "days": [],
+    "time": "19:30",
+    "byDay": null,
+    "model": "deepseek/deepseek-v4-flash",
+    "readAt": "2026-09-10"
+  },
+  "6df58ea7ca2f089a": {
+    "from": 9.5,
+    "to": null,
+    "concession": 5,
+    "concessionTo": 6,
+    "free": false,
+    "payWhatYouLike": false,
+    "performances": [
+      {
+        "date": "2026-10-23",
+        "time": "16:00"
+      }
+    ],
+    "days": [],
+    "time": "16:00",
+    "byDay": null,
+    "model": "deepseek/deepseek-v4-flash",
+    "readAt": "2026-09-10"
   }
 }

@@ -2041,6 +2041,37 @@
     "form": "stand-up"
   },
   {
+    "id": "oran-mor-a-slice-of-the-pie",
+    "title": "A Slice of The Pie",
+    "venue": "Òran Mór",
+    "venueId": "oran-mor",
+    "season": "A Play, A Pie and A Pint",
+    "date": "2026-09-28",
+    "time": null,
+    "endDate": null,
+    "type": "new-writing",
+    "tags": [
+      "play",
+      "scratch",
+      "a-play-a-pie-a-pint"
+    ],
+    "description": "A Slice of The Pie is A Play, A Pie and A Pint’s very own scratch night, hosted by our artistic team as part of our work to platform and champion exciting new artists in Scotland. The night consists of ‘slices’ of new work from incredible writers, directors and performers who we have never worked …...",
+    "ticketUrl": "https://playpiepint.com/whats-on/event/a-slice-of-the-pie-2/",
+    "image": "https://playpiepint.com/app/uploads/2026/05/A-Slice-of-the-Pie-.png",
+    "pricing": {
+      "from": 9,
+      "to": null,
+      "concession": null,
+      "concessionTo": null,
+      "free": false,
+      "payWhatYouLike": false,
+      "text": "£9 (inc. booking fee)",
+      "read": "model"
+    },
+    "checkedAt": "2026-09-10",
+    "form": "play"
+  },
+  {
     "id": "oran-mor-whaur-s-yer-wullie-shakespeare-noo",
     "title": "Whaur’s Yer Wullie Shakespeare Noo?",
     "venue": "Òran Mór",
@@ -2104,37 +2135,6 @@
       }
     ],
     "scheduleRead": "model",
-    "form": "play"
-  },
-  {
-    "id": "oran-mor-a-slice-of-the-pie",
-    "title": "A Slice of The Pie",
-    "venue": "Òran Mór",
-    "venueId": "oran-mor",
-    "season": "A Play, A Pie and A Pint",
-    "date": "2026-09-28",
-    "time": null,
-    "endDate": null,
-    "type": "new-writing",
-    "tags": [
-      "play",
-      "scratch",
-      "a-play-a-pie-a-pint"
-    ],
-    "description": "A Slice of The Pie is A Play, A Pie and A Pint’s very own scratch night, hosted by our artistic team as part of our work to platform and champion exciting new artists in Scotland. The night consists of ‘slices’ of new work from incredible writers, directors and performers who we have never worked …...",
-    "ticketUrl": "https://playpiepint.com/whats-on/event/a-slice-of-the-pie-2/",
-    "image": "https://playpiepint.com/app/uploads/2026/05/A-Slice-of-the-Pie-.png",
-    "pricing": {
-      "from": 9,
-      "to": null,
-      "concession": null,
-      "concessionTo": null,
-      "free": false,
-      "payWhatYouLike": false,
-      "text": "£9 (inc. booking fee)",
-      "read": "model"
-    },
-    "checkedAt": "2026-09-10",
     "form": "play"
   },
   {
@@ -8624,6 +8624,9 @@
     "sourceGenre": "Opera",
     "ticketUrl": "https://www.atgtickets.com/shows/scottish-opera-fidelio/theatre-royal-glasgow/calendar/",
     "image": "https://res.cloudinary.com/dwzhqvxaz/image/upload/w_800,q_auto,f_auto/v1778512165/Titles/Scottish%20Opera%202026-27/Fidelio/Fidelio_TITLE_-_Theatre_Royal_Glasgow_1920x1080px.jpg",
+    "accessibility": [
+      "Audio-described performances available"
+    ],
     "description": "To mark the 200th anniversary of Beethoven’s death, in 2027 Scotland’s orchestras and national opera company unite for an extraordinary exploration of the composer’s music.",
     "performances": [
       {
@@ -8669,6 +8672,9 @@
     "sourceGenre": "Events",
     "ticketUrl": "https://www.atgtickets.com/shows/scottish-opera-fidelio-touch-tour/theatre-royal-glasgow/calendar/",
     "image": "https://res.cloudinary.com/dwzhqvxaz/image/upload/w_800,q_auto,f_auto/v1779968417/Titles/Scottish%20Opera%202026-27/Fidelio/Fidelio_TOUCH_TOUR_Theatre_Royal_Glasgow_1920x1080px.jpg",
+    "accessibility": [
+      "Audio-described performances available"
+    ],
     "description": "Our free touch tours provide an opportunity to become more familiar with the set, scenery, props and costumes. This aims to help audience members living with sight loss to immerse themselves in the world presented on stage, with audio describers, stage management and wardrobe staff present to...",
     "performances": [
       {
