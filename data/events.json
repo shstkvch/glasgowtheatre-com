@@ -8622,6 +8622,9 @@
     "sourceGenre": "Opera",
     "ticketUrl": "https://www.atgtickets.com/shows/scottish-opera-fidelio/theatre-royal-glasgow/calendar/",
     "image": "https://res.cloudinary.com/dwzhqvxaz/image/upload/w_800,q_auto,f_auto/v1778512165/Titles/Scottish%20Opera%202026-27/Fidelio/Fidelio_TITLE_-_Theatre_Royal_Glasgow_1920x1080px.jpg",
+    "accessibility": [
+      "Audio-described performances available"
+    ],
     "description": "To mark the 200th anniversary of Beethoven’s death, in 2027 Scotland’s orchestras and national opera company unite for an extraordinary exploration of the composer’s music.",
     "performances": [
       {
@@ -8667,6 +8670,9 @@
     "sourceGenre": "Events",
     "ticketUrl": "https://www.atgtickets.com/shows/scottish-opera-fidelio-touch-tour/theatre-royal-glasgow/calendar/",
     "image": "https://res.cloudinary.com/dwzhqvxaz/image/upload/w_800,q_auto,f_auto/v1779968417/Titles/Scottish%20Opera%202026-27/Fidelio/Fidelio_TOUCH_TOUR_Theatre_Royal_Glasgow_1920x1080px.jpg",
+    "accessibility": [
+      "Audio-described performances available"
+    ],
     "description": "Our free touch tours provide an opportunity to become more familiar with the set, scenery, props and costumes. This aims to help audience members living with sight loss to immerse themselves in the world presented on stage, with audio describers, stage management and wardrobe staff present to...",
     "performances": [
       {

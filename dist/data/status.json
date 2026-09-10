@@ -1,6 +1,6 @@
 {
-  "builtAt": "2026-09-10T17:12:08.939Z",
-  "refreshedAt": "2026-09-10T17:06:54.000Z",
+  "builtAt": "2026-09-10T17:18:33.676Z",
+  "refreshedAt": "2026-09-10T17:18:30.005Z",
   "upcoming": 155,
   "venues": 11,
   "sources": {
@@ -18,7 +18,7 @@
   },
   "retainedVenues": [],
   "tagging": {
-    "at": "2026-09-10T17:06:54.956Z",
+    "at": "2026-09-10T17:18:30.367Z",
     "model": "deepseek/deepseek-v4-flash",
     "listingsTagged": 0,
     "promptTokens": 0,
@@ -509,7 +509,7 @@
     ]
   },
   "tickets": {
-    "at": "2026-09-10T17:06:54.154Z",
+    "at": "2026-09-10T17:18:30.166Z",
     "model": "deepseek/deepseek-v4-flash",
     "listingsRead": 0,
     "listingsWithWording": 96,
