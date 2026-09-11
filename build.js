@@ -129,20 +129,15 @@ const arrow = '<span aria-hidden="true">↗</span>';
  * and every class added since renders unstyled for four hours. A hash in the
  * URL makes a changed file a different file, so the browser has to fetch it.
  *
- * style.css `@import`s fonts.css, which the browser caches under its own URL,
- * so a change to either has to move the hash.
+ * fonts.css is linked beside style.css rather than `@import`ed from inside
+ * it. An `@import` is only discovered once the importing sheet has arrived
+ * and parsed, and rendering waits for both, so it put a second full round
+ * trip in front of the first paint on every page.
  */
-const IMPORTED = { "css/style.css": ["css/fonts.css"] };
 const asset = (file) =>
   `/${file}?v=${crypto
     .createHash("sha1")
-    .update(
-      Buffer.concat(
-        [file, ...(IMPORTED[file] || [])].map((part) =>
-          fs.readFileSync(path.join(__dirname, "src", part)),
-        ),
-      ),
-    )
+    .update(fs.readFileSync(path.join(__dirname, "src", file)))
     .digest("hex")
     .slice(0, 8)}`;
 /* ------------------------------------------------- tickets, times, prices */
@@ -204,6 +199,11 @@ function eventData(event) {
     },
   };
 }
+/**
+ * @param hero The image this page will paint largest, if it has one. The
+ *   browser otherwise finds it only after the stylesheet has arrived and the
+ *   layout has run, which is what made the hero the slowest paint on the site.
+ */
 function page(
   title,
   description,
@@ -211,6 +211,7 @@ function page(
   body,
   active = "events",
   pageEvents = events,
+  hero = null,
 ) {
   const nav = [
     ["events", "/", "What’s on"],
@@ -222,7 +223,7 @@ function page(
   return `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>${e(title)} | Glasgow Theatre</title><meta name="description" content="${e(description)}"><link rel="canonical" href="${SITE}${url}">
 <meta property="og:title" content="${e(title)}"><meta property="og:description" content="${e(description)}"><meta property="og:url" content="${SITE}${url}"><meta property="og:type" content="website"><meta property="og:site_name" content="Glasgow Theatre"><meta property="og:image" content="${SITE}/images/thrice.webp"><meta name="twitter:card" content="summary_large_image"><meta name="theme-color" content="#303fce">
-<link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="${asset("css/style.css")}">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="${asset("css/fonts.css")}"><link rel="stylesheet" href="${asset("css/style.css")}">${hero ? `<link rel="preload" as="image" href="${e(hero)}" fetchpriority="high">` : ""}
 <script defer src="${asset("js/listings.js")}"></script><script defer src="${asset("js/main.js")}"></script></head><body>
 <a class="skip-link" href="#main">Skip to content</a><header class="site-header"><div class="container header-inner"><a class="brand" href="/" aria-label="Glasgow Theatre home">GLASGOW<span>THEATRE<span class="brand-dot">●</span></span></a>
 <details class="nav-menu" open><summary class="nav-toggle"><span class="nav-bars" aria-hidden="true"></span><span class="nav-toggle-label">Menu</span></summary><nav aria-label="Main navigation">${nav.map(([key, href, text]) => `<a href="${href}"${active === key ? ' aria-current="page"' : ""}>${text}</a>`).join("")}</nav></details></div></header>
@@ -239,11 +240,16 @@ function page(
  * straight to the venue, so nobody who only wants to book is made to travel
  * through us to do it.
  */
-function card(event) {
+function card(event, index = 0) {
+  // The first row is what a visitor sees, and one of its thumbnails is the
+  // largest thing painted on the page. Lazy-loading those deferred the fetch
+  // until after layout and then ran it at low priority; below the first row
+  // lazy is still right.
+  const eager = index < 3;
   const cost = price(event);
   const times = when(event);
   return `<article class="event-card" id="${e(event.id)}" data-id="${e(event.id)}" data-date="${e(event.date)}" data-end-date="${e(event.endDate || event.date)}">
-<div class="event-card-image${event.image ? "" : " image-unavailable"}"><a class="event-card-thumb" href="${e(showPath(event))}" tabindex="-1"><div class="image-fallback" aria-hidden="true"><span>ON STAGE AT</span><strong>${e(event.venue)}</strong></div>${event.image ? `<img src="${e(event.image)}" alt="${e(event.imageAlt || event.title)}" width="1100" height="688" loading="lazy">` : ""}</a><span class="date-stamp">${e(range(event))}</span></div>
+<div class="event-card-image${event.image ? "" : " image-unavailable"}"><a class="event-card-thumb" href="${e(showPath(event))}" tabindex="-1"><div class="image-fallback" aria-hidden="true"><span>ON STAGE AT</span><strong>${e(event.venue)}</strong></div>${event.image ? `<img src="${e(event.image)}" alt="${e(event.imageAlt || event.title)}" width="1100" height="688"${eager ? ` fetchpriority="high"` : ` loading="lazy"`} decoding="async">` : ""}</a><span class="date-stamp">${e(range(event))}</span></div>
 <div class="event-card-body"><div class="card-topline"><a href="/venues/${e(event.venueId)}.html">${e(event.season || event.venue)}</a><span>${e(label(event.form))}</span></div>
 <h3><a href="${e(showPath(event))}">${e(event.title)}</a></h3>
 <p class="card-when">${times ? `<span class="fact-time">${e(times)}</span>` : ""}${cost ? `<span class="fact-price">${e(cost)}</span>` : `<span class="fact-unknown">Prices at the venue</span>`}</p>
@@ -606,7 +612,7 @@ function showPage(event) {
 <h1>${e(event.title)}</h1>
 <dl class="show-facts">${facts.map(([term, value]) => `<div><dt>${e(term)}</dt><dd>${e(value)}</dd></div>`).join("")}</dl>
 <a class="btn" href="${e(event.ticketUrl)}">Book at ${e(event.venue)} ${arrow}</a></div>
-${event.image ? `<figure class="show-hero-image"><img src="${e(event.image)}" alt="${e(event.imageAlt || event.title)}" width="1100" height="688">${event.imageCredit ? `<figcaption>${e(event.imageCredit)}</figcaption>` : ""}</figure>` : ""}
+${event.image ? `<figure class="show-hero-image"><img src="${e(event.image)}" alt="${e(event.imageAlt || event.title)}" width="1100" height="688" fetchpriority="high" decoding="async">${event.imageCredit ? `<figcaption>${e(event.imageCredit)}</figcaption>` : ""}</figure>` : ""}
 </div></div></section>
 <section class="show-body"><div class="container show-columns">
 <div class="show-main"><h2>About the show</h2><p class="show-description">${e(event.description)}</p>
@@ -619,6 +625,7 @@ ${performancePanel(event)}
 <script type="application/ld+json">${json(eventData(event))}</script>`,
     "events",
     [event],
+    event.image || null,
   );
 }
 for (const event of events) write(`shows/${event.id}.html`, showPage(event));

@@ -427,6 +427,43 @@ test("every bar's title is readable against its own venue colour", async ({
 const published = () =>
   JSON.parse(fs.readFileSync("dist/data/events.json", "utf8"));
 
+test("the images a visitor sees first are fetched first", async ({ page }) => {
+  await page.goto("/");
+  const images = page.locator("#events-grid .event-card-image img");
+  const hints = await images.evaluateAll((els) =>
+    els.map((el) => ({
+      loading: el.getAttribute("loading"),
+      priority: el.getAttribute("fetchpriority"),
+    })),
+  );
+  expect(hints.length).toBeGreaterThan(4);
+  // One of the first row's thumbnails is the largest thing painted on the
+  // page, and lazy-loading it deferred the fetch past layout and then ran it
+  // at low priority — 3.5 seconds to paint, on Cloudflare's own measurements.
+  for (const hint of hints.slice(0, 3)) {
+    expect(hint.loading).toBe(null);
+    expect(hint.priority).toBe("high");
+  }
+  // Everything past the first row still waits to be scrolled to.
+  for (const hint of hints.slice(3)) {
+    expect(hint.loading).toBe("lazy");
+    expect(hint.priority).toBe(null);
+  }
+});
+
+test("a show page asks for its hero image before anything else", async ({
+  page,
+}) => {
+  await page.goto("/shows/oran-mor-transparent.html");
+  const hero = page.locator(".show-hero-image img");
+  await expect(hero).toHaveAttribute("fetchpriority", "high");
+  expect(await hero.getAttribute("loading")).toBe(null);
+  const src = await hero.getAttribute("src");
+  await expect(
+    page.locator(`link[rel="preload"][as="image"][href="${src}"]`),
+  ).toHaveCount(1);
+});
+
 test("a card carries when the show starts and what it costs", async ({
   page,
 }) => {
@@ -599,19 +636,25 @@ test("stylesheet and script URLs change when the file does", async ({
   }
   // The hash has to follow the contents, not just be present.
   const built = fs.readFileSync("dist/index.html", "utf8");
-  const stamped = built.match(/\/css\/style\.css\?v=([a-f0-9]{8})/)[1];
   const crypto = require("crypto");
-  const expected = crypto
-    .createHash("sha1")
-    .update(
-      Buffer.concat([
-        fs.readFileSync("src/css/style.css"),
-        fs.readFileSync("src/css/fonts.css"),
-      ]),
-    )
-    .digest("hex")
-    .slice(0, 8);
-  expect(stamped).toBe(expected);
+  for (const file of ["css/style.css", "css/fonts.css"]) {
+    const stamped = built.match(
+      new RegExp(`/${file.replace(".", "\\.")}\\?v=([a-f0-9]{8})`),
+    )[1];
+    const expected = crypto
+      .createHash("sha1")
+      .update(fs.readFileSync(`src/${file}`))
+      .digest("hex")
+      .slice(0, 8);
+    expect(stamped, file).toBe(expected);
+  }
+  // Each sheet is linked in its own right. An @import would hide fonts.css
+  // behind style.css and put a second round trip in front of the first paint.
+  expect(
+    await page.evaluate(
+      () => document.querySelectorAll('link[rel="stylesheet"]').length,
+    ),
+  ).toBe(2);
 });
 
 test("the nav is a hamburger on a phone and a row on a desktop", async ({
