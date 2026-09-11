@@ -368,7 +368,7 @@ function datesBetween(from, to) {
  * to a season either side of the run's own start so a misread year cannot put
  * a show in 2027.
  *
- * A Play, A Pie and A Pint instead names a pattern: "Monday – Saturday 1pm"
+ * A Play, a Pie and a Pint instead names a pattern: "Monday – Saturday 1pm"
  * against a Monday to Saturday run describes every performance in it without
  * listing one, and a reader wants to know it is on the Thursday. That is only
  * expanded where the run has an end date to expand between, because a weekly

@@ -152,9 +152,8 @@
   {
     "id": "oran-mor-transparent",
     "title": "Transparent",
-    "venue": "Òran Mór",
+    "venue": "A Play, a Pie and a Pint",
     "venueId": "oran-mor",
-    "season": "A Play, A Pie and A Pint",
     "date": "2026-09-07",
     "time": "13:00",
     "endDate": "2026-09-12",
@@ -306,78 +305,6 @@
     "id": "kings-burlesque-the-musical",
     "checkedAt": "2026-09-10",
     "form": "musical"
-  },
-  {
-    "id": "tron-community-ensemble-18-recruitment-workshop",
-    "title": "Community Ensemble 18+ | Recruitment Workshop",
-    "venue": "Tron Theatre",
-    "venueId": "tron",
-    "date": "2026-09-10",
-    "time": "19:00",
-    "endDate": null,
-    "type": "community",
-    "tags": [
-      "workshop"
-    ],
-    "description": "Our Community Ensemble is for anyone interested in practically exploring the themes, content and creation of the shows which make up the Tron Theatre programme. Each term is fun and varied! Our activities this year has included attending a range of shows at the Tron, exploring the text from plays …...",
-    "ticketUrl": "https://www.tron.co.uk/shows/community-ensemble-18-recruitment-workshop-3/",
-    "image": "/images/f01f4a2e2107b6497b47.webp",
-    "performances": [
-      {
-        "date": "2026-09-10",
-        "time": "19:00"
-      }
-    ],
-    "pricing": {
-      "from": 0,
-      "to": null,
-      "concession": null,
-      "concessionTo": null,
-      "free": true,
-      "payWhatYouLike": false,
-      "text": "Free but Ticketed",
-      "notes": "Free but Ticketed",
-      "read": "model"
-    },
-    "duration": 120,
-    "checkedAt": "2026-09-10",
-    "form": "workshop"
-  },
-  {
-    "id": "tramway-oidhche-nam-b-rd-poetry-in-art-and-sound",
-    "title": "Oidhche nam Bàrd - Poetry in Art and Sound",
-    "venue": "Tramway",
-    "venueId": "tramway",
-    "date": "2026-09-10",
-    "time": "19:30",
-    "endDate": null,
-    "type": "professional",
-    "tags": [
-      "spoken-word"
-    ],
-    "description": "This unique event will weave together Gaelic voices of the past and the words of our greatest living poets, presented through live performance, music, and visual projection. Welcoming Gaelic speakers and non-Gaelic speakers alike, all poems read will be accompanied by on-screen english translations.",
-    "ticketUrl": "https://www.tramway.org/event/92566702-3c0b-4861-b502-b44e01077967/",
-    "image": "/images/0328104227675f3e819d.webp",
-    "performances": [
-      {
-        "date": "2026-09-10",
-        "time": "19:30"
-      }
-    ],
-    "pricing": {
-      "from": 20,
-      "to": null,
-      "concession": 12,
-      "concessionTo": null,
-      "free": false,
-      "payWhatYouLike": false,
-      "text": "£20/£12",
-      "notes": "Bookings subject to transaction fees: £1.50 online, £1.75 by phone.",
-      "read": "model"
-    },
-    "scheduleText": "7.30pm - 9.00pm",
-    "checkedAt": "2026-09-10",
-    "form": "spoken-word"
   },
   {
     "id": "glad-cafe-acid-cabaret",
@@ -563,9 +490,8 @@
   {
     "id": "oran-mor-feel-good",
     "title": "Feel_Good",
-    "venue": "Òran Mór",
+    "venue": "A Play, a Pie and a Pint",
     "venueId": "oran-mor",
-    "season": "A Play, A Pie and A Pint",
     "date": "2026-09-14",
     "time": "13:00",
     "endDate": "2026-09-19",
@@ -1294,9 +1220,8 @@
   {
     "id": "oran-mor-the-whaler-s-wife",
     "title": "The Whaler’s Wife",
-    "venue": "Òran Mór",
+    "venue": "A Play, a Pie and a Pint",
     "venueId": "oran-mor",
-    "season": "A Play, A Pie and A Pint",
     "date": "2026-09-21",
     "time": "13:00",
     "endDate": "2026-09-26",
@@ -1825,9 +1750,8 @@
   {
     "id": "oran-mor-a-slice-of-the-pie",
     "title": "A Slice of The Pie",
-    "venue": "Òran Mór",
+    "venue": "A Play, a Pie and a Pint",
     "venueId": "oran-mor",
-    "season": "A Play, A Pie and A Pint",
     "date": "2026-09-28",
     "time": null,
     "endDate": null,
@@ -1856,9 +1780,8 @@
   {
     "id": "oran-mor-whaur-s-yer-wullie-shakespeare-noo",
     "title": "Whaur’s Yer Wullie Shakespeare Noo?",
-    "venue": "Òran Mór",
+    "venue": "A Play, a Pie and a Pint",
     "venueId": "oran-mor",
-    "season": "A Play, A Pie and A Pint",
     "date": "2026-09-28",
     "time": "13:00",
     "endDate": "2026-10-03",
@@ -2434,9 +2357,8 @@
   {
     "id": "oran-mor-contact",
     "title": "Contact",
-    "venue": "Òran Mór",
+    "venue": "A Play, a Pie and a Pint",
     "venueId": "oran-mor",
-    "season": "A Play, A Pie and A Pint",
     "date": "2026-10-05",
     "time": "13:00",
     "endDate": "2026-10-10",
@@ -2988,9 +2910,8 @@
   {
     "id": "oran-mor-bottoms-dream",
     "title": "Bottom's Dream",
-    "venue": "Òran Mór",
+    "venue": "A Play, a Pie and a Pint",
     "venueId": "oran-mor",
-    "season": "A Play, A Pie and A Pint",
     "date": "2026-10-12",
     "time": "13:00",
     "endDate": "2026-10-17",
@@ -3611,9 +3532,8 @@
   {
     "id": "oran-mor-lune",
     "title": "Lune",
-    "venue": "Òran Mór",
+    "venue": "A Play, a Pie and a Pint",
     "venueId": "oran-mor",
-    "season": "A Play, A Pie and A Pint",
     "date": "2026-10-19",
     "time": "13:00",
     "endDate": "2026-10-24",
@@ -4290,9 +4210,8 @@
   {
     "id": "oran-mor-badhbh-shith-and-the-storytellers",
     "title": "Badhbh-Shith and The Storytellers",
-    "venue": "Òran Mór",
+    "venue": "A Play, a Pie and a Pint",
     "venueId": "oran-mor",
-    "season": "A Play, A Pie and A Pint",
     "date": "2026-10-26",
     "time": "13:00",
     "endDate": "2026-10-31",
@@ -5025,9 +4944,8 @@
   {
     "id": "oran-mor-zamboni",
     "title": "Zamboni",
-    "venue": "Òran Mór",
+    "venue": "A Play, a Pie and a Pint",
     "venueId": "oran-mor",
-    "season": "A Play, A Pie and A Pint",
     "date": "2026-11-02",
     "time": "13:00",
     "endDate": "2026-11-07",
@@ -5267,9 +5185,8 @@
   {
     "id": "oran-mor-making-way",
     "title": "Making Way",
-    "venue": "Òran Mór",
+    "venue": "A Play, a Pie and a Pint",
     "venueId": "oran-mor",
-    "season": "A Play, A Pie and A Pint",
     "date": "2026-11-09",
     "time": "13:00",
     "endDate": "2026-11-14",
@@ -5605,9 +5522,8 @@
   {
     "id": "oran-mor-dead-husbands-club",
     "title": "Dead Husbands Club",
-    "venue": "Òran Mór",
+    "venue": "A Play, a Pie and a Pint",
     "venueId": "oran-mor",
-    "season": "A Play, A Pie and A Pint",
     "date": "2026-11-16",
     "time": "13:00",
     "endDate": "2026-11-21",

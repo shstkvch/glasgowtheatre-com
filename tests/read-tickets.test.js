@@ -199,7 +199,7 @@ test("only listings with wording nobody can parse are sent to the model", () => 
 test("the prompt carries the wording and the run, and nothing else", () => {
   const text = promptText({
     title: "Transparent",
-    venue: "Òran Mór",
+    venue: "A Play, a Pie and a Pint",
     date: "2026-09-07",
     endDate: "2026-09-12",
     pricing: { text: "Monday: £17" },

@@ -26,7 +26,7 @@ Local browser tests use installed Google Chrome. CI installs Playwright Chromium
 
 - **Packing.** Overlapping runs at one venue stack onto extra tracks within the same lane. A run reserves at least five days of its track even if it is a single night, so a one-night show's title has somewhere to sit; that is why a lane can have more tracks than a naive reading of the dates suggests.
 - **Clipping.** A run that started before the window, or carries on past its far edge, is drawn to the edge with a flat end rather than a rounded one, so a bar never claims to begin or finish where it does not.
-- **Lane names.** Where every listing in a lane shares a season the lane takes the season's name and the venue drops to the line below — the Òran Mór lane reads "A Play, A Pie and A Pint".
+- **Lane names.** Where every listing in a lane shares a season the lane takes the season's name and the venue drops to the line below; otherwise the lane carries the venue's own name.
 - **Colour.** Each venue wears its own brand colour, listed with its source in `VENUE_COLOURS` in `build.js`. Bar titles are drawn in whichever house ink is legible on that colour, and a colour that clears neither is nudged the smallest step towards black or white that works. The build fails rather than publish a title nobody can read, and a browser test measures the rendered contrast.
 
 The main navigation is a `<details>` disclosure, like the filter panel. Below 720px it collapses behind a hamburger and opens as a full-width panel with 16px links and 44px tap targets; above it, `display: contents` drops the disclosure out of the layout and the links are a row again, with the toggle hidden. It is rendered open, so without JavaScript every link is still there — script collapses it on a phone, closes it on Escape or a tap outside, and reopens it if the window widens.
@@ -57,7 +57,7 @@ The card title and the calendar bar both open it. The **Tickets** button and the
 
 A card and a calendar bar each carry one line — "From £18 (conc. from £5)" and "7.30pm & matinees". Both come from what the venue published, and where nothing was published the site says so rather than leaving a gap that reads as free.
 
-**Where the numbers come from.** Four venues publish machine-readable prices and times, and those are used in preference to anything else: the Citizens' schedule lists every performance with its time, its access provision and what is happening around it; ATG and Trafalgar emit one structured-data block per performance carrying the cheapest seat still on sale; the Tron's prices live in its Spektrix box office rather than on its website, where the price column in the performance table is commented out and reads "From £0.00". Tramway, Òran Mór, Platform, Cottiers and the Glad Café publish a sentence instead.
+**Where the numbers come from.** Four venues publish machine-readable prices and times, and those are used in preference to anything else: the Citizens' schedule lists every performance with its time, its access provision and what is happening around it; ATG and Trafalgar emit one structured-data block per performance carrying the cheapest seat still on sale; the Tron's prices live in its Spektrix box office rather than on its website, where the price column in the performance table is commented out and reads "From £0.00". Tramway, A Play, a Pie and a Pint, Platform, Cottiers and the Glad Café publish a sentence instead.
 
 **Live prices.** ATG and Trafalgar quote the cheapest seat *still on sale*, fees included, which moves as a run sells — a nearly sold-out night can read £110. That is true and worth knowing, so it is published, with the show page saying which day the figure was read.
 
@@ -69,7 +69,7 @@ A card and a calendar bar each carry one line — "From £18 (conc. from £5)" a
 
 There is no shared format to parse. Eleven venues write eleven ways: `£14 - £43.50`, `£20/£12`, `Previews: £16 | Main Run: £19, £23 or £26`, `£10.50 (standard) | £7 (concession) | £6`, `Monday: £17 / Tuesday-Friday: £19 / Saturday: £22.50`, `Tickets £5-£20 (sliding scale)`, `Pay-What-You-Like`. A regular expression can be made to fit all seven, and then a venue rewrites one line and it quietly returns the wrong number — which is worse than none, because a wrong price is a promise the site cannot keep.
 
-It reads times the same way. "Monday – Saturday 1pm" against a Monday-to-Saturday run names every performance in it without listing one, so A Play, A Pie and A Pint gets a date for each day with that day's own price against it. "Fri 2 Oct @ 7pm & Sat 3 Oct @ 2pm & 7pm" is three performances on two days, and the second day was missing from Platform's own date range until the reading found it. "Day & evening shows" names nothing, and produces nothing.
+It reads times the same way. "Monday – Saturday 1pm" against a Monday-to-Saturday run names every performance in it without listing one, so A Play, a Pie and a Pint gets a date for each day with that day's own price against it. "Fri 2 Oct @ 7pm & Sat 3 Oct @ 2pm & 7pm" is three performances on two days, and the second day was missing from Platform's own date range until the reading found it. "Day & evening shows" names nothing, and produces nothing.
 
 Nothing the model returns is trusted on sight. A concession dearer than the full price, a range that runs backwards, a price no Glasgow theatre would charge, a date the run cannot reach, anything that is not a 24-hour time — all dropped rather than corrected. A pattern is never expanded across a run with no end date, because one lonely Thursday would read as a whole term. And the venue's own wording is never rewritten: `pricing.text` is what a show page quotes.
 
@@ -93,11 +93,11 @@ It fails open. A listing with no verdict — the API was down, the response was 
 
 Set `OPENROUTER_API_KEY` in `.env` (see `.env.example`), or `OPENROUTER_MODEL` to use a different model. Without a key, or if the API fails, tagging falls back to keyword matching and exits successfully — it never breaks a build. Run `npm run tag -- --dry-run` to preview changes, or `--retag` to ignore the cache.
 
-Òran Mór's lunchtime season carries `season: "A Play, A Pie and A Pint"`, which is what a card shows instead of the building name. The label still links to the Òran Mór venue page.
+A Play, a Pie and a Pint is listed as a venue in its own right rather than as Òran Mór, the building it runs in, because that is the name its audience knows. Its pages still live under `/venues/oran-mor.html`, so older links keep working.
 
 ## Refreshing and images
 
-`scripts/scrape-events.js` reads eleven sources, collecting each listing's dates, blurb, artwork and — where the source publishes them in a machine-readable form — its prices and performance times: Citizens Theatre, Tron, Tramway, A Play, A Pie and A Pint, The Glad Café, the King's, Theatre Royal, the Pavilion, Platform, Cottiers and The Old Hairdressers.
+`scripts/scrape-events.js` reads eleven sources, collecting each listing's dates, blurb, artwork and — where the source publishes them in a machine-readable form — its prices and performance times: Citizens Theatre, Tron, Tramway, A Play, a Pie and a Pint, The Glad Café, the King's, Theatre Royal, the Pavilion, Platform, Cottiers and The Old Hairdressers.
 
 The King's and Theatre Royal are both ATG houses and share one parser, `scrapeATG`, which walks the paginated what's-on URLs that ATG's robots.txt explicitly allows and reads the listings out of the React Server Component payload. The Pavilion's own domain redirects to Trafalgar's platform, whose payload carries an ISO `startDate`. Platform publishes no year on a listing, so the year is read from the `evmon-October-2026` class names on each item. Cottiers is a WP Event Manager install. The Old Hairdressers publishes neither meta description nor category, so its blurb comes from the longest paragraph on the event page.
 

@@ -9,7 +9,7 @@
  * 1. Citizens Theatre — https://citz.co.uk/whats-on/
  * 2. Tron Theatre — https://www.tron.co.uk/whats-on/
  * 3. Tramway — https://www.tramway.org/whats-on
- * 4. Oran Mor — https://oran-mor.co.uk/events/
+ * 4. A Play, a Pie and a Pint — https://playpiepint.com/plays/
  * 5. The Glad Cafe — https://www.thegladcafe.co.uk/whats-on/
  * 6. Eventbrite Glasgow Theatre — https://www.eventbrite.co.uk/d/united-kingdom--glasgow/theatre/
  *
@@ -966,7 +966,7 @@ async function scrapeTramway() {
 }
 
 async function scrapePlayPiePint() {
-  console.log('\n🎭 Scraping A Play, A Pie and A Pint (Oran Mor)...');
+  console.log('\n🎭 Scraping A Play, a Pie and a Pint...');
   // PPAP has its own dedicated website at playpiepint.com
   const events = [];
 
@@ -1037,7 +1037,7 @@ async function scrapePlayPiePint() {
             const { startDate, endDate } = parseDateRange(eventDateText);
 
             if (startDate) {
-              // A Play, A Pie and A Pint prices by the day of the week and
+              // A Play, a Pie and a Pint prices by the day of the week and
               // says so in prose — "Monday: £17 / Tuesday-Friday: £19 /
               // Saturday: £22.50" — with the pie and the drink in the price.
               const times = blockText($page, $page('.opening-times')) || null;
@@ -1049,7 +1049,7 @@ async function scrapePlayPiePint() {
                 endDate,
                 time: parseTime($page('.opening-times').first().text().split('(')[0]),
                 image: show.image,
-                description: description || `A Play, A Pie and A Pint: ${show.title} at Oran Mor, Glasgow.`,
+                description: description || `A Play, a Pie and a Pint: ${show.title}, Glasgow.`,
                 scheduleText: times,
               };
               attachPricing(listing, readPricing(priceText), {
@@ -1072,10 +1072,10 @@ async function scrapePlayPiePint() {
       .map((e) => ({
         id: makeId('oran-mor', e.title),
         title: e.title,
-        venue: 'Òran Mór',
+        // The audience knows the programme by name rather than by the
+        // building it runs in, so the programme is the venue here.
+        venue: 'A Play, a Pie and a Pint',
         venueId: 'oran-mor',
-        // The audience knows this season by name, not by the building it runs in.
-        season: 'A Play, A Pie and A Pint',
         date: e.date,
         time: e.time || null,
         endDate: e.endDate,
@@ -1088,7 +1088,7 @@ async function scrapePlayPiePint() {
         ...(e.scheduleText ? { scheduleText: e.scheduleText } : {}),
       }));
 
-    console.log(`  ✓ ${results.length} PPAP shows from Oran Mor`);
+    console.log(`  ✓ ${results.length} A Play, a Pie and a Pint shows`);
     return results;
   } catch (err) {
     console.error(`  ✗ PPAP scrape failed: ${err.message}`);

@@ -144,7 +144,7 @@ test("filters collapse on phones and stay open on desktop", async ({
   await expect(page.getByLabel("Search shows")).toBeVisible();
 });
 
-test("Play, Pie and a Pint shows are labelled by their season, not the building", async ({
+test("Play, Pie and a Pint shows are labelled by the programme, not the building", async ({
   page,
 }) => {
   await page.goto("/?venue=oran-mor");
@@ -152,7 +152,7 @@ test("Play, Pie and a Pint shows are labelled by their season, not the building"
   await expect(cards.first()).toBeVisible();
   const labels = await cards.locator(".card-topline > a").allTextContents();
   expect(labels.length).toBeGreaterThan(0);
-  expect([...new Set(labels)]).toEqual(["A Play, A Pie and A Pint"]);
+  expect([...new Set(labels)]).toEqual(["A Play, a Pie and a Pint"]);
   // The label still leads to the venue it runs in.
   await expect(cards.first().locator(".card-topline > a")).toHaveAttribute(
     "href",

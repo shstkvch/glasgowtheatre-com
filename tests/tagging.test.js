@@ -68,17 +68,17 @@ test("the cache key follows the text, so an edited description is reclassified",
   assert.notEqual(cacheKey(event), cacheKey({ ...event, description: "D" }));
 });
 
-test("a season name is searchable, so 'play pie' finds the lunchtime shows", () => {
+test("a season name is searchable, so a festival name finds its shows", () => {
   const event = {
-    id: "ppp",
+    id: "season-show",
     title: "The Whaler’s Wife",
-    venue: "Òran Mór",
-    venueId: "oran-mor",
-    season: "A Play, A Pie and A Pint",
+    venue: "Tron Theatre",
+    venueId: "tron",
+    season: "Mayfesto",
     date: "2026-10-01",
-    tags: ["play", "lunchtime", "a-play-a-pie-a-pint"],
+    tags: ["play"],
   };
-  const found = filterEvents([event], { today: "2026-09-01", query: "a play, a pie" });
+  const found = filterEvents([event], { today: "2026-09-01", query: "mayfesto" });
   assert.equal(found.length, 1);
 });
 
