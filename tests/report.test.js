@@ -124,3 +124,62 @@ test("the report says what reading ticket prices cost, including nothing", () =>
     /did not run/,
   );
 });
+
+test("the tagging line says how many listings went unclassified", () => {
+  // It reported the pending count either way, so a run that classified five of
+  // seventeen and guessed at the rest read exactly like a clean one.
+  const line = taggingLine(
+    status({
+      tagging: {
+        at: "2026-09-10T05:18:35Z",
+        listingsPending: 17,
+        listingsTagged: 5,
+        totalTokens: 1370,
+        costUsd: 0.0002,
+      },
+    }),
+  );
+  assert.match(line, /5 of 17 listings/);
+});
+
+test("keyword-guessed listings are named in the morning email", () => {
+  // A guess is not visibly a guess on the site: three gigs were published as
+  // plays and nothing said they had never been classified.
+  const lines = summaryLines(
+    158,
+    status({
+      tagging: {
+        at: "2026-09-10T05:18:35Z",
+        listingsPending: 17,
+        listingsTagged: 5,
+        totalTokens: 1370,
+        costUsd: 0.0002,
+        fellBack: [
+          { title: "Locust + Mock Uncle", venue: "The Glad Cafe" },
+          { title: "Ezra Furman Doing What She Wants.", venue: "Cottiers" },
+        ],
+      },
+    }),
+  ).join("\n");
+  assert.match(lines, /keyword-guessed: 2/);
+  assert.match(lines, /Locust \+ Mock Uncle/);
+  assert.match(lines, /Ezra Furman/);
+});
+
+test("a clean tagging run says nothing about guesses", () => {
+  const lines = summaryLines(
+    158,
+    status({
+      tagging: {
+        at: "2026-09-10T05:18:35Z",
+        listingsPending: 5,
+        listingsTagged: 5,
+        totalTokens: 1370,
+        costUsd: 0.0002,
+        fellBack: [],
+      },
+    }),
+  ).join("\n");
+  assert.match(lines, /for 5 listings/);
+  assert.doesNotMatch(lines, /keyword-guessed/);
+});

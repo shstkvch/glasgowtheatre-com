@@ -32,8 +32,20 @@ const STRUCTURAL = new Set(["a-play-a-pie-a-pint", "lunchtime", "scratch"]);
 
 const ALLOWED = new Set(Object.keys(FORMS));
 
-/** Conservative fallback when no model classification is available. */
-function fallbackForm(event) {
+/**
+ * Conservative fallback when no model classification is available.
+ *
+ * The last resort follows the venue. At a dedicated theatre everything staged
+ * is theatre, so a listing the keywords cannot place is most likely a play. At
+ * a venue that programmes more than theatre the same guess is wrong the other
+ * way round: most of what the Glad Café and the Old Hairdressers put on is a
+ * gig, and "play" files a band at the top of the plays filter. Three of them
+ * were published that way when one tagging request failed to come back.
+ *
+ * A guess is still a guess either way. This only makes it wrong in the
+ * direction the venue's own programme points.
+ */
+function fallbackForm(event, { mixedProgramme = false } = {}) {
   if (ALLOWED.has(event.form)) return event.form;
   const title = event.title || "";
   const text = `${title} ${event.description || ""}`.toLowerCase();
@@ -52,13 +64,13 @@ function fallbackForm(event) {
   if (/\b(play|drama|theatre)\b/.test(text)) return "play";
   if (/\b(concert|gig|live music)\b/.test(text)) return "music";
   if (/\b(fair|convention|community festival)\b/.test(text)) return "community-event";
-  return "play";
+  return mixedProgramme ? "music" : "play";
 }
 
 /** Keep source season metadata searchable, separate from the single art form. */
-function combine(event, form) {
+function combine(event, form, options) {
   const structural = (event.tags || []).filter((tag) => STRUCTURAL.has(tag));
-  const valid = ALLOWED.has(form) ? form : fallbackForm(event);
+  const valid = ALLOWED.has(form) ? form : fallbackForm(event, options);
   return [...new Set([valid, ...structural])];
 }
 

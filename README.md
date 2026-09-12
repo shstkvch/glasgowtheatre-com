@@ -89,6 +89,16 @@ The decision is made by the same model call that assigns tags, which returns `in
 
 It fails open. A listing with no verdict — the API was down, the response was malformed — stays on the site; an outage must never quietly empty the listings. Every exclusion is logged with its reason and reported in the daily email, so a wrong call surfaces the next morning rather than vanishing. A wrongly dropped show can be forced back through `data/manual-events.json`, which overrides everything.
 
+### Getting an answer at all
+
+Failing open costs something. A listing the model never judged keeps its keyword-guessed form, and a guess does not look like a guess on the site: three gigs at the Glad Café, the Old Hairdressers and Cottiers were published as plays because one request in a batch of twelve did not come back. Nothing retried it, and the morning email reported the whole run as tagged.
+
+So a batch is asked about up to three times, and then split in half and each half asked about again. A retry clears the transient failure — a timeout, a 429, a bad gateway; halving separates the other kind, one listing the model chokes on, so eleven are not punished for the twelfth. Once two groups have been abandoned the run stops asking altogether, because during an outage waiting out the retries on every batch keeps a build going for an hour to learn what the first two already said.
+
+A reply that skips a listing now counts as a failure rather than a success with a hole in it. It used to pass silently: `byIndex` left the unanswered listings without a verdict while the run logged a tick and billed for the batch.
+
+What the keyword fallback guesses when it cannot place a listing follows the venue. At a dedicated theatre everything staged is theatre, so `play` is a fair last resort; at a venue that programmes more than theatre most of what it puts on is a gig, so the same guess is wrong the other way round and the last resort is `music`. It is still a guess — which is why the daily email now names every listing that took one, alongside the exclusions, and says how many of the listings put to the model it actually answered about.
+
 `talk`, `workshop` and `tour` are forms for events that are not performances to watch: a discussion about a play is a talk. `a-play-a-pie-a-pint`, `lunchtime` and `scratch` remain searchable source metadata, but do not appear as art-form filters.
 
 Set `OPENROUTER_API_KEY` in `.env` (see `.env.example`), or `OPENROUTER_MODEL` to use a different model. Without a key, or if the API fails, tagging falls back to keyword matching and exits successfully — it never breaks a build. Run `npm run tag -- --dry-run` to preview changes, or `--retag` to ignore the cache.

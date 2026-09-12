@@ -34,6 +34,11 @@ const USAGE_FILE = path.join(DATA_DIR, "tag-usage.json");
 const MODEL = process.env.OPENROUTER_MODEL || "deepseek/deepseek-v4-flash";
 const API_URL = "https://openrouter.ai/api/v1/chat/completions";
 const BATCH_SIZE = 12;
+// Tries per group before it is halved, and per half before it is given up on.
+const ATTEMPTS = 3;
+const RETRY_DELAY_MS = 2000;
+// Groups abandoned before the run stops asking at all. See askAbout.
+const GIVE_UP_AFTER = 2;
 const readJSON = (file, fallback) => {
   try {
     return JSON.parse(fs.readFileSync(file, "utf8"));
@@ -228,12 +233,96 @@ async function tagBatch(batch, apiKey) {
   if (!Array.isArray(results)) throw new Error("Response had no results array");
 
   const byIndex = new Map(results.map((r) => [r.index, r]));
+  const verdicts = batch.map((_, i) => byIndex.get(i));
+
+  // A response missing an index is a failure, not a success with a hole in it.
+  // It used to pass silently: the run logged a tick and billed for the batch
+  // while the unanswered listings took a keyword guess, which is how three
+  // gigs came to be published as plays.
+  const missing = verdicts.filter((verdict) => !verdict).length;
+  if (missing) {
+    throw new Error(
+      `Model answered ${batch.length - missing} of ${batch.length} listings`,
+    );
+  }
+
   return {
-    verdicts: batch.map((_, i) => byIndex.get(i) || null),
+    verdicts,
     cost: body.usage?.cost || 0,
     promptTokens: body.usage?.prompt_tokens || 0,
     completionTokens: body.usage?.completion_tokens || 0,
   };
+}
+
+const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+/**
+ * Ask about a group of listings, and keep asking before giving up on them.
+ *
+ * One request that does not come back used to cost every listing in its batch
+ * a classification, and the keyword fallback's last resort is a guess: twelve
+ * listings fell back because one call failed, and the three at music venues
+ * were published as plays.
+ *
+ * So a failed group is retried, and then halved. A retry clears the transient
+ * case - a timeout, a 429, a bad gateway. Halving separates the other one, a
+ * single listing the model chokes on, so eleven are not punished for the
+ * twelfth. Halves are not halved again: past that the cause is not the batch.
+ *
+ * Verdicts are written straight into the cache. Listings nothing could be got
+ * for are left out of it, and picked up as fallbacks by the caller.
+ */
+async function askAbout(group, apiKey, label, ctx, canSplit = true) {
+  // During an outage every group fails the same way, and waiting out the
+  // retries on each of fourteen batches would keep the build going for an
+  // hour to learn what the first two already said.
+  if (ctx.abandoned >= GIVE_UP_AFTER) return;
+
+  let error;
+  for (let attempt = 1; attempt <= ATTEMPTS; attempt++) {
+    try {
+      const result = await tagBatch(group, apiKey);
+      ctx.cost += result.cost;
+      ctx.promptTokens += result.promptTokens;
+      ctx.completionTokens += result.completionTokens;
+      group.forEach((event, i) => {
+        const verdict = result.verdicts[i];
+        if (!ALLOWED.has(verdict.form)) return;
+        ctx.cache[cacheKey(event)] = {
+          form: verdict.form,
+          inScope: verdict.inScope !== false,
+          scopeReason: (verdict.scopeReason || "").trim(),
+          model: MODEL,
+          taggedAt: TODAY_ISO,
+        };
+      });
+      const again = attempt > 1 ? ` (attempt ${attempt})` : "";
+      const plural = group.length === 1 ? "" : "s";
+      console.log(`${label} ✓ ${group.length} listing${plural}${again}`);
+      return;
+    } catch (err) {
+      error = err;
+      console.log(`${label} ✗ attempt ${attempt}/${ATTEMPTS}: ${err.message}`);
+      const delay = ctx.retryDelayMs ?? RETRY_DELAY_MS;
+      if (attempt < ATTEMPTS) await sleep(delay * attempt);
+    }
+  }
+
+  if (canSplit && group.length > 1) {
+    const half = Math.ceil(group.length / 2);
+    console.log(`${label} splitting ${group.length} listings and asking again`);
+    await askAbout(group.slice(0, half), apiKey, `${label}a`, ctx, false);
+    await askAbout(group.slice(half), apiKey, `${label}b`, ctx, false);
+    return;
+  }
+
+  ctx.abandoned += 1;
+  console.log(`${label} ✗ gave up: ${error.message}`);
+  if (ctx.abandoned === GIVE_UP_AFTER) {
+    console.log(
+      `  ! ${GIVE_UP_AFTER} groups abandoned — not asking about the rest of this run`,
+    );
+  }
 }
 
 async function main() {
@@ -262,41 +351,40 @@ async function main() {
     `  ${events.length - pending.length} already tagged, ${pending.length} to tag`,
   );
 
-  let cost = 0;
-  let promptTokens = 0;
-  let completionTokens = 0;
-  let failed = false;
+  const ctx = {
+    cache,
+    cost: 0,
+    promptTokens: 0,
+    completionTokens: 0,
+    abandoned: 0,
+  };
 
   if (pending.length && !apiKey) {
     console.log("  ! OPENROUTER_API_KEY is not set — using keyword fallback");
-    failed = true;
   }
 
   if (pending.length && apiKey) {
+    const batches = Math.ceil(pending.length / BATCH_SIZE);
     for (let i = 0; i < pending.length; i += BATCH_SIZE) {
       const batch = pending.slice(i, i + BATCH_SIZE);
-      const label = `  batch ${Math.floor(i / BATCH_SIZE) + 1}/${Math.ceil(pending.length / BATCH_SIZE)}`;
-      try {
-        const result = await tagBatch(batch, apiKey);
-        batch.forEach((event, j) => {
-          const verdict = result.verdicts[j];
-          if (!verdict || !ALLOWED.has(verdict.form)) return;
-          cache[cacheKey(event)] = {
-            form: verdict.form,
-            inScope: verdict.inScope !== false,
-            scopeReason: (verdict.scopeReason || "").trim(),
-            model: MODEL,
-            taggedAt: TODAY_ISO,
-          };
-        });
-        cost += result.cost;
-        promptTokens += result.promptTokens;
-        completionTokens += result.completionTokens;
-        console.log(`${label} ✓ ${batch.length} listings`);
-      } catch (err) {
-        failed = true;
-        console.log(`${label} ✗ ${err.message} — keyword fallback for these`);
-      }
+      const label = `  batch ${Math.floor(i / BATCH_SIZE) + 1}/${batches}`;
+      await askAbout(batch, apiKey, label, ctx);
+    }
+  }
+
+  // What the run actually managed, read back off the cache rather than
+  // counted along the way, so it is the same condition the forms are chosen
+  // by below and cannot drift from it.
+  const fellBack = pending.filter((event) => {
+    const hit = cache[cacheKey(event)];
+    return !hit || !ALLOWED.has(hit.form);
+  });
+  if (fellBack.length) {
+    console.log(
+      `\n  ! ${fellBack.length} of ${pending.length} listings were never classified — keyword fallback:`,
+    );
+    for (const event of fellBack) {
+      console.log(`    - ${event.title.slice(0, 44).padEnd(44)} ${event.venue}`);
     }
   }
 
@@ -306,8 +394,12 @@ async function main() {
     const hit = cache[cacheKey(event)];
     if (hit && ALLOWED.has(hit.form)) fromModel++;
     else fromKeywords++;
-    const form = hit && ALLOWED.has(hit.form) ? hit.form : fallbackForm(event);
-    return { ...event, form, tags: combine(event, form) };
+    // The venue decides what an unclassified listing is guessed to be, so a
+    // gig at a music venue is not filed as a play.
+    const options = { mixedProgramme: MIXED_PROGRAMME.has(event.venueId) };
+    const form =
+      hit && ALLOWED.has(hit.form) ? hit.form : fallbackForm(event, options);
+    return { ...event, form, tags: combine(event, form, options) };
   });
 
   // Fail open. A listing with no verdict — the API was down, the response was
@@ -346,17 +438,26 @@ async function main() {
     );
   }
   if (changed.length > 15) console.log(`    …and ${changed.length - 15} more`);
+  // listingsTagged is what the model actually answered about, not what was
+  // put to it. It counted the pending listings before, so a run that asked
+  // about seventeen and heard back about five still reported seventeen, and
+  // the twelve keyword guesses went unmentioned in the morning email.
   const usage = {
     at: new Date().toISOString(),
     model: MODEL,
-    listingsTagged: apiKey ? pending.length : 0,
-    promptTokens,
-    completionTokens,
-    totalTokens: promptTokens + completionTokens,
-    costUsd: cost,
+    listingsPending: apiKey ? pending.length : 0,
+    listingsTagged: apiKey ? pending.length - fellBack.length : 0,
+    promptTokens: ctx.promptTokens,
+    completionTokens: ctx.completionTokens,
+    totalTokens: ctx.promptTokens + ctx.completionTokens,
+    costUsd: ctx.cost,
     excluded,
+    fellBack: fellBack.map((event) => ({
+      title: event.title,
+      venue: event.season || event.venue,
+    })),
   };
-  console.log(`  ${usage.totalTokens} tokens, cost: $${cost.toFixed(5)}`);
+  console.log(`  ${usage.totalTokens} tokens, cost: $${ctx.cost.toFixed(5)}`);
 
   if (dryRun) {
     console.log("\n  (dry run — nothing written)");
@@ -369,7 +470,7 @@ async function main() {
   console.log(
     `\n  ✓ Wrote ${listed.length} listings to ${path.basename(EVENTS_FILE)}`,
   );
-  if (failed) {
+  if (fellBack.length) {
     console.log(
       "  ! Some listings used the keyword fallback. They will be retried on the next run.",
     );
@@ -386,4 +487,14 @@ if (require.main === module) {
   });
 }
 
-module.exports = { FORMS, STRUCTURAL, combine, fallbackForm, cacheKey, needsScopeCheck };
+module.exports = {
+  FORMS,
+  STRUCTURAL,
+  combine,
+  fallbackForm,
+  cacheKey,
+  needsScopeCheck,
+  tagBatch,
+  askAbout,
+  ATTEMPTS,
+};

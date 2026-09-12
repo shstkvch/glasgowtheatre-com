@@ -39,8 +39,10 @@ const BUILT_STATUS = path.join(__dirname, "..", "dist", "data", "status.json");
 // with GBP_PER_USD if it ever drifts far enough to matter.
 const GBP_PER_USD = Number(process.env.GBP_PER_USD || 0.79);
 
-// How many out-of-scope listings to name before summarising the rest.
+// How many out-of-scope listings, and how many keyword-guessed ones, to name
+// before summarising the rest.
 const EXCLUDED_SHOWN = 8;
+const FALLBACK_SHOWN = 8;
 
 const fmtDate = (value) =>
   new Date(value + "T12:00:00Z").toLocaleDateString("en-GB", {
@@ -101,9 +103,36 @@ function taggingLine(status) {
   if (!usage || stale) return "Tagging: did not run \u2014 \u00a30.00";
   const tokens = usage.totalTokens || 0;
   if (!tokens) return "Tagging: nothing new to tag \u2014 \u00a30.00";
-  return `Tagging: ${tokens.toLocaleString("en-GB")} tokens for ${usage.listingsTagged} listing${
-    usage.listingsTagged === 1 ? "" : "s"
+  // Where the model answered about fewer listings than it was asked about,
+  // both numbers are given. One number hid a run that classified five of
+  // seventeen and guessed at the rest.
+  const asked = usage.listingsPending ?? usage.listingsTagged;
+  const answered = usage.listingsTagged;
+  const count = asked > answered ? `${answered} of ${asked}` : `${answered}`;
+  return `Tagging: ${tokens.toLocaleString("en-GB")} tokens for ${count} listing${
+    asked === 1 ? "" : "s"
   } \u2014 ${money(usage.costUsd)}`;
+}
+
+/**
+ * Listings the model was never heard about, which the keyword fallback then
+ * guessed at. A guess is not visibly a guess on the site - a gig the keywords
+ * cannot place is published as a play - so the morning email has to say which
+ * listings are guesses, the way it already says which were left off.
+ */
+function fallbackLines(status) {
+  const fellBack = status?.tagging?.fellBack || [];
+  if (!fellBack.length) return [];
+  const lines = [
+    `Not classified, so keyword-guessed: ${fellBack.length}. Check these.`,
+  ];
+  for (const item of fellBack.slice(0, FALLBACK_SHOWN)) {
+    lines.push(`  \u00b7 ${item.title} \u2014 ${item.venue}`);
+  }
+  if (fellBack.length > FALLBACK_SHOWN) {
+    lines.push(`  \u00b7 \u2026and ${fellBack.length - FALLBACK_SHOWN} more.`);
+  }
+  return lines;
 }
 
 /**
@@ -182,6 +211,7 @@ function summaryLines(total, status) {
     }
   }
 
+  lines.push(...fallbackLines(status));
   lines.push(...troubleLines(status));
   return lines;
 }
@@ -344,4 +374,4 @@ if (require.main === module) {
   });
 }
 
-module.exports = { emailBody, quietBody, summaryLines, taggingLine, ticketsLine, troubleLines, money, when };
+module.exports = { emailBody, quietBody, summaryLines, taggingLine, ticketsLine, troubleLines, fallbackLines, money, when };
