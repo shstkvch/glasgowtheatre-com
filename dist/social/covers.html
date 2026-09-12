@@ -1,0 +1,771 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>What's on 14–20 September — carousel</title>
+<style>
+@font-face { font-family: "Barlow Condensed"; font-weight: 700; src: url(../fonts/font-0.ttf) format("truetype"); }
+@font-face { font-family: "Barlow Condensed"; font-weight: 800; src: url(../fonts/font-1.ttf) format("truetype"); }
+@font-face { font-family: "DM Sans"; font-weight: 400; src: url(../fonts/font-2.ttf) format("truetype"); }
+@font-face { font-family: "DM Sans"; font-weight: 500; src: url(../fonts/font-3.ttf) format("truetype"); }
+@font-face { font-family: "DM Sans"; font-weight: 600; src: url(../fonts/font-4.ttf) format("truetype"); }
+@font-face { font-family: "DM Sans"; font-weight: 700; src: url(../fonts/font-5.ttf) format("truetype"); }
+
+:root {
+  --paper: #f4f3f8;
+  --lilac: #e3ddfa;
+  --blue: #303fce;
+  --ink: #20202c;
+  --muted: #595867;
+  --peach: #f5ab76;
+  --line: #d3d1df;
+  --display: "Barlow Condensed", "Arial Narrow", sans-serif;
+  --body: "DM Sans", Arial, sans-serif;
+  --pad: 76px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: #16161e; font-family: var(--body); color: var(--paper); }
+
+/* The deck is shown at a third size so a whole carousel fits on a screen.
+   ?raw=1 drops the scaling, which is how the slides are screenshotted. */
+.deck { display: flex; flex-wrap: wrap; gap: 40px; padding: 40px; align-items: flex-start; }
+body.preview .deck { zoom: 0.34; }
+.plate { position: relative; }
+.plate > figcaption {
+  position: absolute; top: -30px; left: 0;
+  font: 600 22px/1 var(--body); color: #8b8aa0; letter-spacing: 0.04em;
+}
+body:not(.preview) .plate > figcaption { display: none; }
+
+.slide {
+  width: 1080px; height: 1350px; overflow: hidden; position: relative;
+  background: var(--paper); color: var(--ink);
+  display: flex; flex-direction: column;
+}
+
+/* ------------------------------------------------------------ the cover */
+
+.cover { padding: var(--pad); justify-content: space-between; }
+.cover .eyebrow {
+  font: 600 25px/1 var(--body); letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--blue); margin-bottom: 26px;
+}
+.cover h1 {
+  font: 800 168px/0.84 var(--display); letter-spacing: -0.025em; color: var(--ink);
+}
+
+/* The site's logotype, at the size each cover wants it. Two stacked lines of
+   Barlow Condensed with the blue full stop, exactly as the header sets it —
+   only the dot's size is tied to the logotype's so it scales with it. */
+.brand {
+  font: 800 var(--brand) / 0.82 var(--display); letter-spacing: -0.02em;
+  display: inline-block; color: var(--ink);
+}
+.brand > span { display: block; }
+.brand-dot {
+  color: var(--blue); font: calc(var(--brand) * 0.58) / 1 var(--body);
+  margin-left: calc(var(--brand) * 0.17);
+}
+
+/* masthead: logotype over the headline, the dates below both */
+.cover-masthead { --brand: 76px; }
+.cover-masthead h1 { font-size: 124px; margin-top: 34px; }
+.cover-masthead .dateline {
+  font: 600 32px/1 var(--body); letter-spacing: 0.02em; color: var(--blue); margin-top: 18px;
+}
+
+/* lockup: logotype and dates share a line over a rule */
+.cover-lockup { --brand: 52px; }
+.cover-lockup .lockup-row {
+  display: flex; justify-content: space-between; align-items: flex-end;
+  border-bottom: 2px solid var(--ink); padding-bottom: 22px;
+}
+.cover-lockup .lockup-date {
+  font: 600 30px/1 var(--body); letter-spacing: 0.03em; color: var(--blue);
+}
+.cover-lockup h1 { font-size: 152px; margin-top: 30px; }
+
+/* hero: the logotype is the headline and there is no second type block */
+.cover-hero { --brand: 196px; }
+.cover-hero .dateline {
+  font: 600 38px/1 var(--body); letter-spacing: 0.01em; color: var(--blue); margin-top: 26px;
+}
+
+/* signoff: the headline as it was, the logotype signing off at the foot */
+.cover-signoff { --brand: 44px; }
+.cover-foot.signoff { align-items: center; }
+
+/* ------------------------------------------------ covers led by the artwork */
+
+.pic { padding: 0; --brand: 58px; }
+.pic-head {
+  display: flex; align-items: flex-end; justify-content: space-between; gap: 24px;
+  background: var(--paper); padding: 40px var(--pad) 34px; flex: none;
+}
+.pic-dates {
+  text-align: right; font: 700 30px/1.15 var(--body); color: var(--ink);
+}
+.pic-dates span { display: block; font-weight: 500; color: var(--blue); }
+
+/* The thumbnails sit edge to edge: a gutter would make them nine cards, and
+   the point is one wall. Each caption is on its venue's colour, so the grid
+   carries the same colour key as the calendar does. */
+.cells { list-style: none; display: grid; flex: 1; min-height: 0; }
+.pic-wall .cells { grid-template-columns: repeat(3, 1fr); grid-auto-rows: 1fr; }
+.pic-six .cells { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 1fr; }
+
+.cell { display: flex; flex-direction: column; overflow: hidden; min-height: 0; }
+.cell-art { flex: 1; min-height: 0; background: var(--bar); }
+.cell-art img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.cell-art.whole { background: var(--bar); }
+.cell-art.whole img { object-fit: contain; }
+.cell-none {
+  display: flex; height: 100%; align-items: center; justify-content: center;
+  font: 800 44px/1 var(--display); color: var(--on-bar);
+}
+.cell-cap { background: var(--bar); color: var(--on-bar); padding: 14px 18px 16px; flex: none; }
+.cell-when {
+  font: 700 18px/1 var(--body); letter-spacing: 0.1em; text-transform: uppercase;
+  opacity: 0.82; margin-bottom: 7px;
+}
+.cell-cap h3 {
+  font: 800 34px/0.95 var(--display); letter-spacing: -0.005em;
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+}
+.cell-venue {
+  font: 600 17px/1 var(--body); letter-spacing: 0.06em; text-transform: uppercase;
+  opacity: 0.78; margin-top: 7px;
+}
+.pic-six .cell-cap { padding: 18px 24px 20px; }
+.pic-six .cell-cap h3 { font-size: 46px; }
+.pic-six .cell-when, .pic-six .cell-venue { font-size: 19px; }
+
+.pic-tally {
+  background: var(--ink); color: var(--paper); flex: none;
+  display: flex; justify-content: space-between; align-items: baseline;
+  padding: 22px var(--pad) 24px;
+  font: 500 26px/1 var(--body);
+}
+.pic-tally strong { font-weight: 700; }
+.pic-url { font-weight: 700; color: var(--lilac); }
+
+/* lead: one show at cover size, the rest along the foot */
+.pic-lead .lead-art { position: relative; height: 860px; flex: none; background: var(--bar); }
+.pic-lead .lead-art > img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.pic-lead .lead-art.whole > img { object-fit: contain; }
+.pic-lead .pic-head { position: absolute; top: 0; left: 0; right: 0; }
+.lead-cap {
+  position: absolute; left: 0; right: 0; bottom: 0;
+  background: var(--bar); color: var(--on-bar); padding: 24px var(--pad) 28px;
+}
+.lead-flag {
+  font: 700 24px/1 var(--body); letter-spacing: 0.12em; text-transform: uppercase;
+  opacity: 0.85; margin-bottom: 12px;
+}
+.lead-cap h2 { font: 800 92px/0.9 var(--display); letter-spacing: -0.02em; }
+.lead-venue { font: 600 26px/1 var(--body); letter-spacing: 0.04em; margin-top: 12px; text-transform: uppercase; }
+
+.lead-more { flex: 1; display: flex; flex-direction: column; padding: 26px var(--pad) 0; min-height: 0; }
+.more-label {
+  font: 700 22px/1 var(--body); letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--blue); margin-bottom: 18px; flex: none;
+}
+.strip-cells { list-style: none; display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; flex: 1; min-height: 0; }
+.strip-cells .cell-cap { padding: 10px 12px 12px; }
+.strip-cells .cell-cap h3 { font-size: 25px; -webkit-line-clamp: 2; }
+.strip-cells .cell-when { font-size: 14px; margin-bottom: 5px; }
+.strip-cells .cell-venue { display: none; }
+.pic-foot { font: 500 24px/1 var(--body); color: var(--muted); padding: 20px 0 26px; flex: none; }
+.pic-foot strong { color: var(--ink); font-weight: 700; }
+
+.week-grid { position: relative; margin: 52px 0 0; }
+.days {
+  display: grid; grid-template-columns: repeat(7, 1fr); list-style: none;
+  border-bottom: 2px solid var(--ink); padding-bottom: 10px; margin-bottom: 20px;
+}
+.days li { display: flex; align-items: baseline; gap: 8px; }
+.days li + li { border-left: 1px solid var(--line); padding-left: 12px; }
+.day-name { font: 700 24px/1 var(--body); letter-spacing: 0.1em; color: var(--ink); }
+.day-num { font: 500 24px/1 var(--body); color: var(--muted); }
+
+.tracks { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+.track { position: relative; height: 58px; display: block; }
+.bar {
+  position: absolute; top: 0; height: 58px; border-radius: 10px;
+  left: calc(var(--from) * (100% / 7));
+  width: calc(var(--span) * (100% / 7) - 6px);
+  background: var(--bar); color: var(--on-bar);
+  display: flex; align-items: center; padding: 0 18px;
+}
+.bar.open-left { border-top-left-radius: 0; border-bottom-left-radius: 0; margin-left: -6px; }
+.bar.open-right { border-top-right-radius: 0; border-bottom-right-radius: 0; width: calc(var(--span) * (100% / 7)); }
+.bar-title {
+  font: 700 33px/1 var(--display); letter-spacing: 0.005em;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+/* Too narrow to hold its own name: the bar keeps its true width and the title
+   steps outside it, in page ink rather than in the ink for the colour. Which
+   side it goes depends on where the week still has room. */
+.bar.side-right, .bar.side-left { padding: 0; }
+.bar.side-right .bar-title,
+.bar.side-left .bar-title {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  color: var(--ink); max-width: 620px;
+}
+.bar.side-right .bar-title { left: calc(100% + 16px); }
+.bar.side-left .bar-title { right: calc(100% + 16px); text-align: right; }
+
+.cover-foot {
+  display: flex; justify-content: space-between; align-items: flex-end;
+  border-top: 2px solid var(--ink); padding-top: 22px;
+}
+.tally { font: 500 34px/1 var(--body); color: var(--muted); }
+.tally strong { font-weight: 700; color: var(--ink); }
+.wordmark { font: 700 34px/1 var(--body); color: var(--blue); }
+
+/* ------------------------------------------------------- a show's slide */
+
+.show .art { position: relative; height: 772px; background: var(--lilac); flex: none; }
+.show .art img { width: 100%; height: 100%; object-fit: cover; display: block; }
+/* A venue's artwork is often a banner or a tour poster with the show's name
+   set into it, and a crop to 1080x772 cuts the name in half — "TAM COW". Where
+   scripts/read-artwork.js found a name in the image, it is sat whole on the
+   venue's colour instead of being cropped through. */
+.show .art.whole { background: var(--bar); }
+.show .art.whole img { object-fit: contain; }
+.art-fallback {
+  height: 100%; display: flex; flex-direction: column; justify-content: center;
+  align-items: center; gap: 14px; background: var(--bar); color: var(--on-bar);
+}
+.art-fallback span { font: 600 28px/1 var(--body); letter-spacing: 0.14em; text-transform: uppercase; opacity: 0.75; }
+.art-fallback strong { font: 800 82px/1 var(--display); }
+
+.flag {
+  position: absolute; left: 0; bottom: 0;
+  background: var(--bar); color: var(--on-bar);
+  font: 700 27px/1 var(--body); letter-spacing: 0.1em; text-transform: uppercase;
+  padding: 20px 30px 20px var(--pad);
+}
+
+.panel { flex: 1; padding: 40px var(--pad) var(--pad); display: flex; flex-direction: column; }
+.topline { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 16px; flex-shrink: 0; }
+.venue {
+  font: 700 29px/1 var(--body); letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--bar);
+}
+.form {
+  font: 600 25px/1 var(--body); letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--muted);
+}
+/* The Citz's identity colour is black, which on paper reads as body text
+   rather than as a venue. Its own site does the same thing, so leave it. */
+/* Nothing in the panel shrinks. A flex child at the default flex-shrink: 1
+   gives up box height while its text stays the size it was, so an overlong
+   title used to sit on top of the date with every measurement insisting it
+   fitted. The title is sized to the room instead, by the script below. */
+.show h2 {
+  font: 800 112px/0.88 var(--display); letter-spacing: -0.02em;
+  margin-bottom: auto; padding-bottom: 24px; flex-shrink: 0;
+}
+
+.strip { position: relative; margin-bottom: 26px; flex-shrink: 0; }
+.strip-days {
+  display: grid; grid-template-columns: repeat(7, 1fr); list-style: none;
+  border-top: 2px solid var(--ink); padding-top: 12px;
+}
+.strip-days li { font: 700 25px/1 var(--body); letter-spacing: 0.1em; color: var(--line); }
+.strip-days li.on { color: var(--ink); }
+.strip-bar {
+  display: block; height: 14px; border-radius: 7px; margin-top: 14px;
+  background: var(--bar);
+  margin-left: calc(var(--from) * (100% / 7));
+  width: calc(var(--span) * (100% / 7) - 8px);
+}
+.strip-bar.open-left { border-top-left-radius: 0; border-bottom-left-radius: 0; }
+.strip-bar.open-right { border-top-right-radius: 0; border-bottom-right-radius: 0; width: calc(var(--span) * (100% / 7)); }
+.strip-label { font: 500 31px/1 var(--body); color: var(--muted); margin-top: 18px; }
+
+.facts { display: flex; gap: 18px; align-items: baseline; flex-wrap: wrap; flex-shrink: 0; }
+.facts span { font: 700 37px/1.1 var(--body); color: var(--ink); }
+.facts span + span::before { content: "·"; color: var(--line); margin-right: 18px; }
+.facts .soft { font-weight: 500; color: var(--muted); }
+
+</style>
+</head>
+<body class="preview">
+<div class="deck">
+<figure class="plate"><figcaption>masthead</figcaption><section class="slide cover cover-masthead" id="cover-1" data-name="01-cover-masthead">
+  <header class="cover-head">
+    <span class="brand">GLASGOW<span>THEATRE<span class="brand-dot">●</span></span></span>
+    <h1>What’s on.</h1>
+    <p class="dateline">14–20 September</p>
+  </header>
+  <div class="week-grid">
+    <ol class="days"><li><span class="day-name">M</span><span class="day-num">14</span></li><li><span class="day-name">T</span><span class="day-num">15</span></li><li><span class="day-name">W</span><span class="day-num">16</span></li><li><span class="day-name">T</span><span class="day-num">17</span></li><li><span class="day-name">F</span><span class="day-num">18</span></li><li><span class="day-name">S</span><span class="day-num">19</span></li><li><span class="day-name">S</span><span class="day-num">20</span></li></ol>
+    <ol class="tracks"><li class="track">
+  <span class="bar side-in"
+        style="--from:0;--span:6;--bar:#e74825;--on-bar:#20202c">
+    <span class="bar-title">Feel_Good</span>
+  </span>
+</li>
+<li class="track">
+  <span class="bar side-in"
+        style="--from:1;--span:5;--bar:#111111;--on-bar:#ffffff">
+    <span class="bar-title">The Singer</span>
+  </span>
+</li>
+<li class="track">
+  <span class="bar side-right"
+        style="--from:3;--span:1;--bar:#f0bd0f;--on-bar:#20202c">
+    <span class="bar-title">Justyna Jablonska</span>
+  </span>
+</li>
+<li class="track">
+  <span class="bar side-in open-right"
+        style="--from:4;--span:3;--bar:#e91d75;--on-bar:#ffffff">
+    <span class="bar-title">Antigone</span>
+  </span>
+</li>
+<li class="track">
+  <span class="bar side-left"
+        style="--from:4;--span:1;--bar:#256d58;--on-bar:#ffffff">
+    <span class="bar-title">Russell Howard</span>
+  </span>
+</li>
+<li class="track">
+  <span class="bar side-left"
+        style="--from:6;--span:1;--bar:#d0202d;--on-bar:#ffffff">
+    <span class="bar-title">Gary Delaney</span>
+  </span>
+</li>
+<li class="track">
+  <span class="bar side-in open-left"
+        style="--from:0;--span:6;--bar:#5a00ff;--on-bar:#ffffff">
+    <span class="bar-title">Burlesque The Musical</span>
+  </span>
+</li>
+<li class="track">
+  <span class="bar side-left"
+        style="--from:5;--span:1;--bar:#256d58;--on-bar:#ffffff">
+    <span class="bar-title">Tam Cowan</span>
+  </span>
+</li>
+<li class="track">
+  <span class="bar side-in open-left open-right"
+        style="--from:0;--span:7;--bar:#111111;--on-bar:#ffffff">
+    <span class="bar-title">1984</span>
+  </span>
+</li></ol>
+  </div>
+  <footer class="cover-foot">
+    <p class="tally"><strong>9</strong> shows · <strong>7</strong> venues</p>
+    <p class="wordmark">glasgowtheatre.com</p>
+  </footer>
+</section></figure>
+<figure class="plate"><figcaption>lockup</figcaption><section class="slide cover cover-lockup" id="cover-2" data-name="01-cover-lockup">
+  <header class="cover-head lockup">
+    <div class="lockup-row"><span class="brand">GLASGOW<span>THEATRE<span class="brand-dot">●</span></span></span><span class="lockup-date">14–20 September</span></div>
+    <h1>What’s<br>on.</h1>
+  </header>
+  <div class="week-grid">
+    <ol class="days"><li><span class="day-name">M</span><span class="day-num">14</span></li><li><span class="day-name">T</span><span class="day-num">15</span></li><li><span class="day-name">W</span><span class="day-num">16</span></li><li><span class="day-name">T</span><span class="day-num">17</span></li><li><span class="day-name">F</span><span class="day-num">18</span></li><li><span class="day-name">S</span><span class="day-num">19</span></li><li><span class="day-name">S</span><span class="day-num">20</span></li></ol>
+    <ol class="tracks"><li class="track">
+  <span class="bar side-in"
+        style="--from:0;--span:6;--bar:#e74825;--on-bar:#20202c">
+    <span class="bar-title">Feel_Good</span>
+  </span>
+</li>
+<li class="track">
+  <span class="bar side-in"
+        style="--from:1;--span:5;--bar:#111111;--on-bar:#ffffff">
+    <span class="bar-title">The Singer</span>
+  </span>
+</li>
+<li class="track">
+  <span class="bar side-right"
+        style="--from:3;--span:1;--bar:#f0bd0f;--on-bar:#20202c">
+    <span class="bar-title">Justyna Jablonska</span>
+  </span>
+</li>
+<li class="track">
+  <span class="bar side-in open-right"
+        style="--from:4;--span:3;--bar:#e91d75;--on-bar:#ffffff">
+    <span class="bar-title">Antigone</span>
+  </span>
+</li>
+<li class="track">
+  <span class="bar side-left"
+        style="--from:4;--span:1;--bar:#256d58;--on-bar:#ffffff">
+    <span class="bar-title">Russell Howard</span>
+  </span>
+</li>
+<li class="track">
+  <span class="bar side-left"
+        style="--from:6;--span:1;--bar:#d0202d;--on-bar:#ffffff">
+    <span class="bar-title">Gary Delaney</span>
+  </span>
+</li>
+<li class="track">
+  <span class="bar side-in open-left"
+        style="--from:0;--span:6;--bar:#5a00ff;--on-bar:#ffffff">
+    <span class="bar-title">Burlesque The Musical</span>
+  </span>
+</li>
+<li class="track">
+  <span class="bar side-left"
+        style="--from:5;--span:1;--bar:#256d58;--on-bar:#ffffff">
+    <span class="bar-title">Tam Cowan</span>
+  </span>
+</li>
+<li class="track">
+  <span class="bar side-in open-left open-right"
+        style="--from:0;--span:7;--bar:#111111;--on-bar:#ffffff">
+    <span class="bar-title">1984</span>
+  </span>
+</li></ol>
+  </div>
+  <footer class="cover-foot">
+    <p class="tally"><strong>9</strong> shows · <strong>7</strong> venues</p>
+    <p class="wordmark">glasgowtheatre.com</p>
+  </footer>
+</section></figure>
+<figure class="plate"><figcaption>hero</figcaption><section class="slide cover cover-hero" id="cover-3" data-name="01-cover-hero">
+  <header class="cover-head hero">
+    <span class="brand">GLASGOW<span>THEATRE<span class="brand-dot">●</span></span></span>
+    <p class="dateline">What’s on · 14–20 September</p>
+  </header>
+  <div class="week-grid">
+    <ol class="days"><li><span class="day-name">M</span><span class="day-num">14</span></li><li><span class="day-name">T</span><span class="day-num">15</span></li><li><span class="day-name">W</span><span class="day-num">16</span></li><li><span class="day-name">T</span><span class="day-num">17</span></li><li><span class="day-name">F</span><span class="day-num">18</span></li><li><span class="day-name">S</span><span class="day-num">19</span></li><li><span class="day-name">S</span><span class="day-num">20</span></li></ol>
+    <ol class="tracks"><li class="track">
+  <span class="bar side-in"
+        style="--from:0;--span:6;--bar:#e74825;--on-bar:#20202c">
+    <span class="bar-title">Feel_Good</span>
+  </span>
+</li>
+<li class="track">
+  <span class="bar side-in"
+        style="--from:1;--span:5;--bar:#111111;--on-bar:#ffffff">
+    <span class="bar-title">The Singer</span>
+  </span>
+</li>
+<li class="track">
+  <span class="bar side-right"
+        style="--from:3;--span:1;--bar:#f0bd0f;--on-bar:#20202c">
+    <span class="bar-title">Justyna Jablonska</span>
+  </span>
+</li>
+<li class="track">
+  <span class="bar side-in open-right"
+        style="--from:4;--span:3;--bar:#e91d75;--on-bar:#ffffff">
+    <span class="bar-title">Antigone</span>
+  </span>
+</li>
+<li class="track">
+  <span class="bar side-left"
+        style="--from:4;--span:1;--bar:#256d58;--on-bar:#ffffff">
+    <span class="bar-title">Russell Howard</span>
+  </span>
+</li>
+<li class="track">
+  <span class="bar side-left"
+        style="--from:6;--span:1;--bar:#d0202d;--on-bar:#ffffff">
+    <span class="bar-title">Gary Delaney</span>
+  </span>
+</li>
+<li class="track">
+  <span class="bar side-in open-left"
+        style="--from:0;--span:6;--bar:#5a00ff;--on-bar:#ffffff">
+    <span class="bar-title">Burlesque The Musical</span>
+  </span>
+</li>
+<li class="track">
+  <span class="bar side-left"
+        style="--from:5;--span:1;--bar:#256d58;--on-bar:#ffffff">
+    <span class="bar-title">Tam Cowan</span>
+  </span>
+</li>
+<li class="track">
+  <span class="bar side-in open-left open-right"
+        style="--from:0;--span:7;--bar:#111111;--on-bar:#ffffff">
+    <span class="bar-title">1984</span>
+  </span>
+</li></ol>
+  </div>
+  <footer class="cover-foot">
+    <p class="tally"><strong>9</strong> shows · <strong>7</strong> venues</p>
+    <p class="wordmark">glasgowtheatre.com</p>
+  </footer>
+</section></figure>
+<figure class="plate"><figcaption>signoff</figcaption><section class="slide cover cover-signoff" id="cover-4" data-name="01-cover-signoff">
+  <header class="cover-head">
+    <p class="eyebrow">Week of 14–20 September</p>
+    <h1>What’s<br>on.</h1>
+  </header>
+  <div class="week-grid">
+    <ol class="days"><li><span class="day-name">M</span><span class="day-num">14</span></li><li><span class="day-name">T</span><span class="day-num">15</span></li><li><span class="day-name">W</span><span class="day-num">16</span></li><li><span class="day-name">T</span><span class="day-num">17</span></li><li><span class="day-name">F</span><span class="day-num">18</span></li><li><span class="day-name">S</span><span class="day-num">19</span></li><li><span class="day-name">S</span><span class="day-num">20</span></li></ol>
+    <ol class="tracks"><li class="track">
+  <span class="bar side-in"
+        style="--from:0;--span:6;--bar:#e74825;--on-bar:#20202c">
+    <span class="bar-title">Feel_Good</span>
+  </span>
+</li>
+<li class="track">
+  <span class="bar side-in"
+        style="--from:1;--span:5;--bar:#111111;--on-bar:#ffffff">
+    <span class="bar-title">The Singer</span>
+  </span>
+</li>
+<li class="track">
+  <span class="bar side-right"
+        style="--from:3;--span:1;--bar:#f0bd0f;--on-bar:#20202c">
+    <span class="bar-title">Justyna Jablonska</span>
+  </span>
+</li>
+<li class="track">
+  <span class="bar side-in open-right"
+        style="--from:4;--span:3;--bar:#e91d75;--on-bar:#ffffff">
+    <span class="bar-title">Antigone</span>
+  </span>
+</li>
+<li class="track">
+  <span class="bar side-left"
+        style="--from:4;--span:1;--bar:#256d58;--on-bar:#ffffff">
+    <span class="bar-title">Russell Howard</span>
+  </span>
+</li>
+<li class="track">
+  <span class="bar side-left"
+        style="--from:6;--span:1;--bar:#d0202d;--on-bar:#ffffff">
+    <span class="bar-title">Gary Delaney</span>
+  </span>
+</li>
+<li class="track">
+  <span class="bar side-in open-left"
+        style="--from:0;--span:6;--bar:#5a00ff;--on-bar:#ffffff">
+    <span class="bar-title">Burlesque The Musical</span>
+  </span>
+</li>
+<li class="track">
+  <span class="bar side-left"
+        style="--from:5;--span:1;--bar:#256d58;--on-bar:#ffffff">
+    <span class="bar-title">Tam Cowan</span>
+  </span>
+</li>
+<li class="track">
+  <span class="bar side-in open-left open-right"
+        style="--from:0;--span:7;--bar:#111111;--on-bar:#ffffff">
+    <span class="bar-title">1984</span>
+  </span>
+</li></ol>
+  </div>
+  <footer class="cover-foot signoff">
+    <p class="tally"><strong>9</strong> shows · <strong>7</strong> venues</p>
+    <span class="brand">GLASGOW<span>THEATRE<span class="brand-dot">●</span></span></span>
+  </footer>
+</section></figure>
+<figure class="plate"><figcaption>wall</figcaption><section class="slide cover pic pic-wall" id="cover-5" data-name="01-cover-wall">
+  <header class="pic-head">
+    <span class="brand">GLASGOW<span>THEATRE<span class="brand-dot">●</span></span></span>
+    <p class="pic-dates">What’s on<span>14–20 September</span></p>
+  </header>
+  <ol class="cells"><li class="cell " style="--bar:#e74825;--on-bar:#20202c">
+  <div class="cell-art"><img src="../images/63e8dc57a425b216e30b.webp" alt="Feel_Good" style="object-position: 50% 50%"></div>
+  <div class="cell-cap">
+    <p class="cell-when">Mon 14 – Sat 19</p>
+    <h3>Feel_Good</h3>
+    <p class="cell-venue">A Play, a Pie and a Pint</p>
+  </div>
+</li><li class="cell " style="--bar:#111111;--on-bar:#ffffff">
+  <div class="cell-art"><img src="../images/e00f37d82fe28af68594.webp" alt="The Singer" style="object-position: 50% 50%"></div>
+  <div class="cell-cap">
+    <p class="cell-when">Tue 15 – Sat 19</p>
+    <h3>The Singer</h3>
+    <p class="cell-venue">Citizens Theatre</p>
+  </div>
+</li><li class="cell " style="--bar:#f0bd0f;--on-bar:#20202c">
+  <div class="cell-art"><img src="../images/f8c59c3c47366fee58a7.webp" alt="Justyna Jablonska - Unforeseen: Improvising Life and Music" style="object-position: 50% 50%"></div>
+  <div class="cell-cap">
+    <p class="cell-when">Thu 17</p>
+    <h3>Justyna Jablonska</h3>
+    <p class="cell-venue">The Glad Cafe</p>
+  </div>
+</li><li class="cell " style="--bar:#e91d75;--on-bar:#ffffff">
+  <div class="cell-art"><img src="../images/fa3ab78347179ad1404f.webp" alt="Antigone" style="object-position: 50% 25%"></div>
+  <div class="cell-cap">
+    <p class="cell-when">Fri 18 – Sat 10 Oct</p>
+    <h3>Antigone</h3>
+    <p class="cell-venue">Tron Theatre</p>
+  </div>
+</li><li class="cell " style="--bar:#256d58;--on-bar:#ffffff">
+  <div class="cell-art whole"><img src="../images/fff88525aac6ff5f1afa.webp" alt="Russell Howard - Don't Tell The Algorithm"></div>
+  <div class="cell-cap">
+    <p class="cell-when">Fri 18</p>
+    <h3>Russell Howard</h3>
+    <p class="cell-venue">Pavilion Theatre</p>
+  </div>
+</li><li class="cell " style="--bar:#d0202d;--on-bar:#ffffff">
+  <div class="cell-art whole"><img src="../images/b406441f4a82bae99455.webp" alt="Gary Delaney: Gary On Laughing"></div>
+  <div class="cell-cap">
+    <p class="cell-when">Sun 20</p>
+    <h3>Gary Delaney</h3>
+    <p class="cell-venue">Theatre Royal</p>
+  </div>
+</li><li class="cell " style="--bar:#5a00ff;--on-bar:#ffffff">
+  <div class="cell-art whole"><img src="../images/69c005021308ea2500b1.webp" alt="Burlesque The Musical"></div>
+  <div class="cell-cap">
+    <p class="cell-when">Thu 10 Sep – Sat 19</p>
+    <h3>Burlesque The Musical</h3>
+    <p class="cell-venue">King's Theatre</p>
+  </div>
+</li><li class="cell " style="--bar:#256d58;--on-bar:#ffffff">
+  <div class="cell-art whole"><img src="../images/edbb59910e15c8c4cedc.webp" alt="Tam Cowan"></div>
+  <div class="cell-cap">
+    <p class="cell-when">Sat 19</p>
+    <h3>Tam Cowan</h3>
+    <p class="cell-venue">Pavilion Theatre</p>
+  </div>
+</li><li class="cell " style="--bar:#111111;--on-bar:#ffffff">
+  <div class="cell-art"><img src="../images/d0971e548cc5101fc021.webp" alt="1984" style="object-position: 50% 50%"></div>
+  <div class="cell-cap">
+    <p class="cell-when">Sat 29 Aug – Sat 26 Sep</p>
+    <h3>1984</h3>
+    <p class="cell-venue">Citizens Theatre</p>
+  </div>
+</li></ol>
+  <footer class="pic-tally">
+    <p><strong>9</strong> shows · <strong>7</strong> venues</p>
+    <p class="pic-url">glasgowtheatre.com</p>
+  </footer>
+</section></figure>
+<figure class="plate"><figcaption>lead</figcaption><section class="slide cover pic pic-lead" id="cover-6" data-name="01-cover-lead">
+  <div class="lead-art" style="--bar:#e74825;--on-bar:#20202c">
+    <img src="../images/63e8dc57a425b216e30b.webp" alt="Feel_Good" style="object-position: 50% 50%">
+    <header class="pic-head">
+    <span class="brand">GLASGOW<span>THEATRE<span class="brand-dot">●</span></span></span>
+    <p class="pic-dates">What’s on<span>14–20 September</span></p>
+  </header>
+    <div class="lead-cap">
+      <p class="lead-flag">Opening this week</p>
+      <h2>Feel_Good</h2>
+      <p class="lead-venue">A Play, a Pie and a Pint · Mon 14 – Sat 19</p>
+    </div>
+  </div>
+  <div class="lead-more">
+    <p class="more-label">Also on this week</p>
+    <ol class="strip-cells"><li class="cell " style="--bar:#111111;--on-bar:#ffffff">
+  <div class="cell-art"><img src="../images/e00f37d82fe28af68594.webp" alt="The Singer" style="object-position: 50% 50%"></div>
+  <div class="cell-cap">
+    <p class="cell-when">Tue 15 – Sat 19</p>
+    <h3>The Singer</h3>
+    <p class="cell-venue">Citizens Theatre</p>
+  </div>
+</li><li class="cell " style="--bar:#f0bd0f;--on-bar:#20202c">
+  <div class="cell-art"><img src="../images/f8c59c3c47366fee58a7.webp" alt="Justyna Jablonska - Unforeseen: Improvising Life and Music" style="object-position: 50% 50%"></div>
+  <div class="cell-cap">
+    <p class="cell-when">Thu 17</p>
+    <h3>Justyna Jablonska</h3>
+    <p class="cell-venue">The Glad Cafe</p>
+  </div>
+</li><li class="cell " style="--bar:#e91d75;--on-bar:#ffffff">
+  <div class="cell-art"><img src="../images/fa3ab78347179ad1404f.webp" alt="Antigone" style="object-position: 50% 25%"></div>
+  <div class="cell-cap">
+    <p class="cell-when">Fri 18 – Sat 10 Oct</p>
+    <h3>Antigone</h3>
+    <p class="cell-venue">Tron Theatre</p>
+  </div>
+</li><li class="cell " style="--bar:#256d58;--on-bar:#ffffff">
+  <div class="cell-art whole"><img src="../images/fff88525aac6ff5f1afa.webp" alt="Russell Howard - Don't Tell The Algorithm"></div>
+  <div class="cell-cap">
+    <p class="cell-when">Fri 18</p>
+    <h3>Russell Howard</h3>
+    <p class="cell-venue">Pavilion Theatre</p>
+  </div>
+</li></ol>
+    <p class="pic-foot"><strong>9</strong> shows · <strong>7</strong> venues · glasgowtheatre.com</p>
+  </div>
+</section></figure>
+<figure class="plate"><figcaption>six</figcaption><section class="slide cover pic pic-six" id="cover-7" data-name="01-cover-six">
+  <header class="pic-head">
+    <span class="brand">GLASGOW<span>THEATRE<span class="brand-dot">●</span></span></span>
+    <p class="pic-dates">What’s on<span>14–20 September</span></p>
+  </header>
+  <ol class="cells"><li class="cell " style="--bar:#e74825;--on-bar:#20202c">
+  <div class="cell-art"><img src="../images/63e8dc57a425b216e30b.webp" alt="Feel_Good" style="object-position: 50% 50%"></div>
+  <div class="cell-cap">
+    <p class="cell-when">Mon 14 – Sat 19</p>
+    <h3>Feel_Good</h3>
+    <p class="cell-venue">A Play, a Pie and a Pint</p>
+  </div>
+</li><li class="cell " style="--bar:#111111;--on-bar:#ffffff">
+  <div class="cell-art"><img src="../images/e00f37d82fe28af68594.webp" alt="The Singer" style="object-position: 50% 50%"></div>
+  <div class="cell-cap">
+    <p class="cell-when">Tue 15 – Sat 19</p>
+    <h3>The Singer</h3>
+    <p class="cell-venue">Citizens Theatre</p>
+  </div>
+</li><li class="cell " style="--bar:#f0bd0f;--on-bar:#20202c">
+  <div class="cell-art"><img src="../images/f8c59c3c47366fee58a7.webp" alt="Justyna Jablonska - Unforeseen: Improvising Life and Music" style="object-position: 50% 50%"></div>
+  <div class="cell-cap">
+    <p class="cell-when">Thu 17</p>
+    <h3>Justyna Jablonska</h3>
+    <p class="cell-venue">The Glad Cafe</p>
+  </div>
+</li><li class="cell " style="--bar:#e91d75;--on-bar:#ffffff">
+  <div class="cell-art"><img src="../images/fa3ab78347179ad1404f.webp" alt="Antigone" style="object-position: 50% 25%"></div>
+  <div class="cell-cap">
+    <p class="cell-when">Fri 18 – Sat 10 Oct</p>
+    <h3>Antigone</h3>
+    <p class="cell-venue">Tron Theatre</p>
+  </div>
+</li><li class="cell " style="--bar:#256d58;--on-bar:#ffffff">
+  <div class="cell-art whole"><img src="../images/fff88525aac6ff5f1afa.webp" alt="Russell Howard - Don't Tell The Algorithm"></div>
+  <div class="cell-cap">
+    <p class="cell-when">Fri 18</p>
+    <h3>Russell Howard</h3>
+    <p class="cell-venue">Pavilion Theatre</p>
+  </div>
+</li><li class="cell " style="--bar:#d0202d;--on-bar:#ffffff">
+  <div class="cell-art whole"><img src="../images/b406441f4a82bae99455.webp" alt="Gary Delaney: Gary On Laughing"></div>
+  <div class="cell-cap">
+    <p class="cell-when">Sun 20</p>
+    <h3>Gary Delaney</h3>
+    <p class="cell-venue">Theatre Royal</p>
+  </div>
+</li></ol>
+  <footer class="pic-tally">
+    <p><strong>9</strong> shows · <strong>7</strong> venues · 3 more on the site</p>
+    <p class="pic-url">glasgowtheatre.com</p>
+  </footer>
+</section></figure>
+</div>
+<script>
+  if (new URLSearchParams(location.search).has("raw")) document.body.classList.remove("preview");
+  // The title is the only thing on a slide whose height is not known in
+  // advance, so it is the thing that gives. Counting characters guessed at
+  // that and got "Justyna Jablonska - Unforeseen: Improvising Life and Music"
+  // right by luck: the count says nothing about how wide the words set, and a
+  // title one line longer pushed the date and the price out of the panel. The
+  // panel is measured instead and the type steps down until they fit, which
+  // is also why .strip and .facts do not shrink — the space they need is not
+  // the title's to take.
+  for (const h of document.querySelectorAll(".show h2")) {
+    const panel = h.closest(".panel");
+    const facts = panel.querySelector(".facts");
+    // The floor is the slide's own bottom edge, never the panel's. A flex item
+    // keeps min-height: auto, so the panel grows to whatever it holds and is
+    // clipped by the slide — measured against the panel, an overflowing slide
+    // reports that everything fits.
+    const floor =
+      h.closest(".slide").getBoundingClientRect().bottom -
+      parseFloat(getComputedStyle(panel).paddingBottom);
+    for (let size = 112; size >= 40; size -= 2) {
+      h.style.fontSize = size + "px";
+      if (facts.getBoundingClientRect().bottom <= floor + 0.5) break;
+    }
+  }
+</script>
+</body>
+</html>

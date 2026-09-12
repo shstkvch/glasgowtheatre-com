@@ -166,7 +166,32 @@ const asset = (file) =>
  * all. A show page has room to be honest and simply prints the image at its
  * own proportions.
  */
-const FOCUS = { top: "0%", upper: "25%", centre: "50%", lower: "75%", bottom: "100%" };
+/**
+ * Where a card's crop sits vertically.
+ *
+ * A card's tile is 1.6 wide and an image taller than that loses the
+ * difference — 58% of the height for A Play, a Pie and a Pint's portrait
+ * photograph of Transparent. Anchored in the middle, that crop took both
+ * actors' heads off.
+ *
+ * The model cannot be relied on to say where to keep. Its reading was made
+ * for the social deck's 4:5 frame, where a portrait image barely crops and
+ * "centre" is the right answer; asked again about this photograph and told
+ * explicitly to find the faces, it answered 49% — the middle of their bodies,
+ * which is the crop that beheaded them.
+ *
+ * Shape decides it instead, and shape is known exactly. Theatre photography
+ * frames a standing figure with the head high, and a poster prints its title
+ * at the top, so the taller the source is relative to the tile the further up
+ * the crop sits: half way for anything the tile does not crop vertically,
+ * down to 30% for a portrait source.
+ */
+const CARD_FRAME = 1.6;
+function cardAnchor(ratio) {
+  if (!ratio || ratio >= CARD_FRAME) return 50;
+  const tallness = Math.min(1, (CARD_FRAME - ratio) / (CARD_FRAME - 1));
+  return Math.round(50 - 20 * tallness);
+}
 function art(event) {
   const reading = event.image ? artwork[path.basename(event.image)] : null;
   const ratio = reading?.w && reading?.h ? reading.w / reading.h : null;
@@ -183,7 +208,7 @@ function art(event) {
     // the focus the reading gave, which on a poster is the top where the
     // title is.
     whole: reading?.text === "title" && ratio !== null && ratio >= 1,
-    position: `50% ${FOCUS[reading?.focus] || "50%"}`,
+    position: `50% ${cardAnchor(ratio)}%`,
   };
 }
 

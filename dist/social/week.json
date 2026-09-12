@@ -1,0 +1,69 @@
+{
+  "weekOf": "2026-09-14",
+  "weekEnds": "2026-09-20",
+  "slides": 10,
+  "shows": [
+    {
+      "id": "oran-mor-feel-good",
+      "title": "Feel_Good",
+      "venue": "A Play, a Pie and a Pint",
+      "opens": true
+    },
+    {
+      "id": "citizens-the-singer",
+      "title": "The Singer",
+      "venue": "Citizens Theatre",
+      "opens": true
+    },
+    {
+      "id": "tron-antigone",
+      "title": "Antigone",
+      "venue": "Tron Theatre",
+      "opens": true
+    },
+    {
+      "id": "kings-burlesque-the-musical",
+      "title": "Burlesque The Musical",
+      "venue": "King's Theatre",
+      "opens": false
+    },
+    {
+      "id": "glad-cafe-justyna-jablonska-unforeseen-improvising-life-and-",
+      "title": "Justyna Jablonska - Unforeseen: Improvising Life and Music",
+      "venue": "The Glad Cafe",
+      "opens": true
+    },
+    {
+      "id": "pavilion-russell-howard-dont-tell-the-algorithm",
+      "title": "Russell Howard - Don't Tell The Algorithm",
+      "venue": "Pavilion Theatre",
+      "opens": true
+    },
+    {
+      "id": "theatre-royal-gary-delaney-gary-on-laughing",
+      "title": "Gary Delaney: Gary On Laughing",
+      "venue": "Theatre Royal",
+      "opens": true
+    },
+    {
+      "id": "cottiers-women-who-built-scotland",
+      "title": "Women Who Built Scotland",
+      "venue": "Cottiers",
+      "opens": true
+    },
+    {
+      "id": "platform-glaswegians",
+      "title": "Glaswegians",
+      "venue": "Platform",
+      "opens": true
+    }
+  ],
+  "held": [
+    "citizens-1984",
+    "old-hairdressers-baked-beans-on-the-doorstep-september",
+    "cottiers-window-conservation-visit",
+    "pavilion-tam-cowan",
+    "tron-glasgow-doors-open-days-festival-tours",
+    "cottiers-visit-cottiers-as-part-of-doors-open-day"
+  ]
+}
