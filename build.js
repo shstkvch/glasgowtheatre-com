@@ -30,6 +30,17 @@ const status = read("refresh-status.json");
 // here is scraped, because none of these venues publishes it in a form a
 // scraper could trust, and a wrong price is worse than no price.
 const concessions = read("concessions.json");
+// What each image is and what shape it is, from scripts/read-artwork.js. Absent
+// until that has run, and absent for artwork that arrived since; both cases
+// fall back to the behaviour the site had before, so a missing cache is a
+// plainer page rather than a broken one.
+const artwork = (() => {
+  try {
+    return read("crop-cache.json");
+  } catch {
+    return {};
+  }
+})();
 // Absent when a model pass has never run; the daily report treats a missing
 // file as no spend rather than as a failure.
 const usage = (name) => {
@@ -140,6 +151,42 @@ const asset = (file) =>
     .update(fs.readFileSync(path.join(__dirname, "src", file)))
     .digest("hex")
     .slice(0, 8)}`;
+/* ---------------------------------------------------------------- artwork */
+/**
+ * How to place one image.
+ *
+ * Venues publish whatever shape they have. Forcing every one into a 1.6 frame
+ * and cropping from the middle took 58% of the height off A Play, a Pie and a
+ * Pint's portrait photograph for Transparent, straight through both actors'
+ * heads; 29 of 161 cached images lose between 16% and 65% that way.
+ *
+ * So a card keeps its fixed tile — a grid of mismatched tiles is worse than a
+ * tight crop — but crops towards wherever the subject is rather than the
+ * centre, and a poster with the show's name set into it is never cropped at
+ * all. A show page has room to be honest and simply prints the image at its
+ * own proportions.
+ */
+const FOCUS = { top: "0%", upper: "25%", centre: "50%", lower: "75%", bottom: "100%" };
+function art(event) {
+  const reading = event.image ? artwork[path.basename(event.image)] : null;
+  const ratio = reading?.w && reading?.h ? reading.w / reading.h : null;
+  return {
+    // The real pixels, so the browser reserves the right box and the page does
+    // not jump when the image lands. Every image used to claim 1100x688.
+    width: reading?.w || 1100,
+    height: reading?.h || 688,
+    ratio,
+    // A name set into the artwork survives no crop, so it is shown whole —
+    // but only where the artwork is landscape or square. A card's tile is 1.6
+    // wide and the Tron prints portrait posters at 0.56, which contained in
+    // that tile is a stamp in a field of ink. Those are cropped instead, from
+    // the focus the reading gave, which on a poster is the top where the
+    // title is.
+    whole: reading?.text === "title" && ratio !== null && ratio >= 1,
+    position: `50% ${FOCUS[reading?.focus] || "50%"}`,
+  };
+}
+
 /* ------------------------------------------------- tickets, times, prices */
 /** The venue's own concession schemes, where it publishes any. */
 const scheme = (event) => concessions[event.venueId] || null;
@@ -248,8 +295,9 @@ function card(event, index = 0) {
   const eager = index < 3;
   const cost = price(event);
   const times = when(event);
+  const picture = art(event);
   return `<article class="event-card" id="${e(event.id)}" data-id="${e(event.id)}" data-date="${e(event.date)}" data-end-date="${e(event.endDate || event.date)}">
-<div class="event-card-image${event.image ? "" : " image-unavailable"}"><a class="event-card-thumb" href="${e(showPath(event))}" tabindex="-1"><div class="image-fallback" aria-hidden="true"><span>ON STAGE AT</span><strong>${e(event.venue)}</strong></div>${event.image ? `<img src="${e(event.image)}" alt="${e(event.imageAlt || event.title)}" width="1100" height="688"${eager ? ` fetchpriority="high"` : ` loading="lazy"`} decoding="async">` : ""}</a><span class="date-stamp">${e(range(event))}</span></div>
+<div class="event-card-image${event.image ? "" : " image-unavailable"}${picture.whole ? " artwork-whole" : ""}"><a class="event-card-thumb" href="${e(showPath(event))}" tabindex="-1"><div class="image-fallback" aria-hidden="true"><span>ON STAGE AT</span><strong>${e(event.venue)}</strong></div>${event.image ? `<img src="${e(event.image)}" alt="${e(event.imageAlt || event.title)}" width="${picture.width}" height="${picture.height}" style="object-position: ${picture.position}"${eager ? ` fetchpriority="high"` : ` loading="lazy"`} decoding="async">` : ""}</a><span class="date-stamp">${e(range(event))}</span></div>
 <div class="event-card-body"><div class="card-topline"><a href="/venues/${e(event.venueId)}.html">${e(event.season || event.venue)}</a><span>${e(label(event.form))}</span></div>
 <h3><a href="${e(showPath(event))}">${e(event.title)}</a></h3>
 <p class="card-when">${times ? `<span class="fact-time">${e(times)}</span>` : ""}${cost ? `<span class="fact-price">${e(cost)}</span>` : `<span class="fact-unknown">Prices at the venue</span>`}</p>
@@ -594,6 +642,7 @@ ${event.performancesPartial ? `<p class="perf-note">${e(event.venue)} publishes 
 function showPage(event) {
   const cost = price(event);
   const times = when(event);
+  const hero = art(event);
   const facts = [
     ["Dates", range(event)],
     ["Times", times],
@@ -612,7 +661,7 @@ function showPage(event) {
 <h1>${e(event.title)}</h1>
 <dl class="show-facts">${facts.map(([term, value]) => `<div><dt>${e(term)}</dt><dd>${e(value)}</dd></div>`).join("")}</dl>
 <a class="btn" href="${e(event.ticketUrl)}">Book at ${e(event.venue)} ${arrow}</a></div>
-${event.image ? `<figure class="show-hero-image"><img src="${e(event.image)}" alt="${e(event.imageAlt || event.title)}" width="1100" height="688" fetchpriority="high" decoding="async">${event.imageCredit ? `<figcaption>${e(event.imageCredit)}</figcaption>` : ""}</figure>` : ""}
+${event.image ? `<figure class="show-hero-image"><img src="${e(event.image)}" alt="${e(event.imageAlt || event.title)}" width="${hero.width}" height="${hero.height}" fetchpriority="high" decoding="async">${event.imageCredit ? `<figcaption>${e(event.imageCredit)}</figcaption>` : ""}</figure>` : ""}
 </div></div></section>
 <section class="show-body"><div class="container show-columns">
 <div class="show-main"><h2>About the show</h2><p class="show-description">${e(event.description)}</p>

@@ -5,7 +5,7 @@
   "main": "build.js",
   "scripts": {
     "build": "node build.js",
-    "refresh": "node scripts/scrape-events.js && node scripts/read-tickets.js && node scripts/tag-events.js && node scripts/cache-images.js",
+    "refresh": "node scripts/scrape-events.js && node scripts/read-tickets.js && node scripts/tag-events.js && node scripts/cache-images.js && node scripts/read-artwork.js",
     "test": "node --test tests/*.test.js",
     "test:browser": "playwright test",
     "preview": "python3 -m http.server 4173 --directory dist",
@@ -14,7 +14,8 @@
     "report": "node scripts/report-new.js",
     "deploy:worker": "bash scripts/deploy-worker.sh",
     "setup:cloudflare": "bash scripts/setup-cloudflare.sh",
-    "tickets": "node scripts/read-tickets.js"
+    "tickets": "node scripts/read-tickets.js",
+    "artwork": "node scripts/read-artwork.js"
   },
   "repository": {
     "type": "git",
