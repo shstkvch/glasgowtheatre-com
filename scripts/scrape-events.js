@@ -28,7 +28,11 @@ const HORIZON_MONTHS = 6;
 const ALL_SOURCES = [
   'citizens', 'tron', 'tramway', 'oran-mor', 'glad-cafe',
   'kings', 'theatre-royal', 'pavilion', 'platform', 'cottiers', 'old-hairdressers',
+  'theatre-118',
 ];
+// 118's own public listing feed. Structured JSON, so no page is scraped and
+// no model has to read a price or a performance time back out of prose.
+const THEATRE_118_API = process.env.THEATRE_118_API || 'https://theatre118.com/api/v1/shows';
 const EVENTS_FILE = path.join(DATA_DIR, 'events.json');
 const { londonDate } = require('../src/js/listings');
 const TODAY = londonDate();
@@ -390,7 +394,7 @@ const offersOf = (event) =>
 
 /** Drop the empty fields rather than publish `"pricing": null` 150 times. */
 function attachPricing(event, pricing, extra = {}) {
-  const merged = pricing && (pricing.from != null || pricing.text) ? pricing : null;
+  const merged = pricing && (pricing.from != null || pricing.text || pricing.payWhatYouLike) ? pricing : null;
   if (merged) {
     if (extra.notes) merged.notes = extra.notes;
     event.pricing = merged;
@@ -2072,6 +2076,127 @@ async function scrapeEventbrite() {
 // We note it here but it provides minimal data for our needs.
 // async function scrapeTheatreScotland() { ... }
 
+/* --- Theatre 118 -------------------------------------------------------- */
+
+// 118's own type vocabulary, mapped onto Glasgow Theatre's art forms. "Show"
+// is the ambiguous one and is left for the tagger; everything else is exact.
+const THEATRE_118_FORMS = {
+  play: 'play',
+  musical: 'musical',
+  pantomime: 'pantomime',
+  workshop: 'workshop',
+  'spoken word': 'spoken-word',
+};
+
+/**
+ * The feed's ticket types as a listing's price story. Prices arrive in pence.
+ * Pay What You Can is reported on every show by the venue, so a listing with
+ * no fixed price still has a price to print rather than a blank.
+ */
+function theatre118Pricing(ticketing) {
+  const types = (ticketing && ticketing.ticket_types) || [];
+  const fixed = types
+    .filter((t) => t.kind === 'fixed' && typeof t.price === 'number')
+    .map((t) => t.price / 100);
+  const from = fixed.length ? Math.min(...fixed) : null;
+  const to = fixed.length ? Math.max(...fixed) : null;
+
+  return {
+    from,
+    to: to != null && from != null && to > from ? to : null,
+    concession: null,
+    concessionTo: null,
+    free: fixed.length > 0 && fixed.every((p) => p === 0),
+    payWhatYouLike: Boolean(ticketing && ticketing.pay_what_you_can),
+    // Left null deliberately: a text value would send the listing to the
+    // model for a price read, and the numbers here are already the venue's.
+    text: null,
+    read: 'source',
+  };
+}
+
+/**
+ * A show's sittings, each with whatever the venue says about it. 118 sells
+ * through its own box office, so a performance's booking link is the one to
+ * send a visitor to.
+ */
+function theatre118Performances(show) {
+  return (show.performances || [])
+    .filter((p) => /^\d{4}-\d{2}-\d{2}$/.test(String((p && p.date) || '')))
+    .map((p) => ({
+      date: p.date,
+      time: /^\d{2}:\d{2}$/.test(String(p.time || '')) ? p.time : null,
+      url: p.booking_url || null,
+      note: p.cancelled ? 'Cancelled' : p.sold_out ? 'Sold out' : null,
+    }));
+}
+
+/**
+ * The public feed as Glasgow Theatre listings. Kept apart from the fetch so
+ * the mapping can be tested against a saved response.
+ */
+function theatre118Events(feed) {
+  const events = [];
+
+  for (const show of (feed && feed.shows) || []) {
+    if (!show.title || !show.url || !/^\d{4}-\d{2}-\d{2}$/.test(String(show.start_date || ''))) continue;
+
+    const description = truncateDesc(
+      cleanText(show.description || '') || `${show.title} at Theatre 118, Port Dundas.`,
+    );
+    const listing = {
+      id: makeId('theatre-118', show.title),
+      title: show.title,
+      producer: show.company || null,
+      venue: 'Theatre 118',
+      venueId: 'theatre-118',
+      date: show.start_date,
+      endDate: show.end_date && show.end_date > show.start_date ? show.end_date : null,
+      time: null,
+      type: /workshop/i.test(show.type || '') ? 'community' : 'professional',
+      tags: classifyTags(show.title, description),
+      description,
+      // The show's own page, which lists every performance and books each
+      // one. Stable across a run, unlike a link to a single performance.
+      ticketUrl: show.url,
+      image: (show.image && show.image.url) || null,
+      accessibility: cleanText(show.accessibility || '') || null,
+    };
+
+    const form = THEATRE_118_FORMS[String(show.type || '').toLowerCase().trim()];
+    if (form) listing.form = form;
+
+    attachSchedule(listing, theatre118Performances(show));
+    attachPricing(listing, theatre118Pricing(show.ticketing), {
+      duration: show.runtime_minutes || readDuration(show.runtime),
+    });
+    events.push(listing);
+  }
+
+  return events;
+}
+
+async function scrapeTheatre118() {
+  console.log('\n🎭 Scraping Theatre 118...');
+
+  try {
+    const fetch = await getFetch();
+    const res = await fetch(THEATRE_118_API, { headers: { Accept: 'application/json' } });
+    if (!res.ok) throw new Error(`HTTP ${res.status} for ${THEATRE_118_API}`);
+    const feed = await res.json();
+
+    canary('theatre-118', 'the feed carried no shows array', Array.isArray(feed && feed.shows));
+
+    const events = theatre118Events(feed);
+    console.log(`  ✓ ${events.length} candidate events from Theatre 118`);
+    return events;
+  } catch (err) {
+    console.error(`  ✗ Theatre 118 fetch failed: ${err.message}`);
+    FAILURES['theatre-118'] = err.message;
+    return [];
+  }
+}
+
 // --- Main ---
 
 async function main() {
@@ -2085,6 +2210,7 @@ async function main() {
   const [
     citizens, tron, tramway, ppap, gladCafe,
     kings, theatreRoyal, pavilion, platform, cottiers, oldHairdressers,
+    theatre118,
   ] = await Promise.all([
       scrapeCitizens(),
       scrapeTron(),
@@ -2097,6 +2223,7 @@ async function main() {
       scrapePlatform(),
       scrapeCottiers(),
       scrapeOldHairdressers(),
+      scrapeTheatre118(),
     ]);
 
   saveDescriptionCache();
@@ -2113,6 +2240,7 @@ async function main() {
     ...platform,
     ...cottiers,
     ...oldHairdressers,
+    ...theatre118,
   ];
 
   console.log('\n' + '='.repeat(50));
@@ -2129,7 +2257,7 @@ async function main() {
     const priority = {
       citizens: 0, tron: 1, tramway: 2, 'oran-mor': 3, 'glad-cafe': 4,
       kings: 5, 'theatre-royal': 6, pavilion: 7, platform: 8,
-      cottiers: 9, 'old-hairdressers': 10, various: 11,
+      cottiers: 9, 'old-hairdressers': 10, 'theatre-118': 11, various: 12,
     };
     return (priority[a.venueId] ?? 99) - (priority[b.venueId] ?? 99);
   });
@@ -2226,7 +2354,7 @@ async function main() {
   console.log('='.repeat(50));
 }
 
-module.exports = { parseTime, parseDateRange, classifyTags, platformDates, londonMoment, jsonLdEvents, isInterstitial };
+module.exports = { parseTime, parseDateRange, classifyTags, platformDates, londonMoment, jsonLdEvents, isInterstitial, theatre118Events, theatre118Pricing };
 
 if (require.main === module) main().catch((err) => {
   console.error('Fatal error:', err);

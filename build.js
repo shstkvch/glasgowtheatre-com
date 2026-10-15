@@ -373,6 +373,7 @@ const VENUE_COLOURS = {
   "theatre-royal": "#d0202d", // ATG red, and the auditorium's own
   pavilion: "#256d58", // its accent green; the masthead navy reads as black
   "old-hairdressers": "#6f7f3a", // the olive running through its artwork
+  "theatre-118": "#ff5b1e", // 118's brand orange, from its own stylesheet
   mono: "#0e7c8c", // no colour of its own: reserve teal
 };
 const RESERVE = ["#b039d8", "#ff9500", "#2ad4c8", "#8c1c5a", "#3e6815"];
