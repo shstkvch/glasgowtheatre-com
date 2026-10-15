@@ -57,7 +57,7 @@ The card title and the calendar bar both open it. The **Tickets** button and the
 
 A card and a calendar bar each carry one line — "From £18 (conc. from £5)" and "7.30pm & matinees". Both come from what the venue published, and where nothing was published the site says so rather than leaving a gap that reads as free.
 
-**Where the numbers come from.** Four venues publish machine-readable prices and times, and those are used in preference to anything else: the Citizens' schedule lists every performance with its time, its access provision and what is happening around it; ATG and Trafalgar emit one structured-data block per performance carrying the cheapest seat still on sale; the Tron's prices live in its Spektrix box office rather than on its website, where the price column in the performance table is commented out and reads "From £0.00". Tramway, A Play, a Pie and a Pint, Platform, Cottiers and the Glad Café publish a sentence instead.
+**Where the numbers come from.** Several venues publish machine-readable prices and times, and those are used in preference to anything else: Theatre 118's own public feed arrives as JSON, with every performance and ticket price already on it; the Citizens' schedule lists every performance with its time, its access provision and what is happening around it; ATG and Trafalgar emit one structured-data block per performance carrying the cheapest seat still on sale; the Tron's prices live in its Spektrix box office rather than on its website, where the price column in the performance table is commented out and reads "From £0.00". Tramway, A Play, a Pie and a Pint, Platform, Cottiers and the Glad Café publish a sentence instead.
 
 **Live prices.** ATG and Trafalgar quote the cheapest seat *still on sale*, fees included, which moves as a run sells — a nearly sold-out night can read £110. That is true and worth knowing, so it is published, with the show page saying which day the figure was read.
 
@@ -107,7 +107,9 @@ A Play, a Pie and a Pint is listed as a venue in its own right rather than as Ò
 
 ## Refreshing and images
 
-`scripts/scrape-events.js` reads eleven sources, collecting each listing's dates, blurb, artwork and — where the source publishes them in a machine-readable form — its prices and performance times: Citizens Theatre, Tron, Tramway, A Play, a Pie and a Pint, The Glad Café, the King's, Theatre Royal, the Pavilion, Platform, Cottiers and The Old Hairdressers.
+`scripts/scrape-events.js` reads twelve sources, collecting each listing's dates, blurb, artwork and — where the source publishes them in a machine-readable form — its prices and performance times: Citizens Theatre, Tron, Tramway, A Play, a Pie and a Pint, The Glad Café, the King's, Theatre Royal, the Pavilion, Platform, Cottiers, The Old Hairdressers and Theatre 118.
+
+Theatre 118 publishes its programme as JSON at `https://theatre118.com/api/v1/shows`, so `scrapeTheatre118` reads the feed rather than a page: the poster and gallery, every performance with its curtain time and bookability, running time, and ticket prices all arrive structured, and no model is asked to read a price or a time back out of prose. Its shows are linked to 118's own show page, which lists every performance, and Pay What You Can is reported on every show per the venue's policy.
 
 The King's and Theatre Royal are both ATG houses and share one parser, `scrapeATG`, which walks the paginated what's-on URLs that ATG's robots.txt explicitly allows and reads the listings out of the React Server Component payload. The Pavilion's own domain redirects to Trafalgar's platform, whose payload carries an ISO `startDate`. Platform publishes no year on a listing, so the year is read from the `evmon-October-2026` class names on each item. Cottiers is a WP Event Manager install. The Old Hairdressers publishes neither meta description nor category, so its blurb comes from the longest paragraph on the event page.
 
