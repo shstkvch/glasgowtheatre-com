@@ -1,0 +1,18 @@
+{
+  "apiVersion": "1",
+  "generatedAt": "2026-10-17T21:40:27.566Z",
+  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "venue": {
+    "id": "mono",
+    "name": "Mono",
+    "area": "Merchant City",
+    "description": "Vegan cafe-bar, record shop and live venue. It hosts a programme of gigs and performances. Independent to its core, with strong ties to Glasgow’s DIY music and arts scenes.",
+    "website": "https://monocafebar.com",
+    "instagram": "monocafebar",
+    "programme": "theatre",
+    "url": "https://glasgowtheatre.com/venues/mono.html",
+    "upcomingShows": 0,
+    "showsUrl": "https://glasgowtheatre.com/api/v1/venues/mono/shows.json",
+    "concessions": null
+  }
+}

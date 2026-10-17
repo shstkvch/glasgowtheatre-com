@@ -1,0 +1,84 @@
+{
+  "apiVersion": "1",
+  "generatedAt": "2026-10-17T21:40:27.566Z",
+  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "show": {
+    "id": "oran-mor-badhbh-shith-and-the-storytellers",
+    "url": "https://glasgowtheatre.com/shows/oran-mor-badhbh-shith-and-the-storytellers.html",
+    "title": "Badhbh-Shith and The Storytellers",
+    "artForm": "play",
+    "tags": [
+      "play",
+      "lunchtime",
+      "a-play-a-pie-a-pint"
+    ],
+    "producer": null,
+    "description": "Sorcha and Evander have a mountain to conquer, but when a Hebridean storm descends they are forced to take shelter in a lonely bothy. They decide to pass the time telling grim stories from Scottish folklore. But bothies are unusual places. You never never know who else might be there…as the pair...",
+    "venue": {
+      "id": "oran-mor",
+      "name": "A Play, a Pie and a Pint",
+      "area": "West End"
+    },
+    "run": {
+      "opens": "2026-10-26",
+      "closes": "2026-10-31",
+      "time": "13:00"
+    },
+    "schedule": {
+      "text": "Monday – Saturday 1pm\n(Doors 12pm/12.30pm on Mondays)"
+    },
+    "performances": [
+      {
+        "date": "2026-10-26",
+        "time": "13:00",
+        "price": 17
+      },
+      {
+        "date": "2026-10-27",
+        "time": "13:00",
+        "price": 19
+      },
+      {
+        "date": "2026-10-28",
+        "time": "13:00",
+        "price": 19
+      },
+      {
+        "date": "2026-10-29",
+        "time": "13:00",
+        "price": 19
+      },
+      {
+        "date": "2026-10-30",
+        "time": "13:00",
+        "price": 19
+      },
+      {
+        "date": "2026-10-31",
+        "time": "13:00",
+        "price": 22.5
+      }
+    ],
+    "pricing": {
+      "currency": "GBP",
+      "from": 17,
+      "to": 22.5,
+      "concessionFrom": null,
+      "concessionTo": null,
+      "free": false,
+      "payWhatYouLike": false,
+      "text": "Monday: £17\nTuesday-Friday: £19\nSaturday: £22.50",
+      "source": "published-text",
+      "checkedAt": "2026-10-15"
+    },
+    "accessibility": null,
+    "durationMinutes": null,
+    "image": {
+      "url": "https://glasgowtheatre.com/images/5ced29478651d4597df2.webp",
+      "alt": "Badhbh-Shith and The Storytellers",
+      "credit": null
+    },
+    "bookingUrl": "https://playpiepint.com/whats-on/event/badhbh-shith-and-the-storytellers/",
+    "updatedAt": "2026-10-15"
+  }
+}

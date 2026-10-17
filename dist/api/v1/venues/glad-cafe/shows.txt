@@ -1,0 +1,2 @@
+# opens	closes	title	venue	artForm	fromPrice	url
+2026-10-31	2026-10-31	PHANTASMAGASM Spooky Elvis Special!	The Glad Cafe	cabaret	12	https://glasgowtheatre.com/shows/glad-cafe-phantasmagasm-spooky-elvis-special.html

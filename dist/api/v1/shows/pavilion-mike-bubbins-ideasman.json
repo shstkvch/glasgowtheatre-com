@@ -1,0 +1,44 @@
+{
+  "apiVersion": "1",
+  "generatedAt": "2026-10-17T21:40:27.566Z",
+  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "show": {
+    "id": "pavilion-mike-bubbins-ideasman",
+    "url": "https://glasgowtheatre.com/shows/pavilion-mike-bubbins-ideasman.html",
+    "title": "Mike Bubbins: IDEASMAN",
+    "artForm": "stand-up",
+    "tags": [
+      "stand-up"
+    ],
+    "producer": null,
+    "description": "Mike Bubbins: IDEASMAN plus special guests Ideas Man, noun : 'A person who is particularly good at thinking of new or original ideas.' That's what Mike Bubbins is. Not an admin man. Not an organised man. Not an especially dedicated man. This comedy tour, for instance, is a case in point. Mike has...",
+    "venue": {
+      "id": "pavilion",
+      "name": "Pavilion Theatre",
+      "area": "City Centre"
+    },
+    "run": {
+      "opens": "2027-02-27",
+      "closes": "2027-02-27",
+      "time": "19:30"
+    },
+    "schedule": null,
+    "performances": [
+      {
+        "date": "2027-02-27",
+        "time": "19:30",
+        "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/comedy/mike-bubbins-ideasman-tickets"
+      }
+    ],
+    "pricing": null,
+    "accessibility": null,
+    "durationMinutes": null,
+    "image": {
+      "url": "https://glasgowtheatre.com/images/2e18ee231ccc6a3a70e2.webp",
+      "alt": "Mike Bubbins: IDEASMAN",
+      "credit": null
+    },
+    "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/comedy/mike-bubbins-ideasman-tickets",
+    "updatedAt": "2026-10-15"
+  }
+}

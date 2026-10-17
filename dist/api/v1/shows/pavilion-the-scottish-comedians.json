@@ -1,0 +1,44 @@
+{
+  "apiVersion": "1",
+  "generatedAt": "2026-10-17T21:40:27.566Z",
+  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "show": {
+    "id": "pavilion-the-scottish-comedians",
+    "url": "https://glasgowtheatre.com/shows/pavilion-the-scottish-comedians.html",
+    "title": "The Scottish Comedians",
+    "artForm": "stand-up",
+    "tags": [
+      "stand-up"
+    ],
+    "producer": null,
+    "description": "‘The Scottish Comedians’ is packed with amazing Scottish comedy talent! For our visit to the Glasgow Pavilion, we have an unbelievable line up of talent for you and we would go as far as saying this is probably the best comedy show you will see - with an amazing variety of comedians, all worthy...",
+    "venue": {
+      "id": "pavilion",
+      "name": "Pavilion Theatre",
+      "area": "City Centre"
+    },
+    "run": {
+      "opens": "2026-10-21",
+      "closes": "2026-10-21",
+      "time": "20:00"
+    },
+    "schedule": null,
+    "performances": [
+      {
+        "date": "2026-10-21",
+        "time": "20:00",
+        "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/comedy/the-scottish-comedians-tickets"
+      }
+    ],
+    "pricing": null,
+    "accessibility": null,
+    "durationMinutes": null,
+    "image": {
+      "url": "https://glasgowtheatre.com/images/94d0022de3e397fbe153.webp",
+      "alt": "The Scottish Comedians",
+      "credit": null
+    },
+    "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/comedy/the-scottish-comedians-tickets",
+    "updatedAt": "2026-10-15"
+  }
+}

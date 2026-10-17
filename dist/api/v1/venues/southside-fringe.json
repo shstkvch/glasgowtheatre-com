@@ -1,0 +1,18 @@
+{
+  "apiVersion": "1",
+  "generatedAt": "2026-10-17T21:40:27.566Z",
+  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "venue": {
+    "id": "southside-fringe",
+    "name": "Southside Fringe",
+    "area": "Southside",
+    "description": "An annual multi-venue festival celebrating the creativity and diversity of Glasgow’s Southside. For two weeks each May, the Fringe pops up in cafes, parks, community halls, and shop fronts across the Southside, with a programme spanning theatre, comedy, music, visual art, and family events.",
+    "website": "https://southsidefringe.org.uk",
+    "instagram": "southsidefringe",
+    "programme": "theatre",
+    "url": "https://glasgowtheatre.com/venues/southside-fringe.html",
+    "upcomingShows": 0,
+    "showsUrl": "https://glasgowtheatre.com/api/v1/venues/southside-fringe/shows.json",
+    "concessions": null
+  }
+}

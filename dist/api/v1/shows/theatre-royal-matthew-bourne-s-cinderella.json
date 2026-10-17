@@ -1,0 +1,40 @@
+{
+  "apiVersion": "1",
+  "generatedAt": "2026-10-17T21:40:27.566Z",
+  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "show": {
+    "id": "theatre-royal-matthew-bourne-s-cinderella",
+    "url": "https://glasgowtheatre.com/shows/theatre-royal-matthew-bourne-s-cinderella.html",
+    "title": "Matthew Bourne’s Cinderella",
+    "artForm": "dance",
+    "tags": [
+      "dance"
+    ],
+    "producer": null,
+    "description": "New Adventures return to Glasgow with the 30th Anniversary celebration of one of its most popular and beloved productions, Matthew Bourne’s CINDERELLA — a thrilling and evocative love story set in London during the Second World War.",
+    "venue": {
+      "id": "theatre-royal",
+      "name": "Theatre Royal",
+      "area": "City Centre"
+    },
+    "run": {
+      "opens": "2027-04-13",
+      "closes": "2027-04-17",
+      "time": null
+    },
+    "schedule": null,
+    "performances": [],
+    "pricing": null,
+    "accessibility": [
+      "Audio-described performances available"
+    ],
+    "durationMinutes": null,
+    "image": {
+      "url": "https://glasgowtheatre.com/images/200b6b35ba24b9bf8e3c.webp",
+      "alt": "Matthew Bourne’s Cinderella",
+      "credit": null
+    },
+    "bookingUrl": "https://www.atgtickets.com/shows/matthew-bournes-cinderella/theatre-royal-glasgow/calendar/",
+    "updatedAt": "2026-10-15"
+  }
+}

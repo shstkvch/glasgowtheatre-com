@@ -1,0 +1,56 @@
+{
+  "apiVersion": "1",
+  "generatedAt": "2026-10-17T21:40:27.566Z",
+  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "show": {
+    "id": "cottiers-witch-hunt",
+    "url": "https://glasgowtheatre.com/shows/cottiers-witch-hunt.html",
+    "title": "Witch Hunt",
+    "artForm": "musical",
+    "tags": [
+      "musical"
+    ],
+    "producer": null,
+    "description": "Witch HuntWitch Hunt is a thrilling new musical inspired by the Scottish witch trials.When a ruthless King declares war on witches, fear spreads and three women are accused,hunted, and forced to run for their lives.Pursued by a bishop hiding a dangerous secret, they must choose between silence...",
+    "venue": {
+      "id": "cottiers",
+      "name": "Cottiers",
+      "area": "Hyndland"
+    },
+    "run": {
+      "opens": "2026-10-25",
+      "closes": "2026-10-25",
+      "time": "19:30"
+    },
+    "schedule": {
+      "text": "07:30 PM - 09:30 PM"
+    },
+    "performances": [
+      {
+        "date": "2026-10-25",
+        "time": "19:30"
+      }
+    ],
+    "pricing": {
+      "currency": "GBP",
+      "from": 20,
+      "to": null,
+      "concessionFrom": null,
+      "concessionTo": null,
+      "free": false,
+      "payWhatYouLike": false,
+      "text": "Standard Price : £20.00",
+      "source": "published-text",
+      "checkedAt": "2026-10-15"
+    },
+    "accessibility": null,
+    "durationMinutes": null,
+    "image": {
+      "url": "https://glasgowtheatre.com/images/1f2fce089a35acd1b362.webp",
+      "alt": "Witch Hunt",
+      "credit": null
+    },
+    "bookingUrl": "https://cottiers.com/event/witch-hunt/",
+    "updatedAt": "2026-10-15"
+  }
+}

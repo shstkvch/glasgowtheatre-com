@@ -1,0 +1,38 @@
+{
+  "apiVersion": "1",
+  "generatedAt": "2026-10-17T21:40:27.566Z",
+  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "show": {
+    "id": "theatre-royal-operation-mincemeat-a-new-musical",
+    "url": "https://glasgowtheatre.com/shows/theatre-royal-operation-mincemeat-a-new-musical.html",
+    "title": "Operation Mincemeat: A New Musical",
+    "artForm": "musical",
+    "tags": [
+      "musical"
+    ],
+    "producer": null,
+    "description": "Operation Mincemeat is the 2024 Olivier Award-winning Best New Musical, a Tony Award®-winning musical on Broadway, and it's now coming to Theatre Royal Glasgow for one week!",
+    "venue": {
+      "id": "theatre-royal",
+      "name": "Theatre Royal",
+      "area": "City Centre"
+    },
+    "run": {
+      "opens": "2026-11-10",
+      "closes": "2027-07-10",
+      "time": null
+    },
+    "schedule": null,
+    "performances": [],
+    "pricing": null,
+    "accessibility": null,
+    "durationMinutes": null,
+    "image": {
+      "url": "https://glasgowtheatre.com/images/6627e84f915c2d690d99.webp",
+      "alt": "Operation Mincemeat: A New Musical",
+      "credit": null
+    },
+    "bookingUrl": "https://www.atgtickets.com/shows/operation-mincemeat-a-new-musical/theatre-royal-glasgow/calendar/",
+    "updatedAt": "2026-10-15"
+  }
+}

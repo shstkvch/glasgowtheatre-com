@@ -1,0 +1,38 @@
+{
+  "apiVersion": "1",
+  "generatedAt": "2026-10-17T21:40:27.566Z",
+  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "show": {
+    "id": "theatre-royal-go-dance-2027-celebrating-20-years",
+    "url": "https://glasgowtheatre.com/shows/theatre-royal-go-dance-2027-celebrating-20-years.html",
+    "title": "Go Dance 2027 - Celebrating 20 years!",
+    "artForm": "dance",
+    "tags": [
+      "dance"
+    ],
+    "producer": null,
+    "description": "Go Dance 2027 - Celebrating 20 years! at Theatre Royal, Glasgow.",
+    "venue": {
+      "id": "theatre-royal",
+      "name": "Theatre Royal",
+      "area": "City Centre"
+    },
+    "run": {
+      "opens": "2027-03-02",
+      "closes": "2027-03-05",
+      "time": null
+    },
+    "schedule": null,
+    "performances": [],
+    "pricing": null,
+    "accessibility": null,
+    "durationMinutes": null,
+    "image": {
+      "url": "https://glasgowtheatre.com/images/97928b3465dccbd20fe0.webp",
+      "alt": "Go Dance 2027 - Celebrating 20 years!",
+      "credit": null
+    },
+    "bookingUrl": "https://www.atgtickets.com/shows/go-dance-2027-celebrating-20-years/theatre-royal-glasgow/calendar/",
+    "updatedAt": "2026-10-15"
+  }
+}

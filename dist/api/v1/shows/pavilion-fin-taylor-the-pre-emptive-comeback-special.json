@@ -1,0 +1,44 @@
+{
+  "apiVersion": "1",
+  "generatedAt": "2026-10-17T21:40:27.566Z",
+  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "show": {
+    "id": "pavilion-fin-taylor-the-pre-emptive-comeback-special",
+    "url": "https://glasgowtheatre.com/shows/pavilion-fin-taylor-the-pre-emptive-comeback-special.html",
+    "title": "Fin Taylor: The Pre-emptive Comeback Special",
+    "artForm": "stand-up",
+    "tags": [
+      "stand-up"
+    ],
+    "producer": null,
+    "description": "Men want to be him, Women want their boyfriends to stop showing them his videos. The King of the Internet Jungle is back where he belongs, doing stand-up in front of a live audience. After the whirlwind success of his chart-topping podcast Fin vs History and interview series Fin vs the Internet...",
+    "venue": {
+      "id": "pavilion",
+      "name": "Pavilion Theatre",
+      "area": "City Centre"
+    },
+    "run": {
+      "opens": "2026-11-01",
+      "closes": "2026-11-01",
+      "time": "20:00"
+    },
+    "schedule": null,
+    "performances": [
+      {
+        "date": "2026-11-01",
+        "time": "20:00",
+        "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/comedy/fin-taylor-the-pre-emptive-comeback-special-tickets"
+      }
+    ],
+    "pricing": null,
+    "accessibility": null,
+    "durationMinutes": null,
+    "image": {
+      "url": "https://glasgowtheatre.com/images/1075918c3872aaf4b9f9.webp",
+      "alt": "Fin Taylor: The Pre-emptive Comeback Special",
+      "credit": null
+    },
+    "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/comedy/fin-taylor-the-pre-emptive-comeback-special-tickets",
+    "updatedAt": "2026-10-15"
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "apiVersion": "1",
+  "generatedAt": "2026-10-17T21:40:27.566Z",
+  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "show": {
+    "id": "citizens-an-t-rlar-as-irde-the-highest-stage",
+    "url": "https://glasgowtheatre.com/shows/citizens-an-t-rlar-as-irde-the-highest-stage.html",
+    "title": "An t-Ùrlar as Àirde (The Highest Stage)",
+    "artForm": "play",
+    "tags": [
+      "play"
+    ],
+    "producer": null,
+    "description": "Tha Theatre Gu Leòr, prìomh chompanaidh tèatar na Gàidhlig, a’ toirt cuireadh dhuibh gu oidhche shònraichte a’ comharrachadh 10 bliadhna den obair àraid is àrd-amasach aca. Le measgachadh de pìosan tèatair ùr is sean, tha An t-Ùrlar as Àirde a’ sealltainn cho cruthachail is cumhachdach ’s a tha...",
+    "venue": {
+      "id": "citizens",
+      "name": "Citizens Theatre",
+      "area": "Gorbals"
+    },
+    "run": {
+      "opens": "2026-11-13",
+      "closes": "2026-11-13",
+      "time": null
+    },
+    "schedule": null,
+    "performances": [],
+    "pricing": {
+      "currency": "GBP",
+      "from": 17.5,
+      "to": null,
+      "concessionFrom": null,
+      "concessionTo": null,
+      "free": false,
+      "payWhatYouLike": false,
+      "text": "£17.50",
+      "source": "published-text",
+      "checkedAt": "2026-10-15"
+    },
+    "accessibility": null,
+    "durationMinutes": 105,
+    "image": {
+      "url": "https://glasgowtheatre.com/images/826b6cbd2e72dbdbb0de.webp",
+      "alt": "An t-Ùrlar as Àirde (The Highest Stage)",
+      "credit": null
+    },
+    "bookingUrl": "https://citz.co.uk/whats-on/an-t-urlar-as-airde/",
+    "updatedAt": "2026-10-15"
+  }
+}

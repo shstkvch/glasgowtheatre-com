@@ -17,6 +17,12 @@ const {
   money,
   concessionSource,
 } = require("./scripts/tickets");
+const {
+  buildApiFiles,
+  docsBody,
+  playgroundBody,
+  loadExamples,
+} = require("./scripts/api");
 const DIST = path.join(__dirname, "dist");
 const SITE = "https://glasgowtheatre.com";
 const today = londonDate();
@@ -300,7 +306,7 @@ function page(
 <a class="skip-link" href="#main">Skip to content</a><header class="site-header"><div class="container header-inner"><a class="brand" href="/" aria-label="Glasgow Theatre home">GLASGOW<span>THEATRE<span class="brand-dot">●</span></span></a>
 <details class="nav-menu" open><summary class="nav-toggle"><span class="nav-bars" aria-hidden="true"></span><span class="nav-toggle-label">Menu</span></summary><nav aria-label="Main navigation">${nav.map(([key, href, text]) => `<a href="${href}"${active === key ? ' aria-current="page"' : ""}>${text}</a>`).join("")}</nav></details></div></header>
 <main id="main">${body}</main>
-<footer class="site-footer"><div class="container"><div class="footer-top"><div><a class="brand" href="/">GLASGOW<span>THEATRE<span class="brand-dot">●</span></span></a><p>Explore Glasgow’s bustling theatre scene.</p></div><div><p class="eyebrow">Made for the audience</p><a href="/about.html">About this independent guide ${arrow}</a><a href="/submit.html">Get your show listed ${arrow}</a><a href="mailto:info@glasgowtheatre.com">Get in touch ${arrow}</a></div></div><div class="footer-bottom"><span>© ${today.slice(0, 4)} Glasgow Theatre</span><span>Listings refreshed ${date(londonDate(new Date(status.refreshedAt)), true)} · Always check details with the venue.</span></div></div></footer>
+<footer class="site-footer"><div class="container"><div class="footer-top"><div><a class="brand" href="/">GLASGOW<span>THEATRE<span class="brand-dot">●</span></span></a><p>Explore Glasgow’s bustling theatre scene.</p></div><div><p class="eyebrow">Made for the audience</p><a href="/about.html">About this independent guide ${arrow}</a><a href="/submit.html">Get your show listed ${arrow}</a><a href="/api/">API for developers ${arrow}</a><a href="mailto:info@glasgowtheatre.com">Get in touch ${arrow}</a></div></div><div class="footer-bottom"><span>© ${today.slice(0, 4)} Glasgow Theatre</span><span>Listings refreshed ${date(londonDate(new Date(status.refreshedAt)), true)} · Always check details with the venue.</span></div></div></footer>
 <script type="application/ld+json">${json({ "@context": "https://schema.org", "@type": "WebSite", name: "Glasgow Theatre", url: SITE })}</script>${active === "events" ? `<script type="application/ld+json">${json(pageEvents.map(eventData))}</script>` : ""}
 <script>window.EVENTS = ${json(pageEvents)};</script></body></html>`;
 }
@@ -710,7 +716,7 @@ write(
     "About this independent theatre guide",
     "An independent guide to theatre, dance and performance in Glasgow.",
     "/about.html",
-    `<section class="page-hero container"><p class="eyebrow">Independent. Local. Live.</p><h1>So much stuff<br>to see.</h1><p>Glasgow Theatre helps you find what’s on across the city, from established theatres to independent performance spaces.</p></section><section class="prose container"><h2>A place to find your next show</h2><p>Browse productions by venue, date or art form, then book directly with the venue. Listings are free, and this guide is independent of the theatres it covers.</p><h2>About the listings</h2><p>We gather listings from venue programmes and accept submissions from companies and artists. This is a selection of what’s on, rather than a complete programme for every venue. Check the booking page for the latest performance times, prices, availability and access arrangements.</p><h2>How prices get here</h2><p>Prices and concession schemes are read from each venue’s own pages and refreshed with the listings. Where a theatre prices by demand — the King’s, the Theatre Royal and the Pavilion all do — the figure shown is the cheapest seat still on sale when we last looked, and it moves as the run sells. Every price here is a guide: the booking page is the one that counts.</p><h2>Something missing or incorrect?</h2><p><a href="/submit.html">Send us a listing</a> or email <a href="mailto:info@glasgowtheatre.com">info@glasgowtheatre.com</a> with a correction.</p><h2>Who runs this</h2><p>Glasgow Theatre is maintained by David Hewitson.</p></section>`,
+    `<section class="page-hero container"><p class="eyebrow">Independent. Local. Live.</p><h1>So much stuff<br>to see.</h1><p>Glasgow Theatre helps you find what’s on across the city, from established theatres to independent performance spaces.</p></section><section class="prose container"><h2>A place to find your next show</h2><p>Browse productions by venue, date or art form, then book directly with the venue. Listings are free, and this guide is independent of the theatres it covers.</p><h2>About the listings</h2><p>We gather listings from venue programmes and accept submissions from companies and artists. This is a selection of what’s on, rather than a complete programme for every venue. Check the booking page for the latest performance times, prices, availability and access arrangements.</p><h2>How prices get here</h2><p>Prices and concession schemes are read from each venue’s own pages and refreshed with the listings. Where a theatre prices by demand — the King’s, the Theatre Royal and the Pavilion all do — the figure shown is the cheapest seat still on sale when we last looked, and it moves as the run sells. Every price here is a guide: the booking page is the one that counts.</p><h2>Something missing or incorrect?</h2><p><a href="/submit.html">Send us a listing</a> or email <a href="mailto:info@glasgowtheatre.com">info@glasgowtheatre.com</a> with a correction.</p><h2>Use the listings</h2><p>There is a free, read-only JSON API for shows and venues, with no key and no account. Start at <a href="/api/">the API documentation</a>, or <a href="/api/examples.html">try it in your browser</a>. Please credit Glasgow Theatre and check prices and times with the venue.</p><h2>Who runs this</h2><p>Glasgow Theatre is maintained by David Hewitson.</p></section>`,
     "about",
   ),
 );
@@ -730,6 +736,8 @@ const paths = [
   "/venues.html",
   "/about.html",
   "/submit.html",
+  "/api/",
+  "/api/examples.html",
   ...venues.map((v) => `/venues/${v.id}.html`),
   ...events.map(showPath),
 ];
@@ -764,6 +772,46 @@ write(
     null,
     2,
   ) + "\n",
+);
+/* ------------------------------------------------------------------- API */
+// The public contract is generated from the same merged listings the pages
+// use: static snapshots for bulk access, docs, OpenAPI and a tiny playground.
+const { files: apiFiles, dataset: apiDataset } = buildApiFiles({
+  events,
+  venues,
+  concessions,
+  status,
+});
+for (const [name, text] of Object.entries(apiFiles)) write(name, text);
+const apiExamples = loadExamples();
+write(
+  "api/index.html",
+  page(
+    "API for developers",
+    "A free, read-only JSON API for Glasgow theatre shows and venues.",
+    "/api/",
+    docsBody({
+      dataset: apiDataset,
+      sampleShow: apiDataset.shows[0] || null,
+      sampleVenue: apiDataset.venues[0] || null,
+    }),
+    "api",
+    [],
+  ),
+);
+write(
+  "api/examples.html",
+  page(
+    "Try the Glasgow Theatre API",
+    "Edit and run JavaScript, Python, PHP, C and Go examples against the Glasgow Theatre API.",
+    "/api/examples.html",
+    playgroundBody({
+      examples: apiExamples,
+      scriptUrl: asset("js/playground.js"),
+    }),
+    "api",
+    [],
+  ),
 );
 write("robots.txt", `User-agent: *\nAllow: /\nSitemap: ${SITE}/sitemap.xml\n`);
 write("CNAME", "glasgowtheatre.com\n");

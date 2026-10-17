@@ -1,0 +1,49 @@
+{
+  "apiVersion": "1",
+  "generatedAt": "2026-10-17T21:40:27.566Z",
+  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "show": {
+    "id": "citizens-jill-jackson-and-support",
+    "url": "https://glasgowtheatre.com/shows/citizens-jill-jackson-and-support.html",
+    "title": "Jill Jackson and Support",
+    "artForm": "music",
+    "tags": [
+      "music"
+    ],
+    "producer": null,
+    "description": "Heartfelt songwriting and contemporary folk charm. More information to follow.",
+    "venue": {
+      "id": "citizens",
+      "name": "Citizens Theatre",
+      "area": "Gorbals"
+    },
+    "run": {
+      "opens": "2027-01-22",
+      "closes": "2027-01-22",
+      "time": null
+    },
+    "schedule": null,
+    "performances": [],
+    "pricing": {
+      "currency": "GBP",
+      "from": 28,
+      "to": null,
+      "concessionFrom": null,
+      "concessionTo": null,
+      "free": false,
+      "payWhatYouLike": false,
+      "text": "£28",
+      "source": "published-text",
+      "checkedAt": "2026-10-15"
+    },
+    "accessibility": null,
+    "durationMinutes": null,
+    "image": {
+      "url": "https://glasgowtheatre.com/images/eb455b6d493e03be0d32.webp",
+      "alt": "Jill Jackson and Support",
+      "credit": null
+    },
+    "bookingUrl": "https://citz.co.uk/whats-on/jill-jackson-and-support/",
+    "updatedAt": "2026-10-15"
+  }
+}

@@ -1,0 +1,862 @@
+{
+  "apiVersion": "1",
+  "generatedAt": "2026-10-17T21:40:27.566Z",
+  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "total": 25,
+  "count": 25,
+  "limit": null,
+  "offset": 0,
+  "next": null,
+  "prev": null,
+  "shows": [
+    {
+      "id": "theatre-royal-scottish-opera-turandot",
+      "url": "https://glasgowtheatre.com/shows/theatre-royal-scottish-opera-turandot.html",
+      "title": "Scottish Opera - Turandot",
+      "artForm": "opera",
+      "tags": [
+        "opera"
+      ],
+      "producer": null,
+      "description": "A new co-production with Irish National Opera An Emperor’s court decays around him; a princess, haunted by inherited trauma, plays a deadly game of riddles; a visiting prince takes one look and decides to risk his life for love. The stakes could not be higher.",
+      "venue": {
+        "id": "theatre-royal",
+        "name": "Theatre Royal",
+        "area": "City Centre"
+      },
+      "run": {
+        "opens": "2026-10-22",
+        "closes": "2026-11-07",
+        "time": null
+      },
+      "schedule": null,
+      "performances": [],
+      "pricing": null,
+      "accessibility": [
+        "Audio-described performances available"
+      ],
+      "durationMinutes": null,
+      "image": {
+        "url": "https://glasgowtheatre.com/images/6d2f939a352e9b2cd895.webp",
+        "alt": "Scottish Opera - Turandot",
+        "credit": null
+      },
+      "bookingUrl": "https://www.atgtickets.com/shows/scottish-opera-turandot/theatre-royal-glasgow/calendar/",
+      "updatedAt": "2026-10-15"
+    },
+    {
+      "id": "theatre-royal-scottish-opera-turandot-touch-tour",
+      "url": "https://glasgowtheatre.com/shows/theatre-royal-scottish-opera-turandot-touch-tour.html",
+      "title": "Scottish Opera - Turandot - Touch Tour",
+      "artForm": "tour",
+      "tags": [
+        "tour"
+      ],
+      "producer": null,
+      "description": "Our free touch tours provide an opportunity to become more familiar with the set, scenery, props and costumes. This aims to help audience members living with sight loss to immerse themselves in the world presented on stage, with audio describers, stage management and wardrobe staff present to...",
+      "venue": {
+        "id": "theatre-royal",
+        "name": "Theatre Royal",
+        "area": "City Centre"
+      },
+      "run": {
+        "opens": "2026-10-25",
+        "closes": "2026-10-25",
+        "time": null
+      },
+      "schedule": null,
+      "performances": [],
+      "pricing": null,
+      "accessibility": [
+        "Audio-described performances available"
+      ],
+      "durationMinutes": null,
+      "image": {
+        "url": "https://glasgowtheatre.com/images/37fb870bfff7f3e969e5.webp",
+        "alt": "Scottish Opera - Turandot - Touch Tour",
+        "credit": null
+      },
+      "bookingUrl": "https://www.atgtickets.com/shows/scottish-opera-turandot-touch-tour/theatre-royal-glasgow/calendar/",
+      "updatedAt": "2026-10-15"
+    },
+    {
+      "id": "theatre-royal-scottish-opera-turandot-pre-show-talk",
+      "url": "https://glasgowtheatre.com/shows/theatre-royal-scottish-opera-turandot-pre-show-talk.html",
+      "title": "Scottish Opera - Turandot Pre Show Talk",
+      "artForm": "talk",
+      "tags": [
+        "talk"
+      ],
+      "producer": null,
+      "description": "Get closer to the action and see into the minds of the creatives behind the production by attending a pre-show talk.",
+      "venue": {
+        "id": "theatre-royal",
+        "name": "Theatre Royal",
+        "area": "City Centre"
+      },
+      "run": {
+        "opens": "2026-10-31",
+        "closes": "2026-10-31",
+        "time": null
+      },
+      "schedule": null,
+      "performances": [],
+      "pricing": null,
+      "accessibility": null,
+      "durationMinutes": null,
+      "image": {
+        "url": "https://glasgowtheatre.com/images/6d2f939a352e9b2cd895.webp",
+        "alt": "Scottish Opera - Turandot Pre Show Talk",
+        "credit": null
+      },
+      "bookingUrl": "https://www.atgtickets.com/shows/scottish-opera-turandot-pre-show-talk/theatre-royal-glasgow/calendar/",
+      "updatedAt": "2026-10-15"
+    },
+    {
+      "id": "theatre-royal-operation-mincemeat-a-new-musical",
+      "url": "https://glasgowtheatre.com/shows/theatre-royal-operation-mincemeat-a-new-musical.html",
+      "title": "Operation Mincemeat: A New Musical",
+      "artForm": "musical",
+      "tags": [
+        "musical"
+      ],
+      "producer": null,
+      "description": "Operation Mincemeat is the 2024 Olivier Award-winning Best New Musical, a Tony Award®-winning musical on Broadway, and it's now coming to Theatre Royal Glasgow for one week!",
+      "venue": {
+        "id": "theatre-royal",
+        "name": "Theatre Royal",
+        "area": "City Centre"
+      },
+      "run": {
+        "opens": "2026-11-10",
+        "closes": "2027-07-10",
+        "time": null
+      },
+      "schedule": null,
+      "performances": [],
+      "pricing": null,
+      "accessibility": null,
+      "durationMinutes": null,
+      "image": {
+        "url": "https://glasgowtheatre.com/images/6627e84f915c2d690d99.webp",
+        "alt": "Operation Mincemeat: A New Musical",
+        "credit": null
+      },
+      "bookingUrl": "https://www.atgtickets.com/shows/operation-mincemeat-a-new-musical/theatre-royal-glasgow/calendar/",
+      "updatedAt": "2026-10-15"
+    },
+    {
+      "id": "theatre-royal-phil-wang-uh-oh",
+      "url": "https://glasgowtheatre.com/shows/theatre-royal-phil-wang-uh-oh.html",
+      "title": "Phil Wang: UH OH",
+      "artForm": "stand-up",
+      "tags": [
+        "stand-up"
+      ],
+      "producer": null,
+      "description": "UH OH. Phil Wang’s back with a new stand - up show, and he’s older than ever before.",
+      "venue": {
+        "id": "theatre-royal",
+        "name": "Theatre Royal",
+        "area": "City Centre"
+      },
+      "run": {
+        "opens": "2026-11-15",
+        "closes": "2026-11-15",
+        "time": null
+      },
+      "schedule": null,
+      "performances": [],
+      "pricing": null,
+      "accessibility": null,
+      "durationMinutes": null,
+      "image": {
+        "url": "https://glasgowtheatre.com/images/41c6d8ba63eb3531b621.webp",
+        "alt": "Phil Wang: UH OH",
+        "credit": null
+      },
+      "bookingUrl": "https://www.atgtickets.com/shows/phil-wang-uh-oh/theatre-royal-glasgow/calendar/",
+      "updatedAt": "2026-10-15"
+    },
+    {
+      "id": "theatre-royal-matilda-the-musical",
+      "url": "https://glasgowtheatre.com/shows/theatre-royal-matilda-the-musical.html",
+      "title": "Matilda The Musical",
+      "artForm": "musical",
+      "tags": [
+        "musical"
+      ],
+      "producer": null,
+      "description": "Matilda The Musical, the multi-award winning musical from the Royal Shakespeare Company is inspired by the beloved book by Roald Dahl. Buy one and get one under 16s half price on selected seats at Tue – Thu performances.",
+      "venue": {
+        "id": "theatre-royal",
+        "name": "Theatre Royal",
+        "area": "City Centre"
+      },
+      "run": {
+        "opens": "2026-11-18",
+        "closes": "2026-12-05",
+        "time": null
+      },
+      "schedule": null,
+      "performances": [],
+      "pricing": null,
+      "accessibility": [
+        "Captioned performances available",
+        "Audio-described performances available",
+        "BSL-interpreted performances available"
+      ],
+      "durationMinutes": null,
+      "image": {
+        "url": "https://glasgowtheatre.com/images/12603bd62ae24984881d.webp",
+        "alt": "Matilda The Musical",
+        "credit": null
+      },
+      "bookingUrl": "https://www.atgtickets.com/shows/matilda-the-musical/theatre-royal-glasgow/calendar/",
+      "updatedAt": "2026-10-15"
+    },
+    {
+      "id": "theatre-royal-ice-dragon",
+      "url": "https://glasgowtheatre.com/shows/theatre-royal-ice-dragon.html",
+      "title": "Ice Dragon",
+      "artForm": "musical",
+      "tags": [
+        "musical"
+      ],
+      "producer": null,
+      "description": "Travel through the seasons in Ice Dragon, an interactive musical adventure for babies and children under six years.",
+      "venue": {
+        "id": "theatre-royal",
+        "name": "Theatre Royal",
+        "area": "City Centre"
+      },
+      "run": {
+        "opens": "2026-11-30",
+        "closes": "2026-12-06",
+        "time": null
+      },
+      "schedule": null,
+      "performances": [],
+      "pricing": null,
+      "accessibility": null,
+      "durationMinutes": null,
+      "image": {
+        "url": "https://glasgowtheatre.com/images/113cfc81e2cde6731711.webp",
+        "alt": "Ice Dragon",
+        "credit": null
+      },
+      "bookingUrl": "https://www.atgtickets.com/shows/ice-dragon/theatre-royal-glasgow/calendar/",
+      "updatedAt": "2026-10-15"
+    },
+    {
+      "id": "theatre-royal-atg-inspire-academy-juniors",
+      "url": "https://glasgowtheatre.com/shows/theatre-royal-atg-inspire-academy-juniors.html",
+      "title": "ATG Inspire Academy Juniors",
+      "artForm": "workshop",
+      "tags": [
+        "workshop"
+      ],
+      "producer": null,
+      "description": "Weekly classes for young people, delivered in partnership with ShowWorks Theatre. - Work towards Trinity College London accredited certificates.",
+      "venue": {
+        "id": "theatre-royal",
+        "name": "Theatre Royal",
+        "area": "City Centre"
+      },
+      "run": {
+        "opens": "2026-12-08",
+        "closes": "2026-12-08",
+        "time": null
+      },
+      "schedule": null,
+      "performances": [],
+      "pricing": null,
+      "accessibility": null,
+      "durationMinutes": null,
+      "image": {
+        "url": "https://glasgowtheatre.com/images/bee3079bd0a389ceb66a.webp",
+        "alt": "ATG Inspire Academy Juniors",
+        "credit": null
+      },
+      "bookingUrl": "https://www.atgtickets.com/shows/atg-inspire-academy-juniors/theatre-royal-glasgow/calendar/",
+      "updatedAt": "2026-10-15"
+    },
+    {
+      "id": "theatre-royal-atg-inspire-academy-seniors",
+      "url": "https://glasgowtheatre.com/shows/theatre-royal-atg-inspire-academy-seniors.html",
+      "title": "ATG Inspire Academy Seniors",
+      "artForm": "workshop",
+      "tags": [
+        "workshop"
+      ],
+      "producer": null,
+      "description": "Weekly classes for young people, delivered in partnership with ShowWorks Theatre. - Work towards Trinity College London accredited certificates.",
+      "venue": {
+        "id": "theatre-royal",
+        "name": "Theatre Royal",
+        "area": "City Centre"
+      },
+      "run": {
+        "opens": "2026-12-08",
+        "closes": "2026-12-08",
+        "time": null
+      },
+      "schedule": null,
+      "performances": [],
+      "pricing": null,
+      "accessibility": null,
+      "durationMinutes": null,
+      "image": {
+        "url": "https://glasgowtheatre.com/images/c3157faa5f82d0adba99.webp",
+        "alt": "ATG Inspire Academy Seniors",
+        "credit": null
+      },
+      "bookingUrl": "https://www.atgtickets.com/shows/atg-inspire-academy-seniors/theatre-royal-glasgow/calendar/",
+      "updatedAt": "2026-10-15"
+    },
+    {
+      "id": "theatre-royal-cats",
+      "url": "https://glasgowtheatre.com/shows/theatre-royal-cats.html",
+      "title": "CATS",
+      "artForm": "musical",
+      "tags": [
+        "musical"
+      ],
+      "producer": null,
+      "description": "A spectacular new production of Andrew Lloyd Webber’s multi award-winning musical CATS is coming to the Theatre Royal.",
+      "venue": {
+        "id": "theatre-royal",
+        "name": "Theatre Royal",
+        "area": "City Centre"
+      },
+      "run": {
+        "opens": "2026-12-08",
+        "closes": "2026-12-27",
+        "time": null
+      },
+      "schedule": null,
+      "performances": [],
+      "pricing": null,
+      "accessibility": [
+        "Captioned performances available",
+        "Audio-described performances available",
+        "BSL-interpreted performances available"
+      ],
+      "durationMinutes": null,
+      "image": {
+        "url": "https://glasgowtheatre.com/images/d920e04fa0224ba41450.webp",
+        "alt": "CATS",
+        "credit": null
+      },
+      "bookingUrl": "https://www.atgtickets.com/shows/cats/theatre-royal-glasgow/calendar/",
+      "updatedAt": "2026-10-15"
+    },
+    {
+      "id": "theatre-royal-scottish-ballet-cinders",
+      "url": "https://glasgowtheatre.com/shows/theatre-royal-scottish-ballet-cinders.html",
+      "title": "Scottish Ballet – Cinders!",
+      "artForm": "dance",
+      "tags": [
+        "dance"
+      ],
+      "producer": null,
+      "description": "A dazzling Cinderella story - Scottish Ballet's playful retelling of the Cinderella story returns to surprise and delight audiences.",
+      "venue": {
+        "id": "theatre-royal",
+        "name": "Theatre Royal",
+        "area": "City Centre"
+      },
+      "run": {
+        "opens": "2026-12-30",
+        "closes": "2027-01-16",
+        "time": null
+      },
+      "schedule": null,
+      "performances": [],
+      "pricing": null,
+      "accessibility": [
+        "Audio-described performances available"
+      ],
+      "durationMinutes": null,
+      "image": {
+        "url": "https://glasgowtheatre.com/images/54416c6f7207286d85e5.webp",
+        "alt": "Scottish Ballet – Cinders!",
+        "credit": null
+      },
+      "bookingUrl": "https://www.atgtickets.com/shows/scottish-ballet-cinders/theatre-royal-glasgow/calendar/",
+      "updatedAt": "2026-10-15"
+    },
+    {
+      "id": "theatre-royal-scottish-ballet-cinders-talk-ballet",
+      "url": "https://glasgowtheatre.com/shows/theatre-royal-scottish-ballet-cinders-talk-ballet.html",
+      "title": "Scottish Ballet – Cinders!: Talk Ballet",
+      "artForm": "talk",
+      "tags": [
+        "talk"
+      ],
+      "producer": null,
+      "description": "Scottish Ballet – Cinders!: Talk Ballet at Theatre Royal, Glasgow.",
+      "venue": {
+        "id": "theatre-royal",
+        "name": "Theatre Royal",
+        "area": "City Centre"
+      },
+      "run": {
+        "opens": "2027-01-08",
+        "closes": "2027-01-08",
+        "time": null
+      },
+      "schedule": null,
+      "performances": [],
+      "pricing": null,
+      "accessibility": null,
+      "durationMinutes": null,
+      "image": {
+        "url": "https://glasgowtheatre.com/images/54416c6f7207286d85e5.webp",
+        "alt": "Scottish Ballet – Cinders!: Talk Ballet",
+        "credit": null
+      },
+      "bookingUrl": "https://www.atgtickets.com/shows/scottish-ballet-cinders-talk-ballet/theatre-royal-glasgow/calendar/",
+      "updatedAt": "2026-10-15"
+    },
+    {
+      "id": "theatre-royal-shine-productions-present-titanic-the-musical",
+      "url": "https://glasgowtheatre.com/shows/theatre-royal-shine-productions-present-titanic-the-musical.html",
+      "title": "Shine Productions present Titanic The Musical",
+      "artForm": "musical",
+      "tags": [
+        "musical"
+      ],
+      "producer": null,
+      "description": "Join Shine Productions as they retell this extraordinary story, brought to life through the music, lyrics, and book by Tony Award-winning Maury Yeston and Peter Stone.",
+      "venue": {
+        "id": "theatre-royal",
+        "name": "Theatre Royal",
+        "area": "City Centre"
+      },
+      "run": {
+        "opens": "2027-01-20",
+        "closes": "2027-01-23",
+        "time": null
+      },
+      "schedule": null,
+      "performances": [],
+      "pricing": null,
+      "accessibility": null,
+      "durationMinutes": null,
+      "image": {
+        "url": "https://glasgowtheatre.com/images/d3ac818e09e848c69c23.webp",
+        "alt": "Shine Productions present Titanic The Musical",
+        "credit": null
+      },
+      "bookingUrl": "https://www.atgtickets.com/shows/shine-productions-present-titanic-the-musical/theatre-royal-glasgow/calendar/",
+      "updatedAt": "2026-10-15"
+    },
+    {
+      "id": "theatre-royal-scottish-opera-alcina",
+      "url": "https://glasgowtheatre.com/shows/theatre-royal-scottish-opera-alcina.html",
+      "title": "Scottish Opera - Alcina",
+      "artForm": "opera",
+      "tags": [
+        "opera"
+      ],
+      "producer": null,
+      "description": "There are worse places to find yourself trapped than Club Amnesia. Here, Alcina – performance artist extraordinaire – captivates the men who swarm around her, bending their minds, and reality, to her will. But when she meets Ruggiero, her heart finally softens. Then Ruggiero’s fiancée – disguised...",
+      "venue": {
+        "id": "theatre-royal",
+        "name": "Theatre Royal",
+        "area": "City Centre"
+      },
+      "run": {
+        "opens": "2027-02-06",
+        "closes": "2027-02-14",
+        "time": null
+      },
+      "schedule": null,
+      "performances": [],
+      "pricing": null,
+      "accessibility": [
+        "Audio-described performances available"
+      ],
+      "durationMinutes": null,
+      "image": {
+        "url": "https://glasgowtheatre.com/images/54fdeccfd3a9e4d36a56.webp",
+        "alt": "Scottish Opera - Alcina",
+        "credit": null
+      },
+      "bookingUrl": "https://www.atgtickets.com/shows/scottish-opera-alcina/theatre-royal-glasgow/calendar/",
+      "updatedAt": "2026-10-15"
+    },
+    {
+      "id": "theatre-royal-scottish-opera-alcina-pre-show-talk",
+      "url": "https://glasgowtheatre.com/shows/theatre-royal-scottish-opera-alcina-pre-show-talk.html",
+      "title": "Scottish Opera - Alcina Pre Show Talk",
+      "artForm": "talk",
+      "tags": [
+        "talk"
+      ],
+      "producer": null,
+      "description": "Get closer to the action and see into the minds of the creatives behind the production by attending a pre-show talk.",
+      "venue": {
+        "id": "theatre-royal",
+        "name": "Theatre Royal",
+        "area": "City Centre"
+      },
+      "run": {
+        "opens": "2027-02-11",
+        "closes": "2027-02-11",
+        "time": null
+      },
+      "schedule": null,
+      "performances": [],
+      "pricing": null,
+      "accessibility": null,
+      "durationMinutes": null,
+      "image": {
+        "url": "https://glasgowtheatre.com/images/54fdeccfd3a9e4d36a56.webp",
+        "alt": "Scottish Opera - Alcina Pre Show Talk",
+        "credit": null
+      },
+      "bookingUrl": "https://www.atgtickets.com/shows/scottish-opera-alcina-pre-show-talk/theatre-royal-glasgow/calendar/",
+      "updatedAt": "2026-10-15"
+    },
+    {
+      "id": "theatre-royal-scottish-opera-alcina-touch-tour",
+      "url": "https://glasgowtheatre.com/shows/theatre-royal-scottish-opera-alcina-touch-tour.html",
+      "title": "Scottish Opera - Alcina - Touch Tour",
+      "artForm": "tour",
+      "tags": [
+        "tour"
+      ],
+      "producer": null,
+      "description": "Our free touch tours provide an opportunity to become more familiar with the set, scenery, props and costumes. This aims to help audience members living with sight loss to immerse themselves in the world presented on stage, with audio describers, stage management and wardrobe staff present to...",
+      "venue": {
+        "id": "theatre-royal",
+        "name": "Theatre Royal",
+        "area": "City Centre"
+      },
+      "run": {
+        "opens": "2027-02-14",
+        "closes": "2027-02-14",
+        "time": null
+      },
+      "schedule": null,
+      "performances": [],
+      "pricing": null,
+      "accessibility": [
+        "Audio-described performances available"
+      ],
+      "durationMinutes": null,
+      "image": {
+        "url": "https://glasgowtheatre.com/images/64c82fefefd8b587151c.webp",
+        "alt": "Scottish Opera - Alcina - Touch Tour",
+        "credit": null
+      },
+      "bookingUrl": "https://www.atgtickets.com/shows/scottish-opera-alcina-touch-tour/theatre-royal-glasgow/calendar/",
+      "updatedAt": "2026-10-15"
+    },
+    {
+      "id": "theatre-royal-scottish-opera-fidelio",
+      "url": "https://glasgowtheatre.com/shows/theatre-royal-scottish-opera-fidelio.html",
+      "title": "Scottish Opera - Fidelio",
+      "artForm": "opera",
+      "tags": [
+        "opera"
+      ],
+      "producer": null,
+      "description": "To mark the 200th anniversary of Beethoven’s death, in 2027 Scotland’s orchestras and national opera company unite for an extraordinary exploration of the composer’s music.",
+      "venue": {
+        "id": "theatre-royal",
+        "name": "Theatre Royal",
+        "area": "City Centre"
+      },
+      "run": {
+        "opens": "2027-02-17",
+        "closes": "2027-02-19",
+        "time": null
+      },
+      "schedule": null,
+      "performances": [],
+      "pricing": null,
+      "accessibility": [
+        "Audio-described performances available"
+      ],
+      "durationMinutes": null,
+      "image": {
+        "url": "https://glasgowtheatre.com/images/0143eb71b96ba115047b.webp",
+        "alt": "Scottish Opera - Fidelio",
+        "credit": null
+      },
+      "bookingUrl": "https://www.atgtickets.com/shows/scottish-opera-fidelio/theatre-royal-glasgow/calendar/",
+      "updatedAt": "2026-10-15"
+    },
+    {
+      "id": "theatre-royal-scottish-opera-fidelio-touch-tour",
+      "url": "https://glasgowtheatre.com/shows/theatre-royal-scottish-opera-fidelio-touch-tour.html",
+      "title": "Scottish Opera - Fidelio - Touch Tour",
+      "artForm": "tour",
+      "tags": [
+        "tour"
+      ],
+      "producer": null,
+      "description": "Our free touch tours provide an opportunity to become more familiar with the set, scenery, props and costumes. This aims to help audience members living with sight loss to immerse themselves in the world presented on stage, with audio describers, stage management and wardrobe staff present to...",
+      "venue": {
+        "id": "theatre-royal",
+        "name": "Theatre Royal",
+        "area": "City Centre"
+      },
+      "run": {
+        "opens": "2027-02-19",
+        "closes": "2027-02-19",
+        "time": null
+      },
+      "schedule": null,
+      "performances": [],
+      "pricing": null,
+      "accessibility": [
+        "Audio-described performances available"
+      ],
+      "durationMinutes": null,
+      "image": {
+        "url": "https://glasgowtheatre.com/images/1ea2c17f028818a5c467.webp",
+        "alt": "Scottish Opera - Fidelio - Touch Tour",
+        "credit": null
+      },
+      "bookingUrl": "https://www.atgtickets.com/shows/scottish-opera-fidelio-touch-tour/theatre-royal-glasgow/calendar/",
+      "updatedAt": "2026-10-15"
+    },
+    {
+      "id": "theatre-royal-scottish-opera-national-opera-studio",
+      "url": "https://glasgowtheatre.com/shows/theatre-royal-scottish-opera-national-opera-studio.html",
+      "title": "Scottish Opera - National Opera Studio",
+      "artForm": "talk",
+      "tags": [
+        "talk"
+      ],
+      "producer": null,
+      "description": "As one of the National Opera Studio’s partners, Scottish Opera is delighted to host the 2026/27 NOS cohort – a group of the brightest rising star singers and repetiteurs from around the world – for a one-week residency of coaching with the Company’s Music Department, working with The Orchestra of...",
+      "venue": {
+        "id": "theatre-royal",
+        "name": "Theatre Royal",
+        "area": "City Centre"
+      },
+      "run": {
+        "opens": "2027-02-20",
+        "closes": "2027-02-20",
+        "time": null
+      },
+      "schedule": null,
+      "performances": [],
+      "pricing": null,
+      "accessibility": null,
+      "durationMinutes": null,
+      "image": {
+        "url": "https://glasgowtheatre.com/images/d93106f2eb552d6edb35.webp",
+        "alt": "Scottish Opera - National Opera Studio",
+        "credit": null
+      },
+      "bookingUrl": "https://www.atgtickets.com/shows/scottish-opera-national-opera-studio/theatre-royal-glasgow/calendar/",
+      "updatedAt": "2026-10-15"
+    },
+    {
+      "id": "theatre-royal-strangers-on-a-train",
+      "url": "https://glasgowtheatre.com/shows/theatre-royal-strangers-on-a-train.html",
+      "title": "Strangers on a Train",
+      "artForm": "play",
+      "tags": [
+        "play"
+      ],
+      "producer": null,
+      "description": "Based on the novel by Patricia Highsmith and inspired by Hitchcock’s iconic film, Strangers on a Train arrives on stage in a thrilling new production directed by Roxana Silbert.",
+      "venue": {
+        "id": "theatre-royal",
+        "name": "Theatre Royal",
+        "area": "City Centre"
+      },
+      "run": {
+        "opens": "2027-02-23",
+        "closes": "2027-02-27",
+        "time": null
+      },
+      "schedule": null,
+      "performances": [],
+      "pricing": null,
+      "accessibility": null,
+      "durationMinutes": null,
+      "image": {
+        "url": "https://glasgowtheatre.com/images/35da47c7b1beb964aece.webp",
+        "alt": "Strangers on a Train",
+        "credit": null
+      },
+      "bookingUrl": "https://www.atgtickets.com/shows/strangers-on-a-train/theatre-royal-glasgow/calendar/",
+      "updatedAt": "2026-10-15"
+    },
+    {
+      "id": "theatre-royal-go-dance-2027-celebrating-20-years",
+      "url": "https://glasgowtheatre.com/shows/theatre-royal-go-dance-2027-celebrating-20-years.html",
+      "title": "Go Dance 2027 - Celebrating 20 years!",
+      "artForm": "dance",
+      "tags": [
+        "dance"
+      ],
+      "producer": null,
+      "description": "Go Dance 2027 - Celebrating 20 years! at Theatre Royal, Glasgow.",
+      "venue": {
+        "id": "theatre-royal",
+        "name": "Theatre Royal",
+        "area": "City Centre"
+      },
+      "run": {
+        "opens": "2027-03-02",
+        "closes": "2027-03-05",
+        "time": null
+      },
+      "schedule": null,
+      "performances": [],
+      "pricing": null,
+      "accessibility": null,
+      "durationMinutes": null,
+      "image": {
+        "url": "https://glasgowtheatre.com/images/97928b3465dccbd20fe0.webp",
+        "alt": "Go Dance 2027 - Celebrating 20 years!",
+        "credit": null
+      },
+      "bookingUrl": "https://www.atgtickets.com/shows/go-dance-2027-celebrating-20-years/theatre-royal-glasgow/calendar/",
+      "updatedAt": "2026-10-15"
+    },
+    {
+      "id": "theatre-royal-the-curious-incident-of-the-dog-in-the-night-t",
+      "url": "https://glasgowtheatre.com/shows/theatre-royal-the-curious-incident-of-the-dog-in-the-night-t.html",
+      "title": "The Curious Incident of the Dog in the Night-Time",
+      "artForm": "play",
+      "tags": [
+        "play"
+      ],
+      "producer": null,
+      "description": "The internationally celebrated novel that captivated 10 million readers is coming in a brand-new staging more thrilling than ever.",
+      "venue": {
+        "id": "theatre-royal",
+        "name": "Theatre Royal",
+        "area": "City Centre"
+      },
+      "run": {
+        "opens": "2027-03-09",
+        "closes": "2027-03-13",
+        "time": null
+      },
+      "schedule": null,
+      "performances": [],
+      "pricing": null,
+      "accessibility": null,
+      "durationMinutes": null,
+      "image": {
+        "url": "https://glasgowtheatre.com/images/4edbea8aec489a82ad45.webp",
+        "alt": "The Curious Incident of the Dog in the Night-Time",
+        "credit": null
+      },
+      "bookingUrl": "https://www.atgtickets.com/shows/the-curious-incident-of-the-dog-in-the-night-time/theatre-royal-glasgow/calendar/",
+      "updatedAt": "2026-10-15"
+    },
+    {
+      "id": "theatre-royal-pmos-presents-calamity-jane",
+      "url": "https://glasgowtheatre.com/shows/theatre-royal-pmos-presents-calamity-jane.html",
+      "title": "PMOS presents Calamity Jane",
+      "artForm": "musical",
+      "tags": [
+        "musical"
+      ],
+      "producer": null,
+      "description": "A Beloved Favourite Shining Brighter Than Ever!",
+      "venue": {
+        "id": "theatre-royal",
+        "name": "Theatre Royal",
+        "area": "City Centre"
+      },
+      "run": {
+        "opens": "2027-03-24",
+        "closes": "2027-03-27",
+        "time": null
+      },
+      "schedule": null,
+      "performances": [],
+      "pricing": null,
+      "accessibility": null,
+      "durationMinutes": null,
+      "image": {
+        "url": "https://glasgowtheatre.com/images/8dfafda0cbd3e110dbea.webp",
+        "alt": "PMOS presents Calamity Jane",
+        "credit": null
+      },
+      "bookingUrl": "https://www.atgtickets.com/shows/pmos-presents-calamity-jane/theatre-royal-glasgow/calendar/",
+      "updatedAt": "2026-10-15"
+    },
+    {
+      "id": "theatre-royal-twelve-angry-men",
+      "url": "https://glasgowtheatre.com/shows/theatre-royal-twelve-angry-men.html",
+      "title": "Twelve Angry Men",
+      "artForm": "play",
+      "tags": [
+        "play"
+      ],
+      "producer": null,
+      "description": "A life in the balance. Twelve men. One verdict.",
+      "venue": {
+        "id": "theatre-royal",
+        "name": "Theatre Royal",
+        "area": "City Centre"
+      },
+      "run": {
+        "opens": "2027-03-30",
+        "closes": "2027-04-03",
+        "time": null
+      },
+      "schedule": null,
+      "performances": [],
+      "pricing": null,
+      "accessibility": null,
+      "durationMinutes": null,
+      "image": {
+        "url": "https://glasgowtheatre.com/images/91b6b1da5836f1dc16dc.webp",
+        "alt": "Twelve Angry Men",
+        "credit": null
+      },
+      "bookingUrl": "https://www.atgtickets.com/shows/twelve-angry-men/theatre-royal-glasgow/calendar/",
+      "updatedAt": "2026-10-15"
+    },
+    {
+      "id": "theatre-royal-matthew-bourne-s-cinderella",
+      "url": "https://glasgowtheatre.com/shows/theatre-royal-matthew-bourne-s-cinderella.html",
+      "title": "Matthew Bourne’s Cinderella",
+      "artForm": "dance",
+      "tags": [
+        "dance"
+      ],
+      "producer": null,
+      "description": "New Adventures return to Glasgow with the 30th Anniversary celebration of one of its most popular and beloved productions, Matthew Bourne’s CINDERELLA — a thrilling and evocative love story set in London during the Second World War.",
+      "venue": {
+        "id": "theatre-royal",
+        "name": "Theatre Royal",
+        "area": "City Centre"
+      },
+      "run": {
+        "opens": "2027-04-13",
+        "closes": "2027-04-17",
+        "time": null
+      },
+      "schedule": null,
+      "performances": [],
+      "pricing": null,
+      "accessibility": [
+        "Audio-described performances available"
+      ],
+      "durationMinutes": null,
+      "image": {
+        "url": "https://glasgowtheatre.com/images/200b6b35ba24b9bf8e3c.webp",
+        "alt": "Matthew Bourne’s Cinderella",
+        "credit": null
+      },
+      "bookingUrl": "https://www.atgtickets.com/shows/matthew-bournes-cinderella/theatre-royal-glasgow/calendar/",
+      "updatedAt": "2026-10-15"
+    }
+  ]
+}

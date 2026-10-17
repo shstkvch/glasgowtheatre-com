@@ -35,6 +35,28 @@ Stylesheet and script URLs carry a hash of their own contents — `/css/style.cs
 
 Everything above works without JavaScript. Script adds the hover preview, the month buttons, drag-to-scroll and the jump to today.
 
+## The API
+
+A free, read-only API is published at `https://glasgowtheatre.com/api/` (documentation) and `/api/v1/` (data). It exposes the same merged listings the pages use: shows, venues, performances, prices and concessions. No key and no account.
+
+- `GET /api/v1/shows` — filtered, paginated list
+- `GET /api/v1/shows.json` — every upcoming show
+- `GET /api/v1/shows/{id}.json` — one show
+- `GET /api/v1/venues.json`, `/api/v1/venues/{id}.json` — venue directory and concessions
+- `GET /api/v1/venues/{id}/shows` — a venue's listings
+- `GET /api/v1/openapi.json`, `/api/v1/schema.json` — contract and schema
+
+The static snapshots are written by `scripts/api.js` during `npm run build`; the filtered queries are a Cloudflare Pages Function in `functions/api/v1/[[path]].js`, backed by `functions/_lib/api-core.js`. The internal `/data/events.json` feed is not the public contract and should stay undocumented: it carries scrape internals and has no stability guarantee.
+
+`/api/examples.html` is an editable playground for JavaScript, Python, PHP, C and Go. It fetches a five-show snapshot from this site and passes it to the program on stdin, then sends the source to Judge0's public sandbox. The same files live in `examples/` and run locally:
+
+```sh
+./examples/run.sh
+curl -s 'https://glasgowtheatre.com/api/v1/shows?limit=5' | node examples/javascript/shows.js
+```
+
+`format=txt` (or `/shows.txt`) gives a tab-separated view for shell scripts and C. Dates are Europe/London calendar dates; prices are a guide, not a quote; credit Glasgow Theatre when reusing the data.
+
 ## Add or correct a listing
 
 Listings that arrive by email are added by hand to `data/manual-events.json`. There is no database: the file is the record, and it is version controlled with everything else.

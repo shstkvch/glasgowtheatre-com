@@ -1,0 +1,19 @@
+{
+  "apiVersion": "1",
+  "generatedAt": "2026-10-17T21:40:27.566Z",
+  "documentation": "https://glasgowtheatre.com/api/",
+  "playground": "https://glasgowtheatre.com/api/examples.html",
+  "openapi": "https://glasgowtheatre.com/api/v1/openapi.json",
+  "schema": "https://glasgowtheatre.com/api/v1/schema.json",
+  "endpoints": {
+    "shows": "https://glasgowtheatre.com/api/v1/shows",
+    "showsSnapshot": "https://glasgowtheatre.com/api/v1/shows.json",
+    "showsText": "https://glasgowtheatre.com/api/v1/shows.txt",
+    "venues": "https://glasgowtheatre.com/api/v1/venues.json",
+    "preview": "https://glasgowtheatre.com/api/v1/shows-preview.json",
+    "openapi": "https://glasgowtheatre.com/api/v1/openapi.json",
+    "schema": "https://glasgowtheatre.com/api/v1/schema.json",
+    "documentation": "https://glasgowtheatre.com/api/",
+    "playground": "https://glasgowtheatre.com/api/examples.html"
+  }
+}

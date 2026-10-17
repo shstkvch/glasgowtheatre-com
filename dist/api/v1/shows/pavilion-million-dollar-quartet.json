@@ -1,0 +1,44 @@
+{
+  "apiVersion": "1",
+  "generatedAt": "2026-10-17T21:40:27.566Z",
+  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "show": {
+    "id": "pavilion-million-dollar-quartet",
+    "url": "https://glasgowtheatre.com/shows/pavilion-million-dollar-quartet.html",
+    "title": "Million Dollar Quartet",
+    "artForm": "musical",
+    "tags": [
+      "musical"
+    ],
+    "producer": null,
+    "description": "Following its return to London, the West End and Broadway smash-hit musical, Million Dollar Quartet is hitting the road! On the night of December 4, 1956, four musical icons entered a recording studio in Memphis and made music history. Johnny Cash, Jerry Lee Lewis, Carl Perkins and Elvis Presley...",
+    "venue": {
+      "id": "pavilion",
+      "name": "Pavilion Theatre",
+      "area": "City Centre"
+    },
+    "run": {
+      "opens": "2027-02-15",
+      "closes": "2027-02-20",
+      "time": "19:30"
+    },
+    "schedule": null,
+    "performances": [
+      {
+        "date": "2027-02-15",
+        "time": "19:30",
+        "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/musical/million-dollar-quartet-tickets"
+      }
+    ],
+    "pricing": null,
+    "accessibility": null,
+    "durationMinutes": null,
+    "image": {
+      "url": "https://glasgowtheatre.com/images/0a057b8d4803737a660e.webp",
+      "alt": "Million Dollar Quartet",
+      "credit": null
+    },
+    "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/musical/million-dollar-quartet-tickets",
+    "updatedAt": "2026-10-15"
+  }
+}

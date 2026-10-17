@@ -1,0 +1,84 @@
+{
+  "apiVersion": "1",
+  "generatedAt": "2026-10-17T21:40:27.566Z",
+  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "show": {
+    "id": "oran-mor-lune",
+    "url": "https://glasgowtheatre.com/shows/oran-mor-lune.html",
+    "title": "Lune",
+    "artForm": "play",
+    "tags": [
+      "play",
+      "lunchtime",
+      "a-play-a-pie-a-pint"
+    ],
+    "producer": null,
+    "description": "Lune Bogaert heads to the Palace of Justice in Brussels to take the Belgian state to court for its inaction on discrimination against women. When she’s told her complaint will take months or even years to process, she decides to sit herself outside the court for as long as it takes. As Lune’s act...",
+    "venue": {
+      "id": "oran-mor",
+      "name": "A Play, a Pie and a Pint",
+      "area": "West End"
+    },
+    "run": {
+      "opens": "2026-10-19",
+      "closes": "2026-10-24",
+      "time": "13:00"
+    },
+    "schedule": {
+      "text": "Monday – Saturday 1pm\n(Doors 12pm/12.30pm on Mondays)"
+    },
+    "performances": [
+      {
+        "date": "2026-10-19",
+        "time": "13:00",
+        "price": 17
+      },
+      {
+        "date": "2026-10-20",
+        "time": "13:00",
+        "price": 19
+      },
+      {
+        "date": "2026-10-21",
+        "time": "13:00",
+        "price": 19
+      },
+      {
+        "date": "2026-10-22",
+        "time": "13:00",
+        "price": 19
+      },
+      {
+        "date": "2026-10-23",
+        "time": "13:00",
+        "price": 19
+      },
+      {
+        "date": "2026-10-24",
+        "time": "13:00",
+        "price": 22.5
+      }
+    ],
+    "pricing": {
+      "currency": "GBP",
+      "from": 17,
+      "to": 22.5,
+      "concessionFrom": null,
+      "concessionTo": null,
+      "free": false,
+      "payWhatYouLike": false,
+      "text": "Monday: £17\nTuesday-Friday: £19\nSaturday: £22.50",
+      "source": "published-text",
+      "checkedAt": "2026-10-15"
+    },
+    "accessibility": null,
+    "durationMinutes": null,
+    "image": {
+      "url": "https://glasgowtheatre.com/images/4aa568c783ed197f2e95.webp",
+      "alt": "Lune",
+      "credit": null
+    },
+    "bookingUrl": "https://playpiepint.com/whats-on/event/lune/",
+    "updatedAt": "2026-10-15"
+  }
+}

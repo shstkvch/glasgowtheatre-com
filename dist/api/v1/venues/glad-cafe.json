@@ -1,0 +1,25 @@
+{
+  "apiVersion": "1",
+  "generatedAt": "2026-10-17T21:40:27.566Z",
+  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "venue": {
+    "id": "glad-cafe",
+    "name": "The Glad Cafe",
+    "area": "Shawlands",
+    "description": "A warm, community-focused cafe and arts venue on Pollokshaws Road in the heart of Shawlands. The Glad champions grassroots music and performance.",
+    "website": "https://thegladcafe.co.uk",
+    "instagram": "thegladcafe",
+    "programme": "mixed",
+    "url": "https://glasgowtheatre.com/venues/glad-cafe.html",
+    "upcomingShows": 1,
+    "showsUrl": "https://glasgowtheatre.com/api/v1/venues/glad-cafe/shows.json",
+    "concessions": {
+      "url": "https://www.thegladcafe.co.uk/",
+      "checkedAt": "2026-09-10",
+      "summary": "A single advance price per event, with no published concession scheme. Some nights are free or pay-what-you-like — the event page says which.",
+      "schemes": [],
+      "offers": [],
+      "fees": null
+    }
+  }
+}

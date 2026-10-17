@@ -1,0 +1,85 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Try the Glasgow Theatre API | Glasgow Theatre</title><meta name="description" content="Edit and run JavaScript, Python, PHP, C and Go examples against the Glasgow Theatre API."><link rel="canonical" href="https://glasgowtheatre.com/api/examples.html">
+<meta property="og:title" content="Try the Glasgow Theatre API"><meta property="og:description" content="Edit and run JavaScript, Python, PHP, C and Go examples against the Glasgow Theatre API."><meta property="og:url" content="https://glasgowtheatre.com/api/examples.html"><meta property="og:type" content="website"><meta property="og:site_name" content="Glasgow Theatre"><meta property="og:image" content="https://glasgowtheatre.com/images/thrice.webp"><meta name="twitter:card" content="summary_large_image"><meta name="theme-color" content="#303fce">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/css/fonts.css?v=7c453f72"><link rel="stylesheet" href="/css/style.css?v=db6a34df">
+<script defer src="/js/listings.js?v=3a51280c"></script><script defer src="/js/main.js?v=41a20b1a"></script></head><body>
+<a class="skip-link" href="#main">Skip to content</a><header class="site-header"><div class="container header-inner"><a class="brand" href="/" aria-label="Glasgow Theatre home">GLASGOW<span>THEATRE<span class="brand-dot">●</span></span></a>
+<details class="nav-menu" open><summary class="nav-toggle"><span class="nav-bars" aria-hidden="true"></span><span class="nav-toggle-label">Menu</span></summary><nav aria-label="Main navigation"><a href="/">What’s on</a><a href="/calendar.html">Calendar</a><a href="/venues.html">Venues</a><a href="/about.html">About</a><a href="/submit.html">List your show ↗</a></nav></details></div></header>
+<main id="main">
+<section class="page-hero container api-hero"><p class="eyebrow">Try it</p><h1>Edit. Run.<br>See the data.</h1><p>The page fetches a live snapshot of five shows, then hands it to the program on standard input. Edit the code, press <strong>Run</strong>, and the output appears below. Nothing is saved.</p></section>
+<section class="container api-playground">
+  <div class="playground-bar">
+    <div class="lang-tabs" role="group" aria-label="Example language">
+      <button class="lang-tab active" aria-pressed="true" data-lang="javascript">JavaScript<span>Node.js 22</span></button><button class="lang-tab" aria-pressed="false" data-lang="python">Python<span>3.12</span></button><button class="lang-tab" aria-pressed="false" data-lang="php">PHP<span>8.3</span></button><button class="lang-tab" aria-pressed="false" data-lang="c">C<span>Clang 18</span></button><button class="lang-tab" aria-pressed="false" data-lang="go">Go<span>1.22</span></button>
+    </div>
+    <div class="playground-actions">
+      <button class="text-button" id="api-reset" type="button">Reset</button>
+      <button class="btn" id="api-run" type="button">Run code ↗</button>
+    </div>
+  </div>
+  <div class="code-editor-head"><span>Editor</span><span id="api-code-count" class="code-count"></span></div>
+  <label class="visually-hidden" for="api-code">Example code</label>
+  <textarea id="api-code" class="code-editor" spellcheck="false" autocapitalize="off" autocomplete="off" autocorrect="off" wrap="off">#!/usr/bin/env node
+/**
+ * Print the next few Glasgow shows from an API response on stdin.
+ *
+ *   curl -s &#39;https://glasgowtheatre.com/api/v1/shows?limit=5&#39; \
+ *     | node examples/javascript/shows.js
+ *
+ * The interactive version at /api/examples.html runs this same file against a
+ * snapshot of five shows, so the sandbox never needs network access.
+ */
+&quot;use strict&quot;;
+
+const fs = require(&quot;fs&quot;);
+
+const raw = fs.readFileSync(0, &quot;utf8&quot;).trim();
+if (!raw) {
+  console.error(
+    &quot;No input. Pipe an API response in, for example:\n&quot; +
+      &quot;  curl -s &#39;https://glasgowtheatre.com/api/v1/shows-preview.json&#39; | node shows.js&quot;,
+  );
+  process.exit(1);
+}
+
+let feed;
+try {
+  feed = JSON.parse(raw);
+} catch (error) {
+  console.error(`That was not JSON: ${error.message}`);
+  process.exit(1);
+}
+
+const shows = Array.isArray(feed.shows) ? feed.shows : [];
+const total = Number.isInteger(feed.total) ? feed.total : shows.length;
+console.log(`${total} upcoming shows (showing ${Math.min(shows.length, 5)})\n`);
+
+for (const show of shows.slice(0, 5)) {
+  const price =
+    show.pricing &amp;&amp; show.pricing.from != null
+      ? `from £${show.pricing.from}`
+      : &quot;price at venue&quot;;
+  console.log(
+    `${show.run.opens}  ${show.title}\n` +
+      `          ${show.venue.name} · ${show.artForm} · ${price}\n` +
+      `          ${show.url}\n`,
+  );
+}
+</textarea>
+  <p class="api-run-status" id="api-run-status" role="status" aria-live="polite">Ready. Uses JavaScript Node.js 22.</p>
+  <div class="code-output-wrap"><div class="code-output-head"><span>Output</span><button class="text-button" id="api-clear" type="button">Clear</button></div><pre class="code-output" id="api-output" tabindex="0">Press Run to see the result.</pre></div>
+  <div class="api-notes">
+    <p><strong>What runs where.</strong> This page sends your code to <a href="https://judge0.com" rel="noreferrer">Judge0's public sandbox</a>, a hosted execution service. The API snapshot itself is fetched from this site and passed in on stdin, so the sandbox never needs network access. Do not paste secrets into the editor.</p>
+    <p><strong>Run it locally.</strong> The same programs live in the repository under <code>examples/</code>. Each reads the API response from stdin:</p>
+    <pre tabindex="0"><code>curl -s 'https://glasgowtheatre.com/api/v1/shows-preview.json' | node examples/javascript/shows.js
+curl -s 'https://glasgowtheatre.com/api/v1/shows-preview.json' | python3 examples/python/shows.py
+cc -O2 -o /tmp/shows examples/c/shows.c
+curl -s 'https://glasgowtheatre.com/api/v1/shows-preview.txt' | /tmp/shows</code></pre>
+    <p>For C and shell scripts, use <code>?format=txt</code> or <code>/shows.txt</code> to avoid a JSON parser.</p>
+  </div>
+</section>
+<script>window.API_EXAMPLES = [{"key":"javascript","label":"JavaScript","runtime":"Node.js 22","id":102,"stdin":"json","file":"javascript/shows.js","source":"#!/usr/bin/env node\n/**\n * Print the next few Glasgow shows from an API response on stdin.\n *\n *   curl -s 'https://glasgowtheatre.com/api/v1/shows?limit=5' \\\n *     | node examples/javascript/shows.js\n *\n * The interactive version at /api/examples.html runs this same file against a\n * snapshot of five shows, so the sandbox never needs network access.\n */\n\"use strict\";\n\nconst fs = require(\"fs\");\n\nconst raw = fs.readFileSync(0, \"utf8\").trim();\nif (!raw) {\n  console.error(\n    \"No input. Pipe an API response in, for example:\\n\" +\n      \"  curl -s 'https://glasgowtheatre.com/api/v1/shows-preview.json' | node shows.js\",\n  );\n  process.exit(1);\n}\n\nlet feed;\ntry {\n  feed = JSON.parse(raw);\n} catch (error) {\n  console.error(`That was not JSON: ${error.message}`);\n  process.exit(1);\n}\n\nconst shows = Array.isArray(feed.shows) ? feed.shows : [];\nconst total = Number.isInteger(feed.total) ? feed.total : shows.length;\nconsole.log(`${total} upcoming shows (showing ${Math.min(shows.length, 5)})\\n`);\n\nfor (const show of shows.slice(0, 5)) {\n  const price =\n    show.pricing && show.pricing.from != null\n      ? `from £${show.pricing.from}`\n      : \"price at venue\";\n  console.log(\n    `${show.run.opens}  ${show.title}\\n` +\n      `          ${show.venue.name} · ${show.artForm} · ${price}\\n` +\n      `          ${show.url}\\n`,\n  );\n}\n"},{"key":"python","label":"Python","runtime":"3.12","id":100,"stdin":"json","file":"python/shows.py","source":"#!/usr/bin/env python3\n\"\"\"Print the next few Glasgow shows from an API response on stdin.\n\n    curl -s 'https://glasgowtheatre.com/api/v1/shows?limit=5' \\\n      | python3 examples/python/shows.py\n\nThe interactive version at /api/examples.html runs this same file against a\nsnapshot of five shows, so the sandbox never needs network access.\n\"\"\"\n\nimport json\nimport sys\n\n\ndef main() -> int:\n    raw = sys.stdin.read().strip()\n    if not raw:\n        print(\n            \"No input. Pipe an API response in, for example:\\n\"\n            \"  curl -s 'https://glasgowtheatre.com/api/v1/shows-preview.json'\"\n            \" | python3 shows.py\",\n            file=sys.stderr,\n        )\n        return 1\n    try:\n        feed = json.loads(raw)\n    except json.JSONDecodeError as error:\n        print(f\"That was not JSON: {error}\", file=sys.stderr)\n        return 1\n\n    shows = feed.get(\"shows\", [])\n    total = feed.get(\"total\", len(shows))\n    print(f\"{total} upcoming shows (showing {min(len(shows), 5)})\\n\")\n\n    for show in shows[:5]:\n        pricing = show.get(\"pricing\") or {}\n        price = (\n            f\"from £{pricing['from']}\"\n            if pricing.get(\"from\") is not None\n            else \"price at venue\"\n        )\n        run = show.get(\"run\", {})\n        venue = show.get(\"venue\", {})\n        print(f\"{run.get('opens')}  {show.get('title')}\")\n        print(\n            f\"          {venue.get('name')} · \"\n            f\"{show.get('artForm')} · {price}\"\n        )\n        print(f\"          {show.get('url')}\\n\")\n    return 0\n\n\nif __name__ == \"__main__\":\n    raise SystemExit(main())\n"},{"key":"php","label":"PHP","runtime":"8.3","id":98,"stdin":"json","file":"php/shows.php","source":"\u003c?php\n/**\n * Print the next few Glasgow shows from an API response on stdin.\n *\n *   curl -s 'https://glasgowtheatre.com/api/v1/shows?limit=5' \\\n *     | php examples/php/shows.php\n *\n * The interactive version at /api/examples.html runs this same file against a\n * snapshot of five shows, so the sandbox never needs network access.\n */\n\n$raw = stream_get_contents(STDIN);\nif ($raw === false || trim($raw) === \"\") {\n    fwrite(\n        STDERR,\n        \"No input. Pipe an API response in, for example:\\n\" .\n            \"  curl -s 'https://glasgowtheatre.com/api/v1/shows-preview.json'\" .\n            \" | php shows.php\\n\"\n    );\n    exit(1);\n}\n\n$feed = json_decode($raw, true);\nif (!is_array($feed)) {\n    fwrite(STDERR, \"That was not JSON: \" . json_last_error_msg() . \"\\n\");\n    exit(1);\n}\n\n$shows = $feed[\"shows\"] ?? [];\n$total = $feed[\"total\"] ?? count($shows);\nprintf(\"%d upcoming shows (showing %d)\\n\\n\", $total, min(count($shows), 5));\n\nforeach (array_slice($shows, 0, 5) as $show) {\n    $from = $show[\"pricing\"][\"from\"] ?? null;\n    $price = $from !== null ? \"from £\" . $from : \"price at venue\";\n    printf(\n        \"%s  %s\\n          %s · %s · %s\\n          %s\\n\\n\",\n        $show[\"run\"][\"opens\"],\n        $show[\"title\"],\n        $show[\"venue\"][\"name\"],\n        $show[\"artForm\"],\n        $price,\n        $show[\"url\"]\n    );\n}\n"},{"key":"c","label":"C","runtime":"Clang 18","id":104,"stdin":"txt","file":"c/shows.c","source":"/*\n * Print the next few Glasgow shows from the tab-separated API view on stdin.\n *\n *   curl -s 'https://glasgowtheatre.com/api/v1/shows-preview.txt' \\\n *     | ./examples/c/shows\n *\n * The JSON API is the main interface. This example uses format=txt because a\n * five-line JSON parser would bury the thing the example is meant to show.\n * Compile with:\n *\n *   cc -O2 -std=c11 -o shows examples/c/shows.c\n */\n#include \u003cstdio.h>\n#include \u003cstring.h>\n\n#define MAX_FIELDS 7\n\nint main(void) {\n  char line[8192];\n  int shown = 0;\n\n  while (fgets(line, sizeof line, stdin)) {\n    if (line[0] == '#') continue; /* header */\n    line[strcspn(line, \"\\r\\n\")] = '\\0';\n\n    char *fields[MAX_FIELDS];\n    int count = 0;\n    char *cursor = line;\n    fields[count++] = cursor;\n    while (*cursor && count \u003c MAX_FIELDS) {\n      if (*cursor == '\\t') {\n        *cursor = '\\0';\n        fields[count++] = cursor + 1;\n      }\n      cursor++;\n    }\n    if (count \u003c MAX_FIELDS) continue;\n\n    /* opens, closes, title, venue, artForm, fromPrice, url */\n    printf(\"%s  %s\\n\", fields[0], fields[2]);\n    printf(\"          %s\", fields[3]);\n    if (fields[4][0]) printf(\" - %s\", fields[4]);\n    if (fields[5][0]) printf(\" - from GBP %s\", fields[5]);\n    printf(\"\\n          %s\\n\\n\", fields[6]);\n\n    if (++shown >= 5) break;\n  }\n\n  if (!shown) {\n    fprintf(stderr,\n            \"No TSV input. Pipe the API's text view in, for example:\\n\"\n            \"  curl -s 'https://glasgowtheatre.com/api/v1/shows-preview.txt'\"\n            \" | ./shows\\n\");\n    return 1;\n  }\n  return 0;\n}\n"},{"key":"go","label":"Go","runtime":"1.22","id":106,"stdin":"json","file":"go/main.go","source":"// Print the next few Glasgow shows from an API response on stdin.\n//\n//\tcurl -s 'https://glasgowtheatre.com/api/v1/shows?limit=5' \\\n//\t  | go run examples/go/main.go\n//\n// The interactive version at /api/examples.html runs this same file against a\n// snapshot of five shows, so the sandbox never needs network access.\npackage main\n\nimport (\n\t\"encoding/json\"\n\t\"fmt\"\n\t\"io\"\n\t\"os\"\n)\n\ntype Pricing struct {\n\tFrom *float64 `json:\"from\"`\n}\n\ntype Run struct {\n\tOpens  string `json:\"opens\"`\n\tCloses string `json:\"closes\"`\n}\n\ntype Venue struct {\n\tName string `json:\"name\"`\n}\n\ntype Show struct {\n\tTitle   string   `json:\"title\"`\n\tArtForm string   `json:\"artForm\"`\n\tRun     Run      `json:\"run\"`\n\tVenue   Venue    `json:\"venue\"`\n\tPricing *Pricing `json:\"pricing\"`\n\tURL     string   `json:\"url\"`\n}\n\ntype Feed struct {\n\tTotal int    `json:\"total\"`\n\tShows []Show `json:\"shows\"`\n}\n\nfunc main() {\n\traw, err := io.ReadAll(os.Stdin)\n\tif err != nil {\n\t\tfmt.Fprintln(os.Stderr, \"Could not read stdin:\", err)\n\t\tos.Exit(1)\n\t}\n\tif len(raw) == 0 {\n\t\tfmt.Fprintln(os.Stderr,\n\t\t\t\"No input. Pipe an API response in, for example:\\n\"+\n\t\t\t\t\"  curl -s 'https://glasgowtheatre.com/api/v1/shows-preview.json'\"+\n\t\t\t\t\" | go run main.go\")\n\t\tos.Exit(1)\n\t}\n\n\tvar feed Feed\n\tif err := json.Unmarshal(raw, &feed); err != nil {\n\t\tfmt.Fprintln(os.Stderr, \"That was not JSON:\", err)\n\t\tos.Exit(1)\n\t}\n\n\tlimit := len(feed.Shows)\n\tif limit > 5 {\n\t\tlimit = 5\n\t}\n\tfmt.Printf(\"%d upcoming shows (showing %d)\\n\\n\", feed.Total, limit)\n\tfor _, show := range feed.Shows[:limit] {\n\t\tprice := \"price at venue\"\n\t\tif show.Pricing != nil && show.Pricing.From != nil {\n\t\t\tprice = fmt.Sprintf(\"from £%.2f\", *show.Pricing.From)\n\t\t}\n\t\tfmt.Printf(\"%s  %s\\n\", show.Run.Opens, show.Title)\n\t\tfmt.Printf(\"          %s · %s · %s\\n\", show.Venue.Name, show.ArtForm, price)\n\t\tfmt.Printf(\"          %s\\n\\n\", show.URL)\n\t}\n}\n"}];window.API_RUNNER = "https://ce.judge0.com/submissions?base64_encoded=true&wait=true";window.API_PREVIEW = "/api/v1/shows-preview";</script>
+<script defer src="/js/playground.js?v=894a5d80"></script></main>
+<footer class="site-footer"><div class="container"><div class="footer-top"><div><a class="brand" href="/">GLASGOW<span>THEATRE<span class="brand-dot">●</span></span></a><p>Explore Glasgow’s bustling theatre scene.</p></div><div><p class="eyebrow">Made for the audience</p><a href="/about.html">About this independent guide <span aria-hidden="true">↗</span></a><a href="/submit.html">Get your show listed <span aria-hidden="true">↗</span></a><a href="/api/">API for developers <span aria-hidden="true">↗</span></a><a href="mailto:info@glasgowtheatre.com">Get in touch <span aria-hidden="true">↗</span></a></div></div><div class="footer-bottom"><span>© 2026 Glasgow Theatre</span><span>Listings refreshed 15 Oct 2026 · Always check details with the venue.</span></div></div></footer>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Glasgow Theatre","url":"https://glasgowtheatre.com"}</script>
+<script>window.EVENTS = [];</script></body></html>

@@ -1,0 +1,85 @@
+{
+  "apiVersion": "1",
+  "generatedAt": "2026-10-17T21:40:27.566Z",
+  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "show": {
+    "id": "citizens-punch",
+    "url": "https://glasgowtheatre.com/shows/citizens-punch.html",
+    "title": "Punch",
+    "artForm": "play",
+    "tags": [
+      "play"
+    ],
+    "producer": null,
+    "description": "Following sold-out runs at the Nottingham Playhouse and Young Vic, and simultaneous openings on Broadway and in the West End, Punch comes to the Citizens Theatre for one week only. Don’t miss your chance to see this critically acclaimed play in a ‘powerhouse of a production’ (WhatsOnStage). From...",
+    "venue": {
+      "id": "citizens",
+      "name": "Citizens Theatre",
+      "area": "Gorbals"
+    },
+    "run": {
+      "opens": "2027-03-30",
+      "closes": "2027-04-03",
+      "time": "19:30"
+    },
+    "schedule": null,
+    "performances": [
+      {
+        "date": "2027-03-30",
+        "time": "19:30",
+        "bookingUrl": "https://citz.co.uk/whats-on/punch/book/98401"
+      },
+      {
+        "date": "2027-03-31",
+        "time": "19:30",
+        "bookingUrl": "https://citz.co.uk/whats-on/punch/book/98402"
+      },
+      {
+        "date": "2027-04-01",
+        "time": "14:00",
+        "bookingUrl": "https://citz.co.uk/whats-on/punch/book/98601"
+      },
+      {
+        "date": "2027-04-01",
+        "time": "19:30",
+        "bookingUrl": "https://citz.co.uk/whats-on/punch/book/98403"
+      },
+      {
+        "date": "2027-04-02",
+        "time": "19:30",
+        "bookingUrl": "https://citz.co.uk/whats-on/punch/book/99001"
+      },
+      {
+        "date": "2027-04-03",
+        "time": "14:00",
+        "bookingUrl": "https://citz.co.uk/whats-on/punch/book/98801"
+      },
+      {
+        "date": "2027-04-03",
+        "time": "19:30",
+        "bookingUrl": "https://citz.co.uk/whats-on/punch/book/98802"
+      }
+    ],
+    "pricing": {
+      "currency": "GBP",
+      "from": 18.5,
+      "to": 43.5,
+      "concessionFrom": null,
+      "concessionTo": null,
+      "free": false,
+      "payWhatYouLike": false,
+      "text": "£18.50 - £43.50",
+      "source": "published-text",
+      "checkedAt": "2026-10-15"
+    },
+    "accessibility": null,
+    "durationMinutes": 145,
+    "image": {
+      "url": "https://glasgowtheatre.com/images/06a7cf9f41af020e735a.webp",
+      "alt": "Punch",
+      "credit": null
+    },
+    "bookingUrl": "https://citz.co.uk/whats-on/punch/",
+    "updatedAt": "2026-10-15"
+  }
+}

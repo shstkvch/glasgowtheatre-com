@@ -1,0 +1,43 @@
+{
+  "apiVersion": "1",
+  "generatedAt": "2026-10-17T21:40:27.566Z",
+  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "venue": {
+    "id": "platform",
+    "name": "Platform",
+    "area": "Easterhouse",
+    "description": "An arts centre at The Bridge in Easterhouse, with a programme of theatre, music, visual art and creative activities for different ages. Visit the venue website for performances and opportunities to take part.",
+    "website": "https://platform-online.co.uk",
+    "instagram": "platformglasgow",
+    "programme": "mixed",
+    "url": "https://glasgowtheatre.com/venues/platform.html",
+    "upcomingShows": 3,
+    "showsUrl": "https://glasgowtheatre.com/api/v1/venues/platform/shows.json",
+    "concessions": {
+      "url": "https://www.platform-online.co.uk/page/local-links",
+      "checkedAt": "2026-09-10",
+      "summary": "Most shows are priced in three tiers — standard, concession, and the Local Links rate for people living nearby. Classes and workshops are pay-what-you-like.",
+      "schemes": [
+        {
+          "name": "Local Links",
+          "price": 5,
+          "broad": true,
+          "eligibility": "Residents of G1 1, G1 5, G4 0, G31 1–5, G32 0, G32 6–9, G33 1–6, G34 0, G34 9, G40 1–4, G69 6–8 and G71 7. Shows are as little as £5.",
+          "how": "Free, with no advance registration: choose Local Links when booking online and enter your postcode, or give your address when booking by phone or in person."
+        },
+        {
+          "name": "Concession",
+          "broad": false,
+          "eligibility": "Published per show alongside the standard price."
+        },
+        {
+          "name": "Pay-What-You-Like",
+          "broad": false,
+          "eligibility": "Classes and participatory activities. You decide what to pay; Platform suggests around £5 a class, payable online, by card or in cash at the class."
+        }
+      ],
+      "offers": [],
+      "fees": null
+    }
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "apiVersion": "1",
+  "generatedAt": "2026-10-17T21:40:27.566Z",
+  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "show": {
+    "id": "kings-aladdin-pantomime",
+    "url": "https://glasgowtheatre.com/shows/kings-aladdin-pantomime.html",
+    "title": "Aladdin (Pantomime)",
+    "artForm": "pantomime",
+    "tags": [
+      "pantomime"
+    ],
+    "producer": null,
+    "description": "Aladdin (Pantomime) at King's Theatre, Glasgow.",
+    "venue": {
+      "id": "kings",
+      "name": "King's Theatre",
+      "area": "City Centre"
+    },
+    "run": {
+      "opens": "2026-11-21",
+      "closes": "2027-01-03",
+      "time": null
+    },
+    "schedule": null,
+    "performances": [],
+    "pricing": null,
+    "accessibility": [
+      "Captioned performances available",
+      "BSL-interpreted performances available",
+      "Audio-described performances available"
+    ],
+    "durationMinutes": null,
+    "image": {
+      "url": "https://glasgowtheatre.com/images/9edfb0166bebe8058fa7.webp",
+      "alt": "Aladdin (Pantomime)",
+      "credit": null
+    },
+    "bookingUrl": "https://www.atgtickets.com/shows/aladdin-pantomime/kings-theatre-glasgow/calendar/",
+    "updatedAt": "2026-10-15"
+  }
+}

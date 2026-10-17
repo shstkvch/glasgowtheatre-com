@@ -1,0 +1,42 @@
+{
+  "apiVersion": "1",
+  "generatedAt": "2026-10-17T21:40:27.566Z",
+  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "show": {
+    "id": "kings-mrs-doubtfire-the-musical",
+    "url": "https://glasgowtheatre.com/shows/kings-mrs-doubtfire-the-musical.html",
+    "title": "Mrs. Doubtfire The Musical",
+    "artForm": "musical",
+    "tags": [
+      "musical"
+    ],
+    "producer": null,
+    "description": "Helloooo, poppets! MRS. DOUBTFIRE, the West End's hit comedy musical based on the beloved film, is heading to Glasgow in January 2027.",
+    "venue": {
+      "id": "kings",
+      "name": "King's Theatre",
+      "area": "City Centre"
+    },
+    "run": {
+      "opens": "2027-01-12",
+      "closes": "2027-01-31",
+      "time": null
+    },
+    "schedule": null,
+    "performances": [],
+    "pricing": null,
+    "accessibility": [
+      "Captioned performances available",
+      "Audio-described performances available",
+      "BSL-interpreted performances available"
+    ],
+    "durationMinutes": null,
+    "image": {
+      "url": "https://glasgowtheatre.com/images/17b491a207f054eeb0fe.webp",
+      "alt": "Mrs. Doubtfire The Musical",
+      "credit": null
+    },
+    "bookingUrl": "https://www.atgtickets.com/shows/mrs-doubtfire-the-musical/kings-theatre-glasgow/calendar/",
+    "updatedAt": "2026-10-15"
+  }
+}

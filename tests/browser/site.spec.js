@@ -580,6 +580,10 @@ test("the timeline says when and how much without opening anything", async ({
   // The tooltip carries it for a mouse and for assistive technology alike.
   const title = await item.getAttribute("title");
   expect(title).toMatch(/·/);
+  // Bring the bar into view first: Playwright's own scroll fires the chart's
+  // scroll handler, which hides a preview that was just opened.
+  await item.scrollIntoViewIfNeeded();
+  await page.waitForTimeout(250);
   await item.hover();
   const pop = page.locator(".cal-pop");
   await expect(pop).toBeVisible();

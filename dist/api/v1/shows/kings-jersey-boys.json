@@ -1,0 +1,40 @@
+{
+  "apiVersion": "1",
+  "generatedAt": "2026-10-17T21:40:27.566Z",
+  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "show": {
+    "id": "kings-jersey-boys",
+    "url": "https://glasgowtheatre.com/shows/kings-jersey-boys.html",
+    "title": "Jersey Boys",
+    "artForm": "musical",
+    "tags": [
+      "musical"
+    ],
+    "producer": null,
+    "description": "The boys are back as the original Tony®-winning sensation returns for its 20th Anniversary Tour!",
+    "venue": {
+      "id": "kings",
+      "name": "King's Theatre",
+      "area": "City Centre"
+    },
+    "run": {
+      "opens": "2027-02-16",
+      "closes": "2027-02-27",
+      "time": null
+    },
+    "schedule": null,
+    "performances": [],
+    "pricing": null,
+    "accessibility": [
+      "BSL-interpreted performances available"
+    ],
+    "durationMinutes": null,
+    "image": {
+      "url": "https://glasgowtheatre.com/images/0487ed05f7dce12b00e3.webp",
+      "alt": "Jersey Boys",
+      "credit": null
+    },
+    "bookingUrl": "https://www.atgtickets.com/shows/jersey-boys/kings-theatre-glasgow/calendar/",
+    "updatedAt": "2026-10-15"
+  }
+}

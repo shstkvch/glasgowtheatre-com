@@ -1,0 +1,40 @@
+{
+  "apiVersion": "1",
+  "generatedAt": "2026-10-17T21:40:27.566Z",
+  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "show": {
+    "id": "theatre-royal-scottish-opera-alcina",
+    "url": "https://glasgowtheatre.com/shows/theatre-royal-scottish-opera-alcina.html",
+    "title": "Scottish Opera - Alcina",
+    "artForm": "opera",
+    "tags": [
+      "opera"
+    ],
+    "producer": null,
+    "description": "There are worse places to find yourself trapped than Club Amnesia. Here, Alcina – performance artist extraordinaire – captivates the men who swarm around her, bending their minds, and reality, to her will. But when she meets Ruggiero, her heart finally softens. Then Ruggiero’s fiancée – disguised...",
+    "venue": {
+      "id": "theatre-royal",
+      "name": "Theatre Royal",
+      "area": "City Centre"
+    },
+    "run": {
+      "opens": "2027-02-06",
+      "closes": "2027-02-14",
+      "time": null
+    },
+    "schedule": null,
+    "performances": [],
+    "pricing": null,
+    "accessibility": [
+      "Audio-described performances available"
+    ],
+    "durationMinutes": null,
+    "image": {
+      "url": "https://glasgowtheatre.com/images/54fdeccfd3a9e4d36a56.webp",
+      "alt": "Scottish Opera - Alcina",
+      "credit": null
+    },
+    "bookingUrl": "https://www.atgtickets.com/shows/scottish-opera-alcina/theatre-royal-glasgow/calendar/",
+    "updatedAt": "2026-10-15"
+  }
+}

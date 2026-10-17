@@ -1,0 +1,60 @@
+{
+  "apiVersion": "1",
+  "generatedAt": "2026-10-17T21:40:27.566Z",
+  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "show": {
+    "id": "tron-in-tronversation-with-johnny-mcknight",
+    "url": "https://glasgowtheatre.com/shows/tron-in-tronversation-with-johnny-mcknight.html",
+    "title": "In Tronversation with Johnny McKnight",
+    "artForm": "talk",
+    "tags": [
+      "talk"
+    ],
+    "producer": null,
+    "description": "Recommended Age Guide 14+ In Tronversation With… is a series of events the Tron host over the year that invites creative and cultural legends from Glasgow and beyond to come and talk to our audiences about their careers and their connections with the Tron. As we celebrate the Tron Panto’s …...",
+    "venue": {
+      "id": "tron",
+      "name": "Tron Theatre",
+      "area": "Merchant City"
+    },
+    "run": {
+      "opens": "2026-10-24",
+      "closes": "2026-10-24",
+      "time": "17:00"
+    },
+    "schedule": null,
+    "performances": [
+      {
+        "date": "2026-10-24",
+        "time": "17:00",
+        "bookingUrl": "https://www.tron.co.uk/book-online/573591ADSCTTNBKTNJTMGMJDJGRRMRLQB"
+      },
+      {
+        "date": "2026-10-24",
+        "time": "19:30",
+        "bookingUrl": "https://www.tron.co.uk/book-online/561592AMTNNHSDLPVTGJJKRVRQVBNTRGG"
+      }
+    ],
+    "pricing": {
+      "currency": "GBP",
+      "from": 25,
+      "to": null,
+      "concessionFrom": null,
+      "concessionTo": null,
+      "free": false,
+      "payWhatYouLike": false,
+      "text": "£25",
+      "source": "published-text",
+      "checkedAt": "2026-10-15"
+    },
+    "accessibility": null,
+    "durationMinutes": 90,
+    "image": {
+      "url": "https://glasgowtheatre.com/images/cd718385285f152f1554.webp",
+      "alt": "In Tronversation with Johnny McKnight",
+      "credit": null
+    },
+    "bookingUrl": "https://www.tron.co.uk/shows/in-tronversation-with-johnny-mcknight/",
+    "updatedAt": "2026-10-15"
+  }
+}

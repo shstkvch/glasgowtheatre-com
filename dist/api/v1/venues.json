@@ -1,0 +1,427 @@
+{
+  "apiVersion": "1",
+  "generatedAt": "2026-10-17T21:40:27.566Z",
+  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "total": 14,
+  "count": 14,
+  "venues": [
+    {
+      "id": "oran-mor",
+      "name": "A Play, a Pie and a Pint",
+      "area": "West End",
+      "description": "A lunchtime theatre programme in a converted church at the top of Byres Road. Every week brings a new short play, with a pie and a drink included in the ticket.",
+      "website": "https://playpiepint.com",
+      "instagram": "playpiepint",
+      "programme": "theatre",
+      "url": "https://glasgowtheatre.com/venues/oran-mor.html",
+      "upcomingShows": 6,
+      "showsUrl": "https://glasgowtheatre.com/api/v1/venues/oran-mor/shows.json",
+      "concessions": {
+        "url": "https://playpiepint.com/",
+        "checkedAt": "2026-09-10",
+        "summary": "A Play, a Pie and a Pint tickets include a drink and a pie. Prices rise across the week, from Monday to Saturday, and a cheaper play-only ticket is held back for midweek performances.",
+        "schemes": [
+          {
+            "name": "Play-only ticket",
+            "broad": false,
+            "eligibility": "Tuesday to Thursday, for students, arts workers, and audience members who are unemployed or on a low income or household benefits. The ticket covers the play without the pie and drink.",
+            "how": "Chosen when booking."
+          }
+        ],
+        "offers": [],
+        "fees": "Published prices include a £1.50 booking fee. A small extra fee applies when booking online through Universe."
+      }
+    },
+    {
+      "id": "citizens",
+      "name": "Citizens Theatre",
+      "area": "Gorbals",
+      "description": "One of Scotland’s flagship producing theatres, the Citz has been making bold, uncompromising work in the Gorbals since 1945. Following a landmark restoration, it reopened with stunning new studio spaces alongside its iconic Victorian auditorium. Known for its European spirit, bold reimaginings of classic texts and championing new Scottish voices.",
+      "website": "https://citz.co.uk",
+      "instagram": "citizenstheatre",
+      "programme": "theatre",
+      "url": "https://glasgowtheatre.com/venues/citizens.html",
+      "upcomingShows": 22,
+      "showsUrl": "https://glasgowtheatre.com/api/v1/venues/citizens/shows.json",
+      "concessions": {
+        "url": "https://citz.co.uk/visit/pricing/",
+        "checkedAt": "2026-09-10",
+        "summary": "Standard prices run £14–£55 in the Main Theatre and £12.50–£23.50 in the Studio. Four free memberships carry a reduced price; each needs a one-off sign-up, and none asks for ID.",
+        "schemes": [
+          {
+            "name": "Gorbals Pass",
+            "price": 5,
+            "broad": true,
+            "eligibility": "Residents with a G5 postcode. Two tickets per household.",
+            "how": "Free membership, signed up for once."
+          },
+          {
+            "name": "Low Income Pass",
+            "price": 5,
+            "broad": true,
+            "eligibility": "Audience members on a low household income, unemployed, or receiving low-income benefits.",
+            "how": "Free membership, signed up for once. No ID required."
+          },
+          {
+            "name": "Under 30s Pass",
+            "price": 10,
+            "broad": true,
+            "eligibility": "Ages 16–29, on standard shows. 50% off Christmas and selected productions.",
+            "how": "Free membership, signed up for once."
+          },
+          {
+            "name": "Access Pass",
+            "saving": "50% off full price, plus a free companion ticket",
+            "broad": true,
+            "eligibility": "Audience members with additional access needs.",
+            "how": "Free membership, signed up for once."
+          },
+          {
+            "name": "Children",
+            "price": 10,
+            "broad": false,
+            "eligibility": "Under 16s on standard shows, unless age restrictions apply. 50% off Christmas and selected productions."
+          },
+          {
+            "name": "Schools",
+            "price": 10,
+            "broad": false,
+            "eligibility": "School groups, booked through the Box Office."
+          },
+          {
+            "name": "Groups",
+            "saving": "One free ticket in every ten",
+            "broad": false,
+            "eligibility": "Groups of ten or more, booked through the Box Office."
+          }
+        ],
+        "offers": [
+          {
+            "name": "First Look",
+            "saving": "40% off top prices",
+            "detail": "Preview performances early in a run."
+          },
+          {
+            "name": "Weekday performances",
+            "saving": "20% off weekend prices",
+            "detail": "Selected Main Theatre shows."
+          },
+          {
+            "name": "Lucky Dip",
+            "saving": "At least 50% off standard top prices",
+            "detail": "Main Theatre only. Bought in advance, seat allocated on the day, maximum two per booking."
+          },
+          {
+            "name": "Theatre Pass",
+            "saving": "Up to 20% off, and no booking fees",
+            "detail": "An annual pass; tickets get cheaper the more you visit."
+          }
+        ],
+        "fees": "£1.50 booking fee per transaction, waived for Theatre Pass members. £1.50 of every full-price ticket is a redevelopment levy, already included in the published price and excluded from the Gorbals, Low Income, Access and Under 30s prices."
+      }
+    },
+    {
+      "id": "cottiers",
+      "name": "Cottiers",
+      "area": "Hyndland",
+      "description": "A stunning converted church in the leafy West End neighbourhood of Hyndland. Cottiers’ intimate theatre space hosts a varied programme of comedy, music, theatre, and community events beneath original stained glass windows. The venue also houses a popular bar and restaurant — perfect for a pre-show drink.",
+      "website": "https://cottiers.com",
+      "instagram": "cottiersglasgow",
+      "programme": "mixed",
+      "url": "https://glasgowtheatre.com/venues/cottiers.html",
+      "upcomingShows": 4,
+      "showsUrl": "https://glasgowtheatre.com/api/v1/venues/cottiers/shows.json",
+      "concessions": {
+        "url": "https://cottiers.com/",
+        "checkedAt": "2026-09-10",
+        "summary": "Cottiers publishes a single standard price per event and no venue-wide concession scheme. Ticket queries go to the theatre directly.",
+        "schemes": [],
+        "offers": [],
+        "fees": null
+      }
+    },
+    {
+      "id": "kings",
+      "name": "King's Theatre",
+      "area": "City Centre",
+      "description": "A grand Edwardian theatre on Bath Street, the King’s is Glasgow’s home for touring West End musicals, big comedy names, and large-scale drama. With over 1,700 seats across stalls and three balconies, it’s where Glasgow goes for a big night out — and it hosts the city’s legendary annual pantomime every Christmas.",
+      "website": "https://atgtickets.com/venues/kings-theatre-glasgow",
+      "instagram": "kikitronica",
+      "programme": "mixed",
+      "url": "https://glasgowtheatre.com/venues/kings.html",
+      "upcomingShows": 23,
+      "showsUrl": "https://glasgowtheatre.com/api/v1/venues/kings/shows.json",
+      "concessions": {
+        "url": "https://www.atgtickets.com/access/access-scheme/",
+        "checkedAt": "2026-09-10",
+        "summary": "An ATG house. Concessions are set per production rather than by the venue, so the booking page is the only place they appear; two memberships run across every ATG theatre.",
+        "schemes": [
+          {
+            "name": "Access Membership Scheme",
+            "broad": false,
+            "eligibility": "Free, and open to all Deaf and disabled customers and people with long-term health conditions. Unlocks accessible seats online, any Access concessions on a show, and personal assistant tickets.",
+            "how": "Register once at atgtickets.com/access."
+          },
+          {
+            "name": "ATG+",
+            "broad": false,
+            "eligibility": "A paid membership: no booking fees on most ATG shows, priority booking and member discounts across 35+ venues."
+          }
+        ],
+        "offers": [],
+        "fees": "Booking fees apply and vary by show; ATG+ members pay none."
+      }
+    },
+    {
+      "id": "mono",
+      "name": "Mono",
+      "area": "Merchant City",
+      "description": "Vegan cafe-bar, record shop and live venue. It hosts a programme of gigs and performances. Independent to its core, with strong ties to Glasgow’s DIY music and arts scenes.",
+      "website": "https://monocafebar.com",
+      "instagram": "monocafebar",
+      "programme": "theatre",
+      "url": "https://glasgowtheatre.com/venues/mono.html",
+      "upcomingShows": 0,
+      "showsUrl": "https://glasgowtheatre.com/api/v1/venues/mono/shows.json",
+      "concessions": null
+    },
+    {
+      "id": "pavilion",
+      "name": "Pavilion Theatre",
+      "area": "City Centre",
+      "description": "An Edwardian variety house on Renfield Street, and a natural home for Scottish comedy, panto that runs for months, tribute nights and new plays.",
+      "website": "https://www.paviliontheatre.co.uk",
+      "instagram": "paviliontheatre",
+      "programme": "mixed",
+      "url": "https://glasgowtheatre.com/venues/pavilion.html",
+      "upcomingShows": 40,
+      "showsUrl": "https://glasgowtheatre.com/api/v1/venues/pavilion/shows.json",
+      "concessions": {
+        "url": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/terms-and-conditions",
+        "checkedAt": "2026-09-10",
+        "summary": "Concessions are set per show and applied at the point of purchase. Access tickets, including companion seats, are arranged with the theatre directly rather than online.",
+        "schemes": [
+          {
+            "name": "Concession",
+            "broad": false,
+            "eligibility": "Where a show offers one. Must be claimed at the time of purchase — it cannot be added afterwards — and proof of entitlement may be asked for. Only one discount applies per ticket; where several would, you get the cheapest single one."
+          },
+          {
+            "name": "Access and companion tickets",
+            "broad": false,
+            "eligibility": "Wheelchair spaces and essential companion tickets are booked by phone, in person, or through the theatre's enquiry form."
+          }
+        ],
+        "offers": [],
+        "fees": "Some events include a venue levy of up to £2 in the ticket price."
+      }
+    },
+    {
+      "id": "platform",
+      "name": "Platform",
+      "area": "Easterhouse",
+      "description": "An arts centre at The Bridge in Easterhouse, with a programme of theatre, music, visual art and creative activities for different ages. Visit the venue website for performances and opportunities to take part.",
+      "website": "https://platform-online.co.uk",
+      "instagram": "platformglasgow",
+      "programme": "mixed",
+      "url": "https://glasgowtheatre.com/venues/platform.html",
+      "upcomingShows": 3,
+      "showsUrl": "https://glasgowtheatre.com/api/v1/venues/platform/shows.json",
+      "concessions": {
+        "url": "https://www.platform-online.co.uk/page/local-links",
+        "checkedAt": "2026-09-10",
+        "summary": "Most shows are priced in three tiers — standard, concession, and the Local Links rate for people living nearby. Classes and workshops are pay-what-you-like.",
+        "schemes": [
+          {
+            "name": "Local Links",
+            "price": 5,
+            "broad": true,
+            "eligibility": "Residents of G1 1, G1 5, G4 0, G31 1–5, G32 0, G32 6–9, G33 1–6, G34 0, G34 9, G40 1–4, G69 6–8 and G71 7. Shows are as little as £5.",
+            "how": "Free, with no advance registration: choose Local Links when booking online and enter your postcode, or give your address when booking by phone or in person."
+          },
+          {
+            "name": "Concession",
+            "broad": false,
+            "eligibility": "Published per show alongside the standard price."
+          },
+          {
+            "name": "Pay-What-You-Like",
+            "broad": false,
+            "eligibility": "Classes and participatory activities. You decide what to pay; Platform suggests around £5 a class, payable online, by card or in cash at the class."
+          }
+        ],
+        "offers": [],
+        "fees": null
+      }
+    },
+    {
+      "id": "southside-fringe",
+      "name": "Southside Fringe",
+      "area": "Southside",
+      "description": "An annual multi-venue festival celebrating the creativity and diversity of Glasgow’s Southside. For two weeks each May, the Fringe pops up in cafes, parks, community halls, and shop fronts across the Southside, with a programme spanning theatre, comedy, music, visual art, and family events.",
+      "website": "https://southsidefringe.org.uk",
+      "instagram": "southsidefringe",
+      "programme": "theatre",
+      "url": "https://glasgowtheatre.com/venues/southside-fringe.html",
+      "upcomingShows": 0,
+      "showsUrl": "https://glasgowtheatre.com/api/v1/venues/southside-fringe/shows.json",
+      "concessions": null
+    },
+    {
+      "id": "glad-cafe",
+      "name": "The Glad Cafe",
+      "area": "Shawlands",
+      "description": "A warm, community-focused cafe and arts venue on Pollokshaws Road in the heart of Shawlands. The Glad champions grassroots music and performance.",
+      "website": "https://thegladcafe.co.uk",
+      "instagram": "thegladcafe",
+      "programme": "mixed",
+      "url": "https://glasgowtheatre.com/venues/glad-cafe.html",
+      "upcomingShows": 1,
+      "showsUrl": "https://glasgowtheatre.com/api/v1/venues/glad-cafe/shows.json",
+      "concessions": {
+        "url": "https://www.thegladcafe.co.uk/",
+        "checkedAt": "2026-09-10",
+        "summary": "A single advance price per event, with no published concession scheme. Some nights are free or pay-what-you-like — the event page says which.",
+        "schemes": [],
+        "offers": [],
+        "fees": null
+      }
+    },
+    {
+      "id": "old-hairdressers",
+      "name": "The Old Hairdressers",
+      "area": "City Centre",
+      "description": "An independent bar and arts venue on Renfield Lane, hosting live music, exhibitions and experimental performance. Check the venue programme for upcoming events.",
+      "website": "https://theoldhairdressers.com",
+      "instagram": "theoldhairdressers",
+      "programme": "mixed",
+      "url": "https://glasgowtheatre.com/venues/old-hairdressers.html",
+      "upcomingShows": 1,
+      "showsUrl": "https://glasgowtheatre.com/api/v1/venues/old-hairdressers/shows.json",
+      "concessions": {
+        "url": "http://www.theoldhairdressers.com/",
+        "checkedAt": "2026-09-10",
+        "summary": "Prices are not published on the venue's own listings; they appear on the ticket seller's page, and some nights are free or on the door.",
+        "schemes": [],
+        "offers": [],
+        "fees": null
+      }
+    },
+    {
+      "id": "theatre-118",
+      "name": "Theatre 118",
+      "area": "Port Dundas",
+      "description": "Glasgow's fringe theatre, in a former industrial building at 24 Payne Street, just north of the city centre across the M8. It programmes new writing, comedy, music and live performance from grassroots companies and its own productions, with Pay What You Can tickets available on every show.",
+      "website": "https://theatre118.com",
+      "instagram": "theatre_118",
+      "programme": "theatre",
+      "url": "https://glasgowtheatre.com/venues/theatre-118.html",
+      "upcomingShows": 2,
+      "showsUrl": "https://glasgowtheatre.com/api/v1/venues/theatre-118/shows.json",
+      "concessions": {
+        "url": "https://theatre118.com/whats-on",
+        "checkedAt": "2026-10-15",
+        "summary": "Theatre 118 runs Pay What You Can on every show: the standard price is a suggestion, and nobody is turned away for paying less. There is a £1.50 booking fee per order.",
+        "schemes": [],
+        "offers": [
+          {
+            "name": "Pay What You Can",
+            "saving": "Choose your own price",
+            "detail": "Available on every show, whatever the standard price. Buyers choose what to pay, from the venue minimum up; there is no upper limit and no application to make."
+          }
+        ],
+        "fees": "£1.50 booking fee per order, however many tickets are bought."
+      }
+    },
+    {
+      "id": "theatre-royal",
+      "name": "Theatre Royal",
+      "area": "City Centre",
+      "description": "Opened in 1867, the Theatre Royal on Hope Street hosts opera, ballet, touring drama and musicals in a plush Victorian auditorium. It is the Glasgow home of Scottish Opera and Scottish Ballet.",
+      "website": "https://atgtickets.com/venues/theatre-royal-glasgow",
+      "instagram": "theatreroyalglasgow",
+      "programme": "mixed",
+      "url": "https://glasgowtheatre.com/venues/theatre-royal.html",
+      "upcomingShows": 25,
+      "showsUrl": "https://glasgowtheatre.com/api/v1/venues/theatre-royal/shows.json",
+      "concessions": {
+        "url": "https://www.atgtickets.com/access/access-scheme/",
+        "checkedAt": "2026-09-10",
+        "summary": "An ATG house. Concessions are set per production rather than by the venue, so the booking page is the only place they appear; two memberships run across every ATG theatre.",
+        "schemes": [
+          {
+            "name": "Access Membership Scheme",
+            "broad": false,
+            "eligibility": "Free, and open to all Deaf and disabled customers and people with long-term health conditions. Unlocks accessible seats online, any Access concessions on a show, and personal assistant tickets.",
+            "how": "Register once at atgtickets.com/access."
+          },
+          {
+            "name": "ATG+",
+            "broad": false,
+            "eligibility": "A paid membership: no booking fees on most ATG shows, priority booking and member discounts across 35+ venues."
+          }
+        ],
+        "offers": [],
+        "fees": "Booking fees apply and vary by show; ATG+ members pay none."
+      }
+    },
+    {
+      "id": "tramway",
+      "name": "Tramway",
+      "area": "Pollokshields",
+      "description": "An internationally renowned arts venue housed in a vast former tram depot on the Southside. Tramway’s cavernous industrial spaces host cutting-edge theatre, dance, and visual art from Scotland and around the world. Its programme leans towards the experimental and the boundary-pushing.",
+      "website": "https://tramway.org",
+      "instagram": "tramwayart",
+      "programme": "theatre",
+      "url": "https://glasgowtheatre.com/venues/tramway.html",
+      "upcomingShows": 5,
+      "showsUrl": "https://glasgowtheatre.com/api/v1/venues/tramway/shows.json",
+      "concessions": {
+        "url": "https://www.glasgowlife.org.uk/the-small-print/tickets-glasgow-tickets-purchase-policy",
+        "checkedAt": "2026-09-10",
+        "summary": "Tramway sells through Glasgow Life, whose concession rate is published per show — usually as the second figure in a listing such as £20/£12.",
+        "schemes": [
+          {
+            "name": "Concession",
+            "broad": false,
+            "eligibility": "Full-time students; people aged 60 and over; and recipients of Jobseeker's Allowance, Disability Living Allowance, Personal Independence Payment or Employment & Support Allowance. Photographic proof of entitlement may be asked for.",
+            "how": "Chosen at the time of booking. One concession or discount per ticket."
+          }
+        ],
+        "offers": [],
+        "fees": "Transaction fees apply: £1.50 online, £1.75 by phone. Exchanges, where allowed, are £1 per ticket."
+      }
+    },
+    {
+      "id": "tron",
+      "name": "Tron Theatre",
+      "area": "Merchant City",
+      "description": "Housed in a beautiful converted church at the heart of the Merchant City, the Tron is Glasgow’s home for new writing and independent theatre. With an intimate main stage and a buzzing bar, it programmes a mix of Scottish premieres, visiting companies, and its popular scratch series for works-in-development.",
+      "website": "https://tron.co.uk",
+      "instagram": "tikitronica",
+      "programme": "theatre",
+      "url": "https://glasgowtheatre.com/venues/tron.html",
+      "upcomingShows": 12,
+      "showsUrl": "https://glasgowtheatre.com/api/v1/venues/tron/shows.json",
+      "concessions": {
+        "url": "https://www.tron.co.uk/booking-information/",
+        "checkedAt": "2026-09-10",
+        "summary": "The Tron has scrapped concession types altogether. Every show is sold at three price points and you choose which to pay — so the lowest price on a listing here is the lowest price anyone pays, with no eligibility to prove.",
+        "schemes": [
+          {
+            "name": "Choose what you pay",
+            "broad": false,
+            "eligibility": "Open to everyone. Pick from the three price points shown when booking."
+          },
+          {
+            "name": "Groups",
+            "broad": false,
+            "eligibility": "Groups may be eligible for a discount — contact the Box Office on 0141 552 4267."
+          }
+        ],
+        "offers": [],
+        "fees": "No booking fees."
+      }
+    }
+  ]
+}

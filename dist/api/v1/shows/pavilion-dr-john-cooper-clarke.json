@@ -1,0 +1,44 @@
+{
+  "apiVersion": "1",
+  "generatedAt": "2026-10-17T21:40:27.566Z",
+  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "show": {
+    "id": "pavilion-dr-john-cooper-clarke",
+    "url": "https://glasgowtheatre.com/shows/pavilion-dr-john-cooper-clarke.html",
+    "title": "Dr John Cooper Clarke",
+    "artForm": "spoken-word",
+    "tags": [
+      "spoken-word"
+    ],
+    "producer": null,
+    "description": "Literary phenomenon Dr John Cooper Clarke is a British cult hero. Known as the 'Godfather of Punk Poetry' and the original people’s poet, John’s cultural influence spans literature, music and fashion. From creating some of the most iconic poetry of the modern era, including the world’s most...",
+    "venue": {
+      "id": "pavilion",
+      "name": "Pavilion Theatre",
+      "area": "City Centre"
+    },
+    "run": {
+      "opens": "2026-10-20",
+      "closes": "2026-10-20",
+      "time": "19:30"
+    },
+    "schedule": null,
+    "performances": [
+      {
+        "date": "2026-10-20",
+        "time": "19:30",
+        "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/other/dr-john-cooper-clarke-tickets"
+      }
+    ],
+    "pricing": null,
+    "accessibility": null,
+    "durationMinutes": null,
+    "image": {
+      "url": "https://glasgowtheatre.com/images/eab11bf5890af0c0cbee.webp",
+      "alt": "Dr John Cooper Clarke",
+      "credit": null
+    },
+    "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/other/dr-john-cooper-clarke-tickets",
+    "updatedAt": "2026-10-15"
+  }
+}

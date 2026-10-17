@@ -1,0 +1,44 @@
+{
+  "apiVersion": "1",
+  "generatedAt": "2026-10-17T21:40:27.566Z",
+  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "show": {
+    "id": "pavilion-celtic-connections-2027-proudly-presents-a-toast-fa",
+    "url": "https://glasgowtheatre.com/shows/pavilion-celtic-connections-2027-proudly-presents-a-toast-fa.html",
+    "title": "Celtic Connections 2027 Proudly Presents A Toast Fae The Lassies",
+    "artForm": "musical",
+    "tags": [
+      "musical"
+    ],
+    "producer": null,
+    "description": "Written and directed by John Binnie Musical arrangements and additional music by Alyson Orr Songs and poetry by Robert Burns Following on from its sell-out success at Pitlochry Festival Theatre, this dynamic musical play explores the life of Robert Burns through the eyes of the three women who knew...",
+    "venue": {
+      "id": "pavilion",
+      "name": "Pavilion Theatre",
+      "area": "City Centre"
+    },
+    "run": {
+      "opens": "2027-01-21",
+      "closes": "2027-01-21",
+      "time": "19:30"
+    },
+    "schedule": null,
+    "performances": [
+      {
+        "date": "2027-01-21",
+        "time": "19:30",
+        "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/other/celtic-connections-2027-proudly-presents-a-toast-fae-the-lassies-tickets"
+      }
+    ],
+    "pricing": null,
+    "accessibility": null,
+    "durationMinutes": null,
+    "image": {
+      "url": "https://glasgowtheatre.com/images/09a5eed41dc5591634f8.webp",
+      "alt": "Celtic Connections 2027 Proudly Presents A Toast Fae The Lassies",
+      "credit": null
+    },
+    "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/other/celtic-connections-2027-proudly-presents-a-toast-fae-the-lassies-tickets",
+    "updatedAt": "2026-10-15"
+  }
+}

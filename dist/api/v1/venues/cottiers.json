@@ -1,0 +1,25 @@
+{
+  "apiVersion": "1",
+  "generatedAt": "2026-10-17T21:40:27.566Z",
+  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "venue": {
+    "id": "cottiers",
+    "name": "Cottiers",
+    "area": "Hyndland",
+    "description": "A stunning converted church in the leafy West End neighbourhood of Hyndland. Cottiers’ intimate theatre space hosts a varied programme of comedy, music, theatre, and community events beneath original stained glass windows. The venue also houses a popular bar and restaurant — perfect for a pre-show drink.",
+    "website": "https://cottiers.com",
+    "instagram": "cottiersglasgow",
+    "programme": "mixed",
+    "url": "https://glasgowtheatre.com/venues/cottiers.html",
+    "upcomingShows": 4,
+    "showsUrl": "https://glasgowtheatre.com/api/v1/venues/cottiers/shows.json",
+    "concessions": {
+      "url": "https://cottiers.com/",
+      "checkedAt": "2026-09-10",
+      "summary": "Cottiers publishes a single standard price per event and no venue-wide concession scheme. Ticket queries go to the theatre directly.",
+      "schemes": [],
+      "offers": [],
+      "fees": null
+    }
+  }
+}

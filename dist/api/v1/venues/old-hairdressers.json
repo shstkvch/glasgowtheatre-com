@@ -1,0 +1,25 @@
+{
+  "apiVersion": "1",
+  "generatedAt": "2026-10-17T21:40:27.566Z",
+  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "venue": {
+    "id": "old-hairdressers",
+    "name": "The Old Hairdressers",
+    "area": "City Centre",
+    "description": "An independent bar and arts venue on Renfield Lane, hosting live music, exhibitions and experimental performance. Check the venue programme for upcoming events.",
+    "website": "https://theoldhairdressers.com",
+    "instagram": "theoldhairdressers",
+    "programme": "mixed",
+    "url": "https://glasgowtheatre.com/venues/old-hairdressers.html",
+    "upcomingShows": 1,
+    "showsUrl": "https://glasgowtheatre.com/api/v1/venues/old-hairdressers/shows.json",
+    "concessions": {
+      "url": "http://www.theoldhairdressers.com/",
+      "checkedAt": "2026-09-10",
+      "summary": "Prices are not published on the venue's own listings; they appear on the ticket seller's page, and some nights are free or on the door.",
+      "schemes": [],
+      "offers": [],
+      "fees": null
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "apiVersion": "1",
+  "generatedAt": "2026-10-17T21:40:27.566Z",
+  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "show": {
+    "id": "theatre-royal-atg-inspire-academy-juniors",
+    "url": "https://glasgowtheatre.com/shows/theatre-royal-atg-inspire-academy-juniors.html",
+    "title": "ATG Inspire Academy Juniors",
+    "artForm": "workshop",
+    "tags": [
+      "workshop"
+    ],
+    "producer": null,
+    "description": "Weekly classes for young people, delivered in partnership with ShowWorks Theatre. - Work towards Trinity College London accredited certificates.",
+    "venue": {
+      "id": "theatre-royal",
+      "name": "Theatre Royal",
+      "area": "City Centre"
+    },
+    "run": {
+      "opens": "2026-12-08",
+      "closes": "2026-12-08",
+      "time": null
+    },
+    "schedule": null,
+    "performances": [],
+    "pricing": null,
+    "accessibility": null,
+    "durationMinutes": null,
+    "image": {
+      "url": "https://glasgowtheatre.com/images/bee3079bd0a389ceb66a.webp",
+      "alt": "ATG Inspire Academy Juniors",
+      "credit": null
+    },
+    "bookingUrl": "https://www.atgtickets.com/shows/atg-inspire-academy-juniors/theatre-royal-glasgow/calendar/",
+    "updatedAt": "2026-10-15"
+  }
+}

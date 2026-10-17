@@ -1,0 +1,49 @@
+{
+  "apiVersion": "1",
+  "generatedAt": "2026-10-17T21:40:27.566Z",
+  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "show": {
+    "id": "citizens-revel",
+    "url": "https://glasgowtheatre.com/shows/citizens-revel.html",
+    "title": "Revel",
+    "artForm": "dance",
+    "tags": [
+      "dance"
+    ],
+    "producer": null,
+    "description": "This is the dressing room of every show Kally and Steinvör have ever been in – past, present and future. A 60+ coming-of-age story, Revel is a dance-theatre piece that combines physical theatre, dance, dialogue and music. We move between the real relationship in the dressing room as they get ready...",
+    "venue": {
+      "id": "citizens",
+      "name": "Citizens Theatre",
+      "area": "Gorbals"
+    },
+    "run": {
+      "opens": "2026-10-23",
+      "closes": "2026-10-23",
+      "time": null
+    },
+    "schedule": null,
+    "performances": [],
+    "pricing": {
+      "currency": "GBP",
+      "from": 17.5,
+      "to": null,
+      "concessionFrom": null,
+      "concessionTo": null,
+      "free": false,
+      "payWhatYouLike": false,
+      "text": "£17.50",
+      "source": "published-text",
+      "checkedAt": "2026-10-15"
+    },
+    "accessibility": null,
+    "durationMinutes": 55,
+    "image": {
+      "url": "https://glasgowtheatre.com/images/c1fe04f0221c4454e065.webp",
+      "alt": "Revel",
+      "credit": null
+    },
+    "bookingUrl": "https://citz.co.uk/whats-on/revel/",
+    "updatedAt": "2026-10-15"
+  }
+}

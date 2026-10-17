@@ -1,0 +1,120 @@
+{
+  "apiVersion": "1",
+  "generatedAt": "2026-10-17T21:40:27.566Z",
+  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "show": {
+    "id": "citizens-othello",
+    "url": "https://glasgowtheatre.com/shows/citizens-othello.html",
+    "title": "Othello",
+    "artForm": "play",
+    "tags": [
+      "play"
+    ],
+    "producer": null,
+    "description": "A secret marriage. The brink of war. Fact and fiction. It’s not just black and white. Fear, passion and paranoia bubble beneath the surface of Othello and Desdemona’s newlywed life. Iago’s manipulations begin in whispers – and end in ruin. Director Anthony Almeida‘s new production looks afresh at...",
+    "venue": {
+      "id": "citizens",
+      "name": "Citizens Theatre",
+      "area": "Gorbals"
+    },
+    "run": {
+      "opens": "2026-10-27",
+      "closes": "2026-11-07",
+      "time": "19:30"
+    },
+    "schedule": null,
+    "performances": [
+      {
+        "date": "2026-10-27",
+        "time": "19:30",
+        "bookingUrl": "https://citz.co.uk/whats-on/othello/book/74801"
+      },
+      {
+        "date": "2026-10-28",
+        "time": "19:30",
+        "bookingUrl": "https://citz.co.uk/whats-on/othello/book/74802"
+      },
+      {
+        "date": "2026-10-29",
+        "time": "14:00",
+        "bookingUrl": "https://citz.co.uk/whats-on/othello/book/75001"
+      },
+      {
+        "date": "2026-10-29",
+        "time": "19:30",
+        "bookingUrl": "https://citz.co.uk/whats-on/othello/book/74803"
+      },
+      {
+        "date": "2026-10-30",
+        "time": "19:30",
+        "bookingUrl": "https://citz.co.uk/whats-on/othello/book/75401"
+      },
+      {
+        "date": "2026-10-31",
+        "time": "14:00",
+        "bookingUrl": "https://citz.co.uk/whats-on/othello/book/75601"
+      },
+      {
+        "date": "2026-10-31",
+        "time": "19:30",
+        "bookingUrl": "https://citz.co.uk/whats-on/othello/book/75402"
+      },
+      {
+        "date": "2026-11-03",
+        "time": "18:00",
+        "bookingUrl": "https://citz.co.uk/whats-on/othello/book/74805"
+      },
+      {
+        "date": "2026-11-04",
+        "time": "19:30",
+        "bookingUrl": "https://citz.co.uk/whats-on/othello/book/74806"
+      },
+      {
+        "date": "2026-11-05",
+        "time": "14:00",
+        "bookingUrl": "https://citz.co.uk/whats-on/othello/book/75002"
+      },
+      {
+        "date": "2026-11-05",
+        "time": "19:30",
+        "bookingUrl": "https://citz.co.uk/whats-on/othello/book/74807"
+      },
+      {
+        "date": "2026-11-06",
+        "time": "19:30",
+        "bookingUrl": "https://citz.co.uk/whats-on/othello/book/75403"
+      },
+      {
+        "date": "2026-11-07",
+        "time": "14:00",
+        "bookingUrl": "https://citz.co.uk/whats-on/othello/book/75602"
+      },
+      {
+        "date": "2026-11-07",
+        "time": "19:30",
+        "bookingUrl": "https://citz.co.uk/whats-on/othello/book/75404"
+      }
+    ],
+    "pricing": {
+      "currency": "GBP",
+      "from": 18.5,
+      "to": 43.5,
+      "concessionFrom": null,
+      "concessionTo": null,
+      "free": false,
+      "payWhatYouLike": false,
+      "text": "£18.50 - £43.50",
+      "source": "published-text",
+      "checkedAt": "2026-10-15"
+    },
+    "accessibility": null,
+    "durationMinutes": 170,
+    "image": {
+      "url": "https://glasgowtheatre.com/images/5fff4a23033146bbe7de.webp",
+      "alt": "Othello",
+      "credit": null
+    },
+    "bookingUrl": "https://citz.co.uk/whats-on/othello/",
+    "updatedAt": "2026-10-15"
+  }
+}

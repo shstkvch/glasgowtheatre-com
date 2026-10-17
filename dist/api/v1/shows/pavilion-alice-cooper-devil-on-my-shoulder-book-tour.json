@@ -1,0 +1,44 @@
+{
+  "apiVersion": "1",
+  "generatedAt": "2026-10-17T21:40:27.566Z",
+  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "show": {
+    "id": "pavilion-alice-cooper-devil-on-my-shoulder-book-tour",
+    "url": "https://glasgowtheatre.com/shows/pavilion-alice-cooper-devil-on-my-shoulder-book-tour.html",
+    "title": "Alice Cooper - Devil On My Shoulder Book Tour",
+    "artForm": "talk",
+    "tags": [
+      "talk"
+    ],
+    "producer": null,
+    "description": "Alice Cooper announces the release of his definitive autobiography, Devil On My Shoulder, published by Ebury Spotlight on Thu 8 Oct 2026. This long-awaited autobiography finally lifts the lid on one of the greatest lives in music. Building on over sixty years of rock folklore, Cooper will support...",
+    "venue": {
+      "id": "pavilion",
+      "name": "Pavilion Theatre",
+      "area": "City Centre"
+    },
+    "run": {
+      "opens": "2026-10-19",
+      "closes": "2026-10-19",
+      "time": "19:30"
+    },
+    "schedule": null,
+    "performances": [
+      {
+        "date": "2026-10-19",
+        "time": "19:30",
+        "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/other/alice-cooper-devil-on-my-shoulder-book-tour-tickets"
+      }
+    ],
+    "pricing": null,
+    "accessibility": null,
+    "durationMinutes": null,
+    "image": {
+      "url": "https://glasgowtheatre.com/images/79a096ffc49f2a748d7b.webp",
+      "alt": "Alice Cooper - Devil On My Shoulder Book Tour",
+      "credit": null
+    },
+    "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/other/alice-cooper-devil-on-my-shoulder-book-tour-tickets",
+    "updatedAt": "2026-10-15"
+  }
+}

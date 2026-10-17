@@ -1,0 +1,49 @@
+{
+  "apiVersion": "1",
+  "generatedAt": "2026-10-17T21:40:27.566Z",
+  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "show": {
+    "id": "citizens-mike-wozniak-the-bench",
+    "url": "https://glasgowtheatre.com/shows/citizens-mike-wozniak-the-bench.html",
+    "title": "Mike Wozniak: The Bench",
+    "artForm": "stand-up",
+    "tags": [
+      "stand-up"
+    ],
+    "producer": null,
+    "description": "New stand-up tour show from Mike Wozniak in which a story about a bench will be prominent. Previous experience of or strong opinions about benches not required. Let Mike worry about that. As seen on Taskmaster, Man Down and Junior Taskmaster. As heard on Three Bean Salad podcast.",
+    "venue": {
+      "id": "citizens",
+      "name": "Citizens Theatre",
+      "area": "Gorbals"
+    },
+    "run": {
+      "opens": "2027-03-20",
+      "closes": "2027-03-20",
+      "time": null
+    },
+    "schedule": null,
+    "performances": [],
+    "pricing": {
+      "currency": "GBP",
+      "from": 24.5,
+      "to": null,
+      "concessionFrom": null,
+      "concessionTo": null,
+      "free": false,
+      "payWhatYouLike": false,
+      "text": "£24.50",
+      "source": "published-text",
+      "checkedAt": "2026-10-15"
+    },
+    "accessibility": null,
+    "durationMinutes": 110,
+    "image": {
+      "url": "https://glasgowtheatre.com/images/8565fbba50cbd408dc37.webp",
+      "alt": "Mike Wozniak: The Bench",
+      "credit": null
+    },
+    "bookingUrl": "https://citz.co.uk/whats-on/mike-wozniak-the-bench-2/",
+    "updatedAt": "2026-10-15"
+  }
+}

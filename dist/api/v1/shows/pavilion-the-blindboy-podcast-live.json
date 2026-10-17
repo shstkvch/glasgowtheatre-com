@@ -1,0 +1,44 @@
+{
+  "apiVersion": "1",
+  "generatedAt": "2026-10-17T21:40:27.566Z",
+  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "show": {
+    "id": "pavilion-the-blindboy-podcast-live",
+    "url": "https://glasgowtheatre.com/shows/pavilion-the-blindboy-podcast-live.html",
+    "title": "The Blindboy Podcast Live",
+    "artForm": "spoken-word",
+    "tags": [
+      "spoken-word"
+    ],
+    "producer": null,
+    "description": "The Blindboy Podcast LIVE returns on its biggest UK tour yet, with polymath, bestselling author, screenwriter, songwriter, musician, producer and academic Blindboy Boatclub. Described as a 'cultural phenomenon' by The New York Times, The Blindboy Podcast is an award-winning storytelling podcast...",
+    "venue": {
+      "id": "pavilion",
+      "name": "Pavilion Theatre",
+      "area": "City Centre"
+    },
+    "run": {
+      "opens": "2026-10-28",
+      "closes": "2026-10-28",
+      "time": "19:30"
+    },
+    "schedule": null,
+    "performances": [
+      {
+        "date": "2026-10-28",
+        "time": "19:30",
+        "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/other/the-blindboy-podcast-live-tickets"
+      }
+    ],
+    "pricing": null,
+    "accessibility": null,
+    "durationMinutes": null,
+    "image": {
+      "url": "https://glasgowtheatre.com/images/bac8d466d8bd1895339d.webp",
+      "alt": "The Blindboy Podcast Live",
+      "credit": null
+    },
+    "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/other/the-blindboy-podcast-live-tickets",
+    "updatedAt": "2026-10-15"
+  }
+}

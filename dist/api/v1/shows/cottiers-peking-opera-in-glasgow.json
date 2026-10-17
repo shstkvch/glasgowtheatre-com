@@ -1,0 +1,45 @@
+{
+  "apiVersion": "1",
+  "generatedAt": "2026-10-17T21:40:27.566Z",
+  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "show": {
+    "id": "cottiers-peking-opera-in-glasgow",
+    "url": "https://glasgowtheatre.com/shows/cottiers-peking-opera-in-glasgow.html",
+    "title": "Peking opera in Glasgow",
+    "artForm": "opera",
+    "tags": [
+      "opera"
+    ],
+    "producer": null,
+    "description": "Peking Opera in Glasgow brings Chinese opera into the city through live performance, voice, movement and gesture. Audiences can experience its distinctive performance language up close and see how stories and emotions are communicated beyond words. The event creates a meeting point between Chinese...",
+    "venue": {
+      "id": "cottiers",
+      "name": "Cottiers",
+      "area": "Hyndland"
+    },
+    "run": {
+      "opens": "2026-11-11",
+      "closes": "2026-11-11",
+      "time": "19:00"
+    },
+    "schedule": {
+      "text": "07:00 PM - 09:00 PM"
+    },
+    "performances": [
+      {
+        "date": "2026-11-11",
+        "time": "19:00"
+      }
+    ],
+    "pricing": null,
+    "accessibility": null,
+    "durationMinutes": null,
+    "image": {
+      "url": "https://glasgowtheatre.com/images/976ae6d1ae49d8a32c49.webp",
+      "alt": "Peking opera in Glasgow",
+      "credit": null
+    },
+    "bookingUrl": "https://cottiers.com/event/peking-opera-in-glasgow/",
+    "updatedAt": "2026-10-15"
+  }
+}

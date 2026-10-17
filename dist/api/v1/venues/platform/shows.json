@@ -1,0 +1,161 @@
+{
+  "apiVersion": "1",
+  "generatedAt": "2026-10-17T21:40:27.566Z",
+  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "total": 3,
+  "count": 3,
+  "limit": null,
+  "offset": 0,
+  "next": null,
+  "prev": null,
+  "shows": [
+    {
+      "id": "platform-made-in-easterhouse-2026",
+      "url": "https://glasgowtheatre.com/shows/platform-made-in-easterhouse-2026.html",
+      "title": "Made in Easterhouse 2026",
+      "artForm": "community-event",
+      "tags": [
+        "community-event"
+      ],
+      "producer": null,
+      "description": "Help us mark twenty years of participatory arts in Easterhouse with this special celebration.",
+      "venue": {
+        "id": "platform",
+        "name": "Platform",
+        "area": "Easterhouse"
+      },
+      "run": {
+        "opens": "2026-10-23",
+        "closes": "2026-10-23",
+        "time": "16:00"
+      },
+      "schedule": {
+        "text": "Fri 23 Oct | from 4pm"
+      },
+      "performances": [
+        {
+          "date": "2026-10-23",
+          "time": "16:00"
+        }
+      ],
+      "pricing": {
+        "currency": "GBP",
+        "from": 9.5,
+        "to": null,
+        "concessionFrom": 5,
+        "concessionTo": 6,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": "£9.50 (standard) | £6 (concession) | £5",
+        "source": "published-text",
+        "checkedAt": "2026-10-15"
+      },
+      "accessibility": null,
+      "durationMinutes": null,
+      "image": {
+        "url": "https://glasgowtheatre.com/images/6a66476bc38595f1b523.webp",
+        "alt": "Made in Easterhouse 2026",
+        "credit": null
+      },
+      "bookingUrl": "https://www.platform-online.co.uk/index.php/whats-on/event/1238",
+      "updatedAt": "2026-10-15"
+    },
+    {
+      "id": "platform-starcatchers-play-day",
+      "url": "https://glasgowtheatre.com/shows/platform-starcatchers-play-day.html",
+      "title": "Starcatchers Play Day",
+      "artForm": "community-event",
+      "tags": [
+        "community-event"
+      ],
+      "producer": null,
+      "description": "Starcatchers celebrate its 20 birthday at Platform with live music and performance for early years audiences and the rest of the family.",
+      "venue": {
+        "id": "platform",
+        "name": "Platform",
+        "area": "Easterhouse"
+      },
+      "run": {
+        "opens": "2026-10-24",
+        "closes": "2026-10-24",
+        "time": "12:00"
+      },
+      "schedule": {
+        "text": "Sat 24 Oct | 12pm"
+      },
+      "performances": [
+        {
+          "date": "2026-10-24",
+          "time": "12:00"
+        }
+      ],
+      "pricing": {
+        "currency": "GBP",
+        "from": 5,
+        "to": null,
+        "concessionFrom": 3,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": "£5 | £3",
+        "source": "published-text",
+        "checkedAt": "2026-10-15"
+      },
+      "accessibility": null,
+      "durationMinutes": null,
+      "image": {
+        "url": "https://glasgowtheatre.com/images/8c7cff040fae5e7a219d.webp",
+        "alt": "Starcatchers Play Day",
+        "credit": null
+      },
+      "bookingUrl": "https://www.platform-online.co.uk/index.php/whats-on/event/1239",
+      "updatedAt": "2026-10-15"
+    },
+    {
+      "id": "platform-christmas-show-hansel-gretel",
+      "url": "https://glasgowtheatre.com/shows/platform-christmas-show-hansel-gretel.html",
+      "title": "Christmas Show: Hansel & Gretel",
+      "artForm": "pantomime",
+      "tags": [
+        "pantomime"
+      ],
+      "producer": null,
+      "description": "Join us for a gripping, festive story, groovy songs and plenty of silly jokes this Christmas!",
+      "venue": {
+        "id": "platform",
+        "name": "Platform",
+        "area": "Easterhouse"
+      },
+      "run": {
+        "opens": "2026-12-01",
+        "closes": "2026-12-24",
+        "time": null
+      },
+      "schedule": {
+        "text": "Tue 1 Dec - Thu 24 Dec | Day & evening shows"
+      },
+      "performances": [],
+      "pricing": {
+        "currency": "GBP",
+        "from": 10.5,
+        "to": null,
+        "concessionFrom": 6,
+        "concessionTo": 7,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": "£10.50 (standard) | £7 (concession) | £6",
+        "source": "published-text",
+        "checkedAt": "2026-10-15"
+      },
+      "accessibility": null,
+      "durationMinutes": null,
+      "image": {
+        "url": "https://glasgowtheatre.com/images/5f61968f7f75f3ccd94a.webp",
+        "alt": "Christmas Show: Hansel & Gretel",
+        "credit": null
+      },
+      "bookingUrl": "https://www.platform-online.co.uk/index.php/whats-on/event/1233",
+      "updatedAt": "2026-10-15"
+    }
+  ]
+}

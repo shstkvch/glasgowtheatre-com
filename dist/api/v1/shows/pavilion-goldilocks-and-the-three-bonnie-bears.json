@@ -1,0 +1,44 @@
+{
+  "apiVersion": "1",
+  "generatedAt": "2026-10-17T21:40:27.566Z",
+  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "show": {
+    "id": "pavilion-goldilocks-and-the-three-bonnie-bears",
+    "url": "https://glasgowtheatre.com/shows/pavilion-goldilocks-and-the-three-bonnie-bears.html",
+    "title": "Goldilocks and the Three Bonnie Bears",
+    "artForm": "pantomime",
+    "tags": [
+      "pantomime"
+    ],
+    "producer": null,
+    "description": "Bringing Glasgow together once again for the laugh-out-loud spectacular Goldilocks and the Three Bonnie Bears. Joining the already‑announced funny man Liam Dolan are returning favourites Grado, Stephen Purdon, Scott Fletcher, Jack Jester, Jennifer Neil, Valissa Scott and Craig Glover — a team...",
+    "venue": {
+      "id": "pavilion",
+      "name": "Pavilion Theatre",
+      "area": "City Centre"
+    },
+    "run": {
+      "opens": "2026-11-26",
+      "closes": "2027-01-10",
+      "time": "19:00"
+    },
+    "schedule": null,
+    "performances": [
+      {
+        "date": "2026-11-26",
+        "time": "19:00",
+        "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/pantomime/goldilocks-and-the-three-bonnie-bears-tickets"
+      }
+    ],
+    "pricing": null,
+    "accessibility": null,
+    "durationMinutes": null,
+    "image": {
+      "url": "https://glasgowtheatre.com/images/61a40b79b12b245bdc49.webp",
+      "alt": "Goldilocks and the Three Bonnie Bears",
+      "credit": null
+    },
+    "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/pantomime/goldilocks-and-the-three-bonnie-bears-tickets",
+    "updatedAt": "2026-10-15"
+  }
+}

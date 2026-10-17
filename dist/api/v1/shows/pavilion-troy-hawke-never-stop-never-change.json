@@ -1,0 +1,44 @@
+{
+  "apiVersion": "1",
+  "generatedAt": "2026-10-17T21:40:27.566Z",
+  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "show": {
+    "id": "pavilion-troy-hawke-never-stop-never-change",
+    "url": "https://glasgowtheatre.com/shows/pavilion-troy-hawke-never-stop-never-change.html",
+    "title": "Troy Hawke: Never Stop, Never Change!",
+    "artForm": "stand-up",
+    "tags": [
+      "stand-up"
+    ],
+    "producer": null,
+    "description": "Following last year’s sellout world tour, Troy Hawke is back to his globe sweeping in 2027 with new show ‘Never Stop, Never Change!’ Angry security guards, barked compliments and crossed wires abound as Troy navigates various conversational minefields, both online and in real life. ‘I like the...",
+    "venue": {
+      "id": "pavilion",
+      "name": "Pavilion Theatre",
+      "area": "City Centre"
+    },
+    "run": {
+      "opens": "2027-03-18",
+      "closes": "2027-03-18",
+      "time": "19:30"
+    },
+    "schedule": null,
+    "performances": [
+      {
+        "date": "2027-03-18",
+        "time": "19:30",
+        "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/comedy/troy-hawke-never-stop-never-change-tickets"
+      }
+    ],
+    "pricing": null,
+    "accessibility": null,
+    "durationMinutes": null,
+    "image": {
+      "url": "https://glasgowtheatre.com/images/4d18661e43332c693355.webp",
+      "alt": "Troy Hawke: Never Stop, Never Change!",
+      "credit": null
+    },
+    "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/comedy/troy-hawke-never-stop-never-change-tickets",
+    "updatedAt": "2026-10-15"
+  }
+}

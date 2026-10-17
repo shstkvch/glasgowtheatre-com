@@ -1,0 +1,55 @@
+{
+  "apiVersion": "1",
+  "generatedAt": "2026-10-17T21:40:27.566Z",
+  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "show": {
+    "id": "tron-seamus-egan-maeve-gilchrist-into-the-ice",
+    "url": "https://glasgowtheatre.com/shows/tron-seamus-egan-maeve-gilchrist-into-the-ice.html",
+    "title": "Seamus Egan & Maeve Gilchrist: Into the Ice",
+    "artForm": "music",
+    "tags": [
+      "music"
+    ],
+    "producer": null,
+    "description": "Recommended Age Guide: 14+ An immersive collaboration between Irish music icon Seamus Egan and acclaimed Scots/Irish harper and composer Maeve Gilchrist. Inspired by the history and mythology of Antarctic exploration, Into The Ice draws from the story of Ernest Shackleton’s 1914 Trans-Antarctic...",
+    "venue": {
+      "id": "tron",
+      "name": "Tron Theatre",
+      "area": "Merchant City"
+    },
+    "run": {
+      "opens": "2027-01-21",
+      "closes": "2027-01-21",
+      "time": "19:30"
+    },
+    "schedule": null,
+    "performances": [
+      {
+        "date": "2027-01-21",
+        "time": "19:30",
+        "bookingUrl": "https://www.tron.co.uk/book-online/573191AJCNHPLSMGQQPJNRTNKDKQGKJRR"
+      }
+    ],
+    "pricing": {
+      "currency": "GBP",
+      "from": 24,
+      "to": null,
+      "concessionFrom": null,
+      "concessionTo": null,
+      "free": false,
+      "payWhatYouLike": false,
+      "text": "£24",
+      "source": "published-text",
+      "checkedAt": "2026-10-15"
+    },
+    "accessibility": null,
+    "durationMinutes": 90,
+    "image": {
+      "url": "https://glasgowtheatre.com/images/9a92701178edb1ca26df.webp",
+      "alt": "Seamus Egan & Maeve Gilchrist: Into the Ice",
+      "credit": null
+    },
+    "bookingUrl": "https://www.tron.co.uk/shows/seamus-egan-maeve-gilchrist-into-the-ice/",
+    "updatedAt": "2026-10-15"
+  }
+}

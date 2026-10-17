@@ -1,0 +1,37 @@
+{
+  "apiVersion": "1",
+  "generatedAt": "2026-10-17T21:40:27.566Z",
+  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "venue": {
+    "id": "kings",
+    "name": "King's Theatre",
+    "area": "City Centre",
+    "description": "A grand Edwardian theatre on Bath Street, the King’s is Glasgow’s home for touring West End musicals, big comedy names, and large-scale drama. With over 1,700 seats across stalls and three balconies, it’s where Glasgow goes for a big night out — and it hosts the city’s legendary annual pantomime every Christmas.",
+    "website": "https://atgtickets.com/venues/kings-theatre-glasgow",
+    "instagram": "kikitronica",
+    "programme": "mixed",
+    "url": "https://glasgowtheatre.com/venues/kings.html",
+    "upcomingShows": 23,
+    "showsUrl": "https://glasgowtheatre.com/api/v1/venues/kings/shows.json",
+    "concessions": {
+      "url": "https://www.atgtickets.com/access/access-scheme/",
+      "checkedAt": "2026-09-10",
+      "summary": "An ATG house. Concessions are set per production rather than by the venue, so the booking page is the only place they appear; two memberships run across every ATG theatre.",
+      "schemes": [
+        {
+          "name": "Access Membership Scheme",
+          "broad": false,
+          "eligibility": "Free, and open to all Deaf and disabled customers and people with long-term health conditions. Unlocks accessible seats online, any Access concessions on a show, and personal assistant tickets.",
+          "how": "Register once at atgtickets.com/access."
+        },
+        {
+          "name": "ATG+",
+          "broad": false,
+          "eligibility": "A paid membership: no booking fees on most ATG shows, priority booking and member discounts across 35+ venues."
+        }
+      ],
+      "offers": [],
+      "fees": "Booking fees apply and vary by show; ATG+ members pay none."
+    }
+  }
+}

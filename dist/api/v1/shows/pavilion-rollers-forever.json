@@ -1,0 +1,44 @@
+{
+  "apiVersion": "1",
+  "generatedAt": "2026-10-17T21:40:27.566Z",
+  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "show": {
+    "id": "pavilion-rollers-forever",
+    "url": "https://glasgowtheatre.com/shows/pavilion-rollers-forever.html",
+    "title": "Rollers Forever",
+    "artForm": "musical",
+    "tags": [
+      "musical"
+    ],
+    "producer": null,
+    "description": "Back by Huge Public Demand! Rollers Forever is the smash-hit tartan-clad musical celebrating the music, memories and passionate fandom of the Bay City Rollers. This warm and funny story follows two lifelong friends who reconnect on a Saturday night and are pulled back into the excitement...",
+    "venue": {
+      "id": "pavilion",
+      "name": "Pavilion Theatre",
+      "area": "City Centre"
+    },
+    "run": {
+      "opens": "2026-10-15",
+      "closes": "2026-10-17",
+      "time": "14:30"
+    },
+    "schedule": null,
+    "performances": [
+      {
+        "date": "2026-10-15",
+        "time": "14:30",
+        "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/musical/rollers-forever-tickets"
+      }
+    ],
+    "pricing": null,
+    "accessibility": null,
+    "durationMinutes": null,
+    "image": {
+      "url": "https://glasgowtheatre.com/images/9ad85e51c73035590816.webp",
+      "alt": "Rollers Forever",
+      "credit": null
+    },
+    "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/musical/rollers-forever-tickets",
+    "updatedAt": "2026-10-15"
+  }
+}

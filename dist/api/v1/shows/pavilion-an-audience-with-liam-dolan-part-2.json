@@ -1,0 +1,44 @@
+{
+  "apiVersion": "1",
+  "generatedAt": "2026-10-17T21:40:27.566Z",
+  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "show": {
+    "id": "pavilion-an-audience-with-liam-dolan-part-2",
+    "url": "https://glasgowtheatre.com/shows/pavilion-an-audience-with-liam-dolan-part-2.html",
+    "title": "An Audience With... Liam Dolan (Part 2)",
+    "artForm": "talk",
+    "tags": [
+      "talk"
+    ],
+    "producer": null,
+    "description": "Pavilion Pantomime favourite Liam Dolan is back with his brand new show for 2027. Following on from the success of “An Audience With...” in 2026, Liam couldn’t squeeze everything from his 30 year career in showbusiness, the audience wanted more so Liam decided to write a “Part Two” Expect an...",
+    "venue": {
+      "id": "pavilion",
+      "name": "Pavilion Theatre",
+      "area": "City Centre"
+    },
+    "run": {
+      "opens": "2027-03-13",
+      "closes": "2027-03-13",
+      "time": "19:30"
+    },
+    "schedule": null,
+    "performances": [
+      {
+        "date": "2027-03-13",
+        "time": "19:30",
+        "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/comedy/an-audience-with-liam-dolan-part-2-tickets"
+      }
+    ],
+    "pricing": null,
+    "accessibility": null,
+    "durationMinutes": null,
+    "image": {
+      "url": "https://glasgowtheatre.com/images/ba0089237bc7e22b271f.webp",
+      "alt": "An Audience With... Liam Dolan (Part 2)",
+      "credit": null
+    },
+    "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/comedy/an-audience-with-liam-dolan-part-2-tickets",
+    "updatedAt": "2026-10-15"
+  }
+}

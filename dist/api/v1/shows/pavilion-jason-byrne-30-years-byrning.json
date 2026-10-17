@@ -1,0 +1,44 @@
+{
+  "apiVersion": "1",
+  "generatedAt": "2026-10-17T21:40:27.566Z",
+  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "show": {
+    "id": "pavilion-jason-byrne-30-years-byrning",
+    "url": "https://glasgowtheatre.com/shows/pavilion-jason-byrne-30-years-byrning.html",
+    "title": "Jason Byrne: 30 Years Byrning",
+    "artForm": "stand-up",
+    "tags": [
+      "stand-up"
+    ],
+    "producer": null,
+    "description": "Jason Byrne is back and “Byrning” brighter than ever, celebrating 30 glorious years of stand-up with his brand-new show, 30 Years Byrning. Byrne delivers a riotous night of high-energy storytelling, surreal tangents and unstoppable laughter. From razor-sharp observations to gloriously unhinged...",
+    "venue": {
+      "id": "pavilion",
+      "name": "Pavilion Theatre",
+      "area": "City Centre"
+    },
+    "run": {
+      "opens": "2026-11-15",
+      "closes": "2026-11-15",
+      "time": "19:30"
+    },
+    "schedule": null,
+    "performances": [
+      {
+        "date": "2026-11-15",
+        "time": "19:30",
+        "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/comedy/jason-byrne-30-years-byrning-tickets"
+      }
+    ],
+    "pricing": null,
+    "accessibility": null,
+    "durationMinutes": null,
+    "image": {
+      "url": "https://glasgowtheatre.com/images/712602a5b5e06bc403fd.webp",
+      "alt": "Jason Byrne: 30 Years Byrning",
+      "credit": null
+    },
+    "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/comedy/jason-byrne-30-years-byrning-tickets",
+    "updatedAt": "2026-10-15"
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "apiVersion": "1",
+  "generatedAt": "2026-10-17T21:40:27.566Z",
+  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "show": {
+    "id": "citizens-poggle-and-me",
+    "url": "https://glasgowtheatre.com/shows/citizens-poggle-and-me.html",
+    "title": "Poggle and Me",
+    "artForm": "physical-theatre",
+    "tags": [
+      "physical-theatre"
+    ],
+    "producer": null,
+    "description": "This sensory, inclusive dance-theatre performance is made especially for and with children with complex needs ages 7-15 years. Playfulness within the work creates space for live response between the audience and performers, with its adaptable approach allowing the individuality of each child to be...",
+    "venue": {
+      "id": "citizens",
+      "name": "Citizens Theatre",
+      "area": "Gorbals"
+    },
+    "run": {
+      "opens": "2026-12-10",
+      "closes": "2026-12-11",
+      "time": "10:00"
+    },
+    "schedule": null,
+    "performances": [
+      {
+        "date": "2026-12-10",
+        "time": "10:00"
+      },
+      {
+        "date": "2026-12-10",
+        "time": "13:00"
+      },
+      {
+        "date": "2026-12-11",
+        "time": "10:00"
+      },
+      {
+        "date": "2026-12-11",
+        "time": "13:00"
+      }
+    ],
+    "pricing": {
+      "currency": "GBP",
+      "from": null,
+      "to": null,
+      "concessionFrom": null,
+      "concessionTo": null,
+      "free": false,
+      "payWhatYouLike": false,
+      "text": "£100 fee per performance",
+      "source": "published-text",
+      "checkedAt": "2026-10-15"
+    },
+    "accessibility": null,
+    "durationMinutes": 40,
+    "image": {
+      "url": "https://glasgowtheatre.com/images/7f3cbd5a13534a98150c.webp",
+      "alt": "Poggle and Me",
+      "credit": null
+    },
+    "bookingUrl": "https://citz.co.uk/whats-on/poggle-and-me/",
+    "updatedAt": "2026-10-15"
+  }
+}

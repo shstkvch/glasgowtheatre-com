@@ -1,0 +1,44 @@
+{
+  "apiVersion": "1",
+  "generatedAt": "2026-10-17T21:40:27.566Z",
+  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "show": {
+    "id": "pavilion-myra-dubois-siren",
+    "url": "https://glasgowtheatre.com/shows/pavilion-myra-dubois-siren.html",
+    "title": "Myra DuBois: Siren",
+    "artForm": "cabaret",
+    "tags": [
+      "cabaret"
+    ],
+    "producer": null,
+    "description": "Don’t be alarmed, she’s making a noise! After taking the global internet by storm with viral clips of her shows, dazzling the West-End as ‘Ruth’ in the hit show ‘Titanique’ and a barnstorming sell-out tour of Australia, the UK’s self-declared “siren from South Yorkshire” MYRA DUBOIS has heard the...",
+    "venue": {
+      "id": "pavilion",
+      "name": "Pavilion Theatre",
+      "area": "City Centre"
+    },
+    "run": {
+      "opens": "2027-04-09",
+      "closes": "2027-04-09",
+      "time": "19:30"
+    },
+    "schedule": null,
+    "performances": [
+      {
+        "date": "2027-04-09",
+        "time": "19:30",
+        "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/comedy/myra-dubois-siren-tickets"
+      }
+    ],
+    "pricing": null,
+    "accessibility": null,
+    "durationMinutes": null,
+    "image": {
+      "url": "https://glasgowtheatre.com/images/19f330a5f814122b1c22.webp",
+      "alt": "Myra DuBois: Siren",
+      "credit": null
+    },
+    "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/comedy/myra-dubois-siren-tickets",
+    "updatedAt": "2026-10-15"
+  }
+}

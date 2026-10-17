@@ -1,0 +1,32 @@
+{
+  "apiVersion": "1",
+  "generatedAt": "2026-10-17T21:40:27.566Z",
+  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "venue": {
+    "id": "tramway",
+    "name": "Tramway",
+    "area": "Pollokshields",
+    "description": "An internationally renowned arts venue housed in a vast former tram depot on the Southside. Tramway’s cavernous industrial spaces host cutting-edge theatre, dance, and visual art from Scotland and around the world. Its programme leans towards the experimental and the boundary-pushing.",
+    "website": "https://tramway.org",
+    "instagram": "tramwayart",
+    "programme": "theatre",
+    "url": "https://glasgowtheatre.com/venues/tramway.html",
+    "upcomingShows": 5,
+    "showsUrl": "https://glasgowtheatre.com/api/v1/venues/tramway/shows.json",
+    "concessions": {
+      "url": "https://www.glasgowlife.org.uk/the-small-print/tickets-glasgow-tickets-purchase-policy",
+      "checkedAt": "2026-09-10",
+      "summary": "Tramway sells through Glasgow Life, whose concession rate is published per show — usually as the second figure in a listing such as £20/£12.",
+      "schemes": [
+        {
+          "name": "Concession",
+          "broad": false,
+          "eligibility": "Full-time students; people aged 60 and over; and recipients of Jobseeker's Allowance, Disability Living Allowance, Personal Independence Payment or Employment & Support Allowance. Photographic proof of entitlement may be asked for.",
+          "how": "Chosen at the time of booking. One concession or discount per ticket."
+        }
+      ],
+      "offers": [],
+      "fees": "Transaction fees apply: £1.50 online, £1.75 by phone. Exchanges, where allowed, are £1 per ticket."
+    }
+  }
+}

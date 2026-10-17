@@ -1,0 +1,133 @@
+{
+  "apiVersion": "1",
+  "generatedAt": "2026-10-17T21:40:27.566Z",
+  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "total": 2,
+  "count": 2,
+  "limit": null,
+  "offset": 0,
+  "next": null,
+  "prev": null,
+  "shows": [
+    {
+      "id": "theatre-118-working-it-out-october-2026",
+      "url": "https://glasgowtheatre.com/shows/theatre-118-working-it-out-october-2026.html",
+      "title": "Working it Out - October 2026",
+      "artForm": "cabaret",
+      "tags": [
+        "cabaret"
+      ],
+      "producer": "Theatre 118",
+      "description": "Theatre 118 reopens with our highly popular new material night. Every month, a range of acts perform brand new play extracts, stand-up, poetry, music and pretty much any other kind of live performance you can imagine.",
+      "venue": {
+        "id": "theatre-118",
+        "name": "Theatre 118",
+        "area": "Port Dundas"
+      },
+      "run": {
+        "opens": "2026-11-16",
+        "closes": "2026-11-16",
+        "time": "20:00"
+      },
+      "schedule": null,
+      "performances": [
+        {
+          "date": "2026-11-16",
+          "time": "20:00",
+          "bookingUrl": "https://theatre118.com/book/385"
+        }
+      ],
+      "pricing": {
+        "currency": "GBP",
+        "from": 3,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": true,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-15"
+      },
+      "accessibility": null,
+      "durationMinutes": 75,
+      "image": {
+        "url": "https://glasgowtheatre.com/images/172df84d0332424aaea0.webp",
+        "alt": "Working it Out - October 2026",
+        "credit": null
+      },
+      "bookingUrl": "https://theatre118.com/whats-on/working-it-out",
+      "updatedAt": "2026-10-15"
+    },
+    {
+      "id": "theatre-118-sleeping-beauty-the-new-republic-of-port-dundas",
+      "url": "https://glasgowtheatre.com/shows/theatre-118-sleeping-beauty-the-new-republic-of-port-dundas.html",
+      "title": "Sleeping Beauty & the New Republic of Port Dundas",
+      "artForm": "pantomime",
+      "tags": [
+        "pantomime"
+      ],
+      "producer": "Theatre 118",
+      "description": "Theatre 118's irreverent take on panto returns: with an all-new script, absurd comedy, banging tunes and a twisted spin on a traditional fairytale!",
+      "venue": {
+        "id": "theatre-118",
+        "name": "Theatre 118",
+        "area": "Port Dundas"
+      },
+      "run": {
+        "opens": "2026-12-16",
+        "closes": "2026-12-19",
+        "time": "20:00"
+      },
+      "schedule": null,
+      "performances": [
+        {
+          "date": "2026-12-16",
+          "time": "20:00",
+          "bookingUrl": "https://theatre118.com/book/380"
+        },
+        {
+          "date": "2026-12-17",
+          "time": "20:00",
+          "bookingUrl": "https://theatre118.com/book/381"
+        },
+        {
+          "date": "2026-12-18",
+          "time": "20:00",
+          "bookingUrl": "https://theatre118.com/book/382"
+        },
+        {
+          "date": "2026-12-19",
+          "time": "14:30",
+          "bookingUrl": "https://theatre118.com/book/383"
+        },
+        {
+          "date": "2026-12-19",
+          "time": "20:00",
+          "bookingUrl": "https://theatre118.com/book/384"
+        }
+      ],
+      "pricing": {
+        "currency": "GBP",
+        "from": 12,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": true,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-15"
+      },
+      "accessibility": null,
+      "durationMinutes": 100,
+      "image": {
+        "url": "https://glasgowtheatre.com/images/17aa0b472a934c36da42.webp",
+        "alt": "Sleeping Beauty & the New Republic of Port Dundas",
+        "credit": null
+      },
+      "bookingUrl": "https://theatre118.com/whats-on/sleeping-beauty-the-new-republic-of-port-dundas",
+      "updatedAt": "2026-10-15"
+    }
+  ]
+}

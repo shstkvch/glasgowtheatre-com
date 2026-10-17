@@ -1,0 +1,60 @@
+{
+  "apiVersion": "1",
+  "generatedAt": "2026-10-17T21:40:27.566Z",
+  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "show": {
+    "id": "tron-have-you-seen-my-red-yo-yo-the-songs-of-matt-mcginn",
+    "url": "https://glasgowtheatre.com/shows/tron-have-you-seen-my-red-yo-yo-the-songs-of-matt-mcginn.html",
+    "title": "Have You Seen My Red Yo-Yo?: The Songs of Matt McGinn",
+    "artForm": "music",
+    "tags": [
+      "music"
+    ],
+    "producer": null,
+    "description": "Recommended Age Guide: 14+ The Songs of Matt McGinn celebrates one of Glasgow’s most distinctive and enduring songwriting voices. Audiences can expect an evening rich in humour, storytelling and song, as a cast of performers revisits the much-loved repertoire of the legendary folk singer whose...",
+    "venue": {
+      "id": "tron",
+      "name": "Tron Theatre",
+      "area": "Merchant City"
+    },
+    "run": {
+      "opens": "2027-01-22",
+      "closes": "2027-01-24",
+      "time": "14:00"
+    },
+    "schedule": null,
+    "performances": [
+      {
+        "date": "2027-01-22",
+        "time": "19:30",
+        "bookingUrl": "https://www.tron.co.uk/book-online/574391AJGBRMCVHDTNGGKNRSDCRNCMNNC"
+      },
+      {
+        "date": "2027-01-24",
+        "time": "14:00",
+        "bookingUrl": "https://www.tron.co.uk/book-online/574591ASSRJCSSJRJCTLMDDNHHGKJHCVD"
+      }
+    ],
+    "pricing": {
+      "currency": "GBP",
+      "from": 22,
+      "to": null,
+      "concessionFrom": null,
+      "concessionTo": null,
+      "free": false,
+      "payWhatYouLike": false,
+      "text": "£22",
+      "source": "published-text",
+      "checkedAt": "2026-10-15"
+    },
+    "accessibility": null,
+    "durationMinutes": 120,
+    "image": {
+      "url": "https://glasgowtheatre.com/images/ecf01dcfab8b1a7ea331.webp",
+      "alt": "Have You Seen My Red Yo-Yo?: The Songs of Matt McGinn",
+      "credit": null
+    },
+    "bookingUrl": "https://www.tron.co.uk/shows/have-you-seen-my-red-yo-yo-the-songs-of-matt-mcginn/",
+    "updatedAt": "2026-10-15"
+  }
+}

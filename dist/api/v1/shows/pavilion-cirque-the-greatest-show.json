@@ -1,0 +1,44 @@
+{
+  "apiVersion": "1",
+  "generatedAt": "2026-10-17T21:40:27.566Z",
+  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "show": {
+    "id": "pavilion-cirque-the-greatest-show",
+    "url": "https://glasgowtheatre.com/shows/pavilion-cirque-the-greatest-show.html",
+    "title": "Cirque: The Greatest Show",
+    "artForm": "physical-theatre",
+    "tags": [
+      "physical-theatre"
+    ],
+    "producer": null,
+    "description": "Where musical theatre meets circus… Cirque returns with an exciting new production for 2027. Step into a world where iconic musical theatre favourites meet the skill and artistry of extraordinary circus performers in a vibrant celebration of music, movement, and live entertainment. Featuring...",
+    "venue": {
+      "id": "pavilion",
+      "name": "Pavilion Theatre",
+      "area": "City Centre"
+    },
+    "run": {
+      "opens": "2027-04-10",
+      "closes": "2027-04-10",
+      "time": "15:00"
+    },
+    "schedule": null,
+    "performances": [
+      {
+        "date": "2027-04-10",
+        "time": "15:00",
+        "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/other/cirque-the-greatest-show-tickets"
+      }
+    ],
+    "pricing": null,
+    "accessibility": null,
+    "durationMinutes": null,
+    "image": {
+      "url": "https://glasgowtheatre.com/images/94ac1749ec78b51a6329.webp",
+      "alt": "Cirque: The Greatest Show",
+      "credit": null
+    },
+    "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/other/cirque-the-greatest-show-tickets",
+    "updatedAt": "2026-10-15"
+  }
+}

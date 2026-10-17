@@ -1,0 +1,62 @@
+{
+  "apiVersion": "1",
+  "generatedAt": "2026-10-17T21:40:27.566Z",
+  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "show": {
+    "id": "citizens-these-are-our-neighbours",
+    "url": "https://glasgowtheatre.com/shows/citizens-these-are-our-neighbours.html",
+    "title": "These Are Our Neighbours",
+    "artForm": "dance",
+    "tags": [
+      "dance"
+    ],
+    "producer": null,
+    "description": "There’s a van on your street. It says IMMIGRATION ENFORCEMENT on the side. It’s here for your neighbours. What do you do? Fusing documentary with celebratory dance theatre, These Are Our Neighbours revisits the attempted raid on Kenmure Street in 2021 that became an eight-hour act of shared...",
+    "venue": {
+      "id": "citizens",
+      "name": "Citizens Theatre",
+      "area": "Gorbals"
+    },
+    "run": {
+      "opens": "2026-10-16",
+      "closes": "2026-10-17",
+      "time": "19:45"
+    },
+    "schedule": null,
+    "performances": [
+      {
+        "date": "2026-10-16",
+        "time": "19:45"
+      },
+      {
+        "date": "2026-10-17",
+        "time": "14:30"
+      },
+      {
+        "date": "2026-10-17",
+        "time": "19:45"
+      }
+    ],
+    "pricing": {
+      "currency": "GBP",
+      "from": 17.5,
+      "to": null,
+      "concessionFrom": null,
+      "concessionTo": null,
+      "free": false,
+      "payWhatYouLike": false,
+      "text": "£17.50",
+      "source": "published-text",
+      "checkedAt": "2026-10-15"
+    },
+    "accessibility": null,
+    "durationMinutes": 70,
+    "image": {
+      "url": "https://glasgowtheatre.com/images/6a4ae5c15a01d1ea1b2f.webp",
+      "alt": "These Are Our Neighbours",
+      "credit": null
+    },
+    "bookingUrl": "https://citz.co.uk/whats-on/these-are-our-neighbours/",
+    "updatedAt": "2026-10-15"
+  }
+}

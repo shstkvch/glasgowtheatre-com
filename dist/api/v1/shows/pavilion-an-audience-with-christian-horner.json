@@ -1,0 +1,44 @@
+{
+  "apiVersion": "1",
+  "generatedAt": "2026-10-17T21:40:27.566Z",
+  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "show": {
+    "id": "pavilion-an-audience-with-christian-horner",
+    "url": "https://glasgowtheatre.com/shows/pavilion-an-audience-with-christian-horner.html",
+    "title": "An Audience with Christian Horner",
+    "artForm": "talk",
+    "tags": [
+      "talk"
+    ],
+    "producer": null,
+    "description": "Join Christian Horner for an exclusive live event celebrating Drive, the revealing memoir from one of Formula 1’s most influential team principals. In an afternoon of candid conversation, Horner will reflect on the defining moments of his career, the leadership lessons forged under relentless...",
+    "venue": {
+      "id": "pavilion",
+      "name": "Pavilion Theatre",
+      "area": "City Centre"
+    },
+    "run": {
+      "opens": "2026-10-18",
+      "closes": "2026-10-18",
+      "time": "12:30"
+    },
+    "schedule": null,
+    "performances": [
+      {
+        "date": "2026-10-18",
+        "time": "12:30",
+        "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/other/an-audience-with-christian-horner-tickets"
+      }
+    ],
+    "pricing": null,
+    "accessibility": null,
+    "durationMinutes": null,
+    "image": {
+      "url": "https://glasgowtheatre.com/images/fcef883c66e32d30c331.webp",
+      "alt": "An Audience with Christian Horner",
+      "credit": null
+    },
+    "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/other/an-audience-with-christian-horner-tickets",
+    "updatedAt": "2026-10-15"
+  }
+}

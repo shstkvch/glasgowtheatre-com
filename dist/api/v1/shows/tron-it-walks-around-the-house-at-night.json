@@ -1,0 +1,63 @@
+{
+  "apiVersion": "1",
+  "generatedAt": "2026-10-17T21:40:27.566Z",
+  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "show": {
+    "id": "tron-it-walks-around-the-house-at-night",
+    "url": "https://glasgowtheatre.com/shows/tron-it-walks-around-the-house-at-night.html",
+    "title": "It Walks Around The House At Night",
+    "artForm": "play",
+    "tags": [
+      "play"
+    ],
+    "producer": null,
+    "description": "Recommended Age Guide 14+ Unsettling, darkly comic and full of surprises, the stage is set… for terror. When an out-of-work actor takes a job playing a ghost at an old countryside manor, he expects nothing more than a few cheap scares. But as night after night unfolds, the role begins … Continued",
+    "venue": {
+      "id": "tron",
+      "name": "Tron Theatre",
+      "area": "Merchant City"
+    },
+    "run": {
+      "opens": "2026-10-16",
+      "closes": "2026-10-17",
+      "time": "19:30"
+    },
+    "schedule": null,
+    "performances": [
+      {
+        "date": "2026-10-16",
+        "time": "19:30",
+        "bookingUrl": "https://www.tron.co.uk/book-online/560591AMGRCBLDKQTGVVGMTMNRJLQRGQG"
+      },
+      {
+        "date": "2026-10-17",
+        "time": "14:30"
+      },
+      {
+        "date": "2026-10-17",
+        "time": "19:30"
+      }
+    ],
+    "pricing": {
+      "currency": "GBP",
+      "from": 19,
+      "to": 26,
+      "concessionFrom": null,
+      "concessionTo": null,
+      "free": false,
+      "payWhatYouLike": false,
+      "text": "£19, £23 or £26",
+      "source": "published-text",
+      "checkedAt": "2026-10-15"
+    },
+    "accessibility": null,
+    "durationMinutes": 90,
+    "image": {
+      "url": "https://glasgowtheatre.com/images/bb31b4dbdd4e2d0f3eef.webp",
+      "alt": "It Walks Around The House At Night",
+      "credit": null
+    },
+    "bookingUrl": "https://www.tron.co.uk/shows/it-walks-around-the-house-at-night/",
+    "updatedAt": "2026-10-15"
+  }
+}

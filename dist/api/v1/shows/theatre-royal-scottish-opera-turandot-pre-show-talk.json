@@ -1,0 +1,38 @@
+{
+  "apiVersion": "1",
+  "generatedAt": "2026-10-17T21:40:27.566Z",
+  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "show": {
+    "id": "theatre-royal-scottish-opera-turandot-pre-show-talk",
+    "url": "https://glasgowtheatre.com/shows/theatre-royal-scottish-opera-turandot-pre-show-talk.html",
+    "title": "Scottish Opera - Turandot Pre Show Talk",
+    "artForm": "talk",
+    "tags": [
+      "talk"
+    ],
+    "producer": null,
+    "description": "Get closer to the action and see into the minds of the creatives behind the production by attending a pre-show talk.",
+    "venue": {
+      "id": "theatre-royal",
+      "name": "Theatre Royal",
+      "area": "City Centre"
+    },
+    "run": {
+      "opens": "2026-10-31",
+      "closes": "2026-10-31",
+      "time": null
+    },
+    "schedule": null,
+    "performances": [],
+    "pricing": null,
+    "accessibility": null,
+    "durationMinutes": null,
+    "image": {
+      "url": "https://glasgowtheatre.com/images/6d2f939a352e9b2cd895.webp",
+      "alt": "Scottish Opera - Turandot Pre Show Talk",
+      "credit": null
+    },
+    "bookingUrl": "https://www.atgtickets.com/shows/scottish-opera-turandot-pre-show-talk/theatre-royal-glasgow/calendar/",
+    "updatedAt": "2026-10-15"
+  }
+}

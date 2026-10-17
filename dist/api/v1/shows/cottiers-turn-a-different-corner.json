@@ -1,0 +1,38 @@
+{
+  "apiVersion": "1",
+  "generatedAt": "2026-10-17T21:40:27.566Z",
+  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "show": {
+    "id": "cottiers-turn-a-different-corner",
+    "url": "https://glasgowtheatre.com/shows/cottiers-turn-a-different-corner.html",
+    "title": "Turn a different corner",
+    "artForm": "play",
+    "tags": [
+      "play"
+    ],
+    "producer": null,
+    "description": "At 17, Charlie Murphy thought community service at a Glasgow homeless drop-in centre would be easy. Just kill time and get out. He didn’t expect the people he would meet there. A veteran broken by Basra. A grandmother too ashamed to face her grandchildren. A young woman fighting her way back from...",
+    "venue": {
+      "id": "cottiers",
+      "name": "Cottiers",
+      "area": "Hyndland"
+    },
+    "run": {
+      "opens": "2026-10-18",
+      "closes": "2026-10-18",
+      "time": null
+    },
+    "schedule": null,
+    "performances": [],
+    "pricing": null,
+    "accessibility": null,
+    "durationMinutes": null,
+    "image": {
+      "url": "https://glasgowtheatre.com/images/543a8062b6241ff63eae.webp",
+      "alt": "Turn a different corner",
+      "credit": null
+    },
+    "bookingUrl": "https://cottiers.com/event/turn-a-different-corner/",
+    "updatedAt": "2026-10-15"
+  }
+}

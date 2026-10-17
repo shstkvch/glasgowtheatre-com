@@ -1,0 +1,70 @@
+{
+  "apiVersion": "1",
+  "generatedAt": "2026-10-17T21:40:27.566Z",
+  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "show": {
+    "id": "tron-when-prophecy-fails",
+    "url": "https://glasgowtheatre.com/shows/tron-when-prophecy-fails.html",
+    "title": "When Prophecy Fails",
+    "artForm": "physical-theatre",
+    "tags": [
+      "physical-theatre"
+    ],
+    "producer": null,
+    "description": "The end is nigh, and the saucers are coming. Step into a world of apocalyptic visions, clandestine observers and the faithful disciples of a suburban housewife. Award-winning ensemble Groupwork present When Prophecy Fails, a daring new work of physical theatre. Inspired by a 1954 study that...",
+    "venue": {
+      "id": "tron",
+      "name": "Tron Theatre",
+      "area": "Merchant City"
+    },
+    "run": {
+      "opens": "2027-02-04",
+      "closes": "2027-02-06",
+      "time": "19:30"
+    },
+    "schedule": null,
+    "performances": [
+      {
+        "date": "2027-02-04",
+        "time": "19:30",
+        "bookingUrl": "https://www.tron.co.uk/book-online/570791ASSVRLHVVJLCRLNRGLCDCVHQJJP"
+      },
+      {
+        "date": "2027-02-05",
+        "time": "19:30",
+        "bookingUrl": "https://www.tron.co.uk/book-online/570792AMHSSNPHMQVSJTSLRQSKPRRTSJN"
+      },
+      {
+        "date": "2027-02-06",
+        "time": "14:30",
+        "bookingUrl": "https://www.tron.co.uk/book-online/570991AKGHMRVDBPCLQRSMKCMSBJRJVBG"
+      },
+      {
+        "date": "2027-02-06",
+        "time": "19:30",
+        "bookingUrl": "https://www.tron.co.uk/book-online/570793ASVBNMTQSRQRQGPCNBVRVDKHSHG"
+      }
+    ],
+    "pricing": {
+      "currency": "GBP",
+      "from": 20,
+      "to": 27,
+      "concessionFrom": null,
+      "concessionTo": null,
+      "free": false,
+      "payWhatYouLike": false,
+      "text": "£20, £24 or £27",
+      "source": "published-text",
+      "checkedAt": "2026-10-15"
+    },
+    "accessibility": null,
+    "durationMinutes": 70,
+    "image": {
+      "url": "https://glasgowtheatre.com/images/b12d79914b25e58d7c61.webp",
+      "alt": "When Prophecy Fails",
+      "credit": null
+    },
+    "bookingUrl": "https://www.tron.co.uk/shows/when-prophecy-fails/",
+    "updatedAt": "2026-10-15"
+  }
+}

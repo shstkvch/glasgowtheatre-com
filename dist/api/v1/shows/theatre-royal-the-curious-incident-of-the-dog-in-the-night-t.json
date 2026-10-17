@@ -1,0 +1,38 @@
+{
+  "apiVersion": "1",
+  "generatedAt": "2026-10-17T21:40:27.566Z",
+  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "show": {
+    "id": "theatre-royal-the-curious-incident-of-the-dog-in-the-night-t",
+    "url": "https://glasgowtheatre.com/shows/theatre-royal-the-curious-incident-of-the-dog-in-the-night-t.html",
+    "title": "The Curious Incident of the Dog in the Night-Time",
+    "artForm": "play",
+    "tags": [
+      "play"
+    ],
+    "producer": null,
+    "description": "The internationally celebrated novel that captivated 10 million readers is coming in a brand-new staging more thrilling than ever.",
+    "venue": {
+      "id": "theatre-royal",
+      "name": "Theatre Royal",
+      "area": "City Centre"
+    },
+    "run": {
+      "opens": "2027-03-09",
+      "closes": "2027-03-13",
+      "time": null
+    },
+    "schedule": null,
+    "performances": [],
+    "pricing": null,
+    "accessibility": null,
+    "durationMinutes": null,
+    "image": {
+      "url": "https://glasgowtheatre.com/images/4edbea8aec489a82ad45.webp",
+      "alt": "The Curious Incident of the Dog in the Night-Time",
+      "credit": null
+    },
+    "bookingUrl": "https://www.atgtickets.com/shows/the-curious-incident-of-the-dog-in-the-night-time/theatre-royal-glasgow/calendar/",
+    "updatedAt": "2026-10-15"
+  }
+}

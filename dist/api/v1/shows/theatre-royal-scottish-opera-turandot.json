@@ -1,0 +1,40 @@
+{
+  "apiVersion": "1",
+  "generatedAt": "2026-10-17T21:40:27.566Z",
+  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "show": {
+    "id": "theatre-royal-scottish-opera-turandot",
+    "url": "https://glasgowtheatre.com/shows/theatre-royal-scottish-opera-turandot.html",
+    "title": "Scottish Opera - Turandot",
+    "artForm": "opera",
+    "tags": [
+      "opera"
+    ],
+    "producer": null,
+    "description": "A new co-production with Irish National Opera An Emperor’s court decays around him; a princess, haunted by inherited trauma, plays a deadly game of riddles; a visiting prince takes one look and decides to risk his life for love. The stakes could not be higher.",
+    "venue": {
+      "id": "theatre-royal",
+      "name": "Theatre Royal",
+      "area": "City Centre"
+    },
+    "run": {
+      "opens": "2026-10-22",
+      "closes": "2026-11-07",
+      "time": null
+    },
+    "schedule": null,
+    "performances": [],
+    "pricing": null,
+    "accessibility": [
+      "Audio-described performances available"
+    ],
+    "durationMinutes": null,
+    "image": {
+      "url": "https://glasgowtheatre.com/images/6d2f939a352e9b2cd895.webp",
+      "alt": "Scottish Opera - Turandot",
+      "credit": null
+    },
+    "bookingUrl": "https://www.atgtickets.com/shows/scottish-opera-turandot/theatre-royal-glasgow/calendar/",
+    "updatedAt": "2026-10-15"
+  }
+}

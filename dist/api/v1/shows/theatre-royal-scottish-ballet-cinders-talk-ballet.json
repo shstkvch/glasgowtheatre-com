@@ -1,0 +1,38 @@
+{
+  "apiVersion": "1",
+  "generatedAt": "2026-10-17T21:40:27.566Z",
+  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "show": {
+    "id": "theatre-royal-scottish-ballet-cinders-talk-ballet",
+    "url": "https://glasgowtheatre.com/shows/theatre-royal-scottish-ballet-cinders-talk-ballet.html",
+    "title": "Scottish Ballet – Cinders!: Talk Ballet",
+    "artForm": "talk",
+    "tags": [
+      "talk"
+    ],
+    "producer": null,
+    "description": "Scottish Ballet – Cinders!: Talk Ballet at Theatre Royal, Glasgow.",
+    "venue": {
+      "id": "theatre-royal",
+      "name": "Theatre Royal",
+      "area": "City Centre"
+    },
+    "run": {
+      "opens": "2027-01-08",
+      "closes": "2027-01-08",
+      "time": null
+    },
+    "schedule": null,
+    "performances": [],
+    "pricing": null,
+    "accessibility": null,
+    "durationMinutes": null,
+    "image": {
+      "url": "https://glasgowtheatre.com/images/54416c6f7207286d85e5.webp",
+      "alt": "Scottish Ballet – Cinders!: Talk Ballet",
+      "credit": null
+    },
+    "bookingUrl": "https://www.atgtickets.com/shows/scottish-ballet-cinders-talk-ballet/theatre-royal-glasgow/calendar/",
+    "updatedAt": "2026-10-15"
+  }
+}

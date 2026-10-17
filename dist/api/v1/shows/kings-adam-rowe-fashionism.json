@@ -1,0 +1,38 @@
+{
+  "apiVersion": "1",
+  "generatedAt": "2026-10-17T21:40:27.566Z",
+  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "show": {
+    "id": "kings-adam-rowe-fashionism",
+    "url": "https://glasgowtheatre.com/shows/kings-adam-rowe-fashionism.html",
+    "title": "Adam Rowe: Fashionism",
+    "artForm": "stand-up",
+    "tags": [
+      "stand-up"
+    ],
+    "producer": null,
+    "description": "Adam Rowe, host of the Have A Word Podcast and star of Live At The Apollo is back with his best ever hour of stand-up; Fashionism.",
+    "venue": {
+      "id": "kings",
+      "name": "King's Theatre",
+      "area": "City Centre"
+    },
+    "run": {
+      "opens": "2026-11-01",
+      "closes": "2026-11-01",
+      "time": null
+    },
+    "schedule": null,
+    "performances": [],
+    "pricing": null,
+    "accessibility": null,
+    "durationMinutes": null,
+    "image": {
+      "url": "https://glasgowtheatre.com/images/667a468aeceb553a2017.webp",
+      "alt": "Adam Rowe: Fashionism",
+      "credit": null
+    },
+    "bookingUrl": "https://www.atgtickets.com/shows/adam-rowe-fashionism/kings-theatre-glasgow/calendar/",
+    "updatedAt": "2026-10-15"
+  }
+}

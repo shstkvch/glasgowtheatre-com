@@ -1,0 +1,44 @@
+{
+  "apiVersion": "1",
+  "generatedAt": "2026-10-17T21:40:27.566Z",
+  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "show": {
+    "id": "pavilion-myras-story",
+    "url": "https://glasgowtheatre.com/shows/pavilion-myras-story.html",
+    "title": "Myra's Story",
+    "artForm": "play",
+    "tags": [
+      "play"
+    ],
+    "producer": null,
+    "description": "Direct from London’s West End and the four-time smash-hit at the Edinburgh Fringe, Myra’s Story is the tour-de-force performance that you’ll never forget. Meet Myra (played by the acclaimed actor Fionna Hewitt-Twamley). Myra has fallen on hard times and is now homeless living on the streets of...",
+    "venue": {
+      "id": "pavilion",
+      "name": "Pavilion Theatre",
+      "area": "City Centre"
+    },
+    "run": {
+      "opens": "2027-01-26",
+      "closes": "2027-01-31",
+      "time": "19:30"
+    },
+    "schedule": null,
+    "performances": [
+      {
+        "date": "2027-01-26",
+        "time": "19:30",
+        "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/play/myras-story-tickets"
+      }
+    ],
+    "pricing": null,
+    "accessibility": null,
+    "durationMinutes": null,
+    "image": {
+      "url": "https://glasgowtheatre.com/images/28315855a84db9471bce.webp",
+      "alt": "Myra's Story",
+      "credit": null
+    },
+    "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/play/myras-story-tickets",
+    "updatedAt": "2026-10-15"
+  }
+}

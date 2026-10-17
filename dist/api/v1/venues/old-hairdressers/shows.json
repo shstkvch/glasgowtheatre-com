@@ -1,0 +1,51 @@
+{
+  "apiVersion": "1",
+  "generatedAt": "2026-10-17T21:40:27.566Z",
+  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "total": 1,
+  "count": 1,
+  "limit": null,
+  "offset": 0,
+  "next": null,
+  "prev": null,
+  "shows": [
+    {
+      "id": "old-hairdressers-harp-and-carp-doom-creeps-in",
+      "url": "https://glasgowtheatre.com/shows/old-hairdressers-harp-and-carp-doom-creeps-in.html",
+      "title": "Harp and Carp: Doom Creeps In",
+      "artForm": "spoken-word",
+      "tags": [
+        "spoken-word"
+      ],
+      "producer": null,
+      "description": "Harp and Carp are the brainchild of Storyteller Daniel Serridge and Harper Neil Wood. Drawing on their interest in folk and ceilidh culture Harp and Carp share stories and music from the folk tradition, inspired by each others’ rhythms, pace and power, Daniel and Neil combine traditional folk...",
+      "venue": {
+        "id": "old-hairdressers",
+        "name": "The Old Hairdressers",
+        "area": "City Centre"
+      },
+      "run": {
+        "opens": "2026-11-01",
+        "closes": "2026-11-01",
+        "time": "19:00"
+      },
+      "schedule": null,
+      "performances": [
+        {
+          "date": "2026-11-01",
+          "time": "19:00"
+        }
+      ],
+      "pricing": null,
+      "accessibility": null,
+      "durationMinutes": null,
+      "image": {
+        "url": "https://glasgowtheatre.com/images/9e7972a3a73d49ae99f1.webp",
+        "alt": "Harp and Carp: Doom Creeps In",
+        "credit": null
+      },
+      "bookingUrl": "https://www.eventbrite.co.uk/e/harp-and-carp-doom-creeps-in-tickets-1998953966123?aff=oddtdtcreator",
+      "updatedAt": "2026-10-15"
+    }
+  ]
+}

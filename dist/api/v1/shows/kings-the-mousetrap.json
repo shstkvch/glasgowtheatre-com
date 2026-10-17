@@ -1,0 +1,38 @@
+{
+  "apiVersion": "1",
+  "generatedAt": "2026-10-17T21:40:27.566Z",
+  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "show": {
+    "id": "kings-the-mousetrap",
+    "url": "https://glasgowtheatre.com/shows/kings-the-mousetrap.html",
+    "title": "The Mousetrap",
+    "artForm": "play",
+    "tags": [
+      "play"
+    ],
+    "producer": null,
+    "description": "Since 1952, Agatha Christie’s The Mousetrap has captivated the world with silent clues, shifting shadows and the best-kept secret in theatre history. Now, the record-breaking classic embarks on its 75th Anniversary Tour across the UK and Ireland.",
+    "venue": {
+      "id": "kings",
+      "name": "King's Theatre",
+      "area": "City Centre"
+    },
+    "run": {
+      "opens": "2027-04-12",
+      "closes": "2027-04-17",
+      "time": null
+    },
+    "schedule": null,
+    "performances": [],
+    "pricing": null,
+    "accessibility": null,
+    "durationMinutes": null,
+    "image": {
+      "url": "https://glasgowtheatre.com/images/096bec7536a1bec98c45.webp",
+      "alt": "The Mousetrap",
+      "credit": null
+    },
+    "bookingUrl": "https://www.atgtickets.com/shows/the-mousetrap/kings-theatre-glasgow/calendar/",
+    "updatedAt": "2026-10-15"
+  }
+}

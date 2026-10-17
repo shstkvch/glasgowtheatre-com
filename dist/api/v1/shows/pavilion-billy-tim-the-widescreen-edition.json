@@ -1,0 +1,44 @@
+{
+  "apiVersion": "1",
+  "generatedAt": "2026-10-17T21:40:27.566Z",
+  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "show": {
+    "id": "pavilion-billy-tim-the-widescreen-edition",
+    "url": "https://glasgowtheatre.com/shows/pavilion-billy-tim-the-widescreen-edition.html",
+    "title": "Billy & Tim - The Widescreen Edition",
+    "artForm": "play",
+    "tags": [
+      "play"
+    ],
+    "producer": null,
+    "description": "'Force adversaries to talk and you may achieve peace.' What happens when you lock up two sworn rivals on the day of the big match? Fireworks… then something extraordinary. Winner of the coveted Stage Award for Acting Excellence and hailed with multiple five-star reviews at the Edinburgh Festival...",
+    "venue": {
+      "id": "pavilion",
+      "name": "Pavilion Theatre",
+      "area": "City Centre"
+    },
+    "run": {
+      "opens": "2026-10-23",
+      "closes": "2026-10-24",
+      "time": "19:30"
+    },
+    "schedule": null,
+    "performances": [
+      {
+        "date": "2026-10-23",
+        "time": "19:30",
+        "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/play/billy-tim-the-widescreen-edition-tickets"
+      }
+    ],
+    "pricing": null,
+    "accessibility": null,
+    "durationMinutes": null,
+    "image": {
+      "url": "https://glasgowtheatre.com/images/8fbfdf42cd7ada24d7cb.webp",
+      "alt": "Billy & Tim - The Widescreen Edition",
+      "credit": null
+    },
+    "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/play/billy-tim-the-widescreen-edition-tickets",
+    "updatedAt": "2026-10-15"
+  }
+}

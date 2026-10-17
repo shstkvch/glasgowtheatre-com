@@ -1,0 +1,44 @@
+{
+  "apiVersion": "1",
+  "generatedAt": "2026-10-17T21:40:27.566Z",
+  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "show": {
+    "id": "pavilion-matt-mathews-not-what-i-ordered-world-tour",
+    "url": "https://glasgowtheatre.com/shows/pavilion-matt-mathews-not-what-i-ordered-world-tour.html",
+    "title": "Matt Mathews: Not What I Ordered World Tour",
+    "artForm": "stand-up",
+    "tags": [
+      "stand-up"
+    ],
+    "producer": null,
+    "description": "Life rarely turns out the way we planned - and nobody knows that better than Matt Mathews. In his brand new tour, Not What I Ordered, Matt brings his unfiltered stories, wild family chaos, farm life disasters, relationships, fame, and everyday struggles to the stage with the brutally honest...",
+    "venue": {
+      "id": "pavilion",
+      "name": "Pavilion Theatre",
+      "area": "City Centre"
+    },
+    "run": {
+      "opens": "2027-03-23",
+      "closes": "2027-03-23",
+      "time": "19:00"
+    },
+    "schedule": null,
+    "performances": [
+      {
+        "date": "2027-03-23",
+        "time": "19:00",
+        "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/comedy/matt-mathews-not-what-i-ordered-world-tour-tickets"
+      }
+    ],
+    "pricing": null,
+    "accessibility": null,
+    "durationMinutes": null,
+    "image": {
+      "url": "https://glasgowtheatre.com/images/6049854aed0392ccbd5d.webp",
+      "alt": "Matt Mathews: Not What I Ordered World Tour",
+      "credit": null
+    },
+    "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/comedy/matt-mathews-not-what-i-ordered-world-tour-tickets",
+    "updatedAt": "2026-10-15"
+  }
+}

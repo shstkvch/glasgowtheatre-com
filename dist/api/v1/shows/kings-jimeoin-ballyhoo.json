@@ -1,0 +1,38 @@
+{
+  "apiVersion": "1",
+  "generatedAt": "2026-10-17T21:40:27.566Z",
+  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "show": {
+    "id": "kings-jimeoin-ballyhoo",
+    "url": "https://glasgowtheatre.com/shows/kings-jimeoin-ballyhoo.html",
+    "title": "Jimeoin: Ballyhoo!",
+    "artForm": "stand-up",
+    "tags": [
+      "stand-up"
+    ],
+    "producer": null,
+    "description": "And Your Dog, MZA & Geffer Notice present JIMEOIN – Ballyhoo!",
+    "venue": {
+      "id": "kings",
+      "name": "King's Theatre",
+      "area": "City Centre"
+    },
+    "run": {
+      "opens": "2027-03-13",
+      "closes": "2027-03-13",
+      "time": null
+    },
+    "schedule": null,
+    "performances": [],
+    "pricing": null,
+    "accessibility": null,
+    "durationMinutes": null,
+    "image": {
+      "url": "https://glasgowtheatre.com/images/9f5e6f8871768b2e6248.webp",
+      "alt": "Jimeoin: Ballyhoo!",
+      "credit": null
+    },
+    "bookingUrl": "https://www.atgtickets.com/shows/jimeoin-ballyhoo/kings-theatre-glasgow/calendar/",
+    "updatedAt": "2026-10-15"
+  }
+}

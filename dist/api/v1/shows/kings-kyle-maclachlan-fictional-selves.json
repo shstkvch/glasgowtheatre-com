@@ -1,0 +1,38 @@
+{
+  "apiVersion": "1",
+  "generatedAt": "2026-10-17T21:40:27.566Z",
+  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "show": {
+    "id": "kings-kyle-maclachlan-fictional-selves",
+    "url": "https://glasgowtheatre.com/shows/kings-kyle-maclachlan-fictional-selves.html",
+    "title": "Kyle MacLachlan – Fictional Selves",
+    "artForm": "talk",
+    "tags": [
+      "talk"
+    ],
+    "producer": null,
+    "description": "From Dune to Desperate Housewives, from Twin Peaks to Sex and the City, Fallout and TikTok, Kyle MacLachlan is a cultural constant who’s charmingly quirky persona makes him one of the most distinctive actors of his generation.",
+    "venue": {
+      "id": "kings",
+      "name": "King's Theatre",
+      "area": "City Centre"
+    },
+    "run": {
+      "opens": "2026-10-18",
+      "closes": "2026-10-18",
+      "time": null
+    },
+    "schedule": null,
+    "performances": [],
+    "pricing": null,
+    "accessibility": null,
+    "durationMinutes": null,
+    "image": {
+      "url": "https://glasgowtheatre.com/images/62b8361aae2c9e16eb27.webp",
+      "alt": "Kyle MacLachlan – Fictional Selves",
+      "credit": null
+    },
+    "bookingUrl": "https://www.atgtickets.com/shows/kyle-maclachlan-fictional-selves/kings-theatre-glasgow/calendar/",
+    "updatedAt": "2026-10-15"
+  }
+}

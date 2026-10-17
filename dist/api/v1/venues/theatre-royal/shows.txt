@@ -1,0 +1,26 @@
+# opens	closes	title	venue	artForm	fromPrice	url
+2026-10-22	2026-11-07	Scottish Opera - Turandot	Theatre Royal	opera		https://glasgowtheatre.com/shows/theatre-royal-scottish-opera-turandot.html
+2026-10-25	2026-10-25	Scottish Opera - Turandot - Touch Tour	Theatre Royal	tour		https://glasgowtheatre.com/shows/theatre-royal-scottish-opera-turandot-touch-tour.html
+2026-10-31	2026-10-31	Scottish Opera - Turandot Pre Show Talk	Theatre Royal	talk		https://glasgowtheatre.com/shows/theatre-royal-scottish-opera-turandot-pre-show-talk.html
+2026-11-10	2027-07-10	Operation Mincemeat: A New Musical	Theatre Royal	musical		https://glasgowtheatre.com/shows/theatre-royal-operation-mincemeat-a-new-musical.html
+2026-11-15	2026-11-15	Phil Wang: UH OH	Theatre Royal	stand-up		https://glasgowtheatre.com/shows/theatre-royal-phil-wang-uh-oh.html
+2026-11-18	2026-12-05	Matilda The Musical	Theatre Royal	musical		https://glasgowtheatre.com/shows/theatre-royal-matilda-the-musical.html
+2026-11-30	2026-12-06	Ice Dragon	Theatre Royal	musical		https://glasgowtheatre.com/shows/theatre-royal-ice-dragon.html
+2026-12-08	2026-12-08	ATG Inspire Academy Juniors	Theatre Royal	workshop		https://glasgowtheatre.com/shows/theatre-royal-atg-inspire-academy-juniors.html
+2026-12-08	2026-12-08	ATG Inspire Academy Seniors	Theatre Royal	workshop		https://glasgowtheatre.com/shows/theatre-royal-atg-inspire-academy-seniors.html
+2026-12-08	2026-12-27	CATS	Theatre Royal	musical		https://glasgowtheatre.com/shows/theatre-royal-cats.html
+2026-12-30	2027-01-16	Scottish Ballet – Cinders!	Theatre Royal	dance		https://glasgowtheatre.com/shows/theatre-royal-scottish-ballet-cinders.html
+2027-01-08	2027-01-08	Scottish Ballet – Cinders!: Talk Ballet	Theatre Royal	talk		https://glasgowtheatre.com/shows/theatre-royal-scottish-ballet-cinders-talk-ballet.html
+2027-01-20	2027-01-23	Shine Productions present Titanic The Musical	Theatre Royal	musical		https://glasgowtheatre.com/shows/theatre-royal-shine-productions-present-titanic-the-musical.html
+2027-02-06	2027-02-14	Scottish Opera - Alcina	Theatre Royal	opera		https://glasgowtheatre.com/shows/theatre-royal-scottish-opera-alcina.html
+2027-02-11	2027-02-11	Scottish Opera - Alcina Pre Show Talk	Theatre Royal	talk		https://glasgowtheatre.com/shows/theatre-royal-scottish-opera-alcina-pre-show-talk.html
+2027-02-14	2027-02-14	Scottish Opera - Alcina - Touch Tour	Theatre Royal	tour		https://glasgowtheatre.com/shows/theatre-royal-scottish-opera-alcina-touch-tour.html
+2027-02-17	2027-02-19	Scottish Opera - Fidelio	Theatre Royal	opera		https://glasgowtheatre.com/shows/theatre-royal-scottish-opera-fidelio.html
+2027-02-19	2027-02-19	Scottish Opera - Fidelio - Touch Tour	Theatre Royal	tour		https://glasgowtheatre.com/shows/theatre-royal-scottish-opera-fidelio-touch-tour.html
+2027-02-20	2027-02-20	Scottish Opera - National Opera Studio	Theatre Royal	talk		https://glasgowtheatre.com/shows/theatre-royal-scottish-opera-national-opera-studio.html
+2027-02-23	2027-02-27	Strangers on a Train	Theatre Royal	play		https://glasgowtheatre.com/shows/theatre-royal-strangers-on-a-train.html
+2027-03-02	2027-03-05	Go Dance 2027 - Celebrating 20 years!	Theatre Royal	dance		https://glasgowtheatre.com/shows/theatre-royal-go-dance-2027-celebrating-20-years.html
+2027-03-09	2027-03-13	The Curious Incident of the Dog in the Night-Time	Theatre Royal	play		https://glasgowtheatre.com/shows/theatre-royal-the-curious-incident-of-the-dog-in-the-night-t.html
+2027-03-24	2027-03-27	PMOS presents Calamity Jane	Theatre Royal	musical		https://glasgowtheatre.com/shows/theatre-royal-pmos-presents-calamity-jane.html
+2027-03-30	2027-04-03	Twelve Angry Men	Theatre Royal	play		https://glasgowtheatre.com/shows/theatre-royal-twelve-angry-men.html
+2027-04-13	2027-04-17	Matthew Bourne’s Cinderella	Theatre Royal	dance		https://glasgowtheatre.com/shows/theatre-royal-matthew-bourne-s-cinderella.html

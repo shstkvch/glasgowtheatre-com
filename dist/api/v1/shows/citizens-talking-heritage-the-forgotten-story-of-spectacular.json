@@ -1,0 +1,49 @@
+{
+  "apiVersion": "1",
+  "generatedAt": "2026-10-17T21:40:27.566Z",
+  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "show": {
+    "id": "citizens-talking-heritage-the-forgotten-story-of-spectacular",
+    "url": "https://glasgowtheatre.com/shows/citizens-talking-heritage-the-forgotten-story-of-spectacular.html",
+    "title": "Talking Heritage: the forgotten story of spectacular theatre (with Jamie Harrison)",
+    "artForm": "talk",
+    "tags": [
+      "talk"
+    ],
+    "producer": null,
+    "description": "Step into a world of theatrical magic at the Citizens Theatre with Jamie Harrison, director, designer and illusion designer at Vox Motus. In this special talk Harrison explores the fascinating history of spectacular stage effects, illusion and daring scenic innovation. Harrison created the magic...",
+    "venue": {
+      "id": "citizens",
+      "name": "Citizens Theatre",
+      "area": "Gorbals"
+    },
+    "run": {
+      "opens": "2026-10-29",
+      "closes": "2026-10-29",
+      "time": null
+    },
+    "schedule": null,
+    "performances": [],
+    "pricing": {
+      "currency": "GBP",
+      "from": 8,
+      "to": null,
+      "concessionFrom": null,
+      "concessionTo": null,
+      "free": false,
+      "payWhatYouLike": false,
+      "text": "£8",
+      "source": "published-text",
+      "checkedAt": "2026-10-15"
+    },
+    "accessibility": null,
+    "durationMinutes": 90,
+    "image": {
+      "url": "https://glasgowtheatre.com/images/a9709a5591da5423718c.webp",
+      "alt": "Talking Heritage: the forgotten story of spectacular theatre (with Jamie Harrison)",
+      "credit": null
+    },
+    "bookingUrl": "https://citz.co.uk/whats-on/talking-heritage-the-forgotten-story-of-spectacular-theatre-with-jamie-harrison/",
+    "updatedAt": "2026-10-15"
+  }
+}

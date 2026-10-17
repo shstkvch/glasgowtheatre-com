@@ -1,0 +1,38 @@
+{
+  "apiVersion": "1",
+  "generatedAt": "2026-10-17T21:40:27.566Z",
+  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "show": {
+    "id": "theatre-royal-phil-wang-uh-oh",
+    "url": "https://glasgowtheatre.com/shows/theatre-royal-phil-wang-uh-oh.html",
+    "title": "Phil Wang: UH OH",
+    "artForm": "stand-up",
+    "tags": [
+      "stand-up"
+    ],
+    "producer": null,
+    "description": "UH OH. Phil Wang’s back with a new stand - up show, and he’s older than ever before.",
+    "venue": {
+      "id": "theatre-royal",
+      "name": "Theatre Royal",
+      "area": "City Centre"
+    },
+    "run": {
+      "opens": "2026-11-15",
+      "closes": "2026-11-15",
+      "time": null
+    },
+    "schedule": null,
+    "performances": [],
+    "pricing": null,
+    "accessibility": null,
+    "durationMinutes": null,
+    "image": {
+      "url": "https://glasgowtheatre.com/images/41c6d8ba63eb3531b621.webp",
+      "alt": "Phil Wang: UH OH",
+      "credit": null
+    },
+    "bookingUrl": "https://www.atgtickets.com/shows/phil-wang-uh-oh/theatre-royal-glasgow/calendar/",
+    "updatedAt": "2026-10-15"
+  }
+}

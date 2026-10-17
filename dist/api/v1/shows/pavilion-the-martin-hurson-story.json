@@ -1,0 +1,44 @@
+{
+  "apiVersion": "1",
+  "generatedAt": "2026-10-17T21:40:27.566Z",
+  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "show": {
+    "id": "pavilion-the-martin-hurson-story",
+    "url": "https://glasgowtheatre.com/shows/pavilion-the-martin-hurson-story.html",
+    "title": "The Martin Hurson Story",
+    "artForm": "play",
+    "tags": [
+      "play"
+    ],
+    "producer": null,
+    "description": "After 46 days on hunger-strike Martin Hurson died on the 13th July 1981. This young Tyrone man from the Cappagh/ Galbally area was the 6th person to die on hunger-strike in Long Kesh following the deaths of Bobby Sands, Francis Hughes, Ray McCreesh, Patsy O’Hara and Joe McDonnell. Gerry...",
+    "venue": {
+      "id": "pavilion",
+      "name": "Pavilion Theatre",
+      "area": "City Centre"
+    },
+    "run": {
+      "opens": "2027-03-26",
+      "closes": "2027-03-27",
+      "time": "19:30"
+    },
+    "schedule": null,
+    "performances": [
+      {
+        "date": "2027-03-26",
+        "time": "19:30",
+        "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/play/the-martin-hurson-story-tickets"
+      }
+    ],
+    "pricing": null,
+    "accessibility": null,
+    "durationMinutes": null,
+    "image": {
+      "url": "https://glasgowtheatre.com/images/5b5f17e2642e468a768e.webp",
+      "alt": "The Martin Hurson Story",
+      "credit": null
+    },
+    "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/play/the-martin-hurson-story-tickets",
+    "updatedAt": "2026-10-15"
+  }
+}

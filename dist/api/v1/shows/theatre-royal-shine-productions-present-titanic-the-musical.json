@@ -1,0 +1,38 @@
+{
+  "apiVersion": "1",
+  "generatedAt": "2026-10-17T21:40:27.566Z",
+  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "show": {
+    "id": "theatre-royal-shine-productions-present-titanic-the-musical",
+    "url": "https://glasgowtheatre.com/shows/theatre-royal-shine-productions-present-titanic-the-musical.html",
+    "title": "Shine Productions present Titanic The Musical",
+    "artForm": "musical",
+    "tags": [
+      "musical"
+    ],
+    "producer": null,
+    "description": "Join Shine Productions as they retell this extraordinary story, brought to life through the music, lyrics, and book by Tony Award-winning Maury Yeston and Peter Stone.",
+    "venue": {
+      "id": "theatre-royal",
+      "name": "Theatre Royal",
+      "area": "City Centre"
+    },
+    "run": {
+      "opens": "2027-01-20",
+      "closes": "2027-01-23",
+      "time": null
+    },
+    "schedule": null,
+    "performances": [],
+    "pricing": null,
+    "accessibility": null,
+    "durationMinutes": null,
+    "image": {
+      "url": "https://glasgowtheatre.com/images/d3ac818e09e848c69c23.webp",
+      "alt": "Shine Productions present Titanic The Musical",
+      "credit": null
+    },
+    "bookingUrl": "https://www.atgtickets.com/shows/shine-productions-present-titanic-the-musical/theatre-royal-glasgow/calendar/",
+    "updatedAt": "2026-10-15"
+  }
+}

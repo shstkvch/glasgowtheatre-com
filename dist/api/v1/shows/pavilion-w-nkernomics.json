@@ -1,0 +1,44 @@
+{
+  "apiVersion": "1",
+  "generatedAt": "2026-10-17T21:40:27.566Z",
+  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "show": {
+    "id": "pavilion-w-nkernomics",
+    "url": "https://glasgowtheatre.com/shows/pavilion-w-nkernomics.html",
+    "title": "W*nkernomics",
+    "artForm": "stand-up",
+    "tags": [
+      "stand-up"
+    ],
+    "producer": null,
+    "description": "Presented by Gag Reflex in association with Fane Productions After, two sell-out runs at the Edinburgh Fringe, 50 million+ views online and a Sunday Times best-selling book, Australia’s favourite workplace wankers are finally coming to Glasgow. Wankernomics are masters at skewering the buzzwords...",
+    "venue": {
+      "id": "pavilion",
+      "name": "Pavilion Theatre",
+      "area": "City Centre"
+    },
+    "run": {
+      "opens": "2026-11-03",
+      "closes": "2026-11-03",
+      "time": "19:30"
+    },
+    "schedule": null,
+    "performances": [
+      {
+        "date": "2026-11-03",
+        "time": "19:30",
+        "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/comedy/wnkernomics-tickets"
+      }
+    ],
+    "pricing": null,
+    "accessibility": null,
+    "durationMinutes": null,
+    "image": {
+      "url": "https://glasgowtheatre.com/images/12cb69dc13bc2592a7e7.webp",
+      "alt": "W*nkernomics",
+      "credit": null
+    },
+    "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/comedy/wnkernomics-tickets",
+    "updatedAt": "2026-10-15"
+  }
+}

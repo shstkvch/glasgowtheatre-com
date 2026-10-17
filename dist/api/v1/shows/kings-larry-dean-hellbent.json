@@ -1,0 +1,38 @@
+{
+  "apiVersion": "1",
+  "generatedAt": "2026-10-17T21:40:27.566Z",
+  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "show": {
+    "id": "kings-larry-dean-hellbent",
+    "url": "https://glasgowtheatre.com/shows/kings-larry-dean-hellbent.html",
+    "title": "Larry Dean: Hellbent",
+    "artForm": "stand-up",
+    "tags": [
+      "stand-up"
+    ],
+    "producer": null,
+    "description": "Recently married, emotionally feral.",
+    "venue": {
+      "id": "kings",
+      "name": "King's Theatre",
+      "area": "City Centre"
+    },
+    "run": {
+      "opens": "2027-02-02",
+      "closes": "2027-02-02",
+      "time": null
+    },
+    "schedule": null,
+    "performances": [],
+    "pricing": null,
+    "accessibility": null,
+    "durationMinutes": null,
+    "image": {
+      "url": "https://glasgowtheatre.com/images/785fe1e33d9f39d801f9.webp",
+      "alt": "Larry Dean: Hellbent",
+      "credit": null
+    },
+    "bookingUrl": "https://www.atgtickets.com/shows/larry-dean-hellbent/kings-theatre-glasgow/calendar/",
+    "updatedAt": "2026-10-15"
+  }
+}

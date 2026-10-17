@@ -1,0 +1,55 @@
+{
+  "apiVersion": "1",
+  "generatedAt": "2026-10-17T21:40:27.566Z",
+  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "show": {
+    "id": "tron-the-big-comedy-roadshow",
+    "url": "https://glasgowtheatre.com/shows/tron-the-big-comedy-roadshow.html",
+    "title": "The Big Comedy Roadshow",
+    "artForm": "stand-up",
+    "tags": [
+      "stand-up"
+    ],
+    "producer": null,
+    "description": "Recommended Age Guide 16+ A rip-roaring night of the very best live stand‑up comedy starring the TV names you know and love alongside some of the hottest up‑and‑coming talent. Breakout social media star Jack Skipper is the October headliner, with an impressive 19 million likes on TikTok under his...",
+    "venue": {
+      "id": "tron",
+      "name": "Tron Theatre",
+      "area": "Merchant City"
+    },
+    "run": {
+      "opens": "2026-10-18",
+      "closes": "2026-10-18",
+      "time": "19:30"
+    },
+    "schedule": null,
+    "performances": [
+      {
+        "date": "2026-10-18",
+        "time": "19:30",
+        "bookingUrl": "https://www.tron.co.uk/book-online/560992AVMDVCPGQPLVBLNLSLJKBJHPVNH"
+      }
+    ],
+    "pricing": {
+      "currency": "GBP",
+      "from": 23.5,
+      "to": 26.5,
+      "concessionFrom": null,
+      "concessionTo": null,
+      "free": false,
+      "payWhatYouLike": false,
+      "text": "£23.50, £25 or £26.50",
+      "source": "published-text",
+      "checkedAt": "2026-10-15"
+    },
+    "accessibility": null,
+    "durationMinutes": 120,
+    "image": {
+      "url": "https://glasgowtheatre.com/images/504ffb1c8f2fe5650da3.webp",
+      "alt": "The Big Comedy Roadshow",
+      "credit": null
+    },
+    "bookingUrl": "https://www.tron.co.uk/shows/the-big-comedy-roadshow-3/",
+    "updatedAt": "2026-10-15"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "apiVersion": "1",
+  "generatedAt": "2026-10-17T21:40:27.566Z",
+  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "show": {
+    "id": "theatre-royal-scottish-ballet-cinders",
+    "url": "https://glasgowtheatre.com/shows/theatre-royal-scottish-ballet-cinders.html",
+    "title": "Scottish Ballet – Cinders!",
+    "artForm": "dance",
+    "tags": [
+      "dance"
+    ],
+    "producer": null,
+    "description": "A dazzling Cinderella story - Scottish Ballet's playful retelling of the Cinderella story returns to surprise and delight audiences.",
+    "venue": {
+      "id": "theatre-royal",
+      "name": "Theatre Royal",
+      "area": "City Centre"
+    },
+    "run": {
+      "opens": "2026-12-30",
+      "closes": "2027-01-16",
+      "time": null
+    },
+    "schedule": null,
+    "performances": [],
+    "pricing": null,
+    "accessibility": [
+      "Audio-described performances available"
+    ],
+    "durationMinutes": null,
+    "image": {
+      "url": "https://glasgowtheatre.com/images/54416c6f7207286d85e5.webp",
+      "alt": "Scottish Ballet – Cinders!",
+      "credit": null
+    },
+    "bookingUrl": "https://www.atgtickets.com/shows/scottish-ballet-cinders/theatre-royal-glasgow/calendar/",
+    "updatedAt": "2026-10-15"
+  }
+}

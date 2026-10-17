@@ -1,0 +1,38 @@
+{
+  "apiVersion": "1",
+  "generatedAt": "2026-10-17T21:40:27.566Z",
+  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "show": {
+    "id": "kings-fascinating-aida-bawdacious",
+    "url": "https://glasgowtheatre.com/shows/kings-fascinating-aida-bawdacious.html",
+    "title": "Fascinating Aida: Bawdacious!",
+    "artForm": "cabaret",
+    "tags": [
+      "cabaret"
+    ],
+    "producer": null,
+    "description": "The world’s greatest cabaret troupe is back with a BRAND NEW SHOW!",
+    "venue": {
+      "id": "kings",
+      "name": "King's Theatre",
+      "area": "City Centre"
+    },
+    "run": {
+      "opens": "2027-03-11",
+      "closes": "2027-03-11",
+      "time": null
+    },
+    "schedule": null,
+    "performances": [],
+    "pricing": null,
+    "accessibility": null,
+    "durationMinutes": null,
+    "image": {
+      "url": "https://glasgowtheatre.com/images/419601090b1fae136b8a.webp",
+      "alt": "Fascinating Aida: Bawdacious!",
+      "credit": null
+    },
+    "bookingUrl": "https://www.atgtickets.com/shows/fascinating-aida-bawdacious/kings-theatre-glasgow/calendar/",
+    "updatedAt": "2026-10-15"
+  }
+}

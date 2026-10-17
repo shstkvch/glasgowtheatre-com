@@ -1,0 +1,31 @@
+{
+  "apiVersion": "1",
+  "generatedAt": "2026-10-17T21:40:27.566Z",
+  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "venue": {
+    "id": "theatre-118",
+    "name": "Theatre 118",
+    "area": "Port Dundas",
+    "description": "Glasgow's fringe theatre, in a former industrial building at 24 Payne Street, just north of the city centre across the M8. It programmes new writing, comedy, music and live performance from grassroots companies and its own productions, with Pay What You Can tickets available on every show.",
+    "website": "https://theatre118.com",
+    "instagram": "theatre_118",
+    "programme": "theatre",
+    "url": "https://glasgowtheatre.com/venues/theatre-118.html",
+    "upcomingShows": 2,
+    "showsUrl": "https://glasgowtheatre.com/api/v1/venues/theatre-118/shows.json",
+    "concessions": {
+      "url": "https://theatre118.com/whats-on",
+      "checkedAt": "2026-10-15",
+      "summary": "Theatre 118 runs Pay What You Can on every show: the standard price is a suggestion, and nobody is turned away for paying less. There is a £1.50 booking fee per order.",
+      "schemes": [],
+      "offers": [
+        {
+          "name": "Pay What You Can",
+          "saving": "Choose your own price",
+          "detail": "Available on every show, whatever the standard price. Buyers choose what to pay, from the venue minimum up; there is no upper limit and no application to make."
+        }
+      ],
+      "fees": "£1.50 booking fee per order, however many tickets are bought."
+    }
+  }
+}

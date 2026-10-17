@@ -1,0 +1,38 @@
+{
+  "apiVersion": "1",
+  "generatedAt": "2026-10-17T21:40:27.566Z",
+  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "show": {
+    "id": "kings-all-killa-no-filla-live-at-valentines-day",
+    "url": "https://glasgowtheatre.com/shows/kings-all-killa-no-filla-live-at-valentines-day.html",
+    "title": "All Killa No Filla - Live At Valentine's Day!",
+    "artForm": "stand-up",
+    "tags": [
+      "stand-up"
+    ],
+    "producer": null,
+    "description": "True love is out. True crime is in.",
+    "venue": {
+      "id": "kings",
+      "name": "King's Theatre",
+      "area": "City Centre"
+    },
+    "run": {
+      "opens": "2027-02-14",
+      "closes": "2027-02-14",
+      "time": null
+    },
+    "schedule": null,
+    "performances": [],
+    "pricing": null,
+    "accessibility": null,
+    "durationMinutes": null,
+    "image": {
+      "url": "https://glasgowtheatre.com/images/f34ee7461630acb67397.webp",
+      "alt": "All Killa No Filla - Live At Valentine's Day!",
+      "credit": null
+    },
+    "bookingUrl": "https://www.atgtickets.com/shows/all-killa-no-filla-live-at-valentines-day/kings-theatre-glasgow/calendar/",
+    "updatedAt": "2026-10-15"
+  }
+}

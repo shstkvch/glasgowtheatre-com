@@ -1,0 +1,4 @@
+# opens	closes	title	venue	artForm	fromPrice	url
+2026-10-23	2026-10-23	Made in Easterhouse 2026	Platform	community-event	9.5	https://glasgowtheatre.com/shows/platform-made-in-easterhouse-2026.html
+2026-10-24	2026-10-24	Starcatchers Play Day	Platform	community-event	5	https://glasgowtheatre.com/shows/platform-starcatchers-play-day.html
+2026-12-01	2026-12-24	Christmas Show: Hansel & Gretel	Platform	pantomime	10.5	https://glasgowtheatre.com/shows/platform-christmas-show-hansel-gretel.html

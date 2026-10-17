@@ -15,7 +15,8 @@
     "deploy:worker": "bash scripts/deploy-worker.sh",
     "setup:cloudflare": "bash scripts/setup-cloudflare.sh",
     "tickets": "node scripts/read-tickets.js",
-    "artwork": "node scripts/read-artwork.js"
+    "artwork": "node scripts/read-artwork.js",
+    "examples": "bash examples/run.sh"
   },
   "repository": {
     "type": "git",

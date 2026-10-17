@@ -1,0 +1,44 @@
+{
+  "apiVersion": "1",
+  "generatedAt": "2026-10-17T21:40:27.566Z",
+  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "show": {
+    "id": "pavilion-james-gardner-allocation-on-arrival",
+    "url": "https://glasgowtheatre.com/shows/pavilion-james-gardner-allocation-on-arrival.html",
+    "title": "James Gardner: Allocation on Arrival",
+    "artForm": "stand-up",
+    "tags": [
+      "stand-up"
+    ],
+    "producer": null,
+    "description": "Scottish comedy sensation James Gardner brings his latest show “Allocation on Arrival” to the Pavilion. A masterful storyteller, James takes us on a comic journey from Summerston to Safari, navigating the 90s and noughties & tackles the trifecta of football, politics and religion with his studs up...",
+    "venue": {
+      "id": "pavilion",
+      "name": "Pavilion Theatre",
+      "area": "City Centre"
+    },
+    "run": {
+      "opens": "2027-03-21",
+      "closes": "2027-03-21",
+      "time": "16:00"
+    },
+    "schedule": null,
+    "performances": [
+      {
+        "date": "2027-03-21",
+        "time": "16:00",
+        "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/comedy/james-gardner-allocation-on-arrival-tickets"
+      }
+    ],
+    "pricing": null,
+    "accessibility": null,
+    "durationMinutes": null,
+    "image": {
+      "url": "https://glasgowtheatre.com/images/1f1e6164f08c6ac0b25b.webp",
+      "alt": "James Gardner: Allocation on Arrival",
+      "credit": null
+    },
+    "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/comedy/james-gardner-allocation-on-arrival-tickets",
+    "updatedAt": "2026-10-15"
+  }
+}

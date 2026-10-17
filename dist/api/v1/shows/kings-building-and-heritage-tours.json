@@ -1,0 +1,38 @@
+{
+  "apiVersion": "1",
+  "generatedAt": "2026-10-17T21:40:27.566Z",
+  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "show": {
+    "id": "kings-building-and-heritage-tours",
+    "url": "https://glasgowtheatre.com/shows/kings-building-and-heritage-tours.html",
+    "title": "Building And Heritage Tours",
+    "artForm": "tour",
+    "tags": [
+      "tour"
+    ],
+    "producer": null,
+    "description": "Book now for the Building and Heritage Tours at the King’s Theatre!",
+    "venue": {
+      "id": "kings",
+      "name": "King's Theatre",
+      "area": "City Centre"
+    },
+    "run": {
+      "opens": "2026-10-17",
+      "closes": "2026-10-17",
+      "time": null
+    },
+    "schedule": null,
+    "performances": [],
+    "pricing": null,
+    "accessibility": null,
+    "durationMinutes": null,
+    "image": {
+      "url": "https://glasgowtheatre.com/images/89ab4443fb4a39464e0d.webp",
+      "alt": "Building And Heritage Tours",
+      "credit": null
+    },
+    "bookingUrl": "https://www.atgtickets.com/shows/building-and-heritage-tours/kings-theatre-glasgow/calendar/",
+    "updatedAt": "2026-10-15"
+  }
+}

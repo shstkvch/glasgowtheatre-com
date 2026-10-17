@@ -1,0 +1,7 @@
+# opens	closes	title	venue	artForm	fromPrice	url
+2026-10-12	2026-10-17	Bottom's Dream	A Play, a Pie and a Pint	spoken-word	15.5	https://glasgowtheatre.com/shows/oran-mor-bottoms-dream.html
+2026-10-19	2026-10-24	Lune	A Play, a Pie and a Pint	play	17	https://glasgowtheatre.com/shows/oran-mor-lune.html
+2026-10-26	2026-10-31	Badhbh-Shith and The Storytellers	A Play, a Pie and a Pint	play	17	https://glasgowtheatre.com/shows/oran-mor-badhbh-shith-and-the-storytellers.html
+2026-11-02	2026-11-07	Zamboni	A Play, a Pie and a Pint	play	17	https://glasgowtheatre.com/shows/oran-mor-zamboni.html
+2026-11-09	2026-11-14	Making Way	A Play, a Pie and a Pint	play	17	https://glasgowtheatre.com/shows/oran-mor-making-way.html
+2026-11-16	2026-11-21	Dead Husbands Club	A Play, a Pie and a Pint	play	15.5	https://glasgowtheatre.com/shows/oran-mor-dead-husbands-club.html

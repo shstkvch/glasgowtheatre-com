@@ -1,0 +1,49 @@
+{
+  "apiVersion": "1",
+  "generatedAt": "2026-10-17T21:40:27.566Z",
+  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "show": {
+    "id": "citizens-judy-collins-and-support",
+    "url": "https://glasgowtheatre.com/shows/citizens-judy-collins-and-support.html",
+    "title": "Judy Collins and Support",
+    "artForm": "music",
+    "tags": [
+      "music"
+    ],
+    "producer": null,
+    "description": "Timeless folk storytelling, crystal-clear vocals and poetic acoustic songcraft. More information to follow.",
+    "venue": {
+      "id": "citizens",
+      "name": "Citizens Theatre",
+      "area": "Gorbals"
+    },
+    "run": {
+      "opens": "2027-01-27",
+      "closes": "2027-01-27",
+      "time": null
+    },
+    "schedule": null,
+    "performances": [],
+    "pricing": {
+      "currency": "GBP",
+      "from": 34,
+      "to": null,
+      "concessionFrom": null,
+      "concessionTo": null,
+      "free": false,
+      "payWhatYouLike": false,
+      "text": "£34",
+      "source": "published-text",
+      "checkedAt": "2026-10-15"
+    },
+    "accessibility": null,
+    "durationMinutes": null,
+    "image": {
+      "url": "https://glasgowtheatre.com/images/d5db941c048f51e26312.webp",
+      "alt": "Judy Collins and Support",
+      "credit": null
+    },
+    "bookingUrl": "https://citz.co.uk/whats-on/judy-collins-and-support/",
+    "updatedAt": "2026-10-15"
+  }
+}

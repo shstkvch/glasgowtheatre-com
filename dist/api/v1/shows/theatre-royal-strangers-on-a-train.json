@@ -1,0 +1,38 @@
+{
+  "apiVersion": "1",
+  "generatedAt": "2026-10-17T21:40:27.566Z",
+  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "show": {
+    "id": "theatre-royal-strangers-on-a-train",
+    "url": "https://glasgowtheatre.com/shows/theatre-royal-strangers-on-a-train.html",
+    "title": "Strangers on a Train",
+    "artForm": "play",
+    "tags": [
+      "play"
+    ],
+    "producer": null,
+    "description": "Based on the novel by Patricia Highsmith and inspired by Hitchcock’s iconic film, Strangers on a Train arrives on stage in a thrilling new production directed by Roxana Silbert.",
+    "venue": {
+      "id": "theatre-royal",
+      "name": "Theatre Royal",
+      "area": "City Centre"
+    },
+    "run": {
+      "opens": "2027-02-23",
+      "closes": "2027-02-27",
+      "time": null
+    },
+    "schedule": null,
+    "performances": [],
+    "pricing": null,
+    "accessibility": null,
+    "durationMinutes": null,
+    "image": {
+      "url": "https://glasgowtheatre.com/images/35da47c7b1beb964aece.webp",
+      "alt": "Strangers on a Train",
+      "credit": null
+    },
+    "bookingUrl": "https://www.atgtickets.com/shows/strangers-on-a-train/theatre-royal-glasgow/calendar/",
+    "updatedAt": "2026-10-15"
+  }
+}

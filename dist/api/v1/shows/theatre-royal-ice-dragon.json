@@ -1,0 +1,38 @@
+{
+  "apiVersion": "1",
+  "generatedAt": "2026-10-17T21:40:27.566Z",
+  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "show": {
+    "id": "theatre-royal-ice-dragon",
+    "url": "https://glasgowtheatre.com/shows/theatre-royal-ice-dragon.html",
+    "title": "Ice Dragon",
+    "artForm": "musical",
+    "tags": [
+      "musical"
+    ],
+    "producer": null,
+    "description": "Travel through the seasons in Ice Dragon, an interactive musical adventure for babies and children under six years.",
+    "venue": {
+      "id": "theatre-royal",
+      "name": "Theatre Royal",
+      "area": "City Centre"
+    },
+    "run": {
+      "opens": "2026-11-30",
+      "closes": "2026-12-06",
+      "time": null
+    },
+    "schedule": null,
+    "performances": [],
+    "pricing": null,
+    "accessibility": null,
+    "durationMinutes": null,
+    "image": {
+      "url": "https://glasgowtheatre.com/images/113cfc81e2cde6731711.webp",
+      "alt": "Ice Dragon",
+      "credit": null
+    },
+    "bookingUrl": "https://www.atgtickets.com/shows/ice-dragon/theatre-royal-glasgow/calendar/",
+    "updatedAt": "2026-10-15"
+  }
+}

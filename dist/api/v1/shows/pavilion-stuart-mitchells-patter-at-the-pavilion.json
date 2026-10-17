@@ -1,0 +1,44 @@
+{
+  "apiVersion": "1",
+  "generatedAt": "2026-10-17T21:40:27.566Z",
+  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "show": {
+    "id": "pavilion-stuart-mitchells-patter-at-the-pavilion",
+    "url": "https://glasgowtheatre.com/shows/pavilion-stuart-mitchells-patter-at-the-pavilion.html",
+    "title": "Stuart Mitchell's Patter at The Pavilion",
+    "artForm": "stand-up",
+    "tags": [
+      "stand-up"
+    ],
+    "producer": null,
+    "description": "Following on from his SOLD OUT debut performance at the Pavilion and first UK tour, join the local lad with over 100M views on TikTok, star of social media, Radio 4 funny man and 8 tipped wonder STUART MITCHELL for a very special night of jokes, audience patter and an all new extended set from...",
+    "venue": {
+      "id": "pavilion",
+      "name": "Pavilion Theatre",
+      "area": "City Centre"
+    },
+    "run": {
+      "opens": "2026-11-08",
+      "closes": "2026-11-08",
+      "time": "16:30"
+    },
+    "schedule": null,
+    "performances": [
+      {
+        "date": "2026-11-08",
+        "time": "16:30",
+        "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/comedy/stuart-mitchells-patter-at-the-pavilion-tickets"
+      }
+    ],
+    "pricing": null,
+    "accessibility": null,
+    "durationMinutes": null,
+    "image": {
+      "url": "https://glasgowtheatre.com/images/4d207ff043e05d95a5c6.webp",
+      "alt": "Stuart Mitchell's Patter at The Pavilion",
+      "credit": null
+    },
+    "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/comedy/stuart-mitchells-patter-at-the-pavilion-tickets",
+    "updatedAt": "2026-10-15"
+  }
+}

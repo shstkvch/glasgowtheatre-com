@@ -1,0 +1,44 @@
+{
+  "apiVersion": "1",
+  "generatedAt": "2026-10-17T21:40:27.566Z",
+  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "show": {
+    "id": "pavilion-sunshine-on-leith",
+    "url": "https://glasgowtheatre.com/shows/pavilion-sunshine-on-leith.html",
+    "title": "Sunshine On Leith",
+    "artForm": "musical",
+    "tags": [
+      "musical"
+    ],
+    "producer": null,
+    "description": "Following their recent production of We Will Rock You, Pantheon are back at The Pavilion with Sunshine on Leith a jubilant, heartfelt musical about the power of home, the hearth, family and love. Featuring the songs of The Proclaimers. Sunshine on Leith follows the highs and lows of Ally and his...",
+    "venue": {
+      "id": "pavilion",
+      "name": "Pavilion Theatre",
+      "area": "City Centre"
+    },
+    "run": {
+      "opens": "2027-03-02",
+      "closes": "2027-03-06",
+      "time": "19:30"
+    },
+    "schedule": null,
+    "performances": [
+      {
+        "date": "2027-03-02",
+        "time": "19:30",
+        "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/musical/sunshine-on-leith-tickets"
+      }
+    ],
+    "pricing": null,
+    "accessibility": null,
+    "durationMinutes": null,
+    "image": {
+      "url": "https://glasgowtheatre.com/images/bd2286dc72a5498fbe23.webp",
+      "alt": "Sunshine On Leith",
+      "credit": null
+    },
+    "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/musical/sunshine-on-leith-tickets",
+    "updatedAt": "2026-10-15"
+  }
+}

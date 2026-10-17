@@ -1,0 +1,38 @@
+{
+  "apiVersion": "1",
+  "generatedAt": "2026-10-17T21:40:27.566Z",
+  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "show": {
+    "id": "kings-gicf27-gala",
+    "url": "https://glasgowtheatre.com/shows/kings-gicf27-gala.html",
+    "title": "GICF27 Gala",
+    "artForm": "cabaret",
+    "tags": [
+      "cabaret"
+    ],
+    "producer": null,
+    "description": "Don't miss this chance to see the very best of GICF27 at the show of the year!",
+    "venue": {
+      "id": "kings",
+      "name": "King's Theatre",
+      "area": "City Centre"
+    },
+    "run": {
+      "opens": "2027-03-27",
+      "closes": "2027-03-27",
+      "time": null
+    },
+    "schedule": null,
+    "performances": [],
+    "pricing": null,
+    "accessibility": null,
+    "durationMinutes": null,
+    "image": {
+      "url": "https://glasgowtheatre.com/images/bc5d00d78560c44b7ef5.webp",
+      "alt": "GICF27 Gala",
+      "credit": null
+    },
+    "bookingUrl": "https://www.atgtickets.com/shows/gicf27-gala/kings-theatre-glasgow/calendar/",
+    "updatedAt": "2026-10-15"
+  }
+}

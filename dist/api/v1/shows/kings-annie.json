@@ -1,0 +1,38 @@
+{
+  "apiVersion": "1",
+  "generatedAt": "2026-10-17T21:40:27.566Z",
+  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "show": {
+    "id": "kings-annie",
+    "url": "https://glasgowtheatre.com/shows/kings-annie.html",
+    "title": "Annie",
+    "artForm": "musical",
+    "tags": [
+      "musical"
+    ],
+    "producer": null,
+    "description": "THE SMASH-HIT WEST END PRODUCTION OF ANNIE, THE WORLD'S FAVOURITE FAMILY MUSICAL, RETURNS WITH A NEW UK AND IRELAND TOUR, STARRING CLAIRE SWEENEY AS THE TYRANNICAL MISS HANNIGAN!",
+    "venue": {
+      "id": "kings",
+      "name": "King's Theatre",
+      "area": "City Centre"
+    },
+    "run": {
+      "opens": "2027-03-02",
+      "closes": "2027-03-07",
+      "time": null
+    },
+    "schedule": null,
+    "performances": [],
+    "pricing": null,
+    "accessibility": null,
+    "durationMinutes": null,
+    "image": {
+      "url": "https://glasgowtheatre.com/images/2bea5eed78fd8a658fba.webp",
+      "alt": "Annie",
+      "credit": null
+    },
+    "bookingUrl": "https://www.atgtickets.com/shows/annie/kings-theatre-glasgow/calendar/",
+    "updatedAt": "2026-10-15"
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "apiVersion": "1",
+  "generatedAt": "2026-10-17T21:40:27.566Z",
+  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "show": {
+    "id": "kings-heathers-the-musical",
+    "url": "https://glasgowtheatre.com/shows/kings-heathers-the-musical.html",
+    "title": "Heathers the Musical",
+    "artForm": "musical",
+    "tags": [
+      "musical"
+    ],
+    "producer": null,
+    "description": "Following smash hit runs in London and New York, the WhatsOnStage ‘BEST NEW MUSICAL’ winner, Heathers the Musical is returning.",
+    "venue": {
+      "id": "kings",
+      "name": "King's Theatre",
+      "area": "City Centre"
+    },
+    "run": {
+      "opens": "2027-03-30",
+      "closes": "2027-04-03",
+      "time": null
+    },
+    "schedule": null,
+    "performances": [],
+    "pricing": null,
+    "accessibility": null,
+    "durationMinutes": null,
+    "image": {
+      "url": "https://glasgowtheatre.com/images/a1c16eccfdb2cc8f6eb7.webp",
+      "alt": "Heathers the Musical",
+      "credit": null
+    },
+    "bookingUrl": "https://www.atgtickets.com/shows/heathers-the-musical/kings-theatre-glasgow/calendar/",
+    "updatedAt": "2026-10-15"
+  }
+}

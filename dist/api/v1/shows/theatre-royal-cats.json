@@ -1,0 +1,42 @@
+{
+  "apiVersion": "1",
+  "generatedAt": "2026-10-17T21:40:27.566Z",
+  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "show": {
+    "id": "theatre-royal-cats",
+    "url": "https://glasgowtheatre.com/shows/theatre-royal-cats.html",
+    "title": "CATS",
+    "artForm": "musical",
+    "tags": [
+      "musical"
+    ],
+    "producer": null,
+    "description": "A spectacular new production of Andrew Lloyd Webber’s multi award-winning musical CATS is coming to the Theatre Royal.",
+    "venue": {
+      "id": "theatre-royal",
+      "name": "Theatre Royal",
+      "area": "City Centre"
+    },
+    "run": {
+      "opens": "2026-12-08",
+      "closes": "2026-12-27",
+      "time": null
+    },
+    "schedule": null,
+    "performances": [],
+    "pricing": null,
+    "accessibility": [
+      "Captioned performances available",
+      "Audio-described performances available",
+      "BSL-interpreted performances available"
+    ],
+    "durationMinutes": null,
+    "image": {
+      "url": "https://glasgowtheatre.com/images/d920e04fa0224ba41450.webp",
+      "alt": "CATS",
+      "credit": null
+    },
+    "bookingUrl": "https://www.atgtickets.com/shows/cats/theatre-royal-glasgow/calendar/",
+    "updatedAt": "2026-10-15"
+  }
+}

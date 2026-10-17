@@ -1,0 +1,70 @@
+{
+  "apiVersion": "1",
+  "generatedAt": "2026-10-17T21:40:27.566Z",
+  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "show": {
+    "id": "citizens-do-not-pass-go",
+    "url": "https://glasgowtheatre.com/shows/citizens-do-not-pass-go.html",
+    "title": "Do Not Pass Go",
+    "artForm": "play",
+    "tags": [
+      "play"
+    ],
+    "producer": null,
+    "description": "We heart Lizzie Magie! Feminist, economist, disruptor, and games designer who wanted to show the world there was an alternative to capitalist greed. But her beautiful brainchild was stolen, repurposed, and made a man a millionaire. Discover the hidden truth behind one of the world’s most popular...",
+    "venue": {
+      "id": "citizens",
+      "name": "Citizens Theatre",
+      "area": "Gorbals"
+    },
+    "run": {
+      "opens": "2026-11-05",
+      "closes": "2026-11-07",
+      "time": "19:45"
+    },
+    "schedule": null,
+    "performances": [
+      {
+        "date": "2026-11-05",
+        "time": "19:45",
+        "bookingUrl": "https://citz.co.uk/whats-on/do-not-pass-go/book/75801"
+      },
+      {
+        "date": "2026-11-06",
+        "time": "19:45",
+        "bookingUrl": "https://citz.co.uk/whats-on/do-not-pass-go/book/75802"
+      },
+      {
+        "date": "2026-11-07",
+        "time": "14:30",
+        "bookingUrl": "https://citz.co.uk/whats-on/do-not-pass-go/book/76001"
+      },
+      {
+        "date": "2026-11-07",
+        "time": "19:45",
+        "bookingUrl": "https://citz.co.uk/whats-on/do-not-pass-go/book/75803"
+      }
+    ],
+    "pricing": {
+      "currency": "GBP",
+      "from": 17.5,
+      "to": null,
+      "concessionFrom": null,
+      "concessionTo": null,
+      "free": false,
+      "payWhatYouLike": false,
+      "text": "£17.50",
+      "source": "published-text",
+      "checkedAt": "2026-10-15"
+    },
+    "accessibility": null,
+    "durationMinutes": null,
+    "image": {
+      "url": "https://glasgowtheatre.com/images/f8fe84ab2575f7ffc614.webp",
+      "alt": "Do Not Pass Go",
+      "credit": null
+    },
+    "bookingUrl": "https://citz.co.uk/whats-on/do-not-pass-go/",
+    "updatedAt": "2026-10-15"
+  }
+}

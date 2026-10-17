@@ -1,0 +1,44 @@
+{
+  "apiVersion": "1",
+  "generatedAt": "2026-10-17T21:40:27.566Z",
+  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "show": {
+    "id": "pavilion-p-rno",
+    "url": "https://glasgowtheatre.com/shows/pavilion-p-rno.html",
+    "title": "P*rno",
+    "artForm": "play",
+    "tags": [
+      "play"
+    ],
+    "producer": null,
+    "description": "Stage adaptation of the follow up novel to TRAINSPOTTING. Set 20 years after TRAINSPOTTING, what has become of RENTON, SICKBOY, SPUD & BEGBIE? The WEST END SMASH HIT is coming to the Pavilion on 15th & 16th January ’27. A must see for all Irvine Welsh fans. Contains swearing, drug use, language...",
+    "venue": {
+      "id": "pavilion",
+      "name": "Pavilion Theatre",
+      "area": "City Centre"
+    },
+    "run": {
+      "opens": "2027-01-15",
+      "closes": "2027-01-16",
+      "time": "19:30"
+    },
+    "schedule": null,
+    "performances": [
+      {
+        "date": "2027-01-15",
+        "time": "19:30",
+        "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/play/prno-tickets"
+      }
+    ],
+    "pricing": null,
+    "accessibility": null,
+    "durationMinutes": null,
+    "image": {
+      "url": "https://glasgowtheatre.com/images/554557ca5b2fda19eadf.webp",
+      "alt": "P*rno",
+      "credit": null
+    },
+    "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/play/prno-tickets",
+    "updatedAt": "2026-10-15"
+  }
+}

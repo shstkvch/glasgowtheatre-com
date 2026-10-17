@@ -1,0 +1,49 @@
+{
+  "apiVersion": "1",
+  "generatedAt": "2026-10-17T21:40:27.566Z",
+  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "show": {
+    "id": "citizens-all-together-now-2027-artist-residency",
+    "url": "https://glasgowtheatre.com/shows/citizens-all-together-now-2027-artist-residency.html",
+    "title": "All Together Now: 2027 Artist Residency",
+    "artForm": "music",
+    "tags": [
+      "music"
+    ],
+    "producer": null,
+    "description": "Experience the musical fruits of Celtic Connections’ first artist residency. Coming together for five days of creative incubation during the festival, Rachel Sermanni, Kris Drever, The Maes, Cahalen Morrison, Trent Freeman and Duncan Lyall will present new collaborative pieces and reimaginings of...",
+    "venue": {
+      "id": "citizens",
+      "name": "Citizens Theatre",
+      "area": "Gorbals"
+    },
+    "run": {
+      "opens": "2027-01-30",
+      "closes": "2027-01-30",
+      "time": null
+    },
+    "schedule": null,
+    "performances": [],
+    "pricing": {
+      "currency": "GBP",
+      "from": 22,
+      "to": null,
+      "concessionFrom": null,
+      "concessionTo": null,
+      "free": false,
+      "payWhatYouLike": false,
+      "text": "£22",
+      "source": "published-text",
+      "checkedAt": "2026-10-15"
+    },
+    "accessibility": null,
+    "durationMinutes": null,
+    "image": {
+      "url": "https://glasgowtheatre.com/images/aef3ba139df7c8025ea4.webp",
+      "alt": "All Together Now: 2027 Artist Residency",
+      "credit": null
+    },
+    "bookingUrl": "https://citz.co.uk/whats-on/all-together-now-2027-artist-residency/",
+    "updatedAt": "2026-10-15"
+  }
+}

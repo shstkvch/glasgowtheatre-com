@@ -65,43 +65,6 @@
     "scheduleRead": "model"
   },
   {
-    "id": "platform-concerned-others",
-    "title": "Concerned Others",
-    "venue": "Platform",
-    "venueId": "platform",
-    "date": "2026-10-15",
-    "endDate": null,
-    "time": "19:00",
-    "sourceGenre": "Performance",
-    "type": "professional",
-    "tags": [
-      "play"
-    ],
-    "description": "A new intimate tabletop performance, from award-winning theatre company Tortoise in a Nutshell, presents the stories of critically underheard voices,",
-    "ticketUrl": "https://www.platform-online.co.uk/index.php/whats-on/event/1225",
-    "image": "/images/4c41c8a94c990eb0b8c5.webp",
-    "scheduleText": "Thu 15 Oct | 7pm",
-    "pricing": {
-      "from": 9.5,
-      "to": null,
-      "concession": 5,
-      "concessionTo": 6,
-      "free": false,
-      "payWhatYouLike": false,
-      "text": "£9.50 (standard) | £6 (concession) | £5",
-      "read": "model"
-    },
-    "checkedAt": "2026-10-15",
-    "performances": [
-      {
-        "date": "2026-10-15",
-        "time": "19:00"
-      }
-    ],
-    "scheduleRead": "model",
-    "form": "play"
-  },
-  {
     "title": "Dirty Dancing",
     "venue": "King's Theatre",
     "venueId": "kings",
@@ -325,42 +288,6 @@
     "accessibility": "Sat 17 Oct, 7.30pm · BSL interpreted by Lisa Li",
     "checkedAt": "2026-09-09",
     "form": "dance"
-  },
-  {
-    "id": "glad-cafe-tired-of-waiting-weekender-open-mic-and-panel-talk",
-    "title": "Tired of Waiting Weekender: Open Mic and Panel Talk",
-    "venue": "The Glad Cafe",
-    "venueId": "glad-cafe",
-    "date": "2026-10-16",
-    "time": "18:00",
-    "endDate": null,
-    "sourceGenre": null,
-    "type": "community",
-    "tags": [
-      "talk"
-    ],
-    "description": "Join us for a conversation bringing artists together to talk about access, creativity, visibility, community and what it means to make work within the structures around us as neurodivergent & disabled artists. Expect honest conversations, shared experiences, different perspectives and opportunities...",
-    "ticketUrl": "https://www.thegladcafe.co.uk/events/2026-10-16-tired-of-waiting-weekender-open-mic-and-panel-talk-the-glad-cafe",
-    "image": "/images/24a54dbf257d56023e94.webp",
-    "performances": [
-      {
-        "date": "2026-10-16",
-        "time": "18:00",
-        "note": "Doors"
-      }
-    ],
-    "pricing": {
-      "from": 6.5,
-      "to": null,
-      "concession": null,
-      "concessionTo": null,
-      "free": false,
-      "payWhatYouLike": false,
-      "text": "Tickets £6.50 / £15 weekend pass",
-      "read": "model"
-    },
-    "checkedAt": "2026-10-15",
-    "form": "talk"
   },
   {
     "title": "Building And Heritage Tours",

@@ -1,0 +1,42 @@
+{
+  "apiVersion": "1",
+  "generatedAt": "2026-10-17T21:40:27.566Z",
+  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "show": {
+    "id": "theatre-royal-matilda-the-musical",
+    "url": "https://glasgowtheatre.com/shows/theatre-royal-matilda-the-musical.html",
+    "title": "Matilda The Musical",
+    "artForm": "musical",
+    "tags": [
+      "musical"
+    ],
+    "producer": null,
+    "description": "Matilda The Musical, the multi-award winning musical from the Royal Shakespeare Company is inspired by the beloved book by Roald Dahl. Buy one and get one under 16s half price on selected seats at Tue – Thu performances.",
+    "venue": {
+      "id": "theatre-royal",
+      "name": "Theatre Royal",
+      "area": "City Centre"
+    },
+    "run": {
+      "opens": "2026-11-18",
+      "closes": "2026-12-05",
+      "time": null
+    },
+    "schedule": null,
+    "performances": [],
+    "pricing": null,
+    "accessibility": [
+      "Captioned performances available",
+      "Audio-described performances available",
+      "BSL-interpreted performances available"
+    ],
+    "durationMinutes": null,
+    "image": {
+      "url": "https://glasgowtheatre.com/images/12603bd62ae24984881d.webp",
+      "alt": "Matilda The Musical",
+      "credit": null
+    },
+    "bookingUrl": "https://www.atgtickets.com/shows/matilda-the-musical/theatre-royal-glasgow/calendar/",
+    "updatedAt": "2026-10-15"
+  }
+}

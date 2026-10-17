@@ -1,0 +1,3 @@
+# opens	closes	title	venue	artForm	fromPrice	url
+2026-11-16	2026-11-16	Working it Out - October 2026	Theatre 118	cabaret	3	https://glasgowtheatre.com/shows/theatre-118-working-it-out-october-2026.html
+2026-12-16	2026-12-19	Sleeping Beauty & the New Republic of Port Dundas	Theatre 118	pantomime	12	https://glasgowtheatre.com/shows/theatre-118-sleeping-beauty-the-new-republic-of-port-dundas.html

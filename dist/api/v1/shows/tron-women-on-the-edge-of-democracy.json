@@ -1,0 +1,55 @@
+{
+  "apiVersion": "1",
+  "generatedAt": "2026-10-17T21:40:27.566Z",
+  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "show": {
+    "id": "tron-women-on-the-edge-of-democracy",
+    "url": "https://glasgowtheatre.com/shows/tron-women-on-the-edge-of-democracy.html",
+    "title": "Women+ on the Edge of Democracy",
+    "artForm": "talk",
+    "tags": [
+      "talk"
+    ],
+    "producer": null,
+    "description": "We are delighted to be partnering with the Traverse Theatre to participate in Women+ on the Edge of Democracy, a groundbreaking initiative encouraging conversation about American democracy initiated by the Flynn Center in Vermont and The Susan Smith Blackburn Prize. Taking place in communities...",
+    "venue": {
+      "id": "tron",
+      "name": "Tron Theatre",
+      "area": "Merchant City"
+    },
+    "run": {
+      "opens": "2026-10-29",
+      "closes": "2026-10-29",
+      "time": "19:00"
+    },
+    "schedule": null,
+    "performances": [
+      {
+        "date": "2026-10-29",
+        "time": "19:00",
+        "bookingUrl": "https://www.tron.co.uk/book-online/572591ANQGTMTJTQCPBKGCPRSBNNQKBNP"
+      }
+    ],
+    "pricing": {
+      "currency": "GBP",
+      "from": 0,
+      "to": null,
+      "concessionFrom": null,
+      "concessionTo": null,
+      "free": true,
+      "payWhatYouLike": false,
+      "text": "Free but Ticketed",
+      "source": "published-text",
+      "checkedAt": "2026-10-15"
+    },
+    "accessibility": null,
+    "durationMinutes": 90,
+    "image": {
+      "url": "https://glasgowtheatre.com/images/f44424e5e89f45260f13.webp",
+      "alt": "Women+ on the Edge of Democracy",
+      "credit": null
+    },
+    "bookingUrl": "https://www.tron.co.uk/shows/women-on-the-edge-of-democracy/",
+    "updatedAt": "2026-10-15"
+  }
+}

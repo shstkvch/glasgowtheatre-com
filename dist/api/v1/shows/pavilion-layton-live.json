@@ -1,0 +1,44 @@
+{
+  "apiVersion": "1",
+  "generatedAt": "2026-10-17T21:40:27.566Z",
+  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "show": {
+    "id": "pavilion-layton-live",
+    "url": "https://glasgowtheatre.com/shows/pavilion-layton-live.html",
+    "title": "Layton Live",
+    "artForm": "cabaret",
+    "tags": [
+      "cabaret"
+    ],
+    "producer": null,
+    "description": "Olivier Award winner, and Tony Award nominee, Layton Williams is taking to the stage for his nationwide tour. Marking the upcoming 20th anniversary of his stage debut, Layton will take you on a whistle stop musical tour of his journey from Billy Elliot to Titanique, via Cabaret, Hairspray...",
+    "venue": {
+      "id": "pavilion",
+      "name": "Pavilion Theatre",
+      "area": "City Centre"
+    },
+    "run": {
+      "opens": "2027-03-08",
+      "closes": "2027-03-08",
+      "time": "19:30"
+    },
+    "schedule": null,
+    "performances": [
+      {
+        "date": "2027-03-08",
+        "time": "19:30",
+        "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/music/layton-live-tickets"
+      }
+    ],
+    "pricing": null,
+    "accessibility": null,
+    "durationMinutes": null,
+    "image": {
+      "url": "https://glasgowtheatre.com/images/06222b99dbbdb3fc3f4b.webp",
+      "alt": "Layton Live",
+      "credit": null
+    },
+    "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/music/layton-live-tickets",
+    "updatedAt": "2026-10-15"
+  }
+}

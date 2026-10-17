@@ -1,0 +1,38 @@
+{
+  "apiVersion": "1",
+  "generatedAt": "2026-10-17T21:40:27.566Z",
+  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "show": {
+    "id": "kings-romesh-ranganathan-will-change-your-life",
+    "url": "https://glasgowtheatre.com/shows/kings-romesh-ranganathan-will-change-your-life.html",
+    "title": "Romesh Ranganathan Will Change Your Life",
+    "artForm": "stand-up",
+    "tags": [
+      "stand-up"
+    ],
+    "producer": null,
+    "description": "Hi. I’m Romesh Ranganathan and I Will Change Your Life.",
+    "venue": {
+      "id": "kings",
+      "name": "King's Theatre",
+      "area": "City Centre"
+    },
+    "run": {
+      "opens": "2027-01-06",
+      "closes": "2027-01-08",
+      "time": null
+    },
+    "schedule": null,
+    "performances": [],
+    "pricing": null,
+    "accessibility": null,
+    "durationMinutes": null,
+    "image": {
+      "url": "https://glasgowtheatre.com/images/a06b32933a398b941f96.webp",
+      "alt": "Romesh Ranganathan Will Change Your Life",
+      "credit": null
+    },
+    "bookingUrl": "https://www.atgtickets.com/shows/romesh-ranganathan-will-change-your-life/kings-theatre-glasgow/calendar/",
+    "updatedAt": "2026-10-15"
+  }
+}

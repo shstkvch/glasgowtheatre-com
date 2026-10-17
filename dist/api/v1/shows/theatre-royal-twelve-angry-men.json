@@ -1,0 +1,38 @@
+{
+  "apiVersion": "1",
+  "generatedAt": "2026-10-17T21:40:27.566Z",
+  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "show": {
+    "id": "theatre-royal-twelve-angry-men",
+    "url": "https://glasgowtheatre.com/shows/theatre-royal-twelve-angry-men.html",
+    "title": "Twelve Angry Men",
+    "artForm": "play",
+    "tags": [
+      "play"
+    ],
+    "producer": null,
+    "description": "A life in the balance. Twelve men. One verdict.",
+    "venue": {
+      "id": "theatre-royal",
+      "name": "Theatre Royal",
+      "area": "City Centre"
+    },
+    "run": {
+      "opens": "2027-03-30",
+      "closes": "2027-04-03",
+      "time": null
+    },
+    "schedule": null,
+    "performances": [],
+    "pricing": null,
+    "accessibility": null,
+    "durationMinutes": null,
+    "image": {
+      "url": "https://glasgowtheatre.com/images/91b6b1da5836f1dc16dc.webp",
+      "alt": "Twelve Angry Men",
+      "credit": null
+    },
+    "bookingUrl": "https://www.atgtickets.com/shows/twelve-angry-men/theatre-royal-glasgow/calendar/",
+    "updatedAt": "2026-10-15"
+  }
+}

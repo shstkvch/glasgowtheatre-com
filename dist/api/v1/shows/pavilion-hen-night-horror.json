@@ -1,0 +1,44 @@
+{
+  "apiVersion": "1",
+  "generatedAt": "2026-10-17T21:40:27.566Z",
+  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "show": {
+    "id": "pavilion-hen-night-horror",
+    "url": "https://glasgowtheatre.com/shows/pavilion-hen-night-horror.html",
+    "title": "Hen Night Horror",
+    "artForm": "musical",
+    "tags": [
+      "musical"
+    ],
+    "producer": null,
+    "description": "Hen Night Horror is back! The riotous original musical comedy-horror that’s had audiences screaming with laughter returns this Autumn. This witty production stars Dani Heron, best known for playing Lydia in the Emmy award winning drama Crime, and Scotland's West End legend Matthew Mckenna - fresh...",
+    "venue": {
+      "id": "pavilion",
+      "name": "Pavilion Theatre",
+      "area": "City Centre"
+    },
+    "run": {
+      "opens": "2026-10-29",
+      "closes": "2026-10-31",
+      "time": "19:30"
+    },
+    "schedule": null,
+    "performances": [
+      {
+        "date": "2026-10-29",
+        "time": "19:30",
+        "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/play/hen-night-horror-tickets"
+      }
+    ],
+    "pricing": null,
+    "accessibility": null,
+    "durationMinutes": null,
+    "image": {
+      "url": "https://glasgowtheatre.com/images/7d89d66cb8a3a11867eb.webp",
+      "alt": "Hen Night Horror",
+      "credit": null
+    },
+    "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/play/hen-night-horror-tickets",
+    "updatedAt": "2026-10-15"
+  }
+}

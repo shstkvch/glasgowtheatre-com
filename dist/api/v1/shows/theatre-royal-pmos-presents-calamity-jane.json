@@ -1,0 +1,38 @@
+{
+  "apiVersion": "1",
+  "generatedAt": "2026-10-17T21:40:27.566Z",
+  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "show": {
+    "id": "theatre-royal-pmos-presents-calamity-jane",
+    "url": "https://glasgowtheatre.com/shows/theatre-royal-pmos-presents-calamity-jane.html",
+    "title": "PMOS presents Calamity Jane",
+    "artForm": "musical",
+    "tags": [
+      "musical"
+    ],
+    "producer": null,
+    "description": "A Beloved Favourite Shining Brighter Than Ever!",
+    "venue": {
+      "id": "theatre-royal",
+      "name": "Theatre Royal",
+      "area": "City Centre"
+    },
+    "run": {
+      "opens": "2027-03-24",
+      "closes": "2027-03-27",
+      "time": null
+    },
+    "schedule": null,
+    "performances": [],
+    "pricing": null,
+    "accessibility": null,
+    "durationMinutes": null,
+    "image": {
+      "url": "https://glasgowtheatre.com/images/8dfafda0cbd3e110dbea.webp",
+      "alt": "PMOS presents Calamity Jane",
+      "credit": null
+    },
+    "bookingUrl": "https://www.atgtickets.com/shows/pmos-presents-calamity-jane/theatre-royal-glasgow/calendar/",
+    "updatedAt": "2026-10-15"
+  }
+}

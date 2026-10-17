@@ -1,0 +1,44 @@
+{
+  "apiVersion": "1",
+  "generatedAt": "2026-10-17T21:40:27.566Z",
+  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "show": {
+    "id": "pavilion-its-not-where-you-start-by-scott-kyle",
+    "url": "https://glasgowtheatre.com/shows/pavilion-its-not-where-you-start-by-scott-kyle.html",
+    "title": "It's Not Where You Start By Scott Kyle",
+    "artForm": "spoken-word",
+    "tags": [
+      "spoken-word"
+    ],
+    "producer": null,
+    "description": "Based on the award-winning bestselling memoir of the same name, the It’s Not Where You Start live show is a powerful, uplifting, and deeply personal storytelling experience that blends theatre, autobiography, and live performance with projected animation and film. It tells the extraordinary true...",
+    "venue": {
+      "id": "pavilion",
+      "name": "Pavilion Theatre",
+      "area": "City Centre"
+    },
+    "run": {
+      "opens": "2026-10-22",
+      "closes": "2026-10-22",
+      "time": "19:30"
+    },
+    "schedule": null,
+    "performances": [
+      {
+        "date": "2026-10-22",
+        "time": "19:30",
+        "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/other/its-not-where-you-start-a-spoken-word-experience-by-scott-kyle-tickets"
+      }
+    ],
+    "pricing": null,
+    "accessibility": null,
+    "durationMinutes": null,
+    "image": {
+      "url": "https://glasgowtheatre.com/images/7fee8607d7543b791c92.webp",
+      "alt": "It's Not Where You Start By Scott Kyle",
+      "credit": null
+    },
+    "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/other/its-not-where-you-start-a-spoken-word-experience-by-scott-kyle-tickets",
+    "updatedAt": "2026-10-15"
+  }
+}

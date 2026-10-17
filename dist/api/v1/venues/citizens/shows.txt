@@ -1,0 +1,23 @@
+# opens	closes	title	venue	artForm	fromPrice	url
+2026-10-16	2026-10-17	East is East	Citizens Theatre	play	18.5	https://glasgowtheatre.com/shows/citizens-east-is-east.html
+2026-10-16	2026-10-17	These Are Our Neighbours	Citizens Theatre	dance	17.5	https://glasgowtheatre.com/shows/citizens-these-are-our-neighbours.html
+2026-10-21	2026-10-24	The Prime of Miss Jean Brodie	Citizens Theatre	play	14.5	https://glasgowtheatre.com/shows/citizens-the-prime-of-miss-jean-brodie.html
+2026-10-23	2026-10-23	Revel	Citizens Theatre	dance	17.5	https://glasgowtheatre.com/shows/citizens-revel.html
+2026-10-27	2026-11-07	Othello	Citizens Theatre	play	18.5	https://glasgowtheatre.com/shows/citizens-othello.html
+2026-10-29	2026-10-29	Talking Heritage: the forgotten story of spectacular theatre (with Jamie Harrison)	Citizens Theatre	talk	8	https://glasgowtheatre.com/shows/citizens-talking-heritage-the-forgotten-story-of-spectacular.html
+2026-10-30	2026-10-30	I’ll Scratch Yours	Citizens Theatre	play	13	https://glasgowtheatre.com/shows/citizens-i-ll-scratch-yours.html
+2026-10-31	2026-10-31	Queer Folks' Tales: Oct 2026	Citizens Theatre	spoken-word	13	https://glasgowtheatre.com/shows/citizens-queer-folks-tales-oct-2026.html
+2026-11-05	2026-11-07	Do Not Pass Go	Citizens Theatre	play	17.5	https://glasgowtheatre.com/shows/citizens-do-not-pass-go.html
+2026-11-13	2026-11-13	An t-Ùrlar as Àirde (The Highest Stage)	Citizens Theatre	play	17.5	https://glasgowtheatre.com/shows/citizens-an-t-rlar-as-irde-the-highest-stage.html
+2026-11-28	2026-12-31	Cinderella	Citizens Theatre	pantomime	12.5	https://glasgowtheatre.com/shows/citizens-cinderella.html
+2026-12-10	2026-12-11	Poggle and Me	Citizens Theatre	physical-theatre		https://glasgowtheatre.com/shows/citizens-poggle-and-me.html
+2027-01-22	2027-01-22	Jill Jackson and Support	Citizens Theatre	music	28	https://glasgowtheatre.com/shows/citizens-jill-jackson-and-support.html
+2027-01-23	2027-01-23	Dallahan with Laura Cortese	Citizens Theatre	music	22	https://glasgowtheatre.com/shows/citizens-dallahan-with-laura-cortese.html
+2027-01-25	2027-01-25	McGoldrick, McCusker & Doyle and Friends	Citizens Theatre	music	24	https://glasgowtheatre.com/shows/citizens-mcgoldrick-mccusker-doyle-and-friends.html
+2027-01-27	2027-01-27	Judy Collins and Support	Citizens Theatre	music	34	https://glasgowtheatre.com/shows/citizens-judy-collins-and-support.html
+2027-01-29	2027-01-29	Sandy Denny: 80th Birthday Celebration	Citizens Theatre	music	26	https://glasgowtheatre.com/shows/citizens-sandy-denny-80th-birthday-celebration.html
+2027-01-30	2027-01-30	All Together Now: 2027 Artist Residency	Citizens Theatre	music	22	https://glasgowtheatre.com/shows/citizens-all-together-now-2027-artist-residency.html
+2027-02-13	2027-03-06	Mary Queen of Scots Got Her Head Chopped Off	Citizens Theatre	play	14	https://glasgowtheatre.com/shows/citizens-mary-queen-of-scots-got-her-head-chopped-off.html
+2027-03-20	2027-03-20	Mike Wozniak: The Bench	Citizens Theatre	stand-up	24.5	https://glasgowtheatre.com/shows/citizens-mike-wozniak-the-bench.html
+2027-03-30	2027-04-03	Punch	Citizens Theatre	play	18.5	https://glasgowtheatre.com/shows/citizens-punch.html
+2027-04-07	2027-05-01	Death of a Salesman	Citizens Theatre	play	14	https://glasgowtheatre.com/shows/citizens-death-of-a-salesman.html

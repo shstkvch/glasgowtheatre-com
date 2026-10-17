@@ -1,0 +1,36 @@
+{
+  "apiVersion": "1",
+  "generatedAt": "2026-10-17T21:40:27.566Z",
+  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "venue": {
+    "id": "tron",
+    "name": "Tron Theatre",
+    "area": "Merchant City",
+    "description": "Housed in a beautiful converted church at the heart of the Merchant City, the Tron is Glasgow’s home for new writing and independent theatre. With an intimate main stage and a buzzing bar, it programmes a mix of Scottish premieres, visiting companies, and its popular scratch series for works-in-development.",
+    "website": "https://tron.co.uk",
+    "instagram": "tikitronica",
+    "programme": "theatre",
+    "url": "https://glasgowtheatre.com/venues/tron.html",
+    "upcomingShows": 12,
+    "showsUrl": "https://glasgowtheatre.com/api/v1/venues/tron/shows.json",
+    "concessions": {
+      "url": "https://www.tron.co.uk/booking-information/",
+      "checkedAt": "2026-09-10",
+      "summary": "The Tron has scrapped concession types altogether. Every show is sold at three price points and you choose which to pay — so the lowest price on a listing here is the lowest price anyone pays, with no eligibility to prove.",
+      "schemes": [
+        {
+          "name": "Choose what you pay",
+          "broad": false,
+          "eligibility": "Open to everyone. Pick from the three price points shown when booking."
+        },
+        {
+          "name": "Groups",
+          "broad": false,
+          "eligibility": "Groups may be eligible for a discount — contact the Box Office on 0141 552 4267."
+        }
+      ],
+      "offers": [],
+      "fees": "No booking fees."
+    }
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "apiVersion": "1",
+  "generatedAt": "2026-10-17T21:40:27.566Z",
+  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "show": {
+    "id": "oran-mor-making-way",
+    "url": "https://glasgowtheatre.com/shows/oran-mor-making-way.html",
+    "title": "Making Way",
+    "artForm": "play",
+    "tags": [
+      "play",
+      "lunchtime",
+      "a-play-a-pie-a-pint"
+    ],
+    "producer": null,
+    "description": "Scientists have discovered the elixir of youth. Whilst the older generation revel in their rejuvenated bodies, the young are leeched of their priceless blood and forced to fight for their future. A weary widower is injected with this new lease of life but discovers that immortality is not all that...",
+    "venue": {
+      "id": "oran-mor",
+      "name": "A Play, a Pie and a Pint",
+      "area": "West End"
+    },
+    "run": {
+      "opens": "2026-11-09",
+      "closes": "2026-11-14",
+      "time": "13:00"
+    },
+    "schedule": {
+      "text": "Monday – Saturday 1pm\n(Doors 12pm/12.30pm on Mondays)"
+    },
+    "performances": [
+      {
+        "date": "2026-11-09",
+        "time": "13:00",
+        "price": 17
+      },
+      {
+        "date": "2026-11-10",
+        "time": "13:00",
+        "price": 19
+      },
+      {
+        "date": "2026-11-11",
+        "time": "13:00",
+        "price": 19
+      },
+      {
+        "date": "2026-11-12",
+        "time": "13:00",
+        "price": 19
+      },
+      {
+        "date": "2026-11-13",
+        "time": "13:00",
+        "price": 19
+      },
+      {
+        "date": "2026-11-14",
+        "time": "13:00",
+        "price": 22.5
+      }
+    ],
+    "pricing": {
+      "currency": "GBP",
+      "from": 17,
+      "to": 22.5,
+      "concessionFrom": null,
+      "concessionTo": null,
+      "free": false,
+      "payWhatYouLike": false,
+      "text": "Monday: £17\nTuesday-Friday: £19\nSaturday: £22.50",
+      "source": "published-text",
+      "checkedAt": "2026-10-15"
+    },
+    "accessibility": null,
+    "durationMinutes": null,
+    "image": {
+      "url": "https://glasgowtheatre.com/images/049c5f13cc8180fc9007.webp",
+      "alt": "Making Way",
+      "credit": null
+    },
+    "bookingUrl": "https://playpiepint.com/whats-on/event/making-way/",
+    "updatedAt": "2026-10-15"
+  }
+}

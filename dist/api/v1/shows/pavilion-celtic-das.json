@@ -1,0 +1,44 @@
+{
+  "apiVersion": "1",
+  "generatedAt": "2026-10-17T21:40:27.566Z",
+  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "show": {
+    "id": "pavilion-celtic-das",
+    "url": "https://glasgowtheatre.com/shows/pavilion-celtic-das.html",
+    "title": "Celtic Da's",
+    "artForm": "play",
+    "tags": [
+      "play"
+    ],
+    "producer": null,
+    "description": "Danny and Pat are two lifelong friends who view every aspect of their lives through a green and white prism. Following a wee health scare, one of them finds himself questioning his values and his adherence to all things Celtic. This crisis of faith suddenly threatens to bring both their world’s...",
+    "venue": {
+      "id": "pavilion",
+      "name": "Pavilion Theatre",
+      "area": "City Centre"
+    },
+    "run": {
+      "opens": "2027-02-13",
+      "closes": "2027-02-13",
+      "time": "19:30"
+    },
+    "schedule": null,
+    "performances": [
+      {
+        "date": "2027-02-13",
+        "time": "19:30",
+        "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/play/celtic-das-tickets"
+      }
+    ],
+    "pricing": null,
+    "accessibility": null,
+    "durationMinutes": null,
+    "image": {
+      "url": "https://glasgowtheatre.com/images/b519bf28405ea40dc73c.webp",
+      "alt": "Celtic Da's",
+      "credit": null
+    },
+    "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/play/celtic-das-tickets",
+    "updatedAt": "2026-10-15"
+  }
+}

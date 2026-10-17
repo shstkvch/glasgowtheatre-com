@@ -1,0 +1,49 @@
+{
+  "apiVersion": "1",
+  "generatedAt": "2026-10-17T21:40:27.566Z",
+  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "show": {
+    "id": "citizens-sandy-denny-80th-birthday-celebration",
+    "url": "https://glasgowtheatre.com/shows/citizens-sandy-denny-80th-birthday-celebration.html",
+    "title": "Sandy Denny: 80th Birthday Celebration",
+    "artForm": "music",
+    "tags": [
+      "music"
+    ],
+    "producer": null,
+    "description": "Georgia Rose Lucas, in collaboration with Celtic Connections, presents a special 80th anniversary tribute to her mum, Sandy Denny: pioneer of British folk-rock and one of the UK’s finest ever singer-songwriters. Sandy Denny’s haunting vocals have made Scottish ballads beloved, folk-rock anthems...",
+    "venue": {
+      "id": "citizens",
+      "name": "Citizens Theatre",
+      "area": "Gorbals"
+    },
+    "run": {
+      "opens": "2027-01-29",
+      "closes": "2027-01-29",
+      "time": null
+    },
+    "schedule": null,
+    "performances": [],
+    "pricing": {
+      "currency": "GBP",
+      "from": 26,
+      "to": null,
+      "concessionFrom": null,
+      "concessionTo": null,
+      "free": false,
+      "payWhatYouLike": false,
+      "text": "£26",
+      "source": "published-text",
+      "checkedAt": "2026-10-15"
+    },
+    "accessibility": null,
+    "durationMinutes": null,
+    "image": {
+      "url": "https://glasgowtheatre.com/images/33751f530c468d194fff.webp",
+      "alt": "Sandy Denny: 80th Birthday Celebration",
+      "credit": null
+    },
+    "bookingUrl": "https://citz.co.uk/whats-on/sandy-denny-80th-birthday-celebration/",
+    "updatedAt": "2026-10-15"
+  }
+}

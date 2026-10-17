@@ -1,0 +1,44 @@
+{
+  "apiVersion": "1",
+  "generatedAt": "2026-10-17T21:40:27.566Z",
+  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "show": {
+    "id": "pavilion-lucy-beaumont-bad-at-quiz-shows-good-with-weirdos",
+    "url": "https://glasgowtheatre.com/shows/pavilion-lucy-beaumont-bad-at-quiz-shows-good-with-weirdos.html",
+    "title": "Lucy Beaumont - Bad At Quiz Shows, Good With Weirdos",
+    "artForm": "stand-up",
+    "tags": [
+      "stand-up"
+    ],
+    "producer": null,
+    "description": "Lucy Beaumont has had quite the year. She lost a contestant £79,000 on The Wheel, forgot to revise for Mastermind, and generally confirmed she's terrible at quiz shows. So she's sticking with what she does best - this autumn, she's back on the road with a brand new show. Following the success of...",
+    "venue": {
+      "id": "pavilion",
+      "name": "Pavilion Theatre",
+      "area": "City Centre"
+    },
+    "run": {
+      "opens": "2027-03-10",
+      "closes": "2027-03-10",
+      "time": "20:00"
+    },
+    "schedule": null,
+    "performances": [
+      {
+        "date": "2027-03-10",
+        "time": "20:00",
+        "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/comedy/lucy-beaumont-bad-at-quiz-shows-good-with-weirdos-tickets"
+      }
+    ],
+    "pricing": null,
+    "accessibility": null,
+    "durationMinutes": null,
+    "image": {
+      "url": "https://glasgowtheatre.com/images/8f90a948b9276ccd26f0.webp",
+      "alt": "Lucy Beaumont - Bad At Quiz Shows, Good With Weirdos",
+      "credit": null
+    },
+    "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/comedy/lucy-beaumont-bad-at-quiz-shows-good-with-weirdos-tickets",
+    "updatedAt": "2026-10-15"
+  }
+}

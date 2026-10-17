@@ -1,0 +1,378 @@
+{
+  "apiVersion": "1",
+  "generatedAt": "2026-10-17T21:40:27.566Z",
+  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "show": {
+    "id": "tron-the-snaw-queen",
+    "url": "https://glasgowtheatre.com/shows/tron-the-snaw-queen.html",
+    "title": "The Snaw Queen",
+    "artForm": "pantomime",
+    "tags": [
+      "pantomime"
+    ],
+    "producer": null,
+    "description": "Recommended age 7+ CELEBRATING 40 YEARS OF THE TRON PANTOShe’s no’ just frozen… she’s baltic! Christmas is running like a dream down in Santa’s (aka Kristine Cagney Kringle’s) workshop. All nice and naughty lists have been checked off. Nothing can go wrong. Until a broken magic mirror unleashes...",
+    "venue": {
+      "id": "tron",
+      "name": "Tron Theatre",
+      "area": "Merchant City"
+    },
+    "run": {
+      "opens": "2026-11-18",
+      "closes": "2026-12-31",
+      "time": "19:00"
+    },
+    "schedule": null,
+    "performances": [
+      {
+        "date": "2026-11-18",
+        "time": "19:00",
+        "bookingUrl": "https://www.tron.co.uk/book-online/541791AKJJKGBBTJLHHBKCJKBVCDMCBTL"
+      },
+      {
+        "date": "2026-11-19",
+        "time": "13:00",
+        "bookingUrl": "https://www.tron.co.uk/book-online/541591ALMTJDSKLNHCKMKTMSDJRGVJMKN"
+      },
+      {
+        "date": "2026-11-19",
+        "time": "19:00",
+        "bookingUrl": "https://www.tron.co.uk/book-online/541792ATLMNKCBJSDNKRPLTCVNJMTLBJK"
+      },
+      {
+        "date": "2026-11-20",
+        "time": "13:00",
+        "bookingUrl": "https://www.tron.co.uk/book-online/541592ABLNTQQVHRJKGCKNHTMSMPMTRKN"
+      },
+      {
+        "date": "2026-11-20",
+        "time": "19:00"
+      },
+      {
+        "date": "2026-11-21",
+        "time": "19:00",
+        "bookingUrl": "https://www.tron.co.uk/book-online/541794AGKSHKJNHLCLRPHCJGBHJVBDCHS"
+      },
+      {
+        "date": "2026-11-22",
+        "time": "13:00",
+        "bookingUrl": "https://www.tron.co.uk/book-online/541593ACVJPLQDQLLTJVMPPVNLCCHNQJH"
+      },
+      {
+        "date": "2026-11-22",
+        "time": "18:00",
+        "bookingUrl": "https://www.tron.co.uk/book-online/542191AJBGCHGPPNHMKRVJGLNDSGKGGQV"
+      },
+      {
+        "date": "2026-11-24",
+        "time": "19:00",
+        "bookingUrl": "https://www.tron.co.uk/book-online/542391ARQRPRTSSDBSLTSDPQPSBHVQKQG"
+      },
+      {
+        "date": "2026-11-25",
+        "time": "13:00",
+        "bookingUrl": "https://www.tron.co.uk/book-online/542591ACKLJKMJCJVKBNKCVMKJJKKQRPP"
+      },
+      {
+        "date": "2026-11-25",
+        "time": "19:00",
+        "bookingUrl": "https://www.tron.co.uk/book-online/542392AVBPJBVQNQPHCDNJPBLCMPGQQCT"
+      },
+      {
+        "date": "2026-11-26",
+        "time": "10:30",
+        "bookingUrl": "https://www.tron.co.uk/book-online/541391ATNPJTBSTNKMPNTLRHLKSTJPQMP"
+      },
+      {
+        "date": "2026-11-26",
+        "time": "19:00",
+        "bookingUrl": "https://www.tron.co.uk/book-online/542393AGVQQPGGPVCMHDQGBBKKDSKSSBN"
+      },
+      {
+        "date": "2026-11-27",
+        "time": "13:00",
+        "bookingUrl": "https://www.tron.co.uk/book-online/542592AQDBMRLCGGQCVQCDLRJKCRSBQHB"
+      },
+      {
+        "date": "2026-11-27",
+        "time": "19:00",
+        "bookingUrl": "https://www.tron.co.uk/book-online/542394ADNMDNHLLGBDGNKCQKRTDTNTJTN"
+      },
+      {
+        "date": "2026-11-28",
+        "time": "14:00",
+        "bookingUrl": "https://www.tron.co.uk/book-online/542791AVNMPBBTBPBSQNPQLNQVSNCTJPG"
+      },
+      {
+        "date": "2026-11-28",
+        "time": "19:00",
+        "bookingUrl": "https://www.tron.co.uk/book-online/542395AJQDGRPPVKRMVNJVCMVNCHGLDSJ"
+      },
+      {
+        "date": "2026-11-29",
+        "time": "13:00",
+        "bookingUrl": "https://www.tron.co.uk/book-online/542991ADLDCLMMTVJMSJBGNRQVTTMJSLJ"
+      },
+      {
+        "date": "2026-11-29",
+        "time": "18:00",
+        "bookingUrl": "https://www.tron.co.uk/book-online/542192ADBRLJHKRSGMQVHGRPBVNQKRHQD"
+      },
+      {
+        "date": "2026-12-01",
+        "time": "19:00",
+        "bookingUrl": "https://www.tron.co.uk/book-online/542396AHBGBDNQHPQPJLHGMHBBTPLCHPD"
+      },
+      {
+        "date": "2026-12-02",
+        "time": "10:30",
+        "bookingUrl": "https://www.tron.co.uk/book-online/541392AMNGGCRVBQTPSRLPQVSPLTTQRVV"
+      },
+      {
+        "date": "2026-12-02",
+        "time": "19:00",
+        "bookingUrl": "https://www.tron.co.uk/book-online/542397AQGCTJLSKHVTKGGMQDRDJCDJTQB"
+      },
+      {
+        "date": "2026-12-03",
+        "time": "10:30",
+        "bookingUrl": "https://www.tron.co.uk/book-online/541393ALBQMDJNBVLHRMNLGSJVPLBGLNR"
+      },
+      {
+        "date": "2026-12-03",
+        "time": "19:00",
+        "bookingUrl": "https://www.tron.co.uk/book-online/542398AQVJTHKJMPPCHLPPTHTBPSRSTPM"
+      },
+      {
+        "date": "2026-12-04",
+        "time": "13:00",
+        "bookingUrl": "https://www.tron.co.uk/book-online/543191AVJHSCNJQGKKBLHLTVNTTJGCTVR"
+      },
+      {
+        "date": "2026-12-04",
+        "time": "19:00",
+        "bookingUrl": "https://www.tron.co.uk/book-online/542399AJQLGDDLGSMTLRCLMHQLQDDCCGH"
+      },
+      {
+        "date": "2026-12-05",
+        "time": "14:00",
+        "bookingUrl": "https://www.tron.co.uk/book-online/542792AKCRBVDNGDSVCKVRRBTVGKPLVRD"
+      },
+      {
+        "date": "2026-12-05",
+        "time": "19:00",
+        "bookingUrl": "https://www.tron.co.uk/book-online/542400AVHJNJVLTCDSDBSTPRNQNKJKNNH"
+      },
+      {
+        "date": "2026-12-06",
+        "time": "13:00",
+        "bookingUrl": "https://www.tron.co.uk/book-online/543192ATPKVRTTRNGBKRQRPTTQNKNRCJL"
+      },
+      {
+        "date": "2026-12-06",
+        "time": "18:00",
+        "bookingUrl": "https://www.tron.co.uk/book-online/542193ADRQHGVLPJKTTCBVCGKDJLVRQNK"
+      },
+      {
+        "date": "2026-12-08",
+        "time": "19:00",
+        "bookingUrl": "https://www.tron.co.uk/book-online/542401AVVSPJTKDMMDSQCDBDGKBNJNKKP"
+      },
+      {
+        "date": "2026-12-09",
+        "time": "10:30",
+        "bookingUrl": "https://www.tron.co.uk/book-online/541394ABLJDJDQLDTTVPHNBLMGQSDNSSH"
+      },
+      {
+        "date": "2026-12-09",
+        "time": "19:00",
+        "bookingUrl": "https://www.tron.co.uk/book-online/542402AJVGPGCPCTCJLLNSTVJKHRGPGCJ"
+      },
+      {
+        "date": "2026-12-10",
+        "time": "10:30",
+        "bookingUrl": "https://www.tron.co.uk/book-online/541395AJSRLTLTMVBTKVBGNJCKDRMKBNJ"
+      },
+      {
+        "date": "2026-12-10",
+        "time": "19:00",
+        "bookingUrl": "https://www.tron.co.uk/book-online/542403ANTLQCNNDMBGGBHVHSTLCTRTTTQ"
+      },
+      {
+        "date": "2026-12-11",
+        "time": "13:00",
+        "bookingUrl": "https://www.tron.co.uk/book-online/543391ARLTMJKJVSMVTGBBDHDRBJSQJVQ"
+      },
+      {
+        "date": "2026-12-11",
+        "time": "19:00",
+        "bookingUrl": "https://www.tron.co.uk/book-online/542404ASDHSVQCKCCRHRNQLSBLGMPHDLD"
+      },
+      {
+        "date": "2026-12-12",
+        "time": "14:00",
+        "bookingUrl": "https://www.tron.co.uk/book-online/542793ADTKMMHCGQDSMBRBLNMPRSTCNDC"
+      },
+      {
+        "date": "2026-12-12",
+        "time": "19:00",
+        "bookingUrl": "https://www.tron.co.uk/book-online/542405ATSMVMNTLGVMPVPLBSBBTPBKPRM"
+      },
+      {
+        "date": "2026-12-13",
+        "time": "13:00",
+        "bookingUrl": "https://www.tron.co.uk/book-online/543392ARTGJHKRNRVGHDDCPJLVHBGKNPG"
+      },
+      {
+        "date": "2026-12-13",
+        "time": "18:00",
+        "bookingUrl": "https://www.tron.co.uk/book-online/542194AMTDJVNMNBKCJHVRBHLLDPSMHCR"
+      },
+      {
+        "date": "2026-12-16",
+        "time": "13:00",
+        "bookingUrl": "https://www.tron.co.uk/book-online/543591ATTHCTSNRVSQHCRLLJNKBTHHSHK"
+      },
+      {
+        "date": "2026-12-16",
+        "time": "19:00",
+        "bookingUrl": "https://www.tron.co.uk/book-online/543791ALSTQSBCPQRMTJRGCLHTTDCBPJP"
+      },
+      {
+        "date": "2026-12-17",
+        "time": "13:00"
+      },
+      {
+        "date": "2026-12-17",
+        "time": "19:00",
+        "bookingUrl": "https://www.tron.co.uk/book-online/543792ATHQDBLBSLCRRCTDPVPKDDTPNHS"
+      },
+      {
+        "date": "2026-12-18",
+        "time": "16:00",
+        "bookingUrl": "https://www.tron.co.uk/book-online/542406APLNLVVRMPSVHNSKKBJQRQTKRBG"
+      },
+      {
+        "date": "2026-12-18",
+        "time": "20:00",
+        "bookingUrl": "https://www.tron.co.uk/book-online/543991AKPCCVNGCPGQLSJPLBVBBHQKBQS"
+      },
+      {
+        "date": "2026-12-19",
+        "time": "14:00",
+        "bookingUrl": "https://www.tron.co.uk/book-online/542794ANCLTNRPLKTRHTSQTBDLBBVSRVS"
+      },
+      {
+        "date": "2026-12-19",
+        "time": "19:00",
+        "bookingUrl": "https://www.tron.co.uk/book-online/543793ACRDRGPVNQMBNGMJNCGLMDCDQSH"
+      },
+      {
+        "date": "2026-12-20",
+        "time": "13:00",
+        "bookingUrl": "https://www.tron.co.uk/book-online/544991ABJPDKBQTBTDHDNHNJVKDMNDCHR"
+      },
+      {
+        "date": "2026-12-20",
+        "time": "18:00",
+        "bookingUrl": "https://www.tron.co.uk/book-online/542195ALKKHHHBBLMDCNSLDSMDDMMGQCJ"
+      },
+      {
+        "date": "2026-12-22",
+        "time": "14:00",
+        "bookingUrl": "https://www.tron.co.uk/book-online/544191AQGKJJCRKQDJHBQJNJQRBCLMNQH"
+      },
+      {
+        "date": "2026-12-22",
+        "time": "19:00",
+        "bookingUrl": "https://www.tron.co.uk/book-online/544192ARVLMTCSVCHQGNMDKQPDMDCGDGC"
+      },
+      {
+        "date": "2026-12-23",
+        "time": "12:00",
+        "bookingUrl": "https://www.tron.co.uk/book-online/544391AMKSHLCRHRMKJNDLMGCKSVDHNVV"
+      },
+      {
+        "date": "2026-12-23",
+        "time": "17:00",
+        "bookingUrl": "https://www.tron.co.uk/book-online/541795AHHMCLVRSDCCTGNVGHNKKDHKTVH"
+      },
+      {
+        "date": "2026-12-24",
+        "time": "13:00",
+        "bookingUrl": "https://www.tron.co.uk/book-online/542407ARLVMSRPSLPHDQDHQGSPSDBLGCJ"
+      },
+      {
+        "date": "2026-12-27",
+        "time": "13:00",
+        "bookingUrl": "https://www.tron.co.uk/book-online/543794AHNBSPDLRPRMBVRSMRBMGHRTSKT"
+      },
+      {
+        "date": "2026-12-27",
+        "time": "18:00",
+        "bookingUrl": "https://www.tron.co.uk/book-online/544591ANPHLGSSQNMLTGRTMGQVJVQTCPK"
+      },
+      {
+        "date": "2026-12-28",
+        "time": "13:00",
+        "bookingUrl": "https://www.tron.co.uk/book-online/543795AHDSCNKMJVKTNVRVDNHPHPJGMRQ"
+      },
+      {
+        "date": "2026-12-28",
+        "time": "18:00",
+        "bookingUrl": "https://www.tron.co.uk/book-online/544592AKCGBGPVPNMKJLCVMRRMPQNRDRC"
+      },
+      {
+        "date": "2026-12-29",
+        "time": "13:00",
+        "bookingUrl": "https://www.tron.co.uk/book-online/543796AQSMSVPHVJCCTCMJBPQCJMJVHLP"
+      },
+      {
+        "date": "2026-12-29",
+        "time": "18:00",
+        "bookingUrl": "https://www.tron.co.uk/book-online/544593ADTKGMPVJMNCBPRBNCHDNMMTQLM"
+      },
+      {
+        "date": "2026-12-30",
+        "time": "13:00",
+        "bookingUrl": "https://www.tron.co.uk/book-online/543797ALCLBSBQCJMRJCQGMVGVSJSTJSL"
+      },
+      {
+        "date": "2026-12-30",
+        "time": "18:00",
+        "bookingUrl": "https://www.tron.co.uk/book-online/544594ABPHQVKGVNTQGPRCVRDQMTRKMVJ"
+      },
+      {
+        "date": "2026-12-31",
+        "time": "12:00",
+        "bookingUrl": "https://www.tron.co.uk/book-online/542795AGVCJSKQSHRDSPVKJCNVQVQNSHL"
+      },
+      {
+        "date": "2026-12-31",
+        "time": "17:00",
+        "bookingUrl": "https://www.tron.co.uk/book-online/541796AQSCLMCHMPDLLCTQJKJKNHVGNSM"
+      }
+    ],
+    "pricing": {
+      "currency": "GBP",
+      "from": 19,
+      "to": 32,
+      "concessionFrom": null,
+      "concessionTo": null,
+      "free": false,
+      "payWhatYouLike": false,
+      "text": "Previews 18th Nov - 20th Nov: £19 | 21st Nov - 20th Dec: £21, £26, or £29.50 | 22nd Dec - 31st Dec: £23, £28, or £32",
+      "source": "published-text",
+      "checkedAt": "2026-10-15"
+    },
+    "accessibility": null,
+    "durationMinutes": null,
+    "image": {
+      "url": "https://glasgowtheatre.com/images/0048ca45a3d53d0dd943.webp",
+      "alt": "The Snaw Queen",
+      "credit": null
+    },
+    "bookingUrl": "https://www.tron.co.uk/shows/the-snaw-queen/",
+    "updatedAt": "2026-10-15"
+  }
+}

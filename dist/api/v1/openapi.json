@@ -1,0 +1,1868 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Glasgow Theatre API",
+    "version": "1",
+    "description": "Read-only listings for theatre, dance and performance in Glasgow. Free to use with attribution to Glasgow Theatre. Dates are Europe/London calendar dates; prices and times are a guide, so always confirm with the venue.",
+    "license": {
+      "name": "Free to use with attribution"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://glasgowtheatre.com/api/v1"
+    }
+  ],
+  "tags": [
+    {
+      "name": "Shows"
+    },
+    {
+      "name": "Venues"
+    },
+    {
+      "name": "Meta"
+    }
+  ],
+  "paths": {
+    "/shows": {
+      "get": {
+        "tags": [
+          "Shows"
+        ],
+        "summary": "List shows",
+        "description": "Filtered, paginated list. The static snapshot at /shows.json returns everything in one response.",
+        "parameters": [
+          {
+            "name": "from",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date"
+            },
+            "description": "Match runs that have not closed before this date."
+          },
+          {
+            "name": "to",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date"
+            },
+            "description": "Match runs that open on or before this date."
+          },
+          {
+            "name": "date",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date"
+            },
+            "description": "A single day. Shorthand for from=date&to=date; cannot be combined with either."
+          },
+          {
+            "name": "venue",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "style": "form",
+            "explode": true,
+            "description": "Venue id. Repeat the parameter or comma-separate values."
+          },
+          {
+            "name": "form",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "style": "form",
+            "explode": true,
+            "description": "Art form, such as play, musical, dance or stand-up."
+          },
+          {
+            "name": "tag",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "style": "form",
+            "explode": true,
+            "description": "Any tag, including structural tags such as lunchtime."
+          },
+          {
+            "name": "q",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Case-insensitive search over title, venue, description, producer, art form and tags."
+          },
+          {
+            "name": "free",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            },
+            "description": "Only shows whose published price is free."
+          },
+          {
+            "name": "payWhatYouLike",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            },
+            "description": "Only shows with a pay-what-you-like price."
+          },
+          {
+            "name": "hasPerformances",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            },
+            "description": "Only shows with at least one listed performance."
+          },
+          {
+            "name": "minPrice",
+            "in": "query",
+            "schema": {
+              "type": "number",
+              "minimum": 0
+            },
+            "description": "Only shows whose known from-price is at least this amount."
+          },
+          {
+            "name": "maxPrice",
+            "in": "query",
+            "schema": {
+              "type": "number",
+              "minimum": 0
+            },
+            "description": "Only shows whose known from-price is at most this amount."
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "date",
+                "closes",
+                "title",
+                "venue",
+                "price"
+              ],
+              "default": "date"
+            }
+          },
+          {
+            "name": "order",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "asc",
+                "desc"
+              ],
+              "default": "asc"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 200,
+              "default": 50
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "minimum": 0,
+              "default": 0
+            }
+          },
+          {
+            "name": "format",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "json",
+                "txt"
+              ],
+              "default": "json"
+            },
+            "description": "Use txt for a tab-separated table suitable for shell scripts and C."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A page of shows, or a tab-separated table when format=txt.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ShowList"
+                }
+              },
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid query parameter",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/shows.json": {
+      "get": {
+        "tags": [
+          "Shows"
+        ],
+        "summary": "Every upcoming show",
+        "responses": {
+          "200": {
+            "description": "All upcoming shows",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ShowList"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/shows/{id}.json": {
+      "get": {
+        "tags": [
+          "Shows"
+        ],
+        "summary": "One show",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A show",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ShowResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "No show with that id",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/venues": {
+      "get": {
+        "tags": [
+          "Venues"
+        ],
+        "summary": "List venues",
+        "responses": {
+          "200": {
+            "description": "All venues",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/VenueList"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/venues.json": {
+      "get": {
+        "tags": [
+          "Venues"
+        ],
+        "summary": "Every venue",
+        "responses": {
+          "200": {
+            "description": "All venues",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/VenueList"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/venues/{id}.json": {
+      "get": {
+        "tags": [
+          "Venues"
+        ],
+        "summary": "One venue",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A venue",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/VenueResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "No venue with that id",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/venues/{id}/shows": {
+      "get": {
+        "tags": [
+          "Venues",
+          "Shows"
+        ],
+        "summary": "Shows at one venue",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "from",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date"
+            },
+            "description": "Match runs that have not closed before this date."
+          },
+          {
+            "name": "to",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date"
+            },
+            "description": "Match runs that open on or before this date."
+          },
+          {
+            "name": "date",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date"
+            },
+            "description": "A single day. Shorthand for from=date&to=date; cannot be combined with either."
+          },
+          {
+            "name": "form",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "style": "form",
+            "explode": true,
+            "description": "Art form, such as play, musical, dance or stand-up."
+          },
+          {
+            "name": "tag",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "style": "form",
+            "explode": true,
+            "description": "Any tag, including structural tags such as lunchtime."
+          },
+          {
+            "name": "q",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Case-insensitive search over title, venue, description, producer, art form and tags."
+          },
+          {
+            "name": "free",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            },
+            "description": "Only shows whose published price is free."
+          },
+          {
+            "name": "payWhatYouLike",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            },
+            "description": "Only shows with a pay-what-you-like price."
+          },
+          {
+            "name": "hasPerformances",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            },
+            "description": "Only shows with at least one listed performance."
+          },
+          {
+            "name": "minPrice",
+            "in": "query",
+            "schema": {
+              "type": "number",
+              "minimum": 0
+            },
+            "description": "Only shows whose known from-price is at least this amount."
+          },
+          {
+            "name": "maxPrice",
+            "in": "query",
+            "schema": {
+              "type": "number",
+              "minimum": 0
+            },
+            "description": "Only shows whose known from-price is at most this amount."
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "date",
+                "closes",
+                "title",
+                "venue",
+                "price"
+              ],
+              "default": "date"
+            }
+          },
+          {
+            "name": "order",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "asc",
+                "desc"
+              ],
+              "default": "asc"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 200,
+              "default": 50
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "minimum": 0,
+              "default": 0
+            }
+          },
+          {
+            "name": "format",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "json",
+                "txt"
+              ],
+              "default": "json"
+            },
+            "description": "Use txt for a tab-separated table suitable for shell scripts and C."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A page of that venue's shows",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ShowList"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "No venue with that id",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/meta.json": {
+      "get": {
+        "tags": [
+          "Meta"
+        ],
+        "summary": "Build provenance and counts",
+        "responses": {
+          "200": {
+            "description": "Dataset metadata",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Meta"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Show": {
+        "type": "object",
+        "required": [
+          "id",
+          "url",
+          "title",
+          "artForm",
+          "tags",
+          "producer",
+          "description",
+          "venue",
+          "run",
+          "schedule",
+          "performances",
+          "pricing",
+          "accessibility",
+          "durationMinutes",
+          "image",
+          "bookingUrl",
+          "updatedAt"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Stable identifier, also used by the site's show page."
+          },
+          "url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "title": {
+            "type": "string"
+          },
+          "artForm": {
+            "type": "string",
+            "description": "Exactly one art form, from the site's published vocabulary."
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Includes searchable structural tags such as lunchtime or scratch."
+          },
+          "producer": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "description": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "venue": {
+            "type": "object",
+            "required": [
+              "id",
+              "name",
+              "area"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "area": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          },
+          "run": {
+            "type": "object",
+            "required": [
+              "opens",
+              "closes",
+              "time"
+            ],
+            "properties": {
+              "opens": {
+                "type": "string",
+                "format": "date",
+                "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+                "description": "A calendar date in Europe/London, with no time zone offset."
+              },
+              "closes": {
+                "type": "string",
+                "format": "date",
+                "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+                "description": "A calendar date in Europe/London, with no time zone offset."
+              },
+              "time": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "pattern": "^([01]\\d|2[0-3]):[0-5]\\d$"
+              }
+            }
+          },
+          "schedule": {
+            "type": [
+              "object",
+              "null"
+            ],
+            "properties": {
+              "text": {
+                "type": "string"
+              }
+            }
+          },
+          "performances": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "date",
+                "time"
+              ],
+              "properties": {
+                "date": {
+                  "type": "string",
+                  "format": "date",
+                  "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+                  "description": "A calendar date in Europe/London, with no time zone offset."
+                },
+                "time": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "pattern": "^([01]\\d|2[0-3]):[0-5]\\d$",
+                  "description": "24-hour local time, or null when the venue has not confirmed one."
+                },
+                "accessibility": {
+                  "type": "string"
+                },
+                "price": {
+                  "type": "number"
+                },
+                "bookingUrl": {
+                  "type": "string",
+                  "format": "uri"
+                }
+              }
+            }
+          },
+          "pricing": {
+            "type": [
+              "object",
+              "null"
+            ],
+            "description": "The venue's published price. `from` may be the cheapest seat still on sale, not the face value; `text` is the venue's own wording.",
+            "required": [
+              "currency",
+              "from",
+              "free",
+              "payWhatYouLike",
+              "text",
+              "source",
+              "checkedAt"
+            ],
+            "properties": {
+              "currency": {
+                "const": "GBP"
+              },
+              "from": {
+                "type": [
+                  "number",
+                  "null"
+                ]
+              },
+              "to": {
+                "type": [
+                  "number",
+                  "null"
+                ]
+              },
+              "concessionFrom": {
+                "type": [
+                  "number",
+                  "null"
+                ]
+              },
+              "concessionTo": {
+                "type": [
+                  "number",
+                  "null"
+                ]
+              },
+              "free": {
+                "type": "boolean"
+              },
+              "payWhatYouLike": {
+                "type": "boolean"
+              },
+              "text": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "source": {
+                "type": "string",
+                "enum": [
+                  "venue-feed",
+                  "published-text",
+                  "unknown"
+                ],
+                "description": "How the number was obtained, not whether it is live. `venue-feed` came from structured venue data; `published-text` was read from the venue's prose."
+              },
+              "checkedAt": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "format": "date"
+              }
+            }
+          },
+          "accessibility": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "durationMinutes": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "image": {
+            "type": [
+              "object",
+              "null"
+            ],
+            "required": [
+              "url",
+              "alt",
+              "credit"
+            ],
+            "properties": {
+              "url": {
+                "type": "string",
+                "format": "uri"
+              },
+              "alt": {
+                "type": "string"
+              },
+              "credit": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          },
+          "bookingUrl": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "uri"
+          },
+          "updatedAt": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date"
+          }
+        }
+      },
+      "Venue": {
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "area",
+          "description",
+          "website",
+          "instagram",
+          "programme",
+          "url",
+          "upcomingShows",
+          "showsUrl",
+          "concessions"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "area": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "description": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "website": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "uri"
+          },
+          "instagram": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "programme": {
+            "type": "string",
+            "enum": [
+              "theatre",
+              "mixed"
+            ]
+          },
+          "url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "upcomingShows": {
+            "type": "integer"
+          },
+          "showsUrl": {
+            "type": "string",
+            "format": "uri"
+          },
+          "concessions": {
+            "type": [
+              "object",
+              "null"
+            ],
+            "properties": {
+              "url": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "format": "uri"
+              },
+              "checkedAt": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "format": "date"
+              },
+              "summary": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "schemes": {
+                "type": "array",
+                "items": {
+                  "type": "object"
+                }
+              },
+              "offers": {
+                "type": "array",
+                "items": {
+                  "type": "object"
+                }
+              },
+              "fees": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "ShowList": {
+        "type": "object",
+        "required": [
+          "apiVersion",
+          "generatedAt",
+          "refreshedAt",
+          "total",
+          "count",
+          "limit",
+          "offset",
+          "next",
+          "prev",
+          "shows"
+        ],
+        "properties": {
+          "apiVersion": {
+            "const": "1"
+          },
+          "generatedAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "refreshedAt": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date-time"
+          },
+          "total": {
+            "type": "integer"
+          },
+          "count": {
+            "type": "integer"
+          },
+          "limit": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "offset": {
+            "type": "integer"
+          },
+          "next": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "uri"
+          },
+          "prev": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "uri"
+          },
+          "shows": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "id",
+                "url",
+                "title",
+                "artForm",
+                "tags",
+                "producer",
+                "description",
+                "venue",
+                "run",
+                "schedule",
+                "performances",
+                "pricing",
+                "accessibility",
+                "durationMinutes",
+                "image",
+                "bookingUrl",
+                "updatedAt"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "description": "Stable identifier, also used by the site's show page."
+                },
+                "url": {
+                  "type": "string",
+                  "format": "uri"
+                },
+                "title": {
+                  "type": "string"
+                },
+                "artForm": {
+                  "type": "string",
+                  "description": "Exactly one art form, from the site's published vocabulary."
+                },
+                "tags": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  },
+                  "description": "Includes searchable structural tags such as lunchtime or scratch."
+                },
+                "producer": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "description": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "venue": {
+                  "type": "object",
+                  "required": [
+                    "id",
+                    "name",
+                    "area"
+                  ],
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "area": {
+                      "type": [
+                        "string",
+                        "null"
+                      ]
+                    }
+                  }
+                },
+                "run": {
+                  "type": "object",
+                  "required": [
+                    "opens",
+                    "closes",
+                    "time"
+                  ],
+                  "properties": {
+                    "opens": {
+                      "type": "string",
+                      "format": "date",
+                      "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+                      "description": "A calendar date in Europe/London, with no time zone offset."
+                    },
+                    "closes": {
+                      "type": "string",
+                      "format": "date",
+                      "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+                      "description": "A calendar date in Europe/London, with no time zone offset."
+                    },
+                    "time": {
+                      "type": [
+                        "string",
+                        "null"
+                      ],
+                      "pattern": "^([01]\\d|2[0-3]):[0-5]\\d$"
+                    }
+                  }
+                },
+                "schedule": {
+                  "type": [
+                    "object",
+                    "null"
+                  ],
+                  "properties": {
+                    "text": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "performances": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "required": [
+                      "date",
+                      "time"
+                    ],
+                    "properties": {
+                      "date": {
+                        "type": "string",
+                        "format": "date",
+                        "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+                        "description": "A calendar date in Europe/London, with no time zone offset."
+                      },
+                      "time": {
+                        "type": [
+                          "string",
+                          "null"
+                        ],
+                        "pattern": "^([01]\\d|2[0-3]):[0-5]\\d$",
+                        "description": "24-hour local time, or null when the venue has not confirmed one."
+                      },
+                      "accessibility": {
+                        "type": "string"
+                      },
+                      "price": {
+                        "type": "number"
+                      },
+                      "bookingUrl": {
+                        "type": "string",
+                        "format": "uri"
+                      }
+                    }
+                  }
+                },
+                "pricing": {
+                  "type": [
+                    "object",
+                    "null"
+                  ],
+                  "description": "The venue's published price. `from` may be the cheapest seat still on sale, not the face value; `text` is the venue's own wording.",
+                  "required": [
+                    "currency",
+                    "from",
+                    "free",
+                    "payWhatYouLike",
+                    "text",
+                    "source",
+                    "checkedAt"
+                  ],
+                  "properties": {
+                    "currency": {
+                      "const": "GBP"
+                    },
+                    "from": {
+                      "type": [
+                        "number",
+                        "null"
+                      ]
+                    },
+                    "to": {
+                      "type": [
+                        "number",
+                        "null"
+                      ]
+                    },
+                    "concessionFrom": {
+                      "type": [
+                        "number",
+                        "null"
+                      ]
+                    },
+                    "concessionTo": {
+                      "type": [
+                        "number",
+                        "null"
+                      ]
+                    },
+                    "free": {
+                      "type": "boolean"
+                    },
+                    "payWhatYouLike": {
+                      "type": "boolean"
+                    },
+                    "text": {
+                      "type": [
+                        "string",
+                        "null"
+                      ]
+                    },
+                    "source": {
+                      "type": "string",
+                      "enum": [
+                        "venue-feed",
+                        "published-text",
+                        "unknown"
+                      ],
+                      "description": "How the number was obtained, not whether it is live. `venue-feed` came from structured venue data; `published-text` was read from the venue's prose."
+                    },
+                    "checkedAt": {
+                      "type": [
+                        "string",
+                        "null"
+                      ],
+                      "format": "date"
+                    }
+                  }
+                },
+                "accessibility": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "durationMinutes": {
+                  "type": [
+                    "integer",
+                    "null"
+                  ]
+                },
+                "image": {
+                  "type": [
+                    "object",
+                    "null"
+                  ],
+                  "required": [
+                    "url",
+                    "alt",
+                    "credit"
+                  ],
+                  "properties": {
+                    "url": {
+                      "type": "string",
+                      "format": "uri"
+                    },
+                    "alt": {
+                      "type": "string"
+                    },
+                    "credit": {
+                      "type": [
+                        "string",
+                        "null"
+                      ]
+                    }
+                  }
+                },
+                "bookingUrl": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "format": "uri"
+                },
+                "updatedAt": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "format": "date"
+                }
+              }
+            }
+          }
+        }
+      },
+      "ShowResponse": {
+        "type": "object",
+        "required": [
+          "apiVersion",
+          "generatedAt",
+          "refreshedAt",
+          "show"
+        ],
+        "properties": {
+          "apiVersion": {
+            "const": "1"
+          },
+          "generatedAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "refreshedAt": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date-time"
+          },
+          "show": {
+            "type": "object",
+            "required": [
+              "id",
+              "url",
+              "title",
+              "artForm",
+              "tags",
+              "producer",
+              "description",
+              "venue",
+              "run",
+              "schedule",
+              "performances",
+              "pricing",
+              "accessibility",
+              "durationMinutes",
+              "image",
+              "bookingUrl",
+              "updatedAt"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "Stable identifier, also used by the site's show page."
+              },
+              "url": {
+                "type": "string",
+                "format": "uri"
+              },
+              "title": {
+                "type": "string"
+              },
+              "artForm": {
+                "type": "string",
+                "description": "Exactly one art form, from the site's published vocabulary."
+              },
+              "tags": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "description": "Includes searchable structural tags such as lunchtime or scratch."
+              },
+              "producer": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "description": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "venue": {
+                "type": "object",
+                "required": [
+                  "id",
+                  "name",
+                  "area"
+                ],
+                "properties": {
+                  "id": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  },
+                  "area": {
+                    "type": [
+                      "string",
+                      "null"
+                    ]
+                  }
+                }
+              },
+              "run": {
+                "type": "object",
+                "required": [
+                  "opens",
+                  "closes",
+                  "time"
+                ],
+                "properties": {
+                  "opens": {
+                    "type": "string",
+                    "format": "date",
+                    "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+                    "description": "A calendar date in Europe/London, with no time zone offset."
+                  },
+                  "closes": {
+                    "type": "string",
+                    "format": "date",
+                    "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+                    "description": "A calendar date in Europe/London, with no time zone offset."
+                  },
+                  "time": {
+                    "type": [
+                      "string",
+                      "null"
+                    ],
+                    "pattern": "^([01]\\d|2[0-3]):[0-5]\\d$"
+                  }
+                }
+              },
+              "schedule": {
+                "type": [
+                  "object",
+                  "null"
+                ],
+                "properties": {
+                  "text": {
+                    "type": "string"
+                  }
+                }
+              },
+              "performances": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "date",
+                    "time"
+                  ],
+                  "properties": {
+                    "date": {
+                      "type": "string",
+                      "format": "date",
+                      "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+                      "description": "A calendar date in Europe/London, with no time zone offset."
+                    },
+                    "time": {
+                      "type": [
+                        "string",
+                        "null"
+                      ],
+                      "pattern": "^([01]\\d|2[0-3]):[0-5]\\d$",
+                      "description": "24-hour local time, or null when the venue has not confirmed one."
+                    },
+                    "accessibility": {
+                      "type": "string"
+                    },
+                    "price": {
+                      "type": "number"
+                    },
+                    "bookingUrl": {
+                      "type": "string",
+                      "format": "uri"
+                    }
+                  }
+                }
+              },
+              "pricing": {
+                "type": [
+                  "object",
+                  "null"
+                ],
+                "description": "The venue's published price. `from` may be the cheapest seat still on sale, not the face value; `text` is the venue's own wording.",
+                "required": [
+                  "currency",
+                  "from",
+                  "free",
+                  "payWhatYouLike",
+                  "text",
+                  "source",
+                  "checkedAt"
+                ],
+                "properties": {
+                  "currency": {
+                    "const": "GBP"
+                  },
+                  "from": {
+                    "type": [
+                      "number",
+                      "null"
+                    ]
+                  },
+                  "to": {
+                    "type": [
+                      "number",
+                      "null"
+                    ]
+                  },
+                  "concessionFrom": {
+                    "type": [
+                      "number",
+                      "null"
+                    ]
+                  },
+                  "concessionTo": {
+                    "type": [
+                      "number",
+                      "null"
+                    ]
+                  },
+                  "free": {
+                    "type": "boolean"
+                  },
+                  "payWhatYouLike": {
+                    "type": "boolean"
+                  },
+                  "text": {
+                    "type": [
+                      "string",
+                      "null"
+                    ]
+                  },
+                  "source": {
+                    "type": "string",
+                    "enum": [
+                      "venue-feed",
+                      "published-text",
+                      "unknown"
+                    ],
+                    "description": "How the number was obtained, not whether it is live. `venue-feed` came from structured venue data; `published-text` was read from the venue's prose."
+                  },
+                  "checkedAt": {
+                    "type": [
+                      "string",
+                      "null"
+                    ],
+                    "format": "date"
+                  }
+                }
+              },
+              "accessibility": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "durationMinutes": {
+                "type": [
+                  "integer",
+                  "null"
+                ]
+              },
+              "image": {
+                "type": [
+                  "object",
+                  "null"
+                ],
+                "required": [
+                  "url",
+                  "alt",
+                  "credit"
+                ],
+                "properties": {
+                  "url": {
+                    "type": "string",
+                    "format": "uri"
+                  },
+                  "alt": {
+                    "type": "string"
+                  },
+                  "credit": {
+                    "type": [
+                      "string",
+                      "null"
+                    ]
+                  }
+                }
+              },
+              "bookingUrl": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "format": "uri"
+              },
+              "updatedAt": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "format": "date"
+              }
+            }
+          }
+        }
+      },
+      "VenueResponse": {
+        "type": "object",
+        "required": [
+          "apiVersion",
+          "generatedAt",
+          "refreshedAt",
+          "venue"
+        ],
+        "properties": {
+          "apiVersion": {
+            "const": "1"
+          },
+          "generatedAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "refreshedAt": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date-time"
+          },
+          "venue": {
+            "type": "object",
+            "required": [
+              "id",
+              "name",
+              "area",
+              "description",
+              "website",
+              "instagram",
+              "programme",
+              "url",
+              "upcomingShows",
+              "showsUrl",
+              "concessions"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "area": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "description": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "website": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "format": "uri"
+              },
+              "instagram": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "programme": {
+                "type": "string",
+                "enum": [
+                  "theatre",
+                  "mixed"
+                ]
+              },
+              "url": {
+                "type": "string",
+                "format": "uri"
+              },
+              "upcomingShows": {
+                "type": "integer"
+              },
+              "showsUrl": {
+                "type": "string",
+                "format": "uri"
+              },
+              "concessions": {
+                "type": [
+                  "object",
+                  "null"
+                ],
+                "properties": {
+                  "url": {
+                    "type": [
+                      "string",
+                      "null"
+                    ],
+                    "format": "uri"
+                  },
+                  "checkedAt": {
+                    "type": [
+                      "string",
+                      "null"
+                    ],
+                    "format": "date"
+                  },
+                  "summary": {
+                    "type": [
+                      "string",
+                      "null"
+                    ]
+                  },
+                  "schemes": {
+                    "type": "array",
+                    "items": {
+                      "type": "object"
+                    }
+                  },
+                  "offers": {
+                    "type": "array",
+                    "items": {
+                      "type": "object"
+                    }
+                  },
+                  "fees": {
+                    "type": [
+                      "string",
+                      "null"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "VenueList": {
+        "type": "object",
+        "properties": {
+          "apiVersion": {
+            "const": "1"
+          },
+          "generatedAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "refreshedAt": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date-time"
+          },
+          "total": {
+            "type": "integer"
+          },
+          "count": {
+            "type": "integer"
+          },
+          "venues": {
+            "type": "array",
+            "items": {
+              "$ref": "#/$defs/Venue"
+            }
+          }
+        }
+      },
+      "Problem": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "format": "uri"
+          },
+          "title": {
+            "type": "string"
+          },
+          "status": {
+            "type": "integer"
+          },
+          "detail": {
+            "type": "string"
+          },
+          "instance": {
+            "type": "string"
+          }
+        }
+      },
+      "Meta": {
+        "type": "object",
+        "properties": {
+          "apiVersion": {
+            "const": "1"
+          },
+          "generatedAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "refreshedAt": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date-time"
+          },
+          "counts": {
+            "type": "object"
+          },
+          "endpoints": {
+            "type": "object"
+          }
+        }
+      }
+    }
+  }
+}

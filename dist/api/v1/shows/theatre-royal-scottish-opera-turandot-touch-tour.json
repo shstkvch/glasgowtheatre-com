@@ -1,0 +1,40 @@
+{
+  "apiVersion": "1",
+  "generatedAt": "2026-10-17T21:40:27.566Z",
+  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "show": {
+    "id": "theatre-royal-scottish-opera-turandot-touch-tour",
+    "url": "https://glasgowtheatre.com/shows/theatre-royal-scottish-opera-turandot-touch-tour.html",
+    "title": "Scottish Opera - Turandot - Touch Tour",
+    "artForm": "tour",
+    "tags": [
+      "tour"
+    ],
+    "producer": null,
+    "description": "Our free touch tours provide an opportunity to become more familiar with the set, scenery, props and costumes. This aims to help audience members living with sight loss to immerse themselves in the world presented on stage, with audio describers, stage management and wardrobe staff present to...",
+    "venue": {
+      "id": "theatre-royal",
+      "name": "Theatre Royal",
+      "area": "City Centre"
+    },
+    "run": {
+      "opens": "2026-10-25",
+      "closes": "2026-10-25",
+      "time": null
+    },
+    "schedule": null,
+    "performances": [],
+    "pricing": null,
+    "accessibility": [
+      "Audio-described performances available"
+    ],
+    "durationMinutes": null,
+    "image": {
+      "url": "https://glasgowtheatre.com/images/37fb870bfff7f3e969e5.webp",
+      "alt": "Scottish Opera - Turandot - Touch Tour",
+      "credit": null
+    },
+    "bookingUrl": "https://www.atgtickets.com/shows/scottish-opera-turandot-touch-tour/theatre-royal-glasgow/calendar/",
+    "updatedAt": "2026-10-15"
+  }
+}

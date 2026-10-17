@@ -1,0 +1,40 @@
+{
+  "apiVersion": "1",
+  "generatedAt": "2026-10-17T21:40:27.566Z",
+  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "show": {
+    "id": "kings-matthew-bournes-the-car-man",
+    "url": "https://glasgowtheatre.com/shows/kings-matthew-bournes-the-car-man.html",
+    "title": "Matthew Bourne's The Car Man",
+    "artForm": "dance",
+    "tags": [
+      "dance"
+    ],
+    "producer": null,
+    "description": "Matthew Bourne’s award-winning The Car Man is back! Loosely based on Bizet’s ever-popular opera, The Car Man has one of the most thrilling and instantly recognisable scores in New Adventures’ repertoire.",
+    "venue": {
+      "id": "kings",
+      "name": "King's Theatre",
+      "area": "City Centre"
+    },
+    "run": {
+      "opens": "2026-10-27",
+      "closes": "2026-10-31",
+      "time": null
+    },
+    "schedule": null,
+    "performances": [],
+    "pricing": null,
+    "accessibility": [
+      "Audio-described performances available"
+    ],
+    "durationMinutes": null,
+    "image": {
+      "url": "https://glasgowtheatre.com/images/53c30ff9a5b0263ff1ed.webp",
+      "alt": "Matthew Bourne's The Car Man",
+      "credit": null
+    },
+    "bookingUrl": "https://www.atgtickets.com/shows/matthew-bournes-the-car-man/kings-theatre-glasgow/calendar/",
+    "updatedAt": "2026-10-15"
+  }
+}

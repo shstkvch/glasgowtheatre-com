@@ -1,0 +1,119 @@
+{
+  "apiVersion": "1",
+  "generatedAt": "2026-10-17T21:40:27.566Z",
+  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "show": {
+    "id": "tron-the-ferry",
+    "url": "https://glasgowtheatre.com/shows/tron-the-ferry.html",
+    "title": "The Ferry",
+    "artForm": "play",
+    "tags": [
+      "play"
+    ],
+    "producer": null,
+    "description": "Recommended Age Guide 14+ | Strong language, drug use, addiction, exploitation, reported sexual violence, rape, violence and bereavement. Everybody needs to get away from something sooner or later. Freddy is fifteen and newly orphaned. When Chris offers him a job and a train ticket from Glasgow to...",
+    "venue": {
+      "id": "tron",
+      "name": "Tron Theatre",
+      "area": "Merchant City"
+    },
+    "run": {
+      "opens": "2027-02-23",
+      "closes": "2027-03-06",
+      "time": "19:30"
+    },
+    "schedule": null,
+    "performances": [
+      {
+        "date": "2027-02-23",
+        "time": "19:30",
+        "bookingUrl": "https://www.tron.co.uk/book-online/571791ACQPSMVGKNSCMNPBMQTKSCGKDNR"
+      },
+      {
+        "date": "2027-02-24",
+        "time": "19:30",
+        "bookingUrl": "https://www.tron.co.uk/book-online/571792AMSPBDPMCJHPQJTPQKDGGSQTVSD"
+      },
+      {
+        "date": "2027-02-25",
+        "time": "14:30",
+        "bookingUrl": "https://www.tron.co.uk/book-online/572191AGHPTDPMPHSMRLHCPNTDSJGPKVG"
+      },
+      {
+        "date": "2027-02-25",
+        "time": "19:30"
+      },
+      {
+        "date": "2027-02-26",
+        "time": "19:30",
+        "bookingUrl": "https://www.tron.co.uk/book-online/571992ADTKHNSMTQTSJRNMLNKTMRRKHGB"
+      },
+      {
+        "date": "2027-02-27",
+        "time": "14:30",
+        "bookingUrl": "https://www.tron.co.uk/book-online/572192AKQNBDJHSKBSBKCLGBJTSVQTRPL"
+      },
+      {
+        "date": "2027-02-27",
+        "time": "19:30",
+        "bookingUrl": "https://www.tron.co.uk/book-online/571993AMNQGDMCMDKJVLKBRKNDRJLQJLP"
+      },
+      {
+        "date": "2027-03-02",
+        "time": "19:30",
+        "bookingUrl": "https://www.tron.co.uk/book-online/571994ADDLHNJCSSLBVCMRBMNQNHJSGBR"
+      },
+      {
+        "date": "2027-03-03",
+        "time": "19:30",
+        "bookingUrl": "https://www.tron.co.uk/book-online/571995AJMDRMPJPHJLQDMHQQBKDKVLGMD"
+      },
+      {
+        "date": "2027-03-04",
+        "time": "14:30",
+        "bookingUrl": "https://www.tron.co.uk/book-online/572193AGHCSRNBNNNPMLCPVTLVVTJKTDC"
+      },
+      {
+        "date": "2027-03-04",
+        "time": "19:30",
+        "bookingUrl": "https://www.tron.co.uk/book-online/571996ASKQSJQPRVBGKDSQBJMRPLNJCGG"
+      },
+      {
+        "date": "2027-03-05",
+        "time": "19:30",
+        "bookingUrl": "https://www.tron.co.uk/book-online/571997ATCJTLJVMDBBKLLHNVSRKVDCDMP"
+      },
+      {
+        "date": "2027-03-06",
+        "time": "14:30",
+        "bookingUrl": "https://www.tron.co.uk/book-online/572194ACNGLGDKJKTDNMCPMQQLVGNLQHQ"
+      },
+      {
+        "date": "2027-03-06",
+        "time": "19:30",
+        "bookingUrl": "https://www.tron.co.uk/book-online/571998ADCMBDSDGVBSKGSRHPTSMQTVRND"
+      }
+    ],
+    "pricing": {
+      "currency": "GBP",
+      "from": 17,
+      "to": 27,
+      "concessionFrom": null,
+      "concessionTo": null,
+      "free": false,
+      "payWhatYouLike": false,
+      "text": "Previews £17 | Main Run £20, £24 or £27",
+      "source": "published-text",
+      "checkedAt": "2026-10-15"
+    },
+    "accessibility": null,
+    "durationMinutes": 90,
+    "image": {
+      "url": "https://glasgowtheatre.com/images/51a177eb910239584667.webp",
+      "alt": "The Ferry",
+      "credit": null
+    },
+    "bookingUrl": "https://www.tron.co.uk/shows/the-ferry/",
+    "updatedAt": "2026-10-15"
+  }
+}

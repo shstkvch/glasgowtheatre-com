@@ -1,0 +1,44 @@
+{
+  "apiVersion": "1",
+  "generatedAt": "2026-10-17T21:40:27.566Z",
+  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "show": {
+    "id": "pavilion-dianne-and-vito-back-in-business",
+    "url": "https://glasgowtheatre.com/shows/pavilion-dianne-and-vito-back-in-business.html",
+    "title": "Dianne And Vito Back In Business",
+    "artForm": "dance",
+    "tags": [
+      "dance"
+    ],
+    "producer": null,
+    "description": "After whirlwind seasons on and off the dance floor, Dianne and Vito are heading back on tour with a spectacular new show - bigger, bolder and more exhilarating than ever. Back in Business explodes with the passion, personality and electric chemistry that have made this dynamic duo audience...",
+    "venue": {
+      "id": "pavilion",
+      "name": "Pavilion Theatre",
+      "area": "City Centre"
+    },
+    "run": {
+      "opens": "2027-04-07",
+      "closes": "2027-04-07",
+      "time": "19:30"
+    },
+    "schedule": null,
+    "performances": [
+      {
+        "date": "2027-04-07",
+        "time": "19:30",
+        "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/dance/dianne-and-vito-back-in-business-tickets"
+      }
+    ],
+    "pricing": null,
+    "accessibility": null,
+    "durationMinutes": null,
+    "image": {
+      "url": "https://glasgowtheatre.com/images/e2995f77e4ffa76fbadd.webp",
+      "alt": "Dianne And Vito Back In Business",
+      "credit": null
+    },
+    "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/dance/dianne-and-vito-back-in-business-tickets",
+    "updatedAt": "2026-10-15"
+  }
+}

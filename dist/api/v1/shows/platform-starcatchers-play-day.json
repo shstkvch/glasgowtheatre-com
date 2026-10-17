@@ -1,0 +1,56 @@
+{
+  "apiVersion": "1",
+  "generatedAt": "2026-10-17T21:40:27.566Z",
+  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "show": {
+    "id": "platform-starcatchers-play-day",
+    "url": "https://glasgowtheatre.com/shows/platform-starcatchers-play-day.html",
+    "title": "Starcatchers Play Day",
+    "artForm": "community-event",
+    "tags": [
+      "community-event"
+    ],
+    "producer": null,
+    "description": "Starcatchers celebrate its 20 birthday at Platform with live music and performance for early years audiences and the rest of the family.",
+    "venue": {
+      "id": "platform",
+      "name": "Platform",
+      "area": "Easterhouse"
+    },
+    "run": {
+      "opens": "2026-10-24",
+      "closes": "2026-10-24",
+      "time": "12:00"
+    },
+    "schedule": {
+      "text": "Sat 24 Oct | 12pm"
+    },
+    "performances": [
+      {
+        "date": "2026-10-24",
+        "time": "12:00"
+      }
+    ],
+    "pricing": {
+      "currency": "GBP",
+      "from": 5,
+      "to": null,
+      "concessionFrom": 3,
+      "concessionTo": null,
+      "free": false,
+      "payWhatYouLike": false,
+      "text": "£5 | £3",
+      "source": "published-text",
+      "checkedAt": "2026-10-15"
+    },
+    "accessibility": null,
+    "durationMinutes": null,
+    "image": {
+      "url": "https://glasgowtheatre.com/images/8c7cff040fae5e7a219d.webp",
+      "alt": "Starcatchers Play Day",
+      "credit": null
+    },
+    "bookingUrl": "https://www.platform-online.co.uk/index.php/whats-on/event/1239",
+    "updatedAt": "2026-10-15"
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "apiVersion": "1",
+  "generatedAt": "2026-10-17T21:40:27.566Z",
+  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "show": {
+    "id": "pavilion-jack-and-his-big-beanstalk",
+    "url": "https://glasgowtheatre.com/shows/pavilion-jack-and-his-big-beanstalk.html",
+    "title": "Jack And His Big Beanstalk",
+    "artForm": "pantomime",
+    "tags": [
+      "pantomime"
+    ],
+    "producer": null,
+    "description": "Following the sell-out success of The Wizard Wae The Big Bawz, Patter Productions returns with a brand-new adults-only pantomime. Jack and His Big Beanstalk is a riotous 18+ twist on the classic fairytale, packed with outrageous comedy, cheek and charm, audience banter, and more innuendo than you...",
+    "venue": {
+      "id": "pavilion",
+      "name": "Pavilion Theatre",
+      "area": "City Centre"
+    },
+    "run": {
+      "opens": "2027-02-21",
+      "closes": "2027-02-21",
+      "time": "19:30"
+    },
+    "schedule": null,
+    "performances": [
+      {
+        "date": "2027-02-21",
+        "time": "19:30",
+        "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/play/jack-and-his-big-beanstalk-tickets"
+      }
+    ],
+    "pricing": null,
+    "accessibility": null,
+    "durationMinutes": null,
+    "image": {
+      "url": "https://glasgowtheatre.com/images/02f4f9b6f7a9ba68baf8.webp",
+      "alt": "Jack And His Big Beanstalk",
+      "credit": null
+    },
+    "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/play/jack-and-his-big-beanstalk-tickets",
+    "updatedAt": "2026-10-15"
+  }
+}

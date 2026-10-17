@@ -1,0 +1,165 @@
+{
+  "apiVersion": "1",
+  "generatedAt": "2026-10-17T21:40:27.566Z",
+  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "show": {
+    "id": "citizens-mary-queen-of-scots-got-her-head-chopped-off",
+    "url": "https://glasgowtheatre.com/shows/citizens-mary-queen-of-scots-got-her-head-chopped-off.html",
+    "title": "Mary Queen of Scots Got Her Head Chopped Off",
+    "artForm": "play",
+    "tags": [
+      "play"
+    ],
+    "producer": null,
+    "description": "‘Once upon a time, there were twa queens on the wan green island, and the wan green island was split inty twa kingdoms. But no equal kingdoms . . .’ Celebrating the richly poetic Scots language, Liz Lochhead’s mighty text explores the deadly rivalry between two of history’s most fascinating women...",
+    "venue": {
+      "id": "citizens",
+      "name": "Citizens Theatre",
+      "area": "Gorbals"
+    },
+    "run": {
+      "opens": "2027-02-13",
+      "closes": "2027-03-06",
+      "time": "19:30"
+    },
+    "schedule": null,
+    "performances": [
+      {
+        "date": "2027-02-13",
+        "time": "19:30",
+        "bookingUrl": "https://citz.co.uk/whats-on/mary-queen-of-scots-got-her-head-chopped-off/book/94601"
+      },
+      {
+        "date": "2027-02-15",
+        "time": "19:30",
+        "bookingUrl": "https://citz.co.uk/whats-on/mary-queen-of-scots-got-her-head-chopped-off/book/94602"
+      },
+      {
+        "date": "2027-02-16",
+        "time": "19:30",
+        "bookingUrl": "https://citz.co.uk/whats-on/mary-queen-of-scots-got-her-head-chopped-off/book/94603"
+      },
+      {
+        "date": "2027-02-17",
+        "time": "19:30",
+        "bookingUrl": "https://citz.co.uk/whats-on/mary-queen-of-scots-got-her-head-chopped-off/book/94801"
+      },
+      {
+        "date": "2027-02-18",
+        "time": "19:30",
+        "bookingUrl": "https://citz.co.uk/whats-on/mary-queen-of-scots-got-her-head-chopped-off/book/94802"
+      },
+      {
+        "date": "2027-02-19",
+        "time": "19:30",
+        "bookingUrl": "https://citz.co.uk/whats-on/mary-queen-of-scots-got-her-head-chopped-off/book/96801"
+      },
+      {
+        "date": "2027-02-20",
+        "time": "14:00",
+        "bookingUrl": "https://citz.co.uk/whats-on/mary-queen-of-scots-got-her-head-chopped-off/book/96204"
+      },
+      {
+        "date": "2027-02-20",
+        "time": "19:30",
+        "bookingUrl": "https://citz.co.uk/whats-on/mary-queen-of-scots-got-her-head-chopped-off/book/96205"
+      },
+      {
+        "date": "2027-02-23",
+        "time": "18:00",
+        "bookingUrl": "https://citz.co.uk/whats-on/mary-queen-of-scots-got-her-head-chopped-off/book/95001"
+      },
+      {
+        "date": "2027-02-24",
+        "time": "19:30",
+        "bookingUrl": "https://citz.co.uk/whats-on/mary-queen-of-scots-got-her-head-chopped-off/book/94803"
+      },
+      {
+        "date": "2027-02-25",
+        "time": "14:00",
+        "bookingUrl": "https://citz.co.uk/whats-on/mary-queen-of-scots-got-her-head-chopped-off/book/95201"
+      },
+      {
+        "date": "2027-02-25",
+        "time": "19:30",
+        "bookingUrl": "https://citz.co.uk/whats-on/mary-queen-of-scots-got-her-head-chopped-off/book/94804"
+      },
+      {
+        "date": "2027-02-26",
+        "time": "19:30",
+        "bookingUrl": "https://citz.co.uk/whats-on/mary-queen-of-scots-got-her-head-chopped-off/book/95401"
+      },
+      {
+        "date": "2027-02-27",
+        "time": "14:00",
+        "bookingUrl": "https://citz.co.uk/whats-on/mary-queen-of-scots-got-her-head-chopped-off/book/95801"
+      },
+      {
+        "date": "2027-02-27",
+        "time": "19:30",
+        "bookingUrl": "https://citz.co.uk/whats-on/mary-queen-of-scots-got-her-head-chopped-off/book/95802"
+      },
+      {
+        "date": "2027-02-28",
+        "time": "15:00",
+        "bookingUrl": "https://citz.co.uk/whats-on/mary-queen-of-scots-got-her-head-chopped-off/book/102001"
+      },
+      {
+        "date": "2027-03-02",
+        "time": "18:00",
+        "bookingUrl": "https://citz.co.uk/whats-on/mary-queen-of-scots-got-her-head-chopped-off/book/95002"
+      },
+      {
+        "date": "2027-03-03",
+        "time": "19:30",
+        "bookingUrl": "https://citz.co.uk/whats-on/mary-queen-of-scots-got-her-head-chopped-off/book/94805"
+      },
+      {
+        "date": "2027-03-04",
+        "time": "14:00",
+        "bookingUrl": "https://citz.co.uk/whats-on/mary-queen-of-scots-got-her-head-chopped-off/book/95202"
+      },
+      {
+        "date": "2027-03-04",
+        "time": "19:30",
+        "bookingUrl": "https://citz.co.uk/whats-on/mary-queen-of-scots-got-her-head-chopped-off/book/94806"
+      },
+      {
+        "date": "2027-03-05",
+        "time": "19:30",
+        "bookingUrl": "https://citz.co.uk/whats-on/mary-queen-of-scots-got-her-head-chopped-off/book/95402"
+      },
+      {
+        "date": "2027-03-06",
+        "time": "14:00",
+        "bookingUrl": "https://citz.co.uk/whats-on/mary-queen-of-scots-got-her-head-chopped-off/book/95601"
+      },
+      {
+        "date": "2027-03-06",
+        "time": "19:30",
+        "bookingUrl": "https://citz.co.uk/whats-on/mary-queen-of-scots-got-her-head-chopped-off/book/95602"
+      }
+    ],
+    "pricing": {
+      "currency": "GBP",
+      "from": 14,
+      "to": 43.5,
+      "concessionFrom": null,
+      "concessionTo": null,
+      "free": false,
+      "payWhatYouLike": false,
+      "text": "£14 - £43.50",
+      "source": "published-text",
+      "checkedAt": "2026-10-15"
+    },
+    "accessibility": null,
+    "durationMinutes": null,
+    "image": {
+      "url": "https://glasgowtheatre.com/images/8fa1e7f095c61b119208.webp",
+      "alt": "Mary Queen of Scots Got Her Head Chopped Off",
+      "credit": null
+    },
+    "bookingUrl": "https://citz.co.uk/whats-on/mary-queen-of-scots-got-her-head-chopped-off/",
+    "updatedAt": "2026-10-15"
+  }
+}

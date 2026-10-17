@@ -1,0 +1,44 @@
+{
+  "apiVersion": "1",
+  "generatedAt": "2026-10-17T21:40:27.566Z",
+  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "show": {
+    "id": "pavilion-chris-packhams-world-of-wonder-a-planet-on-the-edge",
+    "url": "https://glasgowtheatre.com/shows/pavilion-chris-packhams-world-of-wonder-a-planet-on-the-edge.html",
+    "title": "Chris Packham's World of Wonder: A Planet on the Edge",
+    "artForm": "talk",
+    "tags": [
+      "talk"
+    ],
+    "producer": null,
+    "description": "For nearly forty years, Chris Packham has been the voice of nature in the UK. Through his groundbreaking work on The Really Wild Show, Springwatch, Inside Our Autistic Minds and Earth, Chris has devoted his remarkable life to engaging with the natural world — and urging us all to do the same...",
+    "venue": {
+      "id": "pavilion",
+      "name": "Pavilion Theatre",
+      "area": "City Centre"
+    },
+    "run": {
+      "opens": "2026-11-02",
+      "closes": "2026-11-02",
+      "time": "19:30"
+    },
+    "schedule": null,
+    "performances": [
+      {
+        "date": "2026-11-02",
+        "time": "19:30",
+        "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/other/chris-packhams-world-of-wonder-a-planet-on-the-edge-tickets"
+      }
+    ],
+    "pricing": null,
+    "accessibility": null,
+    "durationMinutes": null,
+    "image": {
+      "url": "https://glasgowtheatre.com/images/f0f627c29a5a8daae1f0.webp",
+      "alt": "Chris Packham's World of Wonder: A Planet on the Edge",
+      "credit": null
+    },
+    "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/other/chris-packhams-world-of-wonder-a-planet-on-the-edge-tickets",
+    "updatedAt": "2026-10-15"
+  }
+}

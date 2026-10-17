@@ -1,0 +1,51 @@
+{
+  "apiVersion": "1",
+  "generatedAt": "2026-10-17T21:40:27.566Z",
+  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "show": {
+    "id": "tramway-cade-macaskill-with-yas-clarke-tim-spooner-now-not-n",
+    "url": "https://glasgowtheatre.com/shows/tramway-cade-macaskill-with-yas-clarke-tim-spooner-now-not-n.html",
+    "title": "Cade & MacAskill with Yas Clarke & Tim Spooner - NOW NOT NOW",
+    "artForm": "physical-theatre",
+    "tags": [
+      "physical-theatre"
+    ],
+    "producer": null,
+    "description": "Two performers and their uncanny video doubles spiral through a strange, looping morning, in a mind-bending performance exploring how we live, slip and stall in time.",
+    "venue": {
+      "id": "tramway",
+      "name": "Tramway",
+      "area": "Pollokshields"
+    },
+    "run": {
+      "opens": "2026-10-30",
+      "closes": "2026-10-31",
+      "time": "19:30"
+    },
+    "schedule": {
+      "text": "7.30pm - 9.00pm"
+    },
+    "performances": [],
+    "pricing": {
+      "currency": "GBP",
+      "from": 18,
+      "to": null,
+      "concessionFrom": 12,
+      "concessionTo": null,
+      "free": false,
+      "payWhatYouLike": false,
+      "text": "£18/£12 concession",
+      "source": "published-text",
+      "checkedAt": "2026-10-15"
+    },
+    "accessibility": null,
+    "durationMinutes": null,
+    "image": {
+      "url": "https://glasgowtheatre.com/images/d0cc08f5158419d992f0.webp",
+      "alt": "Cade & MacAskill with Yas Clarke & Tim Spooner - NOW NOT NOW",
+      "credit": null
+    },
+    "bookingUrl": "https://www.tramway.org/event/b3780c07-1d30-4fde-b247-b42b00a44124/",
+    "updatedAt": "2026-10-15"
+  }
+}

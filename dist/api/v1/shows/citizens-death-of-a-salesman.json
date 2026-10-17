@@ -1,0 +1,180 @@
+{
+  "apiVersion": "1",
+  "generatedAt": "2026-10-17T21:40:27.566Z",
+  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "show": {
+    "id": "citizens-death-of-a-salesman",
+    "url": "https://glasgowtheatre.com/shows/citizens-death-of-a-salesman.html",
+    "title": "Death of a Salesman",
+    "artForm": "play",
+    "tags": [
+      "play"
+    ],
+    "producer": null,
+    "description": "“You can’t eat the orange and throw the peel away — a man is not a piece of fruit.” After thirty-four years on the road, Willy Loman returns home exhausted. A man who has sacrificed everything in pursuit of success and recognition. Yet the American Dream seems always just out of reach. As his...",
+    "venue": {
+      "id": "citizens",
+      "name": "Citizens Theatre",
+      "area": "Gorbals"
+    },
+    "run": {
+      "opens": "2027-04-07",
+      "closes": "2027-05-01",
+      "time": "19:30"
+    },
+    "schedule": null,
+    "performances": [
+      {
+        "date": "2027-04-07",
+        "time": "19:30",
+        "bookingUrl": "https://citz.co.uk/whats-on/death-of-a-salesman/book/96601"
+      },
+      {
+        "date": "2027-04-08",
+        "time": "19:30",
+        "bookingUrl": "https://citz.co.uk/whats-on/death-of-a-salesman/book/97001"
+      },
+      {
+        "date": "2027-04-09",
+        "time": "19:30",
+        "bookingUrl": "https://citz.co.uk/whats-on/death-of-a-salesman/book/98001"
+      },
+      {
+        "date": "2027-04-10",
+        "time": "14:00",
+        "bookingUrl": "https://citz.co.uk/whats-on/death-of-a-salesman/book/97801"
+      },
+      {
+        "date": "2027-04-10",
+        "time": "19:30",
+        "bookingUrl": "https://citz.co.uk/whats-on/death-of-a-salesman/book/97802"
+      },
+      {
+        "date": "2027-04-13",
+        "time": "18:00",
+        "bookingUrl": "https://citz.co.uk/whats-on/death-of-a-salesman/book/97201"
+      },
+      {
+        "date": "2027-04-14",
+        "time": "19:30",
+        "bookingUrl": "https://citz.co.uk/whats-on/death-of-a-salesman/book/97002"
+      },
+      {
+        "date": "2027-04-15",
+        "time": "14:00",
+        "bookingUrl": "https://citz.co.uk/whats-on/death-of-a-salesman/book/97401"
+      },
+      {
+        "date": "2027-04-15",
+        "time": "19:30",
+        "bookingUrl": "https://citz.co.uk/whats-on/death-of-a-salesman/book/97003"
+      },
+      {
+        "date": "2027-04-16",
+        "time": "19:30",
+        "bookingUrl": "https://citz.co.uk/whats-on/death-of-a-salesman/book/98002"
+      },
+      {
+        "date": "2027-04-17",
+        "time": "14:00",
+        "bookingUrl": "https://citz.co.uk/whats-on/death-of-a-salesman/book/97803"
+      },
+      {
+        "date": "2027-04-17",
+        "time": "19:30",
+        "bookingUrl": "https://citz.co.uk/whats-on/death-of-a-salesman/book/97804"
+      },
+      {
+        "date": "2027-04-20",
+        "time": "18:00",
+        "bookingUrl": "https://citz.co.uk/whats-on/death-of-a-salesman/book/97202"
+      },
+      {
+        "date": "2027-04-21",
+        "time": "19:30",
+        "bookingUrl": "https://citz.co.uk/whats-on/death-of-a-salesman/book/97004"
+      },
+      {
+        "date": "2027-04-22",
+        "time": "19:30",
+        "bookingUrl": "https://citz.co.uk/whats-on/death-of-a-salesman/book/97005"
+      },
+      {
+        "date": "2027-04-23",
+        "time": "19:30",
+        "bookingUrl": "https://citz.co.uk/whats-on/death-of-a-salesman/book/98003"
+      },
+      {
+        "date": "2027-04-24",
+        "time": "14:00",
+        "bookingUrl": "https://citz.co.uk/whats-on/death-of-a-salesman/book/97805"
+      },
+      {
+        "date": "2027-04-24",
+        "time": "19:30",
+        "bookingUrl": "https://citz.co.uk/whats-on/death-of-a-salesman/book/97806"
+      },
+      {
+        "date": "2027-04-25",
+        "time": "15:00",
+        "bookingUrl": "https://citz.co.uk/whats-on/death-of-a-salesman/book/98201"
+      },
+      {
+        "date": "2027-04-27",
+        "time": "18:00",
+        "bookingUrl": "https://citz.co.uk/whats-on/death-of-a-salesman/book/97203"
+      },
+      {
+        "date": "2027-04-28",
+        "time": "19:30",
+        "bookingUrl": "https://citz.co.uk/whats-on/death-of-a-salesman/book/97006"
+      },
+      {
+        "date": "2027-04-29",
+        "time": "14:00",
+        "bookingUrl": "https://citz.co.uk/whats-on/death-of-a-salesman/book/97601"
+      },
+      {
+        "date": "2027-04-29",
+        "time": "19:30",
+        "bookingUrl": "https://citz.co.uk/whats-on/death-of-a-salesman/book/97007"
+      },
+      {
+        "date": "2027-04-30",
+        "time": "19:30",
+        "bookingUrl": "https://citz.co.uk/whats-on/death-of-a-salesman/book/98004"
+      },
+      {
+        "date": "2027-05-01",
+        "time": "14:00",
+        "bookingUrl": "https://citz.co.uk/whats-on/death-of-a-salesman/book/97807"
+      },
+      {
+        "date": "2027-05-01",
+        "time": "19:30",
+        "bookingUrl": "https://citz.co.uk/whats-on/death-of-a-salesman/book/97808"
+      }
+    ],
+    "pricing": {
+      "currency": "GBP",
+      "from": 14,
+      "to": 43.5,
+      "concessionFrom": null,
+      "concessionTo": null,
+      "free": false,
+      "payWhatYouLike": false,
+      "text": "£14 - £43.50",
+      "source": "published-text",
+      "checkedAt": "2026-10-15"
+    },
+    "accessibility": null,
+    "durationMinutes": null,
+    "image": {
+      "url": "https://glasgowtheatre.com/images/36be380a4a1c5dd219b8.webp",
+      "alt": "Death of a Salesman",
+      "credit": null
+    },
+    "bookingUrl": "https://citz.co.uk/whats-on/death-of-a-salesman/",
+    "updatedAt": "2026-10-15"
+  }
+}

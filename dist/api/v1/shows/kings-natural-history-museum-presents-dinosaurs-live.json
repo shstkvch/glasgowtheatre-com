@@ -1,0 +1,38 @@
+{
+  "apiVersion": "1",
+  "generatedAt": "2026-10-17T21:40:27.566Z",
+  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "show": {
+    "id": "kings-natural-history-museum-presents-dinosaurs-live",
+    "url": "https://glasgowtheatre.com/shows/kings-natural-history-museum-presents-dinosaurs-live.html",
+    "title": "Natural History Museum presents Dinosaurs Live",
+    "artForm": "talk",
+    "tags": [
+      "talk"
+    ],
+    "producer": null,
+    "description": "For the first time since 1881, the home of dinosaurs, London’s Natural History Museum, is going on tour!",
+    "venue": {
+      "id": "kings",
+      "name": "King's Theatre",
+      "area": "City Centre"
+    },
+    "run": {
+      "opens": "2027-02-13",
+      "closes": "2027-02-13",
+      "time": null
+    },
+    "schedule": null,
+    "performances": [],
+    "pricing": null,
+    "accessibility": null,
+    "durationMinutes": null,
+    "image": {
+      "url": "https://glasgowtheatre.com/images/f8f42d0b121b72ee1b4e.webp",
+      "alt": "Natural History Museum presents Dinosaurs Live",
+      "credit": null
+    },
+    "bookingUrl": "https://www.atgtickets.com/shows/natural-history-museum-presents-dinosaurs-live/kings-theatre-glasgow/calendar/",
+    "updatedAt": "2026-10-15"
+  }
+}

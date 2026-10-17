@@ -1,0 +1,44 @@
+{
+  "apiVersion": "1",
+  "generatedAt": "2026-10-17T21:40:27.566Z",
+  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "show": {
+    "id": "pavilion-dr-richard-shepherd-time-of-death-more-unnatural-ca",
+    "url": "https://glasgowtheatre.com/shows/pavilion-dr-richard-shepherd-time-of-death-more-unnatural-ca.html",
+    "title": "Dr Richard Shepherd: Time of Death - More Unnatural Causes",
+    "artForm": "talk",
+    "tags": [
+      "talk"
+    ],
+    "producer": null,
+    "description": "Join Dr Richard Shepherd, the UK's leading forensic pathologist, as he returns to the stage this autumn with his captivating new tour, Time of Death – More Unnatural Causes. Following his successful 2021 and 2022 tours, Dr. Shepherd invites audiences into the world of forensic investigation...",
+    "venue": {
+      "id": "pavilion",
+      "name": "Pavilion Theatre",
+      "area": "City Centre"
+    },
+    "run": {
+      "opens": "2026-10-26",
+      "closes": "2026-10-26",
+      "time": "19:30"
+    },
+    "schedule": null,
+    "performances": [
+      {
+        "date": "2026-10-26",
+        "time": "19:30",
+        "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/other/dr-richard-shepherd-time-of-death-more-unnatural-causes-tickets"
+      }
+    ],
+    "pricing": null,
+    "accessibility": null,
+    "durationMinutes": null,
+    "image": {
+      "url": "https://glasgowtheatre.com/images/c4bc2b9eb4a04e3dc175.webp",
+      "alt": "Dr Richard Shepherd: Time of Death - More Unnatural Causes",
+      "credit": null
+    },
+    "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/other/dr-richard-shepherd-time-of-death-more-unnatural-causes-tickets",
+    "updatedAt": "2026-10-15"
+  }
+}

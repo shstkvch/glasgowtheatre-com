@@ -1,0 +1,49 @@
+{
+  "apiVersion": "1",
+  "generatedAt": "2026-10-17T21:40:27.566Z",
+  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "show": {
+    "id": "tramway-hayley-earlam-brrr",
+    "url": "https://glasgowtheatre.com/shows/tramway-hayley-earlam-brrr.html",
+    "title": "Hayley Earlam - Brrr",
+    "artForm": "play",
+    "tags": [
+      "play"
+    ],
+    "producer": null,
+    "description": "Hayley Earlam - Brrr at Tramway, Glasgow.",
+    "venue": {
+      "id": "tramway",
+      "name": "Tramway",
+      "area": "Pollokshields"
+    },
+    "run": {
+      "opens": "2026-12-05",
+      "closes": "2026-12-05",
+      "time": null
+    },
+    "schedule": null,
+    "performances": [],
+    "pricing": {
+      "currency": "GBP",
+      "from": 8,
+      "to": null,
+      "concessionFrom": 6,
+      "concessionTo": null,
+      "free": false,
+      "payWhatYouLike": false,
+      "text": "£8 (Child With Up to Two Adults), £6 for an additional child",
+      "source": "published-text",
+      "checkedAt": "2026-10-15"
+    },
+    "accessibility": null,
+    "durationMinutes": null,
+    "image": {
+      "url": "https://glasgowtheatre.com/images/17963c60036684017d47.webp",
+      "alt": "Hayley Earlam - Brrr",
+      "credit": null
+    },
+    "bookingUrl": "https://www.tramway.org/event/1bc72e46-4474-4e57-9332-b4b4009c421d/",
+    "updatedAt": "2026-10-15"
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "apiVersion": "1",
+  "generatedAt": "2026-10-17T21:40:27.566Z",
+  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "show": {
+    "id": "kings-tony-ropers-the-steamie",
+    "url": "https://glasgowtheatre.com/shows/kings-tony-ropers-the-steamie.html",
+    "title": "Tony Roper's The Steamie",
+    "artForm": "play",
+    "tags": [
+      "play"
+    ],
+    "producer": null,
+    "description": "Step inside a 1950s Glasgow washhouse on Hogmanay, where the water’s hot and the gossips even hotter.",
+    "venue": {
+      "id": "kings",
+      "name": "King's Theatre",
+      "area": "City Centre"
+    },
+    "run": {
+      "opens": "2026-11-02",
+      "closes": "2026-11-14",
+      "time": null
+    },
+    "schedule": null,
+    "performances": [],
+    "pricing": null,
+    "accessibility": null,
+    "durationMinutes": null,
+    "image": {
+      "url": "https://glasgowtheatre.com/images/12c9f626e32c49aba0c1.webp",
+      "alt": "Tony Roper's The Steamie",
+      "credit": null
+    },
+    "bookingUrl": "https://www.atgtickets.com/shows/tony-ropers-the-steamie/kings-theatre-glasgow/calendar/",
+    "updatedAt": "2026-10-15"
+  }
+}

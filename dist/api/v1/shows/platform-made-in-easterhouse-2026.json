@@ -1,0 +1,56 @@
+{
+  "apiVersion": "1",
+  "generatedAt": "2026-10-17T21:40:27.566Z",
+  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "show": {
+    "id": "platform-made-in-easterhouse-2026",
+    "url": "https://glasgowtheatre.com/shows/platform-made-in-easterhouse-2026.html",
+    "title": "Made in Easterhouse 2026",
+    "artForm": "community-event",
+    "tags": [
+      "community-event"
+    ],
+    "producer": null,
+    "description": "Help us mark twenty years of participatory arts in Easterhouse with this special celebration.",
+    "venue": {
+      "id": "platform",
+      "name": "Platform",
+      "area": "Easterhouse"
+    },
+    "run": {
+      "opens": "2026-10-23",
+      "closes": "2026-10-23",
+      "time": "16:00"
+    },
+    "schedule": {
+      "text": "Fri 23 Oct | from 4pm"
+    },
+    "performances": [
+      {
+        "date": "2026-10-23",
+        "time": "16:00"
+      }
+    ],
+    "pricing": {
+      "currency": "GBP",
+      "from": 9.5,
+      "to": null,
+      "concessionFrom": 5,
+      "concessionTo": 6,
+      "free": false,
+      "payWhatYouLike": false,
+      "text": "£9.50 (standard) | £6 (concession) | £5",
+      "source": "published-text",
+      "checkedAt": "2026-10-15"
+    },
+    "accessibility": null,
+    "durationMinutes": null,
+    "image": {
+      "url": "https://glasgowtheatre.com/images/6a66476bc38595f1b523.webp",
+      "alt": "Made in Easterhouse 2026",
+      "credit": null
+    },
+    "bookingUrl": "https://www.platform-online.co.uk/index.php/whats-on/event/1238",
+    "updatedAt": "2026-10-15"
+  }
+}

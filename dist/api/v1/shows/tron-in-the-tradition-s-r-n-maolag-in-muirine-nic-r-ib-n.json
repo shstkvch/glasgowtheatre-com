@@ -1,0 +1,55 @@
+{
+  "apiVersion": "1",
+  "generatedAt": "2026-10-17T21:40:27.566Z",
+  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "show": {
+    "id": "tron-in-the-tradition-s-r-n-maolag-in-muirine-nic-r-ib-n",
+    "url": "https://glasgowtheatre.com/shows/tron-in-the-tradition-s-r-n-maolag-in-muirine-nic-r-ib-n.html",
+    "title": "In The Tradition: Sárán Ó Maolagáin & Muirine Nic Róibín",
+    "artForm": "music",
+    "tags": [
+      "music"
+    ],
+    "producer": null,
+    "description": "Recommended Age Guide 14+ Innovative Irish folk blending concertina, fiddle, clarinet and new compositions.",
+    "venue": {
+      "id": "tron",
+      "name": "Tron Theatre",
+      "area": "Merchant City"
+    },
+    "run": {
+      "opens": "2027-01-30",
+      "closes": "2027-01-30",
+      "time": "19:30"
+    },
+    "schedule": null,
+    "performances": [
+      {
+        "date": "2027-01-30",
+        "time": "19:30",
+        "bookingUrl": "https://www.tron.co.uk/book-online/573391ADVTCJJMDTHKCQJJRRVSKPNNPLR"
+      }
+    ],
+    "pricing": {
+      "currency": "GBP",
+      "from": 20,
+      "to": null,
+      "concessionFrom": null,
+      "concessionTo": null,
+      "free": false,
+      "payWhatYouLike": false,
+      "text": "£20",
+      "source": "published-text",
+      "checkedAt": "2026-10-15"
+    },
+    "accessibility": null,
+    "durationMinutes": 50,
+    "image": {
+      "url": "https://glasgowtheatre.com/images/ca82fdbf65f86f4f8c74.webp",
+      "alt": "In The Tradition: Sárán Ó Maolagáin & Muirine Nic Róibín",
+      "credit": null
+    },
+    "bookingUrl": "https://www.tron.co.uk/shows/in-the-tradition-saran-o-maolagain-muirine-nic-roibin/",
+    "updatedAt": "2026-10-15"
+  }
+}

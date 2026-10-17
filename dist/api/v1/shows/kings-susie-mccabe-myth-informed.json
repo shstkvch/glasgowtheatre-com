@@ -1,0 +1,38 @@
+{
+  "apiVersion": "1",
+  "generatedAt": "2026-10-17T21:40:27.566Z",
+  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "show": {
+    "id": "kings-susie-mccabe-myth-informed",
+    "url": "https://glasgowtheatre.com/shows/kings-susie-mccabe-myth-informed.html",
+    "title": "Susie McCabe: Myth Informed",
+    "artForm": "stand-up",
+    "tags": [
+      "stand-up"
+    ],
+    "producer": null,
+    "description": "Well ….. it’s been some year for our Susie and, of course, she has written it all down and is ready to share. Debuting at GICF27, her brand new show - Myth informed - is sure to be another cracker of a show.",
+    "venue": {
+      "id": "kings",
+      "name": "King's Theatre",
+      "area": "City Centre"
+    },
+    "run": {
+      "opens": "2027-03-26",
+      "closes": "2027-03-27",
+      "time": null
+    },
+    "schedule": null,
+    "performances": [],
+    "pricing": null,
+    "accessibility": null,
+    "durationMinutes": null,
+    "image": {
+      "url": "https://glasgowtheatre.com/images/4051123db17f56fb7ec5.webp",
+      "alt": "Susie McCabe: Myth Informed",
+      "credit": null
+    },
+    "bookingUrl": "https://www.atgtickets.com/shows/susie-mccabe-myth-informed/kings-theatre-glasgow/calendar/",
+    "updatedAt": "2026-10-15"
+  }
+}

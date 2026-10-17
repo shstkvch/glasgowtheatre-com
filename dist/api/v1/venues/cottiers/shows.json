@@ -1,0 +1,188 @@
+{
+  "apiVersion": "1",
+  "generatedAt": "2026-10-17T21:40:27.566Z",
+  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "total": 4,
+  "count": 4,
+  "limit": null,
+  "offset": 0,
+  "next": null,
+  "prev": null,
+  "shows": [
+    {
+      "id": "cottiers-turn-a-different-corner",
+      "url": "https://glasgowtheatre.com/shows/cottiers-turn-a-different-corner.html",
+      "title": "Turn a different corner",
+      "artForm": "play",
+      "tags": [
+        "play"
+      ],
+      "producer": null,
+      "description": "At 17, Charlie Murphy thought community service at a Glasgow homeless drop-in centre would be easy. Just kill time and get out. He didn’t expect the people he would meet there. A veteran broken by Basra. A grandmother too ashamed to face her grandchildren. A young woman fighting her way back from...",
+      "venue": {
+        "id": "cottiers",
+        "name": "Cottiers",
+        "area": "Hyndland"
+      },
+      "run": {
+        "opens": "2026-10-18",
+        "closes": "2026-10-18",
+        "time": null
+      },
+      "schedule": null,
+      "performances": [],
+      "pricing": null,
+      "accessibility": null,
+      "durationMinutes": null,
+      "image": {
+        "url": "https://glasgowtheatre.com/images/543a8062b6241ff63eae.webp",
+        "alt": "Turn a different corner",
+        "credit": null
+      },
+      "bookingUrl": "https://cottiers.com/event/turn-a-different-corner/",
+      "updatedAt": "2026-10-15"
+    },
+    {
+      "id": "cottiers-the-seven-witches-of-torryburn",
+      "url": "https://glasgowtheatre.com/shows/cottiers-the-seven-witches-of-torryburn.html",
+      "title": "The Seven Witches of Torryburn",
+      "artForm": "play",
+      "tags": [
+        "play"
+      ],
+      "producer": null,
+      "description": "In 17th Century Torryburn, as the Scottish Witch Trials reach a fevered peak, seven ordinary women are accused of the unthinkable. It’s 1666 and as fear turns neighbour against neighbour, the seven women must risk everything to defend themselves. The Seven Witches of Torryburn is a stark, lyrical...",
+      "venue": {
+        "id": "cottiers",
+        "name": "Cottiers",
+        "area": "Hyndland"
+      },
+      "run": {
+        "opens": "2026-10-19",
+        "closes": "2026-10-19",
+        "time": "19:00"
+      },
+      "schedule": {
+        "text": "07:00 PM - 09:00 PM"
+      },
+      "performances": [
+        {
+          "date": "2026-10-19",
+          "time": "19:00"
+        }
+      ],
+      "pricing": {
+        "currency": "GBP",
+        "from": 17,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": "Standard Price : £17.00",
+        "source": "published-text",
+        "checkedAt": "2026-10-15"
+      },
+      "accessibility": null,
+      "durationMinutes": null,
+      "image": {
+        "url": "https://glasgowtheatre.com/images/2be441e393aafbfc6f15.webp",
+        "alt": "The Seven Witches of Torryburn",
+        "credit": null
+      },
+      "bookingUrl": "https://cottiers.com/event/7-witches-of-torryburn/",
+      "updatedAt": "2026-10-15"
+    },
+    {
+      "id": "cottiers-witch-hunt",
+      "url": "https://glasgowtheatre.com/shows/cottiers-witch-hunt.html",
+      "title": "Witch Hunt",
+      "artForm": "musical",
+      "tags": [
+        "musical"
+      ],
+      "producer": null,
+      "description": "Witch HuntWitch Hunt is a thrilling new musical inspired by the Scottish witch trials.When a ruthless King declares war on witches, fear spreads and three women are accused,hunted, and forced to run for their lives.Pursued by a bishop hiding a dangerous secret, they must choose between silence...",
+      "venue": {
+        "id": "cottiers",
+        "name": "Cottiers",
+        "area": "Hyndland"
+      },
+      "run": {
+        "opens": "2026-10-25",
+        "closes": "2026-10-25",
+        "time": "19:30"
+      },
+      "schedule": {
+        "text": "07:30 PM - 09:30 PM"
+      },
+      "performances": [
+        {
+          "date": "2026-10-25",
+          "time": "19:30"
+        }
+      ],
+      "pricing": {
+        "currency": "GBP",
+        "from": 20,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": "Standard Price : £20.00",
+        "source": "published-text",
+        "checkedAt": "2026-10-15"
+      },
+      "accessibility": null,
+      "durationMinutes": null,
+      "image": {
+        "url": "https://glasgowtheatre.com/images/1f2fce089a35acd1b362.webp",
+        "alt": "Witch Hunt",
+        "credit": null
+      },
+      "bookingUrl": "https://cottiers.com/event/witch-hunt/",
+      "updatedAt": "2026-10-15"
+    },
+    {
+      "id": "cottiers-peking-opera-in-glasgow",
+      "url": "https://glasgowtheatre.com/shows/cottiers-peking-opera-in-glasgow.html",
+      "title": "Peking opera in Glasgow",
+      "artForm": "opera",
+      "tags": [
+        "opera"
+      ],
+      "producer": null,
+      "description": "Peking Opera in Glasgow brings Chinese opera into the city through live performance, voice, movement and gesture. Audiences can experience its distinctive performance language up close and see how stories and emotions are communicated beyond words. The event creates a meeting point between Chinese...",
+      "venue": {
+        "id": "cottiers",
+        "name": "Cottiers",
+        "area": "Hyndland"
+      },
+      "run": {
+        "opens": "2026-11-11",
+        "closes": "2026-11-11",
+        "time": "19:00"
+      },
+      "schedule": {
+        "text": "07:00 PM - 09:00 PM"
+      },
+      "performances": [
+        {
+          "date": "2026-11-11",
+          "time": "19:00"
+        }
+      ],
+      "pricing": null,
+      "accessibility": null,
+      "durationMinutes": null,
+      "image": {
+        "url": "https://glasgowtheatre.com/images/976ae6d1ae49d8a32c49.webp",
+        "alt": "Peking opera in Glasgow",
+        "credit": null
+      },
+      "bookingUrl": "https://cottiers.com/event/peking-opera-in-glasgow/",
+      "updatedAt": "2026-10-15"
+    }
+  ]
+}

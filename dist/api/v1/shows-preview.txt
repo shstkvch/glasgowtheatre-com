@@ -1,0 +1,6 @@
+# opens	closes	title	venue	artForm	fromPrice	url
+2026-10-12	2026-10-17	Bottom's Dream	A Play, a Pie and a Pint	spoken-word	15.5	https://glasgowtheatre.com/shows/oran-mor-bottoms-dream.html
+2026-10-15	2026-10-17	Dirty Dancing	King's Theatre	play		https://glasgowtheatre.com/shows/kings-dirty-dancing.html
+2026-10-15	2026-10-17	Rollers Forever	Pavilion Theatre	musical		https://glasgowtheatre.com/shows/pavilion-rollers-forever.html
+2026-10-16	2026-10-17	East is East	Citizens Theatre	play	18.5	https://glasgowtheatre.com/shows/citizens-east-is-east.html
+2026-10-16	2026-10-17	It Walks Around The House At Night	Tron Theatre	play	19	https://glasgowtheatre.com/shows/tron-it-walks-around-the-house-at-night.html

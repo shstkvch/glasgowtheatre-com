@@ -1,0 +1,36 @@
+{
+  "apiVersion": "1",
+  "generatedAt": "2026-10-17T21:40:27.566Z",
+  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "venue": {
+    "id": "pavilion",
+    "name": "Pavilion Theatre",
+    "area": "City Centre",
+    "description": "An Edwardian variety house on Renfield Street, and a natural home for Scottish comedy, panto that runs for months, tribute nights and new plays.",
+    "website": "https://www.paviliontheatre.co.uk",
+    "instagram": "paviliontheatre",
+    "programme": "mixed",
+    "url": "https://glasgowtheatre.com/venues/pavilion.html",
+    "upcomingShows": 40,
+    "showsUrl": "https://glasgowtheatre.com/api/v1/venues/pavilion/shows.json",
+    "concessions": {
+      "url": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/terms-and-conditions",
+      "checkedAt": "2026-09-10",
+      "summary": "Concessions are set per show and applied at the point of purchase. Access tickets, including companion seats, are arranged with the theatre directly rather than online.",
+      "schemes": [
+        {
+          "name": "Concession",
+          "broad": false,
+          "eligibility": "Where a show offers one. Must be claimed at the time of purchase — it cannot be added afterwards — and proof of entitlement may be asked for. Only one discount applies per ticket; where several would, you get the cheapest single one."
+        },
+        {
+          "name": "Access and companion tickets",
+          "broad": false,
+          "eligibility": "Wheelchair spaces and essential companion tickets are booked by phone, in person, or through the theatre's enquiry form."
+        }
+      ],
+      "offers": [],
+      "fees": "Some events include a venue levy of up to £2 in the ticket price."
+    }
+  }
+}
