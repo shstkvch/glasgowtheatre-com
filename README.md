@@ -37,12 +37,12 @@ Everything above works without JavaScript. Script adds the hover preview, the mo
 
 ## The API
 
-A free, read-only API is published at `https://glasgowtheatre.com/api/` (documentation) and `/api/v1/` (data). It exposes the same merged listings the pages use: shows, venues, performances, prices and concessions. No key and no account.
+A free, read-only API is published at `https://glasgowtheatre.com/api/` (documentation) and `/api/v1/` (data). It exposes the same merged listings the pages use: shows, venues, performances, prices, concessions and each venue's house colour. No key and no account. The current response version is `1.1`; the path stays `/api/v1` because the change was additive.
 
 - `GET /api/v1/shows` — filtered, paginated list
 - `GET /api/v1/shows.json` — every upcoming show
 - `GET /api/v1/shows/{id}.json` — one show
-- `GET /api/v1/venues.json`, `/api/v1/venues/{id}.json` — venue directory and concessions
+- `GET /api/v1/venues.json`, `/api/v1/venues/{id}.json` — venue directory, concessions, and `colour`/`ink` house palette
 - `GET /api/v1/venues/{id}/shows` — a venue's listings
 - `GET /api/v1/openapi.json`, `/api/v1/schema.json` — contract and schema
 

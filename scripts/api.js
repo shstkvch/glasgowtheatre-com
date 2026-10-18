@@ -776,9 +776,9 @@ function docsBody({ dataset, sampleShow, sampleVenue }) {
   </ul>
 
   <h2>Versioning</h2>
-  <p>The path carries the version: <code>/api/v1</code>. Changes within v1 are additive only. A breaking change gets <code>/api/v2</code> and at least twelve months of overlap.</p>
+  <p>The path carries the major version: <code>/api/v1</code>. Minor versions are additive only, so a client written for <code>1.0</code> keeps working with <code>1.1</code>. A breaking change gets <code>/api/v2</code> and at least twelve months of overlap.</p>
   <h3>Changelog</h3>
-  <ul><li><strong>v1, October 2026.</strong> First public release: shows, venues, concessions, OpenAPI and JSON Schema.</li><li><strong>v1, October 2026.</strong> Venue objects gained <code>colour</code> and <code>ink</code> for the calendar's house palette.</li></ul>
+  <ul><li><strong>v1.1, October 2026.</strong> Venue objects gained <code>colour</code> and <code>ink</code> for the calendar's house palette. Additive; <code>/api/v1</code> is unchanged.</li><li><strong>v1.0, October 2026.</strong> First public release: shows, venues, concessions, OpenAPI and JSON Schema.</li></ul>
 
   <h2>Static snapshots and CORS</h2>
   <p>The <code>.json</code> endpoints are files written by the daily build; they are cached at the edge and are the safest thing to poll. The extensionless <code>/shows</code> endpoint is a Cloudflare Pages Function that filters the same snapshot. All endpoints send <code>Access-Control-Allow-Origin: *</code>, so they can be called from a browser on any origin.</p>

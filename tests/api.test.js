@@ -297,3 +297,9 @@ test("the build writes the documented snapshots and never leaks internals", () =
   assert.ok(routes.include.includes("/api/v1/shows"));
   assert.ok(routes.include.includes("/api/v1/venues/*/shows"));
 });
+
+test("the API version moves for additive changes while the path stays on v1", () => {
+  const { API_VERSION, API_ROOT } = require("../scripts/api-core");
+  assert.equal(API_VERSION, "1.1");
+  assert.equal(API_ROOT, "https://glasgowtheatre.com/api/v1");
+});

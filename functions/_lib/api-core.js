@@ -8,9 +8,12 @@
 
 const { laneColour, barInk } = require("./venue-colours.js");
 
-const API_VERSION = "1";
+// The major version lives in the path; the minor version only moves for
+// backward-compatible additions, so /api/v1 keeps working.
+const API_VERSION = "1.1";
+const API_PATH_VERSION = "v1";
 const SITE = "https://glasgowtheatre.com";
-const API_ROOT = `${SITE}/api/v1`;
+const API_ROOT = `${SITE}/api/${API_PATH_VERSION}`;
 const MAX_LIMIT = 200;
 const DEFAULT_LIMIT = 50;
 const DATE_RE = /^\d{4}-\d{2}-\d{2}$/;
