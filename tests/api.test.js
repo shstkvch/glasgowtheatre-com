@@ -134,11 +134,14 @@ test("the dataset counts venues with shows separately from all venues", () => {
   assert.equal(dataset.counts.shows, 1);
   assert.equal(dataset.counts.venues, 2);
   assert.equal(dataset.counts.venuesWithShows, 1);
-  assert.equal(dataset.venues.find((venue) => venue.id === "tron").upcomingShows, 0);
-  assert.equal(
-    dataset.venues.find((venue) => venue.id === "tramway").concessions.summary,
-    "Concessions at Tramway.",
-  );
+  const tron = dataset.venues.find((venue) => venue.id === "tron");
+  const tramway = dataset.venues.find((venue) => venue.id === "tramway");
+  assert.equal(tron.upcomingShows, 0);
+  assert.equal(tron.colour, "#e01c70");
+  assert.equal(tron.ink, "#ffffff");
+  assert.equal(tramway.colour, "#4a4f57");
+  assert.equal(tramway.ink, "#ffffff");
+  assert.equal(tramway.concessions.summary, "Concessions at Tramway.");
 });
 
 test("empty and inverted ranges are rejected rather than silently empty", () => {

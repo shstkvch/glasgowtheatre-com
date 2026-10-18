@@ -6,6 +6,8 @@
  */
 "use strict";
 
+const { laneColour, barInk } = require("./venue-colours.js");
+
 const API_VERSION = "1";
 const SITE = "https://glasgowtheatre.com";
 const API_ROOT = `${SITE}/api/v1`;
@@ -117,13 +119,16 @@ function publicShow(event, venuesById) {
   };
 }
 
-function publicVenue(venue, shows, concessions) {
+function publicVenue(venue, shows, concessions, index = 0) {
   const upcoming = shows.filter((show) => show.venue.id === venue.id);
   const concession = concessions[venue.id] || null;
+  const colour = laneColour(venue, index);
   return {
     id: venue.id,
     name: venue.name,
     area: venue.area || null,
+    colour,
+    ink: barInk(colour),
     description: venue.description || null,
     website: venue.website || null,
     instagram: venue.instagram || null,
@@ -164,7 +169,7 @@ function buildDataset({ events, venues, concessions, status, generatedAt }) {
         a.title.localeCompare(b.title),
     );
   const publicVenues = venues
-    .map((venue) => publicVenue(venue, shows, concessions))
+    .map((venue, index) => publicVenue(venue, shows, concessions, index))
     .sort((a, b) => a.name.localeCompare(b.name));
   return {
     apiVersion: API_VERSION,

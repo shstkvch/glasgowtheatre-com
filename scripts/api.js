@@ -230,6 +230,8 @@ const venueSchema = {
     "id",
     "name",
     "area",
+    "colour",
+    "ink",
     "description",
     "website",
     "instagram",
@@ -243,6 +245,17 @@ const venueSchema = {
     id: { type: "string" },
     name: { type: "string" },
     area: { type: ["string", "null"] },
+    colour: {
+      type: "string",
+      pattern: "^#[0-9a-f]{6}$",
+      description:
+        "The venue's house colour, adjusted to clear WCAG AA against ink.",
+    },
+    ink: {
+      type: "string",
+      pattern: "^#[0-9a-f]{6}$",
+      description: "The legible text colour to use on colour.",
+    },
     description: { type: ["string", "null"] },
     website: { type: ["string", "null"], format: "uri" },
     instagram: { type: ["string", "null"] },
@@ -748,7 +761,7 @@ function docsBody({ dataset, sampleShow, sampleVenue }) {
   <pre tabindex="0"><code>${esc(JSON.stringify(sampleShow, null, 2))}</code></pre>
 
   <h2>A venue</h2>
-  <p>Concessions are a property of the building, not the show. They are hand-checked against the venue's own page and the date is published with them.</p>
+  <p>Concessions are a property of the building, not the show. They are hand-checked against the venue's own page and the date is published with them. <code>colour</code> is the house colour used on the calendar, adjusted to clear WCAG AA against <code>ink</code>; use the pair together if you are drawing the venue yourself.</p>
   <pre tabindex="0"><code>${esc(JSON.stringify(sampleVenue, null, 2))}</code></pre>
 
   <h2>What the data means</h2>
@@ -765,7 +778,7 @@ function docsBody({ dataset, sampleShow, sampleVenue }) {
   <h2>Versioning</h2>
   <p>The path carries the version: <code>/api/v1</code>. Changes within v1 are additive only. A breaking change gets <code>/api/v2</code> and at least twelve months of overlap.</p>
   <h3>Changelog</h3>
-  <ul><li><strong>v1, October 2026.</strong> First public release: shows, venues, concessions, OpenAPI and JSON Schema.</li></ul>
+  <ul><li><strong>v1, October 2026.</strong> First public release: shows, venues, concessions, OpenAPI and JSON Schema.</li><li><strong>v1, October 2026.</strong> Venue objects gained <code>colour</code> and <code>ink</code> for the calendar's house palette.</li></ul>
 
   <h2>Static snapshots and CORS</h2>
   <p>The <code>.json</code> endpoints are files written by the daily build; they are cached at the edge and are the safest thing to poll. The extensionless <code>/shows</code> endpoint is a Cloudflare Pages Function that filters the same snapshot. All endpoints send <code>Access-Control-Allow-Origin: *</code>, so they can be called from a browser on any origin.</p>
