@@ -1,7 +1,7 @@
 {
-  "apiVersion": "1",
-  "generatedAt": "2026-10-17T21:40:27.566Z",
-  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "apiVersion": "1.1",
+  "generatedAt": "2026-10-18T09:51:28.372Z",
+  "refreshedAt": "2026-10-18T09:49:11.723Z",
   "show": {
     "id": "cottiers-turn-a-different-corner",
     "url": "https://glasgowtheatre.com/shows/cottiers-turn-a-different-corner.html",
@@ -33,6 +33,6 @@
       "credit": null
     },
     "bookingUrl": "https://cottiers.com/event/turn-a-different-corner/",
-    "updatedAt": "2026-10-15"
+    "updatedAt": "2026-10-18"
   }
 }

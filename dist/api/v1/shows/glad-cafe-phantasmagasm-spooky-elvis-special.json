@@ -1,7 +1,7 @@
 {
-  "apiVersion": "1",
-  "generatedAt": "2026-10-17T21:40:27.566Z",
-  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "apiVersion": "1.1",
+  "generatedAt": "2026-10-18T09:56:21.462Z",
+  "refreshedAt": "2026-10-18T09:55:39.286Z",
   "show": {
     "id": "glad-cafe-phantasmagasm-spooky-elvis-special",
     "url": "https://glasgowtheatre.com/shows/glad-cafe-phantasmagasm-spooky-elvis-special.html",
@@ -39,7 +39,7 @@
       "payWhatYouLike": false,
       "text": "Tickets £12 full price / £8 concession / £17 Music scene super hero",
       "source": "published-text",
-      "checkedAt": "2026-10-15"
+      "checkedAt": "2026-10-18"
     },
     "accessibility": null,
     "durationMinutes": null,
@@ -49,6 +49,6 @@
       "credit": null
     },
     "bookingUrl": "https://www.thegladcafe.co.uk/events/2026-10-31-phantasmagasm-spooky-elvis-special-the-glad-cafe",
-    "updatedAt": "2026-10-15"
+    "updatedAt": "2026-10-18"
   }
 }

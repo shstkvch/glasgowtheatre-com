@@ -1,2 +1,2 @@
 # opens	closes	title	venue	artForm	fromPrice	url
-2026-11-01	2026-11-01	Harp and Carp: Doom Creeps In	The Old Hairdressers	spoken-word		https://glasgowtheatre.com/shows/old-hairdressers-harp-and-carp-doom-creeps-in.html
+2026-11-01	2026-11-01	Harp and Carp: Doom Creeps In	The Old Hairdressers	spoken-word	8	https://glasgowtheatre.com/shows/old-hairdressers-harp-and-carp-doom-creeps-in.html

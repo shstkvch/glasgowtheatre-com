@@ -1,5 +1,4 @@
 # opens	closes	title	venue	artForm	fromPrice	url
-2026-10-18	2026-10-18	Turn a different corner	Cottiers	play		https://glasgowtheatre.com/shows/cottiers-turn-a-different-corner.html
 2026-10-19	2026-10-19	The Seven Witches of Torryburn	Cottiers	play	17	https://glasgowtheatre.com/shows/cottiers-the-seven-witches-of-torryburn.html
 2026-10-25	2026-10-25	Witch Hunt	Cottiers	musical	20	https://glasgowtheatre.com/shows/cottiers-witch-hunt.html
-2026-11-11	2026-11-11	Peking opera in Glasgow	Cottiers	opera		https://glasgowtheatre.com/shows/cottiers-peking-opera-in-glasgow.html
+2026-11-11	2026-11-11	Peking opera in Glasgow	Cottiers	opera	0	https://glasgowtheatre.com/shows/cottiers-peking-opera-in-glasgow.html

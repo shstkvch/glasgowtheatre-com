@@ -1,7 +1,7 @@
 {
-  "apiVersion": "1",
-  "generatedAt": "2026-10-17T21:40:27.566Z",
-  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "apiVersion": "1.1",
+  "generatedAt": "2026-10-18T09:56:21.462Z",
+  "refreshedAt": "2026-10-18T09:55:39.286Z",
   "show": {
     "id": "theatre-royal-cats",
     "url": "https://glasgowtheatre.com/shows/theatre-royal-cats.html",
@@ -20,11 +20,68 @@
     "run": {
       "opens": "2026-12-08",
       "closes": "2026-12-27",
-      "time": null
+      "time": "19:30"
     },
     "schedule": null,
-    "performances": [],
-    "pricing": null,
+    "performances": [
+      {
+        "date": "2026-12-08",
+        "time": "19:30",
+        "price": 21
+      },
+      {
+        "date": "2026-12-09",
+        "time": "19:30",
+        "price": 21
+      },
+      {
+        "date": "2026-12-10",
+        "time": "14:30",
+        "price": 21
+      },
+      {
+        "date": "2026-12-10",
+        "time": "19:30",
+        "price": 21
+      },
+      {
+        "date": "2026-12-11",
+        "time": "19:30",
+        "price": 21
+      },
+      {
+        "date": "2026-12-12",
+        "time": "14:30",
+        "price": 47
+      },
+      {
+        "date": "2026-12-12",
+        "time": "19:30",
+        "price": 26
+      },
+      {
+        "date": "2026-12-13",
+        "time": "13:00",
+        "price": 42
+      },
+      {
+        "date": "2026-12-15",
+        "time": "19:30",
+        "price": 21
+      }
+    ],
+    "pricing": {
+      "currency": "GBP",
+      "from": 21,
+      "to": 47,
+      "concessionFrom": null,
+      "concessionTo": null,
+      "free": false,
+      "payWhatYouLike": false,
+      "text": null,
+      "source": "venue-feed",
+      "checkedAt": "2026-10-18"
+    },
     "accessibility": [
       "Captioned performances available",
       "Audio-described performances available",
@@ -37,6 +94,6 @@
       "credit": null
     },
     "bookingUrl": "https://www.atgtickets.com/shows/cats/theatre-royal-glasgow/calendar/",
-    "updatedAt": "2026-10-15"
+    "updatedAt": "2026-10-18"
   }
 }

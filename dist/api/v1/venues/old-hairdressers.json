@@ -1,11 +1,13 @@
 {
-  "apiVersion": "1",
-  "generatedAt": "2026-10-17T21:40:27.566Z",
-  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "apiVersion": "1.1",
+  "generatedAt": "2026-10-18T09:56:21.462Z",
+  "refreshedAt": "2026-10-18T09:55:39.286Z",
   "venue": {
     "id": "old-hairdressers",
     "name": "The Old Hairdressers",
     "area": "City Centre",
+    "colour": "#6d7c39",
+    "ink": "#ffffff",
     "description": "An independent bar and arts venue on Renfield Lane, hosting live music, exhibitions and experimental performance. Check the venue programme for upcoming events.",
     "website": "https://theoldhairdressers.com",
     "instagram": "theoldhairdressers",

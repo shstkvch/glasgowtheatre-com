@@ -1,0 +1,55 @@
+{
+  "apiVersion": "1.1",
+  "generatedAt": "2026-10-18T09:56:21.462Z",
+  "refreshedAt": "2026-10-18T09:55:39.286Z",
+  "show": {
+    "id": "pavilion-la-voix-live",
+    "url": "https://glasgowtheatre.com/shows/pavilion-la-voix-live.html",
+    "title": "La Voix Live",
+    "artForm": "cabaret",
+    "tags": [
+      "cabaret"
+    ],
+    "producer": null,
+    "description": "Fresh from dazzling millions on Strictly Come Dancing, La Voix is back – bigger, bolder and more fabulous than ever. Having waltzed her way into the nation's heart, she's gone on to conquer the UK, becoming the most recognisable redhead in Britain. Expect an evening of sensational live vocals...",
+    "venue": {
+      "id": "pavilion",
+      "name": "Pavilion Theatre",
+      "area": "City Centre"
+    },
+    "run": {
+      "opens": "2027-04-16",
+      "closes": "2027-04-16",
+      "time": "19:30"
+    },
+    "schedule": null,
+    "performances": [
+      {
+        "date": "2027-04-16",
+        "time": "19:30",
+        "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/other/la-voix-live-tickets"
+      }
+    ],
+    "pricing": {
+      "currency": "GBP",
+      "from": 35,
+      "to": null,
+      "concessionFrom": null,
+      "concessionTo": null,
+      "free": false,
+      "payWhatYouLike": false,
+      "text": null,
+      "source": "venue-feed",
+      "checkedAt": "2026-10-18"
+    },
+    "accessibility": null,
+    "durationMinutes": null,
+    "image": {
+      "url": "https://glasgowtheatre.com/images/148b3f15dc7f29d2eb58.webp",
+      "alt": "La Voix Live",
+      "credit": null
+    },
+    "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/other/la-voix-live-tickets",
+    "updatedAt": "2026-10-18"
+  }
+}

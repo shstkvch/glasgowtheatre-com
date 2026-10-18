@@ -1,7 +1,7 @@
 {
-  "apiVersion": "1",
-  "generatedAt": "2026-10-17T21:40:27.566Z",
-  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "apiVersion": "1.1",
+  "generatedAt": "2026-10-18T09:56:21.462Z",
+  "refreshedAt": "2026-10-18T09:55:39.286Z",
   "show": {
     "id": "oran-mor-badhbh-shith-and-the-storytellers",
     "url": "https://glasgowtheatre.com/shows/oran-mor-badhbh-shith-and-the-storytellers.html",
@@ -69,7 +69,7 @@
       "payWhatYouLike": false,
       "text": "Monday: £17\nTuesday-Friday: £19\nSaturday: £22.50",
       "source": "published-text",
-      "checkedAt": "2026-10-15"
+      "checkedAt": "2026-10-18"
     },
     "accessibility": null,
     "durationMinutes": null,
@@ -79,6 +79,6 @@
       "credit": null
     },
     "bookingUrl": "https://playpiepint.com/whats-on/event/badhbh-shith-and-the-storytellers/",
-    "updatedAt": "2026-10-15"
+    "updatedAt": "2026-10-18"
   }
 }

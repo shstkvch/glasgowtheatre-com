@@ -1,7 +1,7 @@
 {
-  "apiVersion": "1",
-  "generatedAt": "2026-10-17T21:40:27.566Z",
-  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "apiVersion": "1.1",
+  "generatedAt": "2026-10-18T09:56:21.462Z",
+  "refreshedAt": "2026-10-18T09:55:39.286Z",
   "show": {
     "id": "theatre-royal-shine-productions-present-titanic-the-musical",
     "url": "https://glasgowtheatre.com/shows/theatre-royal-shine-productions-present-titanic-the-musical.html",
@@ -20,11 +20,48 @@
     "run": {
       "opens": "2027-01-20",
       "closes": "2027-01-23",
-      "time": null
+      "time": "19:30"
     },
     "schedule": null,
-    "performances": [],
-    "pricing": null,
+    "performances": [
+      {
+        "date": "2027-01-20",
+        "time": "19:30",
+        "price": 20.73
+      },
+      {
+        "date": "2027-01-21",
+        "time": "19:30",
+        "price": 20.73
+      },
+      {
+        "date": "2027-01-22",
+        "time": "19:30",
+        "price": 20.73
+      },
+      {
+        "date": "2027-01-23",
+        "time": "14:30",
+        "price": 20.73
+      },
+      {
+        "date": "2027-01-23",
+        "time": "19:30",
+        "price": 20.73
+      }
+    ],
+    "pricing": {
+      "currency": "GBP",
+      "from": 20.73,
+      "to": null,
+      "concessionFrom": null,
+      "concessionTo": null,
+      "free": false,
+      "payWhatYouLike": false,
+      "text": null,
+      "source": "venue-feed",
+      "checkedAt": "2026-10-18"
+    },
     "accessibility": null,
     "durationMinutes": null,
     "image": {
@@ -33,6 +70,6 @@
       "credit": null
     },
     "bookingUrl": "https://www.atgtickets.com/shows/shine-productions-present-titanic-the-musical/theatre-royal-glasgow/calendar/",
-    "updatedAt": "2026-10-15"
+    "updatedAt": "2026-10-18"
   }
 }

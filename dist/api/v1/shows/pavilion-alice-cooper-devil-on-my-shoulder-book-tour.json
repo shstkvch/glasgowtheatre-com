@@ -1,7 +1,7 @@
 {
-  "apiVersion": "1",
-  "generatedAt": "2026-10-17T21:40:27.566Z",
-  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "apiVersion": "1.1",
+  "generatedAt": "2026-10-18T09:56:21.462Z",
+  "refreshedAt": "2026-10-18T09:55:39.286Z",
   "show": {
     "id": "pavilion-alice-cooper-devil-on-my-shoulder-book-tour",
     "url": "https://glasgowtheatre.com/shows/pavilion-alice-cooper-devil-on-my-shoulder-book-tour.html",
@@ -30,7 +30,18 @@
         "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/other/alice-cooper-devil-on-my-shoulder-book-tour-tickets"
       }
     ],
-    "pricing": null,
+    "pricing": {
+      "currency": "GBP",
+      "from": 59.5,
+      "to": null,
+      "concessionFrom": null,
+      "concessionTo": null,
+      "free": false,
+      "payWhatYouLike": false,
+      "text": null,
+      "source": "venue-feed",
+      "checkedAt": "2026-10-18"
+    },
     "accessibility": null,
     "durationMinutes": null,
     "image": {
@@ -39,6 +50,6 @@
       "credit": null
     },
     "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/other/alice-cooper-devil-on-my-shoulder-book-tour-tickets",
-    "updatedAt": "2026-10-15"
+    "updatedAt": "2026-10-18"
   }
 }

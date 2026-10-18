@@ -1,47 +1,67 @@
 {
-  "builtAt": "2026-10-17T21:40:27.565Z",
-  "refreshedAt": "2026-10-15T19:58:04.418Z",
-  "upcoming": 144,
+  "builtAt": "2026-10-18T09:56:21.462Z",
+  "refreshedAt": "2026-10-18T09:55:39.286Z",
+  "upcoming": 139,
   "venues": 12,
   "sources": {
-    "platform": 16,
-    "oran-mor": 6,
-    "old-hairdressers": 24,
+    "platform": 14,
+    "old-hairdressers": 23,
+    "tron": 11,
     "glad-cafe": 16,
-    "kings": 29,
-    "pavilion": 66,
-    "citizens": 22,
-    "tron": 12,
-    "tramway": 5,
-    "cottiers": 21,
-    "theatre-royal": 27,
+    "kings": 28,
+    "pavilion": 68,
+    "oran-mor": 5,
+    "cottiers": 20,
+    "citizens": 20,
+    "theatre-royal": 26,
+    "tramway": 4,
     "theatre-118": 2
   },
   "retainedVenues": [],
   "tagging": {
-    "at": "2026-10-15T20:00:50.732Z",
+    "at": "2026-10-18T09:55:39.562Z",
     "model": "deepseek/deepseek-v4-flash",
-    "listingsPending": 114,
-    "listingsTagged": 114,
-    "promptTokens": 19936,
-    "completionTokens": 3534,
-    "totalTokens": 23470,
-    "costUsd": 0.000753052832,
+    "listingsPending": 0,
+    "listingsTagged": 0,
+    "promptTokens": 0,
+    "completionTokens": 0,
+    "totalTokens": 0,
+    "costUsd": 0,
     "excluded": [
       {
-        "title": "Trash Cinema presents TALES FROM THE HOOD",
-        "venue": "The Old Hairdressers",
-        "reason": "Film screening, not live performance"
+        "title": "Music Space: Drum Lessons",
+        "venue": "Platform",
+        "reason": "Music lesson, not performance"
       },
       {
-        "title": "Martin Stephenson + Nicola Madill & Nicky Murray",
-        "venue": "The Glad Cafe",
-        "reason": "Concert by singer-songwriter"
+        "title": "Clack and Yak: Knitting Group",
+        "venue": "Platform",
+        "reason": "Craft group, not performance"
       },
       {
-        "title": "Tired of Waiting Weekender: Sophie Cotton Album Launch",
-        "venue": "The Glad Cafe",
-        "reason": "Album launch concert"
+        "title": "Art Factory",
+        "venue": "Platform",
+        "reason": "Art class, not performance"
+      },
+      {
+        "title": "Painting Club",
+        "venue": "Platform",
+        "reason": "Art class, not performance"
+      },
+      {
+        "title": "Nu Gen: Art Group for 11yrs +",
+        "venue": "Platform",
+        "reason": "Art class, not performance"
+      },
+      {
+        "title": "Music Classes: Platform Singers",
+        "venue": "Platform",
+        "reason": "Singing class, not performance"
+      },
+      {
+        "title": "Saturday Art Club",
+        "venue": "Platform",
+        "reason": "Art class, not performance"
       },
       {
         "title": "Guapo Venom presents JUST ANOTHER MIGRANT vol. 2",
@@ -52,6 +72,11 @@
         "title": "Felicity J Lord + P.G Tina + Harry Gorski-Brown",
         "venue": "The Glad Cafe",
         "reason": "Live music gig"
+      },
+      {
+        "title": "Fastlove: The Tribute To George Michael",
+        "venue": "Pavilion Theatre",
+        "reason": "Tribute band concert"
       },
       {
         "title": "Earth Tongue",
@@ -77,6 +102,11 @@
         "title": "Carrie Hope Fletcher",
         "venue": "Cottiers",
         "reason": "Concert tour by a singer."
+      },
+      {
+        "title": "STROOM NIGHT: Sergeant, Daisy Ray, Gichard",
+        "venue": "The Old Hairdressers",
+        "reason": "Band playing original music"
       },
       {
         "title": "Central Belters Karaoke: DIVAS",
@@ -119,6 +149,11 @@
         "reason": "Concert by singer-songwriter duo."
       },
       {
+        "title": "The Story of Guitar Heroes",
+        "venue": "Pavilion Theatre",
+        "reason": "Guitar anthems concert"
+      },
+      {
         "title": "GIOdynamics",
         "venue": "The Glad Cafe",
         "reason": "Improvised music session."
@@ -149,9 +184,24 @@
         "reason": "Film screening with live score."
       },
       {
+        "title": "Konradsen",
+        "venue": "The Glad Cafe",
+        "reason": "Concert by a pop duo"
+      },
+      {
         "title": "Circuit Des Yeux ft. Alan Sparhawk (of Low)",
         "venue": "Cottiers",
         "reason": "Film screening with live score."
+      },
+      {
+        "title": "Wendy Eisenberg + Jack Mellin",
+        "venue": "The Glad Cafe",
+        "reason": "Concert by a musician"
+      },
+      {
+        "title": "Francis Rossi",
+        "venue": "Pavilion Theatre",
+        "reason": "Singer-songwriter concert"
       },
       {
         "title": "Choir Party by Candlelight: The One Night Choir For Everybody!",
@@ -164,9 +214,19 @@
         "reason": "Gig with multiple bands."
       },
       {
+        "title": "Boyzlife - Featuring Keith Duffy & Brian McFadden + Support",
+        "venue": "Pavilion Theatre",
+        "reason": "Boyband tribute concert"
+      },
+      {
         "title": "Steven Lindsay",
         "venue": "Cottiers",
         "reason": "Likely a music performance."
+      },
+      {
+        "title": "Pop Mutations & Divided By Language presents: Maria BC plus special guests",
+        "venue": "The Old Hairdressers",
+        "reason": "Singer-songwriter concert"
       },
       {
         "title": "Hound Album Party",
@@ -174,9 +234,24 @@
         "reason": "Album release gig."
       },
       {
+        "title": "FHEADAIN",
+        "venue": "The Old Hairdressers",
+        "reason": "Likely a music gig, not theatre."
+      },
+      {
         "title": "Theo Bleak",
         "venue": "Cottiers",
         "reason": "Too thin to judge, treat as in scope."
+      },
+      {
+        "title": "Second Sunday Sipping Sounds",
+        "venue": "The Old Hairdressers",
+        "reason": "Ukulele residency gig"
+      },
+      {
+        "title": "Rosie Frater-Taylor (Up Close)",
+        "venue": "The Old Hairdressers",
+        "reason": "Concert by a singer-songwriter."
       },
       {
         "title": "Dom Martin band",
@@ -186,12 +261,37 @@
       {
         "title": "Matthew and the Atlas | Temple 10th Anniversary Tour",
         "venue": "Cottiers",
-        "reason": "Concert tour."
+        "reason": "Concert by a band"
+      },
+      {
+        "title": "Man In The Mirror - A Tribute To Michael Jackson",
+        "venue": "Pavilion Theatre",
+        "reason": "Tribute concert, not theatre."
       },
       {
         "title": "Pippa Blundell",
         "venue": "Cottiers",
-        "reason": "Singer-songwriter gig."
+        "reason": "Concert by a singer-songwriter"
+      },
+      {
+        "title": "Helen McCookerybook and Lorraine Lucas",
+        "venue": "The Old Hairdressers",
+        "reason": "Likely a music gig."
+      },
+      {
+        "title": "POP MUTATIONS x TINY CHANGES",
+        "venue": "The Old Hairdressers",
+        "reason": "Intimate music concert."
+      },
+      {
+        "title": "ABBA-Merry Christmas",
+        "venue": "Pavilion Theatre",
+        "reason": "Tribute concert, not theatre."
+      },
+      {
+        "title": "re-charge",
+        "venue": "The Old Hairdressers",
+        "reason": "Likely a gig or club night"
       },
       {
         "title": "Weird and Wired",
@@ -201,17 +301,22 @@
       {
         "title": "Bond, James Bond",
         "venue": "Cottiers",
-        "reason": "Concert of film themes by orchestra."
+        "reason": "Orchestra concert of film themes"
+      },
+      {
+        "title": "Paul Simon's Graceland: 40th Anniversary Celebration by the London African Gospel Choir",
+        "venue": "Pavilion Theatre",
+        "reason": "Tribute concert, not theatre"
       },
       {
         "title": "Richard Shindell",
         "venue": "Cottiers",
-        "reason": "Singer-songwriter concert."
+        "reason": "Concert by a singer-songwriter"
       },
       {
         "title": "Big Vern n the Shootahs Back to the Groove ’26",
         "venue": "Cottiers",
-        "reason": "Soul/funk band concert."
+        "reason": "Concert by a covers band"
       },
       {
         "title": "Posuposu Otani, Minimum Wage Immanence Unit, Dome Riders",
@@ -221,7 +326,7 @@
       {
         "title": "Dylan LeBlanc",
         "venue": "Cottiers",
-        "reason": "Singer-songwriter concert."
+        "reason": "Concert by a singer-songwriter"
       },
       {
         "title": "Renegade Communications presents Ian McNabb (The Icicle works)",
@@ -234,14 +339,49 @@
         "reason": "Album launch concert."
       },
       {
+        "title": "The Morning Early - Live (With Elgin And The Marbles)",
+        "venue": "The Old Hairdressers",
+        "reason": "Likely a gig"
+      },
+      {
         "title": "Pop Mutations & Freakender present: Tomorrow Syndicate",
         "venue": "The Old Hairdressers",
-        "reason": "Band concert."
+        "reason": "Concert by a band"
+      },
+      {
+        "title": "Gerard Love and Alex Rex",
+        "venue": "The Old Hairdressers",
+        "reason": "Concert by a rock/folk band."
+      },
+      {
+        "title": "The Magic of the Beatles",
+        "venue": "King's Theatre",
+        "reason": "Tribute concert"
+      },
+      {
+        "title": "Celtic Legends Live",
+        "venue": "King's Theatre",
+        "reason": "Sports talk event"
+      },
+      {
+        "title": "Let The Music Play: THE LEGEND OF BARRY WHITE",
+        "venue": "Pavilion Theatre",
+        "reason": "Tribute concert"
+      },
+      {
+        "title": "Celtic Connections 2027 Proudly Presents The Milk Carton Kids And Vera Sola",
+        "venue": "Pavilion Theatre",
+        "reason": "Concert by singer-songwriters"
+      },
+      {
+        "title": "Nashville Live",
+        "venue": "Pavilion Theatre",
+        "reason": "Tribute band concert"
       },
       {
         "title": "Celtic Connections 2027 Proudly Presents Solas and Isla Callister",
         "venue": "Pavilion Theatre",
-        "reason": "Irish traditional band concert"
+        "reason": "Irish traditional band concert."
       },
       {
         "title": "Celtic Connections 2027 Proudly Presents Sierra Hull with The Brudi Brothers",
@@ -251,12 +391,57 @@
       {
         "title": "Celtic Connections 2027 Proudly Presents Ralph McTell with Special Guests: From Here To Clare",
         "venue": "Pavilion Theatre",
-        "reason": "Concert by a folk musician"
+        "reason": "Singer-songwriter concert."
+      },
+      {
+        "title": "Go Your Own Way - The Fleetwood Mac Legacy",
+        "venue": "King's Theatre",
+        "reason": "Tribute band concert"
+      },
+      {
+        "title": "A Night at the Musicals",
+        "venue": "King's Theatre",
+        "reason": "Concert of musical songs"
+      },
+      {
+        "title": "80s Live",
+        "venue": "Pavilion Theatre",
+        "reason": "Tribute band concert"
+      },
+      {
+        "title": "The Big Pants Party",
+        "venue": "King's Theatre",
+        "reason": "Concert of pop songs"
+      },
+      {
+        "title": "The Ultimate Classic Rock Show",
+        "venue": "Pavilion Theatre",
+        "reason": "Tribute band concert"
       },
       {
         "title": "The Rocket Man - A Tribute to Sir Elton John",
         "venue": "King's Theatre",
         "reason": "Tribute band concert"
+      },
+      {
+        "title": "Defying Gravity - West End Women",
+        "venue": "Pavilion Theatre",
+        "reason": "Concert of musical songs"
+      },
+      {
+        "title": "Talon - The Best Of Eagles: Busy Being Fabulous",
+        "venue": "Pavilion Theatre",
+        "reason": "Tribute band concert"
+      },
+      {
+        "title": "Uptown Funk",
+        "venue": "Pavilion Theatre",
+        "reason": "Tribute band concert"
+      },
+      {
+        "title": "Pop Mutations & Freakender present: Black Doldrums",
+        "venue": "The Old Hairdressers",
+        "reason": "Band concert"
       },
       {
         "title": "Queen by Candlelight",
@@ -296,7 +481,7 @@
       {
         "title": "RY X",
         "venue": "Pavilion Theatre",
-        "reason": "Singer-songwriter concert"
+        "reason": "Singer-songwriter concert."
       },
       {
         "title": "Björn Again",
@@ -311,20 +496,20 @@
       {
         "title": "The Beatles' Rubber Soul - Live with Jumbo Gibson",
         "venue": "The Old Hairdressers",
-        "reason": "Band playing Beatles songs."
+        "reason": "Band playing Beatles album live."
       }
     ],
     "fellBack": []
   },
   "tickets": {
-    "at": "2026-10-15T20:00:00.323Z",
+    "at": "2026-10-18T09:55:39.439Z",
     "model": "deepseek/deepseek-v4-flash",
-    "listingsRead": 66,
-    "listingsWithWording": 88,
-    "promptTokens": 15763,
-    "completionTokens": 5571,
-    "totalTokens": 21334,
-    "costUsd": 0.000984939032,
+    "listingsRead": 0,
+    "listingsWithWording": 89,
+    "promptTokens": 0,
+    "completionTokens": 0,
+    "totalTokens": 0,
+    "costUsd": 0,
     "failed": false
   }
 }

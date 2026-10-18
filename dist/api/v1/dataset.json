@@ -1,432 +1,30 @@
 {
-  "apiVersion": "1",
-  "generatedAt": "2026-10-17T21:40:27.566Z",
-  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "apiVersion": "1.1",
+  "generatedAt": "2026-10-18T09:56:21.462Z",
+  "refreshedAt": "2026-10-18T09:55:39.286Z",
   "site": "https://glasgowtheatre.com",
   "counts": {
-    "shows": 144,
+    "shows": 139,
     "venues": 14,
     "venuesWithShows": 12,
     "artForms": {
-      "spoken-word": 6,
-      "play": 31,
-      "musical": 17,
-      "dance": 9,
-      "tour": 4,
       "talk": 17,
-      "stand-up": 24,
+      "stand-up": 26,
+      "play": 27,
+      "spoken-word": 6,
+      "musical": 17,
       "opera": 4,
       "community-event": 2,
+      "dance": 7,
       "physical-theatre": 5,
-      "cabaret": 6,
+      "cabaret": 7,
       "pantomime": 8,
       "workshop": 2,
-      "music": 9
+      "music": 9,
+      "tour": 2
     }
   },
   "shows": [
-    {
-      "id": "oran-mor-bottoms-dream",
-      "url": "https://glasgowtheatre.com/shows/oran-mor-bottoms-dream.html",
-      "title": "Bottom's Dream",
-      "artForm": "spoken-word",
-      "tags": [
-        "spoken-word",
-        "lunchtime",
-        "a-play-a-pie-a-pint"
-      ],
-      "producer": null,
-      "description": "“Ah hud a maist rare vision Ah hud a dream. Ah’ll write a ballad ae this dream: it sal be cried Bottom’s Dream. Because it disnae huv a bottom.” Blending the text of A Midsummer Night’s Dream with original Scots-language poetry, this new spoken word performance by Martin O’Connor (Through the...",
-      "venue": {
-        "id": "oran-mor",
-        "name": "A Play, a Pie and a Pint",
-        "area": "West End"
-      },
-      "run": {
-        "opens": "2026-10-12",
-        "closes": "2026-10-17",
-        "time": "13:00"
-      },
-      "schedule": {
-        "text": "Monday – Saturday 1pm\n(Doors 12pm/12.30pm on Mondays)"
-      },
-      "performances": [
-        {
-          "date": "2026-10-12",
-          "time": "13:00",
-          "price": 15.5
-        },
-        {
-          "date": "2026-10-13",
-          "time": "13:00",
-          "price": 17.5
-        },
-        {
-          "date": "2026-10-14",
-          "time": "13:00",
-          "price": 17.5
-        },
-        {
-          "date": "2026-10-15",
-          "time": "13:00",
-          "price": 17.5
-        },
-        {
-          "date": "2026-10-16",
-          "time": "13:00",
-          "price": 17.5
-        },
-        {
-          "date": "2026-10-17",
-          "time": "13:00",
-          "price": 21
-        }
-      ],
-      "pricing": {
-        "currency": "GBP",
-        "from": 15.5,
-        "to": 21,
-        "concessionFrom": null,
-        "concessionTo": null,
-        "free": false,
-        "payWhatYouLike": false,
-        "text": "Monday: £15.50\nTuesday-Friday: £17.50\nSaturday: £21.00",
-        "source": "published-text",
-        "checkedAt": "2026-10-15"
-      },
-      "accessibility": null,
-      "durationMinutes": null,
-      "image": {
-        "url": "https://glasgowtheatre.com/images/6f771d478109092c7c0c.webp",
-        "alt": "Bottom's Dream",
-        "credit": null
-      },
-      "bookingUrl": "https://playpiepint.com/whats-on/event/bottoms-dream/",
-      "updatedAt": "2026-10-15"
-    },
-    {
-      "id": "kings-dirty-dancing",
-      "url": "https://glasgowtheatre.com/shows/kings-dirty-dancing.html",
-      "title": "Dirty Dancing",
-      "artForm": "play",
-      "tags": [
-        "play"
-      ],
-      "producer": null,
-      "description": "Dirty Dancing returns to Glasgow as part of a UK and Irish tour. Exploding with heart-pounding music, breath-taking emotion and sensationally sexy dancing.",
-      "venue": {
-        "id": "kings",
-        "name": "King's Theatre",
-        "area": "City Centre"
-      },
-      "run": {
-        "opens": "2026-10-15",
-        "closes": "2026-10-17",
-        "time": null
-      },
-      "schedule": null,
-      "performances": [],
-      "pricing": null,
-      "accessibility": null,
-      "durationMinutes": null,
-      "image": {
-        "url": "https://glasgowtheatre.com/images/e56a42636d3c37878de5.webp",
-        "alt": "Dirty Dancing",
-        "credit": null
-      },
-      "bookingUrl": "https://www.atgtickets.com/shows/dirty-dancing/kings-theatre-glasgow/calendar/",
-      "updatedAt": "2026-10-15"
-    },
-    {
-      "id": "pavilion-rollers-forever",
-      "url": "https://glasgowtheatre.com/shows/pavilion-rollers-forever.html",
-      "title": "Rollers Forever",
-      "artForm": "musical",
-      "tags": [
-        "musical"
-      ],
-      "producer": null,
-      "description": "Back by Huge Public Demand! Rollers Forever is the smash-hit tartan-clad musical celebrating the music, memories and passionate fandom of the Bay City Rollers. This warm and funny story follows two lifelong friends who reconnect on a Saturday night and are pulled back into the excitement...",
-      "venue": {
-        "id": "pavilion",
-        "name": "Pavilion Theatre",
-        "area": "City Centre"
-      },
-      "run": {
-        "opens": "2026-10-15",
-        "closes": "2026-10-17",
-        "time": "14:30"
-      },
-      "schedule": null,
-      "performances": [
-        {
-          "date": "2026-10-15",
-          "time": "14:30",
-          "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/musical/rollers-forever-tickets"
-        }
-      ],
-      "pricing": null,
-      "accessibility": null,
-      "durationMinutes": null,
-      "image": {
-        "url": "https://glasgowtheatre.com/images/9ad85e51c73035590816.webp",
-        "alt": "Rollers Forever",
-        "credit": null
-      },
-      "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/musical/rollers-forever-tickets",
-      "updatedAt": "2026-10-15"
-    },
-    {
-      "id": "citizens-east-is-east",
-      "url": "https://glasgowtheatre.com/shows/citizens-east-is-east.html",
-      "title": "East is East",
-      "artForm": "play",
-      "tags": [
-        "play"
-      ],
-      "producer": null,
-      "description": "Family can hold you together and tear you apart. Salford, 1971. The Khan family are living above a chip shop and on the fault line between two cultures. George Khan is determined the family is raised his Pakistani way. His English wife, Ella, just wants to keep the peace. Their seven children...",
-      "venue": {
-        "id": "citizens",
-        "name": "Citizens Theatre",
-        "area": "Gorbals"
-      },
-      "run": {
-        "opens": "2026-10-16",
-        "closes": "2026-10-17",
-        "time": "19:30"
-      },
-      "schedule": null,
-      "performances": [
-        {
-          "date": "2026-10-16",
-          "time": "19:30",
-          "bookingUrl": "https://citz.co.uk/whats-on/east-is-east/book/74603"
-        },
-        {
-          "date": "2026-10-17",
-          "time": "14:00",
-          "bookingUrl": "https://citz.co.uk/whats-on/east-is-east/book/74403"
-        },
-        {
-          "date": "2026-10-17",
-          "time": "19:30",
-          "bookingUrl": "https://citz.co.uk/whats-on/east-is-east/book/74604"
-        }
-      ],
-      "pricing": {
-        "currency": "GBP",
-        "from": 18.5,
-        "to": 43.5,
-        "concessionFrom": null,
-        "concessionTo": null,
-        "free": false,
-        "payWhatYouLike": false,
-        "text": "£18.50 - £43.50",
-        "source": "published-text",
-        "checkedAt": "2026-10-15"
-      },
-      "accessibility": null,
-      "durationMinutes": 145,
-      "image": {
-        "url": "https://glasgowtheatre.com/images/abff3d4a98c4b2a4e958.webp",
-        "alt": "East is East",
-        "credit": null
-      },
-      "bookingUrl": "https://citz.co.uk/whats-on/east-is-east/",
-      "updatedAt": "2026-10-15"
-    },
-    {
-      "id": "tron-it-walks-around-the-house-at-night",
-      "url": "https://glasgowtheatre.com/shows/tron-it-walks-around-the-house-at-night.html",
-      "title": "It Walks Around The House At Night",
-      "artForm": "play",
-      "tags": [
-        "play"
-      ],
-      "producer": null,
-      "description": "Recommended Age Guide 14+ Unsettling, darkly comic and full of surprises, the stage is set… for terror. When an out-of-work actor takes a job playing a ghost at an old countryside manor, he expects nothing more than a few cheap scares. But as night after night unfolds, the role begins … Continued",
-      "venue": {
-        "id": "tron",
-        "name": "Tron Theatre",
-        "area": "Merchant City"
-      },
-      "run": {
-        "opens": "2026-10-16",
-        "closes": "2026-10-17",
-        "time": "19:30"
-      },
-      "schedule": null,
-      "performances": [
-        {
-          "date": "2026-10-16",
-          "time": "19:30",
-          "bookingUrl": "https://www.tron.co.uk/book-online/560591AMGRCBLDKQTGVVGMTMNRJLQRGQG"
-        },
-        {
-          "date": "2026-10-17",
-          "time": "14:30"
-        },
-        {
-          "date": "2026-10-17",
-          "time": "19:30"
-        }
-      ],
-      "pricing": {
-        "currency": "GBP",
-        "from": 19,
-        "to": 26,
-        "concessionFrom": null,
-        "concessionTo": null,
-        "free": false,
-        "payWhatYouLike": false,
-        "text": "£19, £23 or £26",
-        "source": "published-text",
-        "checkedAt": "2026-10-15"
-      },
-      "accessibility": null,
-      "durationMinutes": 90,
-      "image": {
-        "url": "https://glasgowtheatre.com/images/bb31b4dbdd4e2d0f3eef.webp",
-        "alt": "It Walks Around The House At Night",
-        "credit": null
-      },
-      "bookingUrl": "https://www.tron.co.uk/shows/it-walks-around-the-house-at-night/",
-      "updatedAt": "2026-10-15"
-    },
-    {
-      "id": "citizens-these-are-our-neighbours",
-      "url": "https://glasgowtheatre.com/shows/citizens-these-are-our-neighbours.html",
-      "title": "These Are Our Neighbours",
-      "artForm": "dance",
-      "tags": [
-        "dance"
-      ],
-      "producer": null,
-      "description": "There’s a van on your street. It says IMMIGRATION ENFORCEMENT on the side. It’s here for your neighbours. What do you do? Fusing documentary with celebratory dance theatre, These Are Our Neighbours revisits the attempted raid on Kenmure Street in 2021 that became an eight-hour act of shared...",
-      "venue": {
-        "id": "citizens",
-        "name": "Citizens Theatre",
-        "area": "Gorbals"
-      },
-      "run": {
-        "opens": "2026-10-16",
-        "closes": "2026-10-17",
-        "time": "19:45"
-      },
-      "schedule": null,
-      "performances": [
-        {
-          "date": "2026-10-16",
-          "time": "19:45"
-        },
-        {
-          "date": "2026-10-17",
-          "time": "14:30"
-        },
-        {
-          "date": "2026-10-17",
-          "time": "19:45"
-        }
-      ],
-      "pricing": {
-        "currency": "GBP",
-        "from": 17.5,
-        "to": null,
-        "concessionFrom": null,
-        "concessionTo": null,
-        "free": false,
-        "payWhatYouLike": false,
-        "text": "£17.50",
-        "source": "published-text",
-        "checkedAt": "2026-10-15"
-      },
-      "accessibility": null,
-      "durationMinutes": 70,
-      "image": {
-        "url": "https://glasgowtheatre.com/images/6a4ae5c15a01d1ea1b2f.webp",
-        "alt": "These Are Our Neighbours",
-        "credit": null
-      },
-      "bookingUrl": "https://citz.co.uk/whats-on/these-are-our-neighbours/",
-      "updatedAt": "2026-10-15"
-    },
-    {
-      "id": "thrice-2026",
-      "url": "https://glasgowtheatre.com/shows/thrice-2026.html",
-      "title": "Thrice",
-      "artForm": "dance",
-      "tags": [
-        "dance"
-      ],
-      "producer": "Al Seed Productions",
-      "description": "Al Seed Productions' visual and physical theatre response to Macbeth. Nine women, three trios, standing in the aftermath of the play and taking the words of soldiers and tyrants into their own mouths.",
-      "venue": {
-        "id": "tramway",
-        "name": "Tramway",
-        "area": "Pollokshields"
-      },
-      "run": {
-        "opens": "2026-10-16",
-        "closes": "2026-10-17",
-        "time": "19:30"
-      },
-      "schedule": null,
-      "performances": [
-        {
-          "date": "2026-10-16",
-          "time": "19:30"
-        },
-        {
-          "date": "2026-10-17",
-          "time": "19:30",
-          "accessibility": "BSL interpreted by Lisa Li"
-        }
-      ],
-      "pricing": null,
-      "accessibility": "Sat 17 Oct, 7.30pm · BSL interpreted by Lisa Li",
-      "durationMinutes": null,
-      "image": {
-        "url": "https://glasgowtheatre.com/images/thrice.webp",
-        "alt": "The Thrice ensemble gathered together on a dark, reflective stage.",
-        "credit": "Alberto Santos Bellido"
-      },
-      "bookingUrl": "https://www.tramway.org/event/328af962-85b1-4a39-9f3a-b43900ec12d2/",
-      "updatedAt": "2026-09-09"
-    },
-    {
-      "id": "kings-building-and-heritage-tours",
-      "url": "https://glasgowtheatre.com/shows/kings-building-and-heritage-tours.html",
-      "title": "Building And Heritage Tours",
-      "artForm": "tour",
-      "tags": [
-        "tour"
-      ],
-      "producer": null,
-      "description": "Book now for the Building and Heritage Tours at the King’s Theatre!",
-      "venue": {
-        "id": "kings",
-        "name": "King's Theatre",
-        "area": "City Centre"
-      },
-      "run": {
-        "opens": "2026-10-17",
-        "closes": "2026-10-17",
-        "time": null
-      },
-      "schedule": null,
-      "performances": [],
-      "pricing": null,
-      "accessibility": null,
-      "durationMinutes": null,
-      "image": {
-        "url": "https://glasgowtheatre.com/images/89ab4443fb4a39464e0d.webp",
-        "alt": "Building And Heritage Tours",
-        "credit": null
-      },
-      "bookingUrl": "https://www.atgtickets.com/shows/building-and-heritage-tours/kings-theatre-glasgow/calendar/",
-      "updatedAt": "2026-10-15"
-    },
     {
       "id": "pavilion-an-audience-with-christian-horner",
       "url": "https://glasgowtheatre.com/shows/pavilion-an-audience-with-christian-horner.html",
@@ -455,7 +53,18 @@
           "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/other/an-audience-with-christian-horner-tickets"
         }
       ],
-      "pricing": null,
+      "pricing": {
+        "currency": "GBP",
+        "from": 53.25,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
       "durationMinutes": null,
       "image": {
@@ -464,7 +73,7 @@
         "credit": null
       },
       "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/other/an-audience-with-christian-horner-tickets",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "kings-kyle-maclachlan-fictional-selves",
@@ -484,20 +93,37 @@
       "run": {
         "opens": "2026-10-18",
         "closes": "2026-10-18",
-        "time": null
+        "time": "19:30"
       },
       "schedule": null,
-      "performances": [],
-      "pricing": null,
+      "performances": [
+        {
+          "date": "2026-10-18",
+          "time": "19:30",
+          "price": 165.48
+        }
+      ],
+      "pricing": {
+        "currency": "GBP",
+        "from": 165.48,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
-      "durationMinutes": null,
+      "durationMinutes": 110,
       "image": {
         "url": "https://glasgowtheatre.com/images/62b8361aae2c9e16eb27.webp",
         "alt": "Kyle MacLachlan – Fictional Selves",
         "credit": null
       },
       "bookingUrl": "https://www.atgtickets.com/shows/kyle-maclachlan-fictional-selves/kings-theatre-glasgow/calendar/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "tron-the-big-comedy-roadshow",
@@ -508,7 +134,7 @@
         "stand-up"
       ],
       "producer": null,
-      "description": "Recommended Age Guide 16+ A rip-roaring night of the very best live stand‑up comedy starring the TV names you know and love alongside some of the hottest up‑and‑coming talent. Breakout social media star Jack Skipper is the October headliner, with an impressive 19 million likes on TikTok under his...",
+      "description": "Recommended Age Guide 16+ A rip-roaring night of the very best live stand‑up comedy starring the TV names you know and love alongside some of the hottest up‑and‑coming talent. Breakout social media star Jack Skipper is our October headliner, with an impressive 19 million likes on Tik Tok under his...",
       "venue": {
         "id": "tron",
         "name": "Tron Theatre",
@@ -537,50 +163,17 @@
         "payWhatYouLike": false,
         "text": "£23.50, £25 or £26.50",
         "source": "published-text",
-        "checkedAt": "2026-10-15"
+        "checkedAt": "2026-10-18"
       },
       "accessibility": null,
       "durationMinutes": 120,
       "image": {
-        "url": "https://glasgowtheatre.com/images/504ffb1c8f2fe5650da3.webp",
+        "url": "https://glasgowtheatre.com/images/5e466a0f03e04c114b02.webp",
         "alt": "The Big Comedy Roadshow",
         "credit": null
       },
       "bookingUrl": "https://www.tron.co.uk/shows/the-big-comedy-roadshow-3/",
-      "updatedAt": "2026-10-15"
-    },
-    {
-      "id": "cottiers-turn-a-different-corner",
-      "url": "https://glasgowtheatre.com/shows/cottiers-turn-a-different-corner.html",
-      "title": "Turn a different corner",
-      "artForm": "play",
-      "tags": [
-        "play"
-      ],
-      "producer": null,
-      "description": "At 17, Charlie Murphy thought community service at a Glasgow homeless drop-in centre would be easy. Just kill time and get out. He didn’t expect the people he would meet there. A veteran broken by Basra. A grandmother too ashamed to face her grandchildren. A young woman fighting her way back from...",
-      "venue": {
-        "id": "cottiers",
-        "name": "Cottiers",
-        "area": "Hyndland"
-      },
-      "run": {
-        "opens": "2026-10-18",
-        "closes": "2026-10-18",
-        "time": null
-      },
-      "schedule": null,
-      "performances": [],
-      "pricing": null,
-      "accessibility": null,
-      "durationMinutes": null,
-      "image": {
-        "url": "https://glasgowtheatre.com/images/543a8062b6241ff63eae.webp",
-        "alt": "Turn a different corner",
-        "credit": null
-      },
-      "bookingUrl": "https://cottiers.com/event/turn-a-different-corner/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "pavilion-alice-cooper-devil-on-my-shoulder-book-tour",
@@ -610,7 +203,18 @@
           "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/other/alice-cooper-devil-on-my-shoulder-book-tour-tickets"
         }
       ],
-      "pricing": null,
+      "pricing": {
+        "currency": "GBP",
+        "from": 59.5,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
       "durationMinutes": null,
       "image": {
@@ -619,7 +223,7 @@
         "credit": null
       },
       "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/other/alice-cooper-devil-on-my-shoulder-book-tour-tickets",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "oran-mor-lune",
@@ -688,7 +292,7 @@
         "payWhatYouLike": false,
         "text": "Monday: £17\nTuesday-Friday: £19\nSaturday: £22.50",
         "source": "published-text",
-        "checkedAt": "2026-10-15"
+        "checkedAt": "2026-10-18"
       },
       "accessibility": null,
       "durationMinutes": null,
@@ -698,7 +302,7 @@
         "credit": null
       },
       "bookingUrl": "https://playpiepint.com/whats-on/event/lune/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "cottiers-the-seven-witches-of-torryburn",
@@ -739,7 +343,7 @@
         "payWhatYouLike": false,
         "text": "Standard Price : £17.00",
         "source": "published-text",
-        "checkedAt": "2026-10-15"
+        "checkedAt": "2026-10-18"
       },
       "accessibility": null,
       "durationMinutes": null,
@@ -749,7 +353,7 @@
         "credit": null
       },
       "bookingUrl": "https://cottiers.com/event/7-witches-of-torryburn/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "pavilion-dr-john-cooper-clarke",
@@ -779,7 +383,18 @@
           "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/other/dr-john-cooper-clarke-tickets"
         }
       ],
-      "pricing": null,
+      "pricing": {
+        "currency": "GBP",
+        "from": 36,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
       "durationMinutes": null,
       "image": {
@@ -788,7 +403,7 @@
         "credit": null
       },
       "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/other/dr-john-cooper-clarke-tickets",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "kings-gloc-presents-42nd-street",
@@ -808,11 +423,53 @@
       "run": {
         "opens": "2026-10-21",
         "closes": "2026-10-24",
-        "time": null
+        "time": "19:30"
       },
       "schedule": null,
-      "performances": [],
-      "pricing": null,
+      "performances": [
+        {
+          "date": "2026-10-21",
+          "time": "19:30",
+          "price": 33.06
+        },
+        {
+          "date": "2026-10-22",
+          "time": "14:30",
+          "price": 33.06
+        },
+        {
+          "date": "2026-10-22",
+          "time": "19:30",
+          "price": 33.06
+        },
+        {
+          "date": "2026-10-23",
+          "time": "19:30",
+          "price": 34.2
+        },
+        {
+          "date": "2026-10-24",
+          "time": "14:30",
+          "price": 34.2
+        },
+        {
+          "date": "2026-10-24",
+          "time": "19:30",
+          "price": 34.2
+        }
+      ],
+      "pricing": {
+        "currency": "GBP",
+        "from": 33.06,
+        "to": 34.2,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
       "durationMinutes": null,
       "image": {
@@ -821,7 +478,7 @@
         "credit": null
       },
       "bookingUrl": "https://www.atgtickets.com/shows/gloc-presents-42nd-street/kings-theatre-glasgow/calendar/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "citizens-the-prime-of-miss-jean-brodie",
@@ -880,7 +537,7 @@
         "payWhatYouLike": false,
         "text": "£14.50 - £43.50",
         "source": "published-text",
-        "checkedAt": "2026-10-15"
+        "checkedAt": "2026-10-18"
       },
       "accessibility": null,
       "durationMinutes": 180,
@@ -890,7 +547,7 @@
         "credit": null
       },
       "bookingUrl": "https://citz.co.uk/whats-on/the-prime-of-miss-jean-brodie/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "pavilion-the-scottish-comedians",
@@ -920,7 +577,18 @@
           "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/comedy/the-scottish-comedians-tickets"
         }
       ],
-      "pricing": null,
+      "pricing": {
+        "currency": "GBP",
+        "from": 37,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
       "durationMinutes": null,
       "image": {
@@ -929,7 +597,7 @@
         "credit": null
       },
       "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/comedy/the-scottish-comedians-tickets",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "pavilion-its-not-where-you-start-by-scott-kyle",
@@ -959,7 +627,18 @@
           "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/other/its-not-where-you-start-a-spoken-word-experience-by-scott-kyle-tickets"
         }
       ],
-      "pricing": null,
+      "pricing": {
+        "currency": "GBP",
+        "from": 31.5,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
       "durationMinutes": null,
       "image": {
@@ -968,7 +647,7 @@
         "credit": null
       },
       "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/other/its-not-where-you-start-a-spoken-word-experience-by-scott-kyle-tickets",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "theatre-royal-scottish-opera-turandot",
@@ -988,22 +667,64 @@
       "run": {
         "opens": "2026-10-22",
         "closes": "2026-11-07",
-        "time": null
+        "time": "19:15"
       },
       "schedule": null,
-      "performances": [],
-      "pricing": null,
+      "performances": [
+        {
+          "date": "2026-10-22",
+          "time": "19:15",
+          "price": 24
+        },
+        {
+          "date": "2026-10-25",
+          "time": "15:00",
+          "price": 24
+        },
+        {
+          "date": "2026-10-28",
+          "time": "19:15",
+          "price": 24
+        },
+        {
+          "date": "2026-10-31",
+          "time": "19:15",
+          "price": 24
+        },
+        {
+          "date": "2026-11-04",
+          "time": "19:15",
+          "price": 24
+        },
+        {
+          "date": "2026-11-07",
+          "time": "19:15",
+          "price": 24
+        }
+      ],
+      "pricing": {
+        "currency": "GBP",
+        "from": 24,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": [
         "Audio-described performances available"
       ],
-      "durationMinutes": null,
+      "durationMinutes": 170,
       "image": {
         "url": "https://glasgowtheatre.com/images/6d2f939a352e9b2cd895.webp",
         "alt": "Scottish Opera - Turandot",
         "credit": null
       },
       "bookingUrl": "https://www.atgtickets.com/shows/scottish-opera-turandot/theatre-royal-glasgow/calendar/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "tron-thanks-for-being-here",
@@ -1048,7 +769,7 @@
         "payWhatYouLike": false,
         "text": "£19, £23 or £26",
         "source": "published-text",
-        "checkedAt": "2026-10-15"
+        "checkedAt": "2026-10-18"
       },
       "accessibility": null,
       "durationMinutes": 75,
@@ -1058,7 +779,7 @@
         "credit": null
       },
       "bookingUrl": "https://www.tron.co.uk/shows/thanks-for-being-here/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "pavilion-billy-tim-the-widescreen-edition",
@@ -1088,7 +809,18 @@
           "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/play/billy-tim-the-widescreen-edition-tickets"
         }
       ],
-      "pricing": null,
+      "pricing": {
+        "currency": "GBP",
+        "from": 36.5,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
       "durationMinutes": null,
       "image": {
@@ -1097,7 +829,7 @@
         "credit": null
       },
       "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/play/billy-tim-the-widescreen-edition-tickets",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "platform-made-in-easterhouse-2026",
@@ -1138,7 +870,7 @@
         "payWhatYouLike": false,
         "text": "£9.50 (standard) | £6 (concession) | £5",
         "source": "published-text",
-        "checkedAt": "2026-10-15"
+        "checkedAt": "2026-10-18"
       },
       "accessibility": null,
       "durationMinutes": null,
@@ -1148,7 +880,7 @@
         "credit": null
       },
       "bookingUrl": "https://www.platform-online.co.uk/index.php/whats-on/event/1238",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "citizens-revel",
@@ -1182,7 +914,7 @@
         "payWhatYouLike": false,
         "text": "£17.50",
         "source": "published-text",
-        "checkedAt": "2026-10-15"
+        "checkedAt": "2026-10-18"
       },
       "accessibility": null,
       "durationMinutes": 55,
@@ -1192,7 +924,7 @@
         "credit": null
       },
       "bookingUrl": "https://citz.co.uk/whats-on/revel/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "tron-in-tronversation-with-johnny-mcknight",
@@ -1223,8 +955,7 @@
         },
         {
           "date": "2026-10-24",
-          "time": "19:30",
-          "bookingUrl": "https://www.tron.co.uk/book-online/561592AMTNNHSDLPVTGJJKRVRQVBNTRGG"
+          "time": "19:30"
         }
       ],
       "pricing": {
@@ -1237,7 +968,7 @@
         "payWhatYouLike": false,
         "text": "£25",
         "source": "published-text",
-        "checkedAt": "2026-10-15"
+        "checkedAt": "2026-10-18"
       },
       "accessibility": null,
       "durationMinutes": 90,
@@ -1247,7 +978,7 @@
         "credit": null
       },
       "bookingUrl": "https://www.tron.co.uk/shows/in-tronversation-with-johnny-mcknight/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "platform-starcatchers-play-day",
@@ -1288,7 +1019,7 @@
         "payWhatYouLike": false,
         "text": "£5 | £3",
         "source": "published-text",
-        "checkedAt": "2026-10-15"
+        "checkedAt": "2026-10-18"
       },
       "accessibility": null,
       "durationMinutes": null,
@@ -1298,7 +1029,7 @@
         "credit": null
       },
       "bookingUrl": "https://www.platform-online.co.uk/index.php/whats-on/event/1239",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "pavilion-chris-ramsey-here-man",
@@ -1328,7 +1059,18 @@
           "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/comedy/chris-ramsey-here-man-tickets"
         }
       ],
-      "pricing": null,
+      "pricing": {
+        "currency": "GBP",
+        "from": 37,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
       "durationMinutes": null,
       "image": {
@@ -1337,42 +1079,7 @@
         "credit": null
       },
       "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/comedy/chris-ramsey-here-man-tickets",
-      "updatedAt": "2026-10-15"
-    },
-    {
-      "id": "theatre-royal-scottish-opera-turandot-touch-tour",
-      "url": "https://glasgowtheatre.com/shows/theatre-royal-scottish-opera-turandot-touch-tour.html",
-      "title": "Scottish Opera - Turandot - Touch Tour",
-      "artForm": "tour",
-      "tags": [
-        "tour"
-      ],
-      "producer": null,
-      "description": "Our free touch tours provide an opportunity to become more familiar with the set, scenery, props and costumes. This aims to help audience members living with sight loss to immerse themselves in the world presented on stage, with audio describers, stage management and wardrobe staff present to...",
-      "venue": {
-        "id": "theatre-royal",
-        "name": "Theatre Royal",
-        "area": "City Centre"
-      },
-      "run": {
-        "opens": "2026-10-25",
-        "closes": "2026-10-25",
-        "time": null
-      },
-      "schedule": null,
-      "performances": [],
-      "pricing": null,
-      "accessibility": [
-        "Audio-described performances available"
-      ],
-      "durationMinutes": null,
-      "image": {
-        "url": "https://glasgowtheatre.com/images/37fb870bfff7f3e969e5.webp",
-        "alt": "Scottish Opera - Turandot - Touch Tour",
-        "credit": null
-      },
-      "bookingUrl": "https://www.atgtickets.com/shows/scottish-opera-turandot-touch-tour/theatre-royal-glasgow/calendar/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "cottiers-witch-hunt",
@@ -1413,7 +1120,7 @@
         "payWhatYouLike": false,
         "text": "Standard Price : £20.00",
         "source": "published-text",
-        "checkedAt": "2026-10-15"
+        "checkedAt": "2026-10-18"
       },
       "accessibility": null,
       "durationMinutes": null,
@@ -1423,7 +1130,7 @@
         "credit": null
       },
       "bookingUrl": "https://cottiers.com/event/witch-hunt/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "oran-mor-badhbh-shith-and-the-storytellers",
@@ -1492,7 +1199,7 @@
         "payWhatYouLike": false,
         "text": "Monday: £17\nTuesday-Friday: £19\nSaturday: £22.50",
         "source": "published-text",
-        "checkedAt": "2026-10-15"
+        "checkedAt": "2026-10-18"
       },
       "accessibility": null,
       "durationMinutes": null,
@@ -1502,7 +1209,7 @@
         "credit": null
       },
       "bookingUrl": "https://playpiepint.com/whats-on/event/badhbh-shith-and-the-storytellers/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "pavilion-dr-richard-shepherd-time-of-death-more-unnatural-ca",
@@ -1532,7 +1239,18 @@
           "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/other/dr-richard-shepherd-time-of-death-more-unnatural-causes-tickets"
         }
       ],
-      "pricing": null,
+      "pricing": {
+        "currency": "GBP",
+        "from": 36,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
       "durationMinutes": null,
       "image": {
@@ -1541,7 +1259,7 @@
         "credit": null
       },
       "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/other/dr-richard-shepherd-time-of-death-more-unnatural-causes-tickets",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "kings-matthew-bournes-the-car-man",
@@ -1561,22 +1279,69 @@
       "run": {
         "opens": "2026-10-27",
         "closes": "2026-10-31",
-        "time": null
+        "time": "19:30"
       },
       "schedule": null,
-      "performances": [],
-      "pricing": null,
+      "performances": [
+        {
+          "date": "2026-10-27",
+          "time": "19:30",
+          "price": 48
+        },
+        {
+          "date": "2026-10-28",
+          "time": "19:30",
+          "price": 43.68
+        },
+        {
+          "date": "2026-10-29",
+          "time": "14:30",
+          "price": 48
+        },
+        {
+          "date": "2026-10-29",
+          "time": "19:30",
+          "price": 48
+        },
+        {
+          "date": "2026-10-30",
+          "time": "19:30",
+          "price": 44.72
+        },
+        {
+          "date": "2026-10-31",
+          "time": "14:30",
+          "price": 36
+        },
+        {
+          "date": "2026-10-31",
+          "time": "19:30",
+          "price": 43.16
+        }
+      ],
+      "pricing": {
+        "currency": "GBP",
+        "from": 36,
+        "to": 48,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": [
         "Audio-described performances available"
       ],
-      "durationMinutes": null,
+      "durationMinutes": 120,
       "image": {
         "url": "https://glasgowtheatre.com/images/53c30ff9a5b0263ff1ed.webp",
         "alt": "Matthew Bourne's The Car Man",
         "credit": null
       },
       "bookingUrl": "https://www.atgtickets.com/shows/matthew-bournes-the-car-man/kings-theatre-glasgow/calendar/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "citizens-othello",
@@ -1681,7 +1446,7 @@
         "payWhatYouLike": false,
         "text": "£18.50 - £43.50",
         "source": "published-text",
-        "checkedAt": "2026-10-15"
+        "checkedAt": "2026-10-18"
       },
       "accessibility": null,
       "durationMinutes": 170,
@@ -1691,7 +1456,7 @@
         "credit": null
       },
       "bookingUrl": "https://citz.co.uk/whats-on/othello/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "pavilion-the-blindboy-podcast-live",
@@ -1721,7 +1486,18 @@
           "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/other/the-blindboy-podcast-live-tickets"
         }
       ],
-      "pricing": null,
+      "pricing": {
+        "currency": "GBP",
+        "from": 36,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
       "durationMinutes": null,
       "image": {
@@ -1730,7 +1506,7 @@
         "credit": null
       },
       "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/other/the-blindboy-podcast-live-tickets",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "pavilion-hen-night-horror",
@@ -1760,7 +1536,18 @@
           "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/play/hen-night-horror-tickets"
         }
       ],
-      "pricing": null,
+      "pricing": {
+        "currency": "GBP",
+        "from": 19.5,
+        "to": 24.5,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
       "durationMinutes": null,
       "image": {
@@ -1769,7 +1556,7 @@
         "credit": null
       },
       "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/play/hen-night-horror-tickets",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "citizens-talking-heritage-the-forgotten-story-of-spectacular",
@@ -1803,7 +1590,7 @@
         "payWhatYouLike": false,
         "text": "£8",
         "source": "published-text",
-        "checkedAt": "2026-10-15"
+        "checkedAt": "2026-10-18"
       },
       "accessibility": null,
       "durationMinutes": 90,
@@ -1813,7 +1600,7 @@
         "credit": null
       },
       "bookingUrl": "https://citz.co.uk/whats-on/talking-heritage-the-forgotten-story-of-spectacular-theatre-with-jamie-harrison/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "tron-women-on-the-edge-of-democracy",
@@ -1853,7 +1640,7 @@
         "payWhatYouLike": false,
         "text": "Free but Ticketed",
         "source": "published-text",
-        "checkedAt": "2026-10-15"
+        "checkedAt": "2026-10-18"
       },
       "accessibility": null,
       "durationMinutes": 90,
@@ -1863,7 +1650,7 @@
         "credit": null
       },
       "bookingUrl": "https://www.tron.co.uk/shows/women-on-the-edge-of-democracy/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "tramway-cade-macaskill-with-yas-clarke-tim-spooner-now-not-n",
@@ -1899,7 +1686,7 @@
         "payWhatYouLike": false,
         "text": "£18/£12 concession",
         "source": "published-text",
-        "checkedAt": "2026-10-15"
+        "checkedAt": "2026-10-18"
       },
       "accessibility": null,
       "durationMinutes": null,
@@ -1909,7 +1696,7 @@
         "credit": null
       },
       "bookingUrl": "https://www.tramway.org/event/b3780c07-1d30-4fde-b247-b42b00a44124/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "citizens-i-ll-scratch-yours",
@@ -1943,7 +1730,7 @@
         "payWhatYouLike": false,
         "text": "£13",
         "source": "published-text",
-        "checkedAt": "2026-10-15"
+        "checkedAt": "2026-10-18"
       },
       "accessibility": null,
       "durationMinutes": 105,
@@ -1953,7 +1740,7 @@
         "credit": null
       },
       "bookingUrl": "https://citz.co.uk/whats-on/ill-scratch-yours/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "glad-cafe-phantasmagasm-spooky-elvis-special",
@@ -1992,7 +1779,7 @@
         "payWhatYouLike": false,
         "text": "Tickets £12 full price / £8 concession / £17 Music scene super hero",
         "source": "published-text",
-        "checkedAt": "2026-10-15"
+        "checkedAt": "2026-10-18"
       },
       "accessibility": null,
       "durationMinutes": null,
@@ -2002,7 +1789,7 @@
         "credit": null
       },
       "bookingUrl": "https://www.thegladcafe.co.uk/events/2026-10-31-phantasmagasm-spooky-elvis-special-the-glad-cafe",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "citizens-queer-folks-tales-oct-2026",
@@ -2036,7 +1823,7 @@
         "payWhatYouLike": false,
         "text": "£13",
         "source": "published-text",
-        "checkedAt": "2026-10-15"
+        "checkedAt": "2026-10-18"
       },
       "accessibility": null,
       "durationMinutes": 120,
@@ -2046,7 +1833,7 @@
         "credit": null
       },
       "bookingUrl": "https://citz.co.uk/whats-on/queer-folks-tales-oct-26/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "theatre-royal-scottish-opera-turandot-pre-show-talk",
@@ -2066,20 +1853,37 @@
       "run": {
         "opens": "2026-10-31",
         "closes": "2026-10-31",
-        "time": null
+        "time": "18:00"
       },
       "schedule": null,
-      "performances": [],
-      "pricing": null,
+      "performances": [
+        {
+          "date": "2026-10-31",
+          "time": "18:00",
+          "price": 0
+        }
+      ],
+      "pricing": {
+        "currency": "GBP",
+        "from": 0,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": true,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
-      "durationMinutes": null,
+      "durationMinutes": 30,
       "image": {
         "url": "https://glasgowtheatre.com/images/6d2f939a352e9b2cd895.webp",
         "alt": "Scottish Opera - Turandot Pre Show Talk",
         "credit": null
       },
       "bookingUrl": "https://www.atgtickets.com/shows/scottish-opera-turandot-pre-show-talk/theatre-royal-glasgow/calendar/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "kings-adam-rowe-fashionism",
@@ -2099,11 +1903,28 @@
       "run": {
         "opens": "2026-11-01",
         "closes": "2026-11-01",
-        "time": null
+        "time": "19:30"
       },
       "schedule": null,
-      "performances": [],
-      "pricing": null,
+      "performances": [
+        {
+          "date": "2026-11-01",
+          "time": "19:30",
+          "price": 31
+        }
+      ],
+      "pricing": {
+        "currency": "GBP",
+        "from": 31,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
       "durationMinutes": null,
       "image": {
@@ -2112,7 +1933,7 @@
         "credit": null
       },
       "bookingUrl": "https://www.atgtickets.com/shows/adam-rowe-fashionism/kings-theatre-glasgow/calendar/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "pavilion-fin-taylor-the-pre-emptive-comeback-special",
@@ -2142,7 +1963,18 @@
           "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/comedy/fin-taylor-the-pre-emptive-comeback-special-tickets"
         }
       ],
-      "pricing": null,
+      "pricing": {
+        "currency": "GBP",
+        "from": 28.5,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
       "durationMinutes": null,
       "image": {
@@ -2151,7 +1983,7 @@
         "credit": null
       },
       "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/comedy/fin-taylor-the-pre-emptive-comeback-special-tickets",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "old-hairdressers-harp-and-carp-doom-creeps-in",
@@ -2177,10 +2009,22 @@
       "performances": [
         {
           "date": "2026-11-01",
-          "time": "19:00"
+          "time": "19:00",
+          "bookingUrl": "https://www.eventbrite.co.uk/e/harp-and-carp-doom-creeps-in-tickets-1998953966123"
         }
       ],
-      "pricing": null,
+      "pricing": {
+        "currency": "GBP",
+        "from": 8,
+        "to": 12,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
       "durationMinutes": null,
       "image": {
@@ -2189,7 +2033,56 @@
         "credit": null
       },
       "bookingUrl": "https://www.eventbrite.co.uk/e/harp-and-carp-doom-creeps-in-tickets-1998953966123?aff=oddtdtcreator",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
+    },
+    {
+      "id": "glad-cafe-the-winged-and-the-wicked-stories-from-the-south-o",
+      "url": "https://glasgowtheatre.com/shows/glad-cafe-the-winged-and-the-wicked-stories-from-the-south-o.html",
+      "title": "The Winged and the Wicked: Stories from the South of Chile",
+      "artForm": "spoken-word",
+      "tags": [
+        "spoken-word"
+      ],
+      "producer": null,
+      "description": "Trinidad Cabezón Droguett and Sam Gamero, accompanied by musician Giulia Drummond, explore the beastly myths and sorcery of Chile’s Chiloé Archipelago. The stories unearth the secrets of the Recta Provincia, a historical clandestine society of sorcerers, the magical realm of creatures coexisting...",
+      "venue": {
+        "id": "glad-cafe",
+        "name": "The Glad Cafe",
+        "area": "Shawlands"
+      },
+      "run": {
+        "opens": "2026-11-01",
+        "closes": "2026-11-01",
+        "time": "12:00"
+      },
+      "schedule": null,
+      "performances": [
+        {
+          "date": "2026-11-01",
+          "time": "12:00"
+        }
+      ],
+      "pricing": {
+        "currency": "GBP",
+        "from": 10,
+        "to": null,
+        "concessionFrom": 8,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": "Tickets £10 in advance / £8 concession",
+        "source": "published-text",
+        "checkedAt": "2026-10-18"
+      },
+      "accessibility": null,
+      "durationMinutes": null,
+      "image": {
+        "url": "https://glasgowtheatre.com/images/df36b30d61c4086e229d.webp",
+        "alt": "The Winged and the Wicked: Stories from the South of Chile",
+        "credit": null
+      },
+      "bookingUrl": "https://www.thegladcafe.co.uk/events/2026-11-01-the-winged-and-the-wicked-stories-from-the-south-of-chile-the-glad-cafe",
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "pavilion-chris-packhams-world-of-wonder-a-planet-on-the-edge",
@@ -2219,7 +2112,18 @@
           "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/other/chris-packhams-world-of-wonder-a-planet-on-the-edge-tickets"
         }
       ],
-      "pricing": null,
+      "pricing": {
+        "currency": "GBP",
+        "from": 36.49,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
       "durationMinutes": null,
       "image": {
@@ -2228,7 +2132,7 @@
         "credit": null
       },
       "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/other/chris-packhams-world-of-wonder-a-planet-on-the-edge-tickets",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "kings-tony-ropers-the-steamie",
@@ -2248,11 +2152,68 @@
       "run": {
         "opens": "2026-11-02",
         "closes": "2026-11-14",
-        "time": null
+        "time": "19:30"
       },
       "schedule": null,
-      "performances": [],
-      "pricing": null,
+      "performances": [
+        {
+          "date": "2026-11-02",
+          "time": "19:30",
+          "price": 17.68
+        },
+        {
+          "date": "2026-11-03",
+          "time": "19:30",
+          "price": 17.68
+        },
+        {
+          "date": "2026-11-04",
+          "time": "19:30",
+          "price": 17.68
+        },
+        {
+          "date": "2026-11-05",
+          "time": "14:30",
+          "price": 17.68
+        },
+        {
+          "date": "2026-11-05",
+          "time": "19:30",
+          "price": 17.68
+        },
+        {
+          "date": "2026-11-06",
+          "time": "19:30",
+          "price": 20.28
+        },
+        {
+          "date": "2026-11-07",
+          "time": "14:30",
+          "price": 20.28
+        },
+        {
+          "date": "2026-11-07",
+          "time": "19:30",
+          "price": 20.28
+        },
+        {
+          "date": "2026-11-09",
+          "time": "19:30",
+          "price": 17.68
+        }
+      ],
+      "pricing": {
+        "currency": "GBP",
+        "from": 17.68,
+        "to": 20.28,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
       "durationMinutes": null,
       "image": {
@@ -2261,7 +2222,7 @@
         "credit": null
       },
       "bookingUrl": "https://www.atgtickets.com/shows/tony-ropers-the-steamie/kings-theatre-glasgow/calendar/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "oran-mor-zamboni",
@@ -2330,7 +2291,7 @@
         "payWhatYouLike": false,
         "text": "Monday: £17\nTuesday-Friday: £19\nSaturday: £22.50",
         "source": "published-text",
-        "checkedAt": "2026-10-15"
+        "checkedAt": "2026-10-18"
       },
       "accessibility": null,
       "durationMinutes": null,
@@ -2340,7 +2301,7 @@
         "credit": null
       },
       "bookingUrl": "https://playpiepint.com/whats-on/event/zamboni/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "pavilion-w-nkernomics",
@@ -2370,7 +2331,18 @@
           "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/comedy/wnkernomics-tickets"
         }
       ],
-      "pricing": null,
+      "pricing": {
+        "currency": "GBP",
+        "from": 39,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
       "durationMinutes": null,
       "image": {
@@ -2379,7 +2351,7 @@
         "credit": null
       },
       "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/comedy/wnkernomics-tickets",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "citizens-do-not-pass-go",
@@ -2434,7 +2406,7 @@
         "payWhatYouLike": false,
         "text": "£17.50",
         "source": "published-text",
-        "checkedAt": "2026-10-15"
+        "checkedAt": "2026-10-18"
       },
       "accessibility": null,
       "durationMinutes": null,
@@ -2444,7 +2416,7 @@
         "credit": null
       },
       "bookingUrl": "https://citz.co.uk/whats-on/do-not-pass-go/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "pavilion-jonathan-pie",
@@ -2474,7 +2446,18 @@
           "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/comedy/jonathan-pie-tickets"
         }
       ],
-      "pricing": null,
+      "pricing": {
+        "currency": "GBP",
+        "from": 26,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
       "durationMinutes": null,
       "image": {
@@ -2483,7 +2466,7 @@
         "credit": null
       },
       "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/comedy/jonathan-pie-tickets",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "pavilion-stuart-mitchells-patter-at-the-pavilion",
@@ -2513,7 +2496,18 @@
           "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/comedy/stuart-mitchells-patter-at-the-pavilion-tickets"
         }
       ],
-      "pricing": null,
+      "pricing": {
+        "currency": "GBP",
+        "from": 34.5,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
       "durationMinutes": null,
       "image": {
@@ -2522,7 +2516,7 @@
         "credit": null
       },
       "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/comedy/stuart-mitchells-patter-at-the-pavilion-tickets",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "oran-mor-making-way",
@@ -2591,7 +2585,7 @@
         "payWhatYouLike": false,
         "text": "Monday: £17\nTuesday-Friday: £19\nSaturday: £22.50",
         "source": "published-text",
-        "checkedAt": "2026-10-15"
+        "checkedAt": "2026-10-18"
       },
       "accessibility": null,
       "durationMinutes": null,
@@ -2601,7 +2595,7 @@
         "credit": null
       },
       "bookingUrl": "https://playpiepint.com/whats-on/event/making-way/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "pavilion-uncovering-ancient-egypt-with-bettany-hughes",
@@ -2631,7 +2625,18 @@
           "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/other/uncovering-ancient-egypt-with-bettany-hughes-tickets"
         }
       ],
-      "pricing": null,
+      "pricing": {
+        "currency": "GBP",
+        "from": 33.5,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
       "durationMinutes": null,
       "image": {
@@ -2640,7 +2645,7 @@
         "credit": null
       },
       "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/other/uncovering-ancient-egypt-with-bettany-hughes-tickets",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "pavilion-flo-and-joan-with-feeling",
@@ -2670,7 +2675,18 @@
           "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/comedy/flo-and-joan-with-feeling-tickets"
         }
       ],
-      "pricing": null,
+      "pricing": {
+        "currency": "GBP",
+        "from": 34.5,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
       "durationMinutes": null,
       "image": {
@@ -2679,7 +2695,7 @@
         "credit": null
       },
       "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/comedy/flo-and-joan-with-feeling-tickets",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "theatre-royal-operation-mincemeat-a-new-musical",
@@ -2699,20 +2715,77 @@
       "run": {
         "opens": "2026-11-10",
         "closes": "2027-07-10",
-        "time": null
+        "time": "19:30"
       },
       "schedule": null,
-      "performances": [],
-      "pricing": null,
+      "performances": [
+        {
+          "date": "2026-11-10",
+          "time": "19:30",
+          "price": 56.16
+        },
+        {
+          "date": "2026-11-11",
+          "time": "14:30",
+          "price": 56.16
+        },
+        {
+          "date": "2026-11-11",
+          "time": "19:30",
+          "price": 40.56
+        },
+        {
+          "date": "2026-11-12",
+          "time": "14:30",
+          "price": 56.16
+        },
+        {
+          "date": "2026-11-12",
+          "time": "19:30",
+          "price": 56.16
+        },
+        {
+          "date": "2026-11-13",
+          "time": "19:30",
+          "price": 40.56
+        },
+        {
+          "date": "2026-11-14",
+          "time": "14:30",
+          "price": 57.2
+        },
+        {
+          "date": "2026-11-14",
+          "time": "19:30",
+          "price": 40.56
+        },
+        {
+          "date": "2027-07-06",
+          "time": "19:30",
+          "price": 20
+        }
+      ],
+      "pricing": {
+        "currency": "GBP",
+        "from": 20,
+        "to": 57.2,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
-      "durationMinutes": null,
+      "durationMinutes": 137,
       "image": {
         "url": "https://glasgowtheatre.com/images/6627e84f915c2d690d99.webp",
         "alt": "Operation Mincemeat: A New Musical",
         "credit": null
       },
       "bookingUrl": "https://www.atgtickets.com/shows/operation-mincemeat-a-new-musical/theatre-royal-glasgow/calendar/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "cottiers-peking-opera-in-glasgow",
@@ -2723,7 +2796,7 @@
         "opera"
       ],
       "producer": null,
-      "description": "Peking Opera in Glasgow brings Chinese opera into the city through live performance, voice, movement and gesture. Audiences can experience its distinctive performance language up close and see how stories and emotions are communicated beyond words. The event creates a meeting point between Chinese...",
+      "description": "Peking Opera in Glasgow brings Chinese opera into the city through live performance, voice, movement and gesture. Audiences can experience its distinctive performance language up close and see how stories and emotions are communicated beyond words. The event creates a meeting point between...",
       "venue": {
         "id": "cottiers",
         "name": "Cottiers",
@@ -2743,7 +2816,18 @@
           "time": "19:00"
         }
       ],
-      "pricing": null,
+      "pricing": {
+        "currency": "GBP",
+        "from": 0,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": true,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
       "durationMinutes": null,
       "image": {
@@ -2752,7 +2836,7 @@
         "credit": null
       },
       "bookingUrl": "https://cottiers.com/event/peking-opera-in-glasgow/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "citizens-an-t-rlar-as-irde-the-highest-stage",
@@ -2786,7 +2870,7 @@
         "payWhatYouLike": false,
         "text": "£17.50",
         "source": "published-text",
-        "checkedAt": "2026-10-15"
+        "checkedAt": "2026-10-18"
       },
       "accessibility": null,
       "durationMinutes": 105,
@@ -2796,7 +2880,7 @@
         "credit": null
       },
       "bookingUrl": "https://citz.co.uk/whats-on/an-t-urlar-as-airde/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "pavilion-susan-calman-tall-tales",
@@ -2826,7 +2910,18 @@
           "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/comedy/susan-calman-tall-tales-tickets"
         }
       ],
-      "pricing": null,
+      "pricing": {
+        "currency": "GBP",
+        "from": 35,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
       "durationMinutes": null,
       "image": {
@@ -2835,7 +2930,7 @@
         "credit": null
       },
       "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/comedy/susan-calman-tall-tales-tickets",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "pavilion-jason-byrne-30-years-byrning",
@@ -2865,7 +2960,18 @@
           "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/comedy/jason-byrne-30-years-byrning-tickets"
         }
       ],
-      "pricing": null,
+      "pricing": {
+        "currency": "GBP",
+        "from": 37,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
       "durationMinutes": null,
       "image": {
@@ -2874,7 +2980,7 @@
         "credit": null
       },
       "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/comedy/jason-byrne-30-years-byrning-tickets",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "theatre-royal-phil-wang-uh-oh",
@@ -2894,20 +3000,37 @@
       "run": {
         "opens": "2026-11-15",
         "closes": "2026-11-15",
-        "time": null
+        "time": "19:30"
       },
       "schedule": null,
-      "performances": [],
-      "pricing": null,
+      "performances": [
+        {
+          "date": "2026-11-15",
+          "time": "19:30",
+          "price": 31
+        }
+      ],
+      "pricing": {
+        "currency": "GBP",
+        "from": 31,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
-      "durationMinutes": null,
+      "durationMinutes": 110,
       "image": {
         "url": "https://glasgowtheatre.com/images/41c6d8ba63eb3531b621.webp",
         "alt": "Phil Wang: UH OH",
         "credit": null
       },
       "bookingUrl": "https://www.atgtickets.com/shows/phil-wang-uh-oh/theatre-royal-glasgow/calendar/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "oran-mor-dead-husbands-club",
@@ -2976,7 +3099,7 @@
         "payWhatYouLike": false,
         "text": "Monday: £15.50\nTuesday-Friday: £17.50\nSaturday: £21.00",
         "source": "published-text",
-        "checkedAt": "2026-10-15"
+        "checkedAt": "2026-10-18"
       },
       "accessibility": null,
       "durationMinutes": null,
@@ -2986,7 +3109,7 @@
         "credit": null
       },
       "bookingUrl": "https://playpiepint.com/whats-on/event/dead-husbands-club/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "theatre-118-working-it-out-october-2026",
@@ -3026,7 +3149,7 @@
         "payWhatYouLike": true,
         "text": null,
         "source": "venue-feed",
-        "checkedAt": "2026-10-15"
+        "checkedAt": "2026-10-18"
       },
       "accessibility": null,
       "durationMinutes": 75,
@@ -3036,7 +3159,7 @@
         "credit": null
       },
       "bookingUrl": "https://theatre118.com/whats-on/working-it-out",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "theatre-royal-matilda-the-musical",
@@ -3056,24 +3179,81 @@
       "run": {
         "opens": "2026-11-18",
         "closes": "2026-12-05",
-        "time": null
+        "time": "19:30"
       },
       "schedule": null,
-      "performances": [],
-      "pricing": null,
+      "performances": [
+        {
+          "date": "2026-11-18",
+          "time": "19:30",
+          "price": 32
+        },
+        {
+          "date": "2026-11-19",
+          "time": "14:30",
+          "price": 32
+        },
+        {
+          "date": "2026-11-19",
+          "time": "19:30",
+          "price": 20
+        },
+        {
+          "date": "2026-11-20",
+          "time": "19:30",
+          "price": 45
+        },
+        {
+          "date": "2026-11-21",
+          "time": "14:30",
+          "price": 55
+        },
+        {
+          "date": "2026-11-21",
+          "time": "19:30",
+          "price": 55
+        },
+        {
+          "date": "2026-11-22",
+          "time": "14:30",
+          "price": 65
+        },
+        {
+          "date": "2026-11-24",
+          "time": "19:30",
+          "price": 46
+        },
+        {
+          "date": "2026-11-25",
+          "time": "14:30",
+          "price": 32
+        }
+      ],
+      "pricing": {
+        "currency": "GBP",
+        "from": 20,
+        "to": 65,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": [
         "Captioned performances available",
         "Audio-described performances available",
         "BSL-interpreted performances available"
       ],
-      "durationMinutes": null,
+      "durationMinutes": 155,
       "image": {
         "url": "https://glasgowtheatre.com/images/12603bd62ae24984881d.webp",
         "alt": "Matilda The Musical",
         "credit": null
       },
       "bookingUrl": "https://www.atgtickets.com/shows/matilda-the-musical/theatre-royal-glasgow/calendar/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "tron-the-snaw-queen",
@@ -3436,7 +3616,7 @@
         "payWhatYouLike": false,
         "text": "Previews 18th Nov - 20th Nov: £19 | 21st Nov - 20th Dec: £21, £26, or £29.50 | 22nd Dec - 31st Dec: £23, £28, or £32",
         "source": "published-text",
-        "checkedAt": "2026-10-15"
+        "checkedAt": "2026-10-18"
       },
       "accessibility": null,
       "durationMinutes": null,
@@ -3446,7 +3626,7 @@
         "credit": null
       },
       "bookingUrl": "https://www.tron.co.uk/shows/the-snaw-queen/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "kings-aladdin-pantomime",
@@ -3466,11 +3646,68 @@
       "run": {
         "opens": "2026-11-21",
         "closes": "2027-01-03",
-        "time": null
+        "time": "19:00"
       },
       "schedule": null,
-      "performances": [],
-      "pricing": null,
+      "performances": [
+        {
+          "date": "2026-11-21",
+          "time": "14:00",
+          "price": 15
+        },
+        {
+          "date": "2026-11-21",
+          "time": "19:00",
+          "price": 15
+        },
+        {
+          "date": "2026-11-22",
+          "time": "13:00",
+          "price": 15
+        },
+        {
+          "date": "2026-11-22",
+          "time": "17:00",
+          "price": 15
+        },
+        {
+          "date": "2026-11-24",
+          "time": "19:00",
+          "price": 15
+        },
+        {
+          "date": "2026-11-25",
+          "time": "19:00",
+          "price": 15
+        },
+        {
+          "date": "2026-11-26",
+          "time": "13:00",
+          "price": 15
+        },
+        {
+          "date": "2026-11-26",
+          "time": "19:00",
+          "price": 15
+        },
+        {
+          "date": "2026-11-27",
+          "time": "19:00",
+          "price": 15
+        }
+      ],
+      "pricing": {
+        "currency": "GBP",
+        "from": 15,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": [
         "Captioned performances available",
         "BSL-interpreted performances available",
@@ -3483,7 +3720,7 @@
         "credit": null
       },
       "bookingUrl": "https://www.atgtickets.com/shows/aladdin-pantomime/kings-theatre-glasgow/calendar/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "pavilion-goldilocks-and-the-three-bonnie-bears",
@@ -3513,7 +3750,18 @@
           "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/pantomime/goldilocks-and-the-three-bonnie-bears-tickets"
         }
       ],
-      "pricing": null,
+      "pricing": {
+        "currency": "GBP",
+        "from": 23,
+        "to": 36,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
       "durationMinutes": null,
       "image": {
@@ -3522,7 +3770,7 @@
         "credit": null
       },
       "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/pantomime/goldilocks-and-the-three-bonnie-bears-tickets",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "citizens-cinderella",
@@ -3769,7 +4017,7 @@
         "payWhatYouLike": false,
         "text": "Adult £12.50 - £43.50, Child £9.25 - £22",
         "source": "published-text",
-        "checkedAt": "2026-10-15"
+        "checkedAt": "2026-10-18"
       },
       "accessibility": null,
       "durationMinutes": 120,
@@ -3779,7 +4027,7 @@
         "credit": null
       },
       "bookingUrl": "https://citz.co.uk/whats-on/cinderella/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "tramway-hanna-tuulikki-deer-dancer",
@@ -3820,7 +4068,7 @@
         "payWhatYouLike": false,
         "text": "£18/£12 concession",
         "source": "published-text",
-        "checkedAt": "2026-10-15"
+        "checkedAt": "2026-10-18"
       },
       "accessibility": null,
       "durationMinutes": null,
@@ -3830,7 +4078,7 @@
         "credit": null
       },
       "bookingUrl": "https://www.tramway.org/event/0cf77209-337f-4dd1-b232-b48d00ffe565/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "theatre-royal-ice-dragon",
@@ -3850,20 +4098,77 @@
       "run": {
         "opens": "2026-11-30",
         "closes": "2026-12-06",
-        "time": null
+        "time": "10:00"
       },
       "schedule": null,
-      "performances": [],
-      "pricing": null,
+      "performances": [
+        {
+          "date": "2026-11-30",
+          "time": "10:00",
+          "price": 12
+        },
+        {
+          "date": "2026-11-30",
+          "time": "11:30",
+          "price": 12
+        },
+        {
+          "date": "2026-12-01",
+          "time": "10:00",
+          "price": 12
+        },
+        {
+          "date": "2026-12-01",
+          "time": "11:30",
+          "price": 12
+        },
+        {
+          "date": "2026-12-02",
+          "time": "10:00",
+          "price": 12
+        },
+        {
+          "date": "2026-12-02",
+          "time": "11:30",
+          "price": 12
+        },
+        {
+          "date": "2026-12-03",
+          "time": "10:00",
+          "price": 12
+        },
+        {
+          "date": "2026-12-03",
+          "time": "11:30",
+          "price": 12
+        },
+        {
+          "date": "2026-12-04",
+          "time": "10:00",
+          "price": 12
+        }
+      ],
+      "pricing": {
+        "currency": "GBP",
+        "from": 12,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
-      "durationMinutes": null,
+      "durationMinutes": 45,
       "image": {
         "url": "https://glasgowtheatre.com/images/113cfc81e2cde6731711.webp",
         "alt": "Ice Dragon",
         "credit": null
       },
       "bookingUrl": "https://www.atgtickets.com/shows/ice-dragon/theatre-royal-glasgow/calendar/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "platform-christmas-show-hansel-gretel",
@@ -3899,7 +4204,7 @@
         "payWhatYouLike": false,
         "text": "£10.50 (standard) | £7 (concession) | £6",
         "source": "published-text",
-        "checkedAt": "2026-10-15"
+        "checkedAt": "2026-10-18"
       },
       "accessibility": null,
       "durationMinutes": null,
@@ -3909,7 +4214,7 @@
         "credit": null
       },
       "bookingUrl": "https://www.platform-online.co.uk/index.php/whats-on/event/1233",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "tramway-hayley-earlam-brrr",
@@ -3943,7 +4248,7 @@
         "payWhatYouLike": false,
         "text": "£8 (Child With Up to Two Adults), £6 for an additional child",
         "source": "published-text",
-        "checkedAt": "2026-10-15"
+        "checkedAt": "2026-10-18"
       },
       "accessibility": null,
       "durationMinutes": null,
@@ -3953,7 +4258,7 @@
         "credit": null
       },
       "bookingUrl": "https://www.tramway.org/event/1bc72e46-4474-4e57-9332-b4b4009c421d/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "theatre-royal-atg-inspire-academy-juniors",
@@ -3973,11 +4278,28 @@
       "run": {
         "opens": "2026-12-08",
         "closes": "2026-12-08",
-        "time": null
+        "time": "17:00"
       },
       "schedule": null,
-      "performances": [],
-      "pricing": null,
+      "performances": [
+        {
+          "date": "2026-12-08",
+          "time": "17:00",
+          "price": 110
+        }
+      ],
+      "pricing": {
+        "currency": "GBP",
+        "from": 110,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
       "durationMinutes": null,
       "image": {
@@ -3986,7 +4308,7 @@
         "credit": null
       },
       "bookingUrl": "https://www.atgtickets.com/shows/atg-inspire-academy-juniors/theatre-royal-glasgow/calendar/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "theatre-royal-atg-inspire-academy-seniors",
@@ -4006,11 +4328,28 @@
       "run": {
         "opens": "2026-12-08",
         "closes": "2026-12-08",
-        "time": null
+        "time": "18:00"
       },
       "schedule": null,
-      "performances": [],
-      "pricing": null,
+      "performances": [
+        {
+          "date": "2026-12-08",
+          "time": "18:00",
+          "price": 130
+        }
+      ],
+      "pricing": {
+        "currency": "GBP",
+        "from": 130,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
       "durationMinutes": null,
       "image": {
@@ -4019,7 +4358,7 @@
         "credit": null
       },
       "bookingUrl": "https://www.atgtickets.com/shows/atg-inspire-academy-seniors/theatre-royal-glasgow/calendar/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "theatre-royal-cats",
@@ -4039,11 +4378,68 @@
       "run": {
         "opens": "2026-12-08",
         "closes": "2026-12-27",
-        "time": null
+        "time": "19:30"
       },
       "schedule": null,
-      "performances": [],
-      "pricing": null,
+      "performances": [
+        {
+          "date": "2026-12-08",
+          "time": "19:30",
+          "price": 21
+        },
+        {
+          "date": "2026-12-09",
+          "time": "19:30",
+          "price": 21
+        },
+        {
+          "date": "2026-12-10",
+          "time": "14:30",
+          "price": 21
+        },
+        {
+          "date": "2026-12-10",
+          "time": "19:30",
+          "price": 21
+        },
+        {
+          "date": "2026-12-11",
+          "time": "19:30",
+          "price": 21
+        },
+        {
+          "date": "2026-12-12",
+          "time": "14:30",
+          "price": 47
+        },
+        {
+          "date": "2026-12-12",
+          "time": "19:30",
+          "price": 26
+        },
+        {
+          "date": "2026-12-13",
+          "time": "13:00",
+          "price": 42
+        },
+        {
+          "date": "2026-12-15",
+          "time": "19:30",
+          "price": 21
+        }
+      ],
+      "pricing": {
+        "currency": "GBP",
+        "from": 21,
+        "to": 47,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": [
         "Captioned performances available",
         "Audio-described performances available",
@@ -4056,7 +4452,7 @@
         "credit": null
       },
       "bookingUrl": "https://www.atgtickets.com/shows/cats/theatre-royal-glasgow/calendar/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "tramway-tortoise-in-a-nutshell-una-imagines",
@@ -4090,7 +4486,7 @@
         "payWhatYouLike": false,
         "text": "£8/ £6",
         "source": "published-text",
-        "checkedAt": "2026-10-15"
+        "checkedAt": "2026-10-18"
       },
       "accessibility": null,
       "durationMinutes": null,
@@ -4100,7 +4496,7 @@
         "credit": null
       },
       "bookingUrl": "https://www.tramway.org/event/2d1b13a6-7800-424e-98b6-b4b4008e5d03/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "citizens-poggle-and-me",
@@ -4151,7 +4547,7 @@
         "payWhatYouLike": false,
         "text": "£100 fee per performance",
         "source": "published-text",
-        "checkedAt": "2026-10-15"
+        "checkedAt": "2026-10-18"
       },
       "accessibility": null,
       "durationMinutes": 40,
@@ -4161,7 +4557,7 @@
         "credit": null
       },
       "bookingUrl": "https://citz.co.uk/whats-on/poggle-and-me/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "theatre-118-sleeping-beauty-the-new-republic-of-port-dundas",
@@ -4221,7 +4617,7 @@
         "payWhatYouLike": true,
         "text": null,
         "source": "venue-feed",
-        "checkedAt": "2026-10-15"
+        "checkedAt": "2026-10-18"
       },
       "accessibility": null,
       "durationMinutes": 100,
@@ -4231,7 +4627,7 @@
         "credit": null
       },
       "bookingUrl": "https://theatre118.com/whats-on/sleeping-beauty-the-new-republic-of-port-dundas",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "kings-aladdin-pantomime-relaxed-performance",
@@ -4251,11 +4647,28 @@
       "run": {
         "opens": "2026-12-17",
         "closes": "2026-12-17",
-        "time": null
+        "time": "13:00"
       },
       "schedule": null,
-      "performances": [],
-      "pricing": null,
+      "performances": [
+        {
+          "date": "2026-12-17",
+          "time": "13:00",
+          "price": 15
+        }
+      ],
+      "pricing": {
+        "currency": "GBP",
+        "from": 15,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": [
         "Relaxed performances available"
       ],
@@ -4266,7 +4679,7 @@
         "credit": null
       },
       "bookingUrl": "https://www.atgtickets.com/shows/aladdin-pantomime-relaxed-performance/kings-theatre-glasgow/calendar/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "theatre-royal-scottish-ballet-cinders",
@@ -4286,11 +4699,68 @@
       "run": {
         "opens": "2026-12-30",
         "closes": "2027-01-16",
-        "time": null
+        "time": "19:30"
       },
       "schedule": null,
-      "performances": [],
-      "pricing": null,
+      "performances": [
+        {
+          "date": "2026-12-30",
+          "time": "19:30",
+          "price": 15.56
+        },
+        {
+          "date": "2026-12-31",
+          "time": "13:30",
+          "price": 15.56
+        },
+        {
+          "date": "2027-01-03",
+          "time": "14:30",
+          "price": 15.56
+        },
+        {
+          "date": "2027-01-05",
+          "time": "19:30",
+          "price": 15.56
+        },
+        {
+          "date": "2027-01-06",
+          "time": "19:30",
+          "price": 15.56
+        },
+        {
+          "date": "2027-01-07",
+          "time": "14:30",
+          "price": 15.56
+        },
+        {
+          "date": "2027-01-07",
+          "time": "19:30",
+          "price": 15.56
+        },
+        {
+          "date": "2027-01-08",
+          "time": "19:30",
+          "price": 15.56
+        },
+        {
+          "date": "2027-01-09",
+          "time": "14:30",
+          "price": 15.56
+        }
+      ],
+      "pricing": {
+        "currency": "GBP",
+        "from": 15.56,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": [
         "Audio-described performances available"
       ],
@@ -4301,7 +4771,7 @@
         "credit": null
       },
       "bookingUrl": "https://www.atgtickets.com/shows/scottish-ballet-cinders/theatre-royal-glasgow/calendar/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "kings-romesh-ranganathan-will-change-your-life",
@@ -4321,20 +4791,47 @@
       "run": {
         "opens": "2027-01-06",
         "closes": "2027-01-08",
-        "time": null
+        "time": "20:00"
       },
       "schedule": null,
-      "performances": [],
-      "pricing": null,
+      "performances": [
+        {
+          "date": "2027-01-06",
+          "time": "20:00",
+          "price": 36.74
+        },
+        {
+          "date": "2027-01-07",
+          "time": "20:00",
+          "price": 36.74
+        },
+        {
+          "date": "2027-01-08",
+          "time": "20:00",
+          "price": 36.74
+        }
+      ],
+      "pricing": {
+        "currency": "GBP",
+        "from": 36.74,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
-      "durationMinutes": null,
+      "durationMinutes": 100,
       "image": {
         "url": "https://glasgowtheatre.com/images/a06b32933a398b941f96.webp",
         "alt": "Romesh Ranganathan Will Change Your Life",
         "credit": null
       },
       "bookingUrl": "https://www.atgtickets.com/shows/romesh-ranganathan-will-change-your-life/kings-theatre-glasgow/calendar/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "theatre-royal-scottish-ballet-cinders-talk-ballet",
@@ -4354,11 +4851,28 @@
       "run": {
         "opens": "2027-01-08",
         "closes": "2027-01-08",
-        "time": null
+        "time": "18:30"
       },
       "schedule": null,
-      "performances": [],
-      "pricing": null,
+      "performances": [
+        {
+          "date": "2027-01-08",
+          "time": "18:30",
+          "price": 5
+        }
+      ],
+      "pricing": {
+        "currency": "GBP",
+        "from": 5,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
       "durationMinutes": null,
       "image": {
@@ -4367,7 +4881,7 @@
         "credit": null
       },
       "bookingUrl": "https://www.atgtickets.com/shows/scottish-ballet-cinders-talk-ballet/theatre-royal-glasgow/calendar/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "kings-mrs-doubtfire-the-musical",
@@ -4387,11 +4901,68 @@
       "run": {
         "opens": "2027-01-12",
         "closes": "2027-01-31",
-        "time": null
+        "time": "19:30"
       },
       "schedule": null,
-      "performances": [],
-      "pricing": null,
+      "performances": [
+        {
+          "date": "2027-01-12",
+          "time": "19:30",
+          "price": 20
+        },
+        {
+          "date": "2027-01-13",
+          "time": "19:30",
+          "price": 20
+        },
+        {
+          "date": "2027-01-14",
+          "time": "14:30",
+          "price": 20
+        },
+        {
+          "date": "2027-01-14",
+          "time": "19:30",
+          "price": 20
+        },
+        {
+          "date": "2027-01-15",
+          "time": "19:30",
+          "price": 20
+        },
+        {
+          "date": "2027-01-16",
+          "time": "14:30",
+          "price": 35
+        },
+        {
+          "date": "2027-01-16",
+          "time": "19:30",
+          "price": 20
+        },
+        {
+          "date": "2027-01-17",
+          "time": "14:00",
+          "price": 50
+        },
+        {
+          "date": "2027-01-19",
+          "time": "19:30",
+          "price": 35
+        }
+      ],
+      "pricing": {
+        "currency": "GBP",
+        "from": 20,
+        "to": 50,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": [
         "Captioned performances available",
         "Audio-described performances available",
@@ -4404,7 +4975,7 @@
         "credit": null
       },
       "bookingUrl": "https://www.atgtickets.com/shows/mrs-doubtfire-the-musical/kings-theatre-glasgow/calendar/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "pavilion-p-rno",
@@ -4434,7 +5005,18 @@
           "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/play/prno-tickets"
         }
       ],
-      "pricing": null,
+      "pricing": {
+        "currency": "GBP",
+        "from": 19.5,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
       "durationMinutes": null,
       "image": {
@@ -4443,7 +5025,7 @@
         "credit": null
       },
       "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/play/prno-tickets",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "tron-born-in-kyle-billy-kay-robyn-stapleton",
@@ -4483,7 +5065,7 @@
         "payWhatYouLike": false,
         "text": "£18",
         "source": "published-text",
-        "checkedAt": "2026-10-15"
+        "checkedAt": "2026-10-18"
       },
       "accessibility": null,
       "durationMinutes": 75,
@@ -4493,7 +5075,7 @@
         "credit": null
       },
       "bookingUrl": "https://www.tron.co.uk/shows/born-in-kyle-billy-kay-robyn-stapleton/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "theatre-royal-shine-productions-present-titanic-the-musical",
@@ -4513,11 +5095,48 @@
       "run": {
         "opens": "2027-01-20",
         "closes": "2027-01-23",
-        "time": null
+        "time": "19:30"
       },
       "schedule": null,
-      "performances": [],
-      "pricing": null,
+      "performances": [
+        {
+          "date": "2027-01-20",
+          "time": "19:30",
+          "price": 20.73
+        },
+        {
+          "date": "2027-01-21",
+          "time": "19:30",
+          "price": 20.73
+        },
+        {
+          "date": "2027-01-22",
+          "time": "19:30",
+          "price": 20.73
+        },
+        {
+          "date": "2027-01-23",
+          "time": "14:30",
+          "price": 20.73
+        },
+        {
+          "date": "2027-01-23",
+          "time": "19:30",
+          "price": 20.73
+        }
+      ],
+      "pricing": {
+        "currency": "GBP",
+        "from": 20.73,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
       "durationMinutes": null,
       "image": {
@@ -4526,7 +5145,7 @@
         "credit": null
       },
       "bookingUrl": "https://www.atgtickets.com/shows/shine-productions-present-titanic-the-musical/theatre-royal-glasgow/calendar/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "pavilion-celtic-connections-2027-proudly-presents-a-toast-fa",
@@ -4537,7 +5156,7 @@
         "musical"
       ],
       "producer": null,
-      "description": "Written and directed by John Binnie Musical arrangements and additional music by Alyson Orr Songs and poetry by Robert Burns Following on from its sell-out success at Pitlochry Festival Theatre, this dynamic musical play explores the life of Robert Burns through the eyes of the three women who knew...",
+      "description": "Written and directed by John Binnie Musical arrangements and additional music by Alyson Orr Songs and poetry by Robert Burns Following on from its sell-out success at Pitlochry Festival Theatre, this dynamic musical play explores the life of Robert Burns through the eyes of the three women who...",
       "venue": {
         "id": "pavilion",
         "name": "Pavilion Theatre",
@@ -4556,7 +5175,18 @@
           "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/other/celtic-connections-2027-proudly-presents-a-toast-fae-the-lassies-tickets"
         }
       ],
-      "pricing": null,
+      "pricing": {
+        "currency": "GBP",
+        "from": 26.5,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
       "durationMinutes": null,
       "image": {
@@ -4565,7 +5195,7 @@
         "credit": null
       },
       "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/other/celtic-connections-2027-proudly-presents-a-toast-fae-the-lassies-tickets",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "tron-seamus-egan-maeve-gilchrist-into-the-ice",
@@ -4605,7 +5235,7 @@
         "payWhatYouLike": false,
         "text": "£24",
         "source": "published-text",
-        "checkedAt": "2026-10-15"
+        "checkedAt": "2026-10-18"
       },
       "accessibility": null,
       "durationMinutes": 90,
@@ -4615,7 +5245,7 @@
         "credit": null
       },
       "bookingUrl": "https://www.tron.co.uk/shows/seamus-egan-maeve-gilchrist-into-the-ice/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "tron-have-you-seen-my-red-yo-yo-the-songs-of-matt-mcginn",
@@ -4660,7 +5290,7 @@
         "payWhatYouLike": false,
         "text": "£22",
         "source": "published-text",
-        "checkedAt": "2026-10-15"
+        "checkedAt": "2026-10-18"
       },
       "accessibility": null,
       "durationMinutes": 120,
@@ -4670,7 +5300,7 @@
         "credit": null
       },
       "bookingUrl": "https://www.tron.co.uk/shows/have-you-seen-my-red-yo-yo-the-songs-of-matt-mcginn/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "citizens-jill-jackson-and-support",
@@ -4704,7 +5334,7 @@
         "payWhatYouLike": false,
         "text": "£28",
         "source": "published-text",
-        "checkedAt": "2026-10-15"
+        "checkedAt": "2026-10-18"
       },
       "accessibility": null,
       "durationMinutes": null,
@@ -4714,7 +5344,7 @@
         "credit": null
       },
       "bookingUrl": "https://citz.co.uk/whats-on/jill-jackson-and-support/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "citizens-dallahan-with-laura-cortese",
@@ -4748,7 +5378,7 @@
         "payWhatYouLike": false,
         "text": "£22",
         "source": "published-text",
-        "checkedAt": "2026-10-15"
+        "checkedAt": "2026-10-18"
       },
       "accessibility": null,
       "durationMinutes": null,
@@ -4758,7 +5388,7 @@
         "credit": null
       },
       "bookingUrl": "https://citz.co.uk/whats-on/dallahan-and-support/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "citizens-mcgoldrick-mccusker-doyle-and-friends",
@@ -4792,7 +5422,7 @@
         "payWhatYouLike": false,
         "text": "£24",
         "source": "published-text",
-        "checkedAt": "2026-10-15"
+        "checkedAt": "2026-10-18"
       },
       "accessibility": null,
       "durationMinutes": null,
@@ -4802,7 +5432,7 @@
         "credit": null
       },
       "bookingUrl": "https://citz.co.uk/whats-on/mcgoldrick-mccusker-doyle-and-friends/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "pavilion-myras-story",
@@ -4832,7 +5462,18 @@
           "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/play/myras-story-tickets"
         }
       ],
-      "pricing": null,
+      "pricing": {
+        "currency": "GBP",
+        "from": 29.5,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
       "durationMinutes": null,
       "image": {
@@ -4841,7 +5482,7 @@
         "credit": null
       },
       "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/play/myras-story-tickets",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "citizens-judy-collins-and-support",
@@ -4875,7 +5516,7 @@
         "payWhatYouLike": false,
         "text": "£34",
         "source": "published-text",
-        "checkedAt": "2026-10-15"
+        "checkedAt": "2026-10-18"
       },
       "accessibility": null,
       "durationMinutes": null,
@@ -4885,7 +5526,7 @@
         "credit": null
       },
       "bookingUrl": "https://citz.co.uk/whats-on/judy-collins-and-support/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "citizens-sandy-denny-80th-birthday-celebration",
@@ -4919,7 +5560,7 @@
         "payWhatYouLike": false,
         "text": "£26",
         "source": "published-text",
-        "checkedAt": "2026-10-15"
+        "checkedAt": "2026-10-18"
       },
       "accessibility": null,
       "durationMinutes": null,
@@ -4929,7 +5570,7 @@
         "credit": null
       },
       "bookingUrl": "https://citz.co.uk/whats-on/sandy-denny-80th-birthday-celebration/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "citizens-all-together-now-2027-artist-residency",
@@ -4963,7 +5604,7 @@
         "payWhatYouLike": false,
         "text": "£22",
         "source": "published-text",
-        "checkedAt": "2026-10-15"
+        "checkedAt": "2026-10-18"
       },
       "accessibility": null,
       "durationMinutes": null,
@@ -4973,7 +5614,7 @@
         "credit": null
       },
       "bookingUrl": "https://citz.co.uk/whats-on/all-together-now-2027-artist-residency/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "tron-in-the-tradition-s-r-n-maolag-in-muirine-nic-r-ib-n",
@@ -5013,7 +5654,7 @@
         "payWhatYouLike": false,
         "text": "£20",
         "source": "published-text",
-        "checkedAt": "2026-10-15"
+        "checkedAt": "2026-10-18"
       },
       "accessibility": null,
       "durationMinutes": 50,
@@ -5023,7 +5664,7 @@
         "credit": null
       },
       "bookingUrl": "https://www.tron.co.uk/shows/in-the-tradition-saran-o-maolagain-muirine-nic-roibin/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "kings-larry-dean-hellbent",
@@ -5043,11 +5684,28 @@
       "run": {
         "opens": "2027-02-02",
         "closes": "2027-02-02",
-        "time": null
+        "time": "19:30"
       },
       "schedule": null,
-      "performances": [],
-      "pricing": null,
+      "performances": [
+        {
+          "date": "2027-02-02",
+          "time": "19:30",
+          "price": 28.7
+        }
+      ],
+      "pricing": {
+        "currency": "GBP",
+        "from": 28.7,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
       "durationMinutes": null,
       "image": {
@@ -5056,7 +5714,7 @@
         "credit": null
       },
       "bookingUrl": "https://www.atgtickets.com/shows/larry-dean-hellbent/kings-theatre-glasgow/calendar/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "pavilion-al-murray-all-you-need-is-guv",
@@ -5086,7 +5744,18 @@
           "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/comedy/al-murray-all-you-need-is-guv-tickets"
         }
       ],
-      "pricing": null,
+      "pricing": {
+        "currency": "GBP",
+        "from": 37,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
       "durationMinutes": null,
       "image": {
@@ -5095,7 +5764,7 @@
         "credit": null
       },
       "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/comedy/al-murray-all-you-need-is-guv-tickets",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "tron-when-prophecy-fails",
@@ -5150,7 +5819,7 @@
         "payWhatYouLike": false,
         "text": "£20, £24 or £27",
         "source": "published-text",
-        "checkedAt": "2026-10-15"
+        "checkedAt": "2026-10-18"
       },
       "accessibility": null,
       "durationMinutes": 70,
@@ -5160,7 +5829,7 @@
         "credit": null
       },
       "bookingUrl": "https://www.tron.co.uk/shows/when-prophecy-fails/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "theatre-royal-scottish-opera-alcina",
@@ -5180,22 +5849,49 @@
       "run": {
         "opens": "2027-02-06",
         "closes": "2027-02-14",
-        "time": null
+        "time": "19:15"
       },
       "schedule": null,
-      "performances": [],
-      "pricing": null,
+      "performances": [
+        {
+          "date": "2027-02-06",
+          "time": "19:15",
+          "price": 24
+        },
+        {
+          "date": "2027-02-11",
+          "time": "19:15",
+          "price": 24
+        },
+        {
+          "date": "2027-02-14",
+          "time": "15:00",
+          "price": 24
+        }
+      ],
+      "pricing": {
+        "currency": "GBP",
+        "from": 24,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": [
         "Audio-described performances available"
       ],
-      "durationMinutes": null,
+      "durationMinutes": 150,
       "image": {
         "url": "https://glasgowtheatre.com/images/54fdeccfd3a9e4d36a56.webp",
         "alt": "Scottish Opera - Alcina",
         "credit": null
       },
       "bookingUrl": "https://www.atgtickets.com/shows/scottish-opera-alcina/theatre-royal-glasgow/calendar/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "theatre-royal-scottish-opera-alcina-pre-show-talk",
@@ -5215,20 +5911,37 @@
       "run": {
         "opens": "2027-02-11",
         "closes": "2027-02-11",
-        "time": null
+        "time": "18:00"
       },
       "schedule": null,
-      "performances": [],
-      "pricing": null,
+      "performances": [
+        {
+          "date": "2027-02-11",
+          "time": "18:00",
+          "price": 0
+        }
+      ],
+      "pricing": {
+        "currency": "GBP",
+        "from": 0,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": true,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
-      "durationMinutes": null,
+      "durationMinutes": 30,
       "image": {
         "url": "https://glasgowtheatre.com/images/54fdeccfd3a9e4d36a56.webp",
         "alt": "Scottish Opera - Alcina Pre Show Talk",
         "credit": null
       },
       "bookingUrl": "https://www.atgtickets.com/shows/scottish-opera-alcina-pre-show-talk/theatre-royal-glasgow/calendar/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "pavilion-celtic-das",
@@ -5258,7 +5971,18 @@
           "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/play/celtic-das-tickets"
         }
       ],
-      "pricing": null,
+      "pricing": {
+        "currency": "GBP",
+        "from": 29.5,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
       "durationMinutes": null,
       "image": {
@@ -5267,7 +5991,7 @@
         "credit": null
       },
       "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/play/celtic-das-tickets",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "citizens-mary-queen-of-scots-got-her-head-chopped-off",
@@ -5417,7 +6141,7 @@
         "payWhatYouLike": false,
         "text": "£14 - £43.50",
         "source": "published-text",
-        "checkedAt": "2026-10-15"
+        "checkedAt": "2026-10-18"
       },
       "accessibility": null,
       "durationMinutes": null,
@@ -5427,7 +6151,7 @@
         "credit": null
       },
       "bookingUrl": "https://citz.co.uk/whats-on/mary-queen-of-scots-got-her-head-chopped-off/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "kings-natural-history-museum-presents-dinosaurs-live",
@@ -5447,20 +6171,42 @@
       "run": {
         "opens": "2027-02-13",
         "closes": "2027-02-13",
-        "time": null
+        "time": "12:30"
       },
       "schedule": null,
-      "performances": [],
-      "pricing": null,
+      "performances": [
+        {
+          "date": "2027-02-13",
+          "time": "12:30",
+          "price": 16.5
+        },
+        {
+          "date": "2027-02-13",
+          "time": "15:30",
+          "price": 16.5
+        }
+      ],
+      "pricing": {
+        "currency": "GBP",
+        "from": 16.5,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
-      "durationMinutes": null,
+      "durationMinutes": 60,
       "image": {
         "url": "https://glasgowtheatre.com/images/f8f42d0b121b72ee1b4e.webp",
         "alt": "Natural History Museum presents Dinosaurs Live",
         "credit": null
       },
       "bookingUrl": "https://www.atgtickets.com/shows/natural-history-museum-presents-dinosaurs-live/kings-theatre-glasgow/calendar/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "kings-all-killa-no-filla-live-at-valentines-day",
@@ -5480,11 +6226,28 @@
       "run": {
         "opens": "2027-02-14",
         "closes": "2027-02-14",
-        "time": null
+        "time": "16:00"
       },
       "schedule": null,
-      "performances": [],
-      "pricing": null,
+      "performances": [
+        {
+          "date": "2027-02-14",
+          "time": "16:00",
+          "price": 31
+        }
+      ],
+      "pricing": {
+        "currency": "GBP",
+        "from": 31,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
       "durationMinutes": null,
       "image": {
@@ -5493,7 +6256,7 @@
         "credit": null
       },
       "bookingUrl": "https://www.atgtickets.com/shows/all-killa-no-filla-live-at-valentines-day/kings-theatre-glasgow/calendar/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "theatre-royal-scottish-opera-alcina-touch-tour",
@@ -5513,11 +6276,28 @@
       "run": {
         "opens": "2027-02-14",
         "closes": "2027-02-14",
-        "time": null
+        "time": "13:45"
       },
       "schedule": null,
-      "performances": [],
-      "pricing": null,
+      "performances": [
+        {
+          "date": "2027-02-14",
+          "time": "13:45",
+          "price": 0
+        }
+      ],
+      "pricing": {
+        "currency": "GBP",
+        "from": 0,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": true,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": [
         "Audio-described performances available"
       ],
@@ -5528,7 +6308,7 @@
         "credit": null
       },
       "bookingUrl": "https://www.atgtickets.com/shows/scottish-opera-alcina-touch-tour/theatre-royal-glasgow/calendar/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "pavilion-million-dollar-quartet",
@@ -5558,7 +6338,18 @@
           "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/musical/million-dollar-quartet-tickets"
         }
       ],
-      "pricing": null,
+      "pricing": {
+        "currency": "GBP",
+        "from": 25,
+        "to": 29,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
       "durationMinutes": null,
       "image": {
@@ -5567,7 +6358,7 @@
         "credit": null
       },
       "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/musical/million-dollar-quartet-tickets",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "kings-jersey-boys",
@@ -5587,22 +6378,79 @@
       "run": {
         "opens": "2027-02-16",
         "closes": "2027-02-27",
-        "time": null
+        "time": "19:30"
       },
       "schedule": null,
-      "performances": [],
-      "pricing": null,
+      "performances": [
+        {
+          "date": "2027-02-16",
+          "time": "19:30",
+          "price": 15
+        },
+        {
+          "date": "2027-02-17",
+          "time": "14:30",
+          "price": 15
+        },
+        {
+          "date": "2027-02-17",
+          "time": "19:30",
+          "price": 15
+        },
+        {
+          "date": "2027-02-18",
+          "time": "14:30",
+          "price": 15
+        },
+        {
+          "date": "2027-02-18",
+          "time": "19:30",
+          "price": 15
+        },
+        {
+          "date": "2027-02-19",
+          "time": "19:30",
+          "price": 20
+        },
+        {
+          "date": "2027-02-20",
+          "time": "14:30",
+          "price": 25
+        },
+        {
+          "date": "2027-02-20",
+          "time": "19:30",
+          "price": 25
+        },
+        {
+          "date": "2027-02-22",
+          "time": "19:30",
+          "price": 15
+        }
+      ],
+      "pricing": {
+        "currency": "GBP",
+        "from": 15,
+        "to": 25,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": [
         "BSL-interpreted performances available"
       ],
-      "durationMinutes": null,
+      "durationMinutes": 150,
       "image": {
         "url": "https://glasgowtheatre.com/images/0487ed05f7dce12b00e3.webp",
         "alt": "Jersey Boys",
         "credit": null
       },
       "bookingUrl": "https://www.atgtickets.com/shows/jersey-boys/kings-theatre-glasgow/calendar/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "theatre-royal-scottish-opera-fidelio",
@@ -5622,22 +6470,44 @@
       "run": {
         "opens": "2027-02-17",
         "closes": "2027-02-19",
-        "time": null
+        "time": "19:15"
       },
       "schedule": null,
-      "performances": [],
-      "pricing": null,
+      "performances": [
+        {
+          "date": "2027-02-17",
+          "time": "19:15",
+          "price": 24
+        },
+        {
+          "date": "2027-02-19",
+          "time": "19:15",
+          "price": 24
+        }
+      ],
+      "pricing": {
+        "currency": "GBP",
+        "from": 24,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": [
         "Audio-described performances available"
       ],
-      "durationMinutes": null,
+      "durationMinutes": 145,
       "image": {
         "url": "https://glasgowtheatre.com/images/0143eb71b96ba115047b.webp",
         "alt": "Scottish Opera - Fidelio",
         "credit": null
       },
       "bookingUrl": "https://www.atgtickets.com/shows/scottish-opera-fidelio/theatre-royal-glasgow/calendar/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "theatre-royal-scottish-opera-fidelio-touch-tour",
@@ -5657,22 +6527,39 @@
       "run": {
         "opens": "2027-02-19",
         "closes": "2027-02-19",
-        "time": null
+        "time": "18:00"
       },
       "schedule": null,
-      "performances": [],
-      "pricing": null,
+      "performances": [
+        {
+          "date": "2027-02-19",
+          "time": "18:00",
+          "price": 0
+        }
+      ],
+      "pricing": {
+        "currency": "GBP",
+        "from": 0,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": true,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": [
         "Audio-described performances available"
       ],
-      "durationMinutes": null,
+      "durationMinutes": 30,
       "image": {
         "url": "https://glasgowtheatre.com/images/1ea2c17f028818a5c467.webp",
         "alt": "Scottish Opera - Fidelio - Touch Tour",
         "credit": null
       },
       "bookingUrl": "https://www.atgtickets.com/shows/scottish-opera-fidelio-touch-tour/theatre-royal-glasgow/calendar/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "theatre-royal-scottish-opera-national-opera-studio",
@@ -5692,20 +6579,37 @@
       "run": {
         "opens": "2027-02-20",
         "closes": "2027-02-20",
-        "time": null
+        "time": "15:00"
       },
       "schedule": null,
-      "performances": [],
-      "pricing": null,
+      "performances": [
+        {
+          "date": "2027-02-20",
+          "time": "15:00",
+          "price": 15.5
+        }
+      ],
+      "pricing": {
+        "currency": "GBP",
+        "from": 15.5,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
-      "durationMinutes": null,
+      "durationMinutes": 90,
       "image": {
         "url": "https://glasgowtheatre.com/images/d93106f2eb552d6edb35.webp",
         "alt": "Scottish Opera - National Opera Studio",
         "credit": null
       },
       "bookingUrl": "https://www.atgtickets.com/shows/scottish-opera-national-opera-studio/theatre-royal-glasgow/calendar/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "pavilion-jack-and-his-big-beanstalk",
@@ -5735,7 +6639,18 @@
           "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/play/jack-and-his-big-beanstalk-tickets"
         }
       ],
-      "pricing": null,
+      "pricing": {
+        "currency": "GBP",
+        "from": 31.5,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
       "durationMinutes": null,
       "image": {
@@ -5744,7 +6659,7 @@
         "credit": null
       },
       "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/play/jack-and-his-big-beanstalk-tickets",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "theatre-royal-strangers-on-a-train",
@@ -5764,11 +6679,58 @@
       "run": {
         "opens": "2027-02-23",
         "closes": "2027-02-27",
-        "time": null
+        "time": "19:30"
       },
       "schedule": null,
-      "performances": [],
-      "pricing": null,
+      "performances": [
+        {
+          "date": "2027-02-23",
+          "time": "19:30",
+          "price": 15
+        },
+        {
+          "date": "2027-02-24",
+          "time": "14:30",
+          "price": 15
+        },
+        {
+          "date": "2027-02-24",
+          "time": "19:30",
+          "price": 15
+        },
+        {
+          "date": "2027-02-25",
+          "time": "19:30",
+          "price": 15
+        },
+        {
+          "date": "2027-02-26",
+          "time": "19:30",
+          "price": 15
+        },
+        {
+          "date": "2027-02-27",
+          "time": "14:30",
+          "price": 16.5
+        },
+        {
+          "date": "2027-02-27",
+          "time": "19:30",
+          "price": 15
+        }
+      ],
+      "pricing": {
+        "currency": "GBP",
+        "from": 15,
+        "to": 16.5,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
       "durationMinutes": null,
       "image": {
@@ -5777,7 +6739,7 @@
         "credit": null
       },
       "bookingUrl": "https://www.atgtickets.com/shows/strangers-on-a-train/theatre-royal-glasgow/calendar/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "tron-the-ferry",
@@ -5873,15 +6835,15 @@
       ],
       "pricing": {
         "currency": "GBP",
-        "from": 17,
+        "from": 20,
         "to": 27,
         "concessionFrom": null,
         "concessionTo": null,
         "free": false,
         "payWhatYouLike": false,
-        "text": "Previews £17 | Main Run £20, £24 or £27",
+        "text": "£20, £24 or £27",
         "source": "published-text",
-        "checkedAt": "2026-10-15"
+        "checkedAt": "2026-10-18"
       },
       "accessibility": null,
       "durationMinutes": 90,
@@ -5891,7 +6853,7 @@
         "credit": null
       },
       "bookingUrl": "https://www.tron.co.uk/shows/the-ferry/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "pavilion-mike-bubbins-ideasman",
@@ -5921,7 +6883,18 @@
           "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/comedy/mike-bubbins-ideasman-tickets"
         }
       ],
-      "pricing": null,
+      "pricing": {
+        "currency": "GBP",
+        "from": 31.5,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
       "durationMinutes": null,
       "image": {
@@ -5930,7 +6903,7 @@
         "credit": null
       },
       "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/comedy/mike-bubbins-ideasman-tickets",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "kings-annie",
@@ -5950,11 +6923,63 @@
       "run": {
         "opens": "2027-03-02",
         "closes": "2027-03-07",
-        "time": null
+        "time": "19:30"
       },
       "schedule": null,
-      "performances": [],
-      "pricing": null,
+      "performances": [
+        {
+          "date": "2027-03-02",
+          "time": "19:30",
+          "price": 15.6
+        },
+        {
+          "date": "2027-03-03",
+          "time": "14:30",
+          "price": 15.6
+        },
+        {
+          "date": "2027-03-03",
+          "time": "19:30",
+          "price": 15.6
+        },
+        {
+          "date": "2027-03-04",
+          "time": "19:30",
+          "price": 15.6
+        },
+        {
+          "date": "2027-03-05",
+          "time": "19:30",
+          "price": 15.6
+        },
+        {
+          "date": "2027-03-06",
+          "time": "14:30",
+          "price": 29.12
+        },
+        {
+          "date": "2027-03-06",
+          "time": "19:30",
+          "price": 15.6
+        },
+        {
+          "date": "2027-03-07",
+          "time": "14:00",
+          "price": 15.6
+        }
+      ],
+      "pricing": {
+        "currency": "GBP",
+        "from": 15.6,
+        "to": 29.12,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
       "durationMinutes": null,
       "image": {
@@ -5963,7 +6988,7 @@
         "credit": null
       },
       "bookingUrl": "https://www.atgtickets.com/shows/annie/kings-theatre-glasgow/calendar/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "theatre-royal-go-dance-2027-celebrating-20-years",
@@ -5983,11 +7008,43 @@
       "run": {
         "opens": "2027-03-02",
         "closes": "2027-03-05",
-        "time": null
+        "time": "19:30"
       },
       "schedule": null,
-      "performances": [],
-      "pricing": null,
+      "performances": [
+        {
+          "date": "2027-03-02",
+          "time": "19:30",
+          "price": 17.5
+        },
+        {
+          "date": "2027-03-03",
+          "time": "19:30",
+          "price": 17.5
+        },
+        {
+          "date": "2027-03-04",
+          "time": "19:30",
+          "price": 17.5
+        },
+        {
+          "date": "2027-03-05",
+          "time": "19:30",
+          "price": 17.5
+        }
+      ],
+      "pricing": {
+        "currency": "GBP",
+        "from": 17.5,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
       "durationMinutes": null,
       "image": {
@@ -5996,7 +7053,7 @@
         "credit": null
       },
       "bookingUrl": "https://www.atgtickets.com/shows/go-dance-2027-celebrating-20-years/theatre-royal-glasgow/calendar/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "pavilion-sunshine-on-leith",
@@ -6026,7 +7083,18 @@
           "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/musical/sunshine-on-leith-tickets"
         }
       ],
-      "pricing": null,
+      "pricing": {
+        "currency": "GBP",
+        "from": 21,
+        "to": 26.5,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
       "durationMinutes": null,
       "image": {
@@ -6035,7 +7103,7 @@
         "credit": null
       },
       "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/musical/sunshine-on-leith-tickets",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "pavilion-layton-live",
@@ -6065,7 +7133,18 @@
           "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/music/layton-live-tickets"
         }
       ],
-      "pricing": null,
+      "pricing": {
+        "currency": "GBP",
+        "from": 39,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
       "durationMinutes": null,
       "image": {
@@ -6074,7 +7153,7 @@
         "credit": null
       },
       "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/music/layton-live-tickets",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "theatre-royal-the-curious-incident-of-the-dog-in-the-night-t",
@@ -6094,20 +7173,72 @@
       "run": {
         "opens": "2027-03-09",
         "closes": "2027-03-13",
-        "time": null
+        "time": "19:30"
       },
       "schedule": null,
-      "performances": [],
-      "pricing": null,
+      "performances": [
+        {
+          "date": "2027-03-09",
+          "time": "19:30",
+          "price": 15.6
+        },
+        {
+          "date": "2027-03-10",
+          "time": "14:30",
+          "price": 15.6
+        },
+        {
+          "date": "2027-03-10",
+          "time": "19:30",
+          "price": 15.6
+        },
+        {
+          "date": "2027-03-11",
+          "time": "14:30",
+          "price": 15.6
+        },
+        {
+          "date": "2027-03-11",
+          "time": "19:30",
+          "price": 15.6
+        },
+        {
+          "date": "2027-03-12",
+          "time": "19:30",
+          "price": 15.6
+        },
+        {
+          "date": "2027-03-13",
+          "time": "14:30",
+          "price": 15.6
+        },
+        {
+          "date": "2027-03-13",
+          "time": "19:30",
+          "price": 15.6
+        }
+      ],
+      "pricing": {
+        "currency": "GBP",
+        "from": 15.6,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
-      "durationMinutes": null,
+      "durationMinutes": 145,
       "image": {
         "url": "https://glasgowtheatre.com/images/4edbea8aec489a82ad45.webp",
         "alt": "The Curious Incident of the Dog in the Night-Time",
         "credit": null
       },
       "bookingUrl": "https://www.atgtickets.com/shows/the-curious-incident-of-the-dog-in-the-night-time/theatre-royal-glasgow/calendar/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "pavilion-lucy-beaumont-bad-at-quiz-shows-good-with-weirdos",
@@ -6137,7 +7268,18 @@
           "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/comedy/lucy-beaumont-bad-at-quiz-shows-good-with-weirdos-tickets"
         }
       ],
-      "pricing": null,
+      "pricing": {
+        "currency": "GBP",
+        "from": 29.5,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
       "durationMinutes": null,
       "image": {
@@ -6146,7 +7288,7 @@
         "credit": null
       },
       "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/comedy/lucy-beaumont-bad-at-quiz-shows-good-with-weirdos-tickets",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "kings-fascinating-aida-bawdacious",
@@ -6166,20 +7308,37 @@
       "run": {
         "opens": "2027-03-11",
         "closes": "2027-03-11",
-        "time": null
+        "time": "19:30"
       },
       "schedule": null,
-      "performances": [],
-      "pricing": null,
+      "performances": [
+        {
+          "date": "2027-03-11",
+          "time": "19:30",
+          "price": 37.88
+        }
+      ],
+      "pricing": {
+        "currency": "GBP",
+        "from": 37.88,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
-      "durationMinutes": null,
+      "durationMinutes": 120,
       "image": {
         "url": "https://glasgowtheatre.com/images/419601090b1fae136b8a.webp",
         "alt": "Fascinating Aida: Bawdacious!",
         "credit": null
       },
       "bookingUrl": "https://www.atgtickets.com/shows/fascinating-aida-bawdacious/kings-theatre-glasgow/calendar/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "pavilion-an-audience-with-liam-dolan-part-2",
@@ -6209,7 +7368,18 @@
           "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/comedy/an-audience-with-liam-dolan-part-2-tickets"
         }
       ],
-      "pricing": null,
+      "pricing": {
+        "currency": "GBP",
+        "from": 30,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
       "durationMinutes": null,
       "image": {
@@ -6218,7 +7388,7 @@
         "credit": null
       },
       "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/comedy/an-audience-with-liam-dolan-part-2-tickets",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "kings-jimeoin-ballyhoo",
@@ -6238,11 +7408,28 @@
       "run": {
         "opens": "2027-03-13",
         "closes": "2027-03-13",
-        "time": null
+        "time": "20:30"
       },
       "schedule": null,
-      "performances": [],
-      "pricing": null,
+      "performances": [
+        {
+          "date": "2027-03-13",
+          "time": "20:30",
+          "price": 29.27
+        }
+      ],
+      "pricing": {
+        "currency": "GBP",
+        "from": 29.27,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
       "durationMinutes": null,
       "image": {
@@ -6251,7 +7438,7 @@
         "credit": null
       },
       "bookingUrl": "https://www.atgtickets.com/shows/jimeoin-ballyhoo/kings-theatre-glasgow/calendar/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "pavilion-troy-hawke-never-stop-never-change",
@@ -6281,7 +7468,18 @@
           "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/comedy/troy-hawke-never-stop-never-change-tickets"
         }
       ],
-      "pricing": null,
+      "pricing": {
+        "currency": "GBP",
+        "from": 31.5,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
       "durationMinutes": null,
       "image": {
@@ -6290,7 +7488,7 @@
         "credit": null
       },
       "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/comedy/troy-hawke-never-stop-never-change-tickets",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "kings-an-evening-with-gregor-fisher",
@@ -6310,20 +7508,37 @@
       "run": {
         "opens": "2027-03-19",
         "closes": "2027-03-19",
-        "time": null
+        "time": "19:30"
       },
       "schedule": null,
-      "performances": [],
-      "pricing": null,
+      "performances": [
+        {
+          "date": "2027-03-19",
+          "time": "19:30",
+          "price": 36.74
+        }
+      ],
+      "pricing": {
+        "currency": "GBP",
+        "from": 36.74,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
-      "durationMinutes": null,
+      "durationMinutes": 120,
       "image": {
         "url": "https://glasgowtheatre.com/images/a922f5160749fedb7802.webp",
         "alt": "An Evening With Gregor Fisher",
         "credit": null
       },
       "bookingUrl": "https://www.atgtickets.com/shows/an-evening-with-gregor-fisher/kings-theatre-glasgow/calendar/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "citizens-mike-wozniak-the-bench",
@@ -6357,7 +7572,7 @@
         "payWhatYouLike": false,
         "text": "£24.50",
         "source": "published-text",
-        "checkedAt": "2026-10-15"
+        "checkedAt": "2026-10-18"
       },
       "accessibility": null,
       "durationMinutes": 110,
@@ -6367,7 +7582,7 @@
         "credit": null
       },
       "bookingUrl": "https://citz.co.uk/whats-on/mike-wozniak-the-bench-2/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "pavilion-james-gardner-allocation-on-arrival",
@@ -6378,7 +7593,7 @@
         "stand-up"
       ],
       "producer": null,
-      "description": "Scottish comedy sensation James Gardner brings his latest show “Allocation on Arrival” to the Pavilion. A masterful storyteller, James takes us on a comic journey from Summerston to Safari, navigating the 90s and noughties & tackles the trifecta of football, politics and religion with his studs up...",
+      "description": "Scottish comedy sensation James Gardner brings his latest show “Allocation on Arrival” to the Pavilion. A masterful storyteller, James takes us on a comic journey from Summerston to Safari, navigating the 90s and noughties & tackles the trifecta of football, politics and religion with his studs...",
       "venue": {
         "id": "pavilion",
         "name": "Pavilion Theatre",
@@ -6397,7 +7612,18 @@
           "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/comedy/james-gardner-allocation-on-arrival-tickets"
         }
       ],
-      "pricing": null,
+      "pricing": {
+        "currency": "GBP",
+        "from": 26,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
       "durationMinutes": null,
       "image": {
@@ -6406,7 +7632,7 @@
         "credit": null
       },
       "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/comedy/james-gardner-allocation-on-arrival-tickets",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "pavilion-matt-mathews-not-what-i-ordered-world-tour",
@@ -6436,7 +7662,18 @@
           "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/comedy/matt-mathews-not-what-i-ordered-world-tour-tickets"
         }
       ],
-      "pricing": null,
+      "pricing": {
+        "currency": "GBP",
+        "from": 39.75,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
       "durationMinutes": null,
       "image": {
@@ -6445,7 +7682,7 @@
         "credit": null
       },
       "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/comedy/matt-mathews-not-what-i-ordered-world-tour-tickets",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "theatre-royal-pmos-presents-calamity-jane",
@@ -6465,20 +7702,57 @@
       "run": {
         "opens": "2027-03-24",
         "closes": "2027-03-27",
-        "time": null
+        "time": "19:30"
       },
       "schedule": null,
-      "performances": [],
-      "pricing": null,
+      "performances": [
+        {
+          "date": "2027-03-24",
+          "time": "19:30",
+          "price": 19.38
+        },
+        {
+          "date": "2027-03-25",
+          "time": "19:30",
+          "price": 19.38
+        },
+        {
+          "date": "2027-03-26",
+          "time": "19:30",
+          "price": 19.38
+        },
+        {
+          "date": "2027-03-27",
+          "time": "14:30",
+          "price": 19.38
+        },
+        {
+          "date": "2027-03-27",
+          "time": "19:30",
+          "price": 19.38
+        }
+      ],
+      "pricing": {
+        "currency": "GBP",
+        "from": 19.38,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
-      "durationMinutes": null,
+      "durationMinutes": 150,
       "image": {
         "url": "https://glasgowtheatre.com/images/8dfafda0cbd3e110dbea.webp",
         "alt": "PMOS presents Calamity Jane",
         "credit": null
       },
       "bookingUrl": "https://www.atgtickets.com/shows/pmos-presents-calamity-jane/theatre-royal-glasgow/calendar/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "kings-susie-mccabe-myth-informed",
@@ -6498,11 +7772,33 @@
       "run": {
         "opens": "2027-03-26",
         "closes": "2027-03-27",
-        "time": null
+        "time": "19:30"
       },
       "schedule": null,
-      "performances": [],
-      "pricing": null,
+      "performances": [
+        {
+          "date": "2027-03-26",
+          "time": "20:30",
+          "price": 25.26
+        },
+        {
+          "date": "2027-03-27",
+          "time": "19:30",
+          "price": 25.26
+        }
+      ],
+      "pricing": {
+        "currency": "GBP",
+        "from": 25.26,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
       "durationMinutes": null,
       "image": {
@@ -6511,7 +7807,7 @@
         "credit": null
       },
       "bookingUrl": "https://www.atgtickets.com/shows/susie-mccabe-myth-informed/kings-theatre-glasgow/calendar/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "pavilion-the-martin-hurson-story",
@@ -6541,7 +7837,18 @@
           "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/play/the-martin-hurson-story-tickets"
         }
       ],
-      "pricing": null,
+      "pricing": {
+        "currency": "GBP",
+        "from": 25,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
       "durationMinutes": null,
       "image": {
@@ -6550,7 +7857,7 @@
         "credit": null
       },
       "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/play/the-martin-hurson-story-tickets",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "kings-gicf27-gala",
@@ -6570,11 +7877,28 @@
       "run": {
         "opens": "2027-03-27",
         "closes": "2027-03-27",
-        "time": null
+        "time": "14:00"
       },
       "schedule": null,
-      "performances": [],
-      "pricing": null,
+      "performances": [
+        {
+          "date": "2027-03-27",
+          "time": "14:00",
+          "price": 22.96
+        }
+      ],
+      "pricing": {
+        "currency": "GBP",
+        "from": 22.96,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
       "durationMinutes": null,
       "image": {
@@ -6583,7 +7907,7 @@
         "credit": null
       },
       "bookingUrl": "https://www.atgtickets.com/shows/gicf27-gala/kings-theatre-glasgow/calendar/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "kings-heathers-the-musical",
@@ -6603,20 +7927,72 @@
       "run": {
         "opens": "2027-03-30",
         "closes": "2027-04-03",
-        "time": null
+        "time": "19:30"
       },
       "schedule": null,
-      "performances": [],
-      "pricing": null,
+      "performances": [
+        {
+          "date": "2027-03-30",
+          "time": "19:30",
+          "price": 24
+        },
+        {
+          "date": "2027-03-31",
+          "time": "14:30",
+          "price": 24
+        },
+        {
+          "date": "2027-03-31",
+          "time": "19:30",
+          "price": 28.5
+        },
+        {
+          "date": "2027-04-01",
+          "time": "19:30",
+          "price": 24
+        },
+        {
+          "date": "2027-04-02",
+          "time": "16:00",
+          "price": 24
+        },
+        {
+          "date": "2027-04-02",
+          "time": "20:00",
+          "price": 26
+        },
+        {
+          "date": "2027-04-03",
+          "time": "14:30",
+          "price": 46
+        },
+        {
+          "date": "2027-04-03",
+          "time": "19:30",
+          "price": 26
+        }
+      ],
+      "pricing": {
+        "currency": "GBP",
+        "from": 24,
+        "to": 46,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
-      "durationMinutes": null,
+      "durationMinutes": 150,
       "image": {
         "url": "https://glasgowtheatre.com/images/a1c16eccfdb2cc8f6eb7.webp",
         "alt": "Heathers the Musical",
         "credit": null
       },
       "bookingUrl": "https://www.atgtickets.com/shows/heathers-the-musical/kings-theatre-glasgow/calendar/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "citizens-punch",
@@ -6686,7 +8062,7 @@
         "payWhatYouLike": false,
         "text": "£18.50 - £43.50",
         "source": "published-text",
-        "checkedAt": "2026-10-15"
+        "checkedAt": "2026-10-18"
       },
       "accessibility": null,
       "durationMinutes": 145,
@@ -6696,7 +8072,7 @@
         "credit": null
       },
       "bookingUrl": "https://citz.co.uk/whats-on/punch/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "theatre-royal-twelve-angry-men",
@@ -6716,20 +8092,67 @@
       "run": {
         "opens": "2027-03-30",
         "closes": "2027-04-03",
-        "time": null
+        "time": "19:30"
       },
       "schedule": null,
-      "performances": [],
-      "pricing": null,
+      "performances": [
+        {
+          "date": "2027-03-30",
+          "time": "19:30",
+          "price": 15
+        },
+        {
+          "date": "2027-03-31",
+          "time": "19:30",
+          "price": 15
+        },
+        {
+          "date": "2027-04-01",
+          "time": "14:30",
+          "price": 15.5
+        },
+        {
+          "date": "2027-04-01",
+          "time": "19:30",
+          "price": 15
+        },
+        {
+          "date": "2027-04-02",
+          "time": "19:30",
+          "price": 15.5
+        },
+        {
+          "date": "2027-04-03",
+          "time": "14:30",
+          "price": 15.5
+        },
+        {
+          "date": "2027-04-03",
+          "time": "19:30",
+          "price": 15
+        }
+      ],
+      "pricing": {
+        "currency": "GBP",
+        "from": 15,
+        "to": 15.5,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
-      "durationMinutes": null,
+      "durationMinutes": 135,
       "image": {
         "url": "https://glasgowtheatre.com/images/91b6b1da5836f1dc16dc.webp",
         "alt": "Twelve Angry Men",
         "credit": null
       },
       "bookingUrl": "https://www.atgtickets.com/shows/twelve-angry-men/theatre-royal-glasgow/calendar/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "citizens-death-of-a-salesman",
@@ -6894,7 +8317,7 @@
         "payWhatYouLike": false,
         "text": "£14 - £43.50",
         "source": "published-text",
-        "checkedAt": "2026-10-15"
+        "checkedAt": "2026-10-18"
       },
       "accessibility": null,
       "durationMinutes": null,
@@ -6904,7 +8327,7 @@
         "credit": null
       },
       "bookingUrl": "https://citz.co.uk/whats-on/death-of-a-salesman/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "pavilion-dianne-and-vito-back-in-business",
@@ -6934,7 +8357,18 @@
           "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/dance/dianne-and-vito-back-in-business-tickets"
         }
       ],
-      "pricing": null,
+      "pricing": {
+        "currency": "GBP",
+        "from": 45.25,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
       "durationMinutes": null,
       "image": {
@@ -6943,7 +8377,82 @@
         "credit": null
       },
       "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/dance/dianne-and-vito-back-in-business-tickets",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
+    },
+    {
+      "id": "kings-the-lyric-club-presents-priscilla-queen-of-the-desert",
+      "url": "https://glasgowtheatre.com/shows/kings-the-lyric-club-presents-priscilla-queen-of-the-desert.html",
+      "title": "The Lyric Club presents Priscilla Queen of the Desert",
+      "artForm": "musical",
+      "tags": [
+        "musical"
+      ],
+      "producer": null,
+      "description": "The Lyric Club presents Priscilla Queen of the Desert at King's Theatre, Glasgow.",
+      "venue": {
+        "id": "kings",
+        "name": "King's Theatre",
+        "area": "City Centre"
+      },
+      "run": {
+        "opens": "2027-04-07",
+        "closes": "2027-04-10",
+        "time": "19:30"
+      },
+      "schedule": null,
+      "performances": [
+        {
+          "date": "2027-04-07",
+          "time": "19:30",
+          "price": 19.38
+        },
+        {
+          "date": "2027-04-08",
+          "time": "19:30",
+          "price": 19.38
+        },
+        {
+          "date": "2027-04-09",
+          "time": "16:30",
+          "price": 19.38
+        },
+        {
+          "date": "2027-04-09",
+          "time": "20:00",
+          "price": 23.94
+        },
+        {
+          "date": "2027-04-10",
+          "time": "14:30",
+          "price": 23.94
+        },
+        {
+          "date": "2027-04-10",
+          "time": "19:30",
+          "price": 23.94
+        }
+      ],
+      "pricing": {
+        "currency": "GBP",
+        "from": 19.38,
+        "to": 23.94,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
+      "accessibility": null,
+      "durationMinutes": 150,
+      "image": {
+        "url": "https://glasgowtheatre.com/images/9ccb1966ea6e5242b728.webp",
+        "alt": "The Lyric Club presents Priscilla Queen of the Desert",
+        "credit": null
+      },
+      "bookingUrl": "https://www.atgtickets.com/shows/the-lyric-club-presents-priscilla-queen-of-the-desert/kings-theatre-glasgow/calendar/",
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "pavilion-myra-dubois-siren",
@@ -6973,7 +8482,18 @@
           "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/comedy/myra-dubois-siren-tickets"
         }
       ],
-      "pricing": null,
+      "pricing": {
+        "currency": "GBP",
+        "from": 37,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
       "durationMinutes": null,
       "image": {
@@ -6982,7 +8502,7 @@
         "credit": null
       },
       "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/comedy/myra-dubois-siren-tickets",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "pavilion-cirque-the-greatest-show",
@@ -7012,7 +8532,18 @@
           "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/other/cirque-the-greatest-show-tickets"
         }
       ],
-      "pricing": null,
+      "pricing": {
+        "currency": "GBP",
+        "from": 34.5,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
       "durationMinutes": null,
       "image": {
@@ -7021,7 +8552,7 @@
         "credit": null
       },
       "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/other/cirque-the-greatest-show-tickets",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "kings-the-mousetrap",
@@ -7041,20 +8572,72 @@
       "run": {
         "opens": "2027-04-12",
         "closes": "2027-04-17",
-        "time": null
+        "time": "19:30"
       },
       "schedule": null,
-      "performances": [],
-      "pricing": null,
+      "performances": [
+        {
+          "date": "2027-04-12",
+          "time": "19:30",
+          "price": 15.6
+        },
+        {
+          "date": "2027-04-13",
+          "time": "19:30",
+          "price": 15.6
+        },
+        {
+          "date": "2027-04-14",
+          "time": "14:30",
+          "price": 15.6
+        },
+        {
+          "date": "2027-04-14",
+          "time": "19:30",
+          "price": 15.6
+        },
+        {
+          "date": "2027-04-15",
+          "time": "19:30",
+          "price": 15.6
+        },
+        {
+          "date": "2027-04-16",
+          "time": "19:30",
+          "price": 15.6
+        },
+        {
+          "date": "2027-04-17",
+          "time": "14:30",
+          "price": 17.5
+        },
+        {
+          "date": "2027-04-17",
+          "time": "19:30",
+          "price": 15.6
+        }
+      ],
+      "pricing": {
+        "currency": "GBP",
+        "from": 15.6,
+        "to": 17.5,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
-      "durationMinutes": null,
+      "durationMinutes": 125,
       "image": {
         "url": "https://glasgowtheatre.com/images/096bec7536a1bec98c45.webp",
         "alt": "The Mousetrap",
         "credit": null
       },
       "bookingUrl": "https://www.atgtickets.com/shows/the-mousetrap/kings-theatre-glasgow/calendar/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "theatre-royal-matthew-bourne-s-cinderella",
@@ -7074,11 +8657,58 @@
       "run": {
         "opens": "2027-04-13",
         "closes": "2027-04-17",
-        "time": null
+        "time": "19:30"
       },
       "schedule": null,
-      "performances": [],
-      "pricing": null,
+      "performances": [
+        {
+          "date": "2027-04-13",
+          "time": "19:30",
+          "price": 20.5
+        },
+        {
+          "date": "2027-04-14",
+          "time": "19:30",
+          "price": 20
+        },
+        {
+          "date": "2027-04-15",
+          "time": "14:30",
+          "price": 20.5
+        },
+        {
+          "date": "2027-04-15",
+          "time": "19:30",
+          "price": 20
+        },
+        {
+          "date": "2027-04-16",
+          "time": "19:30",
+          "price": 20.5
+        },
+        {
+          "date": "2027-04-17",
+          "time": "14:30",
+          "price": 22
+        },
+        {
+          "date": "2027-04-17",
+          "time": "19:30",
+          "price": 20
+        }
+      ],
+      "pricing": {
+        "currency": "GBP",
+        "from": 20,
+        "to": 22,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": [
         "Audio-described performances available"
       ],
@@ -7089,7 +8719,157 @@
         "credit": null
       },
       "bookingUrl": "https://www.atgtickets.com/shows/matthew-bournes-cinderella/theatre-royal-glasgow/calendar/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
+    },
+    {
+      "id": "pavilion-la-voix-live",
+      "url": "https://glasgowtheatre.com/shows/pavilion-la-voix-live.html",
+      "title": "La Voix Live",
+      "artForm": "cabaret",
+      "tags": [
+        "cabaret"
+      ],
+      "producer": null,
+      "description": "Fresh from dazzling millions on Strictly Come Dancing, La Voix is back – bigger, bolder and more fabulous than ever. Having waltzed her way into the nation's heart, she's gone on to conquer the UK, becoming the most recognisable redhead in Britain. Expect an evening of sensational live vocals...",
+      "venue": {
+        "id": "pavilion",
+        "name": "Pavilion Theatre",
+        "area": "City Centre"
+      },
+      "run": {
+        "opens": "2027-04-16",
+        "closes": "2027-04-16",
+        "time": "19:30"
+      },
+      "schedule": null,
+      "performances": [
+        {
+          "date": "2027-04-16",
+          "time": "19:30",
+          "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/other/la-voix-live-tickets"
+        }
+      ],
+      "pricing": {
+        "currency": "GBP",
+        "from": 35,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
+      "accessibility": null,
+      "durationMinutes": null,
+      "image": {
+        "url": "https://glasgowtheatre.com/images/148b3f15dc7f29d2eb58.webp",
+        "alt": "La Voix Live",
+        "credit": null
+      },
+      "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/other/la-voix-live-tickets",
+      "updatedAt": "2026-10-18"
+    },
+    {
+      "id": "pavilion-deirdre-okane-all-the-rage",
+      "url": "https://glasgowtheatre.com/shows/pavilion-deirdre-okane-all-the-rage.html",
+      "title": "Deirdre O'Kane: All The Rage",
+      "artForm": "stand-up",
+      "tags": [
+        "stand-up"
+      ],
+      "producer": null,
+      "description": "Deirdre O’Kane grabs the zeitgeist once again with a brand new show in a world that feels decidedly off kilter. She contrasts everyday domestic failures with bigger moments of historical injustice, while taking aim at the double tragedies of heartbreak and getting Christmas all wrong. Nothing is...",
+      "venue": {
+        "id": "pavilion",
+        "name": "Pavilion Theatre",
+        "area": "City Centre"
+      },
+      "run": {
+        "opens": "2027-04-17",
+        "closes": "2027-04-17",
+        "time": "19:30"
+      },
+      "schedule": null,
+      "performances": [
+        {
+          "date": "2027-04-17",
+          "time": "19:30",
+          "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/comedy/deirdre-okane-all-the-rage-tickets"
+        }
+      ],
+      "pricing": {
+        "currency": "GBP",
+        "from": 30,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
+      "accessibility": null,
+      "durationMinutes": null,
+      "image": {
+        "url": "https://glasgowtheatre.com/images/93cb7b17fa9d425ab67e.webp",
+        "alt": "Deirdre O'Kane: All The Rage",
+        "credit": null
+      },
+      "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/comedy/deirdre-okane-all-the-rage-tickets",
+      "updatedAt": "2026-10-18"
+    },
+    {
+      "id": "pavilion-count-arthur-strong-and-its-goodnight-from-me",
+      "url": "https://glasgowtheatre.com/shows/pavilion-count-arthur-strong-and-its-goodnight-from-me.html",
+      "title": "Count Arthur Strong - And It's Goodnight From Me!",
+      "artForm": "stand-up",
+      "tags": [
+        "stand-up"
+      ],
+      "producer": null,
+      "description": "Count Arthur Strong in And It’s Goodnight from Me! The second part of Count Arthur Strong's Farewell Tour of the World (Including the north-east). Count Arthur Strong continues on for one last time, as he says what just might be his final goodbye, to whoever’s listening. Don’t miss this...",
+      "venue": {
+        "id": "pavilion",
+        "name": "Pavilion Theatre",
+        "area": "City Centre"
+      },
+      "run": {
+        "opens": "2027-04-18",
+        "closes": "2027-04-18",
+        "time": "20:00"
+      },
+      "schedule": null,
+      "performances": [
+        {
+          "date": "2027-04-18",
+          "time": "20:00",
+          "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/comedy/count-arthur-strong-and-its-goodnight-from-me-tickets"
+        }
+      ],
+      "pricing": {
+        "currency": "GBP",
+        "from": 28.5,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
+      "accessibility": null,
+      "durationMinutes": null,
+      "image": {
+        "url": "https://glasgowtheatre.com/images/83e86c0d1c087e9c1f4d.webp",
+        "alt": "Count Arthur Strong - And It's Goodnight From Me!",
+        "credit": null
+      },
+      "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/comedy/count-arthur-strong-and-its-goodnight-from-me-tickets",
+      "updatedAt": "2026-10-18"
     }
   ],
   "venues": [
@@ -7097,12 +8877,14 @@
       "id": "oran-mor",
       "name": "A Play, a Pie and a Pint",
       "area": "West End",
+      "colour": "#d54222",
+      "ink": "#ffffff",
       "description": "A lunchtime theatre programme in a converted church at the top of Byres Road. Every week brings a new short play, with a pie and a drink included in the ticket.",
       "website": "https://playpiepint.com",
       "instagram": "playpiepint",
       "programme": "theatre",
       "url": "https://glasgowtheatre.com/venues/oran-mor.html",
-      "upcomingShows": 6,
+      "upcomingShows": 5,
       "showsUrl": "https://glasgowtheatre.com/api/v1/venues/oran-mor/shows.json",
       "concessions": {
         "url": "https://playpiepint.com/",
@@ -7124,12 +8906,14 @@
       "id": "citizens",
       "name": "Citizens Theatre",
       "area": "Gorbals",
+      "colour": "#111111",
+      "ink": "#ffffff",
       "description": "One of Scotland’s flagship producing theatres, the Citz has been making bold, uncompromising work in the Gorbals since 1945. Following a landmark restoration, it reopened with stunning new studio spaces alongside its iconic Victorian auditorium. Known for its European spirit, bold reimaginings of classic texts and championing new Scottish voices.",
       "website": "https://citz.co.uk",
       "instagram": "citizenstheatre",
       "programme": "theatre",
       "url": "https://glasgowtheatre.com/venues/citizens.html",
-      "upcomingShows": 22,
+      "upcomingShows": 20,
       "showsUrl": "https://glasgowtheatre.com/api/v1/venues/citizens/shows.json",
       "concessions": {
         "url": "https://citz.co.uk/visit/pricing/",
@@ -7212,12 +8996,14 @@
       "id": "cottiers",
       "name": "Cottiers",
       "area": "Hyndland",
+      "colour": "#314e42",
+      "ink": "#ffffff",
       "description": "A stunning converted church in the leafy West End neighbourhood of Hyndland. Cottiers’ intimate theatre space hosts a varied programme of comedy, music, theatre, and community events beneath original stained glass windows. The venue also houses a popular bar and restaurant — perfect for a pre-show drink.",
       "website": "https://cottiers.com",
       "instagram": "cottiersglasgow",
       "programme": "mixed",
       "url": "https://glasgowtheatre.com/venues/cottiers.html",
-      "upcomingShows": 4,
+      "upcomingShows": 3,
       "showsUrl": "https://glasgowtheatre.com/api/v1/venues/cottiers/shows.json",
       "concessions": {
         "url": "https://cottiers.com/",
@@ -7232,12 +9018,14 @@
       "id": "kings",
       "name": "King's Theatre",
       "area": "City Centre",
+      "colour": "#5a00ff",
+      "ink": "#ffffff",
       "description": "A grand Edwardian theatre on Bath Street, the King’s is Glasgow’s home for touring West End musicals, big comedy names, and large-scale drama. With over 1,700 seats across stalls and three balconies, it’s where Glasgow goes for a big night out — and it hosts the city’s legendary annual pantomime every Christmas.",
       "website": "https://atgtickets.com/venues/kings-theatre-glasgow",
       "instagram": "kikitronica",
       "programme": "mixed",
       "url": "https://glasgowtheatre.com/venues/kings.html",
-      "upcomingShows": 23,
+      "upcomingShows": 22,
       "showsUrl": "https://glasgowtheatre.com/api/v1/venues/kings/shows.json",
       "concessions": {
         "url": "https://www.atgtickets.com/access/access-scheme/",
@@ -7264,6 +9052,8 @@
       "id": "mono",
       "name": "Mono",
       "area": "Merchant City",
+      "colour": "#0e7c8c",
+      "ink": "#ffffff",
       "description": "Vegan cafe-bar, record shop and live venue. It hosts a programme of gigs and performances. Independent to its core, with strong ties to Glasgow’s DIY music and arts scenes.",
       "website": "https://monocafebar.com",
       "instagram": "monocafebar",
@@ -7277,12 +9067,14 @@
       "id": "pavilion",
       "name": "Pavilion Theatre",
       "area": "City Centre",
+      "colour": "#256d58",
+      "ink": "#ffffff",
       "description": "An Edwardian variety house on Renfield Street, and a natural home for Scottish comedy, panto that runs for months, tribute nights and new plays.",
       "website": "https://www.paviliontheatre.co.uk",
       "instagram": "paviliontheatre",
       "programme": "mixed",
       "url": "https://glasgowtheatre.com/venues/pavilion.html",
-      "upcomingShows": 40,
+      "upcomingShows": 42,
       "showsUrl": "https://glasgowtheatre.com/api/v1/venues/pavilion/shows.json",
       "concessions": {
         "url": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/terms-and-conditions",
@@ -7308,6 +9100,8 @@
       "id": "platform",
       "name": "Platform",
       "area": "Easterhouse",
+      "colour": "#6626ff",
+      "ink": "#ffffff",
       "description": "An arts centre at The Bridge in Easterhouse, with a programme of theatre, music, visual art and creative activities for different ages. Visit the venue website for performances and opportunities to take part.",
       "website": "https://platform-online.co.uk",
       "instagram": "platformglasgow",
@@ -7346,6 +9140,8 @@
       "id": "southside-fringe",
       "name": "Southside Fringe",
       "area": "Southside",
+      "colour": "#0051c3",
+      "ink": "#ffffff",
       "description": "An annual multi-venue festival celebrating the creativity and diversity of Glasgow’s Southside. For two weeks each May, the Fringe pops up in cafes, parks, community halls, and shop fronts across the Southside, with a programme spanning theatre, comedy, music, visual art, and family events.",
       "website": "https://southsidefringe.org.uk",
       "instagram": "southsidefringe",
@@ -7359,12 +9155,14 @@
       "id": "glad-cafe",
       "name": "The Glad Cafe",
       "area": "Shawlands",
+      "colour": "#f0bd0f",
+      "ink": "#20202c",
       "description": "A warm, community-focused cafe and arts venue on Pollokshaws Road in the heart of Shawlands. The Glad champions grassroots music and performance.",
       "website": "https://thegladcafe.co.uk",
       "instagram": "thegladcafe",
       "programme": "mixed",
       "url": "https://glasgowtheatre.com/venues/glad-cafe.html",
-      "upcomingShows": 1,
+      "upcomingShows": 2,
       "showsUrl": "https://glasgowtheatre.com/api/v1/venues/glad-cafe/shows.json",
       "concessions": {
         "url": "https://www.thegladcafe.co.uk/",
@@ -7379,6 +9177,8 @@
       "id": "old-hairdressers",
       "name": "The Old Hairdressers",
       "area": "City Centre",
+      "colour": "#6d7c39",
+      "ink": "#ffffff",
       "description": "An independent bar and arts venue on Renfield Lane, hosting live music, exhibitions and experimental performance. Check the venue programme for upcoming events.",
       "website": "https://theoldhairdressers.com",
       "instagram": "theoldhairdressers",
@@ -7399,6 +9199,8 @@
       "id": "theatre-118",
       "name": "Theatre 118",
       "area": "Port Dundas",
+      "colour": "#ff5b1e",
+      "ink": "#20202c",
       "description": "Glasgow's fringe theatre, in a former industrial building at 24 Payne Street, just north of the city centre across the M8. It programmes new writing, comedy, music and live performance from grassroots companies and its own productions, with Pay What You Can tickets available on every show.",
       "website": "https://theatre118.com",
       "instagram": "theatre_118",
@@ -7425,12 +9227,14 @@
       "id": "theatre-royal",
       "name": "Theatre Royal",
       "area": "City Centre",
+      "colour": "#d0202d",
+      "ink": "#ffffff",
       "description": "Opened in 1867, the Theatre Royal on Hope Street hosts opera, ballet, touring drama and musicals in a plush Victorian auditorium. It is the Glasgow home of Scottish Opera and Scottish Ballet.",
       "website": "https://atgtickets.com/venues/theatre-royal-glasgow",
       "instagram": "theatreroyalglasgow",
       "programme": "mixed",
       "url": "https://glasgowtheatre.com/venues/theatre-royal.html",
-      "upcomingShows": 25,
+      "upcomingShows": 24,
       "showsUrl": "https://glasgowtheatre.com/api/v1/venues/theatre-royal/shows.json",
       "concessions": {
         "url": "https://www.atgtickets.com/access/access-scheme/",
@@ -7457,12 +9261,14 @@
       "id": "tramway",
       "name": "Tramway",
       "area": "Pollokshields",
+      "colour": "#4a4f57",
+      "ink": "#ffffff",
       "description": "An internationally renowned arts venue housed in a vast former tram depot on the Southside. Tramway’s cavernous industrial spaces host cutting-edge theatre, dance, and visual art from Scotland and around the world. Its programme leans towards the experimental and the boundary-pushing.",
       "website": "https://tramway.org",
       "instagram": "tramwayart",
       "programme": "theatre",
       "url": "https://glasgowtheatre.com/venues/tramway.html",
-      "upcomingShows": 5,
+      "upcomingShows": 4,
       "showsUrl": "https://glasgowtheatre.com/api/v1/venues/tramway/shows.json",
       "concessions": {
         "url": "https://www.glasgowlife.org.uk/the-small-print/tickets-glasgow-tickets-purchase-policy",
@@ -7484,12 +9290,14 @@
       "id": "tron",
       "name": "Tron Theatre",
       "area": "Merchant City",
+      "colour": "#e01c70",
+      "ink": "#ffffff",
       "description": "Housed in a beautiful converted church at the heart of the Merchant City, the Tron is Glasgow’s home for new writing and independent theatre. With an intimate main stage and a buzzing bar, it programmes a mix of Scottish premieres, visiting companies, and its popular scratch series for works-in-development.",
       "website": "https://tron.co.uk",
       "instagram": "tikitronica",
       "programme": "theatre",
       "url": "https://glasgowtheatre.com/venues/tron.html",
-      "upcomingShows": 12,
+      "upcomingShows": 11,
       "showsUrl": "https://glasgowtheatre.com/api/v1/venues/tron/shows.json",
       "concessions": {
         "url": "https://www.tron.co.uk/booking-information/",

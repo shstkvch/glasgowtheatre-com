@@ -1,7 +1,7 @@
 {
-  "apiVersion": "1",
-  "generatedAt": "2026-10-17T21:40:27.566Z",
-  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "apiVersion": "1.1",
+  "generatedAt": "2026-10-18T09:56:21.462Z",
+  "refreshedAt": "2026-10-18T09:55:39.286Z",
   "show": {
     "id": "theatre-royal-scottish-opera-alcina",
     "url": "https://glasgowtheatre.com/shows/theatre-royal-scottish-opera-alcina.html",
@@ -20,21 +20,48 @@
     "run": {
       "opens": "2027-02-06",
       "closes": "2027-02-14",
-      "time": null
+      "time": "19:15"
     },
     "schedule": null,
-    "performances": [],
-    "pricing": null,
+    "performances": [
+      {
+        "date": "2027-02-06",
+        "time": "19:15",
+        "price": 24
+      },
+      {
+        "date": "2027-02-11",
+        "time": "19:15",
+        "price": 24
+      },
+      {
+        "date": "2027-02-14",
+        "time": "15:00",
+        "price": 24
+      }
+    ],
+    "pricing": {
+      "currency": "GBP",
+      "from": 24,
+      "to": null,
+      "concessionFrom": null,
+      "concessionTo": null,
+      "free": false,
+      "payWhatYouLike": false,
+      "text": null,
+      "source": "venue-feed",
+      "checkedAt": "2026-10-18"
+    },
     "accessibility": [
       "Audio-described performances available"
     ],
-    "durationMinutes": null,
+    "durationMinutes": 150,
     "image": {
       "url": "https://glasgowtheatre.com/images/54fdeccfd3a9e4d36a56.webp",
       "alt": "Scottish Opera - Alcina",
       "credit": null
     },
     "bookingUrl": "https://www.atgtickets.com/shows/scottish-opera-alcina/theatre-royal-glasgow/calendar/",
-    "updatedAt": "2026-10-15"
+    "updatedAt": "2026-10-18"
   }
 }

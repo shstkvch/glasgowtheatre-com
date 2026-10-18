@@ -1,7 +1,7 @@
 {
-  "apiVersion": "1",
-  "generatedAt": "2026-10-17T21:40:27.566Z",
-  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "apiVersion": "1.1",
+  "generatedAt": "2026-10-18T09:56:21.462Z",
+  "refreshedAt": "2026-10-18T09:55:39.286Z",
   "show": {
     "id": "kings-kyle-maclachlan-fictional-selves",
     "url": "https://glasgowtheatre.com/shows/kings-kyle-maclachlan-fictional-selves.html",
@@ -20,19 +20,36 @@
     "run": {
       "opens": "2026-10-18",
       "closes": "2026-10-18",
-      "time": null
+      "time": "19:30"
     },
     "schedule": null,
-    "performances": [],
-    "pricing": null,
+    "performances": [
+      {
+        "date": "2026-10-18",
+        "time": "19:30",
+        "price": 165.48
+      }
+    ],
+    "pricing": {
+      "currency": "GBP",
+      "from": 165.48,
+      "to": null,
+      "concessionFrom": null,
+      "concessionTo": null,
+      "free": false,
+      "payWhatYouLike": false,
+      "text": null,
+      "source": "venue-feed",
+      "checkedAt": "2026-10-18"
+    },
     "accessibility": null,
-    "durationMinutes": null,
+    "durationMinutes": 110,
     "image": {
       "url": "https://glasgowtheatre.com/images/62b8361aae2c9e16eb27.webp",
       "alt": "Kyle MacLachlan – Fictional Selves",
       "credit": null
     },
     "bookingUrl": "https://www.atgtickets.com/shows/kyle-maclachlan-fictional-selves/kings-theatre-glasgow/calendar/",
-    "updatedAt": "2026-10-15"
+    "updatedAt": "2026-10-18"
   }
 }

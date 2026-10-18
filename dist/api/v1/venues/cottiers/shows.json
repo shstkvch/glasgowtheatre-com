@@ -1,47 +1,14 @@
 {
-  "apiVersion": "1",
-  "generatedAt": "2026-10-17T21:40:27.566Z",
-  "refreshedAt": "2026-10-15T19:58:04.418Z",
-  "total": 4,
-  "count": 4,
+  "apiVersion": "1.1",
+  "generatedAt": "2026-10-18T09:56:21.462Z",
+  "refreshedAt": "2026-10-18T09:55:39.286Z",
+  "total": 3,
+  "count": 3,
   "limit": null,
   "offset": 0,
   "next": null,
   "prev": null,
   "shows": [
-    {
-      "id": "cottiers-turn-a-different-corner",
-      "url": "https://glasgowtheatre.com/shows/cottiers-turn-a-different-corner.html",
-      "title": "Turn a different corner",
-      "artForm": "play",
-      "tags": [
-        "play"
-      ],
-      "producer": null,
-      "description": "At 17, Charlie Murphy thought community service at a Glasgow homeless drop-in centre would be easy. Just kill time and get out. He didn’t expect the people he would meet there. A veteran broken by Basra. A grandmother too ashamed to face her grandchildren. A young woman fighting her way back from...",
-      "venue": {
-        "id": "cottiers",
-        "name": "Cottiers",
-        "area": "Hyndland"
-      },
-      "run": {
-        "opens": "2026-10-18",
-        "closes": "2026-10-18",
-        "time": null
-      },
-      "schedule": null,
-      "performances": [],
-      "pricing": null,
-      "accessibility": null,
-      "durationMinutes": null,
-      "image": {
-        "url": "https://glasgowtheatre.com/images/543a8062b6241ff63eae.webp",
-        "alt": "Turn a different corner",
-        "credit": null
-      },
-      "bookingUrl": "https://cottiers.com/event/turn-a-different-corner/",
-      "updatedAt": "2026-10-15"
-    },
     {
       "id": "cottiers-the-seven-witches-of-torryburn",
       "url": "https://glasgowtheatre.com/shows/cottiers-the-seven-witches-of-torryburn.html",
@@ -81,7 +48,7 @@
         "payWhatYouLike": false,
         "text": "Standard Price : £17.00",
         "source": "published-text",
-        "checkedAt": "2026-10-15"
+        "checkedAt": "2026-10-18"
       },
       "accessibility": null,
       "durationMinutes": null,
@@ -91,7 +58,7 @@
         "credit": null
       },
       "bookingUrl": "https://cottiers.com/event/7-witches-of-torryburn/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "cottiers-witch-hunt",
@@ -132,7 +99,7 @@
         "payWhatYouLike": false,
         "text": "Standard Price : £20.00",
         "source": "published-text",
-        "checkedAt": "2026-10-15"
+        "checkedAt": "2026-10-18"
       },
       "accessibility": null,
       "durationMinutes": null,
@@ -142,7 +109,7 @@
         "credit": null
       },
       "bookingUrl": "https://cottiers.com/event/witch-hunt/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "cottiers-peking-opera-in-glasgow",
@@ -153,7 +120,7 @@
         "opera"
       ],
       "producer": null,
-      "description": "Peking Opera in Glasgow brings Chinese opera into the city through live performance, voice, movement and gesture. Audiences can experience its distinctive performance language up close and see how stories and emotions are communicated beyond words. The event creates a meeting point between Chinese...",
+      "description": "Peking Opera in Glasgow brings Chinese opera into the city through live performance, voice, movement and gesture. Audiences can experience its distinctive performance language up close and see how stories and emotions are communicated beyond words. The event creates a meeting point between...",
       "venue": {
         "id": "cottiers",
         "name": "Cottiers",
@@ -173,7 +140,18 @@
           "time": "19:00"
         }
       ],
-      "pricing": null,
+      "pricing": {
+        "currency": "GBP",
+        "from": 0,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": true,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
       "durationMinutes": null,
       "image": {
@@ -182,7 +160,7 @@
         "credit": null
       },
       "bookingUrl": "https://cottiers.com/event/peking-opera-in-glasgow/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     }
   ]
 }

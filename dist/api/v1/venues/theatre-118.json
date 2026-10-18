@@ -1,11 +1,13 @@
 {
-  "apiVersion": "1",
-  "generatedAt": "2026-10-17T21:40:27.566Z",
-  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "apiVersion": "1.1",
+  "generatedAt": "2026-10-18T09:56:21.462Z",
+  "refreshedAt": "2026-10-18T09:55:39.286Z",
   "venue": {
     "id": "theatre-118",
     "name": "Theatre 118",
     "area": "Port Dundas",
+    "colour": "#ff5b1e",
+    "ink": "#20202c",
     "description": "Glasgow's fringe theatre, in a former industrial building at 24 Payne Street, just north of the city centre across the M8. It programmes new writing, comedy, music and live performance from grassroots companies and its own productions, with Pay What You Can tickets available on every show.",
     "website": "https://theatre118.com",
     "instagram": "theatre_118",

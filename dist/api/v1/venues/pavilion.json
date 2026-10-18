@@ -1,17 +1,19 @@
 {
-  "apiVersion": "1",
-  "generatedAt": "2026-10-17T21:40:27.566Z",
-  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "apiVersion": "1.1",
+  "generatedAt": "2026-10-18T09:56:21.462Z",
+  "refreshedAt": "2026-10-18T09:55:39.286Z",
   "venue": {
     "id": "pavilion",
     "name": "Pavilion Theatre",
     "area": "City Centre",
+    "colour": "#256d58",
+    "ink": "#ffffff",
     "description": "An Edwardian variety house on Renfield Street, and a natural home for Scottish comedy, panto that runs for months, tribute nights and new plays.",
     "website": "https://www.paviliontheatre.co.uk",
     "instagram": "paviliontheatre",
     "programme": "mixed",
     "url": "https://glasgowtheatre.com/venues/pavilion.html",
-    "upcomingShows": 40,
+    "upcomingShows": 42,
     "showsUrl": "https://glasgowtheatre.com/api/v1/venues/pavilion/shows.json",
     "concessions": {
       "url": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/terms-and-conditions",

@@ -1,5 +1,4 @@
 # opens	closes	title	venue	artForm	fromPrice	url
-2026-10-16	2026-10-17	Thrice	Tramway	dance		https://glasgowtheatre.com/shows/thrice-2026.html
 2026-10-30	2026-10-31	Cade & MacAskill with Yas Clarke & Tim Spooner - NOW NOT NOW	Tramway	physical-theatre	18	https://glasgowtheatre.com/shows/tramway-cade-macaskill-with-yas-clarke-tim-spooner-now-not-n.html
 2026-11-28	2026-11-28	Hanna Tuulikki - Deer Dancer	Tramway	dance	18	https://glasgowtheatre.com/shows/tramway-hanna-tuulikki-deer-dancer.html
 2026-12-05	2026-12-05	Hayley Earlam - Brrr	Tramway	play	8	https://glasgowtheatre.com/shows/tramway-hayley-earlam-brrr.html

@@ -1,7 +1,7 @@
 {
-  "apiVersion": "1",
-  "generatedAt": "2026-10-17T21:40:27.566Z",
-  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "apiVersion": "1.1",
+  "generatedAt": "2026-10-18T09:56:21.462Z",
+  "refreshedAt": "2026-10-18T09:55:39.286Z",
   "show": {
     "id": "cottiers-peking-opera-in-glasgow",
     "url": "https://glasgowtheatre.com/shows/cottiers-peking-opera-in-glasgow.html",
@@ -11,7 +11,7 @@
       "opera"
     ],
     "producer": null,
-    "description": "Peking Opera in Glasgow brings Chinese opera into the city through live performance, voice, movement and gesture. Audiences can experience its distinctive performance language up close and see how stories and emotions are communicated beyond words. The event creates a meeting point between Chinese...",
+    "description": "Peking Opera in Glasgow brings Chinese opera into the city through live performance, voice, movement and gesture. Audiences can experience its distinctive performance language up close and see how stories and emotions are communicated beyond words. The event creates a meeting point between...",
     "venue": {
       "id": "cottiers",
       "name": "Cottiers",
@@ -31,7 +31,18 @@
         "time": "19:00"
       }
     ],
-    "pricing": null,
+    "pricing": {
+      "currency": "GBP",
+      "from": 0,
+      "to": null,
+      "concessionFrom": null,
+      "concessionTo": null,
+      "free": true,
+      "payWhatYouLike": false,
+      "text": null,
+      "source": "venue-feed",
+      "checkedAt": "2026-10-18"
+    },
     "accessibility": null,
     "durationMinutes": null,
     "image": {
@@ -40,6 +51,6 @@
       "credit": null
     },
     "bookingUrl": "https://cottiers.com/event/peking-opera-in-glasgow/",
-    "updatedAt": "2026-10-15"
+    "updatedAt": "2026-10-18"
   }
 }

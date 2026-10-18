@@ -1,6 +1,4 @@
 # opens	closes	title	venue	artForm	fromPrice	url
-2026-10-16	2026-10-17	East is East	Citizens Theatre	play	18.5	https://glasgowtheatre.com/shows/citizens-east-is-east.html
-2026-10-16	2026-10-17	These Are Our Neighbours	Citizens Theatre	dance	17.5	https://glasgowtheatre.com/shows/citizens-these-are-our-neighbours.html
 2026-10-21	2026-10-24	The Prime of Miss Jean Brodie	Citizens Theatre	play	14.5	https://glasgowtheatre.com/shows/citizens-the-prime-of-miss-jean-brodie.html
 2026-10-23	2026-10-23	Revel	Citizens Theatre	dance	17.5	https://glasgowtheatre.com/shows/citizens-revel.html
 2026-10-27	2026-11-07	Othello	Citizens Theatre	play	18.5	https://glasgowtheatre.com/shows/citizens-othello.html

@@ -1,7 +1,7 @@
 {
-  "apiVersion": "1",
-  "generatedAt": "2026-10-17T21:40:27.566Z",
-  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "apiVersion": "1.1",
+  "generatedAt": "2026-10-18T09:56:21.462Z",
+  "refreshedAt": "2026-10-18T09:55:39.286Z",
   "show": {
     "id": "kings-jersey-boys",
     "url": "https://glasgowtheatre.com/shows/kings-jersey-boys.html",
@@ -20,21 +20,78 @@
     "run": {
       "opens": "2027-02-16",
       "closes": "2027-02-27",
-      "time": null
+      "time": "19:30"
     },
     "schedule": null,
-    "performances": [],
-    "pricing": null,
+    "performances": [
+      {
+        "date": "2027-02-16",
+        "time": "19:30",
+        "price": 15
+      },
+      {
+        "date": "2027-02-17",
+        "time": "14:30",
+        "price": 15
+      },
+      {
+        "date": "2027-02-17",
+        "time": "19:30",
+        "price": 15
+      },
+      {
+        "date": "2027-02-18",
+        "time": "14:30",
+        "price": 15
+      },
+      {
+        "date": "2027-02-18",
+        "time": "19:30",
+        "price": 15
+      },
+      {
+        "date": "2027-02-19",
+        "time": "19:30",
+        "price": 20
+      },
+      {
+        "date": "2027-02-20",
+        "time": "14:30",
+        "price": 25
+      },
+      {
+        "date": "2027-02-20",
+        "time": "19:30",
+        "price": 25
+      },
+      {
+        "date": "2027-02-22",
+        "time": "19:30",
+        "price": 15
+      }
+    ],
+    "pricing": {
+      "currency": "GBP",
+      "from": 15,
+      "to": 25,
+      "concessionFrom": null,
+      "concessionTo": null,
+      "free": false,
+      "payWhatYouLike": false,
+      "text": null,
+      "source": "venue-feed",
+      "checkedAt": "2026-10-18"
+    },
     "accessibility": [
       "BSL-interpreted performances available"
     ],
-    "durationMinutes": null,
+    "durationMinutes": 150,
     "image": {
       "url": "https://glasgowtheatre.com/images/0487ed05f7dce12b00e3.webp",
       "alt": "Jersey Boys",
       "credit": null
     },
     "bookingUrl": "https://www.atgtickets.com/shows/jersey-boys/kings-theatre-glasgow/calendar/",
-    "updatedAt": "2026-10-15"
+    "updatedAt": "2026-10-18"
   }
 }

@@ -2,7 +2,7 @@
   "openapi": "3.1.0",
   "info": {
     "title": "Glasgow Theatre API",
-    "version": "1",
+    "version": "1.1",
     "description": "Read-only listings for theatre, dance and performance in Glasgow. Free to use with attribution to Glasgow Theatre. Dates are Europe/London calendar dates; prices and times are a guide, so always confirm with the venue.",
     "license": {
       "name": "Free to use with attribution"
@@ -891,6 +891,8 @@
           "id",
           "name",
           "area",
+          "colour",
+          "ink",
           "description",
           "website",
           "instagram",
@@ -912,6 +914,16 @@
               "string",
               "null"
             ]
+          },
+          "colour": {
+            "type": "string",
+            "pattern": "^#[0-9a-f]{6}$",
+            "description": "The venue's house colour, adjusted to clear WCAG AA against ink."
+          },
+          "ink": {
+            "type": "string",
+            "pattern": "^#[0-9a-f]{6}$",
+            "description": "The legible text colour to use on colour."
           },
           "description": {
             "type": [
@@ -1014,7 +1026,7 @@
         ],
         "properties": {
           "apiVersion": {
-            "const": "1"
+            "const": "1.1"
           },
           "generatedAt": {
             "type": "string",
@@ -1352,7 +1364,7 @@
         ],
         "properties": {
           "apiVersion": {
-            "const": "1"
+            "const": "1.1"
           },
           "generatedAt": {
             "type": "string",
@@ -1658,7 +1670,7 @@
         ],
         "properties": {
           "apiVersion": {
-            "const": "1"
+            "const": "1.1"
           },
           "generatedAt": {
             "type": "string",
@@ -1677,6 +1689,8 @@
               "id",
               "name",
               "area",
+              "colour",
+              "ink",
               "description",
               "website",
               "instagram",
@@ -1698,6 +1712,16 @@
                   "string",
                   "null"
                 ]
+              },
+              "colour": {
+                "type": "string",
+                "pattern": "^#[0-9a-f]{6}$",
+                "description": "The venue's house colour, adjusted to clear WCAG AA against ink."
+              },
+              "ink": {
+                "type": "string",
+                "pattern": "^#[0-9a-f]{6}$",
+                "description": "The legible text colour to use on colour."
               },
               "description": {
                 "type": [
@@ -1790,7 +1814,7 @@
         "type": "object",
         "properties": {
           "apiVersion": {
-            "const": "1"
+            "const": "1.1"
           },
           "generatedAt": {
             "type": "string",
@@ -1842,7 +1866,7 @@
         "type": "object",
         "properties": {
           "apiVersion": {
-            "const": "1"
+            "const": "1.1"
           },
           "generatedAt": {
             "type": "string",

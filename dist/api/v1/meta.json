@@ -1,27 +1,27 @@
 {
-  "apiVersion": "1",
-  "generatedAt": "2026-10-17T21:40:27.566Z",
-  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "apiVersion": "1.1",
+  "generatedAt": "2026-10-18T09:56:21.462Z",
+  "refreshedAt": "2026-10-18T09:55:39.286Z",
   "site": "https://glasgowtheatre.com",
   "counts": {
-    "shows": 144,
+    "shows": 139,
     "venues": 14,
     "venuesWithShows": 12,
     "artForms": {
-      "spoken-word": 6,
-      "play": 31,
-      "musical": 17,
-      "dance": 9,
-      "tour": 4,
       "talk": 17,
-      "stand-up": 24,
+      "stand-up": 26,
+      "play": 27,
+      "spoken-word": 6,
+      "musical": 17,
       "opera": 4,
       "community-event": 2,
+      "dance": 7,
       "physical-theatre": 5,
-      "cabaret": 6,
+      "cabaret": 7,
       "pantomime": 8,
       "workshop": 2,
-      "music": 9
+      "music": 9,
+      "tour": 2
     }
   },
   "endpoints": {

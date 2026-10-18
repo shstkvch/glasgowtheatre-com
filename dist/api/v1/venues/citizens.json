@@ -1,17 +1,19 @@
 {
-  "apiVersion": "1",
-  "generatedAt": "2026-10-17T21:40:27.566Z",
-  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "apiVersion": "1.1",
+  "generatedAt": "2026-10-18T09:56:21.462Z",
+  "refreshedAt": "2026-10-18T09:55:39.286Z",
   "venue": {
     "id": "citizens",
     "name": "Citizens Theatre",
     "area": "Gorbals",
+    "colour": "#111111",
+    "ink": "#ffffff",
     "description": "One of Scotland’s flagship producing theatres, the Citz has been making bold, uncompromising work in the Gorbals since 1945. Following a landmark restoration, it reopened with stunning new studio spaces alongside its iconic Victorian auditorium. Known for its European spirit, bold reimaginings of classic texts and championing new Scottish voices.",
     "website": "https://citz.co.uk",
     "instagram": "citizenstheatre",
     "programme": "theatre",
     "url": "https://glasgowtheatre.com/venues/citizens.html",
-    "upcomingShows": 22,
+    "upcomingShows": 20,
     "showsUrl": "https://glasgowtheatre.com/api/v1/venues/citizens/shows.json",
     "concessions": {
       "url": "https://citz.co.uk/visit/pricing/",

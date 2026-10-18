@@ -1,131 +1,14 @@
 {
-  "apiVersion": "1",
-  "generatedAt": "2026-10-17T21:40:27.566Z",
-  "refreshedAt": "2026-10-15T19:58:04.418Z",
-  "total": 22,
-  "count": 22,
+  "apiVersion": "1.1",
+  "generatedAt": "2026-10-18T09:56:21.462Z",
+  "refreshedAt": "2026-10-18T09:55:39.286Z",
+  "total": 20,
+  "count": 20,
   "limit": null,
   "offset": 0,
   "next": null,
   "prev": null,
   "shows": [
-    {
-      "id": "citizens-east-is-east",
-      "url": "https://glasgowtheatre.com/shows/citizens-east-is-east.html",
-      "title": "East is East",
-      "artForm": "play",
-      "tags": [
-        "play"
-      ],
-      "producer": null,
-      "description": "Family can hold you together and tear you apart. Salford, 1971. The Khan family are living above a chip shop and on the fault line between two cultures. George Khan is determined the family is raised his Pakistani way. His English wife, Ella, just wants to keep the peace. Their seven children...",
-      "venue": {
-        "id": "citizens",
-        "name": "Citizens Theatre",
-        "area": "Gorbals"
-      },
-      "run": {
-        "opens": "2026-10-16",
-        "closes": "2026-10-17",
-        "time": "19:30"
-      },
-      "schedule": null,
-      "performances": [
-        {
-          "date": "2026-10-16",
-          "time": "19:30",
-          "bookingUrl": "https://citz.co.uk/whats-on/east-is-east/book/74603"
-        },
-        {
-          "date": "2026-10-17",
-          "time": "14:00",
-          "bookingUrl": "https://citz.co.uk/whats-on/east-is-east/book/74403"
-        },
-        {
-          "date": "2026-10-17",
-          "time": "19:30",
-          "bookingUrl": "https://citz.co.uk/whats-on/east-is-east/book/74604"
-        }
-      ],
-      "pricing": {
-        "currency": "GBP",
-        "from": 18.5,
-        "to": 43.5,
-        "concessionFrom": null,
-        "concessionTo": null,
-        "free": false,
-        "payWhatYouLike": false,
-        "text": "£18.50 - £43.50",
-        "source": "published-text",
-        "checkedAt": "2026-10-15"
-      },
-      "accessibility": null,
-      "durationMinutes": 145,
-      "image": {
-        "url": "https://glasgowtheatre.com/images/abff3d4a98c4b2a4e958.webp",
-        "alt": "East is East",
-        "credit": null
-      },
-      "bookingUrl": "https://citz.co.uk/whats-on/east-is-east/",
-      "updatedAt": "2026-10-15"
-    },
-    {
-      "id": "citizens-these-are-our-neighbours",
-      "url": "https://glasgowtheatre.com/shows/citizens-these-are-our-neighbours.html",
-      "title": "These Are Our Neighbours",
-      "artForm": "dance",
-      "tags": [
-        "dance"
-      ],
-      "producer": null,
-      "description": "There’s a van on your street. It says IMMIGRATION ENFORCEMENT on the side. It’s here for your neighbours. What do you do? Fusing documentary with celebratory dance theatre, These Are Our Neighbours revisits the attempted raid on Kenmure Street in 2021 that became an eight-hour act of shared...",
-      "venue": {
-        "id": "citizens",
-        "name": "Citizens Theatre",
-        "area": "Gorbals"
-      },
-      "run": {
-        "opens": "2026-10-16",
-        "closes": "2026-10-17",
-        "time": "19:45"
-      },
-      "schedule": null,
-      "performances": [
-        {
-          "date": "2026-10-16",
-          "time": "19:45"
-        },
-        {
-          "date": "2026-10-17",
-          "time": "14:30"
-        },
-        {
-          "date": "2026-10-17",
-          "time": "19:45"
-        }
-      ],
-      "pricing": {
-        "currency": "GBP",
-        "from": 17.5,
-        "to": null,
-        "concessionFrom": null,
-        "concessionTo": null,
-        "free": false,
-        "payWhatYouLike": false,
-        "text": "£17.50",
-        "source": "published-text",
-        "checkedAt": "2026-10-15"
-      },
-      "accessibility": null,
-      "durationMinutes": 70,
-      "image": {
-        "url": "https://glasgowtheatre.com/images/6a4ae5c15a01d1ea1b2f.webp",
-        "alt": "These Are Our Neighbours",
-        "credit": null
-      },
-      "bookingUrl": "https://citz.co.uk/whats-on/these-are-our-neighbours/",
-      "updatedAt": "2026-10-15"
-    },
     {
       "id": "citizens-the-prime-of-miss-jean-brodie",
       "url": "https://glasgowtheatre.com/shows/citizens-the-prime-of-miss-jean-brodie.html",
@@ -183,7 +66,7 @@
         "payWhatYouLike": false,
         "text": "£14.50 - £43.50",
         "source": "published-text",
-        "checkedAt": "2026-10-15"
+        "checkedAt": "2026-10-18"
       },
       "accessibility": null,
       "durationMinutes": 180,
@@ -193,7 +76,7 @@
         "credit": null
       },
       "bookingUrl": "https://citz.co.uk/whats-on/the-prime-of-miss-jean-brodie/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "citizens-revel",
@@ -227,7 +110,7 @@
         "payWhatYouLike": false,
         "text": "£17.50",
         "source": "published-text",
-        "checkedAt": "2026-10-15"
+        "checkedAt": "2026-10-18"
       },
       "accessibility": null,
       "durationMinutes": 55,
@@ -237,7 +120,7 @@
         "credit": null
       },
       "bookingUrl": "https://citz.co.uk/whats-on/revel/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "citizens-othello",
@@ -342,7 +225,7 @@
         "payWhatYouLike": false,
         "text": "£18.50 - £43.50",
         "source": "published-text",
-        "checkedAt": "2026-10-15"
+        "checkedAt": "2026-10-18"
       },
       "accessibility": null,
       "durationMinutes": 170,
@@ -352,7 +235,7 @@
         "credit": null
       },
       "bookingUrl": "https://citz.co.uk/whats-on/othello/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "citizens-talking-heritage-the-forgotten-story-of-spectacular",
@@ -386,7 +269,7 @@
         "payWhatYouLike": false,
         "text": "£8",
         "source": "published-text",
-        "checkedAt": "2026-10-15"
+        "checkedAt": "2026-10-18"
       },
       "accessibility": null,
       "durationMinutes": 90,
@@ -396,7 +279,7 @@
         "credit": null
       },
       "bookingUrl": "https://citz.co.uk/whats-on/talking-heritage-the-forgotten-story-of-spectacular-theatre-with-jamie-harrison/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "citizens-i-ll-scratch-yours",
@@ -430,7 +313,7 @@
         "payWhatYouLike": false,
         "text": "£13",
         "source": "published-text",
-        "checkedAt": "2026-10-15"
+        "checkedAt": "2026-10-18"
       },
       "accessibility": null,
       "durationMinutes": 105,
@@ -440,7 +323,7 @@
         "credit": null
       },
       "bookingUrl": "https://citz.co.uk/whats-on/ill-scratch-yours/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "citizens-queer-folks-tales-oct-2026",
@@ -474,7 +357,7 @@
         "payWhatYouLike": false,
         "text": "£13",
         "source": "published-text",
-        "checkedAt": "2026-10-15"
+        "checkedAt": "2026-10-18"
       },
       "accessibility": null,
       "durationMinutes": 120,
@@ -484,7 +367,7 @@
         "credit": null
       },
       "bookingUrl": "https://citz.co.uk/whats-on/queer-folks-tales-oct-26/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "citizens-do-not-pass-go",
@@ -539,7 +422,7 @@
         "payWhatYouLike": false,
         "text": "£17.50",
         "source": "published-text",
-        "checkedAt": "2026-10-15"
+        "checkedAt": "2026-10-18"
       },
       "accessibility": null,
       "durationMinutes": null,
@@ -549,7 +432,7 @@
         "credit": null
       },
       "bookingUrl": "https://citz.co.uk/whats-on/do-not-pass-go/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "citizens-an-t-rlar-as-irde-the-highest-stage",
@@ -583,7 +466,7 @@
         "payWhatYouLike": false,
         "text": "£17.50",
         "source": "published-text",
-        "checkedAt": "2026-10-15"
+        "checkedAt": "2026-10-18"
       },
       "accessibility": null,
       "durationMinutes": 105,
@@ -593,7 +476,7 @@
         "credit": null
       },
       "bookingUrl": "https://citz.co.uk/whats-on/an-t-urlar-as-airde/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "citizens-cinderella",
@@ -840,7 +723,7 @@
         "payWhatYouLike": false,
         "text": "Adult £12.50 - £43.50, Child £9.25 - £22",
         "source": "published-text",
-        "checkedAt": "2026-10-15"
+        "checkedAt": "2026-10-18"
       },
       "accessibility": null,
       "durationMinutes": 120,
@@ -850,7 +733,7 @@
         "credit": null
       },
       "bookingUrl": "https://citz.co.uk/whats-on/cinderella/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "citizens-poggle-and-me",
@@ -901,7 +784,7 @@
         "payWhatYouLike": false,
         "text": "£100 fee per performance",
         "source": "published-text",
-        "checkedAt": "2026-10-15"
+        "checkedAt": "2026-10-18"
       },
       "accessibility": null,
       "durationMinutes": 40,
@@ -911,7 +794,7 @@
         "credit": null
       },
       "bookingUrl": "https://citz.co.uk/whats-on/poggle-and-me/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "citizens-jill-jackson-and-support",
@@ -945,7 +828,7 @@
         "payWhatYouLike": false,
         "text": "£28",
         "source": "published-text",
-        "checkedAt": "2026-10-15"
+        "checkedAt": "2026-10-18"
       },
       "accessibility": null,
       "durationMinutes": null,
@@ -955,7 +838,7 @@
         "credit": null
       },
       "bookingUrl": "https://citz.co.uk/whats-on/jill-jackson-and-support/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "citizens-dallahan-with-laura-cortese",
@@ -989,7 +872,7 @@
         "payWhatYouLike": false,
         "text": "£22",
         "source": "published-text",
-        "checkedAt": "2026-10-15"
+        "checkedAt": "2026-10-18"
       },
       "accessibility": null,
       "durationMinutes": null,
@@ -999,7 +882,7 @@
         "credit": null
       },
       "bookingUrl": "https://citz.co.uk/whats-on/dallahan-and-support/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "citizens-mcgoldrick-mccusker-doyle-and-friends",
@@ -1033,7 +916,7 @@
         "payWhatYouLike": false,
         "text": "£24",
         "source": "published-text",
-        "checkedAt": "2026-10-15"
+        "checkedAt": "2026-10-18"
       },
       "accessibility": null,
       "durationMinutes": null,
@@ -1043,7 +926,7 @@
         "credit": null
       },
       "bookingUrl": "https://citz.co.uk/whats-on/mcgoldrick-mccusker-doyle-and-friends/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "citizens-judy-collins-and-support",
@@ -1077,7 +960,7 @@
         "payWhatYouLike": false,
         "text": "£34",
         "source": "published-text",
-        "checkedAt": "2026-10-15"
+        "checkedAt": "2026-10-18"
       },
       "accessibility": null,
       "durationMinutes": null,
@@ -1087,7 +970,7 @@
         "credit": null
       },
       "bookingUrl": "https://citz.co.uk/whats-on/judy-collins-and-support/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "citizens-sandy-denny-80th-birthday-celebration",
@@ -1121,7 +1004,7 @@
         "payWhatYouLike": false,
         "text": "£26",
         "source": "published-text",
-        "checkedAt": "2026-10-15"
+        "checkedAt": "2026-10-18"
       },
       "accessibility": null,
       "durationMinutes": null,
@@ -1131,7 +1014,7 @@
         "credit": null
       },
       "bookingUrl": "https://citz.co.uk/whats-on/sandy-denny-80th-birthday-celebration/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "citizens-all-together-now-2027-artist-residency",
@@ -1165,7 +1048,7 @@
         "payWhatYouLike": false,
         "text": "£22",
         "source": "published-text",
-        "checkedAt": "2026-10-15"
+        "checkedAt": "2026-10-18"
       },
       "accessibility": null,
       "durationMinutes": null,
@@ -1175,7 +1058,7 @@
         "credit": null
       },
       "bookingUrl": "https://citz.co.uk/whats-on/all-together-now-2027-artist-residency/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "citizens-mary-queen-of-scots-got-her-head-chopped-off",
@@ -1325,7 +1208,7 @@
         "payWhatYouLike": false,
         "text": "£14 - £43.50",
         "source": "published-text",
-        "checkedAt": "2026-10-15"
+        "checkedAt": "2026-10-18"
       },
       "accessibility": null,
       "durationMinutes": null,
@@ -1335,7 +1218,7 @@
         "credit": null
       },
       "bookingUrl": "https://citz.co.uk/whats-on/mary-queen-of-scots-got-her-head-chopped-off/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "citizens-mike-wozniak-the-bench",
@@ -1369,7 +1252,7 @@
         "payWhatYouLike": false,
         "text": "£24.50",
         "source": "published-text",
-        "checkedAt": "2026-10-15"
+        "checkedAt": "2026-10-18"
       },
       "accessibility": null,
       "durationMinutes": 110,
@@ -1379,7 +1262,7 @@
         "credit": null
       },
       "bookingUrl": "https://citz.co.uk/whats-on/mike-wozniak-the-bench-2/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "citizens-punch",
@@ -1449,7 +1332,7 @@
         "payWhatYouLike": false,
         "text": "£18.50 - £43.50",
         "source": "published-text",
-        "checkedAt": "2026-10-15"
+        "checkedAt": "2026-10-18"
       },
       "accessibility": null,
       "durationMinutes": 145,
@@ -1459,7 +1342,7 @@
         "credit": null
       },
       "bookingUrl": "https://citz.co.uk/whats-on/punch/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "citizens-death-of-a-salesman",
@@ -1624,7 +1507,7 @@
         "payWhatYouLike": false,
         "text": "£14 - £43.50",
         "source": "published-text",
-        "checkedAt": "2026-10-15"
+        "checkedAt": "2026-10-18"
       },
       "accessibility": null,
       "durationMinutes": null,
@@ -1634,7 +1517,7 @@
         "credit": null
       },
       "bookingUrl": "https://citz.co.uk/whats-on/death-of-a-salesman/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     }
   ]
 }

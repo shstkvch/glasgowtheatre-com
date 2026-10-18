@@ -1,9 +1,9 @@
 {
-  "apiVersion": "1",
-  "generatedAt": "2026-10-17T21:40:27.566Z",
-  "refreshedAt": "2026-10-15T19:58:04.418Z",
-  "total": 25,
-  "count": 25,
+  "apiVersion": "1.1",
+  "generatedAt": "2026-10-18T09:56:21.462Z",
+  "refreshedAt": "2026-10-18T09:55:39.286Z",
+  "total": 24,
+  "count": 24,
   "limit": null,
   "offset": 0,
   "next": null,
@@ -27,57 +27,64 @@
       "run": {
         "opens": "2026-10-22",
         "closes": "2026-11-07",
-        "time": null
+        "time": "19:15"
       },
       "schedule": null,
-      "performances": [],
-      "pricing": null,
+      "performances": [
+        {
+          "date": "2026-10-22",
+          "time": "19:15",
+          "price": 24
+        },
+        {
+          "date": "2026-10-25",
+          "time": "15:00",
+          "price": 24
+        },
+        {
+          "date": "2026-10-28",
+          "time": "19:15",
+          "price": 24
+        },
+        {
+          "date": "2026-10-31",
+          "time": "19:15",
+          "price": 24
+        },
+        {
+          "date": "2026-11-04",
+          "time": "19:15",
+          "price": 24
+        },
+        {
+          "date": "2026-11-07",
+          "time": "19:15",
+          "price": 24
+        }
+      ],
+      "pricing": {
+        "currency": "GBP",
+        "from": 24,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": [
         "Audio-described performances available"
       ],
-      "durationMinutes": null,
+      "durationMinutes": 170,
       "image": {
         "url": "https://glasgowtheatre.com/images/6d2f939a352e9b2cd895.webp",
         "alt": "Scottish Opera - Turandot",
         "credit": null
       },
       "bookingUrl": "https://www.atgtickets.com/shows/scottish-opera-turandot/theatre-royal-glasgow/calendar/",
-      "updatedAt": "2026-10-15"
-    },
-    {
-      "id": "theatre-royal-scottish-opera-turandot-touch-tour",
-      "url": "https://glasgowtheatre.com/shows/theatre-royal-scottish-opera-turandot-touch-tour.html",
-      "title": "Scottish Opera - Turandot - Touch Tour",
-      "artForm": "tour",
-      "tags": [
-        "tour"
-      ],
-      "producer": null,
-      "description": "Our free touch tours provide an opportunity to become more familiar with the set, scenery, props and costumes. This aims to help audience members living with sight loss to immerse themselves in the world presented on stage, with audio describers, stage management and wardrobe staff present to...",
-      "venue": {
-        "id": "theatre-royal",
-        "name": "Theatre Royal",
-        "area": "City Centre"
-      },
-      "run": {
-        "opens": "2026-10-25",
-        "closes": "2026-10-25",
-        "time": null
-      },
-      "schedule": null,
-      "performances": [],
-      "pricing": null,
-      "accessibility": [
-        "Audio-described performances available"
-      ],
-      "durationMinutes": null,
-      "image": {
-        "url": "https://glasgowtheatre.com/images/37fb870bfff7f3e969e5.webp",
-        "alt": "Scottish Opera - Turandot - Touch Tour",
-        "credit": null
-      },
-      "bookingUrl": "https://www.atgtickets.com/shows/scottish-opera-turandot-touch-tour/theatre-royal-glasgow/calendar/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "theatre-royal-scottish-opera-turandot-pre-show-talk",
@@ -97,20 +104,37 @@
       "run": {
         "opens": "2026-10-31",
         "closes": "2026-10-31",
-        "time": null
+        "time": "18:00"
       },
       "schedule": null,
-      "performances": [],
-      "pricing": null,
+      "performances": [
+        {
+          "date": "2026-10-31",
+          "time": "18:00",
+          "price": 0
+        }
+      ],
+      "pricing": {
+        "currency": "GBP",
+        "from": 0,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": true,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
-      "durationMinutes": null,
+      "durationMinutes": 30,
       "image": {
         "url": "https://glasgowtheatre.com/images/6d2f939a352e9b2cd895.webp",
         "alt": "Scottish Opera - Turandot Pre Show Talk",
         "credit": null
       },
       "bookingUrl": "https://www.atgtickets.com/shows/scottish-opera-turandot-pre-show-talk/theatre-royal-glasgow/calendar/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "theatre-royal-operation-mincemeat-a-new-musical",
@@ -130,20 +154,77 @@
       "run": {
         "opens": "2026-11-10",
         "closes": "2027-07-10",
-        "time": null
+        "time": "19:30"
       },
       "schedule": null,
-      "performances": [],
-      "pricing": null,
+      "performances": [
+        {
+          "date": "2026-11-10",
+          "time": "19:30",
+          "price": 56.16
+        },
+        {
+          "date": "2026-11-11",
+          "time": "14:30",
+          "price": 56.16
+        },
+        {
+          "date": "2026-11-11",
+          "time": "19:30",
+          "price": 40.56
+        },
+        {
+          "date": "2026-11-12",
+          "time": "14:30",
+          "price": 56.16
+        },
+        {
+          "date": "2026-11-12",
+          "time": "19:30",
+          "price": 56.16
+        },
+        {
+          "date": "2026-11-13",
+          "time": "19:30",
+          "price": 40.56
+        },
+        {
+          "date": "2026-11-14",
+          "time": "14:30",
+          "price": 57.2
+        },
+        {
+          "date": "2026-11-14",
+          "time": "19:30",
+          "price": 40.56
+        },
+        {
+          "date": "2027-07-06",
+          "time": "19:30",
+          "price": 20
+        }
+      ],
+      "pricing": {
+        "currency": "GBP",
+        "from": 20,
+        "to": 57.2,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
-      "durationMinutes": null,
+      "durationMinutes": 137,
       "image": {
         "url": "https://glasgowtheatre.com/images/6627e84f915c2d690d99.webp",
         "alt": "Operation Mincemeat: A New Musical",
         "credit": null
       },
       "bookingUrl": "https://www.atgtickets.com/shows/operation-mincemeat-a-new-musical/theatre-royal-glasgow/calendar/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "theatre-royal-phil-wang-uh-oh",
@@ -163,20 +244,37 @@
       "run": {
         "opens": "2026-11-15",
         "closes": "2026-11-15",
-        "time": null
+        "time": "19:30"
       },
       "schedule": null,
-      "performances": [],
-      "pricing": null,
+      "performances": [
+        {
+          "date": "2026-11-15",
+          "time": "19:30",
+          "price": 31
+        }
+      ],
+      "pricing": {
+        "currency": "GBP",
+        "from": 31,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
-      "durationMinutes": null,
+      "durationMinutes": 110,
       "image": {
         "url": "https://glasgowtheatre.com/images/41c6d8ba63eb3531b621.webp",
         "alt": "Phil Wang: UH OH",
         "credit": null
       },
       "bookingUrl": "https://www.atgtickets.com/shows/phil-wang-uh-oh/theatre-royal-glasgow/calendar/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "theatre-royal-matilda-the-musical",
@@ -196,24 +294,81 @@
       "run": {
         "opens": "2026-11-18",
         "closes": "2026-12-05",
-        "time": null
+        "time": "19:30"
       },
       "schedule": null,
-      "performances": [],
-      "pricing": null,
+      "performances": [
+        {
+          "date": "2026-11-18",
+          "time": "19:30",
+          "price": 32
+        },
+        {
+          "date": "2026-11-19",
+          "time": "14:30",
+          "price": 32
+        },
+        {
+          "date": "2026-11-19",
+          "time": "19:30",
+          "price": 20
+        },
+        {
+          "date": "2026-11-20",
+          "time": "19:30",
+          "price": 45
+        },
+        {
+          "date": "2026-11-21",
+          "time": "14:30",
+          "price": 55
+        },
+        {
+          "date": "2026-11-21",
+          "time": "19:30",
+          "price": 55
+        },
+        {
+          "date": "2026-11-22",
+          "time": "14:30",
+          "price": 65
+        },
+        {
+          "date": "2026-11-24",
+          "time": "19:30",
+          "price": 46
+        },
+        {
+          "date": "2026-11-25",
+          "time": "14:30",
+          "price": 32
+        }
+      ],
+      "pricing": {
+        "currency": "GBP",
+        "from": 20,
+        "to": 65,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": [
         "Captioned performances available",
         "Audio-described performances available",
         "BSL-interpreted performances available"
       ],
-      "durationMinutes": null,
+      "durationMinutes": 155,
       "image": {
         "url": "https://glasgowtheatre.com/images/12603bd62ae24984881d.webp",
         "alt": "Matilda The Musical",
         "credit": null
       },
       "bookingUrl": "https://www.atgtickets.com/shows/matilda-the-musical/theatre-royal-glasgow/calendar/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "theatre-royal-ice-dragon",
@@ -233,20 +388,77 @@
       "run": {
         "opens": "2026-11-30",
         "closes": "2026-12-06",
-        "time": null
+        "time": "10:00"
       },
       "schedule": null,
-      "performances": [],
-      "pricing": null,
+      "performances": [
+        {
+          "date": "2026-11-30",
+          "time": "10:00",
+          "price": 12
+        },
+        {
+          "date": "2026-11-30",
+          "time": "11:30",
+          "price": 12
+        },
+        {
+          "date": "2026-12-01",
+          "time": "10:00",
+          "price": 12
+        },
+        {
+          "date": "2026-12-01",
+          "time": "11:30",
+          "price": 12
+        },
+        {
+          "date": "2026-12-02",
+          "time": "10:00",
+          "price": 12
+        },
+        {
+          "date": "2026-12-02",
+          "time": "11:30",
+          "price": 12
+        },
+        {
+          "date": "2026-12-03",
+          "time": "10:00",
+          "price": 12
+        },
+        {
+          "date": "2026-12-03",
+          "time": "11:30",
+          "price": 12
+        },
+        {
+          "date": "2026-12-04",
+          "time": "10:00",
+          "price": 12
+        }
+      ],
+      "pricing": {
+        "currency": "GBP",
+        "from": 12,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
-      "durationMinutes": null,
+      "durationMinutes": 45,
       "image": {
         "url": "https://glasgowtheatre.com/images/113cfc81e2cde6731711.webp",
         "alt": "Ice Dragon",
         "credit": null
       },
       "bookingUrl": "https://www.atgtickets.com/shows/ice-dragon/theatre-royal-glasgow/calendar/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "theatre-royal-atg-inspire-academy-juniors",
@@ -266,11 +478,28 @@
       "run": {
         "opens": "2026-12-08",
         "closes": "2026-12-08",
-        "time": null
+        "time": "17:00"
       },
       "schedule": null,
-      "performances": [],
-      "pricing": null,
+      "performances": [
+        {
+          "date": "2026-12-08",
+          "time": "17:00",
+          "price": 110
+        }
+      ],
+      "pricing": {
+        "currency": "GBP",
+        "from": 110,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
       "durationMinutes": null,
       "image": {
@@ -279,7 +508,7 @@
         "credit": null
       },
       "bookingUrl": "https://www.atgtickets.com/shows/atg-inspire-academy-juniors/theatre-royal-glasgow/calendar/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "theatre-royal-atg-inspire-academy-seniors",
@@ -299,11 +528,28 @@
       "run": {
         "opens": "2026-12-08",
         "closes": "2026-12-08",
-        "time": null
+        "time": "18:00"
       },
       "schedule": null,
-      "performances": [],
-      "pricing": null,
+      "performances": [
+        {
+          "date": "2026-12-08",
+          "time": "18:00",
+          "price": 130
+        }
+      ],
+      "pricing": {
+        "currency": "GBP",
+        "from": 130,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
       "durationMinutes": null,
       "image": {
@@ -312,7 +558,7 @@
         "credit": null
       },
       "bookingUrl": "https://www.atgtickets.com/shows/atg-inspire-academy-seniors/theatre-royal-glasgow/calendar/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "theatre-royal-cats",
@@ -332,11 +578,68 @@
       "run": {
         "opens": "2026-12-08",
         "closes": "2026-12-27",
-        "time": null
+        "time": "19:30"
       },
       "schedule": null,
-      "performances": [],
-      "pricing": null,
+      "performances": [
+        {
+          "date": "2026-12-08",
+          "time": "19:30",
+          "price": 21
+        },
+        {
+          "date": "2026-12-09",
+          "time": "19:30",
+          "price": 21
+        },
+        {
+          "date": "2026-12-10",
+          "time": "14:30",
+          "price": 21
+        },
+        {
+          "date": "2026-12-10",
+          "time": "19:30",
+          "price": 21
+        },
+        {
+          "date": "2026-12-11",
+          "time": "19:30",
+          "price": 21
+        },
+        {
+          "date": "2026-12-12",
+          "time": "14:30",
+          "price": 47
+        },
+        {
+          "date": "2026-12-12",
+          "time": "19:30",
+          "price": 26
+        },
+        {
+          "date": "2026-12-13",
+          "time": "13:00",
+          "price": 42
+        },
+        {
+          "date": "2026-12-15",
+          "time": "19:30",
+          "price": 21
+        }
+      ],
+      "pricing": {
+        "currency": "GBP",
+        "from": 21,
+        "to": 47,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": [
         "Captioned performances available",
         "Audio-described performances available",
@@ -349,7 +652,7 @@
         "credit": null
       },
       "bookingUrl": "https://www.atgtickets.com/shows/cats/theatre-royal-glasgow/calendar/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "theatre-royal-scottish-ballet-cinders",
@@ -369,11 +672,68 @@
       "run": {
         "opens": "2026-12-30",
         "closes": "2027-01-16",
-        "time": null
+        "time": "19:30"
       },
       "schedule": null,
-      "performances": [],
-      "pricing": null,
+      "performances": [
+        {
+          "date": "2026-12-30",
+          "time": "19:30",
+          "price": 15.56
+        },
+        {
+          "date": "2026-12-31",
+          "time": "13:30",
+          "price": 15.56
+        },
+        {
+          "date": "2027-01-03",
+          "time": "14:30",
+          "price": 15.56
+        },
+        {
+          "date": "2027-01-05",
+          "time": "19:30",
+          "price": 15.56
+        },
+        {
+          "date": "2027-01-06",
+          "time": "19:30",
+          "price": 15.56
+        },
+        {
+          "date": "2027-01-07",
+          "time": "14:30",
+          "price": 15.56
+        },
+        {
+          "date": "2027-01-07",
+          "time": "19:30",
+          "price": 15.56
+        },
+        {
+          "date": "2027-01-08",
+          "time": "19:30",
+          "price": 15.56
+        },
+        {
+          "date": "2027-01-09",
+          "time": "14:30",
+          "price": 15.56
+        }
+      ],
+      "pricing": {
+        "currency": "GBP",
+        "from": 15.56,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": [
         "Audio-described performances available"
       ],
@@ -384,7 +744,7 @@
         "credit": null
       },
       "bookingUrl": "https://www.atgtickets.com/shows/scottish-ballet-cinders/theatre-royal-glasgow/calendar/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "theatre-royal-scottish-ballet-cinders-talk-ballet",
@@ -404,11 +764,28 @@
       "run": {
         "opens": "2027-01-08",
         "closes": "2027-01-08",
-        "time": null
+        "time": "18:30"
       },
       "schedule": null,
-      "performances": [],
-      "pricing": null,
+      "performances": [
+        {
+          "date": "2027-01-08",
+          "time": "18:30",
+          "price": 5
+        }
+      ],
+      "pricing": {
+        "currency": "GBP",
+        "from": 5,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
       "durationMinutes": null,
       "image": {
@@ -417,7 +794,7 @@
         "credit": null
       },
       "bookingUrl": "https://www.atgtickets.com/shows/scottish-ballet-cinders-talk-ballet/theatre-royal-glasgow/calendar/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "theatre-royal-shine-productions-present-titanic-the-musical",
@@ -437,11 +814,48 @@
       "run": {
         "opens": "2027-01-20",
         "closes": "2027-01-23",
-        "time": null
+        "time": "19:30"
       },
       "schedule": null,
-      "performances": [],
-      "pricing": null,
+      "performances": [
+        {
+          "date": "2027-01-20",
+          "time": "19:30",
+          "price": 20.73
+        },
+        {
+          "date": "2027-01-21",
+          "time": "19:30",
+          "price": 20.73
+        },
+        {
+          "date": "2027-01-22",
+          "time": "19:30",
+          "price": 20.73
+        },
+        {
+          "date": "2027-01-23",
+          "time": "14:30",
+          "price": 20.73
+        },
+        {
+          "date": "2027-01-23",
+          "time": "19:30",
+          "price": 20.73
+        }
+      ],
+      "pricing": {
+        "currency": "GBP",
+        "from": 20.73,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
       "durationMinutes": null,
       "image": {
@@ -450,7 +864,7 @@
         "credit": null
       },
       "bookingUrl": "https://www.atgtickets.com/shows/shine-productions-present-titanic-the-musical/theatre-royal-glasgow/calendar/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "theatre-royal-scottish-opera-alcina",
@@ -470,22 +884,49 @@
       "run": {
         "opens": "2027-02-06",
         "closes": "2027-02-14",
-        "time": null
+        "time": "19:15"
       },
       "schedule": null,
-      "performances": [],
-      "pricing": null,
+      "performances": [
+        {
+          "date": "2027-02-06",
+          "time": "19:15",
+          "price": 24
+        },
+        {
+          "date": "2027-02-11",
+          "time": "19:15",
+          "price": 24
+        },
+        {
+          "date": "2027-02-14",
+          "time": "15:00",
+          "price": 24
+        }
+      ],
+      "pricing": {
+        "currency": "GBP",
+        "from": 24,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": [
         "Audio-described performances available"
       ],
-      "durationMinutes": null,
+      "durationMinutes": 150,
       "image": {
         "url": "https://glasgowtheatre.com/images/54fdeccfd3a9e4d36a56.webp",
         "alt": "Scottish Opera - Alcina",
         "credit": null
       },
       "bookingUrl": "https://www.atgtickets.com/shows/scottish-opera-alcina/theatre-royal-glasgow/calendar/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "theatre-royal-scottish-opera-alcina-pre-show-talk",
@@ -505,20 +946,37 @@
       "run": {
         "opens": "2027-02-11",
         "closes": "2027-02-11",
-        "time": null
+        "time": "18:00"
       },
       "schedule": null,
-      "performances": [],
-      "pricing": null,
+      "performances": [
+        {
+          "date": "2027-02-11",
+          "time": "18:00",
+          "price": 0
+        }
+      ],
+      "pricing": {
+        "currency": "GBP",
+        "from": 0,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": true,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
-      "durationMinutes": null,
+      "durationMinutes": 30,
       "image": {
         "url": "https://glasgowtheatre.com/images/54fdeccfd3a9e4d36a56.webp",
         "alt": "Scottish Opera - Alcina Pre Show Talk",
         "credit": null
       },
       "bookingUrl": "https://www.atgtickets.com/shows/scottish-opera-alcina-pre-show-talk/theatre-royal-glasgow/calendar/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "theatre-royal-scottish-opera-alcina-touch-tour",
@@ -538,11 +996,28 @@
       "run": {
         "opens": "2027-02-14",
         "closes": "2027-02-14",
-        "time": null
+        "time": "13:45"
       },
       "schedule": null,
-      "performances": [],
-      "pricing": null,
+      "performances": [
+        {
+          "date": "2027-02-14",
+          "time": "13:45",
+          "price": 0
+        }
+      ],
+      "pricing": {
+        "currency": "GBP",
+        "from": 0,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": true,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": [
         "Audio-described performances available"
       ],
@@ -553,7 +1028,7 @@
         "credit": null
       },
       "bookingUrl": "https://www.atgtickets.com/shows/scottish-opera-alcina-touch-tour/theatre-royal-glasgow/calendar/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "theatre-royal-scottish-opera-fidelio",
@@ -573,22 +1048,44 @@
       "run": {
         "opens": "2027-02-17",
         "closes": "2027-02-19",
-        "time": null
+        "time": "19:15"
       },
       "schedule": null,
-      "performances": [],
-      "pricing": null,
+      "performances": [
+        {
+          "date": "2027-02-17",
+          "time": "19:15",
+          "price": 24
+        },
+        {
+          "date": "2027-02-19",
+          "time": "19:15",
+          "price": 24
+        }
+      ],
+      "pricing": {
+        "currency": "GBP",
+        "from": 24,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": [
         "Audio-described performances available"
       ],
-      "durationMinutes": null,
+      "durationMinutes": 145,
       "image": {
         "url": "https://glasgowtheatre.com/images/0143eb71b96ba115047b.webp",
         "alt": "Scottish Opera - Fidelio",
         "credit": null
       },
       "bookingUrl": "https://www.atgtickets.com/shows/scottish-opera-fidelio/theatre-royal-glasgow/calendar/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "theatre-royal-scottish-opera-fidelio-touch-tour",
@@ -608,22 +1105,39 @@
       "run": {
         "opens": "2027-02-19",
         "closes": "2027-02-19",
-        "time": null
+        "time": "18:00"
       },
       "schedule": null,
-      "performances": [],
-      "pricing": null,
+      "performances": [
+        {
+          "date": "2027-02-19",
+          "time": "18:00",
+          "price": 0
+        }
+      ],
+      "pricing": {
+        "currency": "GBP",
+        "from": 0,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": true,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": [
         "Audio-described performances available"
       ],
-      "durationMinutes": null,
+      "durationMinutes": 30,
       "image": {
         "url": "https://glasgowtheatre.com/images/1ea2c17f028818a5c467.webp",
         "alt": "Scottish Opera - Fidelio - Touch Tour",
         "credit": null
       },
       "bookingUrl": "https://www.atgtickets.com/shows/scottish-opera-fidelio-touch-tour/theatre-royal-glasgow/calendar/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "theatre-royal-scottish-opera-national-opera-studio",
@@ -643,20 +1157,37 @@
       "run": {
         "opens": "2027-02-20",
         "closes": "2027-02-20",
-        "time": null
+        "time": "15:00"
       },
       "schedule": null,
-      "performances": [],
-      "pricing": null,
+      "performances": [
+        {
+          "date": "2027-02-20",
+          "time": "15:00",
+          "price": 15.5
+        }
+      ],
+      "pricing": {
+        "currency": "GBP",
+        "from": 15.5,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
-      "durationMinutes": null,
+      "durationMinutes": 90,
       "image": {
         "url": "https://glasgowtheatre.com/images/d93106f2eb552d6edb35.webp",
         "alt": "Scottish Opera - National Opera Studio",
         "credit": null
       },
       "bookingUrl": "https://www.atgtickets.com/shows/scottish-opera-national-opera-studio/theatre-royal-glasgow/calendar/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "theatre-royal-strangers-on-a-train",
@@ -676,11 +1207,58 @@
       "run": {
         "opens": "2027-02-23",
         "closes": "2027-02-27",
-        "time": null
+        "time": "19:30"
       },
       "schedule": null,
-      "performances": [],
-      "pricing": null,
+      "performances": [
+        {
+          "date": "2027-02-23",
+          "time": "19:30",
+          "price": 15
+        },
+        {
+          "date": "2027-02-24",
+          "time": "14:30",
+          "price": 15
+        },
+        {
+          "date": "2027-02-24",
+          "time": "19:30",
+          "price": 15
+        },
+        {
+          "date": "2027-02-25",
+          "time": "19:30",
+          "price": 15
+        },
+        {
+          "date": "2027-02-26",
+          "time": "19:30",
+          "price": 15
+        },
+        {
+          "date": "2027-02-27",
+          "time": "14:30",
+          "price": 16.5
+        },
+        {
+          "date": "2027-02-27",
+          "time": "19:30",
+          "price": 15
+        }
+      ],
+      "pricing": {
+        "currency": "GBP",
+        "from": 15,
+        "to": 16.5,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
       "durationMinutes": null,
       "image": {
@@ -689,7 +1267,7 @@
         "credit": null
       },
       "bookingUrl": "https://www.atgtickets.com/shows/strangers-on-a-train/theatre-royal-glasgow/calendar/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "theatre-royal-go-dance-2027-celebrating-20-years",
@@ -709,11 +1287,43 @@
       "run": {
         "opens": "2027-03-02",
         "closes": "2027-03-05",
-        "time": null
+        "time": "19:30"
       },
       "schedule": null,
-      "performances": [],
-      "pricing": null,
+      "performances": [
+        {
+          "date": "2027-03-02",
+          "time": "19:30",
+          "price": 17.5
+        },
+        {
+          "date": "2027-03-03",
+          "time": "19:30",
+          "price": 17.5
+        },
+        {
+          "date": "2027-03-04",
+          "time": "19:30",
+          "price": 17.5
+        },
+        {
+          "date": "2027-03-05",
+          "time": "19:30",
+          "price": 17.5
+        }
+      ],
+      "pricing": {
+        "currency": "GBP",
+        "from": 17.5,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
       "durationMinutes": null,
       "image": {
@@ -722,7 +1332,7 @@
         "credit": null
       },
       "bookingUrl": "https://www.atgtickets.com/shows/go-dance-2027-celebrating-20-years/theatre-royal-glasgow/calendar/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "theatre-royal-the-curious-incident-of-the-dog-in-the-night-t",
@@ -742,20 +1352,72 @@
       "run": {
         "opens": "2027-03-09",
         "closes": "2027-03-13",
-        "time": null
+        "time": "19:30"
       },
       "schedule": null,
-      "performances": [],
-      "pricing": null,
+      "performances": [
+        {
+          "date": "2027-03-09",
+          "time": "19:30",
+          "price": 15.6
+        },
+        {
+          "date": "2027-03-10",
+          "time": "14:30",
+          "price": 15.6
+        },
+        {
+          "date": "2027-03-10",
+          "time": "19:30",
+          "price": 15.6
+        },
+        {
+          "date": "2027-03-11",
+          "time": "14:30",
+          "price": 15.6
+        },
+        {
+          "date": "2027-03-11",
+          "time": "19:30",
+          "price": 15.6
+        },
+        {
+          "date": "2027-03-12",
+          "time": "19:30",
+          "price": 15.6
+        },
+        {
+          "date": "2027-03-13",
+          "time": "14:30",
+          "price": 15.6
+        },
+        {
+          "date": "2027-03-13",
+          "time": "19:30",
+          "price": 15.6
+        }
+      ],
+      "pricing": {
+        "currency": "GBP",
+        "from": 15.6,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
-      "durationMinutes": null,
+      "durationMinutes": 145,
       "image": {
         "url": "https://glasgowtheatre.com/images/4edbea8aec489a82ad45.webp",
         "alt": "The Curious Incident of the Dog in the Night-Time",
         "credit": null
       },
       "bookingUrl": "https://www.atgtickets.com/shows/the-curious-incident-of-the-dog-in-the-night-time/theatre-royal-glasgow/calendar/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "theatre-royal-pmos-presents-calamity-jane",
@@ -775,20 +1437,57 @@
       "run": {
         "opens": "2027-03-24",
         "closes": "2027-03-27",
-        "time": null
+        "time": "19:30"
       },
       "schedule": null,
-      "performances": [],
-      "pricing": null,
+      "performances": [
+        {
+          "date": "2027-03-24",
+          "time": "19:30",
+          "price": 19.38
+        },
+        {
+          "date": "2027-03-25",
+          "time": "19:30",
+          "price": 19.38
+        },
+        {
+          "date": "2027-03-26",
+          "time": "19:30",
+          "price": 19.38
+        },
+        {
+          "date": "2027-03-27",
+          "time": "14:30",
+          "price": 19.38
+        },
+        {
+          "date": "2027-03-27",
+          "time": "19:30",
+          "price": 19.38
+        }
+      ],
+      "pricing": {
+        "currency": "GBP",
+        "from": 19.38,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
-      "durationMinutes": null,
+      "durationMinutes": 150,
       "image": {
         "url": "https://glasgowtheatre.com/images/8dfafda0cbd3e110dbea.webp",
         "alt": "PMOS presents Calamity Jane",
         "credit": null
       },
       "bookingUrl": "https://www.atgtickets.com/shows/pmos-presents-calamity-jane/theatre-royal-glasgow/calendar/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "theatre-royal-twelve-angry-men",
@@ -808,20 +1507,67 @@
       "run": {
         "opens": "2027-03-30",
         "closes": "2027-04-03",
-        "time": null
+        "time": "19:30"
       },
       "schedule": null,
-      "performances": [],
-      "pricing": null,
+      "performances": [
+        {
+          "date": "2027-03-30",
+          "time": "19:30",
+          "price": 15
+        },
+        {
+          "date": "2027-03-31",
+          "time": "19:30",
+          "price": 15
+        },
+        {
+          "date": "2027-04-01",
+          "time": "14:30",
+          "price": 15.5
+        },
+        {
+          "date": "2027-04-01",
+          "time": "19:30",
+          "price": 15
+        },
+        {
+          "date": "2027-04-02",
+          "time": "19:30",
+          "price": 15.5
+        },
+        {
+          "date": "2027-04-03",
+          "time": "14:30",
+          "price": 15.5
+        },
+        {
+          "date": "2027-04-03",
+          "time": "19:30",
+          "price": 15
+        }
+      ],
+      "pricing": {
+        "currency": "GBP",
+        "from": 15,
+        "to": 15.5,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
-      "durationMinutes": null,
+      "durationMinutes": 135,
       "image": {
         "url": "https://glasgowtheatre.com/images/91b6b1da5836f1dc16dc.webp",
         "alt": "Twelve Angry Men",
         "credit": null
       },
       "bookingUrl": "https://www.atgtickets.com/shows/twelve-angry-men/theatre-royal-glasgow/calendar/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "theatre-royal-matthew-bourne-s-cinderella",
@@ -841,11 +1587,58 @@
       "run": {
         "opens": "2027-04-13",
         "closes": "2027-04-17",
-        "time": null
+        "time": "19:30"
       },
       "schedule": null,
-      "performances": [],
-      "pricing": null,
+      "performances": [
+        {
+          "date": "2027-04-13",
+          "time": "19:30",
+          "price": 20.5
+        },
+        {
+          "date": "2027-04-14",
+          "time": "19:30",
+          "price": 20
+        },
+        {
+          "date": "2027-04-15",
+          "time": "14:30",
+          "price": 20.5
+        },
+        {
+          "date": "2027-04-15",
+          "time": "19:30",
+          "price": 20
+        },
+        {
+          "date": "2027-04-16",
+          "time": "19:30",
+          "price": 20.5
+        },
+        {
+          "date": "2027-04-17",
+          "time": "14:30",
+          "price": 22
+        },
+        {
+          "date": "2027-04-17",
+          "time": "19:30",
+          "price": 20
+        }
+      ],
+      "pricing": {
+        "currency": "GBP",
+        "from": 20,
+        "to": 22,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": [
         "Audio-described performances available"
       ],
@@ -856,7 +1649,7 @@
         "credit": null
       },
       "bookingUrl": "https://www.atgtickets.com/shows/matthew-bournes-cinderella/theatre-royal-glasgow/calendar/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     }
   ]
 }

@@ -1,7 +1,7 @@
 {
-  "apiVersion": "1",
-  "generatedAt": "2026-10-17T21:40:27.566Z",
-  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "apiVersion": "1.1",
+  "generatedAt": "2026-10-18T09:56:21.462Z",
+  "refreshedAt": "2026-10-18T09:55:39.286Z",
   "show": {
     "id": "theatre-royal-ice-dragon",
     "url": "https://glasgowtheatre.com/shows/theatre-royal-ice-dragon.html",
@@ -20,19 +20,76 @@
     "run": {
       "opens": "2026-11-30",
       "closes": "2026-12-06",
-      "time": null
+      "time": "10:00"
     },
     "schedule": null,
-    "performances": [],
-    "pricing": null,
+    "performances": [
+      {
+        "date": "2026-11-30",
+        "time": "10:00",
+        "price": 12
+      },
+      {
+        "date": "2026-11-30",
+        "time": "11:30",
+        "price": 12
+      },
+      {
+        "date": "2026-12-01",
+        "time": "10:00",
+        "price": 12
+      },
+      {
+        "date": "2026-12-01",
+        "time": "11:30",
+        "price": 12
+      },
+      {
+        "date": "2026-12-02",
+        "time": "10:00",
+        "price": 12
+      },
+      {
+        "date": "2026-12-02",
+        "time": "11:30",
+        "price": 12
+      },
+      {
+        "date": "2026-12-03",
+        "time": "10:00",
+        "price": 12
+      },
+      {
+        "date": "2026-12-03",
+        "time": "11:30",
+        "price": 12
+      },
+      {
+        "date": "2026-12-04",
+        "time": "10:00",
+        "price": 12
+      }
+    ],
+    "pricing": {
+      "currency": "GBP",
+      "from": 12,
+      "to": null,
+      "concessionFrom": null,
+      "concessionTo": null,
+      "free": false,
+      "payWhatYouLike": false,
+      "text": null,
+      "source": "venue-feed",
+      "checkedAt": "2026-10-18"
+    },
     "accessibility": null,
-    "durationMinutes": null,
+    "durationMinutes": 45,
     "image": {
       "url": "https://glasgowtheatre.com/images/113cfc81e2cde6731711.webp",
       "alt": "Ice Dragon",
       "credit": null
     },
     "bookingUrl": "https://www.atgtickets.com/shows/ice-dragon/theatre-royal-glasgow/calendar/",
-    "updatedAt": "2026-10-15"
+    "updatedAt": "2026-10-18"
   }
 }

@@ -6,7 +6,7 @@
 <a class="skip-link" href="#main">Skip to content</a><header class="site-header"><div class="container header-inner"><a class="brand" href="/" aria-label="Glasgow Theatre home">GLASGOW<span>THEATRE<span class="brand-dot">●</span></span></a>
 <details class="nav-menu" open><summary class="nav-toggle"><span class="nav-bars" aria-hidden="true"></span><span class="nav-toggle-label">Menu</span></summary><nav aria-label="Main navigation"><a href="/">What’s on</a><a href="/calendar.html">Calendar</a><a href="/venues.html">Venues</a><a href="/about.html">About</a><a href="/submit.html">List your show ↗</a></nav></details></div></header>
 <main id="main">
-<section class="page-hero container api-hero"><p class="eyebrow">For developers</p><h1>An API for<br>Glasgow’s stages.</h1><p>A free, read-only JSON API for every show and venue on Glasgow Theatre. No key, no account, no tracking. 144 upcoming shows across 12 venues, refreshed with the site.</p><p class="api-hero-actions"><a class="btn" href="/api/examples.html">Try it in your browser ↗</a><a class="text-button" href="/api/v1/shows.json">Download the full feed ↗</a></p></section>
+<section class="page-hero container api-hero"><p class="eyebrow">For developers</p><h1>An API for<br>Glasgow’s stages.</h1><p>A free, read-only JSON API for every show and venue on Glasgow Theatre. No key, no account, no tracking. 139 upcoming shows across 12 venues, refreshed with the site.</p><p class="api-hero-actions"><a class="btn" href="/api/examples.html">Try it in your browser ↗</a><a class="text-button" href="/api/v1/shows.json">Download the full feed ↗</a></p></section>
 <section class="container api-docs">
   <div class="api-quick">
     <h2>Quick start</h2>
@@ -55,97 +55,70 @@
   <h2>A show</h2>
   <p>Every response has the same top-level provenance fields, so a client can tell when the data was built and refreshed.</p>
   <pre tabindex="0"><code>{
-  &quot;id&quot;: &quot;oran-mor-bottoms-dream&quot;,
-  &quot;url&quot;: &quot;https://glasgowtheatre.com/shows/oran-mor-bottoms-dream.html&quot;,
-  &quot;title&quot;: &quot;Bottom&#39;s Dream&quot;,
-  &quot;artForm&quot;: &quot;spoken-word&quot;,
+  &quot;id&quot;: &quot;pavilion-an-audience-with-christian-horner&quot;,
+  &quot;url&quot;: &quot;https://glasgowtheatre.com/shows/pavilion-an-audience-with-christian-horner.html&quot;,
+  &quot;title&quot;: &quot;An Audience with Christian Horner&quot;,
+  &quot;artForm&quot;: &quot;talk&quot;,
   &quot;tags&quot;: [
-    &quot;spoken-word&quot;,
-    &quot;lunchtime&quot;,
-    &quot;a-play-a-pie-a-pint&quot;
+    &quot;talk&quot;
   ],
   &quot;producer&quot;: null,
-  &quot;description&quot;: &quot;“Ah hud a maist rare vision Ah hud a dream. Ah’ll write a ballad ae this dream: it sal be cried Bottom’s Dream. Because it disnae huv a bottom.” Blending the text of A Midsummer Night’s Dream with original Scots-language poetry, this new spoken word performance by Martin O’Connor (Through the...&quot;,
+  &quot;description&quot;: &quot;Join Christian Horner for an exclusive live event celebrating Drive, the revealing memoir from one of Formula 1’s most influential team principals. In an afternoon of candid conversation, Horner will reflect on the defining moments of his career, the leadership lessons forged under relentless...&quot;,
   &quot;venue&quot;: {
-    &quot;id&quot;: &quot;oran-mor&quot;,
-    &quot;name&quot;: &quot;A Play, a Pie and a Pint&quot;,
-    &quot;area&quot;: &quot;West End&quot;
+    &quot;id&quot;: &quot;pavilion&quot;,
+    &quot;name&quot;: &quot;Pavilion Theatre&quot;,
+    &quot;area&quot;: &quot;City Centre&quot;
   },
   &quot;run&quot;: {
-    &quot;opens&quot;: &quot;2026-10-12&quot;,
-    &quot;closes&quot;: &quot;2026-10-17&quot;,
-    &quot;time&quot;: &quot;13:00&quot;
+    &quot;opens&quot;: &quot;2026-10-18&quot;,
+    &quot;closes&quot;: &quot;2026-10-18&quot;,
+    &quot;time&quot;: &quot;12:30&quot;
   },
-  &quot;schedule&quot;: {
-    &quot;text&quot;: &quot;Monday – Saturday 1pm\n(Doors 12pm/12.30pm on Mondays)&quot;
-  },
+  &quot;schedule&quot;: null,
   &quot;performances&quot;: [
     {
-      &quot;date&quot;: &quot;2026-10-12&quot;,
-      &quot;time&quot;: &quot;13:00&quot;,
-      &quot;price&quot;: 15.5
-    },
-    {
-      &quot;date&quot;: &quot;2026-10-13&quot;,
-      &quot;time&quot;: &quot;13:00&quot;,
-      &quot;price&quot;: 17.5
-    },
-    {
-      &quot;date&quot;: &quot;2026-10-14&quot;,
-      &quot;time&quot;: &quot;13:00&quot;,
-      &quot;price&quot;: 17.5
-    },
-    {
-      &quot;date&quot;: &quot;2026-10-15&quot;,
-      &quot;time&quot;: &quot;13:00&quot;,
-      &quot;price&quot;: 17.5
-    },
-    {
-      &quot;date&quot;: &quot;2026-10-16&quot;,
-      &quot;time&quot;: &quot;13:00&quot;,
-      &quot;price&quot;: 17.5
-    },
-    {
-      &quot;date&quot;: &quot;2026-10-17&quot;,
-      &quot;time&quot;: &quot;13:00&quot;,
-      &quot;price&quot;: 21
+      &quot;date&quot;: &quot;2026-10-18&quot;,
+      &quot;time&quot;: &quot;12:30&quot;,
+      &quot;bookingUrl&quot;: &quot;https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/other/an-audience-with-christian-horner-tickets&quot;
     }
   ],
   &quot;pricing&quot;: {
     &quot;currency&quot;: &quot;GBP&quot;,
-    &quot;from&quot;: 15.5,
-    &quot;to&quot;: 21,
+    &quot;from&quot;: 53.25,
+    &quot;to&quot;: null,
     &quot;concessionFrom&quot;: null,
     &quot;concessionTo&quot;: null,
     &quot;free&quot;: false,
     &quot;payWhatYouLike&quot;: false,
-    &quot;text&quot;: &quot;Monday: £15.50\nTuesday-Friday: £17.50\nSaturday: £21.00&quot;,
-    &quot;source&quot;: &quot;published-text&quot;,
-    &quot;checkedAt&quot;: &quot;2026-10-15&quot;
+    &quot;text&quot;: null,
+    &quot;source&quot;: &quot;venue-feed&quot;,
+    &quot;checkedAt&quot;: &quot;2026-10-18&quot;
   },
   &quot;accessibility&quot;: null,
   &quot;durationMinutes&quot;: null,
   &quot;image&quot;: {
-    &quot;url&quot;: &quot;https://glasgowtheatre.com/images/6f771d478109092c7c0c.webp&quot;,
-    &quot;alt&quot;: &quot;Bottom&#39;s Dream&quot;,
+    &quot;url&quot;: &quot;https://glasgowtheatre.com/images/fcef883c66e32d30c331.webp&quot;,
+    &quot;alt&quot;: &quot;An Audience with Christian Horner&quot;,
     &quot;credit&quot;: null
   },
-  &quot;bookingUrl&quot;: &quot;https://playpiepint.com/whats-on/event/bottoms-dream/&quot;,
-  &quot;updatedAt&quot;: &quot;2026-10-15&quot;
+  &quot;bookingUrl&quot;: &quot;https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/other/an-audience-with-christian-horner-tickets&quot;,
+  &quot;updatedAt&quot;: &quot;2026-10-18&quot;
 }</code></pre>
 
   <h2>A venue</h2>
-  <p>Concessions are a property of the building, not the show. They are hand-checked against the venue's own page and the date is published with them.</p>
+  <p>Concessions are a property of the building, not the show. They are hand-checked against the venue's own page and the date is published with them. <code>colour</code> is the house colour used on the calendar, adjusted to clear WCAG AA against <code>ink</code>; use the pair together if you are drawing the venue yourself.</p>
   <pre tabindex="0"><code>{
   &quot;id&quot;: &quot;oran-mor&quot;,
   &quot;name&quot;: &quot;A Play, a Pie and a Pint&quot;,
   &quot;area&quot;: &quot;West End&quot;,
+  &quot;colour&quot;: &quot;#d54222&quot;,
+  &quot;ink&quot;: &quot;#ffffff&quot;,
   &quot;description&quot;: &quot;A lunchtime theatre programme in a converted church at the top of Byres Road. Every week brings a new short play, with a pie and a drink included in the ticket.&quot;,
   &quot;website&quot;: &quot;https://playpiepint.com&quot;,
   &quot;instagram&quot;: &quot;playpiepint&quot;,
   &quot;programme&quot;: &quot;theatre&quot;,
   &quot;url&quot;: &quot;https://glasgowtheatre.com/venues/oran-mor.html&quot;,
-  &quot;upcomingShows&quot;: 6,
+  &quot;upcomingShows&quot;: 5,
   &quot;showsUrl&quot;: &quot;https://glasgowtheatre.com/api/v1/venues/oran-mor/shows.json&quot;,
   &quot;concessions&quot;: {
     &quot;url&quot;: &quot;https://playpiepint.com/&quot;,
@@ -176,9 +149,9 @@
   </ul>
 
   <h2>Versioning</h2>
-  <p>The path carries the version: <code>/api/v1</code>. Changes within v1 are additive only. A breaking change gets <code>/api/v2</code> and at least twelve months of overlap.</p>
+  <p>The path carries the major version: <code>/api/v1</code>. Minor versions are additive only, so a client written for <code>1.0</code> keeps working with <code>1.1</code>. A breaking change gets <code>/api/v2</code> and at least twelve months of overlap.</p>
   <h3>Changelog</h3>
-  <ul><li><strong>v1, October 2026.</strong> First public release: shows, venues, concessions, OpenAPI and JSON Schema.</li></ul>
+  <ul><li><strong>v1.1, October 2026.</strong> Venue objects gained <code>colour</code> and <code>ink</code> for the calendar's house palette. Additive; <code>/api/v1</code> is unchanged.</li><li><strong>v1.0, October 2026.</strong> First public release: shows, venues, concessions, OpenAPI and JSON Schema.</li></ul>
 
   <h2>Static snapshots and CORS</h2>
   <p>The <code>.json</code> endpoints are files written by the daily build; they are cached at the edge and are the safest thing to poll. The extensionless <code>/shows</code> endpoint is a Cloudflare Pages Function that filters the same snapshot. All endpoints send <code>Access-Control-Allow-Origin: *</code>, so they can be called from a browser on any origin.</p>
@@ -186,6 +159,6 @@
   <h2>Need a language example?</h2>
   <p><a href="/api/examples.html">Open the interactive examples</a> for JavaScript, Python, PHP, C and Go. Each one is editable, runs in a sandbox, and is also available as a file in the repository under <code>examples/</code>.</p>
 </section></main>
-<footer class="site-footer"><div class="container"><div class="footer-top"><div><a class="brand" href="/">GLASGOW<span>THEATRE<span class="brand-dot">●</span></span></a><p>Explore Glasgow’s bustling theatre scene.</p></div><div><p class="eyebrow">Made for the audience</p><a href="/about.html">About this independent guide <span aria-hidden="true">↗</span></a><a href="/submit.html">Get your show listed <span aria-hidden="true">↗</span></a><a href="/api/">API for developers <span aria-hidden="true">↗</span></a><a href="mailto:info@glasgowtheatre.com">Get in touch <span aria-hidden="true">↗</span></a></div></div><div class="footer-bottom"><span>© 2026 Glasgow Theatre</span><span>Listings refreshed 15 Oct 2026 · Always check details with the venue.</span></div></div></footer>
+<footer class="site-footer"><div class="container"><div class="footer-top"><div><a class="brand" href="/">GLASGOW<span>THEATRE<span class="brand-dot">●</span></span></a><p>Explore Glasgow’s bustling theatre scene.</p></div><div><p class="eyebrow">Made for the audience</p><a href="/about.html">About this independent guide <span aria-hidden="true">↗</span></a><a href="/submit.html">Get your show listed <span aria-hidden="true">↗</span></a><a href="/api/">API for developers <span aria-hidden="true">↗</span></a><a href="mailto:info@glasgowtheatre.com">Get in touch <span aria-hidden="true">↗</span></a></div></div><div class="footer-bottom"><span>© 2026 Glasgow Theatre</span><span>Listings refreshed 18 Oct 2026 · Always check details with the venue.</span></div></div></footer>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Glasgow Theatre","url":"https://glasgowtheatre.com"}</script>
 <script>window.EVENTS = [];</script></body></html>

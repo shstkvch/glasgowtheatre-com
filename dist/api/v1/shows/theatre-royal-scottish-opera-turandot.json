@@ -1,7 +1,7 @@
 {
-  "apiVersion": "1",
-  "generatedAt": "2026-10-17T21:40:27.566Z",
-  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "apiVersion": "1.1",
+  "generatedAt": "2026-10-18T09:56:21.462Z",
+  "refreshedAt": "2026-10-18T09:55:39.286Z",
   "show": {
     "id": "theatre-royal-scottish-opera-turandot",
     "url": "https://glasgowtheatre.com/shows/theatre-royal-scottish-opera-turandot.html",
@@ -20,21 +20,63 @@
     "run": {
       "opens": "2026-10-22",
       "closes": "2026-11-07",
-      "time": null
+      "time": "19:15"
     },
     "schedule": null,
-    "performances": [],
-    "pricing": null,
+    "performances": [
+      {
+        "date": "2026-10-22",
+        "time": "19:15",
+        "price": 24
+      },
+      {
+        "date": "2026-10-25",
+        "time": "15:00",
+        "price": 24
+      },
+      {
+        "date": "2026-10-28",
+        "time": "19:15",
+        "price": 24
+      },
+      {
+        "date": "2026-10-31",
+        "time": "19:15",
+        "price": 24
+      },
+      {
+        "date": "2026-11-04",
+        "time": "19:15",
+        "price": 24
+      },
+      {
+        "date": "2026-11-07",
+        "time": "19:15",
+        "price": 24
+      }
+    ],
+    "pricing": {
+      "currency": "GBP",
+      "from": 24,
+      "to": null,
+      "concessionFrom": null,
+      "concessionTo": null,
+      "free": false,
+      "payWhatYouLike": false,
+      "text": null,
+      "source": "venue-feed",
+      "checkedAt": "2026-10-18"
+    },
     "accessibility": [
       "Audio-described performances available"
     ],
-    "durationMinutes": null,
+    "durationMinutes": 170,
     "image": {
       "url": "https://glasgowtheatre.com/images/6d2f939a352e9b2cd895.webp",
       "alt": "Scottish Opera - Turandot",
       "credit": null
     },
     "bookingUrl": "https://www.atgtickets.com/shows/scottish-opera-turandot/theatre-royal-glasgow/calendar/",
-    "updatedAt": "2026-10-15"
+    "updatedAt": "2026-10-18"
   }
 }

@@ -1,0 +1,55 @@
+{
+  "apiVersion": "1.1",
+  "generatedAt": "2026-10-18T09:56:21.462Z",
+  "refreshedAt": "2026-10-18T09:55:39.286Z",
+  "show": {
+    "id": "pavilion-count-arthur-strong-and-its-goodnight-from-me",
+    "url": "https://glasgowtheatre.com/shows/pavilion-count-arthur-strong-and-its-goodnight-from-me.html",
+    "title": "Count Arthur Strong - And It's Goodnight From Me!",
+    "artForm": "stand-up",
+    "tags": [
+      "stand-up"
+    ],
+    "producer": null,
+    "description": "Count Arthur Strong in And It’s Goodnight from Me! The second part of Count Arthur Strong's Farewell Tour of the World (Including the north-east). Count Arthur Strong continues on for one last time, as he says what just might be his final goodbye, to whoever’s listening. Don’t miss this...",
+    "venue": {
+      "id": "pavilion",
+      "name": "Pavilion Theatre",
+      "area": "City Centre"
+    },
+    "run": {
+      "opens": "2027-04-18",
+      "closes": "2027-04-18",
+      "time": "20:00"
+    },
+    "schedule": null,
+    "performances": [
+      {
+        "date": "2027-04-18",
+        "time": "20:00",
+        "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/comedy/count-arthur-strong-and-its-goodnight-from-me-tickets"
+      }
+    ],
+    "pricing": {
+      "currency": "GBP",
+      "from": 28.5,
+      "to": null,
+      "concessionFrom": null,
+      "concessionTo": null,
+      "free": false,
+      "payWhatYouLike": false,
+      "text": null,
+      "source": "venue-feed",
+      "checkedAt": "2026-10-18"
+    },
+    "accessibility": null,
+    "durationMinutes": null,
+    "image": {
+      "url": "https://glasgowtheatre.com/images/83e86c0d1c087e9c1f4d.webp",
+      "alt": "Count Arthur Strong - And It's Goodnight From Me!",
+      "credit": null
+    },
+    "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/comedy/count-arthur-strong-and-its-goodnight-from-me-tickets",
+    "updatedAt": "2026-10-18"
+  }
+}

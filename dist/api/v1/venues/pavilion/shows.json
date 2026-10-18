@@ -1,53 +1,14 @@
 {
-  "apiVersion": "1",
-  "generatedAt": "2026-10-17T21:40:27.566Z",
-  "refreshedAt": "2026-10-15T19:58:04.418Z",
-  "total": 40,
-  "count": 40,
+  "apiVersion": "1.1",
+  "generatedAt": "2026-10-18T09:56:21.462Z",
+  "refreshedAt": "2026-10-18T09:55:39.286Z",
+  "total": 42,
+  "count": 42,
   "limit": null,
   "offset": 0,
   "next": null,
   "prev": null,
   "shows": [
-    {
-      "id": "pavilion-rollers-forever",
-      "url": "https://glasgowtheatre.com/shows/pavilion-rollers-forever.html",
-      "title": "Rollers Forever",
-      "artForm": "musical",
-      "tags": [
-        "musical"
-      ],
-      "producer": null,
-      "description": "Back by Huge Public Demand! Rollers Forever is the smash-hit tartan-clad musical celebrating the music, memories and passionate fandom of the Bay City Rollers. This warm and funny story follows two lifelong friends who reconnect on a Saturday night and are pulled back into the excitement...",
-      "venue": {
-        "id": "pavilion",
-        "name": "Pavilion Theatre",
-        "area": "City Centre"
-      },
-      "run": {
-        "opens": "2026-10-15",
-        "closes": "2026-10-17",
-        "time": "14:30"
-      },
-      "schedule": null,
-      "performances": [
-        {
-          "date": "2026-10-15",
-          "time": "14:30",
-          "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/musical/rollers-forever-tickets"
-        }
-      ],
-      "pricing": null,
-      "accessibility": null,
-      "durationMinutes": null,
-      "image": {
-        "url": "https://glasgowtheatre.com/images/9ad85e51c73035590816.webp",
-        "alt": "Rollers Forever",
-        "credit": null
-      },
-      "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/musical/rollers-forever-tickets",
-      "updatedAt": "2026-10-15"
-    },
     {
       "id": "pavilion-an-audience-with-christian-horner",
       "url": "https://glasgowtheatre.com/shows/pavilion-an-audience-with-christian-horner.html",
@@ -76,7 +37,18 @@
           "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/other/an-audience-with-christian-horner-tickets"
         }
       ],
-      "pricing": null,
+      "pricing": {
+        "currency": "GBP",
+        "from": 53.25,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
       "durationMinutes": null,
       "image": {
@@ -85,7 +57,7 @@
         "credit": null
       },
       "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/other/an-audience-with-christian-horner-tickets",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "pavilion-alice-cooper-devil-on-my-shoulder-book-tour",
@@ -115,7 +87,18 @@
           "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/other/alice-cooper-devil-on-my-shoulder-book-tour-tickets"
         }
       ],
-      "pricing": null,
+      "pricing": {
+        "currency": "GBP",
+        "from": 59.5,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
       "durationMinutes": null,
       "image": {
@@ -124,7 +107,7 @@
         "credit": null
       },
       "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/other/alice-cooper-devil-on-my-shoulder-book-tour-tickets",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "pavilion-dr-john-cooper-clarke",
@@ -154,7 +137,18 @@
           "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/other/dr-john-cooper-clarke-tickets"
         }
       ],
-      "pricing": null,
+      "pricing": {
+        "currency": "GBP",
+        "from": 36,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
       "durationMinutes": null,
       "image": {
@@ -163,7 +157,7 @@
         "credit": null
       },
       "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/other/dr-john-cooper-clarke-tickets",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "pavilion-the-scottish-comedians",
@@ -193,7 +187,18 @@
           "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/comedy/the-scottish-comedians-tickets"
         }
       ],
-      "pricing": null,
+      "pricing": {
+        "currency": "GBP",
+        "from": 37,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
       "durationMinutes": null,
       "image": {
@@ -202,7 +207,7 @@
         "credit": null
       },
       "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/comedy/the-scottish-comedians-tickets",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "pavilion-its-not-where-you-start-by-scott-kyle",
@@ -232,7 +237,18 @@
           "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/other/its-not-where-you-start-a-spoken-word-experience-by-scott-kyle-tickets"
         }
       ],
-      "pricing": null,
+      "pricing": {
+        "currency": "GBP",
+        "from": 31.5,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
       "durationMinutes": null,
       "image": {
@@ -241,7 +257,7 @@
         "credit": null
       },
       "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/other/its-not-where-you-start-a-spoken-word-experience-by-scott-kyle-tickets",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "pavilion-billy-tim-the-widescreen-edition",
@@ -271,7 +287,18 @@
           "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/play/billy-tim-the-widescreen-edition-tickets"
         }
       ],
-      "pricing": null,
+      "pricing": {
+        "currency": "GBP",
+        "from": 36.5,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
       "durationMinutes": null,
       "image": {
@@ -280,7 +307,7 @@
         "credit": null
       },
       "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/play/billy-tim-the-widescreen-edition-tickets",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "pavilion-chris-ramsey-here-man",
@@ -310,7 +337,18 @@
           "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/comedy/chris-ramsey-here-man-tickets"
         }
       ],
-      "pricing": null,
+      "pricing": {
+        "currency": "GBP",
+        "from": 37,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
       "durationMinutes": null,
       "image": {
@@ -319,7 +357,7 @@
         "credit": null
       },
       "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/comedy/chris-ramsey-here-man-tickets",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "pavilion-dr-richard-shepherd-time-of-death-more-unnatural-ca",
@@ -349,7 +387,18 @@
           "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/other/dr-richard-shepherd-time-of-death-more-unnatural-causes-tickets"
         }
       ],
-      "pricing": null,
+      "pricing": {
+        "currency": "GBP",
+        "from": 36,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
       "durationMinutes": null,
       "image": {
@@ -358,7 +407,7 @@
         "credit": null
       },
       "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/other/dr-richard-shepherd-time-of-death-more-unnatural-causes-tickets",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "pavilion-the-blindboy-podcast-live",
@@ -388,7 +437,18 @@
           "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/other/the-blindboy-podcast-live-tickets"
         }
       ],
-      "pricing": null,
+      "pricing": {
+        "currency": "GBP",
+        "from": 36,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
       "durationMinutes": null,
       "image": {
@@ -397,7 +457,7 @@
         "credit": null
       },
       "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/other/the-blindboy-podcast-live-tickets",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "pavilion-hen-night-horror",
@@ -427,7 +487,18 @@
           "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/play/hen-night-horror-tickets"
         }
       ],
-      "pricing": null,
+      "pricing": {
+        "currency": "GBP",
+        "from": 19.5,
+        "to": 24.5,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
       "durationMinutes": null,
       "image": {
@@ -436,7 +507,7 @@
         "credit": null
       },
       "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/play/hen-night-horror-tickets",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "pavilion-fin-taylor-the-pre-emptive-comeback-special",
@@ -466,7 +537,18 @@
           "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/comedy/fin-taylor-the-pre-emptive-comeback-special-tickets"
         }
       ],
-      "pricing": null,
+      "pricing": {
+        "currency": "GBP",
+        "from": 28.5,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
       "durationMinutes": null,
       "image": {
@@ -475,7 +557,7 @@
         "credit": null
       },
       "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/comedy/fin-taylor-the-pre-emptive-comeback-special-tickets",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "pavilion-chris-packhams-world-of-wonder-a-planet-on-the-edge",
@@ -505,7 +587,18 @@
           "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/other/chris-packhams-world-of-wonder-a-planet-on-the-edge-tickets"
         }
       ],
-      "pricing": null,
+      "pricing": {
+        "currency": "GBP",
+        "from": 36.49,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
       "durationMinutes": null,
       "image": {
@@ -514,7 +607,7 @@
         "credit": null
       },
       "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/other/chris-packhams-world-of-wonder-a-planet-on-the-edge-tickets",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "pavilion-w-nkernomics",
@@ -544,7 +637,18 @@
           "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/comedy/wnkernomics-tickets"
         }
       ],
-      "pricing": null,
+      "pricing": {
+        "currency": "GBP",
+        "from": 39,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
       "durationMinutes": null,
       "image": {
@@ -553,7 +657,7 @@
         "credit": null
       },
       "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/comedy/wnkernomics-tickets",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "pavilion-jonathan-pie",
@@ -583,7 +687,18 @@
           "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/comedy/jonathan-pie-tickets"
         }
       ],
-      "pricing": null,
+      "pricing": {
+        "currency": "GBP",
+        "from": 26,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
       "durationMinutes": null,
       "image": {
@@ -592,7 +707,7 @@
         "credit": null
       },
       "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/comedy/jonathan-pie-tickets",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "pavilion-stuart-mitchells-patter-at-the-pavilion",
@@ -622,7 +737,18 @@
           "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/comedy/stuart-mitchells-patter-at-the-pavilion-tickets"
         }
       ],
-      "pricing": null,
+      "pricing": {
+        "currency": "GBP",
+        "from": 34.5,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
       "durationMinutes": null,
       "image": {
@@ -631,7 +757,7 @@
         "credit": null
       },
       "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/comedy/stuart-mitchells-patter-at-the-pavilion-tickets",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "pavilion-uncovering-ancient-egypt-with-bettany-hughes",
@@ -661,7 +787,18 @@
           "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/other/uncovering-ancient-egypt-with-bettany-hughes-tickets"
         }
       ],
-      "pricing": null,
+      "pricing": {
+        "currency": "GBP",
+        "from": 33.5,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
       "durationMinutes": null,
       "image": {
@@ -670,7 +807,7 @@
         "credit": null
       },
       "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/other/uncovering-ancient-egypt-with-bettany-hughes-tickets",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "pavilion-flo-and-joan-with-feeling",
@@ -700,7 +837,18 @@
           "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/comedy/flo-and-joan-with-feeling-tickets"
         }
       ],
-      "pricing": null,
+      "pricing": {
+        "currency": "GBP",
+        "from": 34.5,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
       "durationMinutes": null,
       "image": {
@@ -709,7 +857,7 @@
         "credit": null
       },
       "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/comedy/flo-and-joan-with-feeling-tickets",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "pavilion-susan-calman-tall-tales",
@@ -739,7 +887,18 @@
           "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/comedy/susan-calman-tall-tales-tickets"
         }
       ],
-      "pricing": null,
+      "pricing": {
+        "currency": "GBP",
+        "from": 35,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
       "durationMinutes": null,
       "image": {
@@ -748,7 +907,7 @@
         "credit": null
       },
       "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/comedy/susan-calman-tall-tales-tickets",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "pavilion-jason-byrne-30-years-byrning",
@@ -778,7 +937,18 @@
           "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/comedy/jason-byrne-30-years-byrning-tickets"
         }
       ],
-      "pricing": null,
+      "pricing": {
+        "currency": "GBP",
+        "from": 37,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
       "durationMinutes": null,
       "image": {
@@ -787,7 +957,7 @@
         "credit": null
       },
       "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/comedy/jason-byrne-30-years-byrning-tickets",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "pavilion-goldilocks-and-the-three-bonnie-bears",
@@ -817,7 +987,18 @@
           "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/pantomime/goldilocks-and-the-three-bonnie-bears-tickets"
         }
       ],
-      "pricing": null,
+      "pricing": {
+        "currency": "GBP",
+        "from": 23,
+        "to": 36,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
       "durationMinutes": null,
       "image": {
@@ -826,7 +1007,7 @@
         "credit": null
       },
       "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/pantomime/goldilocks-and-the-three-bonnie-bears-tickets",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "pavilion-p-rno",
@@ -856,7 +1037,18 @@
           "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/play/prno-tickets"
         }
       ],
-      "pricing": null,
+      "pricing": {
+        "currency": "GBP",
+        "from": 19.5,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
       "durationMinutes": null,
       "image": {
@@ -865,7 +1057,7 @@
         "credit": null
       },
       "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/play/prno-tickets",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "pavilion-celtic-connections-2027-proudly-presents-a-toast-fa",
@@ -876,7 +1068,7 @@
         "musical"
       ],
       "producer": null,
-      "description": "Written and directed by John Binnie Musical arrangements and additional music by Alyson Orr Songs and poetry by Robert Burns Following on from its sell-out success at Pitlochry Festival Theatre, this dynamic musical play explores the life of Robert Burns through the eyes of the three women who knew...",
+      "description": "Written and directed by John Binnie Musical arrangements and additional music by Alyson Orr Songs and poetry by Robert Burns Following on from its sell-out success at Pitlochry Festival Theatre, this dynamic musical play explores the life of Robert Burns through the eyes of the three women who...",
       "venue": {
         "id": "pavilion",
         "name": "Pavilion Theatre",
@@ -895,7 +1087,18 @@
           "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/other/celtic-connections-2027-proudly-presents-a-toast-fae-the-lassies-tickets"
         }
       ],
-      "pricing": null,
+      "pricing": {
+        "currency": "GBP",
+        "from": 26.5,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
       "durationMinutes": null,
       "image": {
@@ -904,7 +1107,7 @@
         "credit": null
       },
       "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/other/celtic-connections-2027-proudly-presents-a-toast-fae-the-lassies-tickets",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "pavilion-myras-story",
@@ -934,7 +1137,18 @@
           "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/play/myras-story-tickets"
         }
       ],
-      "pricing": null,
+      "pricing": {
+        "currency": "GBP",
+        "from": 29.5,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
       "durationMinutes": null,
       "image": {
@@ -943,7 +1157,7 @@
         "credit": null
       },
       "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/play/myras-story-tickets",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "pavilion-al-murray-all-you-need-is-guv",
@@ -973,7 +1187,18 @@
           "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/comedy/al-murray-all-you-need-is-guv-tickets"
         }
       ],
-      "pricing": null,
+      "pricing": {
+        "currency": "GBP",
+        "from": 37,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
       "durationMinutes": null,
       "image": {
@@ -982,7 +1207,7 @@
         "credit": null
       },
       "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/comedy/al-murray-all-you-need-is-guv-tickets",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "pavilion-celtic-das",
@@ -1012,7 +1237,18 @@
           "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/play/celtic-das-tickets"
         }
       ],
-      "pricing": null,
+      "pricing": {
+        "currency": "GBP",
+        "from": 29.5,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
       "durationMinutes": null,
       "image": {
@@ -1021,7 +1257,7 @@
         "credit": null
       },
       "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/play/celtic-das-tickets",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "pavilion-million-dollar-quartet",
@@ -1051,7 +1287,18 @@
           "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/musical/million-dollar-quartet-tickets"
         }
       ],
-      "pricing": null,
+      "pricing": {
+        "currency": "GBP",
+        "from": 25,
+        "to": 29,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
       "durationMinutes": null,
       "image": {
@@ -1060,7 +1307,7 @@
         "credit": null
       },
       "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/musical/million-dollar-quartet-tickets",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "pavilion-jack-and-his-big-beanstalk",
@@ -1090,7 +1337,18 @@
           "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/play/jack-and-his-big-beanstalk-tickets"
         }
       ],
-      "pricing": null,
+      "pricing": {
+        "currency": "GBP",
+        "from": 31.5,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
       "durationMinutes": null,
       "image": {
@@ -1099,7 +1357,7 @@
         "credit": null
       },
       "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/play/jack-and-his-big-beanstalk-tickets",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "pavilion-mike-bubbins-ideasman",
@@ -1129,7 +1387,18 @@
           "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/comedy/mike-bubbins-ideasman-tickets"
         }
       ],
-      "pricing": null,
+      "pricing": {
+        "currency": "GBP",
+        "from": 31.5,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
       "durationMinutes": null,
       "image": {
@@ -1138,7 +1407,7 @@
         "credit": null
       },
       "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/comedy/mike-bubbins-ideasman-tickets",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "pavilion-sunshine-on-leith",
@@ -1168,7 +1437,18 @@
           "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/musical/sunshine-on-leith-tickets"
         }
       ],
-      "pricing": null,
+      "pricing": {
+        "currency": "GBP",
+        "from": 21,
+        "to": 26.5,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
       "durationMinutes": null,
       "image": {
@@ -1177,7 +1457,7 @@
         "credit": null
       },
       "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/musical/sunshine-on-leith-tickets",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "pavilion-layton-live",
@@ -1207,7 +1487,18 @@
           "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/music/layton-live-tickets"
         }
       ],
-      "pricing": null,
+      "pricing": {
+        "currency": "GBP",
+        "from": 39,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
       "durationMinutes": null,
       "image": {
@@ -1216,7 +1507,7 @@
         "credit": null
       },
       "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/music/layton-live-tickets",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "pavilion-lucy-beaumont-bad-at-quiz-shows-good-with-weirdos",
@@ -1246,7 +1537,18 @@
           "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/comedy/lucy-beaumont-bad-at-quiz-shows-good-with-weirdos-tickets"
         }
       ],
-      "pricing": null,
+      "pricing": {
+        "currency": "GBP",
+        "from": 29.5,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
       "durationMinutes": null,
       "image": {
@@ -1255,7 +1557,7 @@
         "credit": null
       },
       "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/comedy/lucy-beaumont-bad-at-quiz-shows-good-with-weirdos-tickets",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "pavilion-an-audience-with-liam-dolan-part-2",
@@ -1285,7 +1587,18 @@
           "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/comedy/an-audience-with-liam-dolan-part-2-tickets"
         }
       ],
-      "pricing": null,
+      "pricing": {
+        "currency": "GBP",
+        "from": 30,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
       "durationMinutes": null,
       "image": {
@@ -1294,7 +1607,7 @@
         "credit": null
       },
       "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/comedy/an-audience-with-liam-dolan-part-2-tickets",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "pavilion-troy-hawke-never-stop-never-change",
@@ -1324,7 +1637,18 @@
           "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/comedy/troy-hawke-never-stop-never-change-tickets"
         }
       ],
-      "pricing": null,
+      "pricing": {
+        "currency": "GBP",
+        "from": 31.5,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
       "durationMinutes": null,
       "image": {
@@ -1333,7 +1657,7 @@
         "credit": null
       },
       "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/comedy/troy-hawke-never-stop-never-change-tickets",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "pavilion-james-gardner-allocation-on-arrival",
@@ -1344,7 +1668,7 @@
         "stand-up"
       ],
       "producer": null,
-      "description": "Scottish comedy sensation James Gardner brings his latest show “Allocation on Arrival” to the Pavilion. A masterful storyteller, James takes us on a comic journey from Summerston to Safari, navigating the 90s and noughties & tackles the trifecta of football, politics and religion with his studs up...",
+      "description": "Scottish comedy sensation James Gardner brings his latest show “Allocation on Arrival” to the Pavilion. A masterful storyteller, James takes us on a comic journey from Summerston to Safari, navigating the 90s and noughties & tackles the trifecta of football, politics and religion with his studs...",
       "venue": {
         "id": "pavilion",
         "name": "Pavilion Theatre",
@@ -1363,7 +1687,18 @@
           "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/comedy/james-gardner-allocation-on-arrival-tickets"
         }
       ],
-      "pricing": null,
+      "pricing": {
+        "currency": "GBP",
+        "from": 26,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
       "durationMinutes": null,
       "image": {
@@ -1372,7 +1707,7 @@
         "credit": null
       },
       "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/comedy/james-gardner-allocation-on-arrival-tickets",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "pavilion-matt-mathews-not-what-i-ordered-world-tour",
@@ -1402,7 +1737,18 @@
           "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/comedy/matt-mathews-not-what-i-ordered-world-tour-tickets"
         }
       ],
-      "pricing": null,
+      "pricing": {
+        "currency": "GBP",
+        "from": 39.75,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
       "durationMinutes": null,
       "image": {
@@ -1411,7 +1757,7 @@
         "credit": null
       },
       "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/comedy/matt-mathews-not-what-i-ordered-world-tour-tickets",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "pavilion-the-martin-hurson-story",
@@ -1441,7 +1787,18 @@
           "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/play/the-martin-hurson-story-tickets"
         }
       ],
-      "pricing": null,
+      "pricing": {
+        "currency": "GBP",
+        "from": 25,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
       "durationMinutes": null,
       "image": {
@@ -1450,7 +1807,7 @@
         "credit": null
       },
       "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/play/the-martin-hurson-story-tickets",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "pavilion-dianne-and-vito-back-in-business",
@@ -1480,7 +1837,18 @@
           "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/dance/dianne-and-vito-back-in-business-tickets"
         }
       ],
-      "pricing": null,
+      "pricing": {
+        "currency": "GBP",
+        "from": 45.25,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
       "durationMinutes": null,
       "image": {
@@ -1489,7 +1857,7 @@
         "credit": null
       },
       "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/dance/dianne-and-vito-back-in-business-tickets",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "pavilion-myra-dubois-siren",
@@ -1519,7 +1887,18 @@
           "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/comedy/myra-dubois-siren-tickets"
         }
       ],
-      "pricing": null,
+      "pricing": {
+        "currency": "GBP",
+        "from": 37,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
       "durationMinutes": null,
       "image": {
@@ -1528,7 +1907,7 @@
         "credit": null
       },
       "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/comedy/myra-dubois-siren-tickets",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "pavilion-cirque-the-greatest-show",
@@ -1558,7 +1937,18 @@
           "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/other/cirque-the-greatest-show-tickets"
         }
       ],
-      "pricing": null,
+      "pricing": {
+        "currency": "GBP",
+        "from": 34.5,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
       "durationMinutes": null,
       "image": {
@@ -1567,7 +1957,157 @@
         "credit": null
       },
       "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/other/cirque-the-greatest-show-tickets",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
+    },
+    {
+      "id": "pavilion-la-voix-live",
+      "url": "https://glasgowtheatre.com/shows/pavilion-la-voix-live.html",
+      "title": "La Voix Live",
+      "artForm": "cabaret",
+      "tags": [
+        "cabaret"
+      ],
+      "producer": null,
+      "description": "Fresh from dazzling millions on Strictly Come Dancing, La Voix is back – bigger, bolder and more fabulous than ever. Having waltzed her way into the nation's heart, she's gone on to conquer the UK, becoming the most recognisable redhead in Britain. Expect an evening of sensational live vocals...",
+      "venue": {
+        "id": "pavilion",
+        "name": "Pavilion Theatre",
+        "area": "City Centre"
+      },
+      "run": {
+        "opens": "2027-04-16",
+        "closes": "2027-04-16",
+        "time": "19:30"
+      },
+      "schedule": null,
+      "performances": [
+        {
+          "date": "2027-04-16",
+          "time": "19:30",
+          "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/other/la-voix-live-tickets"
+        }
+      ],
+      "pricing": {
+        "currency": "GBP",
+        "from": 35,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
+      "accessibility": null,
+      "durationMinutes": null,
+      "image": {
+        "url": "https://glasgowtheatre.com/images/148b3f15dc7f29d2eb58.webp",
+        "alt": "La Voix Live",
+        "credit": null
+      },
+      "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/other/la-voix-live-tickets",
+      "updatedAt": "2026-10-18"
+    },
+    {
+      "id": "pavilion-deirdre-okane-all-the-rage",
+      "url": "https://glasgowtheatre.com/shows/pavilion-deirdre-okane-all-the-rage.html",
+      "title": "Deirdre O'Kane: All The Rage",
+      "artForm": "stand-up",
+      "tags": [
+        "stand-up"
+      ],
+      "producer": null,
+      "description": "Deirdre O’Kane grabs the zeitgeist once again with a brand new show in a world that feels decidedly off kilter. She contrasts everyday domestic failures with bigger moments of historical injustice, while taking aim at the double tragedies of heartbreak and getting Christmas all wrong. Nothing is...",
+      "venue": {
+        "id": "pavilion",
+        "name": "Pavilion Theatre",
+        "area": "City Centre"
+      },
+      "run": {
+        "opens": "2027-04-17",
+        "closes": "2027-04-17",
+        "time": "19:30"
+      },
+      "schedule": null,
+      "performances": [
+        {
+          "date": "2027-04-17",
+          "time": "19:30",
+          "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/comedy/deirdre-okane-all-the-rage-tickets"
+        }
+      ],
+      "pricing": {
+        "currency": "GBP",
+        "from": 30,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
+      "accessibility": null,
+      "durationMinutes": null,
+      "image": {
+        "url": "https://glasgowtheatre.com/images/93cb7b17fa9d425ab67e.webp",
+        "alt": "Deirdre O'Kane: All The Rage",
+        "credit": null
+      },
+      "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/comedy/deirdre-okane-all-the-rage-tickets",
+      "updatedAt": "2026-10-18"
+    },
+    {
+      "id": "pavilion-count-arthur-strong-and-its-goodnight-from-me",
+      "url": "https://glasgowtheatre.com/shows/pavilion-count-arthur-strong-and-its-goodnight-from-me.html",
+      "title": "Count Arthur Strong - And It's Goodnight From Me!",
+      "artForm": "stand-up",
+      "tags": [
+        "stand-up"
+      ],
+      "producer": null,
+      "description": "Count Arthur Strong in And It’s Goodnight from Me! The second part of Count Arthur Strong's Farewell Tour of the World (Including the north-east). Count Arthur Strong continues on for one last time, as he says what just might be his final goodbye, to whoever’s listening. Don’t miss this...",
+      "venue": {
+        "id": "pavilion",
+        "name": "Pavilion Theatre",
+        "area": "City Centre"
+      },
+      "run": {
+        "opens": "2027-04-18",
+        "closes": "2027-04-18",
+        "time": "20:00"
+      },
+      "schedule": null,
+      "performances": [
+        {
+          "date": "2027-04-18",
+          "time": "20:00",
+          "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/comedy/count-arthur-strong-and-its-goodnight-from-me-tickets"
+        }
+      ],
+      "pricing": {
+        "currency": "GBP",
+        "from": 28.5,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
+      "accessibility": null,
+      "durationMinutes": null,
+      "image": {
+        "url": "https://glasgowtheatre.com/images/83e86c0d1c087e9c1f4d.webp",
+        "alt": "Count Arthur Strong - And It's Goodnight From Me!",
+        "credit": null
+      },
+      "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/comedy/count-arthur-strong-and-its-goodnight-from-me-tickets",
+      "updatedAt": "2026-10-18"
     }
   ]
 }

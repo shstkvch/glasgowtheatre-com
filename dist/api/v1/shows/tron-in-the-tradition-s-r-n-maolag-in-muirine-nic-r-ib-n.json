@@ -1,7 +1,7 @@
 {
-  "apiVersion": "1",
-  "generatedAt": "2026-10-17T21:40:27.566Z",
-  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "apiVersion": "1.1",
+  "generatedAt": "2026-10-18T09:56:21.462Z",
+  "refreshedAt": "2026-10-18T09:55:39.286Z",
   "show": {
     "id": "tron-in-the-tradition-s-r-n-maolag-in-muirine-nic-r-ib-n",
     "url": "https://glasgowtheatre.com/shows/tron-in-the-tradition-s-r-n-maolag-in-muirine-nic-r-ib-n.html",
@@ -40,7 +40,7 @@
       "payWhatYouLike": false,
       "text": "£20",
       "source": "published-text",
-      "checkedAt": "2026-10-15"
+      "checkedAt": "2026-10-18"
     },
     "accessibility": null,
     "durationMinutes": 50,
@@ -50,6 +50,6 @@
       "credit": null
     },
     "bookingUrl": "https://www.tron.co.uk/shows/in-the-tradition-saran-o-maolagain-muirine-nic-roibin/",
-    "updatedAt": "2026-10-15"
+    "updatedAt": "2026-10-18"
   }
 }

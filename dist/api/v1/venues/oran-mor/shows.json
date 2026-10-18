@@ -1,93 +1,14 @@
 {
-  "apiVersion": "1",
-  "generatedAt": "2026-10-17T21:40:27.566Z",
-  "refreshedAt": "2026-10-15T19:58:04.418Z",
-  "total": 6,
-  "count": 6,
+  "apiVersion": "1.1",
+  "generatedAt": "2026-10-18T09:56:21.462Z",
+  "refreshedAt": "2026-10-18T09:55:39.286Z",
+  "total": 5,
+  "count": 5,
   "limit": null,
   "offset": 0,
   "next": null,
   "prev": null,
   "shows": [
-    {
-      "id": "oran-mor-bottoms-dream",
-      "url": "https://glasgowtheatre.com/shows/oran-mor-bottoms-dream.html",
-      "title": "Bottom's Dream",
-      "artForm": "spoken-word",
-      "tags": [
-        "spoken-word",
-        "lunchtime",
-        "a-play-a-pie-a-pint"
-      ],
-      "producer": null,
-      "description": "“Ah hud a maist rare vision Ah hud a dream. Ah’ll write a ballad ae this dream: it sal be cried Bottom’s Dream. Because it disnae huv a bottom.” Blending the text of A Midsummer Night’s Dream with original Scots-language poetry, this new spoken word performance by Martin O’Connor (Through the...",
-      "venue": {
-        "id": "oran-mor",
-        "name": "A Play, a Pie and a Pint",
-        "area": "West End"
-      },
-      "run": {
-        "opens": "2026-10-12",
-        "closes": "2026-10-17",
-        "time": "13:00"
-      },
-      "schedule": {
-        "text": "Monday – Saturday 1pm\n(Doors 12pm/12.30pm on Mondays)"
-      },
-      "performances": [
-        {
-          "date": "2026-10-12",
-          "time": "13:00",
-          "price": 15.5
-        },
-        {
-          "date": "2026-10-13",
-          "time": "13:00",
-          "price": 17.5
-        },
-        {
-          "date": "2026-10-14",
-          "time": "13:00",
-          "price": 17.5
-        },
-        {
-          "date": "2026-10-15",
-          "time": "13:00",
-          "price": 17.5
-        },
-        {
-          "date": "2026-10-16",
-          "time": "13:00",
-          "price": 17.5
-        },
-        {
-          "date": "2026-10-17",
-          "time": "13:00",
-          "price": 21
-        }
-      ],
-      "pricing": {
-        "currency": "GBP",
-        "from": 15.5,
-        "to": 21,
-        "concessionFrom": null,
-        "concessionTo": null,
-        "free": false,
-        "payWhatYouLike": false,
-        "text": "Monday: £15.50\nTuesday-Friday: £17.50\nSaturday: £21.00",
-        "source": "published-text",
-        "checkedAt": "2026-10-15"
-      },
-      "accessibility": null,
-      "durationMinutes": null,
-      "image": {
-        "url": "https://glasgowtheatre.com/images/6f771d478109092c7c0c.webp",
-        "alt": "Bottom's Dream",
-        "credit": null
-      },
-      "bookingUrl": "https://playpiepint.com/whats-on/event/bottoms-dream/",
-      "updatedAt": "2026-10-15"
-    },
     {
       "id": "oran-mor-lune",
       "url": "https://glasgowtheatre.com/shows/oran-mor-lune.html",
@@ -155,7 +76,7 @@
         "payWhatYouLike": false,
         "text": "Monday: £17\nTuesday-Friday: £19\nSaturday: £22.50",
         "source": "published-text",
-        "checkedAt": "2026-10-15"
+        "checkedAt": "2026-10-18"
       },
       "accessibility": null,
       "durationMinutes": null,
@@ -165,7 +86,7 @@
         "credit": null
       },
       "bookingUrl": "https://playpiepint.com/whats-on/event/lune/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "oran-mor-badhbh-shith-and-the-storytellers",
@@ -234,7 +155,7 @@
         "payWhatYouLike": false,
         "text": "Monday: £17\nTuesday-Friday: £19\nSaturday: £22.50",
         "source": "published-text",
-        "checkedAt": "2026-10-15"
+        "checkedAt": "2026-10-18"
       },
       "accessibility": null,
       "durationMinutes": null,
@@ -244,7 +165,7 @@
         "credit": null
       },
       "bookingUrl": "https://playpiepint.com/whats-on/event/badhbh-shith-and-the-storytellers/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "oran-mor-zamboni",
@@ -313,7 +234,7 @@
         "payWhatYouLike": false,
         "text": "Monday: £17\nTuesday-Friday: £19\nSaturday: £22.50",
         "source": "published-text",
-        "checkedAt": "2026-10-15"
+        "checkedAt": "2026-10-18"
       },
       "accessibility": null,
       "durationMinutes": null,
@@ -323,7 +244,7 @@
         "credit": null
       },
       "bookingUrl": "https://playpiepint.com/whats-on/event/zamboni/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "oran-mor-making-way",
@@ -392,7 +313,7 @@
         "payWhatYouLike": false,
         "text": "Monday: £17\nTuesday-Friday: £19\nSaturday: £22.50",
         "source": "published-text",
-        "checkedAt": "2026-10-15"
+        "checkedAt": "2026-10-18"
       },
       "accessibility": null,
       "durationMinutes": null,
@@ -402,7 +323,7 @@
         "credit": null
       },
       "bookingUrl": "https://playpiepint.com/whats-on/event/making-way/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "oran-mor-dead-husbands-club",
@@ -471,7 +392,7 @@
         "payWhatYouLike": false,
         "text": "Monday: £15.50\nTuesday-Friday: £17.50\nSaturday: £21.00",
         "source": "published-text",
-        "checkedAt": "2026-10-15"
+        "checkedAt": "2026-10-18"
       },
       "accessibility": null,
       "durationMinutes": null,
@@ -481,7 +402,7 @@
         "credit": null
       },
       "bookingUrl": "https://playpiepint.com/whats-on/event/dead-husbands-club/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     }
   ]
 }

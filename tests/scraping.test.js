@@ -1,7 +1,14 @@
 const test = require("node:test");
 const assert = require("node:assert");
 
-const { parseDateRange, platformDates } = require("../scripts/scrape-events.js");
+const {
+  parseDateRange,
+  platformDates,
+  offerPriceParts,
+  preloadedState,
+  atgStatePerformances,
+  jsonLdOfferPrices,
+} = require("../scripts/scrape-events.js");
 const { needsScopeCheck } = require("../scripts/tag-events.js");
 const { troubleLines, summaryLines } = require("../scripts/report-new.js");
 
@@ -141,4 +148,84 @@ test("a bot-protection holding page is not mistaken for the venue's own", () => 
   assert.ok(!isInterstitial(null));
   // A short page that is genuinely the venue's is still the venue's.
   assert.ok(!isInterstitial('<title>What&#039;s On - Cottiers</title><p>No events.</p>'));
+});
+
+
+test("an AggregateOffer's low/high is still a price", () => {
+  assert.deepStrictEqual(offerPriceParts({ lowPrice: "53.25", highPrice: "53.25" }), {
+    exact: null,
+    prices: [53.25, 53.25],
+  });
+  assert.deepStrictEqual(offerPriceParts({ price: "20.00" }), {
+    exact: 20,
+    prices: [20],
+  });
+});
+
+test("ATG's hydrated state is read, with the fee added to the advertised price", () => {
+  const state = {
+    show: { showData: { priceInfo: { min: 24 } } },
+    showUpcomingPerformances: {
+      upcomingPerformancesData: {
+        show: {
+          performances: [
+            {
+              dates: { performanceDate: "2026-10-22T18:15:00.000Z" },
+              price: { minPrice: 22.12, minPriceFee: 1.88 },
+            },
+          ],
+        },
+      },
+    },
+  };
+  const { performances, prices } = atgStatePerformances(state);
+  assert.deepStrictEqual(performances, [
+    { date: "2026-10-22", time: "19:15", url: null, price: 24 },
+  ]);
+  assert.ok(prices.includes(24));
+});
+
+test("ATG's preloaded state is pulled out of the page safely", () => {
+  const html =
+    '<script>window.__PRELOADED_STATE__={"show":{"showData":{"title":"A show"}}}</script>';
+  assert.strictEqual(preloadedState(html).show.showData.title, "A show");
+  assert.strictEqual(preloadedState("<html></html>"), null);
+});
+
+test("a sold-out ATG performance keeps its date but no price", () => {
+  const state = {
+    showUpcomingPerformances: {
+      upcomingPerformancesData: {
+        show: {
+          performances: [
+            { dates: { performanceDate: "2026-10-22T18:15:00.000Z" }, price: null },
+          ],
+        },
+      },
+    },
+  };
+  const { performances, prices } = atgStatePerformances(state);
+  assert.strictEqual(performances[0].date, "2026-10-22");
+  assert.strictEqual(performances[0].price, null);
+  assert.deepStrictEqual(prices, []);
+});
+
+
+test("a ticket seller's Product offer is a price, and prices land on the penny", () => {
+  const html = `<script type="application/ld+json">
+    {"@type":"Product","name":"A gig","offers":{"@type":"Offer","price":"10.0","priceCurrency":"GBP"}}
+  </script>`;
+  assert.deepStrictEqual(jsonLdOfferPrices(html), [10]);
+
+  const event = `<script type="application/ld+json">
+    {"@type":"MusicEvent","offers":[{"price":16.848},{"price":20}]}
+  </script>`;
+  assert.deepStrictEqual(jsonLdOfferPrices(event), [16.85, 20]);
+});
+
+test("a page with no priced Event or Product yields nothing rather than a guess", () => {
+  const html = `<script type="application/ld+json">
+    {"@type":"WebPage","name":"A page"}
+  </script>`;
+  assert.deepStrictEqual(jsonLdOfferPrices(html), []);
 });

@@ -1,7 +1,7 @@
 {
-  "apiVersion": "1",
-  "generatedAt": "2026-10-17T21:40:27.566Z",
-  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "apiVersion": "1.1",
+  "generatedAt": "2026-10-18T09:56:21.462Z",
+  "refreshedAt": "2026-10-18T09:55:39.286Z",
   "show": {
     "id": "kings-heathers-the-musical",
     "url": "https://glasgowtheatre.com/shows/kings-heathers-the-musical.html",
@@ -20,19 +20,71 @@
     "run": {
       "opens": "2027-03-30",
       "closes": "2027-04-03",
-      "time": null
+      "time": "19:30"
     },
     "schedule": null,
-    "performances": [],
-    "pricing": null,
+    "performances": [
+      {
+        "date": "2027-03-30",
+        "time": "19:30",
+        "price": 24
+      },
+      {
+        "date": "2027-03-31",
+        "time": "14:30",
+        "price": 24
+      },
+      {
+        "date": "2027-03-31",
+        "time": "19:30",
+        "price": 28.5
+      },
+      {
+        "date": "2027-04-01",
+        "time": "19:30",
+        "price": 24
+      },
+      {
+        "date": "2027-04-02",
+        "time": "16:00",
+        "price": 24
+      },
+      {
+        "date": "2027-04-02",
+        "time": "20:00",
+        "price": 26
+      },
+      {
+        "date": "2027-04-03",
+        "time": "14:30",
+        "price": 46
+      },
+      {
+        "date": "2027-04-03",
+        "time": "19:30",
+        "price": 26
+      }
+    ],
+    "pricing": {
+      "currency": "GBP",
+      "from": 24,
+      "to": 46,
+      "concessionFrom": null,
+      "concessionTo": null,
+      "free": false,
+      "payWhatYouLike": false,
+      "text": null,
+      "source": "venue-feed",
+      "checkedAt": "2026-10-18"
+    },
     "accessibility": null,
-    "durationMinutes": null,
+    "durationMinutes": 150,
     "image": {
       "url": "https://glasgowtheatre.com/images/a1c16eccfdb2cc8f6eb7.webp",
       "alt": "Heathers the Musical",
       "credit": null
     },
     "bookingUrl": "https://www.atgtickets.com/shows/heathers-the-musical/kings-theatre-glasgow/calendar/",
-    "updatedAt": "2026-10-15"
+    "updatedAt": "2026-10-18"
   }
 }

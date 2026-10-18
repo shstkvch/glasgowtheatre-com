@@ -1,7 +1,7 @@
 {
-  "apiVersion": "1",
-  "generatedAt": "2026-10-17T21:40:27.566Z",
-  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "apiVersion": "1.1",
+  "generatedAt": "2026-10-18T09:56:21.462Z",
+  "refreshedAt": "2026-10-18T09:55:39.286Z",
   "show": {
     "id": "kings-an-evening-with-gregor-fisher",
     "url": "https://glasgowtheatre.com/shows/kings-an-evening-with-gregor-fisher.html",
@@ -20,19 +20,36 @@
     "run": {
       "opens": "2027-03-19",
       "closes": "2027-03-19",
-      "time": null
+      "time": "19:30"
     },
     "schedule": null,
-    "performances": [],
-    "pricing": null,
+    "performances": [
+      {
+        "date": "2027-03-19",
+        "time": "19:30",
+        "price": 36.74
+      }
+    ],
+    "pricing": {
+      "currency": "GBP",
+      "from": 36.74,
+      "to": null,
+      "concessionFrom": null,
+      "concessionTo": null,
+      "free": false,
+      "payWhatYouLike": false,
+      "text": null,
+      "source": "venue-feed",
+      "checkedAt": "2026-10-18"
+    },
     "accessibility": null,
-    "durationMinutes": null,
+    "durationMinutes": 120,
     "image": {
       "url": "https://glasgowtheatre.com/images/a922f5160749fedb7802.webp",
       "alt": "An Evening With Gregor Fisher",
       "credit": null
     },
     "bookingUrl": "https://www.atgtickets.com/shows/an-evening-with-gregor-fisher/kings-theatre-glasgow/calendar/",
-    "updatedAt": "2026-10-15"
+    "updatedAt": "2026-10-18"
   }
 }

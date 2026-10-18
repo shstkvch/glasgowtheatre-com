@@ -1,0 +1,80 @@
+{
+  "apiVersion": "1.1",
+  "generatedAt": "2026-10-18T09:56:21.462Z",
+  "refreshedAt": "2026-10-18T09:55:39.286Z",
+  "show": {
+    "id": "kings-the-lyric-club-presents-priscilla-queen-of-the-desert",
+    "url": "https://glasgowtheatre.com/shows/kings-the-lyric-club-presents-priscilla-queen-of-the-desert.html",
+    "title": "The Lyric Club presents Priscilla Queen of the Desert",
+    "artForm": "musical",
+    "tags": [
+      "musical"
+    ],
+    "producer": null,
+    "description": "The Lyric Club presents Priscilla Queen of the Desert at King's Theatre, Glasgow.",
+    "venue": {
+      "id": "kings",
+      "name": "King's Theatre",
+      "area": "City Centre"
+    },
+    "run": {
+      "opens": "2027-04-07",
+      "closes": "2027-04-10",
+      "time": "19:30"
+    },
+    "schedule": null,
+    "performances": [
+      {
+        "date": "2027-04-07",
+        "time": "19:30",
+        "price": 19.38
+      },
+      {
+        "date": "2027-04-08",
+        "time": "19:30",
+        "price": 19.38
+      },
+      {
+        "date": "2027-04-09",
+        "time": "16:30",
+        "price": 19.38
+      },
+      {
+        "date": "2027-04-09",
+        "time": "20:00",
+        "price": 23.94
+      },
+      {
+        "date": "2027-04-10",
+        "time": "14:30",
+        "price": 23.94
+      },
+      {
+        "date": "2027-04-10",
+        "time": "19:30",
+        "price": 23.94
+      }
+    ],
+    "pricing": {
+      "currency": "GBP",
+      "from": 19.38,
+      "to": 23.94,
+      "concessionFrom": null,
+      "concessionTo": null,
+      "free": false,
+      "payWhatYouLike": false,
+      "text": null,
+      "source": "venue-feed",
+      "checkedAt": "2026-10-18"
+    },
+    "accessibility": null,
+    "durationMinutes": 150,
+    "image": {
+      "url": "https://glasgowtheatre.com/images/9ccb1966ea6e5242b728.webp",
+      "alt": "The Lyric Club presents Priscilla Queen of the Desert",
+      "credit": null
+    },
+    "bookingUrl": "https://www.atgtickets.com/shows/the-lyric-club-presents-priscilla-queen-of-the-desert/kings-theatre-glasgow/calendar/",
+    "updatedAt": "2026-10-18"
+  }
+}

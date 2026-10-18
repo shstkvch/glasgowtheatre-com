@@ -1,7 +1,7 @@
 {
-  "apiVersion": "1",
-  "generatedAt": "2026-10-17T21:40:27.566Z",
-  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "apiVersion": "1.1",
+  "generatedAt": "2026-10-18T09:56:21.462Z",
+  "refreshedAt": "2026-10-18T09:55:39.286Z",
   "show": {
     "id": "kings-susie-mccabe-myth-informed",
     "url": "https://glasgowtheatre.com/shows/kings-susie-mccabe-myth-informed.html",
@@ -20,11 +20,33 @@
     "run": {
       "opens": "2027-03-26",
       "closes": "2027-03-27",
-      "time": null
+      "time": "19:30"
     },
     "schedule": null,
-    "performances": [],
-    "pricing": null,
+    "performances": [
+      {
+        "date": "2027-03-26",
+        "time": "20:30",
+        "price": 25.26
+      },
+      {
+        "date": "2027-03-27",
+        "time": "19:30",
+        "price": 25.26
+      }
+    ],
+    "pricing": {
+      "currency": "GBP",
+      "from": 25.26,
+      "to": null,
+      "concessionFrom": null,
+      "concessionTo": null,
+      "free": false,
+      "payWhatYouLike": false,
+      "text": null,
+      "source": "venue-feed",
+      "checkedAt": "2026-10-18"
+    },
     "accessibility": null,
     "durationMinutes": null,
     "image": {
@@ -33,6 +55,6 @@
       "credit": null
     },
     "bookingUrl": "https://www.atgtickets.com/shows/susie-mccabe-myth-informed/kings-theatre-glasgow/calendar/",
-    "updatedAt": "2026-10-15"
+    "updatedAt": "2026-10-18"
   }
 }

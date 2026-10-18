@@ -1,7 +1,7 @@
 {
-  "apiVersion": "1",
-  "generatedAt": "2026-10-17T21:40:27.566Z",
-  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "apiVersion": "1.1",
+  "generatedAt": "2026-10-18T09:56:21.462Z",
+  "refreshedAt": "2026-10-18T09:55:39.286Z",
   "show": {
     "id": "theatre-royal-matilda-the-musical",
     "url": "https://glasgowtheatre.com/shows/theatre-royal-matilda-the-musical.html",
@@ -20,23 +20,80 @@
     "run": {
       "opens": "2026-11-18",
       "closes": "2026-12-05",
-      "time": null
+      "time": "19:30"
     },
     "schedule": null,
-    "performances": [],
-    "pricing": null,
+    "performances": [
+      {
+        "date": "2026-11-18",
+        "time": "19:30",
+        "price": 32
+      },
+      {
+        "date": "2026-11-19",
+        "time": "14:30",
+        "price": 32
+      },
+      {
+        "date": "2026-11-19",
+        "time": "19:30",
+        "price": 20
+      },
+      {
+        "date": "2026-11-20",
+        "time": "19:30",
+        "price": 45
+      },
+      {
+        "date": "2026-11-21",
+        "time": "14:30",
+        "price": 55
+      },
+      {
+        "date": "2026-11-21",
+        "time": "19:30",
+        "price": 55
+      },
+      {
+        "date": "2026-11-22",
+        "time": "14:30",
+        "price": 65
+      },
+      {
+        "date": "2026-11-24",
+        "time": "19:30",
+        "price": 46
+      },
+      {
+        "date": "2026-11-25",
+        "time": "14:30",
+        "price": 32
+      }
+    ],
+    "pricing": {
+      "currency": "GBP",
+      "from": 20,
+      "to": 65,
+      "concessionFrom": null,
+      "concessionTo": null,
+      "free": false,
+      "payWhatYouLike": false,
+      "text": null,
+      "source": "venue-feed",
+      "checkedAt": "2026-10-18"
+    },
     "accessibility": [
       "Captioned performances available",
       "Audio-described performances available",
       "BSL-interpreted performances available"
     ],
-    "durationMinutes": null,
+    "durationMinutes": 155,
     "image": {
       "url": "https://glasgowtheatre.com/images/12603bd62ae24984881d.webp",
       "alt": "Matilda The Musical",
       "credit": null
     },
     "bookingUrl": "https://www.atgtickets.com/shows/matilda-the-musical/theatre-royal-glasgow/calendar/",
-    "updatedAt": "2026-10-15"
+    "updatedAt": "2026-10-18"
   }
 }

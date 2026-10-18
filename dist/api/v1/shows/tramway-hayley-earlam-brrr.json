@@ -1,7 +1,7 @@
 {
-  "apiVersion": "1",
-  "generatedAt": "2026-10-17T21:40:27.566Z",
-  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "apiVersion": "1.1",
+  "generatedAt": "2026-10-18T09:56:21.462Z",
+  "refreshedAt": "2026-10-18T09:55:39.286Z",
   "show": {
     "id": "tramway-hayley-earlam-brrr",
     "url": "https://glasgowtheatre.com/shows/tramway-hayley-earlam-brrr.html",
@@ -34,7 +34,7 @@
       "payWhatYouLike": false,
       "text": "£8 (Child With Up to Two Adults), £6 for an additional child",
       "source": "published-text",
-      "checkedAt": "2026-10-15"
+      "checkedAt": "2026-10-18"
     },
     "accessibility": null,
     "durationMinutes": null,
@@ -44,6 +44,6 @@
       "credit": null
     },
     "bookingUrl": "https://www.tramway.org/event/1bc72e46-4474-4e57-9332-b4b4009c421d/",
-    "updatedAt": "2026-10-15"
+    "updatedAt": "2026-10-18"
   }
 }

@@ -1,2 +1,3 @@
 # opens	closes	title	venue	artForm	fromPrice	url
 2026-10-31	2026-10-31	PHANTASMAGASM Spooky Elvis Special!	The Glad Cafe	cabaret	12	https://glasgowtheatre.com/shows/glad-cafe-phantasmagasm-spooky-elvis-special.html
+2026-11-01	2026-11-01	The Winged and the Wicked: Stories from the South of Chile	The Glad Cafe	spoken-word	10	https://glasgowtheatre.com/shows/glad-cafe-the-winged-and-the-wicked-stories-from-the-south-o.html

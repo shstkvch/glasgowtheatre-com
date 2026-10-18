@@ -1,6 +1,6 @@
 {
-  "apiVersion": "1",
-  "generatedAt": "2026-10-17T21:40:27.566Z",
+  "apiVersion": "1.1",
+  "generatedAt": "2026-10-18T09:56:21.462Z",
   "documentation": "https://glasgowtheatre.com/api/",
   "playground": "https://glasgowtheatre.com/api/examples.html",
   "openapi": "https://glasgowtheatre.com/api/v1/openapi.json",

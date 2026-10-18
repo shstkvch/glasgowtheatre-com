@@ -1,57 +1,14 @@
 {
-  "apiVersion": "1",
-  "generatedAt": "2026-10-17T21:40:27.566Z",
-  "refreshedAt": "2026-10-15T19:58:04.418Z",
-  "total": 5,
-  "count": 5,
+  "apiVersion": "1.1",
+  "generatedAt": "2026-10-18T09:56:21.462Z",
+  "refreshedAt": "2026-10-18T09:55:39.286Z",
+  "total": 4,
+  "count": 4,
   "limit": null,
   "offset": 0,
   "next": null,
   "prev": null,
   "shows": [
-    {
-      "id": "thrice-2026",
-      "url": "https://glasgowtheatre.com/shows/thrice-2026.html",
-      "title": "Thrice",
-      "artForm": "dance",
-      "tags": [
-        "dance"
-      ],
-      "producer": "Al Seed Productions",
-      "description": "Al Seed Productions' visual and physical theatre response to Macbeth. Nine women, three trios, standing in the aftermath of the play and taking the words of soldiers and tyrants into their own mouths.",
-      "venue": {
-        "id": "tramway",
-        "name": "Tramway",
-        "area": "Pollokshields"
-      },
-      "run": {
-        "opens": "2026-10-16",
-        "closes": "2026-10-17",
-        "time": "19:30"
-      },
-      "schedule": null,
-      "performances": [
-        {
-          "date": "2026-10-16",
-          "time": "19:30"
-        },
-        {
-          "date": "2026-10-17",
-          "time": "19:30",
-          "accessibility": "BSL interpreted by Lisa Li"
-        }
-      ],
-      "pricing": null,
-      "accessibility": "Sat 17 Oct, 7.30pm · BSL interpreted by Lisa Li",
-      "durationMinutes": null,
-      "image": {
-        "url": "https://glasgowtheatre.com/images/thrice.webp",
-        "alt": "The Thrice ensemble gathered together on a dark, reflective stage.",
-        "credit": "Alberto Santos Bellido"
-      },
-      "bookingUrl": "https://www.tramway.org/event/328af962-85b1-4a39-9f3a-b43900ec12d2/",
-      "updatedAt": "2026-09-09"
-    },
     {
       "id": "tramway-cade-macaskill-with-yas-clarke-tim-spooner-now-not-n",
       "url": "https://glasgowtheatre.com/shows/tramway-cade-macaskill-with-yas-clarke-tim-spooner-now-not-n.html",
@@ -86,7 +43,7 @@
         "payWhatYouLike": false,
         "text": "£18/£12 concession",
         "source": "published-text",
-        "checkedAt": "2026-10-15"
+        "checkedAt": "2026-10-18"
       },
       "accessibility": null,
       "durationMinutes": null,
@@ -96,7 +53,7 @@
         "credit": null
       },
       "bookingUrl": "https://www.tramway.org/event/b3780c07-1d30-4fde-b247-b42b00a44124/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "tramway-hanna-tuulikki-deer-dancer",
@@ -137,7 +94,7 @@
         "payWhatYouLike": false,
         "text": "£18/£12 concession",
         "source": "published-text",
-        "checkedAt": "2026-10-15"
+        "checkedAt": "2026-10-18"
       },
       "accessibility": null,
       "durationMinutes": null,
@@ -147,7 +104,7 @@
         "credit": null
       },
       "bookingUrl": "https://www.tramway.org/event/0cf77209-337f-4dd1-b232-b48d00ffe565/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "tramway-hayley-earlam-brrr",
@@ -181,7 +138,7 @@
         "payWhatYouLike": false,
         "text": "£8 (Child With Up to Two Adults), £6 for an additional child",
         "source": "published-text",
-        "checkedAt": "2026-10-15"
+        "checkedAt": "2026-10-18"
       },
       "accessibility": null,
       "durationMinutes": null,
@@ -191,7 +148,7 @@
         "credit": null
       },
       "bookingUrl": "https://www.tramway.org/event/1bc72e46-4474-4e57-9332-b4b4009c421d/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "tramway-tortoise-in-a-nutshell-una-imagines",
@@ -225,7 +182,7 @@
         "payWhatYouLike": false,
         "text": "£8/ £6",
         "source": "published-text",
-        "checkedAt": "2026-10-15"
+        "checkedAt": "2026-10-18"
       },
       "accessibility": null,
       "durationMinutes": null,
@@ -235,7 +192,7 @@
         "credit": null
       },
       "bookingUrl": "https://www.tramway.org/event/2d1b13a6-7800-424e-98b6-b4b4008e5d03/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     }
   ]
 }

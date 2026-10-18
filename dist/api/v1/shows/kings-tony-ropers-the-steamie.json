@@ -1,7 +1,7 @@
 {
-  "apiVersion": "1",
-  "generatedAt": "2026-10-17T21:40:27.566Z",
-  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "apiVersion": "1.1",
+  "generatedAt": "2026-10-18T09:56:21.462Z",
+  "refreshedAt": "2026-10-18T09:55:39.286Z",
   "show": {
     "id": "kings-tony-ropers-the-steamie",
     "url": "https://glasgowtheatre.com/shows/kings-tony-ropers-the-steamie.html",
@@ -20,11 +20,68 @@
     "run": {
       "opens": "2026-11-02",
       "closes": "2026-11-14",
-      "time": null
+      "time": "19:30"
     },
     "schedule": null,
-    "performances": [],
-    "pricing": null,
+    "performances": [
+      {
+        "date": "2026-11-02",
+        "time": "19:30",
+        "price": 17.68
+      },
+      {
+        "date": "2026-11-03",
+        "time": "19:30",
+        "price": 17.68
+      },
+      {
+        "date": "2026-11-04",
+        "time": "19:30",
+        "price": 17.68
+      },
+      {
+        "date": "2026-11-05",
+        "time": "14:30",
+        "price": 17.68
+      },
+      {
+        "date": "2026-11-05",
+        "time": "19:30",
+        "price": 17.68
+      },
+      {
+        "date": "2026-11-06",
+        "time": "19:30",
+        "price": 20.28
+      },
+      {
+        "date": "2026-11-07",
+        "time": "14:30",
+        "price": 20.28
+      },
+      {
+        "date": "2026-11-07",
+        "time": "19:30",
+        "price": 20.28
+      },
+      {
+        "date": "2026-11-09",
+        "time": "19:30",
+        "price": 17.68
+      }
+    ],
+    "pricing": {
+      "currency": "GBP",
+      "from": 17.68,
+      "to": 20.28,
+      "concessionFrom": null,
+      "concessionTo": null,
+      "free": false,
+      "payWhatYouLike": false,
+      "text": null,
+      "source": "venue-feed",
+      "checkedAt": "2026-10-18"
+    },
     "accessibility": null,
     "durationMinutes": null,
     "image": {
@@ -33,6 +90,6 @@
       "credit": null
     },
     "bookingUrl": "https://www.atgtickets.com/shows/tony-ropers-the-steamie/kings-theatre-glasgow/calendar/",
-    "updatedAt": "2026-10-15"
+    "updatedAt": "2026-10-18"
   }
 }

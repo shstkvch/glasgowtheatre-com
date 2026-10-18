@@ -1,9 +1,9 @@
 {
-  "apiVersion": "1",
-  "generatedAt": "2026-10-17T21:40:27.566Z",
-  "refreshedAt": "2026-10-15T19:58:04.418Z",
-  "total": 1,
-  "count": 1,
+  "apiVersion": "1.1",
+  "generatedAt": "2026-10-18T09:56:21.462Z",
+  "refreshedAt": "2026-10-18T09:55:39.286Z",
+  "total": 2,
+  "count": 2,
   "limit": null,
   "offset": 0,
   "next": null,
@@ -46,7 +46,7 @@
         "payWhatYouLike": false,
         "text": "Tickets £12 full price / £8 concession / £17 Music scene super hero",
         "source": "published-text",
-        "checkedAt": "2026-10-15"
+        "checkedAt": "2026-10-18"
       },
       "accessibility": null,
       "durationMinutes": null,
@@ -56,7 +56,56 @@
         "credit": null
       },
       "bookingUrl": "https://www.thegladcafe.co.uk/events/2026-10-31-phantasmagasm-spooky-elvis-special-the-glad-cafe",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
+    },
+    {
+      "id": "glad-cafe-the-winged-and-the-wicked-stories-from-the-south-o",
+      "url": "https://glasgowtheatre.com/shows/glad-cafe-the-winged-and-the-wicked-stories-from-the-south-o.html",
+      "title": "The Winged and the Wicked: Stories from the South of Chile",
+      "artForm": "spoken-word",
+      "tags": [
+        "spoken-word"
+      ],
+      "producer": null,
+      "description": "Trinidad Cabezón Droguett and Sam Gamero, accompanied by musician Giulia Drummond, explore the beastly myths and sorcery of Chile’s Chiloé Archipelago. The stories unearth the secrets of the Recta Provincia, a historical clandestine society of sorcerers, the magical realm of creatures coexisting...",
+      "venue": {
+        "id": "glad-cafe",
+        "name": "The Glad Cafe",
+        "area": "Shawlands"
+      },
+      "run": {
+        "opens": "2026-11-01",
+        "closes": "2026-11-01",
+        "time": "12:00"
+      },
+      "schedule": null,
+      "performances": [
+        {
+          "date": "2026-11-01",
+          "time": "12:00"
+        }
+      ],
+      "pricing": {
+        "currency": "GBP",
+        "from": 10,
+        "to": null,
+        "concessionFrom": 8,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": "Tickets £10 in advance / £8 concession",
+        "source": "published-text",
+        "checkedAt": "2026-10-18"
+      },
+      "accessibility": null,
+      "durationMinutes": null,
+      "image": {
+        "url": "https://glasgowtheatre.com/images/df36b30d61c4086e229d.webp",
+        "alt": "The Winged and the Wicked: Stories from the South of Chile",
+        "credit": null
+      },
+      "bookingUrl": "https://www.thegladcafe.co.uk/events/2026-11-01-the-winged-and-the-wicked-stories-from-the-south-of-chile-the-glad-cafe",
+      "updatedAt": "2026-10-18"
     }
   ]
 }

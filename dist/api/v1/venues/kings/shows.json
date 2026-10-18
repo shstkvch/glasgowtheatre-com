@@ -1,80 +1,14 @@
 {
-  "apiVersion": "1",
-  "generatedAt": "2026-10-17T21:40:27.566Z",
-  "refreshedAt": "2026-10-15T19:58:04.418Z",
-  "total": 23,
-  "count": 23,
+  "apiVersion": "1.1",
+  "generatedAt": "2026-10-18T09:56:21.462Z",
+  "refreshedAt": "2026-10-18T09:55:39.286Z",
+  "total": 22,
+  "count": 22,
   "limit": null,
   "offset": 0,
   "next": null,
   "prev": null,
   "shows": [
-    {
-      "id": "kings-dirty-dancing",
-      "url": "https://glasgowtheatre.com/shows/kings-dirty-dancing.html",
-      "title": "Dirty Dancing",
-      "artForm": "play",
-      "tags": [
-        "play"
-      ],
-      "producer": null,
-      "description": "Dirty Dancing returns to Glasgow as part of a UK and Irish tour. Exploding with heart-pounding music, breath-taking emotion and sensationally sexy dancing.",
-      "venue": {
-        "id": "kings",
-        "name": "King's Theatre",
-        "area": "City Centre"
-      },
-      "run": {
-        "opens": "2026-10-15",
-        "closes": "2026-10-17",
-        "time": null
-      },
-      "schedule": null,
-      "performances": [],
-      "pricing": null,
-      "accessibility": null,
-      "durationMinutes": null,
-      "image": {
-        "url": "https://glasgowtheatre.com/images/e56a42636d3c37878de5.webp",
-        "alt": "Dirty Dancing",
-        "credit": null
-      },
-      "bookingUrl": "https://www.atgtickets.com/shows/dirty-dancing/kings-theatre-glasgow/calendar/",
-      "updatedAt": "2026-10-15"
-    },
-    {
-      "id": "kings-building-and-heritage-tours",
-      "url": "https://glasgowtheatre.com/shows/kings-building-and-heritage-tours.html",
-      "title": "Building And Heritage Tours",
-      "artForm": "tour",
-      "tags": [
-        "tour"
-      ],
-      "producer": null,
-      "description": "Book now for the Building and Heritage Tours at the King’s Theatre!",
-      "venue": {
-        "id": "kings",
-        "name": "King's Theatre",
-        "area": "City Centre"
-      },
-      "run": {
-        "opens": "2026-10-17",
-        "closes": "2026-10-17",
-        "time": null
-      },
-      "schedule": null,
-      "performances": [],
-      "pricing": null,
-      "accessibility": null,
-      "durationMinutes": null,
-      "image": {
-        "url": "https://glasgowtheatre.com/images/89ab4443fb4a39464e0d.webp",
-        "alt": "Building And Heritage Tours",
-        "credit": null
-      },
-      "bookingUrl": "https://www.atgtickets.com/shows/building-and-heritage-tours/kings-theatre-glasgow/calendar/",
-      "updatedAt": "2026-10-15"
-    },
     {
       "id": "kings-kyle-maclachlan-fictional-selves",
       "url": "https://glasgowtheatre.com/shows/kings-kyle-maclachlan-fictional-selves.html",
@@ -93,20 +27,37 @@
       "run": {
         "opens": "2026-10-18",
         "closes": "2026-10-18",
-        "time": null
+        "time": "19:30"
       },
       "schedule": null,
-      "performances": [],
-      "pricing": null,
+      "performances": [
+        {
+          "date": "2026-10-18",
+          "time": "19:30",
+          "price": 165.48
+        }
+      ],
+      "pricing": {
+        "currency": "GBP",
+        "from": 165.48,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
-      "durationMinutes": null,
+      "durationMinutes": 110,
       "image": {
         "url": "https://glasgowtheatre.com/images/62b8361aae2c9e16eb27.webp",
         "alt": "Kyle MacLachlan – Fictional Selves",
         "credit": null
       },
       "bookingUrl": "https://www.atgtickets.com/shows/kyle-maclachlan-fictional-selves/kings-theatre-glasgow/calendar/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "kings-gloc-presents-42nd-street",
@@ -126,11 +77,53 @@
       "run": {
         "opens": "2026-10-21",
         "closes": "2026-10-24",
-        "time": null
+        "time": "19:30"
       },
       "schedule": null,
-      "performances": [],
-      "pricing": null,
+      "performances": [
+        {
+          "date": "2026-10-21",
+          "time": "19:30",
+          "price": 33.06
+        },
+        {
+          "date": "2026-10-22",
+          "time": "14:30",
+          "price": 33.06
+        },
+        {
+          "date": "2026-10-22",
+          "time": "19:30",
+          "price": 33.06
+        },
+        {
+          "date": "2026-10-23",
+          "time": "19:30",
+          "price": 34.2
+        },
+        {
+          "date": "2026-10-24",
+          "time": "14:30",
+          "price": 34.2
+        },
+        {
+          "date": "2026-10-24",
+          "time": "19:30",
+          "price": 34.2
+        }
+      ],
+      "pricing": {
+        "currency": "GBP",
+        "from": 33.06,
+        "to": 34.2,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
       "durationMinutes": null,
       "image": {
@@ -139,7 +132,7 @@
         "credit": null
       },
       "bookingUrl": "https://www.atgtickets.com/shows/gloc-presents-42nd-street/kings-theatre-glasgow/calendar/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "kings-matthew-bournes-the-car-man",
@@ -159,22 +152,69 @@
       "run": {
         "opens": "2026-10-27",
         "closes": "2026-10-31",
-        "time": null
+        "time": "19:30"
       },
       "schedule": null,
-      "performances": [],
-      "pricing": null,
+      "performances": [
+        {
+          "date": "2026-10-27",
+          "time": "19:30",
+          "price": 48
+        },
+        {
+          "date": "2026-10-28",
+          "time": "19:30",
+          "price": 43.68
+        },
+        {
+          "date": "2026-10-29",
+          "time": "14:30",
+          "price": 48
+        },
+        {
+          "date": "2026-10-29",
+          "time": "19:30",
+          "price": 48
+        },
+        {
+          "date": "2026-10-30",
+          "time": "19:30",
+          "price": 44.72
+        },
+        {
+          "date": "2026-10-31",
+          "time": "14:30",
+          "price": 36
+        },
+        {
+          "date": "2026-10-31",
+          "time": "19:30",
+          "price": 43.16
+        }
+      ],
+      "pricing": {
+        "currency": "GBP",
+        "from": 36,
+        "to": 48,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": [
         "Audio-described performances available"
       ],
-      "durationMinutes": null,
+      "durationMinutes": 120,
       "image": {
         "url": "https://glasgowtheatre.com/images/53c30ff9a5b0263ff1ed.webp",
         "alt": "Matthew Bourne's The Car Man",
         "credit": null
       },
       "bookingUrl": "https://www.atgtickets.com/shows/matthew-bournes-the-car-man/kings-theatre-glasgow/calendar/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "kings-adam-rowe-fashionism",
@@ -194,11 +234,28 @@
       "run": {
         "opens": "2026-11-01",
         "closes": "2026-11-01",
-        "time": null
+        "time": "19:30"
       },
       "schedule": null,
-      "performances": [],
-      "pricing": null,
+      "performances": [
+        {
+          "date": "2026-11-01",
+          "time": "19:30",
+          "price": 31
+        }
+      ],
+      "pricing": {
+        "currency": "GBP",
+        "from": 31,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
       "durationMinutes": null,
       "image": {
@@ -207,7 +264,7 @@
         "credit": null
       },
       "bookingUrl": "https://www.atgtickets.com/shows/adam-rowe-fashionism/kings-theatre-glasgow/calendar/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "kings-tony-ropers-the-steamie",
@@ -227,11 +284,68 @@
       "run": {
         "opens": "2026-11-02",
         "closes": "2026-11-14",
-        "time": null
+        "time": "19:30"
       },
       "schedule": null,
-      "performances": [],
-      "pricing": null,
+      "performances": [
+        {
+          "date": "2026-11-02",
+          "time": "19:30",
+          "price": 17.68
+        },
+        {
+          "date": "2026-11-03",
+          "time": "19:30",
+          "price": 17.68
+        },
+        {
+          "date": "2026-11-04",
+          "time": "19:30",
+          "price": 17.68
+        },
+        {
+          "date": "2026-11-05",
+          "time": "14:30",
+          "price": 17.68
+        },
+        {
+          "date": "2026-11-05",
+          "time": "19:30",
+          "price": 17.68
+        },
+        {
+          "date": "2026-11-06",
+          "time": "19:30",
+          "price": 20.28
+        },
+        {
+          "date": "2026-11-07",
+          "time": "14:30",
+          "price": 20.28
+        },
+        {
+          "date": "2026-11-07",
+          "time": "19:30",
+          "price": 20.28
+        },
+        {
+          "date": "2026-11-09",
+          "time": "19:30",
+          "price": 17.68
+        }
+      ],
+      "pricing": {
+        "currency": "GBP",
+        "from": 17.68,
+        "to": 20.28,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
       "durationMinutes": null,
       "image": {
@@ -240,7 +354,7 @@
         "credit": null
       },
       "bookingUrl": "https://www.atgtickets.com/shows/tony-ropers-the-steamie/kings-theatre-glasgow/calendar/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "kings-aladdin-pantomime",
@@ -260,11 +374,68 @@
       "run": {
         "opens": "2026-11-21",
         "closes": "2027-01-03",
-        "time": null
+        "time": "19:00"
       },
       "schedule": null,
-      "performances": [],
-      "pricing": null,
+      "performances": [
+        {
+          "date": "2026-11-21",
+          "time": "14:00",
+          "price": 15
+        },
+        {
+          "date": "2026-11-21",
+          "time": "19:00",
+          "price": 15
+        },
+        {
+          "date": "2026-11-22",
+          "time": "13:00",
+          "price": 15
+        },
+        {
+          "date": "2026-11-22",
+          "time": "17:00",
+          "price": 15
+        },
+        {
+          "date": "2026-11-24",
+          "time": "19:00",
+          "price": 15
+        },
+        {
+          "date": "2026-11-25",
+          "time": "19:00",
+          "price": 15
+        },
+        {
+          "date": "2026-11-26",
+          "time": "13:00",
+          "price": 15
+        },
+        {
+          "date": "2026-11-26",
+          "time": "19:00",
+          "price": 15
+        },
+        {
+          "date": "2026-11-27",
+          "time": "19:00",
+          "price": 15
+        }
+      ],
+      "pricing": {
+        "currency": "GBP",
+        "from": 15,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": [
         "Captioned performances available",
         "BSL-interpreted performances available",
@@ -277,7 +448,7 @@
         "credit": null
       },
       "bookingUrl": "https://www.atgtickets.com/shows/aladdin-pantomime/kings-theatre-glasgow/calendar/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "kings-aladdin-pantomime-relaxed-performance",
@@ -297,11 +468,28 @@
       "run": {
         "opens": "2026-12-17",
         "closes": "2026-12-17",
-        "time": null
+        "time": "13:00"
       },
       "schedule": null,
-      "performances": [],
-      "pricing": null,
+      "performances": [
+        {
+          "date": "2026-12-17",
+          "time": "13:00",
+          "price": 15
+        }
+      ],
+      "pricing": {
+        "currency": "GBP",
+        "from": 15,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": [
         "Relaxed performances available"
       ],
@@ -312,7 +500,7 @@
         "credit": null
       },
       "bookingUrl": "https://www.atgtickets.com/shows/aladdin-pantomime-relaxed-performance/kings-theatre-glasgow/calendar/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "kings-romesh-ranganathan-will-change-your-life",
@@ -332,20 +520,47 @@
       "run": {
         "opens": "2027-01-06",
         "closes": "2027-01-08",
-        "time": null
+        "time": "20:00"
       },
       "schedule": null,
-      "performances": [],
-      "pricing": null,
+      "performances": [
+        {
+          "date": "2027-01-06",
+          "time": "20:00",
+          "price": 36.74
+        },
+        {
+          "date": "2027-01-07",
+          "time": "20:00",
+          "price": 36.74
+        },
+        {
+          "date": "2027-01-08",
+          "time": "20:00",
+          "price": 36.74
+        }
+      ],
+      "pricing": {
+        "currency": "GBP",
+        "from": 36.74,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
-      "durationMinutes": null,
+      "durationMinutes": 100,
       "image": {
         "url": "https://glasgowtheatre.com/images/a06b32933a398b941f96.webp",
         "alt": "Romesh Ranganathan Will Change Your Life",
         "credit": null
       },
       "bookingUrl": "https://www.atgtickets.com/shows/romesh-ranganathan-will-change-your-life/kings-theatre-glasgow/calendar/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "kings-mrs-doubtfire-the-musical",
@@ -365,11 +580,68 @@
       "run": {
         "opens": "2027-01-12",
         "closes": "2027-01-31",
-        "time": null
+        "time": "19:30"
       },
       "schedule": null,
-      "performances": [],
-      "pricing": null,
+      "performances": [
+        {
+          "date": "2027-01-12",
+          "time": "19:30",
+          "price": 20
+        },
+        {
+          "date": "2027-01-13",
+          "time": "19:30",
+          "price": 20
+        },
+        {
+          "date": "2027-01-14",
+          "time": "14:30",
+          "price": 20
+        },
+        {
+          "date": "2027-01-14",
+          "time": "19:30",
+          "price": 20
+        },
+        {
+          "date": "2027-01-15",
+          "time": "19:30",
+          "price": 20
+        },
+        {
+          "date": "2027-01-16",
+          "time": "14:30",
+          "price": 35
+        },
+        {
+          "date": "2027-01-16",
+          "time": "19:30",
+          "price": 20
+        },
+        {
+          "date": "2027-01-17",
+          "time": "14:00",
+          "price": 50
+        },
+        {
+          "date": "2027-01-19",
+          "time": "19:30",
+          "price": 35
+        }
+      ],
+      "pricing": {
+        "currency": "GBP",
+        "from": 20,
+        "to": 50,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": [
         "Captioned performances available",
         "Audio-described performances available",
@@ -382,7 +654,7 @@
         "credit": null
       },
       "bookingUrl": "https://www.atgtickets.com/shows/mrs-doubtfire-the-musical/kings-theatre-glasgow/calendar/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "kings-larry-dean-hellbent",
@@ -402,11 +674,28 @@
       "run": {
         "opens": "2027-02-02",
         "closes": "2027-02-02",
-        "time": null
+        "time": "19:30"
       },
       "schedule": null,
-      "performances": [],
-      "pricing": null,
+      "performances": [
+        {
+          "date": "2027-02-02",
+          "time": "19:30",
+          "price": 28.7
+        }
+      ],
+      "pricing": {
+        "currency": "GBP",
+        "from": 28.7,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
       "durationMinutes": null,
       "image": {
@@ -415,7 +704,7 @@
         "credit": null
       },
       "bookingUrl": "https://www.atgtickets.com/shows/larry-dean-hellbent/kings-theatre-glasgow/calendar/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "kings-natural-history-museum-presents-dinosaurs-live",
@@ -435,20 +724,42 @@
       "run": {
         "opens": "2027-02-13",
         "closes": "2027-02-13",
-        "time": null
+        "time": "12:30"
       },
       "schedule": null,
-      "performances": [],
-      "pricing": null,
+      "performances": [
+        {
+          "date": "2027-02-13",
+          "time": "12:30",
+          "price": 16.5
+        },
+        {
+          "date": "2027-02-13",
+          "time": "15:30",
+          "price": 16.5
+        }
+      ],
+      "pricing": {
+        "currency": "GBP",
+        "from": 16.5,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
-      "durationMinutes": null,
+      "durationMinutes": 60,
       "image": {
         "url": "https://glasgowtheatre.com/images/f8f42d0b121b72ee1b4e.webp",
         "alt": "Natural History Museum presents Dinosaurs Live",
         "credit": null
       },
       "bookingUrl": "https://www.atgtickets.com/shows/natural-history-museum-presents-dinosaurs-live/kings-theatre-glasgow/calendar/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "kings-all-killa-no-filla-live-at-valentines-day",
@@ -468,11 +779,28 @@
       "run": {
         "opens": "2027-02-14",
         "closes": "2027-02-14",
-        "time": null
+        "time": "16:00"
       },
       "schedule": null,
-      "performances": [],
-      "pricing": null,
+      "performances": [
+        {
+          "date": "2027-02-14",
+          "time": "16:00",
+          "price": 31
+        }
+      ],
+      "pricing": {
+        "currency": "GBP",
+        "from": 31,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
       "durationMinutes": null,
       "image": {
@@ -481,7 +809,7 @@
         "credit": null
       },
       "bookingUrl": "https://www.atgtickets.com/shows/all-killa-no-filla-live-at-valentines-day/kings-theatre-glasgow/calendar/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "kings-jersey-boys",
@@ -501,22 +829,79 @@
       "run": {
         "opens": "2027-02-16",
         "closes": "2027-02-27",
-        "time": null
+        "time": "19:30"
       },
       "schedule": null,
-      "performances": [],
-      "pricing": null,
+      "performances": [
+        {
+          "date": "2027-02-16",
+          "time": "19:30",
+          "price": 15
+        },
+        {
+          "date": "2027-02-17",
+          "time": "14:30",
+          "price": 15
+        },
+        {
+          "date": "2027-02-17",
+          "time": "19:30",
+          "price": 15
+        },
+        {
+          "date": "2027-02-18",
+          "time": "14:30",
+          "price": 15
+        },
+        {
+          "date": "2027-02-18",
+          "time": "19:30",
+          "price": 15
+        },
+        {
+          "date": "2027-02-19",
+          "time": "19:30",
+          "price": 20
+        },
+        {
+          "date": "2027-02-20",
+          "time": "14:30",
+          "price": 25
+        },
+        {
+          "date": "2027-02-20",
+          "time": "19:30",
+          "price": 25
+        },
+        {
+          "date": "2027-02-22",
+          "time": "19:30",
+          "price": 15
+        }
+      ],
+      "pricing": {
+        "currency": "GBP",
+        "from": 15,
+        "to": 25,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": [
         "BSL-interpreted performances available"
       ],
-      "durationMinutes": null,
+      "durationMinutes": 150,
       "image": {
         "url": "https://glasgowtheatre.com/images/0487ed05f7dce12b00e3.webp",
         "alt": "Jersey Boys",
         "credit": null
       },
       "bookingUrl": "https://www.atgtickets.com/shows/jersey-boys/kings-theatre-glasgow/calendar/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "kings-annie",
@@ -536,11 +921,63 @@
       "run": {
         "opens": "2027-03-02",
         "closes": "2027-03-07",
-        "time": null
+        "time": "19:30"
       },
       "schedule": null,
-      "performances": [],
-      "pricing": null,
+      "performances": [
+        {
+          "date": "2027-03-02",
+          "time": "19:30",
+          "price": 15.6
+        },
+        {
+          "date": "2027-03-03",
+          "time": "14:30",
+          "price": 15.6
+        },
+        {
+          "date": "2027-03-03",
+          "time": "19:30",
+          "price": 15.6
+        },
+        {
+          "date": "2027-03-04",
+          "time": "19:30",
+          "price": 15.6
+        },
+        {
+          "date": "2027-03-05",
+          "time": "19:30",
+          "price": 15.6
+        },
+        {
+          "date": "2027-03-06",
+          "time": "14:30",
+          "price": 29.12
+        },
+        {
+          "date": "2027-03-06",
+          "time": "19:30",
+          "price": 15.6
+        },
+        {
+          "date": "2027-03-07",
+          "time": "14:00",
+          "price": 15.6
+        }
+      ],
+      "pricing": {
+        "currency": "GBP",
+        "from": 15.6,
+        "to": 29.12,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
       "durationMinutes": null,
       "image": {
@@ -549,7 +986,7 @@
         "credit": null
       },
       "bookingUrl": "https://www.atgtickets.com/shows/annie/kings-theatre-glasgow/calendar/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "kings-fascinating-aida-bawdacious",
@@ -569,20 +1006,37 @@
       "run": {
         "opens": "2027-03-11",
         "closes": "2027-03-11",
-        "time": null
+        "time": "19:30"
       },
       "schedule": null,
-      "performances": [],
-      "pricing": null,
+      "performances": [
+        {
+          "date": "2027-03-11",
+          "time": "19:30",
+          "price": 37.88
+        }
+      ],
+      "pricing": {
+        "currency": "GBP",
+        "from": 37.88,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
-      "durationMinutes": null,
+      "durationMinutes": 120,
       "image": {
         "url": "https://glasgowtheatre.com/images/419601090b1fae136b8a.webp",
         "alt": "Fascinating Aida: Bawdacious!",
         "credit": null
       },
       "bookingUrl": "https://www.atgtickets.com/shows/fascinating-aida-bawdacious/kings-theatre-glasgow/calendar/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "kings-jimeoin-ballyhoo",
@@ -602,11 +1056,28 @@
       "run": {
         "opens": "2027-03-13",
         "closes": "2027-03-13",
-        "time": null
+        "time": "20:30"
       },
       "schedule": null,
-      "performances": [],
-      "pricing": null,
+      "performances": [
+        {
+          "date": "2027-03-13",
+          "time": "20:30",
+          "price": 29.27
+        }
+      ],
+      "pricing": {
+        "currency": "GBP",
+        "from": 29.27,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
       "durationMinutes": null,
       "image": {
@@ -615,7 +1086,7 @@
         "credit": null
       },
       "bookingUrl": "https://www.atgtickets.com/shows/jimeoin-ballyhoo/kings-theatre-glasgow/calendar/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "kings-an-evening-with-gregor-fisher",
@@ -635,20 +1106,37 @@
       "run": {
         "opens": "2027-03-19",
         "closes": "2027-03-19",
-        "time": null
+        "time": "19:30"
       },
       "schedule": null,
-      "performances": [],
-      "pricing": null,
+      "performances": [
+        {
+          "date": "2027-03-19",
+          "time": "19:30",
+          "price": 36.74
+        }
+      ],
+      "pricing": {
+        "currency": "GBP",
+        "from": 36.74,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
-      "durationMinutes": null,
+      "durationMinutes": 120,
       "image": {
         "url": "https://glasgowtheatre.com/images/a922f5160749fedb7802.webp",
         "alt": "An Evening With Gregor Fisher",
         "credit": null
       },
       "bookingUrl": "https://www.atgtickets.com/shows/an-evening-with-gregor-fisher/kings-theatre-glasgow/calendar/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "kings-susie-mccabe-myth-informed",
@@ -668,11 +1156,33 @@
       "run": {
         "opens": "2027-03-26",
         "closes": "2027-03-27",
-        "time": null
+        "time": "19:30"
       },
       "schedule": null,
-      "performances": [],
-      "pricing": null,
+      "performances": [
+        {
+          "date": "2027-03-26",
+          "time": "20:30",
+          "price": 25.26
+        },
+        {
+          "date": "2027-03-27",
+          "time": "19:30",
+          "price": 25.26
+        }
+      ],
+      "pricing": {
+        "currency": "GBP",
+        "from": 25.26,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
       "durationMinutes": null,
       "image": {
@@ -681,7 +1191,7 @@
         "credit": null
       },
       "bookingUrl": "https://www.atgtickets.com/shows/susie-mccabe-myth-informed/kings-theatre-glasgow/calendar/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "kings-gicf27-gala",
@@ -701,11 +1211,28 @@
       "run": {
         "opens": "2027-03-27",
         "closes": "2027-03-27",
-        "time": null
+        "time": "14:00"
       },
       "schedule": null,
-      "performances": [],
-      "pricing": null,
+      "performances": [
+        {
+          "date": "2027-03-27",
+          "time": "14:00",
+          "price": 22.96
+        }
+      ],
+      "pricing": {
+        "currency": "GBP",
+        "from": 22.96,
+        "to": null,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
       "durationMinutes": null,
       "image": {
@@ -714,7 +1241,7 @@
         "credit": null
       },
       "bookingUrl": "https://www.atgtickets.com/shows/gicf27-gala/kings-theatre-glasgow/calendar/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "kings-heathers-the-musical",
@@ -734,20 +1261,147 @@
       "run": {
         "opens": "2027-03-30",
         "closes": "2027-04-03",
-        "time": null
+        "time": "19:30"
       },
       "schedule": null,
-      "performances": [],
-      "pricing": null,
+      "performances": [
+        {
+          "date": "2027-03-30",
+          "time": "19:30",
+          "price": 24
+        },
+        {
+          "date": "2027-03-31",
+          "time": "14:30",
+          "price": 24
+        },
+        {
+          "date": "2027-03-31",
+          "time": "19:30",
+          "price": 28.5
+        },
+        {
+          "date": "2027-04-01",
+          "time": "19:30",
+          "price": 24
+        },
+        {
+          "date": "2027-04-02",
+          "time": "16:00",
+          "price": 24
+        },
+        {
+          "date": "2027-04-02",
+          "time": "20:00",
+          "price": 26
+        },
+        {
+          "date": "2027-04-03",
+          "time": "14:30",
+          "price": 46
+        },
+        {
+          "date": "2027-04-03",
+          "time": "19:30",
+          "price": 26
+        }
+      ],
+      "pricing": {
+        "currency": "GBP",
+        "from": 24,
+        "to": 46,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
-      "durationMinutes": null,
+      "durationMinutes": 150,
       "image": {
         "url": "https://glasgowtheatre.com/images/a1c16eccfdb2cc8f6eb7.webp",
         "alt": "Heathers the Musical",
         "credit": null
       },
       "bookingUrl": "https://www.atgtickets.com/shows/heathers-the-musical/kings-theatre-glasgow/calendar/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
+    },
+    {
+      "id": "kings-the-lyric-club-presents-priscilla-queen-of-the-desert",
+      "url": "https://glasgowtheatre.com/shows/kings-the-lyric-club-presents-priscilla-queen-of-the-desert.html",
+      "title": "The Lyric Club presents Priscilla Queen of the Desert",
+      "artForm": "musical",
+      "tags": [
+        "musical"
+      ],
+      "producer": null,
+      "description": "The Lyric Club presents Priscilla Queen of the Desert at King's Theatre, Glasgow.",
+      "venue": {
+        "id": "kings",
+        "name": "King's Theatre",
+        "area": "City Centre"
+      },
+      "run": {
+        "opens": "2027-04-07",
+        "closes": "2027-04-10",
+        "time": "19:30"
+      },
+      "schedule": null,
+      "performances": [
+        {
+          "date": "2027-04-07",
+          "time": "19:30",
+          "price": 19.38
+        },
+        {
+          "date": "2027-04-08",
+          "time": "19:30",
+          "price": 19.38
+        },
+        {
+          "date": "2027-04-09",
+          "time": "16:30",
+          "price": 19.38
+        },
+        {
+          "date": "2027-04-09",
+          "time": "20:00",
+          "price": 23.94
+        },
+        {
+          "date": "2027-04-10",
+          "time": "14:30",
+          "price": 23.94
+        },
+        {
+          "date": "2027-04-10",
+          "time": "19:30",
+          "price": 23.94
+        }
+      ],
+      "pricing": {
+        "currency": "GBP",
+        "from": 19.38,
+        "to": 23.94,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
+      "accessibility": null,
+      "durationMinutes": 150,
+      "image": {
+        "url": "https://glasgowtheatre.com/images/9ccb1966ea6e5242b728.webp",
+        "alt": "The Lyric Club presents Priscilla Queen of the Desert",
+        "credit": null
+      },
+      "bookingUrl": "https://www.atgtickets.com/shows/the-lyric-club-presents-priscilla-queen-of-the-desert/kings-theatre-glasgow/calendar/",
+      "updatedAt": "2026-10-18"
     },
     {
       "id": "kings-the-mousetrap",
@@ -767,20 +1421,72 @@
       "run": {
         "opens": "2027-04-12",
         "closes": "2027-04-17",
-        "time": null
+        "time": "19:30"
       },
       "schedule": null,
-      "performances": [],
-      "pricing": null,
+      "performances": [
+        {
+          "date": "2027-04-12",
+          "time": "19:30",
+          "price": 15.6
+        },
+        {
+          "date": "2027-04-13",
+          "time": "19:30",
+          "price": 15.6
+        },
+        {
+          "date": "2027-04-14",
+          "time": "14:30",
+          "price": 15.6
+        },
+        {
+          "date": "2027-04-14",
+          "time": "19:30",
+          "price": 15.6
+        },
+        {
+          "date": "2027-04-15",
+          "time": "19:30",
+          "price": 15.6
+        },
+        {
+          "date": "2027-04-16",
+          "time": "19:30",
+          "price": 15.6
+        },
+        {
+          "date": "2027-04-17",
+          "time": "14:30",
+          "price": 17.5
+        },
+        {
+          "date": "2027-04-17",
+          "time": "19:30",
+          "price": 15.6
+        }
+      ],
+      "pricing": {
+        "currency": "GBP",
+        "from": 15.6,
+        "to": 17.5,
+        "concessionFrom": null,
+        "concessionTo": null,
+        "free": false,
+        "payWhatYouLike": false,
+        "text": null,
+        "source": "venue-feed",
+        "checkedAt": "2026-10-18"
+      },
       "accessibility": null,
-      "durationMinutes": null,
+      "durationMinutes": 125,
       "image": {
         "url": "https://glasgowtheatre.com/images/096bec7536a1bec98c45.webp",
         "alt": "The Mousetrap",
         "credit": null
       },
       "bookingUrl": "https://www.atgtickets.com/shows/the-mousetrap/kings-theatre-glasgow/calendar/",
-      "updatedAt": "2026-10-15"
+      "updatedAt": "2026-10-18"
     }
   ]
 }

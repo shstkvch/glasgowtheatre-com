@@ -1,7 +1,7 @@
 {
-  "apiVersion": "1",
-  "generatedAt": "2026-10-17T21:40:27.566Z",
-  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "apiVersion": "1.1",
+  "generatedAt": "2026-10-18T09:56:21.462Z",
+  "refreshedAt": "2026-10-18T09:55:39.286Z",
   "show": {
     "id": "theatre-royal-scottish-opera-fidelio-touch-tour",
     "url": "https://glasgowtheatre.com/shows/theatre-royal-scottish-opera-fidelio-touch-tour.html",
@@ -20,21 +20,38 @@
     "run": {
       "opens": "2027-02-19",
       "closes": "2027-02-19",
-      "time": null
+      "time": "18:00"
     },
     "schedule": null,
-    "performances": [],
-    "pricing": null,
+    "performances": [
+      {
+        "date": "2027-02-19",
+        "time": "18:00",
+        "price": 0
+      }
+    ],
+    "pricing": {
+      "currency": "GBP",
+      "from": 0,
+      "to": null,
+      "concessionFrom": null,
+      "concessionTo": null,
+      "free": true,
+      "payWhatYouLike": false,
+      "text": null,
+      "source": "venue-feed",
+      "checkedAt": "2026-10-18"
+    },
     "accessibility": [
       "Audio-described performances available"
     ],
-    "durationMinutes": null,
+    "durationMinutes": 30,
     "image": {
       "url": "https://glasgowtheatre.com/images/1ea2c17f028818a5c467.webp",
       "alt": "Scottish Opera - Fidelio - Touch Tour",
       "credit": null
     },
     "bookingUrl": "https://www.atgtickets.com/shows/scottish-opera-fidelio-touch-tour/theatre-royal-glasgow/calendar/",
-    "updatedAt": "2026-10-15"
+    "updatedAt": "2026-10-18"
   }
 }

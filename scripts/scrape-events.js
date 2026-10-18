@@ -392,6 +392,114 @@ function jsonLdEvents(html) {
 const offersOf = (event) =>
   [event && event.offers].flat().filter((o) => o && typeof o === 'object');
 
+/**
+ * Every positive price an offer publishes, plus the exact one when the offer
+ * is a single ticket rather than a low/high aggregate. Trafalgar and Eventbrite
+ * both use AggregateOffer on some pages, where `price` is absent.
+ */
+function offerPriceParts(offer) {
+  const number = (value) =>
+    value == null || value === '' ? Number.NaN : Number(value);
+  const exact = number(offer && offer.price);
+  const round = (n) => Math.round(n * 100) / 100;
+  const prices = [offer && offer.price, offer && offer.lowPrice, offer && offer.highPrice]
+    .map(number)
+    .filter((n) => Number.isFinite(n) && n >= 0)
+    .map(round);
+  return {
+    exact: Number.isFinite(exact) && exact >= 0 ? exact : null,
+    prices,
+  };
+}
+
+/**
+ * Ticket sellers that mark their pages up with schema.org offers. The Old
+ * Hairdressers hands its tickets to whoever is promoting the night — Ticket
+ * Tailor, Wegottickets, Citizen Ticket, a Big Cartel or Shopify shop — so the
+ * price for those listings lives on the seller's page, not the venue's.
+ */
+const SELLER_HOSTS =
+  /(^|\.)(tickettailor\.com|wegottickets\.com|bigcartel\.com|sumupstore\.com|ticketsource\.com|citizenticket\.(?:com|co\.uk)|tickets-scotland\.com|skiddle\.com|seetickets\.com|gigantic\.com|dice\.fm|eventbrite\.co\.uk|lineupnow\.com|ticketmaster\.co\.uk|lastnightfromglasgow\.com|myshopify\.com)$/i;
+
+/**
+ * Every price a page publishes as structured data on an Event or a Product.
+ * Which of the two depends on the seller: Ticket Tailor and Wegottickets mark
+ * up an Event, Big Cartel and Shopify a Product.
+ */
+function jsonLdOfferPrices(html) {
+  const prices = [];
+  const walk = (node) => {
+    if (Array.isArray(node)) return node.forEach(walk);
+    if (!node || typeof node !== 'object') return;
+    if (/Event$|Product$/.test(String(node['@type'] || ''))) {
+      for (const offer of offersOf(node)) {
+        prices.push(...offerPriceParts(offer).prices);
+      }
+    }
+    Object.values(node).forEach(walk);
+  };
+  for (const [, body] of String(html).matchAll(
+    /<script[^>]+type=["']application\/ld\+json["'][^>]*>([\s\S]*?)<\/script>/gi,
+  )) {
+    try {
+      walk(JSON.parse(body));
+    } catch {
+      // A malformed block is one seller's bad day, not a reason to lose the rest.
+    }
+  }
+  return prices;
+}
+
+/** ATG's React app hydrates from this object, not from JSON-LD. */
+function preloadedState(html) {
+  const marker = 'window.__PRELOADED_STATE__=';
+  const text = String(html || '');
+  const start = text.indexOf(marker);
+  if (start < 0) return null;
+  const end = text.indexOf('</script>', start);
+  if (end < 0) return null;
+  try {
+    return JSON.parse(text.slice(start + marker.length, end));
+  } catch {
+    return null;
+  }
+}
+
+/**
+ * ATG's per-performance price is `minPrice` plus `minPriceFee`; the frontend's
+ * own JSON-LD does the same sum. Reading only minPrice would publish the price
+ * before fees while the booking page shows the total.
+ */
+function atgStatePerformances(state) {
+  const list = state?.showUpcomingPerformances?.upcomingPerformancesData?.show?.performances;
+  const performances = [];
+  const prices = [];
+  if (Array.isArray(list)) {
+    for (const performance of list) {
+      const when = londonMoment(performance?.dates?.performanceDate);
+      const minRaw = performance?.price?.minPrice;
+      const feeRaw = performance?.price?.minPriceFee;
+      const min = minRaw == null ? Number.NaN : Number(minRaw);
+      const fee = feeRaw == null ? Number.NaN : Number(feeRaw);
+      let price = null;
+      if (Number.isFinite(min) && min >= 0) {
+        price =
+          Math.round(
+            (min + (Number.isFinite(fee) && fee > 0 ? fee : 0)) * 100,
+          ) / 100;
+        prices.push(price);
+      }
+      if (when) performances.push({ ...when, url: null, price });
+    }
+  }
+  const infoRaw = state?.show?.showData?.priceInfo?.min;
+  const infoMin = infoRaw == null ? Number.NaN : Number(infoRaw);
+  if (Number.isFinite(infoMin) && infoMin >= 0) {
+    prices.push(Math.round(infoMin * 100) / 100);
+  }
+  return { performances, prices };
+}
+
 /** Drop the empty fields rather than publish `"pricing": null` 150 times. */
 function attachPricing(event, pricing, extra = {}) {
   const merged = pricing && (pricing.from != null || pricing.text || pricing.payWhatYouLike) ? pricing : null;
@@ -1291,13 +1399,36 @@ function canary(venueId, label, ok) {
  */
 async function cottiersTickets(url) {
   try {
-    const $ = cheerio.load(await fetchShared(url));
-    const heading = $('.elementor-heading-title')
+    const html = await fetchShared(url);
+    const $ = cheerio.load(html);
+    const headings = $('.elementor-heading-title')
       .toArray()
-      .map((el) => cleanText($(el).text()))
-      .find((text) => /price/i.test(text));
+      .map((el) => cleanText($(el).text()));
+
+    // A cancelled night is not a night out, and listing it is worse than
+    // listing it without a price.
+    if (headings.some((text) => /\bcancelled\b/i.test(text))) {
+      return { cancelled: true };
+    }
+
+    const heading = headings.find((text) => /price/i.test(text));
     const pricing = readPricing(heading);
-    return pricing && (pricing.from != null || pricing.text) ? { pricing } : {};
+    if (pricing && (pricing.from != null || pricing.payWhatYouLike)) {
+      return { pricing };
+    }
+
+    // No price in the page's own heading: some Cottiers events are sold
+    // through a link rather than described in place, so follow it.
+    const seller = $('a')
+      .toArray()
+      .map((el) => $(el).attr('href'))
+      .find((href) => href && /^https?:\/\//i.test(href) && /eventbrite|ticket|wegott|skiddle|seetickets|universe|citizenticket/i.test(href));
+    if (seller) {
+      const out = await sellerTickets(seller);
+      if (out.pricing) return { pricing: out.pricing };
+    }
+
+    return pricing && pricing.text ? { pricing } : {};
   } catch (err) {
     console.log(`  Warning: no price for ${url}: ${err.message}`);
     return {};
@@ -1362,7 +1493,12 @@ async function scrapeCottiers() {
         scheduleText: timePart || null,
       };
       if (listing.time) attachSchedule(listing, [{ date: startDate, time: listing.time }]);
-      Object.assign(listing, await cottiersTickets(ticketUrl));
+      const more = await cottiersTickets(ticketUrl);
+      if (more.cancelled) {
+        console.log(`  Skipping "${title}": the venue has cancelled it`);
+        continue;
+      }
+      Object.assign(listing, more);
       results.push(listing);
     }
 
@@ -1373,6 +1509,110 @@ async function scrapeCottiers() {
     FAILURES.cottiers = err.message;
     return [];
   }
+}
+
+// --- Eventbrite listings ---
+
+/**
+ * Eventbrite publishes a schema.org Event with an AggregateOffer. The Old
+ * Hairdressers sells most of its tickets there, so read the range rather than
+ * leaving the listing without a price.
+ */
+async function eventbriteTickets(url) {
+  const out = {};
+  try {
+    const shows = jsonLdEvents(await fetchShared(url));
+    const performances = [];
+    const prices = [];
+    for (const show of shows) {
+      const when = londonMoment(show.startDate);
+      const offers = offersOf(show);
+      if (!offers.length) {
+        if (when) performances.push({ ...when, url: null, price: null });
+        continue;
+      }
+      for (const offer of offers) {
+        const parts = offerPriceParts(offer);
+        prices.push(...parts.prices);
+        if (when) {
+          performances.push({
+            ...when,
+            url: offer.url || null,
+            price: parts.exact,
+          });
+        }
+      }
+    }
+    attachSchedule(out, performances);
+    if (prices.length) {
+      const allFree = prices.every((price) => price === 0);
+      const band = allFree ? [0] : prices.filter((price) => price > 0);
+      const from = band.length ? Math.min(...band) : null;
+      const to = band.length ? Math.max(...band) : null;
+      attachPricing(
+        out,
+        {
+          from,
+          to: to > from ? to : null,
+          concession: null,
+          concessionTo: null,
+          free: allFree,
+          payWhatYouLike: false,
+          text: null,
+          read: 'source',
+        },
+        {
+          notes:
+            'The price range the ticket seller publishes. Booking fees may be added at checkout.',
+        },
+      );
+    }
+  } catch (err) {
+    console.log(`  Warning: no price for ${url}: ${err.message}`);
+  }
+  return out;
+}
+
+/**
+ * A price from whatever ticket seller the listing links to. Restricted to
+ * known sellers: an arbitrary page's Product is not this show's ticket, and a
+ * wrong price is worse than none.
+ */
+async function sellerTickets(url) {
+  const out = {};
+  try {
+    const host = new URL(url).hostname;
+    if (!SELLER_HOSTS.test(host)) return out;
+    const prices = jsonLdOfferPrices(await fetchShared(url));
+    if (!prices.length) return out;
+    const allFree = prices.every((price) => price === 0);
+    const band = allFree ? [0] : prices.filter((price) => price > 0);
+    if (!band.length) return out;
+    const from = Math.min(...band);
+    const to = Math.max(...band);
+    attachPricing(
+      out,
+      {
+        from,
+        to: to > from ? to : null,
+        concession: null,
+        concessionTo: null,
+        free: allFree,
+        payWhatYouLike: false,
+        text: null,
+        read: 'source',
+      },
+      allFree
+        ? { notes: 'Free, but ticketed.' }
+        : {
+            notes:
+              'The price the ticket seller publishes. Booking fees may be added at checkout.',
+          },
+    );
+  } catch (err) {
+    console.log(`  Warning: no price for ${url}: ${err.message}`);
+  }
+  return out;
 }
 
 // --- The Old Hairdressers ---
@@ -1419,7 +1659,14 @@ async function scrapeOldHairdressers() {
       const type = classifyEventType(title, 'The Old Hairdressers', description);
 
       const time = parseTime(timeText);
-      results.push({
+      // The buy-tickets column is hand-pasted, and has held an email body
+      // where a link should be. Anything that is not a URL is not a ticket
+      // link, so the venue's own page is the honest fallback.
+      const buyLink = $row.find('.ptb_events__buy_tickets a').first().attr('href');
+      const ticketUrl = /^https?:\/\//i.test(String(buyLink || ''))
+        ? buyLink
+        : permalink;
+      const listing = {
         id: makeId('old-hairdressers', title),
         title,
         venue: 'The Old Hairdressers',
@@ -1435,9 +1682,16 @@ async function scrapeOldHairdressers() {
         type,
         tags: classifyTags(title, description, type),
         description,
-        ticketUrl: $row.find('.ptb_events__buy_tickets a').first().attr('href') || permalink,
+        ticketUrl,
         image,
-      });
+      };
+      Object.assign(
+        listing,
+        /eventbrite\./i.test(ticketUrl)
+          ? await eventbriteTickets(ticketUrl)
+          : await sellerTickets(ticketUrl),
+      );
+      results.push(listing);
     }
 
     console.log(`  ✓ ${results.length} candidate events from The Old Hairdressers`);
@@ -1599,26 +1853,49 @@ function atgImage(window) {
 async function atgTickets(url) {
   const out = {};
   try {
-    const shows = jsonLdEvents(await fetchShared(url));
-    const performances = [];
-    const prices = [];
+    const html = await fetchShared(url);
+    let performances = [];
+    let prices = [];
     let duration = null;
-    for (const show of shows) {
-      const when = londonMoment(show.startDate);
-      if (!when) continue;
-      duration = duration || readDuration(show.duration);
-      const cheapest = offersOf(show)
-        .map((o) => Number(o.price))
-        .filter((n) => Number.isFinite(n) && n > 0);
-      const price = cheapest.length ? Math.min(...cheapest) : null;
-      if (price != null) prices.push(price);
-      performances.push({ ...when, url: offersOf(show)[0]?.url || null, price });
+
+    // The server-rendered page no longer carries JSON-LD; its React app is
+    // hydrated from __PRELOADED_STATE__, where each performance has a total
+    // price (minPrice + minPriceFee).
+    const state = preloadedState(html);
+    if (state) {
+      const parsed = atgStatePerformances(state);
+      performances = parsed.performances;
+      prices = parsed.prices;
+      duration = readDuration(state?.show?.showData?.duration || '');
     }
+
+    // Older pages still publish JSON-LD. Keep it as a fallback so a frontend
+    // change at one end does not silently drop every price.
+    if (!performances.length && !prices.length) {
+      for (const show of jsonLdEvents(html)) {
+        const when = londonMoment(show.startDate);
+        if (!when) continue;
+        duration = duration || readDuration(show.duration);
+        const offers = offersOf(show);
+        if (!offers.length) {
+          performances.push({ ...when, url: null, price: null });
+          continue;
+        }
+        for (const offer of offers) {
+          const parts = offerPriceParts(offer);
+          prices.push(...parts.prices);
+          performances.push({ ...when, url: offer.url || null, price: parts.exact });
+        }
+      }
+    }
+
     // Nine on the nose is ATG's page limit, not a nine-performance run.
     attachSchedule(out, performances, { partial: performances.length >= 9 });
     if (prices.length) {
-      const from = Math.min(...prices);
-      const to = Math.max(...prices);
+      const allFree = prices.every((price) => price === 0);
+      const band = allFree ? [0] : prices.filter((price) => price > 0);
+      const from = band.length ? Math.min(...band) : null;
+      const to = band.length ? Math.max(...band) : null;
       attachPricing(
         out,
         {
@@ -1626,12 +1903,11 @@ async function atgTickets(url) {
           to: to > from ? to : null,
           concession: null,
           concessionTo: null,
-          free: false,
+          free: allFree,
           payWhatYouLike: false,
           text: null,
-          // Not a face value: ATG prices dynamically and quotes what is left,
-          // fees included. A page showing this has to date it.
           live: true,
+          read: 'source',
         },
         {
           notes: 'The cheapest seat still on sale for each performance, fees included. ATG prices by demand, so this moves as a run sells and a weekend costs more than a midweek night.',
@@ -1761,21 +2037,39 @@ const PAVILION_BASE = 'https://trafalgartickets.com/pavilion-theatre-glasgow/en-
 async function pavilionTickets(url) {
   const out = {};
   try {
-    const [show] = jsonLdEvents(await fetchShared(url));
-    if (!show) return out;
+    const shows = jsonLdEvents(await fetchShared(url));
     const performances = [];
     const prices = [];
-    for (const offer of offersOf(show)) {
-      const closes = offer.validThrough && offer.validThrough !== show.endDate ? offer.validThrough : null;
-      const when = londonMoment(closes) || londonMoment(show.startDate);
-      const price = Number(offer.price);
-      if (Number.isFinite(price) && price > 0) prices.push(price);
-      if (when) performances.push({ ...when, url: offer.url || null, price: Number.isFinite(price) ? price : null });
+    for (const show of shows) {
+      const showWhen = londonMoment(show.startDate);
+      const offers = offersOf(show);
+      if (!offers.length) {
+        if (showWhen) performances.push({ ...showWhen, url: null, price: null });
+        continue;
+      }
+      for (const offer of offers) {
+        const closes =
+          offer.validThrough && offer.validThrough !== show.endDate
+            ? offer.validThrough
+            : null;
+        const when = londonMoment(closes) || showWhen;
+        const parts = offerPriceParts(offer);
+        prices.push(...parts.prices);
+        if (when) {
+          performances.push({
+            ...when,
+            url: offer.url || null,
+            price: parts.exact,
+          });
+        }
+      }
     }
     attachSchedule(out, performances);
     if (prices.length) {
-      const from = Math.min(...prices);
-      const to = Math.max(...prices);
+      const allFree = prices.every((price) => price === 0);
+      const band = allFree ? [0] : prices.filter((price) => price > 0);
+      const from = band.length ? Math.min(...band) : null;
+      const to = band.length ? Math.max(...band) : null;
       attachPricing(
         out,
         {
@@ -1783,12 +2077,16 @@ async function pavilionTickets(url) {
           to: to > from ? to : null,
           concession: null,
           concessionTo: null,
-          free: false,
+          free: allFree,
           payWhatYouLike: false,
           text: null,
           live: true,
+          read: 'source',
         },
-        { notes: 'The cheapest seat still on sale for each performance. Some shows include a venue levy of up to £2 in the ticket price.' },
+        {
+          notes:
+            'The cheapest seat still on sale for each performance. Some shows include a venue levy of up to £2 in the ticket price.',
+        },
       );
     }
   } catch (err) {
@@ -2354,7 +2652,7 @@ async function main() {
   console.log('='.repeat(50));
 }
 
-module.exports = { parseTime, parseDateRange, classifyTags, platformDates, londonMoment, jsonLdEvents, isInterstitial, theatre118Events, theatre118Pricing };
+module.exports = { parseTime, parseDateRange, classifyTags, platformDates, londonMoment, jsonLdEvents, isInterstitial, theatre118Events, theatre118Pricing, offerPriceParts, preloadedState, atgStatePerformances, atgTickets, pavilionTickets, eventbriteTickets, sellerTickets, jsonLdOfferPrices };
 
 if (require.main === module) main().catch((err) => {
   console.error('Fatal error:', err);

@@ -2707,5 +2707,166 @@
     "scopeReason": "",
     "model": "deepseek/deepseek-v4-flash",
     "taggedAt": "2026-10-15"
+  },
+  "fc00dcbfa5ec0f10": {
+    "form": "stand-up",
+    "inScope": true,
+    "scopeReason": "",
+    "model": "deepseek/deepseek-v4-flash",
+    "taggedAt": "2026-10-18"
+  },
+  "9bf3913c9817805b": {
+    "form": "spoken-word",
+    "inScope": true,
+    "scopeReason": "",
+    "model": "deepseek/deepseek-v4-flash",
+    "taggedAt": "2026-10-18"
+  },
+  "f7d5f839f5f6c37f": {
+    "form": "music",
+    "inScope": false,
+    "scopeReason": "Concert by a pop duo",
+    "model": "deepseek/deepseek-v4-flash",
+    "taggedAt": "2026-10-18"
+  },
+  "b4028c705d3503b4": {
+    "form": "music",
+    "inScope": false,
+    "scopeReason": "Concert by a musician",
+    "model": "deepseek/deepseek-v4-flash",
+    "taggedAt": "2026-10-18"
+  },
+  "5136706e3893139f": {
+    "form": "music",
+    "inScope": false,
+    "scopeReason": "Concert by a band",
+    "model": "deepseek/deepseek-v4-flash",
+    "taggedAt": "2026-10-18"
+  },
+  "627b1b2fa480fa23": {
+    "form": "opera",
+    "inScope": true,
+    "scopeReason": "",
+    "model": "deepseek/deepseek-v4-flash",
+    "taggedAt": "2026-10-18"
+  },
+  "9e9ba791dedecad1": {
+    "form": "music",
+    "inScope": false,
+    "scopeReason": "Concert by a singer-songwriter",
+    "model": "deepseek/deepseek-v4-flash",
+    "taggedAt": "2026-10-18"
+  },
+  "3cf58f27dbe1e28d": {
+    "form": "music",
+    "inScope": false,
+    "scopeReason": "Orchestra concert of film themes",
+    "model": "deepseek/deepseek-v4-flash",
+    "taggedAt": "2026-10-18"
+  },
+  "1993e980eb6ece91": {
+    "form": "music",
+    "inScope": false,
+    "scopeReason": "Concert by a singer-songwriter",
+    "model": "deepseek/deepseek-v4-flash",
+    "taggedAt": "2026-10-18"
+  },
+  "8234966b2dabf26a": {
+    "form": "music",
+    "inScope": false,
+    "scopeReason": "Concert by a covers band",
+    "model": "deepseek/deepseek-v4-flash",
+    "taggedAt": "2026-10-18"
+  },
+  "0ba5602dabb248a6": {
+    "form": "music",
+    "inScope": false,
+    "scopeReason": "Concert by a singer-songwriter",
+    "model": "deepseek/deepseek-v4-flash",
+    "taggedAt": "2026-10-18"
+  },
+  "9902a1d4a5c21820": {
+    "form": "music",
+    "inScope": false,
+    "scopeReason": "Concert by a band",
+    "model": "deepseek/deepseek-v4-flash",
+    "taggedAt": "2026-10-18"
+  },
+  "b4726d3134048f47": {
+    "form": "music",
+    "inScope": false,
+    "scopeReason": "Concert by a rock/folk band.",
+    "model": "deepseek/deepseek-v4-flash",
+    "taggedAt": "2026-10-18"
+  },
+  "10081ee0f5829058": {
+    "form": "musical",
+    "inScope": true,
+    "scopeReason": "",
+    "model": "deepseek/deepseek-v4-flash",
+    "taggedAt": "2026-10-18"
+  },
+  "db4239270e17cb78": {
+    "form": "music",
+    "inScope": false,
+    "scopeReason": "Irish traditional band concert.",
+    "model": "deepseek/deepseek-v4-flash",
+    "taggedAt": "2026-10-18"
+  },
+  "240477280ef255e1": {
+    "form": "music",
+    "inScope": false,
+    "scopeReason": "Singer-songwriter concert.",
+    "model": "deepseek/deepseek-v4-flash",
+    "taggedAt": "2026-10-18"
+  },
+  "92bcce4c1533e4dc": {
+    "form": "stand-up",
+    "inScope": true,
+    "scopeReason": "",
+    "model": "deepseek/deepseek-v4-flash",
+    "taggedAt": "2026-10-18"
+  },
+  "4f014c6b4158da56": {
+    "form": "music",
+    "inScope": false,
+    "scopeReason": "Singer-songwriter concert.",
+    "model": "deepseek/deepseek-v4-flash",
+    "taggedAt": "2026-10-18"
+  },
+  "fa3f4718850569c4": {
+    "form": "musical",
+    "inScope": true,
+    "scopeReason": "",
+    "model": "deepseek/deepseek-v4-flash",
+    "taggedAt": "2026-10-18"
+  },
+  "5070219b95c673bb": {
+    "form": "music",
+    "inScope": false,
+    "scopeReason": "Band playing Beatles album live.",
+    "model": "deepseek/deepseek-v4-flash",
+    "taggedAt": "2026-10-18"
+  },
+  "8dd9389525b925f4": {
+    "form": "cabaret",
+    "inScope": true,
+    "scopeReason": "",
+    "model": "deepseek/deepseek-v4-flash",
+    "taggedAt": "2026-10-18"
+  },
+  "d248b5daeffdc970": {
+    "form": "stand-up",
+    "inScope": true,
+    "scopeReason": "",
+    "model": "deepseek/deepseek-v4-flash",
+    "taggedAt": "2026-10-18"
+  },
+  "597d5f8bd3c69723": {
+    "form": "stand-up",
+    "inScope": true,
+    "scopeReason": "",
+    "model": "deepseek/deepseek-v4-flash",
+    "taggedAt": "2026-10-18"
   }
 }

@@ -1,17 +1,19 @@
 {
-  "apiVersion": "1",
-  "generatedAt": "2026-10-17T21:40:27.566Z",
-  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "apiVersion": "1.1",
+  "generatedAt": "2026-10-18T09:56:21.462Z",
+  "refreshedAt": "2026-10-18T09:55:39.286Z",
   "venue": {
     "id": "theatre-royal",
     "name": "Theatre Royal",
     "area": "City Centre",
+    "colour": "#d0202d",
+    "ink": "#ffffff",
     "description": "Opened in 1867, the Theatre Royal on Hope Street hosts opera, ballet, touring drama and musicals in a plush Victorian auditorium. It is the Glasgow home of Scottish Opera and Scottish Ballet.",
     "website": "https://atgtickets.com/venues/theatre-royal-glasgow",
     "instagram": "theatreroyalglasgow",
     "programme": "mixed",
     "url": "https://glasgowtheatre.com/venues/theatre-royal.html",
-    "upcomingShows": 25,
+    "upcomingShows": 24,
     "showsUrl": "https://glasgowtheatre.com/api/v1/venues/theatre-royal/shows.json",
     "concessions": {
       "url": "https://www.atgtickets.com/access/access-scheme/",

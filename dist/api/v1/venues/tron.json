@@ -1,17 +1,19 @@
 {
-  "apiVersion": "1",
-  "generatedAt": "2026-10-17T21:40:27.566Z",
-  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "apiVersion": "1.1",
+  "generatedAt": "2026-10-18T09:56:21.462Z",
+  "refreshedAt": "2026-10-18T09:55:39.286Z",
   "venue": {
     "id": "tron",
     "name": "Tron Theatre",
     "area": "Merchant City",
+    "colour": "#e01c70",
+    "ink": "#ffffff",
     "description": "Housed in a beautiful converted church at the heart of the Merchant City, the Tron is Glasgow’s home for new writing and independent theatre. With an intimate main stage and a buzzing bar, it programmes a mix of Scottish premieres, visiting companies, and its popular scratch series for works-in-development.",
     "website": "https://tron.co.uk",
     "instagram": "tikitronica",
     "programme": "theatre",
     "url": "https://glasgowtheatre.com/venues/tron.html",
-    "upcomingShows": 12,
+    "upcomingShows": 11,
     "showsUrl": "https://glasgowtheatre.com/api/v1/venues/tron/shows.json",
     "concessions": {
       "url": "https://www.tron.co.uk/booking-information/",

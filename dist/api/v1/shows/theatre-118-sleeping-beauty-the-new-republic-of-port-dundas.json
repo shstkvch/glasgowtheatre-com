@@ -1,7 +1,7 @@
 {
-  "apiVersion": "1",
-  "generatedAt": "2026-10-17T21:40:27.566Z",
-  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "apiVersion": "1.1",
+  "generatedAt": "2026-10-18T09:56:21.462Z",
+  "refreshedAt": "2026-10-18T09:55:39.286Z",
   "show": {
     "id": "theatre-118-sleeping-beauty-the-new-republic-of-port-dundas",
     "url": "https://glasgowtheatre.com/shows/theatre-118-sleeping-beauty-the-new-republic-of-port-dundas.html",
@@ -60,7 +60,7 @@
       "payWhatYouLike": true,
       "text": null,
       "source": "venue-feed",
-      "checkedAt": "2026-10-15"
+      "checkedAt": "2026-10-18"
     },
     "accessibility": null,
     "durationMinutes": 100,
@@ -70,6 +70,6 @@
       "credit": null
     },
     "bookingUrl": "https://theatre118.com/whats-on/sleeping-beauty-the-new-republic-of-port-dundas",
-    "updatedAt": "2026-10-15"
+    "updatedAt": "2026-10-18"
   }
 }

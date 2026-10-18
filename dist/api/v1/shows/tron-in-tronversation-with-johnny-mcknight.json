@@ -1,7 +1,7 @@
 {
-  "apiVersion": "1",
-  "generatedAt": "2026-10-17T21:40:27.566Z",
-  "refreshedAt": "2026-10-15T19:58:04.418Z",
+  "apiVersion": "1.1",
+  "generatedAt": "2026-10-18T09:56:21.462Z",
+  "refreshedAt": "2026-10-18T09:55:39.286Z",
   "show": {
     "id": "tron-in-tronversation-with-johnny-mcknight",
     "url": "https://glasgowtheatre.com/shows/tron-in-tronversation-with-johnny-mcknight.html",
@@ -31,8 +31,7 @@
       },
       {
         "date": "2026-10-24",
-        "time": "19:30",
-        "bookingUrl": "https://www.tron.co.uk/book-online/561592AMTNNHSDLPVTGJJKRVRQVBNTRGG"
+        "time": "19:30"
       }
     ],
     "pricing": {
@@ -45,7 +44,7 @@
       "payWhatYouLike": false,
       "text": "£25",
       "source": "published-text",
-      "checkedAt": "2026-10-15"
+      "checkedAt": "2026-10-18"
     },
     "accessibility": null,
     "durationMinutes": 90,
@@ -55,6 +54,6 @@
       "credit": null
     },
     "bookingUrl": "https://www.tron.co.uk/shows/in-tronversation-with-johnny-mcknight/",
-    "updatedAt": "2026-10-15"
+    "updatedAt": "2026-10-18"
   }
 }

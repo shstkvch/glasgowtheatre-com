@@ -1,0 +1,55 @@
+{
+  "apiVersion": "1.1",
+  "generatedAt": "2026-10-18T09:56:21.462Z",
+  "refreshedAt": "2026-10-18T09:55:39.286Z",
+  "show": {
+    "id": "pavilion-deirdre-okane-all-the-rage",
+    "url": "https://glasgowtheatre.com/shows/pavilion-deirdre-okane-all-the-rage.html",
+    "title": "Deirdre O'Kane: All The Rage",
+    "artForm": "stand-up",
+    "tags": [
+      "stand-up"
+    ],
+    "producer": null,
+    "description": "Deirdre O’Kane grabs the zeitgeist once again with a brand new show in a world that feels decidedly off kilter. She contrasts everyday domestic failures with bigger moments of historical injustice, while taking aim at the double tragedies of heartbreak and getting Christmas all wrong. Nothing is...",
+    "venue": {
+      "id": "pavilion",
+      "name": "Pavilion Theatre",
+      "area": "City Centre"
+    },
+    "run": {
+      "opens": "2027-04-17",
+      "closes": "2027-04-17",
+      "time": "19:30"
+    },
+    "schedule": null,
+    "performances": [
+      {
+        "date": "2027-04-17",
+        "time": "19:30",
+        "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/comedy/deirdre-okane-all-the-rage-tickets"
+      }
+    ],
+    "pricing": {
+      "currency": "GBP",
+      "from": 30,
+      "to": null,
+      "concessionFrom": null,
+      "concessionTo": null,
+      "free": false,
+      "payWhatYouLike": false,
+      "text": null,
+      "source": "venue-feed",
+      "checkedAt": "2026-10-18"
+    },
+    "accessibility": null,
+    "durationMinutes": null,
+    "image": {
+      "url": "https://glasgowtheatre.com/images/93cb7b17fa9d425ab67e.webp",
+      "alt": "Deirdre O'Kane: All The Rage",
+      "credit": null
+    },
+    "bookingUrl": "https://trafalgartickets.com/pavilion-theatre-glasgow/en-GB/event/comedy/deirdre-okane-all-the-rage-tickets",
+    "updatedAt": "2026-10-18"
+  }
+}
