@@ -223,36 +223,6 @@
     "form": "workshop"
   },
   {
-    "id": "platform-glaswegians",
-    "title": "Glaswegians",
-    "venue": "Platform",
-    "venueId": "platform",
-    "date": "2026-09-19",
-    "endDate": null,
-    "time": "10:00",
-    "sourceGenre": "Visual",
-    "type": "professional",
-    "tags": [
-      "talk"
-    ],
-    "description": "Between 1989 and 1993, Cranhill Arts photographers captured 40,000 images of Glaswegians, offering a rare insider portrait.",
-    "ticketUrl": "https://www.platform-online.co.uk/index.php/whats-on/event/1236",
-    "image": "https://www.platform-online.co.uk/images/uploads/_small/Concerned_Others_.jpeg",
-    "scheduleText": "Sat 19 Sep – Sat 28 Nov Mon – Sat | 10am – 5pm (until 8pm on Tue & Thu)",
-    "pricing": {
-      "from": 0,
-      "to": null,
-      "concession": null,
-      "concessionTo": null,
-      "free": true,
-      "payWhatYouLike": false,
-      "text": "Free",
-      "read": "model"
-    },
-    "checkedAt": "2026-10-18",
-    "form": "talk"
-  },
-  {
     "id": "tron-the-big-comedy-roadshow",
     "title": "The Big Comedy Roadshow",
     "venue": "Tron Theatre",
@@ -847,11 +817,11 @@
     },
     "type": "professional",
     "tags": [
-      "spoken-word"
+      "play"
     ],
     "id": "pavilion-its-not-where-you-start-by-scott-kyle",
     "checkedAt": "2026-10-18",
-    "form": "spoken-word"
+    "form": "play"
   },
   {
     "id": "citizens-revel",
@@ -3580,7 +3550,7 @@
     "endDate": null,
     "type": "professional",
     "tags": [
-      "dance"
+      "physical-theatre"
     ],
     "description": "Step into the world of Deer Dancer. See the theatre; hear the drum beat. Observe a quintet of womxn performers take it in turns to play five hybrid characters. In the space between wild-deer-ness and performed male-ness, see them gesture, lip-sync, dance and sing, undressing and redressing into...",
     "ticketUrl": "https://www.tramway.org/event/0cf77209-337f-4dd1-b232-b48d00ffe565/",
@@ -3604,87 +3574,7 @@
     },
     "scheduleText": "7.30pm - 9.00pm",
     "checkedAt": "2026-10-18",
-    "form": "dance"
-  },
-  {
-    "title": "Ice Dragon",
-    "venue": "Theatre Royal",
-    "venueId": "theatre-royal",
-    "date": "2026-11-30",
-    "endDate": "2026-12-06",
-    "time": "10:00",
-    "sourceGenre": "Events",
-    "ticketUrl": "https://www.atgtickets.com/shows/ice-dragon/theatre-royal-glasgow/calendar/",
-    "image": "https://res.cloudinary.com/dwzhqvxaz/image/upload/w_800,q_auto,f_auto/v1791390475/Titles/Ice%20Dragon/1920_x_1080_px_Ice_DRAGON_GLASGOW_2026_V2.png",
-    "description": "Travel through the seasons in Ice Dragon, an interactive musical adventure for babies and children under six years.",
-    "performances": [
-      {
-        "date": "2026-11-30",
-        "time": "10:00",
-        "price": 12
-      },
-      {
-        "date": "2026-11-30",
-        "time": "11:30",
-        "price": 12
-      },
-      {
-        "date": "2026-12-01",
-        "time": "10:00",
-        "price": 12
-      },
-      {
-        "date": "2026-12-01",
-        "time": "11:30",
-        "price": 12
-      },
-      {
-        "date": "2026-12-02",
-        "time": "10:00",
-        "price": 12
-      },
-      {
-        "date": "2026-12-02",
-        "time": "11:30",
-        "price": 12
-      },
-      {
-        "date": "2026-12-03",
-        "time": "10:00",
-        "price": 12
-      },
-      {
-        "date": "2026-12-03",
-        "time": "11:30",
-        "price": 12
-      },
-      {
-        "date": "2026-12-04",
-        "time": "10:00",
-        "price": 12
-      }
-    ],
-    "performancesPartial": true,
-    "pricing": {
-      "from": 12,
-      "to": null,
-      "concession": null,
-      "concessionTo": null,
-      "free": false,
-      "payWhatYouLike": false,
-      "text": null,
-      "live": true,
-      "read": "source",
-      "notes": "The cheapest seat still on sale for each performance, fees included. ATG prices by demand, so this moves as a run sells and a weekend costs more than a midweek night."
-    },
-    "duration": 45,
-    "type": "professional",
-    "tags": [
-      "musical"
-    ],
-    "id": "theatre-royal-ice-dragon",
-    "checkedAt": "2026-10-18",
-    "form": "musical"
+    "form": "physical-theatre"
   },
   {
     "id": "platform-christmas-show-hansel-gretel",
@@ -3726,7 +3616,7 @@
     "endDate": null,
     "type": "professional",
     "tags": [
-      "play"
+      "physical-theatre"
     ],
     "description": "Hayley Earlam - Brrr at Tramway, Glasgow.",
     "ticketUrl": "https://www.tramway.org/event/1bc72e46-4474-4e57-9332-b4b4009c421d/",
@@ -3743,7 +3633,7 @@
       "read": "model"
     },
     "checkedAt": "2026-10-18",
-    "form": "play"
+    "form": "physical-theatre"
   },
   {
     "title": "ATG Inspire Academy Juniors",
@@ -3944,7 +3834,7 @@
     "endDate": "2026-12-11",
     "type": "professional",
     "tags": [
-      "physical-theatre"
+      "dance"
     ],
     "description": "This sensory, inclusive dance-theatre performance is made especially for and with children with complex needs ages 7-15 years. Playfulness within the work creates space for live response between the audience and performers, with its adaptable approach allowing the individuality of each child to be...",
     "ticketUrl": "https://citz.co.uk/whats-on/poggle-and-me/",
@@ -3979,7 +3869,7 @@
     },
     "duration": 40,
     "checkedAt": "2026-10-18",
-    "form": "physical-theatre"
+    "form": "dance"
   },
   {
     "id": "theatre-118-sleeping-beauty-the-new-republic-of-port-dundas",
@@ -4381,7 +4271,7 @@
     "endDate": null,
     "type": "professional",
     "tags": [
-      "talk"
+      "spoken-word"
     ],
     "description": "Recommended Age Guide 14+ “O aw the airts the wind can blaw, I dearly like the West.” In his memoir of growing up in Ayrshire, Billy Kay refers to this song as an Ayrshire anthem, one of many by Burns which gave people their strong Scottish identity. Here, Billy is … Continued",
     "ticketUrl": "https://www.tron.co.uk/shows/born-in-kyle-billy-kay-robyn-stapleton/",
@@ -4406,7 +4296,7 @@
     },
     "duration": 75,
     "checkedAt": "2026-10-18",
-    "form": "talk"
+    "form": "spoken-word"
   },
   {
     "title": "Shine Productions present Titanic The Musical",
@@ -5216,50 +5106,6 @@
     "form": "play"
   },
   {
-    "title": "Natural History Museum presents Dinosaurs Live",
-    "venue": "King's Theatre",
-    "venueId": "kings",
-    "date": "2027-02-13",
-    "endDate": null,
-    "time": "12:30",
-    "sourceGenre": "Family",
-    "ticketUrl": "https://www.atgtickets.com/shows/natural-history-museum-presents-dinosaurs-live/kings-theatre-glasgow/calendar/",
-    "image": "https://res.cloudinary.com/dwzhqvxaz/image/upload/w_800,q_auto,f_auto/v1724060381/Titles/Natural%20History%20Museum%20presents%20Dinosaurs%20Live!/NaturalHistoryMuseumpresentsDinosaursLive!_Title_1920x1080.jpg",
-    "description": "For the first time since 1881, the home of dinosaurs, London’s Natural History Museum, is going on tour!",
-    "performances": [
-      {
-        "date": "2027-02-13",
-        "time": "12:30",
-        "price": 16.5
-      },
-      {
-        "date": "2027-02-13",
-        "time": "15:30",
-        "price": 16.5
-      }
-    ],
-    "pricing": {
-      "from": 16.5,
-      "to": null,
-      "concession": null,
-      "concessionTo": null,
-      "free": false,
-      "payWhatYouLike": false,
-      "text": null,
-      "live": true,
-      "read": "source",
-      "notes": "The cheapest seat still on sale for each performance, fees included. ATG prices by demand, so this moves as a run sells and a weekend costs more than a midweek night."
-    },
-    "duration": 60,
-    "type": "professional",
-    "tags": [
-      "talk"
-    ],
-    "id": "kings-natural-history-museum-presents-dinosaurs-live",
-    "checkedAt": "2026-10-18",
-    "form": "talk"
-  },
-  {
     "title": "Celtic Da's",
     "venue": "Pavilion Theatre",
     "venueId": "pavilion",
@@ -5329,11 +5175,11 @@
     },
     "type": "professional",
     "tags": [
-      "stand-up"
+      "spoken-word"
     ],
     "id": "kings-all-killa-no-filla-live-at-valentines-day",
     "checkedAt": "2026-10-18",
-    "form": "stand-up"
+    "form": "spoken-word"
   },
   {
     "title": "Scottish Opera - Alcina - Touch Tour",
@@ -5619,11 +5465,11 @@
     "duration": 90,
     "type": "professional",
     "tags": [
-      "talk"
+      "workshop"
     ],
     "id": "theatre-royal-scottish-opera-national-opera-studio",
     "checkedAt": "2026-10-18",
-    "form": "talk"
+    "form": "workshop"
   },
   {
     "title": "Jack And His Big Beanstalk",
@@ -6296,11 +6142,11 @@
     },
     "type": "professional",
     "tags": [
-      "talk"
+      "cabaret"
     ],
     "id": "pavilion-an-audience-with-liam-dolan-part-2",
     "checkedAt": "2026-10-18",
-    "form": "talk"
+    "form": "cabaret"
   },
   {
     "title": "Troy Hawke: Never Stop, Never Change!",
@@ -6373,11 +6219,11 @@
     "duration": 120,
     "type": "professional",
     "tags": [
-      "talk"
+      "stand-up"
     ],
     "id": "kings-an-evening-with-gregor-fisher",
     "checkedAt": "2026-10-18",
-    "form": "talk"
+    "form": "stand-up"
   },
   {
     "id": "citizens-mike-wozniak-the-bench",
@@ -6656,11 +6502,11 @@
     },
     "type": "professional",
     "tags": [
-      "cabaret"
+      "stand-up"
     ],
     "id": "kings-gicf27-gala",
     "checkedAt": "2026-10-18",
-    "form": "cabaret"
+    "form": "stand-up"
   },
   {
     "id": "citizens-punch",

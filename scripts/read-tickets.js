@@ -39,14 +39,20 @@ const fs = require("fs");
 const path = require("path");
 const crypto = require("crypto");
 const { readPricing, headlineTime } = require("./tickets");
+const {
+  READER_ID,
+  availableProviders,
+  describeProviders,
+  chat,
+  indexedResults,
+} = require("./llm");
 
 const DATA_DIR = path.join(__dirname, "..", "data");
 const EVENTS_FILE = path.join(DATA_DIR, "events.json");
 const CACHE_FILE = path.join(DATA_DIR, "ticket-cache.json");
 const USAGE_FILE = path.join(DATA_DIR, "ticket-usage.json");
 
-const MODEL = process.env.OPENROUTER_MODEL || "deepseek/deepseek-v4-flash";
-const API_URL = "https://openrouter.ai/api/v1/chat/completions";
+// llm.js decides who answers: DeepSeek first, OpenRouter if it fails.
 const BATCH_SIZE = 10;
 const TODAY_ISO = new Date().toISOString().slice(0, 10);
 
@@ -243,57 +249,36 @@ const INSTRUCTIONS = crypto
 const cacheKey = (event) =>
   crypto
     .createHash("sha1")
-    .update(`${MODEL}\n${INSTRUCTIONS}\n${promptText(event)}`)
+    .update(`${READER_ID}\n${INSTRUCTIONS}\n${promptText(event)}`)
     .digest("hex")
     .slice(0, 16);
 
-async function readBatch(batch, apiKey) {
+async function readBatch(batch) {
   const listings = batch
     .map((event, i) => `[${i}]\n${promptText(event)}`)
     .join("\n\n---\n\n");
 
-  const res = await fetch(API_URL, {
-    method: "POST",
-    headers: {
-      Authorization: `Bearer ${apiKey}`,
-      "Content-Type": "application/json",
-      "HTTP-Referer": "https://glasgowtheatre.com",
-      "X-Title": "Glasgow Theatre",
-    },
-    body: JSON.stringify({
-      model: MODEL,
-      messages: [
-        { role: "system", content: SYSTEM_PROMPT },
-        {
-          role: "user",
-          content: `Read these ${batch.length} listings. Return one result per listing, using the given index.\n\n${listings}`,
-        },
-      ],
-      reasoning: { enabled: false },
-      temperature: 0,
-      max_tokens: 3000,
-      response_format: { type: "json_schema", json_schema: SCHEMA },
-    }),
-    signal: AbortSignal.timeout(60000),
+  const answer = await chat({
+    messages: [
+      { role: "system", content: SYSTEM_PROMPT },
+      {
+        role: "user",
+        content: `Read these ${batch.length} listings. Return one result per listing, using the given index.\n\n${listings}`,
+      },
+    ],
+    schema: SCHEMA,
+    maxTokens: 3000,
   });
 
-  if (!res.ok) throw new Error(`HTTP ${res.status}: ${(await res.text()).slice(0, 200)}`);
-  const body = await res.json();
-  if (body.error) throw new Error(body.error.message || "API error");
-  const content = body.choices?.[0]?.message?.content;
-  if (!content) throw new Error("Empty response from model");
-  if (body.choices[0].finish_reason === "length")
-    throw new Error("Response truncated before the model finished");
-
-  const parsed = JSON.parse(content);
-  const results = Array.isArray(parsed) ? parsed : parsed.results;
-  if (!Array.isArray(results)) throw new Error("Response had no results array");
+  const results = indexedResults(answer.content, batch.length);
   const byIndex = new Map(results.map((r) => [r.index, r]));
   return {
     readings: batch.map((_, i) => byIndex.get(i) || null),
-    cost: body.usage?.cost || 0,
-    promptTokens: body.usage?.prompt_tokens || 0,
-    completionTokens: body.usage?.completion_tokens || 0,
+    provider: answer.provider,
+    model: answer.model,
+    cost: answer.cost,
+    promptTokens: answer.promptTokens,
+    completionTokens: answer.completionTokens,
   };
 }
 
@@ -444,10 +429,12 @@ async function main() {
   }
 
   const cache = reread ? {} : readJSON(CACHE_FILE, {});
-  const apiKey = process.env.OPENROUTER_API_KEY;
+  const apiKey = availableProviders().length > 0;
   const candidates = events.filter(needsReading);
 
-  console.log(`\n🎟  Reading ticket wording on ${candidates.length} listings with ${MODEL}`);
+  console.log(
+    `\n🎟  Reading ticket wording on ${candidates.length} listings with ${describeProviders()}`,
+  );
 
   const pending = candidates.filter((event) => !cache[cacheKey(event)]);
   console.log(`  ${candidates.length - pending.length} already read, ${pending.length} to read`);
@@ -456,9 +443,13 @@ async function main() {
   let promptTokens = 0;
   let completionTokens = 0;
   let failed = false;
+  // Which provider actually answered last, for the usage file.
+  const reader = { model: null };
 
   if (pending.length && !apiKey) {
-    console.log("  ! OPENROUTER_API_KEY is not set — keeping the fallback reading");
+    console.log(
+      "  ! Neither DEEPSEEK_API_KEY nor OPENROUTER_API_KEY is set — keeping the fallback reading",
+    );
     failed = true;
   }
 
@@ -467,11 +458,19 @@ async function main() {
       const batch = pending.slice(i, i + BATCH_SIZE);
       const label = `  batch ${Math.floor(i / BATCH_SIZE) + 1}/${Math.ceil(pending.length / BATCH_SIZE)}`;
       try {
-        const result = await readBatch(batch, apiKey);
+        const result = await readBatch(batch);
         batch.forEach((event, j) => {
           const reading = sane(result.readings[j]);
-          if (reading) cache[cacheKey(event)] = { ...reading, model: MODEL, readAt: TODAY_ISO };
+          if (reading) {
+            cache[cacheKey(event)] = {
+              ...reading,
+              provider: result.provider,
+              model: result.model,
+              readAt: TODAY_ISO,
+            };
+          }
         });
+        reader.model = result.model;
         cost += result.cost;
         promptTokens += result.promptTokens;
         completionTokens += result.completionTokens;
@@ -527,7 +526,8 @@ async function main() {
       // both model passes spent without special-casing either.
       {
         at: new Date().toISOString(),
-        model: MODEL,
+        providers: describeProviders(),
+        model: reader.model || READER_ID,
         listingsRead: pending.length,
         listingsWithWording: candidates.length,
         promptTokens,

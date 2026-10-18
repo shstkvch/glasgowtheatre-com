@@ -1,8 +1,9 @@
 {
-  "9f5e39ebfcf40ce3": {
+  "8dd4152b58ce281b": {
     "from": null,
     "to": null,
     "concession": null,
+    "concessionTo": null,
     "free": false,
     "payWhatYouLike": true,
     "performances": [],
@@ -11,13 +12,15 @@
     ],
     "time": "17:30",
     "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "readAt": "2026-10-18"
   },
-  "af5621561931fa6d": {
+  "bffd1777403cf30b": {
     "from": null,
     "to": null,
     "concession": null,
+    "concessionTo": null,
     "free": false,
     "payWhatYouLike": true,
     "performances": [],
@@ -26,26 +29,15 @@
     ],
     "time": "11:15",
     "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "readAt": "2026-10-18"
   },
-  "05e4106f721d04c3": {
-    "from": 14,
-    "to": 43.5,
-    "concession": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [],
-    "time": null,
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "80b6aa4bfe3f0528": {
+  "836febc0c2898944": {
     "from": null,
     "to": null,
     "concession": null,
+    "concessionTo": null,
     "free": false,
     "payWhatYouLike": true,
     "performances": [],
@@ -54,14 +46,16 @@
     ],
     "time": "17:30",
     "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "readAt": "2026-10-18"
   },
-  "06cf8a2e9ee7bf4b": {
-    "from": 17,
-    "to": 22.5,
+  "f078510044e579aa": {
+    "from": null,
+    "to": null,
     "concession": null,
-    "free": false,
+    "concessionTo": null,
+    "free": true,
     "payWhatYouLike": false,
     "performances": [],
     "days": [
@@ -72,550 +66,32 @@
       5,
       6
     ],
-    "time": "13:00",
-    "byDay": {
-      "1": 17,
-      "2": 19,
-      "3": 19,
-      "4": 19,
-      "5": 19,
-      "6": 22.5
-    },
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "960a163a755aed4f": {
-    "from": null,
-    "to": null,
-    "concession": null,
-    "free": true,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [],
     "time": null,
     "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "readAt": "2026-10-18"
   },
-  "873a0443eb5e4288": {
-    "from": 20,
-    "to": null,
-    "concession": 12,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [],
-    "time": "19:30",
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "c4a83007c36480ff": {
-    "from": 5,
-    "to": 20,
-    "concession": null,
-    "free": false,
-    "payWhatYouLike": true,
-    "performances": [],
-    "days": [],
-    "time": null,
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "3802b34f5501f1d1": {
-    "from": null,
-    "to": null,
-    "concession": null,
-    "free": true,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [
-      6
-    ],
-    "time": "12:00",
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "61ed01ccc70639e6": {
-    "from": null,
-    "to": null,
-    "concession": null,
-    "free": true,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [],
-    "time": "16:00",
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "192b0a9722d2a923": {
-    "from": null,
-    "to": null,
-    "concession": null,
-    "free": true,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [],
-    "time": null,
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "e88140a4a515fc61": {
-    "from": 17,
-    "to": 22.5,
-    "concession": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [
-      1,
-      2,
-      3,
-      4,
-      5,
-      6
-    ],
-    "time": "13:00",
-    "byDay": {
-      "1": 17,
-      "2": 19,
-      "3": 19,
-      "4": 19,
-      "5": 19,
-      "6": 22.5
-    },
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "456537fcbba5e598": {
-    "from": 23.5,
-    "to": null,
-    "concession": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [],
-    "time": null,
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "3c18b651f779b7cd": {
-    "from": 14,
-    "to": null,
-    "concession": 5,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [],
-    "time": null,
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "53c3014a8ea193dc": {
-    "from": null,
-    "to": null,
-    "concession": null,
-    "free": true,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [],
-    "time": "18:00",
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "cf202ecabc476602": {
-    "from": 16,
-    "to": 26,
-    "concession": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [],
-    "time": null,
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "af3f335a99f887fc": {
-    "from": null,
-    "to": null,
-    "concession": null,
-    "free": true,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [],
-    "time": null,
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "189cd823df68f805": {
-    "from": 7,
-    "to": 22.5,
-    "concession": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [
-      1,
-      2,
-      3,
-      4,
-      5,
-      6
-    ],
-    "time": "13:00",
-    "byDay": {
-      "1": 7,
-      "2": 19,
-      "3": 19,
-      "4": 19,
-      "5": 19,
-      "6": 22.5
-    },
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "e833e564a6efeb16": {
-    "from": 17,
-    "to": null,
-    "concession": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [],
-    "time": "19:45",
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "17a81a8f23ccbd1c": {
-    "from": 13,
-    "to": null,
-    "concession": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [],
-    "time": null,
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "64c32e30b90e35e5": {
-    "from": 17,
-    "to": null,
-    "concession": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [],
-    "time": null,
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "4b6a0e722977e6ec": {
-    "from": 9,
-    "to": null,
-    "concession": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [],
-    "time": null,
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "9f6a8e5f502612ad": {
-    "from": 17,
-    "to": 22.5,
-    "concession": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [
-      1,
-      2,
-      3,
-      4,
-      5,
-      6
-    ],
-    "time": "13:00",
-    "byDay": {
-      "1": 17,
-      "2": 19,
-      "3": 19,
-      "4": 19,
-      "5": 19,
-      "6": 22.5
-    },
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "7591a405356f6875": {
-    "from": 18.5,
-    "to": 43.5,
-    "concession": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [],
-    "time": null,
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "a26e6ce03be0ff38": {
-    "from": 23.5,
-    "to": null,
-    "concession": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [],
-    "time": null,
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "c3896ff137a88c1c": {
-    "from": 9.5,
-    "to": null,
-    "concession": 5,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [
-      {
-        "date": "2026-10-02",
-        "time": "19:00"
-      },
-      {
-        "date": "2026-10-03",
-        "time": "14:00"
-      },
-      {
-        "date": "2026-10-03",
-        "time": "19:00"
-      }
-    ],
-    "days": [],
-    "time": null,
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "22ccedd50ef865a5": {
-    "from": 17,
-    "to": 22.5,
-    "concession": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [
-      1,
-      2,
-      3,
-      4,
-      5,
-      6
-    ],
-    "time": "13:00",
-    "byDay": {
-      "1": 17,
-      "2": 19,
-      "3": 19,
-      "4": 19,
-      "5": 19,
-      "6": 22.5
-    },
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "0a217df17de82ba6": {
-    "from": 18.5,
-    "to": 43.5,
-    "concession": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [],
-    "time": null,
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "b9ee0a0575d3650c": {
-    "from": 5,
-    "to": null,
-    "concession": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [],
-    "time": null,
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "f0b94a31148207f9": {
-    "from": 9.5,
-    "to": null,
-    "concession": 5,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [
-      {
-        "date": "2026-10-09",
-        "time": "19:00"
-      },
-      {
-        "date": "2026-10-10",
-        "time": "14:00"
-      }
-    ],
-    "days": [],
-    "time": null,
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "7c673a3c4e50d605": {
-    "from": 15.5,
-    "to": 21,
-    "concession": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [
-      1,
-      2,
-      3,
-      4,
-      5,
-      6
-    ],
-    "time": "13:00",
-    "byDay": {
-      "1": 15.5,
-      "2": 17.5,
-      "3": 17.5,
-      "4": 17.5,
-      "5": 17.5,
-      "6": 21
-    },
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "7a78b5c4639995f7": {
-    "from": 16,
-    "to": null,
-    "concession": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [],
-    "time": null,
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "9e6276e34fe0f586": {
-    "from": 17.5,
-    "to": null,
-    "concession": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [],
-    "time": null,
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "cc806571eec63c5d": {
-    "from": 19,
-    "to": 26,
-    "concession": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [],
-    "time": null,
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "a59b82f0e6df51a8": {
-    "from": 9.5,
-    "to": null,
-    "concession": 5,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [
-      {
-        "date": "2026-10-15",
-        "time": "19:00"
-      }
-    ],
-    "days": [],
-    "time": "19:00",
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "e67514f086d0a1ba": {
-    "from": 18,
-    "to": null,
-    "concession": 12,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [],
-    "time": "19:30",
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "741db160a0cef1d1": {
+  "da8f63c3204410c1": {
     "from": 23.5,
     "to": 26.5,
     "concession": null,
+    "concessionTo": null,
     "free": false,
     "payWhatYouLike": false,
     "performances": [],
     "days": [],
     "time": null,
     "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "readAt": "2026-10-18"
   },
-  "f8bcc8dbd905c8bc": {
-    "from": 22,
-    "to": null,
-    "concession": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [],
-    "time": "14:00",
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "f264d80c3d24a612": {
+  "c8cdf52da446df18": {
     "from": 17,
     "to": 22.5,
     "concession": null,
+    "concessionTo": null,
     "free": false,
     "payWhatYouLike": false,
     "performances": [],
@@ -636,887 +112,75 @@
       "5": 19,
       "6": 22.5
     },
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "readAt": "2026-10-18"
   },
-  "65671325f8034071": {
+  "ddf0770199e1d44a": {
     "from": 17,
     "to": null,
     "concession": null,
+    "concessionTo": null,
     "free": false,
     "payWhatYouLike": false,
     "performances": [],
     "days": [],
     "time": "19:00",
     "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "readAt": "2026-10-18"
   },
-  "98e160b79788067d": {
+  "f14af638845d5df3": {
     "from": 14.5,
     "to": 43.5,
     "concession": null,
+    "concessionTo": null,
     "free": false,
     "payWhatYouLike": false,
     "performances": [],
     "days": [],
     "time": null,
     "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "readAt": "2026-10-18"
   },
-  "9e13dc24293aacff": {
+  "070b19b011fbddc7": {
     "from": 19,
     "to": 26,
     "concession": null,
+    "concessionTo": null,
     "free": false,
     "payWhatYouLike": false,
     "performances": [],
     "days": [],
     "time": null,
     "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "readAt": "2026-10-18"
   },
-  "c31391e0809c15f4": {
+  "afd003cdb9d67438": {
     "from": 17.5,
     "to": null,
     "concession": null,
+    "concessionTo": null,
     "free": false,
     "payWhatYouLike": false,
     "performances": [],
     "days": [],
     "time": null,
     "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "readAt": "2026-10-18"
   },
-  "5642db50ac44b14d": {
-    "from": 25,
-    "to": null,
-    "concession": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [],
-    "time": null,
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "9419c80af6090d57": {
-    "from": 5,
-    "to": null,
-    "concession": 3,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [
-      {
-        "date": "2026-10-24",
-        "time": "12:00"
-      }
-    ],
-    "days": [],
-    "time": "12:00",
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "921b5940ce3ca29a": {
-    "from": 17,
-    "to": 22.5,
-    "concession": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [
-      1,
-      2,
-      3,
-      4,
-      5,
-      6
-    ],
-    "time": "13:00",
-    "byDay": {
-      "1": 17,
-      "2": 19,
-      "3": 19,
-      "4": 19,
-      "5": 19,
-      "6": 22.5
-    },
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "c33112812ee4156a": {
-    "from": 18.5,
-    "to": 43.5,
-    "concession": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [],
-    "time": null,
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "d0ea0e6b65c42526": {
-    "from": 8,
-    "to": null,
-    "concession": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [],
-    "time": null,
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "9615fdf5e515293d": {
-    "from": 13,
-    "to": null,
-    "concession": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [],
-    "time": null,
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "954d4060e2626702": {
-    "from": 18,
-    "to": null,
-    "concession": 12,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [],
-    "time": null,
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "a29faa81d4154fce": {
-    "from": 13,
-    "to": null,
-    "concession": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [],
-    "time": null,
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "2c0fbc53f6426150": {
-    "from": 17,
-    "to": 22.5,
-    "concession": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [
-      1,
-      2,
-      3,
-      4,
-      5,
-      6
-    ],
-    "time": "13:00",
-    "byDay": {
-      "1": 17,
-      "2": 19,
-      "3": 19,
-      "4": 19,
-      "5": 19,
-      "6": 22.5
-    },
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "32c27cd412311964": {
-    "from": 17.5,
-    "to": null,
-    "concession": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [],
-    "time": null,
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "e354007bdfe57d39": {
-    "from": 17,
-    "to": 22.5,
-    "concession": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [
-      1,
-      2,
-      3,
-      4,
-      5,
-      6
-    ],
-    "time": "13:00",
-    "byDay": {
-      "1": 17,
-      "2": 19,
-      "3": 19,
-      "4": 19,
-      "5": 19,
-      "6": 22.5
-    },
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "221ad45d08bddf25": {
-    "from": 15.5,
-    "to": 21,
-    "concession": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [
-      1,
-      2,
-      3,
-      4,
-      5,
-      6
-    ],
-    "time": "13:00",
-    "byDay": {
-      "1": 15.5,
-      "2": 17.5,
-      "3": 17.5,
-      "4": 17.5,
-      "5": 17.5,
-      "6": 21
-    },
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "061a7da9576e2f35": {
-    "from": 19,
-    "to": 32,
-    "concession": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [],
-    "time": null,
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "f6f9fafe7bdc4260": {
-    "from": 12.5,
-    "to": 43.5,
-    "concession": 9.25,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [],
-    "time": null,
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "0fa69a3386d4841e": {
-    "from": 10.5,
-    "to": null,
-    "concession": 6,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [],
-    "time": null,
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "e9d0905d3ed023f3": {
-    "from": 10,
-    "to": null,
-    "concession": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [],
-    "time": null,
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "5647f35bd4f5a2a2": {
-    "from": 20,
-    "to": 27,
-    "concession": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [],
-    "time": null,
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "0707a7a236a7794b": {
-    "from": 14,
-    "to": 43.5,
-    "concession": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [],
-    "time": null,
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "8fcbce21364e4fe5": {
-    "from": null,
-    "to": null,
-    "concession": null,
-    "free": false,
-    "payWhatYouLike": true,
-    "performances": [],
-    "days": [
-      1
-    ],
-    "time": "16:30",
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "10e9f30580c495b5": {
-    "from": null,
-    "to": null,
-    "concession": null,
-    "free": false,
-    "payWhatYouLike": true,
-    "performances": [],
-    "days": [
-      1
-    ],
-    "time": "11:00",
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "9cf8220951347844": {
-    "from": null,
-    "to": null,
-    "concession": null,
-    "free": false,
-    "payWhatYouLike": true,
-    "performances": [],
-    "days": [
-      2
-    ],
-    "time": "14:45",
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "cc92b95dae699a2d": {
-    "from": null,
-    "to": null,
-    "concession": null,
-    "free": false,
-    "payWhatYouLike": true,
-    "performances": [],
-    "days": [
-      2
-    ],
-    "time": "13:00",
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "bc3bb2aa4ce06b01": {
-    "from": null,
-    "to": null,
-    "concession": null,
-    "free": false,
-    "payWhatYouLike": true,
-    "performances": [],
-    "days": [
-      2
-    ],
-    "time": "17:00",
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "b88f613dc915c11f": {
-    "from": null,
-    "to": null,
-    "concession": null,
-    "free": false,
-    "payWhatYouLike": true,
-    "performances": [],
-    "days": [
-      5
-    ],
-    "time": "14:30",
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "baec3d2ed66cdba0": {
-    "from": null,
-    "to": null,
-    "concession": null,
-    "free": false,
-    "payWhatYouLike": true,
-    "performances": [],
-    "days": [
-      6
-    ],
-    "time": "11:00",
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "6c91816c1f4e7de6": {
-    "from": null,
-    "to": null,
-    "concession": null,
-    "free": true,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [],
-    "time": null,
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "7b5ba090c64f91a8": {
-    "from": 12,
-    "to": null,
-    "concession": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [],
-    "time": null,
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "abecc2a9643e864c": {
-    "from": 10,
-    "to": null,
-    "concession": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [],
-    "time": null,
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "20a08dc92ded428d": {
-    "from": 15,
-    "to": null,
-    "concession": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [],
-    "time": null,
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "a77186ca2ff25dd3": {
-    "from": 9,
-    "to": null,
-    "concession": 7,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [],
-    "time": null,
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "c95a5d8b62fa0f19": {
-    "from": 27,
-    "to": null,
-    "concession": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [],
-    "time": "19:45",
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "3b98a08af6476279": {
-    "from": 10,
-    "to": null,
-    "concession": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [],
-    "time": null,
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "53fde9405e49328c": {
-    "from": 15,
-    "to": 17,
-    "concession": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [],
-    "time": null,
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "81e4d98d2347fbb9": {
-    "from": 12,
-    "to": 14,
-    "concession": 5,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [],
-    "time": null,
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "ab42d00f5f0d0811": {
-    "from": null,
-    "to": null,
-    "concession": null,
-    "free": true,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [],
-    "time": null,
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "ef2d65882e7cb1b4": {
-    "from": 10,
-    "to": null,
-    "concession": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [],
-    "time": null,
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "8272b401900ecb8a": {
-    "from": 20,
-    "to": null,
-    "concession": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [],
-    "time": "19:30",
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "6786c017c09d9f24": {
-    "from": 8,
-    "to": 12,
-    "concession": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [],
-    "time": null,
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "970aaa2018cd4acc": {
-    "from": 17,
-    "to": null,
-    "concession": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [
-      {
-        "date": "2026-09-23",
-        "time": "00:00"
-      }
-    ],
-    "days": [],
-    "time": null,
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "dc94d1e9c4127c34": {
-    "from": 12,
-    "to": null,
-    "concession": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [
-      {
-        "date": "2026-09-24",
-        "time": "00:00"
-      }
-    ],
-    "days": [],
-    "time": null,
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "4453f50c3ca18120": {
-    "from": 27,
-    "to": null,
-    "concession": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [
-      {
-        "date": "2026-09-24",
-        "time": "19:30"
-      }
-    ],
-    "days": [],
-    "time": "19:30",
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "1df8ce9d059360ea": {
-    "from": 10,
-    "to": null,
-    "concession": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [
-      {
-        "date": "2026-09-25",
-        "time": "00:00"
-      }
-    ],
-    "days": [],
-    "time": null,
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "7c9b37b4fa7ebebd": {
-    "from": 30,
-    "to": null,
-    "concession": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [
-      {
-        "date": "2026-09-28",
-        "time": "19:30"
-      }
-    ],
-    "days": [],
-    "time": "19:30",
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "57215bfdce03243b": {
-    "from": 27,
-    "to": null,
-    "concession": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [
-      {
-        "date": "2026-09-29",
-        "time": "19:30"
-      }
-    ],
-    "days": [],
-    "time": "19:30",
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "8a2c0d2cc37a341c": {
-    "from": 22,
-    "to": null,
-    "concession": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [
-      {
-        "date": "2026-09-30",
-        "time": "20:00"
-      }
-    ],
-    "days": [],
-    "time": "20:00",
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "805025bea781de0a": {
-    "from": 20.5,
-    "to": null,
-    "concession": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [
-      {
-        "date": "2026-10-01",
-        "time": "19:30"
-      }
-    ],
-    "days": [],
-    "time": "19:30",
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "82d494162175fa38": {
-    "from": 20,
-    "to": null,
-    "concession": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [
-      {
-        "date": "2026-10-04",
-        "time": "19:30"
-      }
-    ],
-    "days": [],
-    "time": "19:30",
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "554533b7b12a0a38": {
-    "from": 31.5,
-    "to": null,
-    "concession": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [
-      {
-        "date": "2026-10-06",
-        "time": "19:30"
-      }
-    ],
-    "days": [],
-    "time": "19:30",
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "e54ff468cbafec81": {
-    "from": 32,
-    "to": null,
-    "concession": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [
-      {
-        "date": "2026-10-07",
-        "time": "19:30"
-      }
-    ],
-    "days": [],
-    "time": "19:30",
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "dd6493d1547d1430": {
-    "from": null,
-    "to": null,
-    "concession": null,
-    "free": true,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [
-      1,
-      2,
-      3,
-      4,
-      5
-    ],
-    "time": "10:00",
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "b04e120a27db9901": {
-    "from": 22,
-    "to": null,
-    "concession": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [
-      {
-        "date": "2026-10-12",
-        "time": "19:45"
-      }
-    ],
-    "days": [],
-    "time": "19:45",
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "17ea1e827e2e47f4": {
-    "from": 28.5,
-    "to": null,
-    "concession": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [
-      {
-        "date": "2026-10-14",
-        "time": "19:30"
-      }
-    ],
-    "days": [],
-    "time": "19:30",
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "beba2c704e5b1a1b": {
+  "27ab6fc2a51f2d16": {
     "from": 9.5,
     "to": null,
     "concession": 5,
+    "concessionTo": 6,
     "free": false,
     "payWhatYouLike": false,
     "performances": [
@@ -1528,807 +192,11 @@
     "days": [],
     "time": "16:00",
     "byDay": null,
+    "provider": "openrouter",
     "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
+    "readAt": "2026-10-18"
   },
-  "21ce7ecbab8e6ff7": {
-    "from": 9.5,
-    "to": null,
-    "concession": 5,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [
-      {
-        "date": "2026-10-02",
-        "time": "19:00"
-      },
-      {
-        "date": "2026-10-03",
-        "time": "14:00"
-      },
-      {
-        "date": "2026-10-03",
-        "time": "19:00"
-      }
-    ],
-    "days": [],
-    "time": "19:00",
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "b4b9f0c770ecdac3": {
-    "from": 9.5,
-    "to": null,
-    "concession": 5,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [
-      {
-        "date": "2026-10-09",
-        "time": "19:00"
-      },
-      {
-        "date": "2026-10-10",
-        "time": "14:00"
-      }
-    ],
-    "days": [],
-    "time": null,
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "17bd0c8ec08feaf1": {
-    "from": null,
-    "to": null,
-    "concession": null,
-    "concessionTo": null,
-    "free": false,
-    "payWhatYouLike": true,
-    "performances": [],
-    "days": [
-      1
-    ],
-    "time": "17:30",
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "1a66d0f0f7beb9d0": {
-    "from": null,
-    "to": null,
-    "concession": null,
-    "concessionTo": null,
-    "free": false,
-    "payWhatYouLike": true,
-    "performances": [],
-    "days": [
-      6
-    ],
-    "time": "11:15",
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "c6cb3afee652c749": {
-    "from": 14,
-    "to": 43.5,
-    "concession": null,
-    "concessionTo": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [],
-    "time": null,
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "39064aace8babdbb": {
-    "from": null,
-    "to": null,
-    "concession": null,
-    "concessionTo": null,
-    "free": false,
-    "payWhatYouLike": true,
-    "performances": [],
-    "days": [
-      4
-    ],
-    "time": "17:30",
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "2c30aef583251c98": {
-    "from": 17,
-    "to": 22.5,
-    "concession": null,
-    "concessionTo": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [
-      1,
-      2,
-      3,
-      4,
-      5,
-      6
-    ],
-    "time": "13:00",
-    "byDay": {
-      "1": 17,
-      "2": 19,
-      "3": 19,
-      "4": 19,
-      "5": 19,
-      "6": 22.5
-    },
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "a9652138b9a66187": {
-    "from": null,
-    "to": null,
-    "concession": null,
-    "concessionTo": null,
-    "free": true,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [],
-    "time": null,
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "87da1eb70562706c": {
-    "from": 20,
-    "to": null,
-    "concession": 12,
-    "concessionTo": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [],
-    "time": "19:30",
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "774c3402d18c49cd": {
-    "from": 5,
-    "to": 20,
-    "concession": null,
-    "concessionTo": null,
-    "free": false,
-    "payWhatYouLike": true,
-    "performances": [],
-    "days": [],
-    "time": null,
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "e7a9312a998ba169": {
-    "from": null,
-    "to": null,
-    "concession": null,
-    "concessionTo": null,
-    "free": true,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [
-      6
-    ],
-    "time": "12:00",
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "5b257d144a2d3f9a": {
-    "from": null,
-    "to": null,
-    "concession": null,
-    "concessionTo": null,
-    "free": true,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [],
-    "time": "16:00",
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "664193894a82151a": {
-    "from": null,
-    "to": null,
-    "concession": null,
-    "concessionTo": null,
-    "free": true,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [],
-    "time": null,
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "d0adb41f2a4618aa": {
-    "from": 17,
-    "to": 22.5,
-    "concession": null,
-    "concessionTo": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [
-      1,
-      2,
-      3,
-      4,
-      5,
-      6
-    ],
-    "time": "13:00",
-    "byDay": {
-      "1": 17,
-      "2": 19,
-      "3": 19,
-      "4": 19,
-      "5": 19,
-      "6": 22.5
-    },
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "88f804da1d813fe5": {
-    "from": 23.5,
-    "to": null,
-    "concession": null,
-    "concessionTo": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [],
-    "time": null,
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "08b19cf99d187df1": {
-    "from": 14,
-    "to": null,
-    "concession": 5,
-    "concessionTo": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [],
-    "time": null,
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "f4ab23616440a84c": {
-    "from": 0,
-    "to": null,
-    "concession": null,
-    "concessionTo": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [],
-    "time": "18:00",
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "45b1d7112d1e1efa": {
-    "from": 16,
-    "to": 26,
-    "concession": null,
-    "concessionTo": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [],
-    "time": null,
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "ee08c42ba5443ce7": {
-    "from": null,
-    "to": null,
-    "concession": null,
-    "concessionTo": null,
-    "free": true,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [],
-    "time": null,
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "8739573d9d294db8": {
-    "from": null,
-    "to": null,
-    "concession": null,
-    "concessionTo": null,
-    "free": true,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [],
-    "time": null,
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "ada1b60a4a04c3ca": {
-    "from": 7,
-    "to": 22.5,
-    "concession": null,
-    "concessionTo": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [
-      1,
-      2,
-      3,
-      4,
-      5,
-      6
-    ],
-    "time": "13:00",
-    "byDay": {
-      "1": 7,
-      "2": 19,
-      "3": 19,
-      "4": 19,
-      "5": 19,
-      "6": 22.5
-    },
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "525415fa45a20ca5": {
-    "from": 17,
-    "to": null,
-    "concession": null,
-    "concessionTo": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [],
-    "time": "19:45",
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "d61d4d76eb3fe51b": {
-    "from": 13,
-    "to": null,
-    "concession": null,
-    "concessionTo": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [],
-    "time": null,
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "dd3564149aa8f2aa": {
-    "from": 17,
-    "to": null,
-    "concession": null,
-    "concessionTo": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [],
-    "time": null,
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "b19778ed3888d4c3": {
-    "from": 17,
-    "to": 22.5,
-    "concession": null,
-    "concessionTo": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [
-      1,
-      2,
-      3,
-      4,
-      5,
-      6
-    ],
-    "time": "13:00",
-    "byDay": {
-      "1": 17,
-      "2": 19,
-      "3": 19,
-      "4": 19,
-      "5": 19,
-      "6": 22.5
-    },
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "18c129794a084937": {
-    "from": 9,
-    "to": null,
-    "concession": null,
-    "concessionTo": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [],
-    "time": null,
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "9ffa69f2bb4043cb": {
-    "from": 18.5,
-    "to": 43.5,
-    "concession": null,
-    "concessionTo": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [],
-    "time": null,
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "f731aa70e5a73310": {
-    "from": 23.5,
-    "to": null,
-    "concession": null,
-    "concessionTo": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [],
-    "time": null,
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "2b50088d7fb86749": {
-    "from": 9.5,
-    "to": null,
-    "concession": 5,
-    "concessionTo": 6,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [
-      {
-        "date": "2026-10-02",
-        "time": "19:00"
-      },
-      {
-        "date": "2026-10-03",
-        "time": "14:00"
-      },
-      {
-        "date": "2026-10-03",
-        "time": "19:00"
-      }
-    ],
-    "days": [],
-    "time": "19:00",
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "22a384c6a0b19625": {
-    "from": 17,
-    "to": 22.5,
-    "concession": null,
-    "concessionTo": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [
-      1,
-      2,
-      3,
-      4,
-      5,
-      6
-    ],
-    "time": "13:00",
-    "byDay": {
-      "1": 17,
-      "2": 19,
-      "3": 19,
-      "4": 19,
-      "5": 19,
-      "6": 22.5
-    },
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "dc51999365c99ccc": {
-    "from": 18.5,
-    "to": 43.5,
-    "concession": null,
-    "concessionTo": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [],
-    "time": null,
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "a07ef0feb6fffa39": {
-    "from": 5,
-    "to": null,
-    "concession": null,
-    "concessionTo": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [],
-    "time": null,
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "82371b3700a47c41": {
-    "from": 9.5,
-    "to": null,
-    "concession": 5,
-    "concessionTo": 6,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [
-      {
-        "date": "2026-10-09",
-        "time": "19:00"
-      },
-      {
-        "date": "2026-10-10",
-        "time": "14:00"
-      }
-    ],
-    "days": [],
-    "time": null,
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "d5b065b8a131b3c6": {
-    "from": 15.5,
-    "to": 21,
-    "concession": null,
-    "concessionTo": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [
-      1,
-      2,
-      3,
-      4,
-      5,
-      6
-    ],
-    "time": "13:00",
-    "byDay": {
-      "1": 15.5,
-      "2": 17.5,
-      "3": 17.5,
-      "4": 17.5,
-      "5": 17.5,
-      "6": 21
-    },
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "1e82365bd84e6a9e": {
-    "from": 16,
-    "to": null,
-    "concession": null,
-    "concessionTo": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [],
-    "time": null,
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "8a9bc136c528c1d0": {
-    "from": 17.5,
-    "to": null,
-    "concession": null,
-    "concessionTo": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [],
-    "time": null,
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "2a653529f2eb81e1": {
-    "from": 19,
-    "to": 26,
-    "concession": null,
-    "concessionTo": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [],
-    "time": null,
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "cb75205d951f188a": {
-    "from": 9.5,
-    "to": null,
-    "concession": 5,
-    "concessionTo": 6,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [
-      {
-        "date": "2026-10-15",
-        "time": "19:00"
-      }
-    ],
-    "days": [],
-    "time": null,
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "3c2755da521181cf": {
-    "from": 18,
-    "to": null,
-    "concession": 12,
-    "concessionTo": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [],
-    "time": "19:30",
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "2d670348761814dd": {
-    "from": 23.5,
-    "to": 26.5,
-    "concession": null,
-    "concessionTo": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [],
-    "time": null,
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "2272c20a0fdd9311": {
-    "from": 22,
-    "to": null,
-    "concession": null,
-    "concessionTo": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [],
-    "time": "14:00",
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "db5597f29244a248": {
-    "from": 17,
-    "to": 22.5,
-    "concession": null,
-    "concessionTo": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [
-      1,
-      2,
-      3,
-      4,
-      5,
-      6
-    ],
-    "time": "13:00",
-    "byDay": {
-      "1": 17,
-      "2": 19,
-      "3": 19,
-      "4": 19,
-      "5": 19,
-      "6": 22.5
-    },
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "5cb47318fb329ccc": {
-    "from": 17,
-    "to": null,
-    "concession": null,
-    "concessionTo": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [],
-    "time": "19:00",
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "8d828854cce5f6cd": {
-    "from": 14.5,
-    "to": 43.5,
-    "concession": null,
-    "concessionTo": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [],
-    "time": null,
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "e46a9e28ecb75568": {
-    "from": 19,
-    "to": 26,
-    "concession": null,
-    "concessionTo": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [],
-    "time": null,
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "b4428a686aae3ce2": {
-    "from": 17.5,
-    "to": null,
-    "concession": null,
-    "concessionTo": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [],
-    "time": null,
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "c90965f12afbeab0": {
+  "629dfc51c3abb229": {
     "from": 25,
     "to": null,
     "concession": null,
@@ -2339,10 +207,11 @@
     "days": [],
     "time": null,
     "byDay": null,
+    "provider": "openrouter",
     "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
+    "readAt": "2026-10-18"
   },
-  "a4530d5b4a903adc": {
+  "0d2415b2b4e2b561": {
     "from": 5,
     "to": null,
     "concession": 3,
@@ -2358,10 +227,26 @@
     "days": [],
     "time": "12:00",
     "byDay": null,
+    "provider": "openrouter",
     "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
+    "readAt": "2026-10-18"
   },
-  "854a70360d59b719": {
+  "02522098dab7bea3": {
+    "from": 20,
+    "to": null,
+    "concession": null,
+    "concessionTo": null,
+    "free": false,
+    "payWhatYouLike": false,
+    "performances": [],
+    "days": [],
+    "time": "19:30",
+    "byDay": null,
+    "provider": "openrouter",
+    "model": "deepseek/deepseek-v4-flash",
+    "readAt": "2026-10-18"
+  },
+  "608cc77bae963c50": {
     "from": 17,
     "to": 22.5,
     "concession": null,
@@ -2386,10 +271,11 @@
       "5": 19,
       "6": 22.5
     },
+    "provider": "openrouter",
     "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
+    "readAt": "2026-10-18"
   },
-  "c65afa2d12fcb46d": {
+  "b87ef4030849c2a6": {
     "from": 18.5,
     "to": 43.5,
     "concession": null,
@@ -2400,10 +286,11 @@
     "days": [],
     "time": null,
     "byDay": null,
+    "provider": "openrouter",
     "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
+    "readAt": "2026-10-18"
   },
-  "ac0786b7dad19e54": {
+  "b545437ca864486d": {
     "from": 8,
     "to": null,
     "concession": null,
@@ -2414,10 +301,26 @@
     "days": [],
     "time": null,
     "byDay": null,
+    "provider": "openrouter",
     "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
+    "readAt": "2026-10-18"
   },
-  "c84609283d425445": {
+  "8df7331731540e91": {
+    "from": null,
+    "to": null,
+    "concession": null,
+    "concessionTo": null,
+    "free": true,
+    "payWhatYouLike": false,
+    "performances": [],
+    "days": [],
+    "time": null,
+    "byDay": null,
+    "provider": "openrouter",
+    "model": "deepseek/deepseek-v4-flash",
+    "readAt": "2026-10-18"
+  },
+  "6bcba127e7765110": {
     "from": 13,
     "to": null,
     "concession": null,
@@ -2428,10 +331,11 @@
     "days": [],
     "time": null,
     "byDay": null,
+    "provider": "openrouter",
     "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
+    "readAt": "2026-10-18"
   },
-  "bbf41f4aa1320a9e": {
+  "be72eb7fc1de07f4": {
     "from": 18,
     "to": null,
     "concession": 12,
@@ -2442,10 +346,11 @@
     "days": [],
     "time": "19:30",
     "byDay": null,
+    "provider": "openrouter",
     "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
+    "readAt": "2026-10-18"
   },
-  "0c37579caa8ddf40": {
+  "790c169832125f05": {
     "from": 13,
     "to": null,
     "concession": null,
@@ -2456,10 +361,41 @@
     "days": [],
     "time": null,
     "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "readAt": "2026-10-18"
   },
-  "1bdece5e71cf8e78": {
+  "e6b802c9866f1296": {
+    "from": 12,
+    "to": 17,
+    "concession": 8,
+    "concessionTo": null,
+    "free": false,
+    "payWhatYouLike": false,
+    "performances": [],
+    "days": [],
+    "time": null,
+    "byDay": null,
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "readAt": "2026-10-18"
+  },
+  "4d880cbb73725304": {
+    "from": 10,
+    "to": null,
+    "concession": 8,
+    "concessionTo": null,
+    "free": false,
+    "payWhatYouLike": false,
+    "performances": [],
+    "days": [],
+    "time": null,
+    "byDay": null,
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "readAt": "2026-10-18"
+  },
+  "3e07225840e86763": {
     "from": 17,
     "to": 22.5,
     "concession": null,
@@ -2484,10 +420,11 @@
       "5": 19,
       "6": 22.5
     },
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "readAt": "2026-10-18"
   },
-  "4be856b4a4fc45e5": {
+  "a7fe66c255609519": {
     "from": 17.5,
     "to": null,
     "concession": null,
@@ -2498,10 +435,11 @@
     "days": [],
     "time": null,
     "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "readAt": "2026-10-18"
   },
-  "64ad6b9421a2b970": {
+  "4fe31df2fbf7cc6a": {
     "from": 17,
     "to": 22.5,
     "concession": null,
@@ -2526,10 +464,26 @@
       "5": 19,
       "6": 22.5
     },
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "readAt": "2026-10-18"
   },
-  "b8fd75c18a4e626c": {
+  "eb4b16d7459e1b57": {
+    "from": 17.5,
+    "to": null,
+    "concession": null,
+    "concessionTo": null,
+    "free": false,
+    "payWhatYouLike": false,
+    "performances": [],
+    "days": [],
+    "time": null,
+    "byDay": null,
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "readAt": "2026-10-18"
+  },
+  "4ff48e826ec7b526": {
     "from": 15.5,
     "to": 21,
     "concession": null,
@@ -2554,10 +508,11 @@
       "5": 17.5,
       "6": 21
     },
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "readAt": "2026-10-18"
   },
-  "5e250ce835f7a380": {
+  "87c2d09fe53b5bd4": {
     "from": 19,
     "to": 32,
     "concession": null,
@@ -2568,10 +523,11 @@
     "days": [],
     "time": null,
     "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "readAt": "2026-10-18"
   },
-  "639306d32c41dff4": {
+  "fde6e35887d1dbb0": {
     "from": 12.5,
     "to": 43.5,
     "concession": 9.25,
@@ -2582,10 +538,26 @@
     "days": [],
     "time": null,
     "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "readAt": "2026-10-18"
   },
-  "06557caaf907779b": {
+  "557202f1416cbb9f": {
+    "from": 18,
+    "to": null,
+    "concession": 12,
+    "concessionTo": null,
+    "free": false,
+    "payWhatYouLike": false,
+    "performances": [],
+    "days": [],
+    "time": "19:30",
+    "byDay": null,
+    "provider": "openrouter",
+    "model": "deepseek/deepseek-v4-flash",
+    "readAt": "2026-10-18"
+  },
+  "a5ebfc06abfb980a": {
     "from": 10.5,
     "to": null,
     "concession": 6,
@@ -2596,1516 +568,11 @@
     "days": [],
     "time": null,
     "byDay": null,
+    "provider": "openrouter",
     "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
+    "readAt": "2026-10-18"
   },
-  "49b37966205cf74e": {
-    "from": 10,
-    "to": null,
-    "concession": null,
-    "concessionTo": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [],
-    "time": null,
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "2ef75b36122bb999": {
-    "from": 20,
-    "to": 27,
-    "concession": null,
-    "concessionTo": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [],
-    "time": null,
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "4baa1699e33717b6": {
-    "from": 14,
-    "to": 43.5,
-    "concession": null,
-    "concessionTo": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [],
-    "time": null,
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "49b476eb64aa8d80": {
-    "from": null,
-    "to": null,
-    "concession": null,
-    "concessionTo": null,
-    "free": false,
-    "payWhatYouLike": true,
-    "performances": [],
-    "days": [
-      1
-    ],
-    "time": "16:30",
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "7d36c724cbcfcb2f": {
-    "from": null,
-    "to": null,
-    "concession": null,
-    "concessionTo": null,
-    "free": false,
-    "payWhatYouLike": true,
-    "performances": [],
-    "days": [
-      1
-    ],
-    "time": "11:00",
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "2135b2546eea2c71": {
-    "from": null,
-    "to": null,
-    "concession": null,
-    "concessionTo": null,
-    "free": false,
-    "payWhatYouLike": true,
-    "performances": [],
-    "days": [
-      2
-    ],
-    "time": "14:45",
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "8dadee86d182f448": {
-    "from": null,
-    "to": null,
-    "concession": null,
-    "concessionTo": null,
-    "free": false,
-    "payWhatYouLike": true,
-    "performances": [],
-    "days": [
-      2
-    ],
-    "time": "13:00",
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "f95d9fca029e5765": {
-    "from": null,
-    "to": null,
-    "concession": null,
-    "concessionTo": null,
-    "free": false,
-    "payWhatYouLike": true,
-    "performances": [],
-    "days": [
-      2
-    ],
-    "time": "17:00",
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "f91615ffc7d5e928": {
-    "from": null,
-    "to": null,
-    "concession": null,
-    "concessionTo": null,
-    "free": false,
-    "payWhatYouLike": true,
-    "performances": [],
-    "days": [
-      5
-    ],
-    "time": "14:30",
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "375d73c9125abd23": {
-    "from": null,
-    "to": null,
-    "concession": null,
-    "concessionTo": null,
-    "free": false,
-    "payWhatYouLike": true,
-    "performances": [],
-    "days": [
-      6
-    ],
-    "time": "11:00",
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "6cb8b5dd623ec030": {
-    "from": null,
-    "to": null,
-    "concession": null,
-    "concessionTo": null,
-    "free": true,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [],
-    "time": null,
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "fadaffc8a679c2f4": {
-    "from": 12,
-    "to": null,
-    "concession": null,
-    "concessionTo": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [],
-    "time": null,
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "814dee019fd4bc4c": {
-    "from": 10,
-    "to": null,
-    "concession": null,
-    "concessionTo": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [],
-    "time": null,
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "9449a1ceb0c7d148": {
-    "from": 15,
-    "to": null,
-    "concession": null,
-    "concessionTo": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [],
-    "time": null,
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "9e53d1935c01033e": {
-    "from": 9,
-    "to": null,
-    "concession": 7,
-    "concessionTo": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [],
-    "time": null,
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "71972a9e1a973220": {
-    "from": 27,
-    "to": null,
-    "concession": null,
-    "concessionTo": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [],
-    "time": "19:45",
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "bde27088d0df89f2": {
-    "from": 10,
-    "to": null,
-    "concession": null,
-    "concessionTo": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [],
-    "time": null,
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "51e296ccef003ba7": {
-    "from": 15,
-    "to": 17,
-    "concession": null,
-    "concessionTo": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [],
-    "time": null,
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "157ceb23d5431b17": {
-    "from": 12,
-    "to": 14,
-    "concession": 5,
-    "concessionTo": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [],
-    "time": null,
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "acf58fde652e9782": {
-    "from": 10,
-    "to": null,
-    "concession": null,
-    "concessionTo": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [],
-    "time": null,
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "3051e51a6ef47403": {
-    "from": 20,
-    "to": null,
-    "concession": null,
-    "concessionTo": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [],
-    "time": "19:30",
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "c8f22850b68fd72e": {
-    "from": 8,
-    "to": 12,
-    "concession": null,
-    "concessionTo": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [],
-    "time": null,
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "5e062d0ce965a239": {
-    "from": 17,
-    "to": null,
-    "concession": null,
-    "concessionTo": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [],
-    "time": null,
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "a75f5fdc9c4351dc": {
-    "from": 12,
-    "to": null,
-    "concession": null,
-    "concessionTo": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [],
-    "time": null,
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "e671a253bd5ae203": {
-    "from": 27,
-    "to": null,
-    "concession": null,
-    "concessionTo": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [],
-    "time": "19:30",
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "b2c9187519cd45f6": {
-    "from": 10,
-    "to": null,
-    "concession": null,
-    "concessionTo": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [],
-    "time": null,
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "872a859c4cf93855": {
-    "from": 30,
-    "to": null,
-    "concession": null,
-    "concessionTo": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [],
-    "time": "19:30",
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "69cfbccb87f54c1f": {
-    "from": 27,
-    "to": null,
-    "concession": null,
-    "concessionTo": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [],
-    "time": "19:30",
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "232675edc5da7172": {
-    "from": 22,
-    "to": null,
-    "concession": null,
-    "concessionTo": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [],
-    "time": "20:00",
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "bcbe307c4e489e8b": {
-    "from": 20.5,
-    "to": null,
-    "concession": null,
-    "concessionTo": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [],
-    "time": "19:30",
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "ba178a4dddb6ae7b": {
-    "from": 9.5,
-    "to": null,
-    "concession": 5,
-    "concessionTo": 6,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [
-      {
-        "date": "2026-10-02",
-        "time": "19:00"
-      },
-      {
-        "date": "2026-10-03",
-        "time": "14:00"
-      },
-      {
-        "date": "2026-10-03",
-        "time": "19:00"
-      }
-    ],
-    "days": [],
-    "time": "19:00",
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "b67b748e0b8726b2": {
-    "from": 20,
-    "to": null,
-    "concession": null,
-    "concessionTo": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [],
-    "time": "19:30",
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "2e85fabedf6efd4d": {
-    "from": 31.5,
-    "to": null,
-    "concession": null,
-    "concessionTo": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [],
-    "time": "19:30",
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "fc4dbf697fd4d095": {
-    "from": 32,
-    "to": null,
-    "concession": null,
-    "concessionTo": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [
-      {
-        "date": "2026-10-07",
-        "time": "19:30"
-      }
-    ],
-    "days": [],
-    "time": "19:30",
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "12bb28b61c4f09e7": {
-    "from": 9.5,
-    "to": null,
-    "concession": 5,
-    "concessionTo": 6,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [
-      {
-        "date": "2026-10-09",
-        "time": "19:00"
-      },
-      {
-        "date": "2026-10-10",
-        "time": "14:00"
-      }
-    ],
-    "days": [],
-    "time": null,
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "35e1ab84712789be": {
-    "from": null,
-    "to": null,
-    "concession": null,
-    "concessionTo": null,
-    "free": true,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [
-      1,
-      2,
-      3,
-      4,
-      5
-    ],
-    "time": "10:00",
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "127483dee1e67bb4": {
-    "from": 22,
-    "to": null,
-    "concession": null,
-    "concessionTo": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [
-      {
-        "date": "2026-10-12",
-        "time": "19:45"
-      }
-    ],
-    "days": [],
-    "time": "19:45",
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "9ffc8db7e0e040f0": {
-    "from": 28.5,
-    "to": null,
-    "concession": null,
-    "concessionTo": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [
-      {
-        "date": "2026-10-14",
-        "time": "19:30"
-      }
-    ],
-    "days": [],
-    "time": "19:30",
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "6df58ea7ca2f089a": {
-    "from": 9.5,
-    "to": null,
-    "concession": 5,
-    "concessionTo": 6,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [
-      {
-        "date": "2026-10-23",
-        "time": "16:00"
-      }
-    ],
-    "days": [],
-    "time": "16:00",
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-09-10"
-  },
-  "85e0f82bffa3991a": {
-    "from": null,
-    "to": null,
-    "concession": null,
-    "concessionTo": null,
-    "free": false,
-    "payWhatYouLike": true,
-    "performances": [
-      {
-        "date": "2026-09-03",
-        "time": "17:30"
-      },
-      {
-        "date": "2026-12-17",
-        "time": "17:30"
-      }
-    ],
-    "days": [
-      4
-    ],
-    "time": "17:30",
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-10-15"
-  },
-  "1334e571e15decc0": {
-    "from": 15.5,
-    "to": 21,
-    "concession": null,
-    "concessionTo": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [
-      1,
-      2,
-      3,
-      4,
-      5,
-      6
-    ],
-    "time": "13:00",
-    "byDay": {
-      "1": 15.5,
-      "2": 17.5,
-      "3": 17.5,
-      "4": 17.5,
-      "5": 17.5,
-      "6": 21
-    },
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-10-15"
-  },
-  "420649ac65fe2c8b": {
-    "from": 20,
-    "to": null,
-    "concession": null,
-    "concessionTo": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [],
-    "time": null,
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-10-15"
-  },
-  "0890ea3bcbf4e61e": {
-    "from": 18.5,
-    "to": 43.5,
-    "concession": null,
-    "concessionTo": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [],
-    "time": null,
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-10-15"
-  },
-  "847ef377217f20b5": {
-    "from": 17.5,
-    "to": null,
-    "concession": null,
-    "concessionTo": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [],
-    "time": null,
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-10-15"
-  },
-  "7abc7fb9a48aa945": {
-    "from": 19,
-    "to": 26,
-    "concession": null,
-    "concessionTo": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [],
-    "time": null,
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-10-15"
-  },
-  "26902ac200944860": {
-    "from": 6.5,
-    "to": null,
-    "concession": null,
-    "concessionTo": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [],
-    "time": null,
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-10-15"
-  },
-  "3ae6eb5bc9ea8713": {
-    "from": 10,
-    "to": null,
-    "concession": null,
-    "concessionTo": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [],
-    "time": null,
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-10-15"
-  },
-  "ac45a8a696c56438": {
-    "from": 14,
-    "to": null,
-    "concession": null,
-    "concessionTo": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [],
-    "time": null,
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-10-15"
-  },
-  "4a587e5426ca4061": {
-    "from": 17,
-    "to": 22.5,
-    "concession": null,
-    "concessionTo": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [
-      1,
-      2,
-      3,
-      4,
-      5,
-      6
-    ],
-    "time": "13:00",
-    "byDay": {
-      "1": 17,
-      "2": 19,
-      "3": 19,
-      "4": 19,
-      "5": 19,
-      "6": 22.5
-    },
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-10-15"
-  },
-  "43d4212f65cc176e": {
-    "from": 15,
-    "to": null,
-    "concession": null,
-    "concessionTo": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [],
-    "time": null,
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-10-15"
-  },
-  "ec9c449e64041c79": {
-    "from": 27,
-    "to": null,
-    "concession": null,
-    "concessionTo": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [],
-    "time": null,
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-10-15"
-  },
-  "52a2436243fb2a78": {
-    "from": 12,
-    "to": 15,
-    "concession": null,
-    "concessionTo": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [],
-    "time": null,
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-10-15"
-  },
-  "3b20b96dd1415dc5": {
-    "from": 49.5,
-    "to": null,
-    "concession": null,
-    "concessionTo": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [],
-    "time": "19:30",
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-10-15"
-  },
-  "3896d27c4ed4fee4": {
-    "from": null,
-    "to": null,
-    "concession": null,
-    "concessionTo": null,
-    "free": true,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [],
-    "time": null,
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-10-15"
-  },
-  "d40e75f95076135e": {
-    "from": 24.5,
-    "to": null,
-    "concession": null,
-    "concessionTo": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [],
-    "time": "19:30",
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-10-15"
-  },
-  "ac18e2fbd7f298e2": {
-    "from": 12,
-    "to": null,
-    "concession": null,
-    "concessionTo": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [],
-    "time": null,
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-10-15"
-  },
-  "737f1bb0fafbb162": {
-    "from": 9.5,
-    "to": null,
-    "concession": 5,
-    "concessionTo": 6,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [
-      {
-        "date": "2026-10-23",
-        "time": "16:00"
-      }
-    ],
-    "days": [
-      5
-    ],
-    "time": "16:00",
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-10-15"
-  },
-  "5110233d3494f17d": {
-    "from": 14,
-    "to": null,
-    "concession": null,
-    "concessionTo": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [],
-    "time": null,
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-10-15"
-  },
-  "730a2c0b84c72817": {
-    "from": 13,
-    "to": null,
-    "concession": null,
-    "concessionTo": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [],
-    "time": null,
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-10-15"
-  },
-  "1343ec8336730670": {
-    "from": 20,
-    "to": null,
-    "concession": null,
-    "concessionTo": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [
-      {
-        "date": "2026-10-25",
-        "time": "19:30"
-      }
-    ],
-    "days": [],
-    "time": "19:30",
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-10-15"
-  },
-  "40879f05809204ff": {
-    "from": 17,
-    "to": 22.5,
-    "concession": null,
-    "concessionTo": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [
-      1,
-      2,
-      3,
-      4,
-      5,
-      6
-    ],
-    "time": "13:00",
-    "byDay": {
-      "1": 17,
-      "2": 19,
-      "3": 19,
-      "4": 19,
-      "5": 19,
-      "6": 22.5
-    },
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-10-15"
-  },
-  "0e0be7fe8c3173f7": {
-    "from": 17,
-    "to": null,
-    "concession": null,
-    "concessionTo": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [
-      {
-        "date": "2026-10-27",
-        "time": "00:00"
-      }
-    ],
-    "days": [],
-    "time": null,
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-10-15"
-  },
-  "027c83a5112858cd": {
-    "from": null,
-    "to": null,
-    "concession": null,
-    "concessionTo": null,
-    "free": true,
-    "payWhatYouLike": false,
-    "performances": [
-      {
-        "date": "2026-10-28",
-        "time": "00:00"
-      }
-    ],
-    "days": [],
-    "time": null,
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-10-15"
-  },
-  "165c484212f7bb34": {
-    "from": 30.5,
-    "to": null,
-    "concession": null,
-    "concessionTo": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [
-      {
-        "date": "2026-10-28",
-        "time": "19:30"
-      }
-    ],
-    "days": [],
-    "time": "19:30",
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-10-15"
-  },
-  "9640169dc02c649c": {
-    "from": null,
-    "to": null,
-    "concession": null,
-    "concessionTo": null,
-    "free": true,
-    "payWhatYouLike": false,
-    "performances": [
-      {
-        "date": "2026-10-29",
-        "time": "00:00"
-      }
-    ],
-    "days": [],
-    "time": null,
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-10-15"
-  },
-  "95c008f0e67083bb": {
-    "from": 14,
-    "to": null,
-    "concession": null,
-    "concessionTo": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [
-      {
-        "date": "2026-10-29",
-        "time": "00:00"
-      }
-    ],
-    "days": [],
-    "time": null,
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-10-15"
-  },
-  "bb0b9f1eab9f6b61": {
-    "from": 17,
-    "to": null,
-    "concession": null,
-    "concessionTo": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [
-      {
-        "date": "2026-10-30",
-        "time": "00:00"
-      }
-    ],
-    "days": [],
-    "time": null,
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-10-15"
-  },
-  "4ff2b1807b6ff118": {
-    "from": 10,
-    "to": null,
-    "concession": null,
-    "concessionTo": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [
-      {
-        "date": "2026-10-31",
-        "time": "00:00"
-      }
-    ],
-    "days": [],
-    "time": null,
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-10-15"
-  },
-  "ef1d356e51f3181d": {
-    "from": 12,
-    "to": 17,
-    "concession": 8,
-    "concessionTo": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [
-      {
-        "date": "2026-10-31",
-        "time": "00:00"
-      }
-    ],
-    "days": [],
-    "time": null,
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-10-15"
-  },
-  "afb9c1a5ad37867e": {
-    "from": 17,
-    "to": 22.5,
-    "concession": null,
-    "concessionTo": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [
-      1,
-      2,
-      3,
-      4,
-      5,
-      6
-    ],
-    "time": "13:00",
-    "byDay": {
-      "1": 17,
-      "2": 19,
-      "3": 19,
-      "4": 19,
-      "5": 19,
-      "6": 22.5
-    },
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-10-15"
-  },
-  "e140d1a02dcbf894": {
-    "from": 24,
-    "to": null,
-    "concession": null,
-    "concessionTo": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [
-      {
-        "date": "2026-11-03",
-        "time": "20:00"
-      }
-    ],
-    "days": [],
-    "time": "20:00",
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-10-15"
-  },
-  "375b7c65d08455fa": {
-    "from": 16,
-    "to": null,
-    "concession": null,
-    "concessionTo": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [
-      {
-        "date": "2026-11-04",
-        "time": "19:00"
-      }
-    ],
-    "days": [],
-    "time": "19:00",
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-10-15"
-  },
-  "2b6be149cc55c339": {
-    "from": 32,
-    "to": null,
-    "concession": null,
-    "concessionTo": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [
-      {
-        "date": "2026-11-05",
-        "time": "19:30"
-      }
-    ],
-    "days": [],
-    "time": "19:30",
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-10-15"
-  },
-  "f5c729085fe4de5a": {
-    "from": 15,
-    "to": null,
-    "concession": null,
-    "concessionTo": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [],
-    "time": null,
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-10-15"
-  },
-  "f4d74f0f10902ac9": {
-    "from": 17,
-    "to": 22.5,
-    "concession": null,
-    "concessionTo": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [
-      1,
-      2,
-      3,
-      4,
-      5,
-      6
-    ],
-    "time": "13:00",
-    "byDay": {
-      "1": 17,
-      "2": 19,
-      "3": 19,
-      "4": 19,
-      "5": 19,
-      "6": 22.5
-    },
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-10-15"
-  },
-  "76a0ee2945d7557b": {
-    "from": 22,
-    "to": null,
-    "concession": null,
-    "concessionTo": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [
-      {
-        "date": "2026-11-09",
-        "time": "19:45"
-      }
-    ],
-    "days": [],
-    "time": "19:45",
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-10-15"
-  },
-  "3b105e21f25bd096": {
-    "from": 22,
-    "to": null,
-    "concession": null,
-    "concessionTo": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [
-      {
-        "date": "2026-11-10",
-        "time": "20:00"
-      }
-    ],
-    "days": [],
-    "time": "20:00",
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-10-15"
-  },
-  "4418d15137c1a9bb": {
-    "from": 15.5,
-    "to": null,
-    "concession": null,
-    "concessionTo": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [
-      {
-        "date": "2026-11-12",
-        "time": "20:00"
-      }
-    ],
-    "days": [],
-    "time": "20:00",
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-10-15"
-  },
-  "56e3b4c0eb918e16": {
-    "from": 17.5,
-    "to": null,
-    "concession": null,
-    "concessionTo": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [],
-    "time": null,
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-10-15"
-  },
-  "1f8f59a4161e1897": {
-    "from": 20,
-    "to": null,
-    "concession": null,
-    "concessionTo": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [
-      {
-        "date": "2026-11-15",
-        "time": "19:30"
-      }
-    ],
-    "days": [],
-    "time": "19:30",
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-10-15"
-  },
-  "3ac3a22570c2a745": {
-    "from": 15.5,
-    "to": 21,
-    "concession": null,
-    "concessionTo": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [
-      1,
-      2,
-      3,
-      4,
-      5,
-      6
-    ],
-    "time": "13:00",
-    "byDay": {
-      "1": 15.5,
-      "2": 17.5,
-      "3": 17.5,
-      "4": 17.5,
-      "5": 17.5,
-      "6": 21
-    },
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-10-15"
-  },
-  "e8e07abb16220e2e": {
-    "from": 19,
-    "to": 32,
-    "concession": null,
-    "concessionTo": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [],
-    "time": null,
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-10-15"
-  },
-  "c05d6290d9ecfe65": {
-    "from": 22,
-    "to": null,
-    "concession": null,
-    "concessionTo": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [
-      {
-        "date": "2026-11-18",
-        "time": "19:30"
-      }
-    ],
-    "days": [],
-    "time": "19:30",
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-10-15"
-  },
-  "e18ae67813ce296a": {
-    "from": 24.5,
-    "to": null,
-    "concession": null,
-    "concessionTo": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [
-      {
-        "date": "2026-11-20",
-        "time": "20:00"
-      }
-    ],
-    "days": [],
-    "time": "20:00",
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-10-15"
-  },
-  "493f06355c4d2932": {
-    "from": 22,
-    "to": null,
-    "concession": null,
-    "concessionTo": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [
-      {
-        "date": "2026-11-22",
-        "time": "19:30"
-      }
-    ],
-    "days": [],
-    "time": "19:30",
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-10-15"
-  },
-  "5d2ceebd93bee6d8": {
-    "from": 25,
-    "to": null,
-    "concession": null,
-    "concessionTo": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [
-      {
-        "date": "2026-11-26",
-        "time": "20:00"
-      }
-    ],
-    "days": [],
-    "time": "20:00",
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-10-15"
-  },
-  "ad4e295d510a8198": {
-    "from": 15,
-    "to": null,
-    "concession": null,
-    "concessionTo": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [
-      {
-        "date": "2026-11-27",
-        "time": "19:30"
-      }
-    ],
-    "days": [],
-    "time": "19:30",
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-10-15"
-  },
-  "5cc9993826004ede": {
-    "from": 18,
-    "to": null,
-    "concession": 12,
-    "concessionTo": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [
-      {
-        "date": "2026-11-28",
-        "time": "19:30"
-      }
-    ],
-    "days": [],
-    "time": "19:30",
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-10-15"
-  },
-  "504689079b6177cd": {
+  "1981952a562eede4": {
     "from": 8,
     "to": null,
     "concession": 6,
@@ -4116,10 +583,11 @@
     "days": [],
     "time": null,
     "byDay": null,
+    "provider": "openrouter",
     "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-10-15"
+    "readAt": "2026-10-18"
   },
-  "94a7bcd21dadf739": {
+  "c3dd21660af22b3f": {
     "from": 8,
     "to": null,
     "concession": 6,
@@ -4130,10 +598,11 @@
     "days": [],
     "time": null,
     "byDay": null,
+    "provider": "openrouter",
     "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-10-15"
+    "readAt": "2026-10-18"
   },
-  "998c4b14c21103b8": {
+  "4bcfc64c970a5399": {
     "from": null,
     "to": null,
     "concession": null,
@@ -4144,10 +613,11 @@
     "days": [],
     "time": null,
     "byDay": null,
+    "provider": "openrouter",
     "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-10-15"
+    "readAt": "2026-10-18"
   },
-  "4d7c92fd50f7ffb2": {
+  "9a6702952fd2c944": {
     "from": 18,
     "to": null,
     "concession": null,
@@ -4158,10 +628,11 @@
     "days": [],
     "time": null,
     "byDay": null,
+    "provider": "openrouter",
     "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-10-15"
+    "readAt": "2026-10-18"
   },
-  "5b771cd05cd73733": {
+  "28940b3a1c4b2f9b": {
     "from": 24,
     "to": null,
     "concession": null,
@@ -4172,10 +643,11 @@
     "days": [],
     "time": null,
     "byDay": null,
+    "provider": "openrouter",
     "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-10-15"
+    "readAt": "2026-10-18"
   },
-  "09490e3668f00da4": {
+  "1cda3a168e450ffe": {
     "from": 28,
     "to": null,
     "concession": null,
@@ -4186,10 +658,11 @@
     "days": [],
     "time": null,
     "byDay": null,
+    "provider": "openrouter",
     "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-10-15"
+    "readAt": "2026-10-18"
   },
-  "791f16f8864a0d3b": {
+  "846b9bd9d8b48093": {
     "from": 22,
     "to": null,
     "concession": null,
@@ -4200,10 +673,11 @@
     "days": [],
     "time": null,
     "byDay": null,
+    "provider": "openrouter",
     "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-10-15"
+    "readAt": "2026-10-18"
   },
-  "683f2d90a8a19da6": {
+  "9199fd21258e2125": {
     "from": 22,
     "to": null,
     "concession": null,
@@ -4214,10 +688,11 @@
     "days": [],
     "time": null,
     "byDay": null,
+    "provider": "openrouter",
     "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-10-15"
+    "readAt": "2026-10-18"
   },
-  "ff5a1dd0b84bdbeb": {
+  "10ad85619897eb47": {
     "from": 24,
     "to": null,
     "concession": null,
@@ -4228,10 +703,11 @@
     "days": [],
     "time": null,
     "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-10-15"
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "readAt": "2026-10-18"
   },
-  "df8885ec578e65e0": {
+  "76d41768b7b62953": {
     "from": 34,
     "to": null,
     "concession": null,
@@ -4242,10 +718,11 @@
     "days": [],
     "time": null,
     "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-10-15"
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "readAt": "2026-10-18"
   },
-  "ae141c3b85d20159": {
+  "d14484f928f9c174": {
     "from": 26,
     "to": null,
     "concession": null,
@@ -4256,10 +733,11 @@
     "days": [],
     "time": null,
     "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-10-15"
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "readAt": "2026-10-18"
   },
-  "957a66b14af47780": {
+  "bfab52be9043b9f3": {
     "from": 22,
     "to": null,
     "concession": null,
@@ -4270,10 +748,11 @@
     "days": [],
     "time": null,
     "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-10-15"
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "readAt": "2026-10-18"
   },
-  "a528dbde492df151": {
+  "9b608b0a2a33995d": {
     "from": 20,
     "to": null,
     "concession": null,
@@ -4284,11 +763,12 @@
     "days": [],
     "time": null,
     "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-10-15"
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "readAt": "2026-10-18"
   },
-  "9aa9b7cd4644b5d6": {
-    "from": 17,
+  "5981a5bb5eab89f5": {
+    "from": 20,
     "to": 27,
     "concession": null,
     "concessionTo": null,
@@ -4298,10 +778,41 @@
     "days": [],
     "time": null,
     "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-10-15"
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "readAt": "2026-10-18"
   },
-  "22f78e0eef3a5879": {
+  "522aa8ed26ef2248": {
+    "from": 14,
+    "to": 43.5,
+    "concession": null,
+    "concessionTo": null,
+    "free": false,
+    "payWhatYouLike": false,
+    "performances": [],
+    "days": [],
+    "time": null,
+    "byDay": null,
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "readAt": "2026-10-18"
+  },
+  "54b17f4d825c643a": {
+    "from": 20,
+    "to": 27,
+    "concession": null,
+    "concessionTo": null,
+    "free": false,
+    "payWhatYouLike": false,
+    "performances": [],
+    "days": [],
+    "time": null,
+    "byDay": null,
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "readAt": "2026-10-18"
+  },
+  "1f962f4ecefcefc4": {
     "from": 24.5,
     "to": null,
     "concession": null,
@@ -4312,10 +823,11 @@
     "days": [],
     "time": null,
     "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-10-15"
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "readAt": "2026-10-18"
   },
-  "ded398d5fe5c4c21": {
+  "a2a7d8d89d8dd052": {
     "from": 18.5,
     "to": 43.5,
     "concession": null,
@@ -4326,10 +838,11 @@
     "days": [],
     "time": null,
     "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-10-15"
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "readAt": "2026-10-18"
   },
-  "a0cefe714439ffed": {
+  "1ee701ae5e3fb4be": {
     "from": 14,
     "to": 43.5,
     "concession": null,
@@ -4340,63 +853,8 @@
     "days": [],
     "time": null,
     "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-10-15"
-  },
-  "044308de584c440b": {
-    "from": 10,
-    "to": null,
-    "concession": 8,
-    "concessionTo": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [],
-    "time": null,
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-10-18"
-  },
-  "25ae766646f0d693": {
-    "from": 14,
-    "to": null,
-    "concession": null,
-    "concessionTo": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [],
-    "time": null,
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-10-18"
-  },
-  "3b262383e65ad1a6": {
-    "from": 15,
-    "to": null,
-    "concession": null,
-    "concessionTo": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [],
-    "time": null,
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
-    "readAt": "2026-10-18"
-  },
-  "5c0a4f76ef24706c": {
-    "from": 20,
-    "to": 27,
-    "concession": null,
-    "concessionTo": null,
-    "free": false,
-    "payWhatYouLike": false,
-    "performances": [],
-    "days": [],
-    "time": null,
-    "byDay": null,
-    "model": "deepseek/deepseek-v4-flash",
+    "provider": "deepseek",
+    "model": "deepseek-flash",
     "readAt": "2026-10-18"
   }
 }

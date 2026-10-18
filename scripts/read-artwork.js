@@ -28,9 +28,7 @@
 const fs = require("fs");
 const path = require("path");
 const sharp = require("sharp");
-
-const MODEL = process.env.ARTWORK_MODEL || "google/gemini-2.5-flash-lite";
-const API_URL = "https://openrouter.ai/api/v1/chat/completions";
+const { availableProviders, describeProviders, chat } = require("./llm");
 const CACHE = path.join(__dirname, "..", "data", "crop-cache.json");
 const IMAGES = path.join(__dirname, "..", "src", "images");
 
@@ -77,35 +75,35 @@ async function thumbnail(file) {
 }
 
 async function ask(file) {
-  const res = await fetch(API_URL, {
-    method: "POST",
-    headers: {
-      Authorization: `Bearer ${process.env.OPENROUTER_API_KEY}`,
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      model: MODEL,
-      usage: { include: true },
-      messages: [
-        {
-          role: "user",
-          content: [
-            { type: "text", text: PROMPT },
-            {
-              type: "image_url",
-              image_url: { url: `data:image/jpeg;base64,${await thumbnail(file)}` },
-            },
-          ],
-        },
-      ],
-    }),
-    signal: AbortSignal.timeout(60000),
+  const answer = await chat({
+    // Artwork stays on the vision model it was chosen against: a cheat sheet of
+    // nine images, and this was the only one that got all nine right. The
+    // DeepSeek key runs the scraping passes; a model swap here would silently
+    // change every social card's crop, which is not something a key change
+    // should decide.
+    models: { openrouter: process.env.ARTWORK_MODEL || "google/gemini-2.5-flash-lite" },
+    providers: availableProviders(["openrouter"]),
+    messages: [
+      {
+        role: "user",
+        content: [
+          { type: "text", text: PROMPT },
+          {
+            type: "image_url",
+            image_url: { url: `data:image/jpeg;base64,${await thumbnail(file)}` },
+          },
+        ],
+      },
+    ],
+    // Enough for the answer plus the reasoning a vision model does first.
+    maxTokens: 600,
+    timeout: 60000,
   });
-  if (!res.ok) throw new Error(`HTTP ${res.status}`);
-  const body = await res.json();
   return {
-    reading: validate(body.choices?.[0]?.message?.content),
-    cost: body.usage?.cost || 0,
+    reading: validate(answer.content),
+    provider: answer.provider,
+    model: answer.model,
+    cost: answer.cost,
   };
 }
 
@@ -174,18 +172,23 @@ async function main() {
   };
 
   if (!todo.length) return save();
-  if (!process.env.OPENROUTER_API_KEY) {
-    console.log("  ! No OPENROUTER_API_KEY — every image falls back to its shape");
+  if (!availableProviders(["openrouter"]).length) {
+    console.log(
+      "  ! No OPENROUTER_API_KEY — every image falls back to its shape",
+    );
     return save();
   }
+  console.log(`  Reading artwork with ${describeProviders()}`);
 
   let cost = 0;
   let read_ = 0;
+  let reader = null;
   for (const name of todo) {
     const file = path.join(IMAGES, name);
     try {
-      const { reading, cost: spent } = await ask(file);
+      const { reading, cost: spent, provider, model } = await ask(file);
       cost += spent;
+      reader = { provider, model };
       if (!reading) {
         console.log(`  ? ${name}: unreadable answer, falling back to shape`);
         continue;
@@ -204,7 +207,17 @@ async function main() {
   save();
   fs.writeFileSync(
     path.join(__dirname, "..", "data", "artwork-usage.json"),
-    JSON.stringify({ at: new Date().toISOString(), imagesRead: read_, costUsd: cost }, null, 2) + "\n",
+    JSON.stringify(
+      {
+        at: new Date().toISOString(),
+        providers: describeProviders(),
+        model: reader?.model || null,
+        imagesRead: read_,
+        costUsd: cost,
+      },
+      null,
+      2,
+    ) + "\n",
   );
 }
 

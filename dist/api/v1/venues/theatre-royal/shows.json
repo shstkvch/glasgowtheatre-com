@@ -1,9 +1,9 @@
 {
   "apiVersion": "1.1",
-  "generatedAt": "2026-10-18T09:56:21.462Z",
+  "generatedAt": "2026-10-18T10:42:04.878Z",
   "refreshedAt": "2026-10-18T09:55:39.286Z",
-  "total": 24,
-  "count": 24,
+  "total": 23,
+  "count": 23,
   "limit": null,
   "offset": 0,
   "next": null,
@@ -368,96 +368,6 @@
         "credit": null
       },
       "bookingUrl": "https://www.atgtickets.com/shows/matilda-the-musical/theatre-royal-glasgow/calendar/",
-      "updatedAt": "2026-10-18"
-    },
-    {
-      "id": "theatre-royal-ice-dragon",
-      "url": "https://glasgowtheatre.com/shows/theatre-royal-ice-dragon.html",
-      "title": "Ice Dragon",
-      "artForm": "musical",
-      "tags": [
-        "musical"
-      ],
-      "producer": null,
-      "description": "Travel through the seasons in Ice Dragon, an interactive musical adventure for babies and children under six years.",
-      "venue": {
-        "id": "theatre-royal",
-        "name": "Theatre Royal",
-        "area": "City Centre"
-      },
-      "run": {
-        "opens": "2026-11-30",
-        "closes": "2026-12-06",
-        "time": "10:00"
-      },
-      "schedule": null,
-      "performances": [
-        {
-          "date": "2026-11-30",
-          "time": "10:00",
-          "price": 12
-        },
-        {
-          "date": "2026-11-30",
-          "time": "11:30",
-          "price": 12
-        },
-        {
-          "date": "2026-12-01",
-          "time": "10:00",
-          "price": 12
-        },
-        {
-          "date": "2026-12-01",
-          "time": "11:30",
-          "price": 12
-        },
-        {
-          "date": "2026-12-02",
-          "time": "10:00",
-          "price": 12
-        },
-        {
-          "date": "2026-12-02",
-          "time": "11:30",
-          "price": 12
-        },
-        {
-          "date": "2026-12-03",
-          "time": "10:00",
-          "price": 12
-        },
-        {
-          "date": "2026-12-03",
-          "time": "11:30",
-          "price": 12
-        },
-        {
-          "date": "2026-12-04",
-          "time": "10:00",
-          "price": 12
-        }
-      ],
-      "pricing": {
-        "currency": "GBP",
-        "from": 12,
-        "to": null,
-        "concessionFrom": null,
-        "concessionTo": null,
-        "free": false,
-        "payWhatYouLike": false,
-        "text": null,
-        "source": "venue-feed",
-        "checkedAt": "2026-10-18"
-      },
-      "accessibility": null,
-      "durationMinutes": 45,
-      "image": {
-        "url": "https://glasgowtheatre.com/images/113cfc81e2cde6731711.webp",
-        "alt": "Ice Dragon",
-        "credit": null
-      },
-      "bookingUrl": "https://www.atgtickets.com/shows/ice-dragon/theatre-royal-glasgow/calendar/",
       "updatedAt": "2026-10-18"
     },
     {
@@ -1143,9 +1053,9 @@
       "id": "theatre-royal-scottish-opera-national-opera-studio",
       "url": "https://glasgowtheatre.com/shows/theatre-royal-scottish-opera-national-opera-studio.html",
       "title": "Scottish Opera - National Opera Studio",
-      "artForm": "talk",
+      "artForm": "workshop",
       "tags": [
-        "talk"
+        "workshop"
       ],
       "producer": null,
       "description": "As one of the National Opera Studio’s partners, Scottish Opera is delighted to host the 2026/27 NOS cohort – a group of the brightest rising star singers and repetiteurs from around the world – for a one-week residency of coaching with the Company’s Music Department, working with The Orchestra of...",

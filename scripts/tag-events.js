@@ -23,6 +23,13 @@ const fs = require("fs");
 const path = require("path");
 const crypto = require("crypto");
 const { FORMS, STRUCTURAL, ALLOWED, fallbackForm, combine } = require("./art-forms");
+const {
+  READER_ID,
+  availableProviders,
+  describeProviders,
+  chat,
+  indexedResults,
+} = require("./llm");
 
 const DATA_DIR = path.join(__dirname, "..", "data");
 const EVENTS_FILE = path.join(DATA_DIR, "events.json");
@@ -31,8 +38,9 @@ const CACHE_FILE = path.join(DATA_DIR, "tag-cache.json");
 // Written on every run, including the usual one that changes nothing.
 const USAGE_FILE = path.join(DATA_DIR, "tag-usage.json");
 
-const MODEL = process.env.OPENROUTER_MODEL || "deepseek/deepseek-v4-flash";
-const API_URL = "https://openrouter.ai/api/v1/chat/completions";
+// Which model, and which provider, is decided in llm.js: DeepSeek first, then
+// OpenRouter. The cache is keyed on the reader rather than the transport, so a
+// verdict survives the request moving between the two.
 const BATCH_SIZE = 12;
 // Tries per group before it is halved, and per half before it is given up on.
 const ATTEMPTS = 3;
@@ -64,7 +72,7 @@ const promptText = (event) =>
 const cacheKey = (event) =>
   crypto
     .createHash("sha1")
-    .update(`${MODEL}\n${promptText(event)}`)
+    .update(`${READER_ID}\n${promptText(event)}`)
     .digest("hex")
     .slice(0, 16);
 
@@ -184,53 +192,24 @@ const SCHEMA = {
   },
 };
 
-async function tagBatch(batch, apiKey) {
+async function tagBatch(batch) {
   const listings = batch
     .map((event, i) => `[${i}] ${promptText(event)}`)
     .join("\n\n---\n\n");
 
-  const res = await fetch(API_URL, {
-    method: "POST",
-    headers: {
-      Authorization: `Bearer ${apiKey}`,
-      "Content-Type": "application/json",
-      "HTTP-Referer": "https://glasgowtheatre.com",
-      "X-Title": "Glasgow Theatre",
-    },
-    body: JSON.stringify({
-      model: MODEL,
-      messages: [
-        { role: "system", content: SYSTEM_PROMPT },
-        {
-          role: "user",
-          content: `Tag these ${batch.length} listings. Return one result per listing, using the given index.\n\n${listings}`,
-        },
-      ],
-      // This model reasons by default; tagging does not need it and it costs tokens.
-      reasoning: { enabled: false },
-      temperature: 0,
-      max_tokens: 2000,
-      response_format: { type: "json_schema", json_schema: SCHEMA },
-    }),
-    signal: AbortSignal.timeout(60000),
+  const answer = await chat({
+    messages: [
+      { role: "system", content: SYSTEM_PROMPT },
+      {
+        role: "user",
+        content: `Tag these ${batch.length} listings. Return one result per listing, using the given index.\n\n${listings}`,
+      },
+    ],
+    schema: SCHEMA,
+    maxTokens: 2000,
   });
 
-  if (!res.ok) {
-    throw new Error(`HTTP ${res.status}: ${(await res.text()).slice(0, 200)}`);
-  }
-  const body = await res.json();
-  if (body.error) throw new Error(body.error.message || "API error");
-
-  const content = body.choices?.[0]?.message?.content;
-  if (!content) throw new Error("Empty response from model");
-
-  if (body.choices[0].finish_reason === "length") {
-    throw new Error("Response truncated before the model finished");
-  }
-
-  const parsed = JSON.parse(content);
-  const results = Array.isArray(parsed) ? parsed : parsed.results;
-  if (!Array.isArray(results)) throw new Error("Response had no results array");
+  const results = indexedResults(answer.content, batch.length);
 
   const byIndex = new Map(results.map((r) => [r.index, r]));
   const verdicts = batch.map((_, i) => byIndex.get(i));
@@ -248,9 +227,11 @@ async function tagBatch(batch, apiKey) {
 
   return {
     verdicts,
-    cost: body.usage?.cost || 0,
-    promptTokens: body.usage?.prompt_tokens || 0,
-    completionTokens: body.usage?.completion_tokens || 0,
+    provider: answer.provider,
+    model: answer.model,
+    cost: answer.cost,
+    promptTokens: answer.promptTokens,
+    completionTokens: answer.completionTokens,
   };
 }
 
@@ -272,7 +253,7 @@ const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
  * Verdicts are written straight into the cache. Listings nothing could be got
  * for are left out of it, and picked up as fallbacks by the caller.
  */
-async function askAbout(group, apiKey, label, ctx, canSplit = true) {
+async function askAbout(group, label, ctx, canSplit = true) {
   // During an outage every group fails the same way, and waiting out the
   // retries on each of fourteen batches would keep the build going for an
   // hour to learn what the first two already said.
@@ -281,7 +262,8 @@ async function askAbout(group, apiKey, label, ctx, canSplit = true) {
   let error;
   for (let attempt = 1; attempt <= ATTEMPTS; attempt++) {
     try {
-      const result = await tagBatch(group, apiKey);
+      const result = await tagBatch(group);
+      ctx.model = result.model;
       ctx.cost += result.cost;
       ctx.promptTokens += result.promptTokens;
       ctx.completionTokens += result.completionTokens;
@@ -292,7 +274,8 @@ async function askAbout(group, apiKey, label, ctx, canSplit = true) {
           form: verdict.form,
           inScope: verdict.inScope !== false,
           scopeReason: (verdict.scopeReason || "").trim(),
-          model: MODEL,
+          provider: result.provider,
+          model: result.model,
           taggedAt: TODAY_ISO,
         };
       });
@@ -311,8 +294,8 @@ async function askAbout(group, apiKey, label, ctx, canSplit = true) {
   if (canSplit && group.length > 1) {
     const half = Math.ceil(group.length / 2);
     console.log(`${label} splitting ${group.length} listings and asking again`);
-    await askAbout(group.slice(0, half), apiKey, `${label}a`, ctx, false);
-    await askAbout(group.slice(half), apiKey, `${label}b`, ctx, false);
+    await askAbout(group.slice(0, half), `${label}a`, ctx, false);
+    await askAbout(group.slice(half), `${label}b`, ctx, false);
     return;
   }
 
@@ -336,9 +319,10 @@ async function main() {
   }
 
   const cache = retag ? {} : readJSON(CACHE_FILE, {});
-  const apiKey = process.env.OPENROUTER_API_KEY;
+  const providers = availableProviders();
+  const apiKey = providers.length > 0;
 
-  console.log(`\n🏷  Tagging ${events.length} listings with ${MODEL}`);
+  console.log(`\n🏷  Tagging ${events.length} listings with ${describeProviders()}`);
 
   // A cached entry from before the scope check existed carries tags but no
   // verdict, so a gated listing with one still has to be asked about.
@@ -353,6 +337,7 @@ async function main() {
 
   const ctx = {
     cache,
+    model: null,
     cost: 0,
     promptTokens: 0,
     completionTokens: 0,
@@ -360,7 +345,9 @@ async function main() {
   };
 
   if (pending.length && !apiKey) {
-    console.log("  ! OPENROUTER_API_KEY is not set — using keyword fallback");
+    console.log(
+      "  ! Neither DEEPSEEK_API_KEY nor OPENROUTER_API_KEY is set — using keyword fallback",
+    );
   }
 
   if (pending.length && apiKey) {
@@ -368,7 +355,7 @@ async function main() {
     for (let i = 0; i < pending.length; i += BATCH_SIZE) {
       const batch = pending.slice(i, i + BATCH_SIZE);
       const label = `  batch ${Math.floor(i / BATCH_SIZE) + 1}/${batches}`;
-      await askAbout(batch, apiKey, label, ctx);
+      await askAbout(batch, label, ctx);
     }
   }
 
@@ -444,7 +431,8 @@ async function main() {
   // the twelve keyword guesses went unmentioned in the morning email.
   const usage = {
     at: new Date().toISOString(),
-    model: MODEL,
+    providers: describeProviders(),
+    model: ctx.model || READER_ID,
     listingsPending: apiKey ? pending.length : 0,
     listingsTagged: apiKey ? pending.length - fellBack.length : 0,
     promptTokens: ctx.promptTokens,

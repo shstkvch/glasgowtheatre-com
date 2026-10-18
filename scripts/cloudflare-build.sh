@@ -5,7 +5,9 @@
 # Set this as the project's build command, with dist/ as the output directory.
 # Required environment variables in the Pages project:
 #
-#   OPENROUTER_API_KEY   tags listings (falls back to keywords without it)
+#   DEEPSEEK_API_KEY     tags listings and reads ticket wording first
+#   OPENROUTER_API_KEY   the fallback provider, and the key that reads artwork
+#                        (tagging falls back to keywords without either)
 #   RESEND_API_KEY       sends the daily report
 #   REPORT_TO            who receives it
 #

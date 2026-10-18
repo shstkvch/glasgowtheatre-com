@@ -1,2872 +1,1130 @@
 {
-  "f9e127a919f07e12": {
-    "form": "play",
-    "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "d683c7e979eb2200": {
-    "form": "play",
-    "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "2c3b7ed295e68871": {
+  "073db6ecb6bfd0e9": {
     "form": "workshop",
     "inScope": true,
     "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "taggedAt": "2026-10-18"
   },
-  "0fa759114d020300": {
-    "form": "spoken-word",
-    "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "3539d52890bbd1b5": {
-    "form": "talk",
-    "inScope": true,
-    "scopeReason": "Discussion with performed extracts",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "619c89a5025323f0": {
-    "form": "play",
-    "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "afb47c7a8f3608ea": {
-    "form": "play",
-    "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "990dcc792083df9d": {
-    "form": "play",
-    "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "643e93c5d3dad940": {
-    "form": "tour",
-    "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "b7b3eb9f5bbfc094": {
-    "form": "play",
-    "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "6484816d9c70e46b": {
-    "form": "spoken-word",
-    "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "d96c08cda444d879": {
-    "form": "play",
-    "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "039d4aab697886a5": {
-    "form": "play",
-    "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "db5ac1b0c5c53667": {
-    "form": "play",
-    "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "2eefda744913d468": {
-    "form": "play",
-    "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "5e217afdd9450996": {
-    "form": "play",
-    "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "93564c4b8323f614": {
-    "form": "play",
-    "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "cdf1126bc08b1a82": {
-    "form": "cabaret",
-    "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "b58f2c8639a3967c": {
-    "form": "spoken-word",
-    "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "cd98d659eadc8a4f": {
-    "form": "dance",
-    "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "b7e8583c654030d9": {
-    "form": "play",
-    "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "18ff6e53ba3dff53": {
-    "form": "play",
-    "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "961ed9a78ffde4ed": {
-    "form": "stand-up",
-    "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "0a45c4f7fa42051f": {
-    "form": "play",
-    "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "4ea1f33c93eb481a": {
-    "form": "play",
-    "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "7b27ffafc524ef70": {
-    "form": "play",
-    "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "d3ccbf45da10f607": {
-    "form": "dance",
-    "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "a82a9982f72648a0": {
-    "form": "talk",
-    "inScope": true,
-    "scopeReason": "Interview event",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "598ba306174a615e": {
-    "form": "play",
-    "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "4accda9263b034f9": {
-    "form": "play",
-    "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "086c5694e20f4430": {
-    "form": "talk",
-    "inScope": true,
-    "scopeReason": "Lecture on theatre history",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "9ad52af17ea9511e": {
-    "form": "play",
-    "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "5a46b45838db46c5": {
-    "form": "physical-theatre",
-    "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "0ab40271f5decb9e": {
-    "form": "spoken-word",
-    "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "79fed5cafbd38dcc": {
-    "form": "play",
-    "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "1f8739a0e790f91f": {
-    "form": "play",
-    "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "2ecbcc13faa208b3": {
-    "form": "pantomime",
-    "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "d904094ad1ed1d8c": {
-    "form": "physical-theatre",
-    "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "3699430b159afc44": {
-    "form": "physical-theatre",
-    "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "8fb64787ff4ba668": {
-    "form": "play",
-    "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "aff7e2ecf8ad558c": {
+  "1dabde9fce9756c8": {
     "form": "workshop",
     "inScope": true,
     "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "taggedAt": "2026-10-18"
   },
-  "ac4485a1c818fc4f": {
+  "56c7c48960167d3f": {
     "form": "workshop",
     "inScope": true,
     "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "taggedAt": "2026-10-18"
   },
-  "e64324b9cea4320d": {
-    "form": "workshop",
-    "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "68de938c25f66973": {
-    "form": "musical",
-    "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "cf17eba0007f02be": {
-    "form": "cabaret",
-    "inScope": true,
-    "scopeReason": "Variety night with diverse acts",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "2b54242c294a594f": {
-    "form": "play",
-    "inScope": true,
-    "scopeReason": "Theatrical show about gang culture",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "64aed90cabe7c4b2": {
-    "form": "community-event",
-    "inScope": false,
-    "scopeReason": "Comics convention, not performance",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "d36cb25d7bad9bb5": {
-    "form": "workshop",
-    "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "b92b2f83b334ce64": {
-    "form": "spoken-word",
-    "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "a1315c3be7337620": {
-    "form": "stand-up",
-    "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "a02ab20a8a7bba70": {
-    "form": "stand-up",
-    "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "9977c0f38aeb8880": {
-    "form": "stand-up",
-    "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "31079d52319cd056": {
-    "form": "stand-up",
-    "inScope": true,
-    "scopeReason": "YouTube comedians doing live show",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "df3d05537e07447a": {
-    "form": "play",
-    "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "c1a6d7c067fa4b4c": {
-    "form": "stand-up",
-    "inScope": true,
-    "scopeReason": "Stand-up comedy tour",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "c97e2b23c7f57c8e": {
-    "form": "stand-up",
-    "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "b250827b65a09cb8": {
-    "form": "musical",
-    "inScope": true,
-    "scopeReason": "Musical with rap battles",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "769706cd99fa889b": {
-    "form": "stand-up",
-    "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "d392a7fb0d8ec42a": {
-    "form": "tour",
-    "inScope": true,
-    "scopeReason": "Building tour",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "1102ccab8aa6b4d7": {
-    "form": "stand-up",
-    "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "bdd722323a9a906b": {
-    "form": "musical",
-    "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "f0b50b416c55f1af": {
-    "form": "musical",
-    "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "3fad1aae9866e424": {
-    "form": "dance",
-    "inScope": true,
-    "scopeReason": "Dance show, not music gig",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "bea93a639a5d1ca7": {
-    "form": "physical-theatre",
-    "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "34f17fa33b85ae89": {
-    "form": "play",
-    "inScope": true,
-    "scopeReason": "Comedy play, not stand-up",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "00bdc054c838bb9e": {
+  "9229dd1ad331f5be": {
     "form": "talk",
     "inScope": false,
-    "scopeReason": "Radio show celebration, not performance",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
+    "scopeReason": "Photography exhibition, not live performance",
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "taggedAt": "2026-10-18"
   },
-  "47784f6ac42dc2c5": {
+  "c3f29cd1563e44f7": {
     "form": "stand-up",
     "inScope": true,
-    "scopeReason": "Stand-up comedy show",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "76ee54b74bb77005": {
-    "form": "musical",
-    "inScope": true,
     "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "taggedAt": "2026-10-18"
   },
-  "7d6ca259b43c6e9a": {
-    "form": "workshop",
-    "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "54ed2eeb82f888ae": {
-    "form": "workshop",
-    "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "a5ef52b50ca41c67": {
-    "form": "community-event",
-    "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "bd58262c647eb2f3": {
-    "form": "tour",
-    "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "8c4165cd39d0313e": {
+  "1a68d6d44bda9b0d": {
     "form": "talk",
     "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
+    "scopeReason": "Actor in conversation on stage",
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "taggedAt": "2026-10-18"
   },
-  "f6801dbfb817ac46": {
-    "form": "musical",
+  "4bb2b7bd2ca7e87d": {
+    "form": "talk",
     "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
+    "scopeReason": "In-conversation theatre event, not sport",
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "taggedAt": "2026-10-18"
   },
-  "937d1603e98afea2": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Children's music show, not theatre",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "1c847ea6c82ce423": {
+  "86fbc906c2a6a527": {
     "form": "play",
     "inScope": true,
     "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "taggedAt": "2026-10-18"
   },
-  "ff8f169c73ef0129": {
-    "form": "physical-theatre",
-    "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "6d11fef79d8099f9": {
+  "ea399f3caa0d962b": {
     "form": "talk",
     "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
+    "scopeReason": "Book-tour conversation, not a gig",
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "taggedAt": "2026-10-18"
   },
-  "b29390c071708ec0": {
-    "form": "talk",
+  "ceddd80d82e4b1ae": {
+    "form": "play",
+    "inScope": true,
+    "scopeReason": "Staged historical drama",
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "taggedAt": "2026-10-18"
+  },
+  "a7425a2dfefc29ba": {
+    "form": "spoken-word",
+    "inScope": true,
+    "scopeReason": "Poet performing his own verse",
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "taggedAt": "2026-10-18"
+  },
+  "50647921a42122d8": {
+    "form": "play",
     "inScope": true,
     "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "taggedAt": "2026-10-18"
   },
-  "3dea2632bc3fa3ad": {
-    "form": "talk",
-    "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "4309a3331ee8ee72": {
+  "281d647fe609249c": {
     "form": "musical",
     "inScope": true,
     "scopeReason": "",
+    "provider": "openrouter",
     "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
+    "taggedAt": "2026-10-18"
   },
-  "4c6d06a17a72fdc7": {
+  "7f02e1e29ae0ca5b": {
+    "form": "stand-up",
+    "inScope": true,
+    "scopeReason": "Comedy show with multiple comedians",
+    "provider": "openrouter",
+    "model": "deepseek/deepseek-v4-flash",
+    "taggedAt": "2026-10-18"
+  },
+  "dc5d40eebbbe64b3": {
+    "form": "play",
+    "inScope": true,
+    "scopeReason": "",
+    "provider": "openrouter",
+    "model": "deepseek/deepseek-v4-flash",
+    "taggedAt": "2026-10-18"
+  },
+  "3be98cbc6001cdf0": {
     "form": "opera",
     "inScope": true,
     "scopeReason": "",
+    "provider": "openrouter",
     "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
+    "taggedAt": "2026-10-18"
   },
-  "ea4fdc7813702cab": {
-    "form": "spoken-word",
+  "29a33edade0ea9d1": {
+    "form": "play",
+    "inScope": true,
+    "scopeReason": "Theatre with autobiography and animation",
+    "provider": "openrouter",
+    "model": "deepseek/deepseek-v4-flash",
+    "taggedAt": "2026-10-18"
+  },
+  "919fd1963a01726f": {
+    "form": "dance",
     "inScope": true,
     "scopeReason": "",
+    "provider": "openrouter",
     "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
+    "taggedAt": "2026-10-18"
   },
-  "5d8b577e35cceb2b": {
+  "bd03fc0fb95615bb": {
+    "form": "play",
+    "inScope": true,
+    "scopeReason": "Award-winning theatre piece",
+    "provider": "openrouter",
+    "model": "deepseek/deepseek-v4-flash",
+    "taggedAt": "2026-10-18"
+  },
+  "202020e84eeddfb7": {
+    "form": "community-event",
+    "inScope": true,
+    "scopeReason": "Participatory arts celebration",
+    "provider": "openrouter",
+    "model": "deepseek/deepseek-v4-flash",
+    "taggedAt": "2026-10-18"
+  },
+  "5a3f380d5898ae62": {
+    "form": "talk",
+    "inScope": true,
+    "scopeReason": "",
+    "provider": "openrouter",
+    "model": "deepseek/deepseek-v4-flash",
+    "taggedAt": "2026-10-18"
+  },
+  "792911a524cdf47c": {
     "form": "community-event",
     "inScope": true,
     "scopeReason": "Family celebration with performances",
+    "provider": "openrouter",
     "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
+    "taggedAt": "2026-10-18"
   },
-  "cdc7ac39ea9e403b": {
-    "form": "tour",
+  "51b2b1a0672964e5": {
+    "form": "stand-up",
     "inScope": true,
-    "scopeReason": "Backstage touch tour",
+    "scopeReason": "Comedian's touring show",
+    "provider": "openrouter",
     "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
+    "taggedAt": "2026-10-18"
   },
-  "d4fae0ecc2fe9d92": {
-    "form": "dance",
-    "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "628140b8b62431c3": {
+  "51886affb529bcd0": {
     "form": "musical",
     "inScope": true,
-    "scopeReason": "",
+    "scopeReason": "Thrilling new musical",
+    "provider": "openrouter",
     "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
+    "taggedAt": "2026-10-18"
   },
-  "3bb45844b6436d57": {
-    "form": "stand-up",
-    "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "f190adfb01a517fb": {
-    "form": "stand-up",
-    "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "672e95f8b0e5f3fa": {
+  "cf6aad40e6a62646": {
     "form": "play",
     "inScope": true,
     "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "taggedAt": "2026-10-18"
   },
-  "067698f4f3d7bcf6": {
-    "form": "stand-up",
-    "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "807a01d687534c06": {
-    "form": "dance",
-    "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "8a9669f658e5f7dd": {
-    "form": "stand-up",
-    "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "5e0171ebe348be2a": {
+  "b4a8c91214ba8ff6": {
     "form": "talk",
     "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
+    "scopeReason": "Stage talk, not a performance",
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "taggedAt": "2026-10-18"
   },
-  "23abbd50b07eb9d6": {
-    "form": "musical",
-    "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "e01f7018b695d084": {
-    "form": "musical",
-    "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "a8ce49fed936f35e": {
+  "45d3ee3ea36b1853": {
     "form": "play",
     "inScope": true,
     "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "taggedAt": "2026-10-18"
   },
-  "213576e5deec6396": {
-    "form": "stand-up",
-    "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "b69b213b638caee2": {
-    "form": "stand-up",
-    "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "4b11608399c0a6cc": {
-    "form": "opera",
-    "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "a37b8fdf2c925916": {
-    "form": "talk",
-    "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "7d7b84aade031de1": {
-    "form": "talk",
-    "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "e29f03d1e39d671e": {
-    "form": "stand-up",
-    "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "b1f74b7992fcd767": {
-    "form": "tour",
-    "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "05539c4747a05335": {
-    "form": "musical",
-    "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "d591e527fd0a6fbe": {
-    "form": "musical",
-    "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "813c0bc759dd5718": {
-    "form": "opera",
-    "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "83360916168022d2": {
-    "form": "tour",
-    "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "c9c6f0a9b96bd1cf": {
-    "form": "talk",
-    "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "adf1787029948781": {
-    "form": "pantomime",
-    "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "9e6c00b8d6b40749": {
-    "form": "play",
-    "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "e6b61f59dd7ce001": {
-    "form": "stand-up",
-    "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "fa9bce8d4b087601": {
-    "form": "musical",
-    "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "e73f27f6b6955630": {
+  "46698d0706ce3017": {
     "form": "dance",
     "inScope": true,
     "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "taggedAt": "2026-10-18"
   },
-  "7269401188895e6a": {
-    "form": "musical",
+  "4172dc5b9b2fc1cc": {
+    "form": "spoken-word",
+    "inScope": true,
+    "scopeReason": "Live storytelling podcast",
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "taggedAt": "2026-10-18"
+  },
+  "ea48415250096230": {
+    "form": "talk",
     "inScope": true,
     "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "taggedAt": "2026-10-18"
   },
-  "2023a4dd818151f8": {
+  "29503015189e459c": {
+    "form": "talk",
+    "inScope": true,
+    "scopeReason": "",
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "taggedAt": "2026-10-18"
+  },
+  "bf5fc6dec3846d12": {
+    "form": "musical",
+    "inScope": true,
+    "scopeReason": "Musical comedy-horror stage show",
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "taggedAt": "2026-10-18"
+  },
+  "7a8ee446d412d9be": {
+    "form": "play",
+    "inScope": true,
+    "scopeReason": "",
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "taggedAt": "2026-10-18"
+  },
+  "e22463a59561eba2": {
+    "form": "physical-theatre",
+    "inScope": true,
+    "scopeReason": "",
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "taggedAt": "2026-10-18"
+  },
+  "2c4bbcee3c570edc": {
+    "form": "spoken-word",
+    "inScope": true,
+    "scopeReason": "",
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "taggedAt": "2026-10-18"
+  },
+  "f380dbd5791bdb85": {
     "form": "cabaret",
     "inScope": true,
-    "scopeReason": "Theatrical performance with songs and variety",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
+    "scopeReason": "Drag, comedy and variety night",
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "taggedAt": "2026-10-18"
   },
-  "544bf9f3b36975fe": {
+  "f219b00831505f25": {
+    "form": "talk",
+    "inScope": true,
+    "scopeReason": "Pre-show talk accompanying opera.",
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "taggedAt": "2026-10-18"
+  },
+  "37b25488a50fbdc3": {
+    "form": "spoken-word",
+    "inScope": true,
+    "scopeReason": "Storytelling performance with folk music.",
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "taggedAt": "2026-10-18"
+  },
+  "8b35f8f43663e26e": {
+    "form": "stand-up",
+    "inScope": true,
+    "scopeReason": "",
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "taggedAt": "2026-10-18"
+  },
+  "eb048550074d8ba0": {
+    "form": "stand-up",
+    "inScope": true,
+    "scopeReason": "Stand-up comedy hour.",
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "taggedAt": "2026-10-18"
+  },
+  "e87b1d35334aa6fb": {
+    "form": "spoken-word",
+    "inScope": true,
+    "scopeReason": "Folk storytelling with harp accompaniment.",
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "taggedAt": "2026-10-18"
+  },
+  "4f22e7dae491a384": {
     "form": "play",
     "inScope": true,
     "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "taggedAt": "2026-10-18"
   },
-  "663b676f95053d1d": {
+  "dc118643e13255d9": {
+    "form": "play",
+    "inScope": true,
+    "scopeReason": "",
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "taggedAt": "2026-10-18"
+  },
+  "b63b2070f08ba080": {
+    "form": "talk",
+    "inScope": true,
+    "scopeReason": "Nature lecture by Chris Packham.",
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "taggedAt": "2026-10-18"
+  },
+  "3da46451d741fc23": {
+    "form": "stand-up",
+    "inScope": true,
+    "scopeReason": "Comedy show about workplace buzzwords.",
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "taggedAt": "2026-10-18"
+  },
+  "d21ecf45fa16733a": {
+    "form": "play",
+    "inScope": true,
+    "scopeReason": "",
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "taggedAt": "2026-10-18"
+  },
+  "90ebed18f933b0f7": {
+    "form": "stand-up",
+    "inScope": true,
+    "scopeReason": "Satirical stand-up character show.",
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "taggedAt": "2026-10-18"
+  },
+  "b8b9555eb42bd1b1": {
+    "form": "stand-up",
+    "inScope": true,
+    "scopeReason": "Stand-up comedy and audience patter.",
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "taggedAt": "2026-10-18"
+  },
+  "3670799568d7bf7b": {
+    "form": "play",
+    "inScope": true,
+    "scopeReason": "",
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "taggedAt": "2026-10-18"
+  },
+  "b15caddf063c781b": {
+    "form": "talk",
+    "inScope": true,
+    "scopeReason": "Live history lecture on stage",
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "taggedAt": "2026-10-18"
+  },
+  "2652ec101c95f97d": {
+    "form": "musical",
+    "inScope": true,
+    "scopeReason": "",
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "taggedAt": "2026-10-18"
+  },
+  "d38c9c727310efd4": {
+    "form": "stand-up",
+    "inScope": true,
+    "scopeReason": "Musical comedy act, comedy first",
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "taggedAt": "2026-10-18"
+  },
+  "2696b2b430bda5f3": {
+    "form": "opera",
+    "inScope": true,
+    "scopeReason": "Chinese opera, staged performance",
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "taggedAt": "2026-10-18"
+  },
+  "c0fe29fb0de6147c": {
+    "form": "play",
+    "inScope": true,
+    "scopeReason": "",
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "taggedAt": "2026-10-18"
+  },
+  "b67e29cb08e9b994": {
+    "form": "stand-up",
+    "inScope": true,
+    "scopeReason": "Comedian touring new show",
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "taggedAt": "2026-10-18"
+  },
+  "ebc4018f5cc5a491": {
+    "form": "stand-up",
+    "inScope": true,
+    "scopeReason": "",
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "taggedAt": "2026-10-18"
+  },
+  "029f78079b629601": {
     "form": "stand-up",
     "inScope": true,
     "scopeReason": "Stand-up comedy tour",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "taggedAt": "2026-10-18"
   },
-  "731f08d20d7fa079": {
-    "form": "stand-up",
+  "3666ea60e9fabd49": {
+    "form": "play",
     "inScope": true,
-    "scopeReason": "Stand-up comedy tour",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
+    "scopeReason": "",
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "taggedAt": "2026-10-18"
   },
-  "b5dfaedc5d1d7923": {
-    "form": "talk",
-    "inScope": false,
-    "scopeReason": "Psychic medium show, not theatre",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
+  "1a90ee10bd3c2c5b": {
+    "form": "cabaret",
+    "inScope": true,
+    "scopeReason": "",
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "taggedAt": "2026-10-18"
   },
-  "0325df9ba29be3e6": {
+  "12fc12b50384c035": {
+    "form": "pantomime",
+    "inScope": true,
+    "scopeReason": "",
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "taggedAt": "2026-10-18"
+  },
+  "2c4feab49dfbac4d": {
     "form": "musical",
     "inScope": true,
     "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "taggedAt": "2026-10-18"
   },
-  "b3a2558351c5fedd": {
+  "166bdb20dbd25268": {
+    "form": "pantomime",
+    "inScope": true,
+    "scopeReason": "",
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "taggedAt": "2026-10-18"
+  },
+  "4798a0a006bbb78a": {
+    "form": "pantomime",
+    "inScope": true,
+    "scopeReason": "Christmas pantomime with comedy cast.",
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "taggedAt": "2026-10-18"
+  },
+  "f3e822b4e5e04992": {
+    "form": "pantomime",
+    "inScope": true,
+    "scopeReason": "",
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "taggedAt": "2026-10-18"
+  },
+  "a88a73fcfcc69a9e": {
+    "form": "physical-theatre",
+    "inScope": true,
+    "scopeReason": "",
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "taggedAt": "2026-10-18"
+  },
+  "38476fc70f0ed2f4": {
+    "form": "pantomime",
+    "inScope": true,
+    "scopeReason": "",
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "taggedAt": "2026-10-18"
+  },
+  "8e8e0d3650b1d7ae": {
+    "form": "physical-theatre",
+    "inScope": true,
+    "scopeReason": "",
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "taggedAt": "2026-10-18"
+  },
+  "60e0f33a60da96c9": {
+    "form": "workshop",
+    "inScope": true,
+    "scopeReason": "Theatre training classes for young people.",
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "taggedAt": "2026-10-18"
+  },
+  "9a2d09070351500c": {
+    "form": "workshop",
+    "inScope": true,
+    "scopeReason": "Theatre training classes for young people.",
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "taggedAt": "2026-10-18"
+  },
+  "a6a13057cd364afa": {
+    "form": "musical",
+    "inScope": true,
+    "scopeReason": "",
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "taggedAt": "2026-10-18"
+  },
+  "3d05a6cad9a401cc": {
+    "form": "physical-theatre",
+    "inScope": true,
+    "scopeReason": "",
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "taggedAt": "2026-10-18"
+  },
+  "a5527f7579ee0690": {
+    "form": "dance",
+    "inScope": true,
+    "scopeReason": "",
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "taggedAt": "2026-10-18"
+  },
+  "9df23cfc5a2d59f6": {
+    "form": "pantomime",
+    "inScope": true,
+    "scopeReason": "",
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "taggedAt": "2026-10-18"
+  },
+  "da6957f2d9e47ef7": {
+    "form": "pantomime",
+    "inScope": true,
+    "scopeReason": "",
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "taggedAt": "2026-10-18"
+  },
+  "3594648d7a24767f": {
+    "form": "dance",
+    "inScope": true,
+    "scopeReason": "",
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "taggedAt": "2026-10-18"
+  },
+  "bc268be40c848600": {
+    "form": "stand-up",
+    "inScope": true,
+    "scopeReason": "",
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "taggedAt": "2026-10-18"
+  },
+  "7b27996883ea57e7": {
+    "form": "talk",
+    "inScope": true,
+    "scopeReason": "",
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "taggedAt": "2026-10-18"
+  },
+  "ef3337797c942b79": {
+    "form": "musical",
+    "inScope": true,
+    "scopeReason": "",
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "taggedAt": "2026-10-18"
+  },
+  "0228a33de1c9cb29": {
+    "form": "play",
+    "inScope": true,
+    "scopeReason": "Stage adaptation of a novel",
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "taggedAt": "2026-10-18"
+  },
+  "a108d84995d05d44": {
     "form": "spoken-word",
     "inScope": true,
     "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "taggedAt": "2026-10-18"
   },
-  "1cc7989a35a31515": {
+  "e9f134a1bacda14e": {
+    "form": "musical",
+    "inScope": true,
+    "scopeReason": "",
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "taggedAt": "2026-10-18"
+  },
+  "f96bfa0a34ed6453": {
+    "form": "music",
+    "inScope": true,
+    "scopeReason": "",
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "taggedAt": "2026-10-18"
+  },
+  "d526567a58f374dc": {
+    "form": "musical",
+    "inScope": true,
+    "scopeReason": "Musical play with Burns songs",
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "taggedAt": "2026-10-18"
+  },
+  "b3ef916f6f51098b": {
+    "form": "music",
+    "inScope": true,
+    "scopeReason": "",
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "taggedAt": "2026-10-18"
+  },
+  "7492d2f999a71e64": {
+    "form": "music",
+    "inScope": true,
+    "scopeReason": "",
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "taggedAt": "2026-10-18"
+  },
+  "aa256af461e60bd6": {
+    "form": "music",
+    "inScope": true,
+    "scopeReason": "",
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "taggedAt": "2026-10-18"
+  },
+  "aa1356ba172ea3e3": {
+    "form": "music",
+    "inScope": true,
+    "scopeReason": "",
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "taggedAt": "2026-10-18"
+  },
+  "79ebf8e036a9498b": {
+    "form": "play",
+    "inScope": true,
+    "scopeReason": "",
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "taggedAt": "2026-10-18"
+  },
+  "e3fdd7aaf2f3444f": {
+    "form": "music",
+    "inScope": true,
+    "scopeReason": "",
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "taggedAt": "2026-10-18"
+  },
+  "fd5b104f2aab305d": {
+    "form": "music",
+    "inScope": true,
+    "scopeReason": "",
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "taggedAt": "2026-10-18"
+  },
+  "b850cdf7180f91ff": {
+    "form": "music",
+    "inScope": true,
+    "scopeReason": "",
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "taggedAt": "2026-10-18"
+  },
+  "586b3f1ed3bd3a6d": {
+    "form": "music",
+    "inScope": true,
+    "scopeReason": "",
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "taggedAt": "2026-10-18"
+  },
+  "146a534d94450f4f": {
     "form": "stand-up",
     "inScope": true,
     "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "taggedAt": "2026-10-18"
   },
-  "19e6a0d4b2bc8044": {
+  "94fc82f1ae11c437": {
     "form": "stand-up",
     "inScope": true,
-    "scopeReason": "Comedy tour",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
+    "scopeReason": "",
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "taggedAt": "2026-10-18"
   },
-  "e434ab40b0d56a90": {
+  "45bdc08fe546d2b8": {
+    "form": "physical-theatre",
+    "inScope": true,
+    "scopeReason": "",
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "taggedAt": "2026-10-18"
+  },
+  "7ef59383ebe6bef4": {
+    "form": "opera",
+    "inScope": true,
+    "scopeReason": "",
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "taggedAt": "2026-10-18"
+  },
+  "98a7178590eecc5a": {
     "form": "talk",
     "inScope": true,
-    "scopeReason": "Lecture event",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
+    "scopeReason": "Pre-show talk about the opera",
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "taggedAt": "2026-10-18"
   },
-  "19b7520bb3ffa4f7": {
+  "3cdba07215f17799": {
+    "form": "play",
+    "inScope": true,
+    "scopeReason": "",
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "taggedAt": "2026-10-18"
+  },
+  "03602d7228cf1842": {
+    "form": "play",
+    "inScope": true,
+    "scopeReason": "Comedy play, not stand-up",
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "taggedAt": "2026-10-18"
+  },
+  "1bbee5003570137d": {
     "form": "spoken-word",
     "inScope": true,
-    "scopeReason": "Live podcast storytelling",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "04cea8d3fcdaae48": {
-    "form": "talk",
-    "inScope": true,
     "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "taggedAt": "2026-10-18"
   },
-  "4c74faca1ec9d1fb": {
-    "form": "pantomime",
+  "be737a9f06d2897c": {
+    "form": "tour",
     "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
+    "scopeReason": "Backstage touch tour of opera",
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "taggedAt": "2026-10-18"
   },
-  "c8ef55939063fc6e": {
-    "form": "pantomime",
-    "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "2f4dfc9a4d96c35e": {
+  "ebe7683e36937334": {
     "form": "musical",
     "inScope": true,
-    "scopeReason": "Interactive music-led theatre for children",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
+    "scopeReason": "Musical theatre, not a gig",
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "taggedAt": "2026-10-18"
   },
-  "3f84ca7718b1a252": {
-    "form": "play",
-    "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "02de363f2bfab383": {
+  "7a9a52844e51aa1d": {
     "form": "musical",
     "inScope": true,
     "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "taggedAt": "2026-10-18"
   },
-  "11cb1b89dd157b77": {
+  "ea3931739c3ac619": {
+    "form": "opera",
+    "inScope": true,
+    "scopeReason": "",
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "taggedAt": "2026-10-18"
+  },
+  "1ccfb92f5c527cea": {
+    "form": "tour",
+    "inScope": true,
+    "scopeReason": "Backstage touch tour of opera",
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "taggedAt": "2026-10-18"
+  },
+  "718fdffd9bfddb2f": {
+    "form": "workshop",
+    "inScope": true,
+    "scopeReason": "",
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "taggedAt": "2026-10-18"
+  },
+  "c029b340e9fc979b": {
     "form": "pantomime",
     "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
+    "scopeReason": "Adults-only pantomime performance",
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "taggedAt": "2026-10-18"
   },
-  "f43284f4ec9cd814": {
+  "3ca79b76b08082d0": {
     "form": "play",
     "inScope": true,
     "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "taggedAt": "2026-10-18"
   },
-  "c6ac1fcb95b8372a": {
+  "db100e968451c9e4": {
     "form": "play",
     "inScope": true,
     "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "taggedAt": "2026-10-18"
   },
-  "7b5ac25cff8281fc": {
-    "form": "talk",
+  "12d9e8fca434328b": {
+    "form": "stand-up",
+    "inScope": true,
+    "scopeReason": "Comedy tour, in scope",
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "taggedAt": "2026-10-18"
+  },
+  "ff8e431c4463aecc": {
+    "form": "musical",
     "inScope": true,
     "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "taggedAt": "2026-10-18"
   },
-  "e31377513161226b": {
-    "form": "tour",
+  "3ed3926cc345aa7d": {
+    "form": "dance",
+    "inScope": true,
+    "scopeReason": "Dance showcase, in scope",
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "taggedAt": "2026-10-18"
+  },
+  "2b96b05b429b2912": {
+    "form": "musical",
+    "inScope": true,
+    "scopeReason": "Musical theatre staging, in scope",
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "taggedAt": "2026-10-18"
+  },
+  "aaf3fa412965ad4d": {
+    "form": "cabaret",
+    "inScope": true,
+    "scopeReason": "Solo theatrical songbook show",
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "taggedAt": "2026-10-18"
+  },
+  "a15aebb6db1dfbb9": {
+    "form": "play",
     "inScope": true,
     "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "taggedAt": "2026-10-18"
   },
-  "b26eda99143faa4a": {
-    "form": "tour",
+  "76b48b0f9c289d36": {
+    "form": "stand-up",
+    "inScope": true,
+    "scopeReason": "Stand-up tour, in scope",
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "taggedAt": "2026-10-18"
+  },
+  "bab4255cf4d02378": {
+    "form": "cabaret",
     "inScope": true,
     "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "taggedAt": "2026-10-18"
   },
-  "7653855cde40b700": {
+  "565e3c9777e00512": {
+    "form": "stand-up",
+    "inScope": true,
+    "scopeReason": "Comedian's live show, in scope",
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "taggedAt": "2026-10-18"
+  },
+  "002cddf501b5a1b7": {
+    "form": "cabaret",
+    "inScope": true,
+    "scopeReason": "Showbusiness anecdotes and songs",
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "taggedAt": "2026-10-18"
+  },
+  "b960b6f8fffa29a8": {
+    "form": "stand-up",
+    "inScope": true,
+    "scopeReason": "Character comedy show, in scope",
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "taggedAt": "2026-10-18"
+  },
+  "9bae3d67e492b2e3": {
+    "form": "stand-up",
+    "inScope": true,
+    "scopeReason": "",
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "taggedAt": "2026-10-18"
+  },
+  "95da963d213588b3": {
+    "form": "stand-up",
+    "inScope": true,
+    "scopeReason": "",
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "taggedAt": "2026-10-18"
+  },
+  "d187d59a6a7a5040": {
     "form": "stand-up",
     "inScope": true,
     "scopeReason": "Stand-up comedy show",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "be3c2219d33bb62d": {
-    "form": "physical-theatre",
-    "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "bb3e9636d8b66188": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Industrial noise music performance",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "a808b91889e87763": {
-    "form": "physical-theatre",
-    "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "a4d94d40da9dc84d": {
-    "form": "play",
-    "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "3ea5f8e69803f290": {
-    "form": "play",
-    "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "f5123ca3837e2e45": {
-    "form": "spoken-word",
-    "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "3c01732c0e2cb0e9": {
-    "form": "cabaret",
-    "inScope": true,
-    "scopeReason": "Magic and comedy combined",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "249f0ae09e12dc07": {
-    "form": "play",
-    "inScope": true,
-    "scopeReason": "Theatre performance with actors",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "9118b67011e2179d": {
-    "form": "workshop",
-    "inScope": false,
-    "scopeReason": "Music class, not performance",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "61ee8caa250b8838": {
-    "form": "workshop",
-    "inScope": false,
-    "scopeReason": "Craft group, not performance",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "47403e818688b539": {
-    "form": "workshop",
-    "inScope": false,
-    "scopeReason": "Art class, not performance",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "087410d33a71e6b5": {
-    "form": "workshop",
-    "inScope": false,
-    "scopeReason": "Painting class, not performance",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "7faa1d0741baa9c5": {
-    "form": "workshop",
-    "inScope": false,
-    "scopeReason": "Art group, not performance",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "bc6bfb9dbba4b16f": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Live music gig",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "e446f40ccfcff846": {
-    "form": "workshop",
-    "inScope": false,
-    "scopeReason": "Singing class, not performance",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "a283c4d5698e378c": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Live music gig",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "cc445641228d3a07": {
-    "form": "workshop",
-    "inScope": false,
-    "scopeReason": "Art class, not performance",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "309602ed5e2387d5": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Live music gig",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "4e79d4d1c8072ad4": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Live music gig",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "06df0b37ab9b50aa": {
-    "form": "community-event",
-    "inScope": false,
-    "scopeReason": "Karaoke night, not performance",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "224323201ba927f8": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Tribute concert, not staged theatre",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "c79f00b05b43d073": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Gig by three bands",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "2363ede1a7ef5bab": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Tribute concert, not staged theatre",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "5f1a74058161dd32": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Gig with DJ set",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "683142bbeddbf2a7": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Band concert",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "bc3e692f1a159a9d": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Band gig",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "03999938349760c0": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Concert tour",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "5bfc64d96dfae7b4": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Album anniversary concert",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "c86cd4364aa5cffb": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Ukulele residency gig",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "0c6eb190b049ca3a": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Film screening",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "30cf64e88cd383a9": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Film with live music",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "517b4f3c7ec5839b": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Concert by two bands",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "bfc75b9c129f548d": {
-    "form": "community-event",
-    "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "1c7eea179ca3612f": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Tribute band concert",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "998db3d3f31f23f0": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "EP launch gig",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "13cdd732945857aa": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Songwriters' music night",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "06f2eea74bd9e6a8": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Album club music event",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "556ef6aa9f05a72e": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Indie-folk gig",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "c5aa4408d38d6805": {
-    "form": "community-event",
-    "inScope": false,
-    "scopeReason": "Photography exhibition",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "098819b6b0a5d83e": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Alt-folk gig",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "c0950bb8ff47aef9": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Folk trio concert",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "74619beb2919c902": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Jazz gig",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "806c316fd61c8c10": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Singing event, likely concert",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "7deaa773414210b3": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Experimental music gig",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "b5f73578668bc8e9": {
-    "form": "community-event",
-    "inScope": true,
-    "scopeReason": "Tribute night celebrating a life",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "b2e82de76d55b054": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Rock concert, not staged theatre",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "4b05fa2c64335286": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Indie-folk concert, not theatre",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "22dd68a3008b08ea": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Tribute concert, not theatre",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "dbbde3baf6ac0076": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Tribute concert, not theatre",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "c5a02bb6751da70a": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Underground music gig",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "1f96249656f73b16": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Country music concert",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "665db458692f687c": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Singer concert, not theatre",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "8a38661978170dd8": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Classical music recital",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "faaf9b06aa4955d8": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Live music double bill",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "88dce42b86cc526e": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Tribute band concert",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "3e18582f279ed49d": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Singer-songwriter concert",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "09ae6ba431174dab": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Live music concert, not theatre",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "382c19db4aad35cc": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Tribute band concert",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "b744929a53a13be0": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Live music concert",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "f2317e56633dd921": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Experimental music gig",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "ed811e798387f9e1": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Classical Arabic music concert",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "2220c42c11e6d424": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Pop/rock concert",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "a144fb7f9788acc1": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Pop band concert",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "7ecf7f98b10ce1df": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Tribute concert with singers",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "fb61d1a1678682ee": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Rock concert",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "281c73d5acaa143f": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Experimental music gig",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "cdb1efcbfd4940e7": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Country music concert",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "893dfe3603e8f86b": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Live music gig",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "0c115c136f269d00": {
-    "form": "community-event",
-    "inScope": false,
-    "scopeReason": "Holiday club, not a performance",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "72e1ca89cfdd0321": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Band playing original music",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "a9258a394906a770": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Singer-songwriter concert",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "a8acc41e3e53fde4": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Band playing original music",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "763315ee97e0b04a": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Tribute band concert",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "68844bebfcb4a1c6": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Band playing original music",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "a4e1de917ba228ee": {
-    "form": "community-event",
-    "inScope": false,
-    "scopeReason": "Celebration event, not a show",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "d959861075a0f8fc": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Guitar anthems concert",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "3fe72a14bbbd841e": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Singer-songwriter concert",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "17a47c711e6245cb": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Boyband tribute concert",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "037f6dde87697926": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Singer-songwriter concert",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "70b3f6a3f5d8133b": {
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "taggedAt": "2026-10-18"
+  },
+  "087e1a4e4c7b2c91": {
     "form": "stand-up",
     "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
+    "scopeReason": "Stand-up comedy tour show",
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "taggedAt": "2026-10-18"
   },
-  "67d91338b43a5405": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Likely a music gig, not theatre.",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "a18cb74f599e56ad": {
-    "form": "stand-up",
-    "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "481e7acbd8497cae": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Concert by a singer-songwriter.",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "5aa98f1a9c912810": {
-    "form": "play",
-    "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "a5c680a83cfbed3f": {
-    "form": "talk",
-    "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "f61c3db06c062cef": {
+  "255c9c850079136a": {
     "form": "musical",
     "inScope": true,
     "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "taggedAt": "2026-10-18"
   },
-  "525d1d4c45430bf4": {
+  "87736a130c5e00f0": {
     "form": "stand-up",
     "inScope": true,
     "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "taggedAt": "2026-10-18"
   },
-  "7512a016340a0c38": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Tribute concert, not theatre.",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
+  "29fb36b1816e1857": {
+    "form": "play",
+    "inScope": true,
+    "scopeReason": "Historical drama staged as theatre",
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "taggedAt": "2026-10-18"
   },
-  "821513b9eb996c6c": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Likely a music gig.",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "ad839af19d6c49f9": {
+  "fae299581e275343": {
     "form": "stand-up",
     "inScope": true,
     "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "taggedAt": "2026-10-18"
   },
-  "c9190b978525e8c5": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Intimate music concert.",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "27126ba5b81b5fd8": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Tribute concert, not theatre.",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "ae57f6477b8f3673": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Likely a gig or club night",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "98db02158ec9b073": {
-    "form": "stand-up",
-    "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "d575e86302691acc": {
-    "form": "stand-up",
-    "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "3f7021e246447f18": {
+  "7cdc8d87a6b594f9": {
     "form": "play",
     "inScope": true,
     "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "taggedAt": "2026-10-18"
   },
-  "1cc456c00f56db41": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Tribute concert, not theatre",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "f3eb1e5d3bfc710d": {
-    "form": "pantomime",
-    "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "17670c03bb0dd3dc": {
+  "e9291d17ff4b0eaa": {
     "form": "musical",
     "inScope": true,
     "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "taggedAt": "2026-10-18"
   },
-  "f89f0a4a2d8373b6": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Likely a gig",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "ecfabb78a086d2df": {
-    "form": "community-event",
-    "inScope": false,
-    "scopeReason": "Ceilidh is a social dance event",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "e263d036e7cbb6c5": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Tribute concert",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "404803bb33e92374": {
-    "form": "talk",
-    "inScope": false,
-    "scopeReason": "Sports talk event",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "184dfcf71185f401": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Tribute concert",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "985e63d1cd36e110": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Concert by singer-songwriters",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "58519be1aa5c152f": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Tribute band concert",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "4601968dcd4c9029": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Tribute band concert",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "579e809971379121": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Concert of musical songs",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "d0e015f04baa8327": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Tribute band concert",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "3012640d99bbb8d9": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Concert of pop songs",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "93431267529981be": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Tribute band concert",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "bca65f9a2092f957": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Concert of musical songs",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "ed19964ec4c8ab45": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Tribute band concert",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "f7aa7d3285329552": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Tribute band concert",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "f6d2dd4f5969f8d0": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Band concert",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "10320c5f1cc022a1": {
-    "form": "workshop",
-    "inScope": false,
-    "scopeReason": "Music lesson, not performance",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "d4893cc2e6cb6a31": {
-    "form": "workshop",
-    "inScope": false,
-    "scopeReason": "Craft group, not performance",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "fa99008982c6696f": {
-    "form": "workshop",
+  "985b53361453c429": {
+    "form": "play",
     "inScope": true,
     "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "taggedAt": "2026-10-18"
   },
-  "cfdbb952a5dea6ea": {
-    "form": "workshop",
-    "inScope": false,
-    "scopeReason": "Art class, not performance",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "facd8d6ec34edc60": {
-    "form": "workshop",
-    "inScope": false,
-    "scopeReason": "Art class, not performance",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "38c24fd348dae44f": {
-    "form": "workshop",
-    "inScope": false,
-    "scopeReason": "Art class, not performance",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "b8d4b5a491392bcf": {
-    "form": "workshop",
-    "inScope": false,
-    "scopeReason": "Play session, not performance",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "06014075c284dd95": {
-    "form": "workshop",
+  "b8503d8e3700d500": {
+    "form": "play",
     "inScope": true,
     "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "taggedAt": "2026-10-18"
   },
-  "fd1e282b3616d3e9": {
-    "form": "workshop",
-    "inScope": false,
-    "scopeReason": "Singing class, not performance",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "d0462d327f7b3758": {
-    "form": "workshop",
-    "inScope": false,
-    "scopeReason": "Art class, not performance",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "e3cfa1af25e74039": {
-    "form": "community-event",
-    "inScope": false,
-    "scopeReason": "Comics convention, not performance",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "7f068a228bb767cc": {
-    "form": "talk",
+  "050e14611fe784bc": {
+    "form": "musical",
     "inScope": true,
     "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "taggedAt": "2026-10-18"
   },
-  "a34bd4e45cf1bf56": {
+  "e4b5044ce9861e75": {
+    "form": "dance",
+    "inScope": true,
+    "scopeReason": "Dance show by Strictly dancers",
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "taggedAt": "2026-10-18"
+  },
+  "515ff1c8c5ee9688": {
+    "form": "cabaret",
+    "inScope": true,
+    "scopeReason": "Drag cabaret performance",
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "taggedAt": "2026-10-18"
+  },
+  "b84abcbbc963b0ca": {
     "form": "physical-theatre",
     "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
+    "scopeReason": "Circus-led production",
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "taggedAt": "2026-10-18"
   },
-  "9b69b95d90ccf98f": {
-    "form": "community-event",
-    "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "a4218406f0974e5d": {
-    "form": "community-event",
-    "inScope": false,
-    "scopeReason": "Holiday club, not a performance",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "8c4531504ada4312": {
+  "c20b14cf19719746": {
     "form": "play",
     "inScope": true,
     "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "taggedAt": "2026-10-18"
   },
-  "e4b66b8f51f74fff": {
-    "form": "community-event",
-    "inScope": false,
-    "scopeReason": "Celebration day, not a performance",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "c6941b85eef3d9eb": {
-    "form": "community-event",
-    "inScope": false,
-    "scopeReason": "Play day, not a performance",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "00f32fb815e31949": {
-    "form": "pantomime",
-    "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-09-10"
-  },
-  "2d5d4390fd2531d6": {
-    "form": "workshop",
-    "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-10-15"
-  },
-  "5e36d8ea97fb2fee": {
-    "form": "spoken-word",
-    "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-10-15"
-  },
-  "e864a6e928459817": {
-    "form": "community-event",
-    "inScope": false,
-    "scopeReason": "Film screening, not live performance",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-10-15"
-  },
-  "c08cba14b4c06453": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Concert by singer-songwriter",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-10-15"
-  },
-  "a6ec4b75d57d8b17": {
-    "form": "talk",
-    "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-10-15"
-  },
-  "34732f98844079bc": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Album launch concert",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-10-15"
-  },
-  "bd9b14ea1c53cf56": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Hip-hop performance",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-10-15"
-  },
-  "3f47ae7b3a6f18dc": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Live music gig",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-10-15"
-  },
-  "ca3c1aafa205b4b7": {
-    "form": "play",
-    "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-10-15"
-  },
-  "cda0e73bff9f7270": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Rock duo concert",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-10-15"
-  },
-  "6c61fd72d0caa18d": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Solo music show",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-10-15"
-  },
-  "c17b5e279b887740": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Indie folk concert",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-10-15"
-  },
-  "def5d56f277dadae": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Live music performance, not theatre.",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-10-15"
-  },
-  "05332b7fac01a6e5": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Concert tour by a singer.",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-10-15"
-  },
-  "458954a1b278a250": {
-    "form": "community-event",
-    "inScope": false,
-    "scopeReason": "Karaoke night, not a performance.",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-10-15"
-  },
-  "4c81d112a8cbb9fc": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Jazz trio concert.",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-10-15"
-  },
-  "fb05abe80b4d27a8": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Album launch concert.",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-10-15"
-  },
-  "a9fa3f055a7532c4": {
-    "form": "community-event",
-    "inScope": true,
-    "scopeReason": "Participatory arts celebration.",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-10-15"
-  },
-  "08a039925382a91c": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Folk music performance.",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-10-15"
-  },
-  "a58241563df82eee": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Indie/electronic concert.",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-10-15"
-  },
-  "38844084fd623134": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Pedal steel guitar concert.",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-10-15"
-  },
-  "dc2d6cf99228d2c1": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Electronic/ambient concert.",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-10-15"
-  },
-  "2fe1021781354a94": {
-    "form": "musical",
-    "inScope": true,
-    "scopeReason": "New musical theatre work.",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-10-15"
-  },
-  "a64d89ae8ac34aa5": {
-    "form": "play",
-    "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-10-15"
-  },
-  "96a8ae603d1164c4": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Concert by singer-songwriter duo.",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-10-15"
-  },
-  "e00c8a91455ce776": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Improvised music session.",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-10-15"
-  },
-  "a2ed2732fa32df28": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Band performing songs from catalogue.",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-10-15"
-  },
-  "6d11e31089b9139f": {
-    "form": "talk",
-    "inScope": true,
-    "scopeReason": "Conversation initiative about democracy.",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-10-15"
-  },
-  "c86520b9fcb54b52": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "International collective of musicians.",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-10-15"
-  },
-  "9885d661a2cdddf2": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Alternative artist concert.",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-10-15"
-  },
-  "0b36da4da86534f6": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Multiple bands playing live.",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-10-15"
-  },
-  "f42aa9f1a245cbc1": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Film screening with live score.",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-10-15"
-  },
-  "3e04ad712adc3123": {
-    "form": "cabaret",
-    "inScope": true,
-    "scopeReason": "Queer rock, comedy, drag show.",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-10-15"
-  },
-  "50c496a118405369": {
-    "form": "talk",
-    "inScope": true,
-    "scopeReason": "Pre-show talk about opera.",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-10-15"
-  },
-  "8b08c0c8194511bb": {
-    "form": "play",
-    "inScope": true,
-    "scopeReason": "Scripted play about skating instructors.",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-10-15"
-  },
-  "fb6eea8acb9eae7d": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Film screening with live score.",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-10-15"
-  },
-  "dab025ffd564068e": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Participatory singing event, not a performance.",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-10-15"
-  },
-  "03cb56471bd81cba": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Gig with multiple bands.",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-10-15"
-  },
-  "2fefcaadaf189bd8": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Likely a music performance.",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-10-15"
-  },
-  "2bf61c9988f4b5e8": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Album release gig.",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-10-15"
-  },
-  "0581844fe2c5a792": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Too thin to judge, treat as in scope.",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-10-15"
-  },
-  "42b6d3c8b41dc401": {
-    "form": "play",
-    "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-10-15"
-  },
-  "1e9ad628842f50fe": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Band concert.",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-10-15"
-  },
-  "6e3c15e3b36ee961": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Concert tour.",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-10-15"
-  },
-  "4ab2963bb4051999": {
-    "form": "opera",
-    "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-10-15"
-  },
-  "8fb82b8bdc6211b9": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Singer-songwriter gig.",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-10-15"
-  },
-  "1f42b52bb50ecb47": {
-    "form": "play",
-    "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-10-15"
-  },
-  "dd526998d1960367": {
-    "form": "community-event",
-    "inScope": false,
-    "scopeReason": "Charity raffle, not a performance.",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-10-15"
-  },
-  "6e4cf0bb663847bd": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Concert of film themes by orchestra.",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-10-15"
-  },
-  "3246b4299716b370": {
-    "form": "play",
-    "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-10-15"
-  },
-  "2ebc5dd9708cead9": {
-    "form": "cabaret",
-    "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-10-15"
-  },
-  "1e08cdea0c30fe54": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Singer-songwriter concert.",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-10-15"
-  },
-  "b0be46424dccd590": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Soul/funk band concert.",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-10-15"
-  },
-  "6e2e86ae18a2bc78": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Experimental music gig.",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-10-15"
-  },
-  "01fd3f3e70998a05": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Singer-songwriter concert.",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-10-15"
-  },
-  "ff9c69f91f656548": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Concert by musician.",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-10-15"
-  },
-  "3a62bfe2df91be3f": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Album launch concert.",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-10-15"
-  },
-  "d19c7565523bee56": {
+  "499b8b3ac3baa96c": {
     "form": "dance",
     "inScope": true,
     "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-10-15"
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "taggedAt": "2026-10-18"
   },
-  "5bd9a0aee476d7f4": {
-    "form": "play",
-    "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-10-15"
-  },
-  "686ccca6308d9c68": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Band concert.",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-10-15"
-  },
-  "2d9c0ecc3bfa7268": {
-    "form": "workshop",
-    "inScope": true,
-    "scopeReason": "Weekly performing arts classes",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-10-15"
-  },
-  "a8807ebf3c9554c4": {
-    "form": "workshop",
-    "inScope": true,
-    "scopeReason": "Weekly performing arts classes",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-10-15"
-  },
-  "357232eaff548673": {
-    "form": "physical-theatre",
-    "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-10-15"
-  },
-  "02c484b89d4e4bc1": {
-    "form": "pantomime",
-    "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-10-15"
-  },
-  "de1f5689d37b9f4b": {
-    "form": "talk",
-    "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-10-15"
-  },
-  "3f119470dbf1f0a3": {
-    "form": "music",
-    "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-10-15"
-  },
-  "c21e77390ba3c144": {
-    "form": "musical",
-    "inScope": true,
-    "scopeReason": "Musical play about Burns",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-10-15"
-  },
-  "09c1465dd7a15109": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Concert by singer-songwriter",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-10-15"
-  },
-  "c8fc5a4e9b9ce924": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Concert of folk songs",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-10-15"
-  },
-  "3084082a40c4d636": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Irish traditional band concert",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-10-15"
-  },
-  "55e419912adc69b2": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Folk band concert",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-10-15"
-  },
-  "7a957c416437047e": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Bluegrass concert",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-10-15"
-  },
-  "30ecd905b33033c1": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Concert by a folk musician",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-10-15"
-  },
-  "454f26960c8d62e7": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Celtic folk concert",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-10-15"
-  },
-  "cc7f80d197d1f970": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Folk concert",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-10-15"
-  },
-  "665ba7a3c18a8b42": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Tribute concert",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-10-15"
-  },
-  "937e9baff7482cb3": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Collaborative music performance",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-10-15"
-  },
-  "5cc04457d0ed40fa": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Irish folk concert",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-10-15"
-  },
-  "e02bad77a026c9f7": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Tribute band concert",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-10-15"
-  },
-  "8321ebd897173d5a": {
-    "form": "talk",
-    "inScope": true,
-    "scopeReason": "Museum tour with live elements",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-10-15"
-  },
-  "9ebcc88aaa3bd74a": {
-    "form": "play",
-    "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-10-15"
-  },
-  "40fa5d4a44ef8fd2": {
-    "form": "play",
-    "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-10-15"
-  },
-  "21edb62933a02a83": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Tribute concert",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-10-15"
-  },
-  "75611d94ecbe42b5": {
+  "cd4ed6d2a092d57a": {
     "form": "cabaret",
     "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-10-15"
+    "scopeReason": "Drag vocal cabaret show",
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "taggedAt": "2026-10-18"
   },
-  "1a88e0a9ecb55bbb": {
+  "566f109dbbea5ca0": {
     "form": "stand-up",
     "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-10-15"
+    "scopeReason": "Stand-up comedy hour",
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "taggedAt": "2026-10-18"
   },
-  "030a3845c15eb492": {
-    "form": "talk",
-    "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-10-15"
-  },
-  "636bf6a333b3124e": {
+  "8ad48d726968898d": {
     "form": "stand-up",
     "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-10-15"
-  },
-  "e803dae92a4042f2": {
-    "form": "talk",
-    "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-10-15"
-  },
-  "236aef4b063388e2": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Music and song celebration",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-10-15"
-  },
-  "38bd874851fcea46": {
-    "form": "stand-up",
-    "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-10-15"
-  },
-  "21d1325345a52a87": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Tribute band concert",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-10-15"
-  },
-  "8b3e99db577ee672": {
-    "form": "stand-up",
-    "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-10-15"
-  },
-  "a4134b7c01dc3946": {
-    "form": "stand-up",
-    "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-10-15"
-  },
-  "cbbabfb4fc51b660": {
-    "form": "musical",
-    "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-10-15"
-  },
-  "91f6c5ff7997b3e7": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Tribute band concert",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-10-15"
-  },
-  "f394c63b382ddca3": {
-    "form": "stand-up",
-    "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-10-15"
-  },
-  "ac7a28419da748f6": {
-    "form": "play",
-    "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-10-15"
-  },
-  "0285a4b1d6c29ddc": {
-    "form": "cabaret",
-    "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-10-15"
-  },
-  "dd17de3239c874db": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Concert of Bond music",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-10-15"
-  },
-  "ff1fe4b2f5ee5027": {
-    "form": "play",
-    "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-10-15"
-  },
-  "5eec09a6044f1506": {
-    "form": "musical",
-    "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-10-15"
-  },
-  "dc36525e0d510112": {
-    "form": "play",
-    "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-10-15"
-  },
-  "8ec6edf765ed2e2a": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Tribute band concert",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-10-15"
-  },
-  "50cdd0f13c0ebe36": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Disco tribute concert",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-10-15"
-  },
-  "ff16dc89357b5fbc": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Singer-songwriter concert",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-10-15"
-  },
-  "6795e365a7319464": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "ABBA tribute concert",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-10-15"
-  },
-  "b060dd6b66c4c92b": {
-    "form": "play",
-    "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-10-15"
-  },
-  "d7cd93d1087ef8de": {
-    "form": "dance",
-    "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-10-15"
-  },
-  "1cad301e84e7b009": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Tribute concert, not theatre.",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-10-15"
-  },
-  "14153a563864846b": {
-    "form": "cabaret",
-    "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-10-15"
-  },
-  "33778378e0b01f1a": {
-    "form": "physical-theatre",
-    "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-10-15"
-  },
-  "acdd8d82abee9950": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Band playing Beatles songs.",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-10-15"
-  },
-  "e7b31c6f90196b22": {
-    "form": "play",
-    "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-10-15"
-  },
-  "9f1ea67a8c784afb": {
-    "form": "dance",
-    "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-10-15"
-  },
-  "fc00dcbfa5ec0f10": {
-    "form": "stand-up",
-    "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-10-18"
-  },
-  "9bf3913c9817805b": {
-    "form": "spoken-word",
-    "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-10-18"
-  },
-  "f7d5f839f5f6c37f": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Concert by a pop duo",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-10-18"
-  },
-  "b4028c705d3503b4": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Concert by a musician",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-10-18"
-  },
-  "5136706e3893139f": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Concert by a band",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-10-18"
-  },
-  "627b1b2fa480fa23": {
-    "form": "opera",
-    "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-10-18"
-  },
-  "9e9ba791dedecad1": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Concert by a singer-songwriter",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-10-18"
-  },
-  "3cf58f27dbe1e28d": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Orchestra concert of film themes",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-10-18"
-  },
-  "1993e980eb6ece91": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Concert by a singer-songwriter",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-10-18"
-  },
-  "8234966b2dabf26a": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Concert by a covers band",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-10-18"
-  },
-  "0ba5602dabb248a6": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Concert by a singer-songwriter",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-10-18"
-  },
-  "9902a1d4a5c21820": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Concert by a band",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-10-18"
-  },
-  "b4726d3134048f47": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Concert by a rock/folk band.",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-10-18"
-  },
-  "10081ee0f5829058": {
-    "form": "musical",
-    "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-10-18"
-  },
-  "db4239270e17cb78": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Irish traditional band concert.",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-10-18"
-  },
-  "240477280ef255e1": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Singer-songwriter concert.",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-10-18"
-  },
-  "92bcce4c1533e4dc": {
-    "form": "stand-up",
-    "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-10-18"
-  },
-  "4f014c6b4158da56": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Singer-songwriter concert.",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-10-18"
-  },
-  "fa3f4718850569c4": {
-    "form": "musical",
-    "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-10-18"
-  },
-  "5070219b95c673bb": {
-    "form": "music",
-    "inScope": false,
-    "scopeReason": "Band playing Beatles album live.",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-10-18"
-  },
-  "8dd9389525b925f4": {
-    "form": "cabaret",
-    "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-10-18"
-  },
-  "d248b5daeffdc970": {
-    "form": "stand-up",
-    "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
-    "taggedAt": "2026-10-18"
-  },
-  "597d5f8bd3c69723": {
-    "form": "stand-up",
-    "inScope": true,
-    "scopeReason": "",
-    "model": "deepseek/deepseek-v4-flash",
+    "scopeReason": "Character comedy stage show",
+    "provider": "deepseek",
+    "model": "deepseek-flash",
     "taggedAt": "2026-10-18"
   }
 }

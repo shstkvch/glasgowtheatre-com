@@ -1,6 +1,6 @@
 {
   "apiVersion": "1.1",
-  "generatedAt": "2026-10-18T09:56:21.462Z",
+  "generatedAt": "2026-10-18T10:42:04.878Z",
   "refreshedAt": "2026-10-18T09:55:39.286Z",
   "total": 42,
   "count": 42,
@@ -213,9 +213,9 @@
       "id": "pavilion-its-not-where-you-start-by-scott-kyle",
       "url": "https://glasgowtheatre.com/shows/pavilion-its-not-where-you-start-by-scott-kyle.html",
       "title": "It's Not Where You Start By Scott Kyle",
-      "artForm": "spoken-word",
+      "artForm": "play",
       "tags": [
-        "spoken-word"
+        "play"
       ],
       "producer": null,
       "description": "Based on the award-winning bestselling memoir of the same name, the It’s Not Where You Start live show is a powerful, uplifting, and deeply personal storytelling experience that blends theatre, autobiography, and live performance with projected animation and film. It tells the extraordinary true...",
@@ -1563,9 +1563,9 @@
       "id": "pavilion-an-audience-with-liam-dolan-part-2",
       "url": "https://glasgowtheatre.com/shows/pavilion-an-audience-with-liam-dolan-part-2.html",
       "title": "An Audience With... Liam Dolan (Part 2)",
-      "artForm": "talk",
+      "artForm": "cabaret",
       "tags": [
-        "talk"
+        "cabaret"
       ],
       "producer": null,
       "description": "Pavilion Pantomime favourite Liam Dolan is back with his brand new show for 2027. Following on from the success of “An Audience With...” in 2026, Liam couldn’t squeeze everything from his 30 year career in showbusiness, the audience wanted more so Liam decided to write a “Part Two” Expect an...",

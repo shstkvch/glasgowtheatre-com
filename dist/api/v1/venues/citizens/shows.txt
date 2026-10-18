@@ -8,7 +8,7 @@
 2026-11-05	2026-11-07	Do Not Pass Go	Citizens Theatre	play	17.5	https://glasgowtheatre.com/shows/citizens-do-not-pass-go.html
 2026-11-13	2026-11-13	An t-Ùrlar as Àirde (The Highest Stage)	Citizens Theatre	play	17.5	https://glasgowtheatre.com/shows/citizens-an-t-rlar-as-irde-the-highest-stage.html
 2026-11-28	2026-12-31	Cinderella	Citizens Theatre	pantomime	12.5	https://glasgowtheatre.com/shows/citizens-cinderella.html
-2026-12-10	2026-12-11	Poggle and Me	Citizens Theatre	physical-theatre		https://glasgowtheatre.com/shows/citizens-poggle-and-me.html
+2026-12-10	2026-12-11	Poggle and Me	Citizens Theatre	dance		https://glasgowtheatre.com/shows/citizens-poggle-and-me.html
 2027-01-22	2027-01-22	Jill Jackson and Support	Citizens Theatre	music	28	https://glasgowtheatre.com/shows/citizens-jill-jackson-and-support.html
 2027-01-23	2027-01-23	Dallahan with Laura Cortese	Citizens Theatre	music	22	https://glasgowtheatre.com/shows/citizens-dallahan-with-laura-cortese.html
 2027-01-25	2027-01-25	McGoldrick, McCusker & Doyle and Friends	Citizens Theatre	music	24	https://glasgowtheatre.com/shows/citizens-mcgoldrick-mccusker-doyle-and-friends.html

@@ -1,14 +1,14 @@
 {
   "apiVersion": "1.1",
-  "generatedAt": "2026-10-18T09:56:21.462Z",
+  "generatedAt": "2026-10-18T10:42:04.878Z",
   "refreshedAt": "2026-10-18T09:55:39.286Z",
   "show": {
     "id": "kings-an-evening-with-gregor-fisher",
     "url": "https://glasgowtheatre.com/shows/kings-an-evening-with-gregor-fisher.html",
     "title": "An Evening With Gregor Fisher",
-    "artForm": "talk",
+    "artForm": "stand-up",
     "tags": [
-      "talk"
+      "stand-up"
     ],
     "producer": null,
     "description": "Gregor Fisher is back on the road with the second leg of his UK tour following a completely sold-out and critically acclaimed Edinburgh Festival season.",

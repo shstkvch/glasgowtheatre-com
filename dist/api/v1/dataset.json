@@ -1,25 +1,25 @@
 {
   "apiVersion": "1.1",
-  "generatedAt": "2026-10-18T09:56:21.462Z",
+  "generatedAt": "2026-10-18T10:42:04.878Z",
   "refreshedAt": "2026-10-18T09:55:39.286Z",
   "site": "https://glasgowtheatre.com",
   "counts": {
-    "shows": 139,
+    "shows": 137,
     "venues": 14,
     "venuesWithShows": 12,
     "artForms": {
-      "talk": 17,
-      "stand-up": 26,
+      "talk": 12,
+      "stand-up": 27,
       "play": 27,
-      "spoken-word": 6,
-      "musical": 17,
+      "spoken-word": 7,
+      "musical": 16,
       "opera": 4,
       "community-event": 2,
       "dance": 7,
-      "physical-theatre": 5,
+      "physical-theatre": 6,
       "cabaret": 7,
       "pantomime": 8,
-      "workshop": 2,
+      "workshop": 3,
       "music": 9,
       "tour": 2
     }
@@ -603,9 +603,9 @@
       "id": "pavilion-its-not-where-you-start-by-scott-kyle",
       "url": "https://glasgowtheatre.com/shows/pavilion-its-not-where-you-start-by-scott-kyle.html",
       "title": "It's Not Where You Start By Scott Kyle",
-      "artForm": "spoken-word",
+      "artForm": "play",
       "tags": [
-        "spoken-word"
+        "play"
       ],
       "producer": null,
       "description": "Based on the award-winning bestselling memoir of the same name, the It’s Not Where You Start live show is a powerful, uplifting, and deeply personal storytelling experience that blends theatre, autobiography, and live performance with projected animation and film. It tells the extraordinary true...",
@@ -4033,9 +4033,9 @@
       "id": "tramway-hanna-tuulikki-deer-dancer",
       "url": "https://glasgowtheatre.com/shows/tramway-hanna-tuulikki-deer-dancer.html",
       "title": "Hanna Tuulikki - Deer Dancer",
-      "artForm": "dance",
+      "artForm": "physical-theatre",
       "tags": [
-        "dance"
+        "physical-theatre"
       ],
       "producer": null,
       "description": "Step into the world of Deer Dancer. See the theatre; hear the drum beat. Observe a quintet of womxn performers take it in turns to play five hybrid characters. In the space between wild-deer-ness and performed male-ness, see them gesture, lip-sync, dance and sing, undressing and redressing into...",
@@ -4078,96 +4078,6 @@
         "credit": null
       },
       "bookingUrl": "https://www.tramway.org/event/0cf77209-337f-4dd1-b232-b48d00ffe565/",
-      "updatedAt": "2026-10-18"
-    },
-    {
-      "id": "theatre-royal-ice-dragon",
-      "url": "https://glasgowtheatre.com/shows/theatre-royal-ice-dragon.html",
-      "title": "Ice Dragon",
-      "artForm": "musical",
-      "tags": [
-        "musical"
-      ],
-      "producer": null,
-      "description": "Travel through the seasons in Ice Dragon, an interactive musical adventure for babies and children under six years.",
-      "venue": {
-        "id": "theatre-royal",
-        "name": "Theatre Royal",
-        "area": "City Centre"
-      },
-      "run": {
-        "opens": "2026-11-30",
-        "closes": "2026-12-06",
-        "time": "10:00"
-      },
-      "schedule": null,
-      "performances": [
-        {
-          "date": "2026-11-30",
-          "time": "10:00",
-          "price": 12
-        },
-        {
-          "date": "2026-11-30",
-          "time": "11:30",
-          "price": 12
-        },
-        {
-          "date": "2026-12-01",
-          "time": "10:00",
-          "price": 12
-        },
-        {
-          "date": "2026-12-01",
-          "time": "11:30",
-          "price": 12
-        },
-        {
-          "date": "2026-12-02",
-          "time": "10:00",
-          "price": 12
-        },
-        {
-          "date": "2026-12-02",
-          "time": "11:30",
-          "price": 12
-        },
-        {
-          "date": "2026-12-03",
-          "time": "10:00",
-          "price": 12
-        },
-        {
-          "date": "2026-12-03",
-          "time": "11:30",
-          "price": 12
-        },
-        {
-          "date": "2026-12-04",
-          "time": "10:00",
-          "price": 12
-        }
-      ],
-      "pricing": {
-        "currency": "GBP",
-        "from": 12,
-        "to": null,
-        "concessionFrom": null,
-        "concessionTo": null,
-        "free": false,
-        "payWhatYouLike": false,
-        "text": null,
-        "source": "venue-feed",
-        "checkedAt": "2026-10-18"
-      },
-      "accessibility": null,
-      "durationMinutes": 45,
-      "image": {
-        "url": "https://glasgowtheatre.com/images/113cfc81e2cde6731711.webp",
-        "alt": "Ice Dragon",
-        "credit": null
-      },
-      "bookingUrl": "https://www.atgtickets.com/shows/ice-dragon/theatre-royal-glasgow/calendar/",
       "updatedAt": "2026-10-18"
     },
     {
@@ -4220,9 +4130,9 @@
       "id": "tramway-hayley-earlam-brrr",
       "url": "https://glasgowtheatre.com/shows/tramway-hayley-earlam-brrr.html",
       "title": "Hayley Earlam - Brrr",
-      "artForm": "play",
+      "artForm": "physical-theatre",
       "tags": [
-        "play"
+        "physical-theatre"
       ],
       "producer": null,
       "description": "Hayley Earlam - Brrr at Tramway, Glasgow.",
@@ -4502,9 +4412,9 @@
       "id": "citizens-poggle-and-me",
       "url": "https://glasgowtheatre.com/shows/citizens-poggle-and-me.html",
       "title": "Poggle and Me",
-      "artForm": "physical-theatre",
+      "artForm": "dance",
       "tags": [
-        "physical-theatre"
+        "dance"
       ],
       "producer": null,
       "description": "This sensory, inclusive dance-theatre performance is made especially for and with children with complex needs ages 7-15 years. Playfulness within the work creates space for live response between the audience and performers, with its adaptable approach allowing the individuality of each child to be...",
@@ -5031,9 +4941,9 @@
       "id": "tron-born-in-kyle-billy-kay-robyn-stapleton",
       "url": "https://glasgowtheatre.com/shows/tron-born-in-kyle-billy-kay-robyn-stapleton.html",
       "title": "Born in Kyle: Billy Kay & Robyn Stapleton",
-      "artForm": "talk",
+      "artForm": "spoken-word",
       "tags": [
-        "talk"
+        "spoken-word"
       ],
       "producer": null,
       "description": "Recommended Age Guide 14+ “O aw the airts the wind can blaw, I dearly like the West.” In his memoir of growing up in Ayrshire, Billy Kay refers to this song as an Ayrshire anthem, one of many by Burns which gave people their strong Scottish identity. Here, Billy is … Continued",
@@ -6154,67 +6064,12 @@
       "updatedAt": "2026-10-18"
     },
     {
-      "id": "kings-natural-history-museum-presents-dinosaurs-live",
-      "url": "https://glasgowtheatre.com/shows/kings-natural-history-museum-presents-dinosaurs-live.html",
-      "title": "Natural History Museum presents Dinosaurs Live",
-      "artForm": "talk",
-      "tags": [
-        "talk"
-      ],
-      "producer": null,
-      "description": "For the first time since 1881, the home of dinosaurs, London’s Natural History Museum, is going on tour!",
-      "venue": {
-        "id": "kings",
-        "name": "King's Theatre",
-        "area": "City Centre"
-      },
-      "run": {
-        "opens": "2027-02-13",
-        "closes": "2027-02-13",
-        "time": "12:30"
-      },
-      "schedule": null,
-      "performances": [
-        {
-          "date": "2027-02-13",
-          "time": "12:30",
-          "price": 16.5
-        },
-        {
-          "date": "2027-02-13",
-          "time": "15:30",
-          "price": 16.5
-        }
-      ],
-      "pricing": {
-        "currency": "GBP",
-        "from": 16.5,
-        "to": null,
-        "concessionFrom": null,
-        "concessionTo": null,
-        "free": false,
-        "payWhatYouLike": false,
-        "text": null,
-        "source": "venue-feed",
-        "checkedAt": "2026-10-18"
-      },
-      "accessibility": null,
-      "durationMinutes": 60,
-      "image": {
-        "url": "https://glasgowtheatre.com/images/f8f42d0b121b72ee1b4e.webp",
-        "alt": "Natural History Museum presents Dinosaurs Live",
-        "credit": null
-      },
-      "bookingUrl": "https://www.atgtickets.com/shows/natural-history-museum-presents-dinosaurs-live/kings-theatre-glasgow/calendar/",
-      "updatedAt": "2026-10-18"
-    },
-    {
       "id": "kings-all-killa-no-filla-live-at-valentines-day",
       "url": "https://glasgowtheatre.com/shows/kings-all-killa-no-filla-live-at-valentines-day.html",
       "title": "All Killa No Filla - Live At Valentine's Day!",
-      "artForm": "stand-up",
+      "artForm": "spoken-word",
       "tags": [
-        "stand-up"
+        "spoken-word"
       ],
       "producer": null,
       "description": "True love is out. True crime is in.",
@@ -6565,9 +6420,9 @@
       "id": "theatre-royal-scottish-opera-national-opera-studio",
       "url": "https://glasgowtheatre.com/shows/theatre-royal-scottish-opera-national-opera-studio.html",
       "title": "Scottish Opera - National Opera Studio",
-      "artForm": "talk",
+      "artForm": "workshop",
       "tags": [
-        "talk"
+        "workshop"
       ],
       "producer": null,
       "description": "As one of the National Opera Studio’s partners, Scottish Opera is delighted to host the 2026/27 NOS cohort – a group of the brightest rising star singers and repetiteurs from around the world – for a one-week residency of coaching with the Company’s Music Department, working with The Orchestra of...",
@@ -7344,9 +7199,9 @@
       "id": "pavilion-an-audience-with-liam-dolan-part-2",
       "url": "https://glasgowtheatre.com/shows/pavilion-an-audience-with-liam-dolan-part-2.html",
       "title": "An Audience With... Liam Dolan (Part 2)",
-      "artForm": "talk",
+      "artForm": "cabaret",
       "tags": [
-        "talk"
+        "cabaret"
       ],
       "producer": null,
       "description": "Pavilion Pantomime favourite Liam Dolan is back with his brand new show for 2027. Following on from the success of “An Audience With...” in 2026, Liam couldn’t squeeze everything from his 30 year career in showbusiness, the audience wanted more so Liam decided to write a “Part Two” Expect an...",
@@ -7494,9 +7349,9 @@
       "id": "kings-an-evening-with-gregor-fisher",
       "url": "https://glasgowtheatre.com/shows/kings-an-evening-with-gregor-fisher.html",
       "title": "An Evening With Gregor Fisher",
-      "artForm": "talk",
+      "artForm": "stand-up",
       "tags": [
-        "talk"
+        "stand-up"
       ],
       "producer": null,
       "description": "Gregor Fisher is back on the road with the second leg of his UK tour following a completely sold-out and critically acclaimed Edinburgh Festival season.",
@@ -7863,9 +7718,9 @@
       "id": "kings-gicf27-gala",
       "url": "https://glasgowtheatre.com/shows/kings-gicf27-gala.html",
       "title": "GICF27 Gala",
-      "artForm": "cabaret",
+      "artForm": "stand-up",
       "tags": [
-        "cabaret"
+        "stand-up"
       ],
       "producer": null,
       "description": "Don't miss this chance to see the very best of GICF27 at the show of the year!",
@@ -9025,7 +8880,7 @@
       "instagram": "kikitronica",
       "programme": "mixed",
       "url": "https://glasgowtheatre.com/venues/kings.html",
-      "upcomingShows": 22,
+      "upcomingShows": 21,
       "showsUrl": "https://glasgowtheatre.com/api/v1/venues/kings/shows.json",
       "concessions": {
         "url": "https://www.atgtickets.com/access/access-scheme/",
@@ -9234,7 +9089,7 @@
       "instagram": "theatreroyalglasgow",
       "programme": "mixed",
       "url": "https://glasgowtheatre.com/venues/theatre-royal.html",
-      "upcomingShows": 24,
+      "upcomingShows": 23,
       "showsUrl": "https://glasgowtheatre.com/api/v1/venues/theatre-royal/shows.json",
       "concessions": {
         "url": "https://www.atgtickets.com/access/access-scheme/",

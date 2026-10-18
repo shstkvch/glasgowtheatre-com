@@ -9,7 +9,7 @@
 2026-10-21	2026-10-24	GLOC presents 42nd Street	King's Theatre	musical	33.06	https://glasgowtheatre.com/shows/kings-gloc-presents-42nd-street.html
 2026-10-21	2026-10-24	The Prime of Miss Jean Brodie	Citizens Theatre	play	14.5	https://glasgowtheatre.com/shows/citizens-the-prime-of-miss-jean-brodie.html
 2026-10-21	2026-10-21	The Scottish Comedians	Pavilion Theatre	stand-up	37	https://glasgowtheatre.com/shows/pavilion-the-scottish-comedians.html
-2026-10-22	2026-10-22	It's Not Where You Start By Scott Kyle	Pavilion Theatre	spoken-word	31.5	https://glasgowtheatre.com/shows/pavilion-its-not-where-you-start-by-scott-kyle.html
+2026-10-22	2026-10-22	It's Not Where You Start By Scott Kyle	Pavilion Theatre	play	31.5	https://glasgowtheatre.com/shows/pavilion-its-not-where-you-start-by-scott-kyle.html
 2026-10-22	2026-11-07	Scottish Opera - Turandot	Theatre Royal	opera	24	https://glasgowtheatre.com/shows/theatre-royal-scottish-opera-turandot.html
 2026-10-22	2026-10-23	Thanks for Being Here	Tron Theatre	play	19	https://glasgowtheatre.com/shows/tron-thanks-for-being-here.html
 2026-10-23	2026-10-24	Billy & Tim - The Widescreen Edition	Pavilion Theatre	play	36.5	https://glasgowtheatre.com/shows/pavilion-billy-tim-the-widescreen-edition.html
@@ -59,15 +59,14 @@
 2026-11-21	2027-01-03	Aladdin (Pantomime)	King's Theatre	pantomime	15	https://glasgowtheatre.com/shows/kings-aladdin-pantomime.html
 2026-11-26	2027-01-10	Goldilocks and the Three Bonnie Bears	Pavilion Theatre	pantomime	23	https://glasgowtheatre.com/shows/pavilion-goldilocks-and-the-three-bonnie-bears.html
 2026-11-28	2026-12-31	Cinderella	Citizens Theatre	pantomime	12.5	https://glasgowtheatre.com/shows/citizens-cinderella.html
-2026-11-28	2026-11-28	Hanna Tuulikki - Deer Dancer	Tramway	dance	18	https://glasgowtheatre.com/shows/tramway-hanna-tuulikki-deer-dancer.html
-2026-11-30	2026-12-06	Ice Dragon	Theatre Royal	musical	12	https://glasgowtheatre.com/shows/theatre-royal-ice-dragon.html
+2026-11-28	2026-11-28	Hanna Tuulikki - Deer Dancer	Tramway	physical-theatre	18	https://glasgowtheatre.com/shows/tramway-hanna-tuulikki-deer-dancer.html
 2026-12-01	2026-12-24	Christmas Show: Hansel & Gretel	Platform	pantomime	10.5	https://glasgowtheatre.com/shows/platform-christmas-show-hansel-gretel.html
-2026-12-05	2026-12-05	Hayley Earlam - Brrr	Tramway	play	8	https://glasgowtheatre.com/shows/tramway-hayley-earlam-brrr.html
+2026-12-05	2026-12-05	Hayley Earlam - Brrr	Tramway	physical-theatre	8	https://glasgowtheatre.com/shows/tramway-hayley-earlam-brrr.html
 2026-12-08	2026-12-08	ATG Inspire Academy Juniors	Theatre Royal	workshop	110	https://glasgowtheatre.com/shows/theatre-royal-atg-inspire-academy-juniors.html
 2026-12-08	2026-12-08	ATG Inspire Academy Seniors	Theatre Royal	workshop	130	https://glasgowtheatre.com/shows/theatre-royal-atg-inspire-academy-seniors.html
 2026-12-08	2026-12-27	CATS	Theatre Royal	musical	21	https://glasgowtheatre.com/shows/theatre-royal-cats.html
 2026-12-09	2026-12-19	Tortoise in a Nutshell - Una Imagines	Tramway	physical-theatre	8	https://glasgowtheatre.com/shows/tramway-tortoise-in-a-nutshell-una-imagines.html
-2026-12-10	2026-12-11	Poggle and Me	Citizens Theatre	physical-theatre		https://glasgowtheatre.com/shows/citizens-poggle-and-me.html
+2026-12-10	2026-12-11	Poggle and Me	Citizens Theatre	dance		https://glasgowtheatre.com/shows/citizens-poggle-and-me.html
 2026-12-16	2026-12-19	Sleeping Beauty & the New Republic of Port Dundas	Theatre 118	pantomime	12	https://glasgowtheatre.com/shows/theatre-118-sleeping-beauty-the-new-republic-of-port-dundas.html
 2026-12-17	2026-12-17	Aladdin (Pantomime) - Relaxed Performance	King's Theatre	pantomime	15	https://glasgowtheatre.com/shows/kings-aladdin-pantomime-relaxed-performance.html
 2026-12-30	2027-01-16	Scottish Ballet – Cinders!	Theatre Royal	dance	15.56	https://glasgowtheatre.com/shows/theatre-royal-scottish-ballet-cinders.html
@@ -75,7 +74,7 @@
 2027-01-08	2027-01-08	Scottish Ballet – Cinders!: Talk Ballet	Theatre Royal	talk	5	https://glasgowtheatre.com/shows/theatre-royal-scottish-ballet-cinders-talk-ballet.html
 2027-01-12	2027-01-31	Mrs. Doubtfire The Musical	King's Theatre	musical	20	https://glasgowtheatre.com/shows/kings-mrs-doubtfire-the-musical.html
 2027-01-15	2027-01-16	P*rno	Pavilion Theatre	play	19.5	https://glasgowtheatre.com/shows/pavilion-p-rno.html
-2027-01-16	2027-01-16	Born in Kyle: Billy Kay & Robyn Stapleton	Tron Theatre	talk	18	https://glasgowtheatre.com/shows/tron-born-in-kyle-billy-kay-robyn-stapleton.html
+2027-01-16	2027-01-16	Born in Kyle: Billy Kay & Robyn Stapleton	Tron Theatre	spoken-word	18	https://glasgowtheatre.com/shows/tron-born-in-kyle-billy-kay-robyn-stapleton.html
 2027-01-20	2027-01-23	Shine Productions present Titanic The Musical	Theatre Royal	musical	20.73	https://glasgowtheatre.com/shows/theatre-royal-shine-productions-present-titanic-the-musical.html
 2027-01-21	2027-01-21	Celtic Connections 2027 Proudly Presents A Toast Fae The Lassies	Pavilion Theatre	musical	26.5	https://glasgowtheatre.com/shows/pavilion-celtic-connections-2027-proudly-presents-a-toast-fa.html
 2027-01-21	2027-01-21	Seamus Egan & Maeve Gilchrist: Into the Ice	Tron Theatre	music	24	https://glasgowtheatre.com/shows/tron-seamus-egan-maeve-gilchrist-into-the-ice.html
@@ -95,14 +94,13 @@
 2027-02-11	2027-02-11	Scottish Opera - Alcina Pre Show Talk	Theatre Royal	talk	0	https://glasgowtheatre.com/shows/theatre-royal-scottish-opera-alcina-pre-show-talk.html
 2027-02-13	2027-02-13	Celtic Da's	Pavilion Theatre	play	29.5	https://glasgowtheatre.com/shows/pavilion-celtic-das.html
 2027-02-13	2027-03-06	Mary Queen of Scots Got Her Head Chopped Off	Citizens Theatre	play	14	https://glasgowtheatre.com/shows/citizens-mary-queen-of-scots-got-her-head-chopped-off.html
-2027-02-13	2027-02-13	Natural History Museum presents Dinosaurs Live	King's Theatre	talk	16.5	https://glasgowtheatre.com/shows/kings-natural-history-museum-presents-dinosaurs-live.html
-2027-02-14	2027-02-14	All Killa No Filla - Live At Valentine's Day!	King's Theatre	stand-up	31	https://glasgowtheatre.com/shows/kings-all-killa-no-filla-live-at-valentines-day.html
+2027-02-14	2027-02-14	All Killa No Filla - Live At Valentine's Day!	King's Theatre	spoken-word	31	https://glasgowtheatre.com/shows/kings-all-killa-no-filla-live-at-valentines-day.html
 2027-02-14	2027-02-14	Scottish Opera - Alcina - Touch Tour	Theatre Royal	tour	0	https://glasgowtheatre.com/shows/theatre-royal-scottish-opera-alcina-touch-tour.html
 2027-02-15	2027-02-20	Million Dollar Quartet	Pavilion Theatre	musical	25	https://glasgowtheatre.com/shows/pavilion-million-dollar-quartet.html
 2027-02-16	2027-02-27	Jersey Boys	King's Theatre	musical	15	https://glasgowtheatre.com/shows/kings-jersey-boys.html
 2027-02-17	2027-02-19	Scottish Opera - Fidelio	Theatre Royal	opera	24	https://glasgowtheatre.com/shows/theatre-royal-scottish-opera-fidelio.html
 2027-02-19	2027-02-19	Scottish Opera - Fidelio - Touch Tour	Theatre Royal	tour	0	https://glasgowtheatre.com/shows/theatre-royal-scottish-opera-fidelio-touch-tour.html
-2027-02-20	2027-02-20	Scottish Opera - National Opera Studio	Theatre Royal	talk	15.5	https://glasgowtheatre.com/shows/theatre-royal-scottish-opera-national-opera-studio.html
+2027-02-20	2027-02-20	Scottish Opera - National Opera Studio	Theatre Royal	workshop	15.5	https://glasgowtheatre.com/shows/theatre-royal-scottish-opera-national-opera-studio.html
 2027-02-21	2027-02-21	Jack And His Big Beanstalk	Pavilion Theatre	pantomime	31.5	https://glasgowtheatre.com/shows/pavilion-jack-and-his-big-beanstalk.html
 2027-02-23	2027-02-27	Strangers on a Train	Theatre Royal	play	15	https://glasgowtheatre.com/shows/theatre-royal-strangers-on-a-train.html
 2027-02-23	2027-03-06	The Ferry	Tron Theatre	play	20	https://glasgowtheatre.com/shows/tron-the-ferry.html
@@ -114,17 +112,17 @@
 2027-03-09	2027-03-13	The Curious Incident of the Dog in the Night-Time	Theatre Royal	play	15.6	https://glasgowtheatre.com/shows/theatre-royal-the-curious-incident-of-the-dog-in-the-night-t.html
 2027-03-10	2027-03-10	Lucy Beaumont - Bad At Quiz Shows, Good With Weirdos	Pavilion Theatre	stand-up	29.5	https://glasgowtheatre.com/shows/pavilion-lucy-beaumont-bad-at-quiz-shows-good-with-weirdos.html
 2027-03-11	2027-03-11	Fascinating Aida: Bawdacious!	King's Theatre	cabaret	37.88	https://glasgowtheatre.com/shows/kings-fascinating-aida-bawdacious.html
-2027-03-13	2027-03-13	An Audience With... Liam Dolan (Part 2)	Pavilion Theatre	talk	30	https://glasgowtheatre.com/shows/pavilion-an-audience-with-liam-dolan-part-2.html
+2027-03-13	2027-03-13	An Audience With... Liam Dolan (Part 2)	Pavilion Theatre	cabaret	30	https://glasgowtheatre.com/shows/pavilion-an-audience-with-liam-dolan-part-2.html
 2027-03-13	2027-03-13	Jimeoin: Ballyhoo!	King's Theatre	stand-up	29.27	https://glasgowtheatre.com/shows/kings-jimeoin-ballyhoo.html
 2027-03-18	2027-03-18	Troy Hawke: Never Stop, Never Change!	Pavilion Theatre	stand-up	31.5	https://glasgowtheatre.com/shows/pavilion-troy-hawke-never-stop-never-change.html
-2027-03-19	2027-03-19	An Evening With Gregor Fisher	King's Theatre	talk	36.74	https://glasgowtheatre.com/shows/kings-an-evening-with-gregor-fisher.html
+2027-03-19	2027-03-19	An Evening With Gregor Fisher	King's Theatre	stand-up	36.74	https://glasgowtheatre.com/shows/kings-an-evening-with-gregor-fisher.html
 2027-03-20	2027-03-20	Mike Wozniak: The Bench	Citizens Theatre	stand-up	24.5	https://glasgowtheatre.com/shows/citizens-mike-wozniak-the-bench.html
 2027-03-21	2027-03-21	James Gardner: Allocation on Arrival	Pavilion Theatre	stand-up	26	https://glasgowtheatre.com/shows/pavilion-james-gardner-allocation-on-arrival.html
 2027-03-23	2027-03-23	Matt Mathews: Not What I Ordered World Tour	Pavilion Theatre	stand-up	39.75	https://glasgowtheatre.com/shows/pavilion-matt-mathews-not-what-i-ordered-world-tour.html
 2027-03-24	2027-03-27	PMOS presents Calamity Jane	Theatre Royal	musical	19.38	https://glasgowtheatre.com/shows/theatre-royal-pmos-presents-calamity-jane.html
 2027-03-26	2027-03-27	Susie McCabe: Myth Informed	King's Theatre	stand-up	25.26	https://glasgowtheatre.com/shows/kings-susie-mccabe-myth-informed.html
 2027-03-26	2027-03-27	The Martin Hurson Story	Pavilion Theatre	play	25	https://glasgowtheatre.com/shows/pavilion-the-martin-hurson-story.html
-2027-03-27	2027-03-27	GICF27 Gala	King's Theatre	cabaret	22.96	https://glasgowtheatre.com/shows/kings-gicf27-gala.html
+2027-03-27	2027-03-27	GICF27 Gala	King's Theatre	stand-up	22.96	https://glasgowtheatre.com/shows/kings-gicf27-gala.html
 2027-03-30	2027-04-03	Heathers the Musical	King's Theatre	musical	24	https://glasgowtheatre.com/shows/kings-heathers-the-musical.html
 2027-03-30	2027-04-03	Punch	Citizens Theatre	play	18.5	https://glasgowtheatre.com/shows/citizens-punch.html
 2027-03-30	2027-04-03	Twelve Angry Men	Theatre Royal	play	15	https://glasgowtheatre.com/shows/theatre-royal-twelve-angry-men.html

@@ -140,10 +140,18 @@ const gig = (title) => ({
   description: "A band playing its own songs.",
 });
 
-/** Stands in for OpenRouter, replying however each test needs. */
+/**
+ * Stands in for the model provider, replying however each test needs.
+ *
+ * The tagger now asks llm.js rather than a URL, and llm.js asks whichever
+ * provider has a key. The tests pin that to one in-memory provider so they
+ * exercise the retry and split logic, not the network.
+ */
 function stubAPI(replies) {
   const calls = [];
-  const original = globalThis.fetch;
+  const original = { deepseek: process.env.DEEPSEEK_API_KEY, openrouter: process.env.OPENROUTER_API_KEY };
+  process.env.DEEPSEEK_API_KEY = "test-key";
+  delete process.env.OPENROUTER_API_KEY;
   globalThis.fetch = async (url, options) => {
     const body = JSON.parse(options.body);
     calls.push(body.messages[1].content);
@@ -152,14 +160,24 @@ function stubAPI(replies) {
     return {
       ok: true,
       json: async () => ({
-        usage: { cost: 0.0001, prompt_tokens: 100, completion_tokens: 10 },
+        usage: { prompt_tokens: 100, completion_tokens: 10 },
         choices: [
           { finish_reason: "stop", message: { content: JSON.stringify(reply) } },
         ],
       }),
     };
   };
-  return { calls, restore: () => (globalThis.fetch = original) };
+  const originalFetch = globalThis.fetch;
+  return {
+    calls,
+    restore: () => {
+      globalThis.fetch = originalFetch;
+      if (original.deepseek == null) delete process.env.DEEPSEEK_API_KEY;
+      else process.env.DEEPSEEK_API_KEY = original.deepseek;
+      if (original.openrouter == null) delete process.env.OPENROUTER_API_KEY;
+      else process.env.OPENROUTER_API_KEY = original.openrouter;
+    },
+  };
 }
 
 const answers = (forms) => ({
@@ -179,7 +197,7 @@ test("a response that skips a listing is a failure, not a partial success", asyn
   ]);
   try {
     await assert.rejects(
-      () => tagBatch([gig("Locust"), gig("Mock Uncle")], "key"),
+      () => tagBatch([gig("Locust"), gig("Mock Uncle")]),
       /answered 1 of 2/,
     );
   } finally {
@@ -191,7 +209,7 @@ test("a transient failure is retried rather than costing the batch its tags", as
   const api = stubAPI([new Error("fetch failed"), answers(["music", "music"])]);
   const ctx = { cache: {}, cost: 0, promptTokens: 0, completionTokens: 0, abandoned: 0, retryDelayMs: 0 };
   try {
-    await askAbout([gig("Locust"), gig("Mock Uncle")], "key", "  batch", ctx);
+    await askAbout([gig("Locust"), gig("Mock Uncle")], "  batch", ctx);
   } finally {
     api.restore();
   }
@@ -213,7 +231,7 @@ test("a group that will not answer is halved, so one listing cannot sink the res
   ]);
   const ctx = { cache: {}, cost: 0, promptTokens: 0, completionTokens: 0, abandoned: 0, retryDelayMs: 0 };
   try {
-    await askAbout([gig("Bad"), gig("Good")], "key", "  batch", ctx);
+    await askAbout([gig("Bad"), gig("Good")], "  batch", ctx);
   } finally {
     api.restore();
   }
@@ -226,10 +244,10 @@ test("an outage stops the run asking rather than waiting out every batch", async
   const api = stubAPI([new Error("fetch failed")]);
   const ctx = { cache: {}, cost: 0, promptTokens: 0, completionTokens: 0, abandoned: 0, retryDelayMs: 0 };
   try {
-    await askAbout([gig("One")], "key", "  batch 1", ctx);
-    await askAbout([gig("Two")], "key", "  batch 2", ctx);
+    await askAbout([gig("One")], "  batch 1", ctx);
+    await askAbout([gig("Two")], "  batch 2", ctx);
     const spent = api.calls.length;
-    await askAbout([gig("Three")], "key", "  batch 3", ctx);
+    await askAbout([gig("Three")], "  batch 3", ctx);
     assert.equal(api.calls.length, spent, "kept calling after giving up twice");
   } finally {
     api.restore();

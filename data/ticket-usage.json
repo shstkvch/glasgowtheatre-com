@@ -1,11 +1,12 @@
 {
-  "at": "2026-10-18T09:55:39.439Z",
-  "model": "deepseek/deepseek-v4-flash",
-  "listingsRead": 0,
-  "listingsWithWording": 89,
-  "promptTokens": 0,
-  "completionTokens": 0,
-  "totalTokens": 0,
-  "costUsd": 0,
+  "at": "2026-10-18T10:17:08.420Z",
+  "providers": "DeepSeek (deepseek-flash) → OpenRouter (deepseek/deepseek-v4-flash)",
+  "model": "deepseek-flash",
+  "listingsRead": 51,
+  "listingsWithWording": 51,
+  "promptTokens": 11040,
+  "completionTokens": 5601,
+  "totalTokens": 16641,
+  "costUsd": 0.0038351431999999997,
   "failed": false
 }

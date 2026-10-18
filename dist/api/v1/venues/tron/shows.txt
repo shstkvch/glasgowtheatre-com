@@ -4,7 +4,7 @@
 2026-10-24	2026-10-24	In Tronversation with Johnny McKnight	Tron Theatre	talk	25	https://glasgowtheatre.com/shows/tron-in-tronversation-with-johnny-mcknight.html
 2026-10-29	2026-10-29	Women+ on the Edge of Democracy	Tron Theatre	talk	0	https://glasgowtheatre.com/shows/tron-women-on-the-edge-of-democracy.html
 2026-11-18	2026-12-31	The Snaw Queen	Tron Theatre	pantomime	19	https://glasgowtheatre.com/shows/tron-the-snaw-queen.html
-2027-01-16	2027-01-16	Born in Kyle: Billy Kay & Robyn Stapleton	Tron Theatre	talk	18	https://glasgowtheatre.com/shows/tron-born-in-kyle-billy-kay-robyn-stapleton.html
+2027-01-16	2027-01-16	Born in Kyle: Billy Kay & Robyn Stapleton	Tron Theatre	spoken-word	18	https://glasgowtheatre.com/shows/tron-born-in-kyle-billy-kay-robyn-stapleton.html
 2027-01-21	2027-01-21	Seamus Egan & Maeve Gilchrist: Into the Ice	Tron Theatre	music	24	https://glasgowtheatre.com/shows/tron-seamus-egan-maeve-gilchrist-into-the-ice.html
 2027-01-22	2027-01-24	Have You Seen My Red Yo-Yo?: The Songs of Matt McGinn	Tron Theatre	music	22	https://glasgowtheatre.com/shows/tron-have-you-seen-my-red-yo-yo-the-songs-of-matt-mcginn.html
 2027-01-30	2027-01-30	In The Tradition: Sárán Ó Maolagáin & Muirine Nic Róibín	Tron Theatre	music	20	https://glasgowtheatre.com/shows/tron-in-the-tradition-s-r-n-maolag-in-muirine-nic-r-ib-n.html

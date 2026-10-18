@@ -111,7 +111,17 @@ function taggingLine(status) {
   const count = asked > answered ? `${answered} of ${asked}` : `${answered}`;
   return `Tagging: ${tokens.toLocaleString("en-GB")} tokens for ${count} listing${
     asked === 1 ? "" : "s"
-  } \u2014 ${money(usage.costUsd)}`;
+  } \u2014 ${money(usage.costUsd)}${providerSuffix(usage)}`;
+}
+
+/**
+ * Which provider answered. A run that quietly moved to the fallback is worth
+ * knowing about from the morning email rather than from the build log.
+ */
+function providerSuffix(usage) {
+  if (!usage?.providers) return "";
+  const first = String(usage.providers).split(" \u2192 ")[0];
+  return ` (${first})`;
 }
 
 /**
@@ -148,7 +158,7 @@ function ticketsLine(status) {
   if (!tokens) return "Ticket prices: nothing new to read \u2014 \u00a30.00";
   return `Ticket prices: ${tokens.toLocaleString("en-GB")} tokens for ${usage.listingsRead} listing${
     usage.listingsRead === 1 ? "" : "s"
-  } \u2014 ${money(usage.costUsd)}`;
+  } \u2014 ${money(usage.costUsd)}${providerSuffix(usage)}`;
 }
 
 /**

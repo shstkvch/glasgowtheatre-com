@@ -9,15 +9,14 @@
 2027-01-06	2027-01-08	Romesh Ranganathan Will Change Your Life	King's Theatre	stand-up	36.74	https://glasgowtheatre.com/shows/kings-romesh-ranganathan-will-change-your-life.html
 2027-01-12	2027-01-31	Mrs. Doubtfire The Musical	King's Theatre	musical	20	https://glasgowtheatre.com/shows/kings-mrs-doubtfire-the-musical.html
 2027-02-02	2027-02-02	Larry Dean: Hellbent	King's Theatre	stand-up	28.7	https://glasgowtheatre.com/shows/kings-larry-dean-hellbent.html
-2027-02-13	2027-02-13	Natural History Museum presents Dinosaurs Live	King's Theatre	talk	16.5	https://glasgowtheatre.com/shows/kings-natural-history-museum-presents-dinosaurs-live.html
-2027-02-14	2027-02-14	All Killa No Filla - Live At Valentine's Day!	King's Theatre	stand-up	31	https://glasgowtheatre.com/shows/kings-all-killa-no-filla-live-at-valentines-day.html
+2027-02-14	2027-02-14	All Killa No Filla - Live At Valentine's Day!	King's Theatre	spoken-word	31	https://glasgowtheatre.com/shows/kings-all-killa-no-filla-live-at-valentines-day.html
 2027-02-16	2027-02-27	Jersey Boys	King's Theatre	musical	15	https://glasgowtheatre.com/shows/kings-jersey-boys.html
 2027-03-02	2027-03-07	Annie	King's Theatre	musical	15.6	https://glasgowtheatre.com/shows/kings-annie.html
 2027-03-11	2027-03-11	Fascinating Aida: Bawdacious!	King's Theatre	cabaret	37.88	https://glasgowtheatre.com/shows/kings-fascinating-aida-bawdacious.html
 2027-03-13	2027-03-13	Jimeoin: Ballyhoo!	King's Theatre	stand-up	29.27	https://glasgowtheatre.com/shows/kings-jimeoin-ballyhoo.html
-2027-03-19	2027-03-19	An Evening With Gregor Fisher	King's Theatre	talk	36.74	https://glasgowtheatre.com/shows/kings-an-evening-with-gregor-fisher.html
+2027-03-19	2027-03-19	An Evening With Gregor Fisher	King's Theatre	stand-up	36.74	https://glasgowtheatre.com/shows/kings-an-evening-with-gregor-fisher.html
 2027-03-26	2027-03-27	Susie McCabe: Myth Informed	King's Theatre	stand-up	25.26	https://glasgowtheatre.com/shows/kings-susie-mccabe-myth-informed.html
-2027-03-27	2027-03-27	GICF27 Gala	King's Theatre	cabaret	22.96	https://glasgowtheatre.com/shows/kings-gicf27-gala.html
+2027-03-27	2027-03-27	GICF27 Gala	King's Theatre	stand-up	22.96	https://glasgowtheatre.com/shows/kings-gicf27-gala.html
 2027-03-30	2027-04-03	Heathers the Musical	King's Theatre	musical	24	https://glasgowtheatre.com/shows/kings-heathers-the-musical.html
 2027-04-07	2027-04-10	The Lyric Club presents Priscilla Queen of the Desert	King's Theatre	musical	19.38	https://glasgowtheatre.com/shows/kings-the-lyric-club-presents-priscilla-queen-of-the-desert.html
 2027-04-12	2027-04-17	The Mousetrap	King's Theatre	play	15.6	https://glasgowtheatre.com/shows/kings-the-mousetrap.html

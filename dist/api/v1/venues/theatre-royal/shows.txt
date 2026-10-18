@@ -4,7 +4,6 @@
 2026-11-10	2027-07-10	Operation Mincemeat: A New Musical	Theatre Royal	musical	20	https://glasgowtheatre.com/shows/theatre-royal-operation-mincemeat-a-new-musical.html
 2026-11-15	2026-11-15	Phil Wang: UH OH	Theatre Royal	stand-up	31	https://glasgowtheatre.com/shows/theatre-royal-phil-wang-uh-oh.html
 2026-11-18	2026-12-05	Matilda The Musical	Theatre Royal	musical	20	https://glasgowtheatre.com/shows/theatre-royal-matilda-the-musical.html
-2026-11-30	2026-12-06	Ice Dragon	Theatre Royal	musical	12	https://glasgowtheatre.com/shows/theatre-royal-ice-dragon.html
 2026-12-08	2026-12-08	ATG Inspire Academy Juniors	Theatre Royal	workshop	110	https://glasgowtheatre.com/shows/theatre-royal-atg-inspire-academy-juniors.html
 2026-12-08	2026-12-08	ATG Inspire Academy Seniors	Theatre Royal	workshop	130	https://glasgowtheatre.com/shows/theatre-royal-atg-inspire-academy-seniors.html
 2026-12-08	2026-12-27	CATS	Theatre Royal	musical	21	https://glasgowtheatre.com/shows/theatre-royal-cats.html
@@ -16,7 +15,7 @@
 2027-02-14	2027-02-14	Scottish Opera - Alcina - Touch Tour	Theatre Royal	tour	0	https://glasgowtheatre.com/shows/theatre-royal-scottish-opera-alcina-touch-tour.html
 2027-02-17	2027-02-19	Scottish Opera - Fidelio	Theatre Royal	opera	24	https://glasgowtheatre.com/shows/theatre-royal-scottish-opera-fidelio.html
 2027-02-19	2027-02-19	Scottish Opera - Fidelio - Touch Tour	Theatre Royal	tour	0	https://glasgowtheatre.com/shows/theatre-royal-scottish-opera-fidelio-touch-tour.html
-2027-02-20	2027-02-20	Scottish Opera - National Opera Studio	Theatre Royal	talk	15.5	https://glasgowtheatre.com/shows/theatre-royal-scottish-opera-national-opera-studio.html
+2027-02-20	2027-02-20	Scottish Opera - National Opera Studio	Theatre Royal	workshop	15.5	https://glasgowtheatre.com/shows/theatre-royal-scottish-opera-national-opera-studio.html
 2027-02-23	2027-02-27	Strangers on a Train	Theatre Royal	play	15	https://glasgowtheatre.com/shows/theatre-royal-strangers-on-a-train.html
 2027-03-02	2027-03-05	Go Dance 2027 - Celebrating 20 years!	Theatre Royal	dance	17.5	https://glasgowtheatre.com/shows/theatre-royal-go-dance-2027-celebrating-20-years.html
 2027-03-09	2027-03-13	The Curious Incident of the Dog in the Night-Time	Theatre Royal	play	15.6	https://glasgowtheatre.com/shows/theatre-royal-the-curious-incident-of-the-dog-in-the-night-t.html

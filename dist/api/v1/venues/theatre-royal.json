@@ -1,6 +1,6 @@
 {
   "apiVersion": "1.1",
-  "generatedAt": "2026-10-18T09:56:21.462Z",
+  "generatedAt": "2026-10-18T10:42:04.878Z",
   "refreshedAt": "2026-10-18T09:55:39.286Z",
   "venue": {
     "id": "theatre-royal",
@@ -13,7 +13,7 @@
     "instagram": "theatreroyalglasgow",
     "programme": "mixed",
     "url": "https://glasgowtheatre.com/venues/theatre-royal.html",
-    "upcomingShows": 24,
+    "upcomingShows": 23,
     "showsUrl": "https://glasgowtheatre.com/api/v1/venues/theatre-royal/shows.json",
     "concessions": {
       "url": "https://www.atgtickets.com/access/access-scheme/",
