@@ -76,13 +76,14 @@ async function thumbnail(file) {
 
 async function ask(file) {
   const answer = await chat({
-    // Artwork stays on the vision model it was chosen against: a cheat sheet of
-    // nine images, and this was the only one that got all nine right. The
-    // DeepSeek key runs the scraping passes; a model swap here would silently
-    // change every social card's crop, which is not something a key change
-    // should decide.
-    models: { openrouter: process.env.ARTWORK_MODEL || "google/gemini-2.5-flash-lite" },
-    providers: availableProviders(["openrouter"]),
+    // Every pass now reads on DeepSeek flash, artwork included. The OpenRouter
+    // fallback names a different model on purpose: OpenRouter's routing for
+    // deepseek-v4-flash has no image endpoint, so the fallback would 404 on
+    // every image rather than read one.
+    models: {
+      deepseek: process.env.DEEPSEEK_ARTWORK_MODEL || "deepseek-flash",
+      openrouter: process.env.ARTWORK_MODEL || "google/gemini-2.5-flash-lite",
+    },
     messages: [
       {
         role: "user",
@@ -172,9 +173,9 @@ async function main() {
   };
 
   if (!todo.length) return save();
-  if (!availableProviders(["openrouter"]).length) {
+  if (!availableProviders().length) {
     console.log(
-      "  ! No OPENROUTER_API_KEY — every image falls back to its shape",
+      "  ! No DEEPSEEK_API_KEY or OPENROUTER_API_KEY — every image falls back to its shape",
     );
     return save();
   }

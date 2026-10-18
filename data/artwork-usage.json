@@ -1,5 +1,7 @@
 {
-  "at": "2026-10-18T09:51:10.485Z",
-  "imagesRead": 6,
-  "costUsd": 0.0007876
+  "at": "2026-10-18T11:04:19.729Z",
+  "providers": "DeepSeek (deepseek-flash) → OpenRouter (deepseek/deepseek-v4-flash)",
+  "model": "deepseek-flash",
+  "imagesRead": 133,
+  "costUsd": 0.027032280000000013
 }

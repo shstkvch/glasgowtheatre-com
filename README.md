@@ -123,7 +123,7 @@ What the keyword fallback guesses when it cannot place a listing follows the ven
 
 `talk`, `workshop` and `tour` are forms for events that are not performances to watch: a discussion about a play is a talk. `a-play-a-pie-a-pint`, `lunchtime` and `scratch` remain searchable source metadata, but do not appear as art-form filters.
 
-Both model passes ask `scripts/llm.js`, which calls DeepSeek directly first and OpenRouter second. Set `DEEPSEEK_API_KEY` and/or `OPENROUTER_API_KEY` in `.env` (see `.env.example`). A provider with no key is skipped; if DeepSeek times out, rate-limits or answers something unreadable, the same prompt and schema go to OpenRouter and the pass carries on. With neither key, tagging falls back to keyword matching and exits successfully — it never breaks a build. Run `npm run tag -- --dry-run` to preview changes, or `--retag` to ignore the cache.
+Both model passes, and the artwork reader, ask `scripts/llm.js`, which calls DeepSeek directly first and OpenRouter second. Set `DEEPSEEK_API_KEY` and/or `OPENROUTER_API_KEY` in `.env` (see `.env.example`). A provider with no key is skipped; if DeepSeek times out, rate-limits or answers something unreadable, the same prompt and schema go to OpenRouter and the pass carries on. With neither key, tagging falls back to keyword matching and exits successfully — it never breaks a build. Run `npm run tag -- --dry-run` to preview changes, or `--retag` to ignore the cache.
 
 The two APIs are not interchangeable, and `llm.js` is where that is handled: DeepSeek has no strict JSON-schema mode, so the exact shape is spelled out in the prompt and the answer is validated on the way back; it also reasons by default, so `reasoning_effort: "low"` is set or a small answer can be eaten by reasoning tokens. Cached verdicts are keyed on the model family rather than the transport, so moving a request between providers does not re-read the programme.
 
@@ -178,7 +178,7 @@ Worker (cron 05:17 UTC) ──POST──▶ Pages deploy hook
 
 Run `./scripts/setup-cloudflare.sh` to do the setup. It is a ten-stage wizard that opens each page, says what to click, and saves the values it captures into `.env`: Cloudflare account and zone, the nameserver move from Porkbun, Resend, the Pages project and its environment variables, the domain cutover, the deploy hook, and deploying the Worker. It is safe to re-run; existing answers come back as defaults.
 
-The Pages project needs four environment variables: `DEEPSEEK_API_KEY`, `OPENROUTER_API_KEY`, `RESEND_API_KEY` and `REPORT_TO`. `OPENROUTER_API_KEY` is both the fallback for the scraping passes and the key that reads artwork, so keep it set even when DeepSeek is doing the work. Build command `npm run build:cloudflare`, output directory `dist`, Node from `.node-version`.
+The Pages project needs four environment variables: `DEEPSEEK_API_KEY`, `OPENROUTER_API_KEY`, `RESEND_API_KEY` and `REPORT_TO`. Everything — tagging, ticket reading and artwork — asks DeepSeek flash first; `OPENROUTER_API_KEY` is the fallback when DeepSeek will not answer. Build command `npm run build:cloudflare`, output directory `dist`, Node from `.node-version`.
 
 Builds run from a fresh checkout, which is fine and is why no data is committed back: cached images are named by a hash of their source URL and committed, so only genuinely new artwork is downloaded, and the tag cache means only new shows are sent to the model. A venue that fails falls back to the last saved listings with expired shows removed.
 
