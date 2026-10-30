@@ -13,7 +13,7 @@ export async function onRequestGet({ request, env }) {
     try {
       const current = await state(env, request, { force: new URL(request.url).searchParams.get('refresh') === '1' });
       const listings = await metadata(env, request);
-      return json({ settings: config, selected: current.selected, checkedAt: current.stock.fetchedAt, report,
+      return json({ settings: current.settings, selected: current.selected, randomSelection: current.randomSelection, checkedAt: current.stock.fetchedAt, report,
         shows: current.stock.feed.shows.map(show => {
           const performances = core.availablePerformances(show);
           return { slug: show.slug, title: show.title, available: performances.length > 0, next: performances[0] || null, listing: performances.length ? core.normalise({ show, performances }, listings, config) : null };

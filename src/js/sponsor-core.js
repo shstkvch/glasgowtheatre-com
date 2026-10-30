@@ -33,6 +33,31 @@
       })[0] || null;
   }
 
+  function selectRandomSponsoredShow(feed, now = new Date(), random) {
+    const today = londonClock(now).date;
+    // Compare calendar days, so the window stays correct across clock changes.
+    const day = date => Date.parse(date + 'T00:00:00Z') / 86400000;
+    const candidates = (feed.shows || []).map(show => ({ show, performances: availablePerformances(show, now) }))
+      .filter(candidate => candidate.performances.length && Number.isFinite(day(candidate.performances[0].date)))
+      .sort((a, b) => String(a.show.id).localeCompare(String(b.show.id)));
+    if (!candidates.length) return null;
+    const earliest = Math.min(...candidates.map(candidate => day(candidate.performances[0].date) - day(today)));
+    let windowDays = 30;
+    while (earliest > windowDays) windowDays *= 2;
+    const pool = candidates.filter(candidate => day(candidate.performances[0].date) - day(today) <= windowDays);
+    // A daily seeded draw keeps the admin preview and public placements aligned
+    // without storing a separate pick. Each eligible show gets one entry.
+    if (!random) {
+      let seed = 2166136261;
+      for (const char of today) seed = Math.imul(seed ^ char.charCodeAt(0), 16777619);
+      seed = Math.imul(seed ^ (seed >>> 16), 0x21f0aaad);
+      seed = Math.imul(seed ^ (seed >>> 15), 0x735a2d97);
+      const draw = ((seed ^ (seed >>> 15)) >>> 0) / 4294967296;
+      random = () => draw;
+    }
+    return { ...pool[Math.floor(random() * pool.length)], windowDays };
+  }
+
   function matchesSponsor(candidate, listing, filters, filterEvents, now = new Date()) {
     if (!candidate || !listing) return false;
     if (candidate.show.url !== listing.ticketUrl) return false;
@@ -54,7 +79,7 @@
     for (const field of ['startsOn', 'endsOn']) if (typeof input[field] !== 'string' || (input[field] && !validDate(input[field]))) errors.push(`${field} must be a valid date.`);
     if (input.startsOn && input.endsOn && input.endsOn < input.startsOn) errors.push('End date must be on or after the start date.');
     if (input.enabled && !input.home && !input.detail) errors.push('Choose at least one placement.');
-    if (!['next', 'specific'].includes(input.mode)) errors.push('Choose automatic selection or a specific show.');
+    if (!['next', 'random', 'specific'].includes(input.mode)) errors.push('Choose next available, random or a specific show.');
     if (typeof input.showSlug !== 'string' || (input.mode === 'specific' && !/^[a-z0-9][a-z0-9-]{0,159}$/.test(input.showSlug))) errors.push('Choose a show.');
     if (typeof input.description !== 'string' || input.description.trim().length > 280) errors.push('Promotional description must be 280 characters or fewer.');
     if (!Number.isInteger(input.revision) || input.revision < 0) errors.push('Reload these settings before saving.');
@@ -65,7 +90,8 @@
     const today = londonClock(now).date;
     return settings.enabled && Boolean(settings[placement]) && (!settings.startsOn || today >= settings.startsOn) && (!settings.endsOn || today <= settings.endsOn);
   }
-  function choose(feed, settings, now = new Date()) {
+  function choose(feed, settings, now = new Date(), random) {
+    if (settings.mode === 'random') return selectRandomSponsoredShow(feed, now, random);
     return selectSponsoredShow(settings.mode === 'specific' ? { shows: (feed.shows || []).filter(show => show.slug === settings.showSlug) } : feed, now);
   }
   function normalise(candidate, metadata = {}, settings = DEFAULTS) {
@@ -105,7 +131,7 @@
     const price = listing.price != null ? `${money(listing.price)} tickets` : listing.minimum != null ? `Pay What You Can from ${money(listing.minimum)}` : 'Prices at the venue';
     return `<article class="sponsored-show" aria-labelledby="sponsor-title"><div class="sponsor-disclosure"><span class="sponsor-label">Sponsored Show</span><span>Paid placement by Theatre 118</span></div><div class="sponsor-layout"><a class="sponsor-art" href="${escape(listing.ticketUrl)}" rel="sponsored" ${track} tabindex="-1" aria-hidden="true">${listing.image ? `<img src="${escape(listing.image)}" alt="" width="764" height="510" loading="lazy">` : '<span class="sponsor-image-fallback">THEATRE<br>118</span>'}</a><div class="sponsor-copy"><p class="sponsor-venue">Theatre 118 <span>· Port Dundas</span></p><h2 id="sponsor-title"><a href="${escape(listing.ticketUrl)}" rel="sponsored" ${track}>${escape(listing.title)}</a></h2><p class="sponsor-facts"><span>${escape(day + time)}</span><span>${escape(listing.formLabel)}${listing.runtime ? ` · ${listing.runtime} minutes` : ''}</span></p><p class="sponsor-description">${escape(listing.promotionalDescription)}</p></div><div class="sponsor-booking"><div><p class="sponsor-price">${escape(price)}</p>${listing.fee != null ? `<p class="sponsor-fee">+ ${escape(money(listing.fee))} booking fee per order</p>` : ''}${listing.payWhatYouCan ? `<p class="sponsor-pwyc">Pay What You Can${listing.minimum != null ? ' from ' + escape(money(listing.minimum)) : ' available'}</p>` : ''}</div><a class="btn sponsor-ticket" href="${escape(listing.ticketUrl)}" rel="sponsored" ${track} aria-label="Tickets for ${escape(listing.title)}">See show &amp; book <span aria-hidden="true">↗</span></a></div></div></article>`;
   }
-  const api = { londonClock, availablePerformances, selectSponsoredShow, matchesSponsor, DEFAULTS, safeUrl, validateSettings, isActive, choose, normalise, renderSponsor };
+  const api = { londonClock, availablePerformances, selectSponsoredShow, selectRandomSponsoredShow, matchesSponsor, DEFAULTS, safeUrl, validateSettings, isActive, choose, normalise, renderSponsor };
   if (typeof module !== 'undefined') module.exports = api;
   else root.SponsoredShow = api;
 })(typeof window !== 'undefined' ? window : globalThis);

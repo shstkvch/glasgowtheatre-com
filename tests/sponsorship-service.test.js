@@ -76,3 +76,39 @@ test('all feed pages are fetched before selection and stale inventory is never s
     assert.equal(sqlite.prepare('SELECT fetched_at FROM sponsorship_feed_cache').get().fetched_at, 1_000_000);
   } finally { sqlite.close(); }
 });
+
+test('saved random mode, admin preview and both public placements agree on an expanded-window pick', async () => {
+  const { db, sqlite } = database();
+  const [auth, admin, publicSlot] = await Promise.all([
+    load('functions/_lib/sponsorship-auth.js'), load('functions/admin/api/sponsorship.js'), load('functions/sponsorship.js'),
+  ]);
+  const core = require('../src/js/sponsor-core');
+  const stock = structuredClone(fixture);
+  const future = days => new Date(Date.now() + days * 86400000).toISOString().slice(0, 10);
+  for (const [index, show] of stock.shows.entries()) {
+    show.performances.forEach(performance => { performance.date = future(75 + index); });
+  }
+  const soldOut = structuredClone(stock.shows[0]);
+  soldOut.id = 'nearer-sold-out';
+  soldOut.performances.forEach(performance => { performance.date = future(2); performance.sold_out = true; });
+  stock.shows.push(soldOut);
+  const env = { DB: db, SPONSOR_ADMIN_PASSWORD: password, ASSETS: { fetch: async () => Response.json({}) } };
+  try {
+    sqlite.prepare("INSERT INTO sponsorship_feed_cache (id, feed, fetched_at) VALUES ('theatre-118', ?, ?)").run(JSON.stringify(stock), Date.now());
+    const signedIn = await auth.signIn(request('POST', { password }), env);
+    const cookie = signedIn.headers.get('Set-Cookie').split(';')[0];
+    const saved = await admin.onRequestPut({ env, request: request('PUT', { ...core.DEFAULTS, mode: 'random' }, { Cookie: cookie }) });
+    assert.equal(saved.status, 200);
+    const panel = await (await admin.onRequestGet({ env, request: request('GET', null, { Cookie: cookie }) })).json();
+    assert.equal(panel.settings.mode, 'random');
+    assert.equal(panel.randomSelection.windowDays, 120);
+    assert.equal(panel.selected.title, panel.randomSelection.listing.title);
+    for (const placement of ['home', 'detail']) {
+      const response = await publicSlot.onRequestGet({ env, request: new Request(`${origin}/sponsorship?placement=${placement}`) });
+      assert.equal(response.status, 200);
+      const { sponsor } = await response.json();
+      assert.equal(sponsor.ticketUrl, panel.selected.ticketUrl);
+      assert.equal(sponsor.title, panel.randomSelection.listing.title);
+    }
+  } finally { sqlite.close(); }
+});

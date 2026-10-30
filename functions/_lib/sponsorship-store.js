@@ -51,9 +51,12 @@ export async function metadata(env, request) {
 export async function state(env, request, { force = false } = {}) {
   const config = await settings(env.DB);
   const [stock, listings] = await Promise.all([inventory(env.DB, { force }), metadata(env, request)]);
-  const candidate = core.choose(stock.feed, config);
+  const now = new Date();
+  const candidate = core.choose(stock.feed, config, now);
   const selected = candidate ? core.normalise(candidate, listings, config) : null;
-  return { settings: config, stock, selected };
+  const random = core.choose(stock.feed, { ...config, mode: 'random' }, now);
+  const randomSelection = random ? { listing: core.normalise(random, listings, config), windowDays: random.windowDays } : null;
+  return { settings: config, stock, selected, randomSelection };
 }
 
 export async function clickReport(db) {

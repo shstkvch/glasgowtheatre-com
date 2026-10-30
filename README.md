@@ -137,6 +137,14 @@ The full paginated feed is cached in D1 for five minutes, with ETag revalidation
 for a complete single-page feed. The next show is chosen by its next future,
 non-cancelled, non-sold-out, bookable performance, rather than by its run’s
 opening date. Specific-show selection never falls through to a different show.
+**Random show in next 30 days** gives each eligible show one entry in a daily
+random draw. It uses the smallest window containing a bookable future
+performance: today through 30 days ahead (inclusive), then 60, 120, 240 days,
+and keeps doubling as needed. Sold-out and cancelled performances do not count
+towards a window. The draw uses the Glasgow date and a stable show order, so
+the preview, homepage and detail placements agree and refreshes do not reshuffle
+the ad. A new day or a change in the eligible pool can change the selection.
+The panel reports the window used. If no eligible shows exist, the slot hides.
 External box-office inventory and unknown availability are excluded. A venue
 outage hides the public placement rather than advertising stale stock; the
 admin panel can still pause or schedule the sponsorship during an outage.

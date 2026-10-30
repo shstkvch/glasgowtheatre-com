@@ -53,6 +53,20 @@ test('admin edits persist, placements and schedules control the actual public en
     expect(publicState.sponsor.title).toContain('Sleeping Beauty');
     await page.reload();
     await expect(page.locator('#creative-preview')).toContainText('Sleeping Beauty');
+    await page.getByRole('radio', { name: /^Random show in next 30 days/ }).check();
+    await expect(page.locator('#preview-status')).toContainText('Random pick from the next 30 days');
+    const randomTitle = await page.locator('#creative-preview h2').innerText();
+    await page.locator('[name=description]').fill('A daily pick from Theatre 118.');
+    await expect(page.locator('#creative-preview h2')).toHaveText(randomTitle);
+    await save(page);
+    for (const placement of ['home', 'detail']) {
+      const selected = await (await context.request.get(`/sponsorship?placement=${placement}`)).json();
+      expect(selected.sponsor.title).toBe(randomTitle);
+    }
+    await page.reload();
+    await expect(page.getByRole('radio', { name: /^Random show in next 30 days/ })).toBeChecked();
+    await expect(page.locator('#creative-preview h2')).toHaveText(randomTitle);
+    await expect(page.locator('[name=showSlug]')).toBeDisabled();
     const violations = (await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa', 'wcag21aa']).analyze()).violations;
     expect(violations.map(v => v.id)).toEqual([]);
     expect(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth)).toBe(false);

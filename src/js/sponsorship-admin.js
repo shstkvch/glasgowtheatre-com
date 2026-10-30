@@ -24,6 +24,7 @@
     return { enabled: values.has('enabled'), home: values.has('home'), detail: values.has('detail'), startsOn: values.get('startsOn'), endsOn: values.get('endsOn'), mode: values.get('mode'), showSlug: form.elements.showSlug.value || '', description: values.get('description'), revision: data?.settings.revision || 0 };
   }
   function candidate(settings) {
+    if (settings.mode === 'random') return data.randomSelection?.listing || null;
     const shows = [...data.shows].filter(show => show.available).sort((a, b) => (a.next.date + (a.next.time || '23:59')).localeCompare(b.next.date + (b.next.time || '23:59')));
     const show = settings.mode === 'specific' ? shows.find(show => show.slug === settings.showSlug) : shows[0];
     return show?.listing || null;
@@ -38,6 +39,7 @@
     document.getElementById('live-status').textContent = status;
     document.getElementById('live-status').dataset.live = String(status === 'Live');
     document.getElementById('preview-status').textContent = dirty ? 'Preview of your unsaved changes.' : status === 'Live' ? 'Currently running. Visitors’ filters still apply on the homepage.' : `${status}. This preview shows the creative when it is eligible to run.`;
+    if (settings.mode === 'random' && selected) document.getElementById('preview-status').textContent += ` Random pick from the next ${data.randomSelection.windowDays} days.`;
     const creative = document.getElementById('creative-preview');
     if (selected) {
       creative.innerHTML = core.renderSponsor({ ...selected, promotionalDescription: settings.description.trim() || selected.description.slice(0, 220) }, 'home');

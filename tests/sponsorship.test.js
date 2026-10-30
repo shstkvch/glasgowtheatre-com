@@ -25,6 +25,61 @@ test('sponsorship ignores cancelled, unknown, expired and not-on-sale inventory'
   assert.equal(core.availablePerformances(feed.shows[0], new Date('2026-11-16T20:00:00Z')).length, 0);
 });
 
+function showIn(days, id, extraPerformances = []) {
+  const show = structuredClone(feed.shows[0]);
+  show.id = id;
+  show.slug = `show-${id}`;
+  const date = new Date('2026-10-30T12:00:00Z');
+  date.setUTCDate(date.getUTCDate() + days);
+  show.performances = [{ ...show.performances[0], date: date.toISOString().slice(0, 10) }, ...extraPerformances];
+  return show;
+}
+
+test('random mode draws shows equally from the first nonempty window, including day 30', () => {
+  const random = { ...settings, mode: 'random' };
+  const first = showIn(1, 'a');
+  const boundary = showIn(30, 'b');
+  boundary.performances.push(...Array.from({ length: 10 }, () => ({ ...boundary.performances[0] })));
+  const data = { shows: [showIn(31, 'c'), boundary, first] };
+  const low = core.choose(data, random, now, () => 0);
+  const high = core.choose(data, random, now, () => 0.99999);
+  assert.equal(low.show.id, 'a');
+  assert.equal(high.show.id, 'b');
+  assert.equal(high.windowDays, 30);
+  // A later sitting does not exclude a show with an earlier available one.
+  assert.equal(core.choose({ shows: [showIn(200, 'a', first.performances)] }, random, now).windowDays, 30);
+});
+
+test('random mode keeps doubling beyond 240 days and ignores unavailable nearer performances', () => {
+  for (const [days, expected] of [[30, 30], [31, 60], [60, 60], [61, 120], [120, 120], [121, 240], [240, 240], [241, 480], [961, 1920]]) {
+    const sold = showIn(1, 'sold'); sold.performances[0].sold_out = true;
+    const cancelled = showIn(2, 'cancelled'); cancelled.performances[0].cancelled = true;
+    const offsale = showIn(3, 'offsale'); offsale.ticketing.on_sale = false;
+    const unknown = showIn(4, 'unknown'); delete unknown.performances[0].sold_out;
+    const data = { shows: [sold, cancelled, offsale, unknown, showIn(-1, 'past'), showIn(days, 'eligible'), showIn(expected + 1, 'later')] };
+    const selected = core.choose(data, { ...settings, mode: 'random' }, now, () => 0.999);
+    assert.equal(selected.show.id, 'eligible', `day ${days}`);
+    assert.equal(selected.windowDays, expected, `day ${days}`);
+  }
+  assert.equal(core.choose({ shows: [] }, { ...settings, mode: 'random' }, now), null);
+  assert.equal(core.choose({ shows: [showIn(-1, 'past')] }, { ...settings, mode: 'random' }, now), null);
+});
+
+test('random daily draw is stable across requests and feed order, with Glasgow calendar windows', () => {
+  const data = { shows: Array.from({ length: 20 }, (_, index) => showIn(5, String(index))) };
+  const random = { ...settings, mode: 'random' };
+  const chosen = core.choose(data, random, now).show.id;
+  assert.equal(core.choose({ shows: [...data.shows].reverse() }, random, new Date('2026-10-30T23:59:00Z')).show.id, chosen);
+  const draws = new Set(Array.from({ length: 4 }, (_, day) => core.choose(data, random, new Date(`2026-10-${30 - day}T12:00:00Z`)).show.id));
+  assert(draws.size > 1);
+  // The Glasgow day is already 2 July; 1 August is exactly 30 calendar days away.
+  const summer = showIn(1, 'summer'); summer.performances[0].date = '2026-08-01';
+  assert.equal(core.choose({ shows: [summer] }, random, new Date('2026-07-01T23:30:00Z')).windowDays, 30);
+  const expired = showIn(0, 'ended'); expired.performances[0].time = '11:00';
+  assert.equal(core.choose({ shows: [expired] }, random, now), null);
+  assert.deepEqual(core.validateSettings({ ...random, showSlug: 'ignored' }).value, { ...random, showSlug: '' });
+});
+
 test('scheduling uses Glasgow days, includes the end date and respects placement switches', () => {
   assert(core.isActive({ ...settings, startsOn: '2026-10-30', endsOn: '2026-10-30' }, 'home', now));
   assert(!core.isActive({ ...settings, startsOn: '2026-10-31' }, 'home', now));
