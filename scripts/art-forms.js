@@ -14,6 +14,8 @@ const FORMS = {
   dance: "Dance or choreographed movement as the main form, including ballet.",
   "stand-up": "Stand-up comedy: one or more comedians performing material.",
   cabaret: "Cabaret, variety, drag, burlesque or magic.",
+
+  scratch: "A scratch or new-material night: an audience watches artists try out unfinished work, often across several forms. Not a finished new play or a participatory workshop.",
   "physical-theatre": "Physical, visual, circus, puppetry, clown or mime-led work.",
   "spoken-word": "Poetry, storytelling or a live podcast performed to an audience.",
   pantomime: "Pantomime, in the British seasonal tradition.",
@@ -28,7 +30,12 @@ const FORMS = {
  * Set by the scraper from the source, never by the model, and carried through
  * untouched. These describe how or where a show runs rather than what it is.
  */
-const STRUCTURAL = new Set(["a-play-a-pie-a-pint", "lunchtime", "scratch"]);
+const STRUCTURAL = new Set(["a-play-a-pie-a-pint", "lunchtime"]);
+
+function formLabel(form) {
+  if (form === "scratch") return "Scratch / new material";
+  return form.split("-").map(word => word[0].toUpperCase() + word.slice(1)).join(" ");
+}
 
 const ALLOWED = new Set(Object.keys(FORMS));
 
@@ -53,6 +60,10 @@ function fallbackForm(event, { mixedProgramme = false } = {}) {
   if (/\b(workshop|masterclass|audition)\b/.test(text)) return "workshop";
   if (/\b(guided|building|heritage|backstage|touch) tours?\b/.test(text)) return "tour";
   if (/\b(pre[- ]show talk|post[- ]show talk|in conversation|panel discussion|lecture)\b/.test(text)) return "talk";
+  // A mixed scratch bill can mention stand-up, poetry and music without being
+  // any one of those things. Look for the advertised kind of night, rather
+  // than every occurrence of "new writing" or the word "scratch" in a title.
+  if (/\bscratch[\s-]+(?:night|showcase|performances?|evening|showing)\b|\bnew[\s-]+material[\s-]+(?:night|showcase|evening)\b|\bworks?[\s-]+in[\s-]+progress[\s-]+(?:night|showcase|showing|performances?)\b/.test(text)) return "scratch";
   if (/\bpanto(?:mime)?\b/.test(text)) return "pantomime";
   if (/\b(opera|operetta)\b/.test(text)) return "opera";
   if (/\bmusical(?: theatre)?\b/.test(text) || title === "Guys and Dolls") return "musical";
@@ -74,4 +85,4 @@ function combine(event, form, options) {
   return [...new Set([valid, ...structural])];
 }
 
-module.exports = { FORMS, STRUCTURAL, ALLOWED, fallbackForm, combine };
+module.exports = { FORMS, STRUCTURAL, ALLOWED, formLabel, fallbackForm, combine };

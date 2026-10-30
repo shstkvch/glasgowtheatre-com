@@ -1,13 +1,15 @@
 {
   "name": "glasgowtheatre-com",
   "version": "1.0.0",
-  "description": "**glasgowtheatre.com** \u2014 What's on in Glasgow's theatre scene.",
+  "description": "**glasgowtheatre.com** — What's on in Glasgow's theatre scene.",
   "main": "build.js",
   "scripts": {
     "build": "node build.js",
     "refresh": "node scripts/scrape-events.js && node scripts/read-tickets.js && node scripts/tag-events.js && node scripts/cache-images.js && node scripts/read-artwork.js",
     "test": "node --test tests/*.test.js",
     "test:browser": "playwright test",
+    "dev:sponsorships": "node scripts/dev-sponsorships.cjs",
+    "test:sponsorships": "playwright test --config playwright.sponsorship.config.cjs",
     "preview": "python3 -m http.server 4173 --directory dist",
     "tag": "node scripts/tag-events.js",
     "build:cloudflare": "bash scripts/cloudflare-build.sh",
@@ -37,6 +39,7 @@
   "devDependencies": {
     "@axe-core/playwright": "^4.13.0",
     "@playwright/test": "^1.63.0",
-    "sharp": "^0.35.4"
+    "sharp": "^0.35.4",
+    "wrangler": "^4.156.0"
   }
 }

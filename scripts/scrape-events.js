@@ -1192,7 +1192,7 @@ async function scrapePlayPiePint() {
         time: e.time || null,
         endDate: e.endDate,
         type: 'new-writing',
-        tags: ['play', ...(e.time === '13:00' ? ['lunchtime'] : ['scratch']), 'a-play-a-pie-a-pint'],
+        tags: ['play', ...(e.time === '13:00' ? ['lunchtime'] : []), 'a-play-a-pie-a-pint'],
         description: e.description,
         ticketUrl: e.url,
         image: e.image,
@@ -2384,6 +2384,9 @@ const THEATRE_118_FORMS = {
   pantomime: 'pantomime',
   workshop: 'workshop',
   'spoken word': 'spoken-word',
+  scratch: 'scratch',
+  'scratch night': 'scratch',
+  'new material': 'scratch',
 };
 
 /**

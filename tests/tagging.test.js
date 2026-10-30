@@ -9,6 +9,7 @@ const {
   needsScopeCheck,
 } = require("../scripts/tag-events.js");
 const { filterEvents } = require("../src/js/listings.js");
+const { formLabel } = require("../scripts/art-forms.js");
 
 test("a listing carries exactly one art form", () => {
   // The old vocabulary let a listing be a comedy and a musical and a drama at
@@ -42,6 +43,30 @@ test("stand-up and pantomime are separate forms", () => {
   // returned a children's pantomime.
   assert.ok("stand-up" in FORMS);
   assert.ok("pantomime" in FORMS);
+});
+
+test("scratch and new-material nights have their own audience-facing category", () => {
+  assert.ok(FORMS.scratch);
+  assert.equal(formLabel("scratch"), "Scratch / new material");
+  const working = require("../data/events.json").find(event => event.ticketUrl === "https://theatre118.com/whats-on/working-it-out");
+  assert.equal(working.form, "scratch");
+  assert.deepEqual(working.tags, ["scratch"]);
+  assert.equal(require("../data/tag-cache.json")[cacheKey(working)].form, "scratch", "the next cached tagging run must preserve the correction");
+  assert.equal(filterEvents([working], { today: "2026-10-30", form: "scratch" }).length, 1);
+  assert.equal(filterEvents([working], { today: "2026-10-30", form: "cabaret" }).length, 0);
+});
+
+test("scratch fallback recognises the kind of night without swallowing plays or workshops", () => {
+  for (const [title, description, expected] of [
+    ["Working it Out", "Our new material night mixes play extracts, stand-up, poetry and music.", "scratch"],
+    ["Outside Eyes", "A scratch night of brand new performances.", "scratch"],
+    ["Something new", "A work-in-progress showcase of theatre and poetry.", "scratch"],
+    ["Brand new", "A new-material night.", "scratch"],
+    ["New writing", "The premiere of a finished new play.", "play"],
+    ["Scratch workshop", "A participatory workshop for new writing.", "workshop"],
+    ["Scratch that", "A play about an artist.", "play"],
+    ["Comedy night", "Stand-up featuring brand new jokes.", "stand-up"],
+  ]) assert.equal(fallbackForm({ title, description }), expected, title);
 });
 
 test("the keyword fallback always yields one real form", () => {

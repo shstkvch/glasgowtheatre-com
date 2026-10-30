@@ -1,0 +1,71 @@
+@font-face{font-family:Anton;src:url("assets/anton.ttf") format("truetype");font-display:swap}
+@font-face{font-family:Bricolage;src:url("assets/bricolage-bold.ttf") format("truetype");font-weight:700;font-display:swap}
+:root{--orange:#ff5619;--purple:#7028bb;--ink:#21132d;--paper:#fffaf1}
+*{box-sizing:border-box}
+body{margin:0;font-family:Bricolage,Arial,sans-serif;background:var(--orange)}
+button,a{-webkit-tap-highlight-color:transparent}
+button{font:inherit;cursor:pointer}
+button:focus-visible,a:focus-visible{outline:3px solid var(--paper);outline-offset:4px}
+.ad{height:250px;width:100%;position:relative;isolation:isolate;overflow:hidden;background:var(--purple);color:var(--ink);container-type:inline-size}
+.stage{position:absolute;inset:0 0 0 51%;overflow:hidden;background:#1a1026}
+.performance{width:100%;height:100%;object-fit:cover;object-position:50% 38%;filter:grayscale(1);opacity:.84;transform:scale(1.025)}
+.photo-wash{position:absolute;inset:0;background:linear-gradient(90deg,#7028bb88,transparent 70%),linear-gradient(0deg,#1a1026 0%,transparent 80%);mix-blend-mode:multiply}
+.spotlight{position:absolute;inset:0;background:radial-gradient(ellipse 180px 220px at var(--spot-x,57%) var(--spot-y,30%),#ffe8bf32 0%,#b973e110 65%,#1a10263d 100%);mix-blend-mode:screen;transition:opacity .4s;pointer-events:none}
+.stage-caption{position:absolute;top:22px;right:22px;font-size:9px;letter-spacing:1.8px;color:var(--paper);writing-mode:vertical-rl;opacity:.7}
+.orange-panel{position:absolute;inset:0 38% 0 0;background:var(--orange);clip-path:polygon(0 0,100% 0,91% 100%,0 100%)}
+.identity{position:absolute;top:13px;left:22px;display:flex;align-items:center;gap:13px}
+.logo{width:63px;height:63px;object-fit:contain;transform:rotate(-6deg)}
+.location{font-size:11px;letter-spacing:1px;line-height:1.6}
+.location span{display:block;font-size:8px;letter-spacing:1.2px;opacity:.8}
+.message{position:absolute;top:88px;left:29px;width:57%;}
+h1{font:400 clamp(35px,5.65cqw,55px)/1.03 Anton,Impact,sans-serif;letter-spacing:-.5px;margin:0}
+h1 span{display:block}
+.line-two{color:var(--paper)}
+.tagline{position:absolute;left:0;top:113px;margin:0;font-size:11px;display:none}
+.scene-picker{position:absolute;bottom:19px;left:29px;display:flex;gap:5px;align-items:center}
+.picker-label{font-size:7px;letter-spacing:1px;margin-right:5px}
+.scene-picker button{border:1px solid #21132d60;background:transparent;padding:6px 10px;border-radius:2px;color:var(--ink);font-size:10px;transition:background .2s,color .2s,transform .2s;min-height:29px}
+.scene-picker button[aria-pressed=true]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.scene-picker button:hover{transform:translateY(-2px)}
+.booking{position:absolute;bottom:24px;right:36px;width:244px;display:grid;gap:12px}
+.price-note{font-size:10px;color:var(--paper);text-align:center}
+.ticket{position:relative;display:flex;align-items:center;justify-content:space-between;padding:15px 19px;background:var(--paper);text-decoration:none;color:var(--ink);font-size:13px;letter-spacing:.5px;transform:rotate(-3deg);box-shadow:4px 5px 0 #7028bb;transition:transform .25s,box-shadow .25s;clip-path:polygon(0 0,100% 0,100% 37%,97% 50%,100% 63%,100% 100%,0 100%,0 63%,3% 50%,0 37%)}
+.ticket:focus-visible{outline-offset:-5px;outline-color:var(--purple)}
+.ticket:hover{transform:rotate(0) translateY(-3px);box-shadow:4px 8px 0 #7028bb}
+.arrow{font:26px/1 Arial,sans-serif;margin-left:15px}
+.motion{position:absolute;right:9px;bottom:9px;display:grid;place-items:center;border:1px solid #fffaf15c;border-radius:50%;width:26px;height:26px;background:#21132d80;color:var(--paper);font-size:13px}
+.motion[hidden]{display:none}
+.curtain{position:absolute;top:0;bottom:0;width:51%;display:flex;align-items:center;justify-content:center;background:repeating-linear-gradient(90deg,#4b1679 0%,#782cb8 6%,#5a1c8e 11%,#321043 15%,#5a1c8e 19%);box-shadow:0 0 30px #0008;transition:transform 1.4s cubic-bezier(.65,0,.22,1);z-index:10;pointer-events:none}
+.curtain:after{content:"";position:absolute;inset:0;background:linear-gradient(#0002,transparent 40%,#0004);}
+.curtain span{font:400 46px Anton,sans-serif;letter-spacing:2px;color:var(--paper);opacity:.8}
+.curtain-left{left:0;transform:translateX(-103%)}
+.curtain-right{right:0;transform:translateX(103%)}
+.ad.opening .curtain{transform:translateX(0)}
+.ad.changing .message{animation:change-scene .48s both}
+.ad.paused *{animation-play-state:paused!important}
+@keyframes change-scene{0%{opacity:1;transform:translateY(0)}45%{opacity:0;transform:translateY(-9px)}55%{opacity:0;transform:translateY(10px)}100%{opacity:1;transform:translateY(0)}}
+@media(min-width:800px){.message{top:82px}h1{font-size:56px}.scene-picker{bottom:17px}}
+@media(max-width:760px) and (min-width:521px){.location{font-size:9px}.location span{font-size:7px}.booking{width:185px;right:25px}.ticket{padding:14px;font-size:11px}.price-note{font-size:9px}.picker-label{display:none}.identity{left:19px}.message{left:24px;top:94px}.scene-picker{left:24px}}
+@media(max-width:520px){
+ .ad{height:300px}
+ .stage{inset:0 0 0 39%}
+ .performance{object-position:46% 50%;opacity:.65}
+ .photo-wash{background:linear-gradient(0deg,#21132d 0%,transparent 85%)}
+ .orange-panel{inset:0 8% 79px 0;clip-path:polygon(0 0,100% 0,86% 100%,0 100%)}
+ .identity{top:8px;left:13px;gap:5px}
+ .logo{width:54px;height:54px}
+ .location{font-size:8px;letter-spacing:.6px}.location span{font-size:6px;letter-spacing:.7px}
+ .message{top:76px;left:20px;width:88%}
+ h1{font-size:clamp(35px,11.7cqw,52px);line-height:1.06}
+ .scene-picker{left:20px;bottom:89px;gap:4px}
+ .picker-label{display:none}
+ .scene-picker button{font-size:9px;min-height:29px;padding:5px 11px}
+ .booking{bottom:16px;left:20px;right:45px;width:auto;gap:9px}
+ .price-note{text-align:left;font-size:9px}
+ .ticket{padding:10px 17px;transform:rotate(-2deg);font-size:12px}
+ .arrow{font-size:21px}
+ .motion{bottom:23px;right:10px;width:27px;height:27px}
+ .stage-caption{display:none}
+ .curtain span{font-size:29px}
+}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}.curtain{display:none}.performance{transform:none}}

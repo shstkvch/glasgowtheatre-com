@@ -1517,7 +1517,7 @@
     "endDate": null,
     "type": "scratch",
     "tags": [
-      "play"
+      "scratch"
     ],
     "description": "I’ll Scratch Yours is an evening of deliciously fresh new writing & performance. Your favorite sold out scratch night is back… and this time it’s extra tasty. I’ll Scratch Yours presents a night of 6 short scratch performances from Scotland’s most exciting artists. From theatre to music...",
     "ticketUrl": "https://citz.co.uk/whats-on/ill-scratch-yours/",
@@ -1534,7 +1534,7 @@
     },
     "duration": 105,
     "checkedAt": "2026-10-18",
-    "form": "play"
+    "form": "scratch"
   },
   {
     "id": "tramway-cade-macaskill-with-yas-clarke-tim-spooner-now-not-n",
@@ -2649,7 +2649,7 @@
     "time": "20:00",
     "type": "professional",
     "tags": [
-      "cabaret"
+      "scratch"
     ],
     "description": "Theatre 118 reopens with our highly popular new material night. Every month, a range of acts perform brand new play extracts, stand-up, poetry, music and pretty much any other kind of live performance you can imagine.",
     "ticketUrl": "https://theatre118.com/whats-on/working-it-out",
@@ -2674,7 +2674,7 @@
     },
     "duration": 75,
     "checkedAt": "2026-10-18",
-    "form": "cabaret"
+    "form": "scratch"
   },
   {
     "id": "tron-the-snaw-queen",

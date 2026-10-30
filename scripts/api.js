@@ -177,7 +177,7 @@ const showSchema = {
     tags: {
       type: "array",
       items: { type: "string" },
-      description: "Includes searchable structural tags such as lunchtime or scratch.",
+      description: "Includes the art form and searchable source tags such as lunchtime.",
     },
     producer: { type: ["string", "null"] },
     description: { type: ["string", "null"] },
@@ -697,7 +697,12 @@ function buildApiFiles({
     "  Access-Control-Allow-Headers: Content-Type\n" +
     "  Access-Control-Max-Age: 86400\n" +
     "  Cache-Control: public, max-age=300, s-maxage=3600, stale-while-revalidate=86400\n" +
-    "  X-Content-Type-Options: nosniff\n";
+    "  X-Content-Type-Options: nosniff\n" +
+    "/admin/*\n" +
+    "  Cache-Control: no-store\n" +
+    "  X-Robots-Tag: noindex, nofollow\n" +
+    "  X-Frame-Options: DENY\n" +
+    "  Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self'; connect-src 'self'; form-action 'self'; base-uri 'none'; frame-ancestors 'none'; object-src 'none'\n";
   files["_routes.json"] = pretty({
     version: 1,
     include: [
@@ -705,6 +710,9 @@ function buildApiFiles({
       "/api/v1/venues/*/shows",
       "/track",
       "/analytics",
+      "/sponsorship",
+      "/sponsor-image",
+      "/admin/api/*",
     ],
     exclude: [],
   });

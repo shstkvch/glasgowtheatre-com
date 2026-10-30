@@ -1,5 +1,6 @@
 const { test, expect } = require("@playwright/test");
 const fs = require("fs");
+const DIST = process.env.BUILD_OUTPUT || "dist";
 const { londonDate } = require("../../src/js/listings");
 
 test("all published images load and the page has no JavaScript errors", async ({
@@ -103,14 +104,14 @@ test("the homepage leads with listings, not a masthead", async ({ page }) => {
   await expect(page.getByRole("heading", { level: 1 })).toHaveText("What’s on.");
   await expect(page.locator(".hero, .featured, .spotlight")).toHaveCount(0);
   // The first card must be reachable without hunting for it.
-  const card = page.locator(".event-card").first();
+  const card = page.locator("#sponsored-slot:not([hidden]), #events-grid .event-card:visible").first();
   await expect(card).toBeInViewport();
 });
 
 test("the thumbnail opens the show without adding a second tab stop", async ({
   page,
 }) => {
-  await page.goto("/?q=Thrice");
+  await page.goto("/");
   const card = page.locator("#events-grid .event-card:visible").first();
   const thumb = card.locator(".event-card-thumb");
   // The title and the artwork both open the show's own page, where the
@@ -126,7 +127,7 @@ test("the thumbnail opens the show without adding a second tab stop", async ({
   // is made to travel through us to get one.
   await expect(card.locator(".ticket-link")).toHaveAttribute(
     "href",
-    "https://www.tramway.org/event/328af962-85b1-4a39-9f3a-b43900ec12d2/",
+    await page.evaluate(id => window.EVENTS.find(event => event.id === id).ticketUrl, await card.getAttribute("data-id")),
   );
   // The date is announced from outside the thumbnail link.
   await expect(card.locator(".date-stamp")).toBeVisible();
@@ -228,14 +229,14 @@ test("page layouts fit small screens and navigation reaches each page", async ({
     .getByRole("navigation", { name: "Main navigation" })
     .getByRole("link", { name: "Venues", exact: true })
     .click();
-  await expect(page).toHaveURL(/\/venues.html$/);
+  await expect(page).toHaveURL(/\/venues(?:\.html)?$/);
   await page
     .locator(".venue-card")
     .filter({
       has: page.getByRole("heading", { name: "Tramway", exact: true }),
     })
     .click();
-  await expect(page).toHaveURL(/\/venues\/tramway.html$/);
+  await expect(page).toHaveURL(/\/venues\/tramway(?:\.html)?$/);
 });
 
 test("all internal links and local assets exist", async ({ request }) => {
@@ -245,12 +246,12 @@ test("all internal links and local assets exist", async ({ request }) => {
     "venues.html",
     "about.html",
     "submit.html",
-    ...fs.readdirSync("dist/venues").map((name) => "venues/" + name),
-    ...fs.readdirSync("dist/shows").map((name) => "shows/" + name),
+    ...fs.readdirSync(`${DIST}/venues`).map((name) => "venues/" + name),
+    ...fs.readdirSync(`${DIST}/shows`).map((name) => "shows/" + name),
   ];
   const paths = new Set();
   for (const file of pages) {
-    const content = fs.readFileSync("dist/" + file, "utf8");
+    const content = fs.readFileSync(DIST + "/" + file, "utf8");
     for (const match of content.matchAll(/(?:href|src)="(\/[^"#?]*)"/g))
       paths.add(match[1]);
   }
@@ -264,7 +265,7 @@ test("pages have no automated WCAG A or AA accessibility violations", async ({
   const AxeBuilder = require("@axe-core/playwright").default;
   // A show page carries a table, a definition list and two panels nothing
   // else on the site uses, so it is swept along with the rest.
-  const showUrl = "/shows/" + fs.readdirSync("dist/shows")[0];
+  const showUrl = "/shows/" + fs.readdirSync(`${DIST}/shows`)[0];
   for (const url of [
     "/",
     "/calendar.html",
@@ -368,11 +369,14 @@ test("a month button scrolls the chart and lights up", async ({ page }) => {
   await page.goto("/calendar.html");
   const chart = page.locator("#cal-scroll");
   const chips = page.locator("#cal-jump .cal-chip:not(.cal-chip-today)");
-  const last = chips.last();
-  await last.click();
-  await expect(last).toHaveAttribute("aria-pressed", "true", { timeout: 4000 });
+  // An interior month can align with the viewport; a short final month may
+  // share the viewport with the preceding month at the maximum scroll.
+  const target = chips.nth(2);
+  const before = await chart.evaluate(el => el.scrollLeft);
+  await target.click();
+  await expect(target).toHaveAttribute("aria-pressed", "true", { timeout: 4000 });
   await expect(chips.first()).toHaveAttribute("aria-pressed", "false");
-  expect(await chart.evaluate((el) => el.scrollLeft)).toBeGreaterThan(1000);
+  await expect.poll(() => chart.evaluate(el => el.scrollLeft)).toBeGreaterThan(before + 100);
 });
 
 test("picking a show from the timeline opens its prices and times", async ({
@@ -383,7 +387,7 @@ test("picking a show from the timeline opens its prices and times", async ({
   const id = await item.getAttribute("data-show");
   const title = await item.locator(".cal-item-label").textContent();
   await item.click();
-  await expect(page).toHaveURL(`/shows/${id}.html`);
+  await expect(page).toHaveURL(new RegExp(`/shows/${id}(?:\\.html)?$`));
   await expect(page.getByRole("heading", { level: 1 })).toHaveText(title);
   await expect(page.locator(".ticket-panel")).toBeVisible();
   // The venue the run is at is still one click away.
@@ -425,7 +429,7 @@ test("every bar's title is readable against its own venue colour", async ({
 /** The listings the build actually published, which is what the pages were
     made from — so a test picks its example the same way the build did. */
 const published = () =>
-  JSON.parse(fs.readFileSync("dist/data/events.json", "utf8"));
+  JSON.parse(fs.readFileSync(`${DIST}/data/events.json`, "utf8"));
 
 test("the images a visitor sees first are fetched first", async ({ page }) => {
   await page.goto("/");
@@ -454,7 +458,8 @@ test("the images a visitor sees first are fetched first", async ({ page }) => {
 test("a show page asks for its hero image before anything else", async ({
   page,
 }) => {
-  await page.goto("/shows/oran-mor-transparent.html");
+  const event = published().find(event => event.image);
+  await page.goto(`/shows/${event.id}.html`);
   const hero = page.locator(".show-hero-image img");
   await expect(hero).toHaveAttribute("fetchpriority", "high");
   expect(await hero.getAttribute("loading")).toBe(null);
@@ -639,9 +644,9 @@ test("stylesheet and script URLs change when the file does", async ({
     expect((await request.get(url)).ok(), url).toBe(true);
   }
   // The hash has to follow the contents, not just be present.
-  const built = fs.readFileSync("dist/index.html", "utf8");
+  const built = fs.readFileSync(`${DIST}/index.html`, "utf8");
   const crypto = require("crypto");
-  for (const file of ["css/style.css", "css/fonts.css"]) {
+  for (const file of ["css/style.css", "css/fonts.css", "css/sponsors.css"]) {
     const stamped = built.match(
       new RegExp(`/${file.replace(".", "\\.")}\\?v=([a-f0-9]{8})`),
     )[1];
@@ -658,7 +663,7 @@ test("stylesheet and script URLs change when the file does", async ({
     await page.evaluate(
       () => document.querySelectorAll('link[rel="stylesheet"]').length,
     ),
-  ).toBe(2);
+  ).toBe(3);
 });
 
 test("the nav is a hamburger on a phone and a row on a desktop", async ({

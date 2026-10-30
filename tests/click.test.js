@@ -49,6 +49,34 @@ test("unknown surfaces become other rather than rejecting the click", () => {
   assert.equal(parseEvent(body({ path: "/shows/x.html?q=secret" })).path, null);
 });
 
+test("sponsored homepage and detail clicks keep distinct placement labels", () => {
+  for (const surface of ["sponsored-home", "sponsored-detail"]) {
+    assert.equal(parseEvent(body({ surface })).surface, surface);
+  }
+});
+
+test("sponsored breakdowns are subsets of all clicks and exclude organic links", () => {
+  const row = { show_id: "working-it-out", kind: "click", venue_id: "theatre-118", title: "Working it Out" };
+  const surfaceTotals = [
+    { ...row, surface: "sponsored-home", n: 2 },
+    { ...row, surface: "sponsored-detail", n: 3 },
+    { ...row, surface: "card", n: 7 },
+  ];
+  const report = summarise({
+    today: "2026-10-30",
+    daily: [{ ...row, day: "2026-10-30", n: 12 }],
+    totals: [{ ...row, n: 12 }],
+    surfaceDaily: surfaceTotals.map(item => ({ ...item, day: "2026-10-30" })),
+    surfaceTotals,
+  });
+  assert.equal(report.totals.all.clicks, 12);
+  assert.equal(report.sponsored.totals.all.clicks, 5);
+  assert.equal(report.sponsored.totals.today.clicks, 5);
+  assert.equal(report.surfaces["sponsored-home"].totals.all.clicks, 2);
+  assert.equal(report.surfaces["sponsored-detail"].shows[0].clicks.week, 3);
+  assert.equal(report.surfaces.card.totals.all.clicks, 7);
+});
+
 test("the day is Glasgow's day, not UTC's", () => {
   const late = parseEvent(body(), { now: new Date("2026-07-01T23:30:00Z") });
   assert.equal(late.day, "2026-07-02");

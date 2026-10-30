@@ -8,7 +8,7 @@ const {
   mergeListings,
 } = require("./src/js/listings");
 const { buildTimeline } = require("./scripts/calendar");
-const { FORMS, fallbackForm, combine } = require("./scripts/art-forms");
+const { FORMS, fallbackForm, combine, formLabel: label } = require("./scripts/art-forms");
 const {
   VENUE_COLOURS,
   laneColour,
@@ -30,7 +30,7 @@ const {
   playgroundBody,
   loadExamples,
 } = require("./scripts/api");
-const DIST = path.join(__dirname, "dist");
+const DIST = path.resolve(process.env.BUILD_OUTPUT || path.join(__dirname, "dist"));
 const SITE = "https://glasgowtheatre.com";
 const today = londonDate();
 const read = (name) =>
@@ -139,11 +139,6 @@ const time = (value) => {
 };
 const range = (event) =>
   `${date(event.date)}${event.endDate && event.endDate !== event.date ? " – " + date(event.endDate) : ""} ${event.date.slice(0, 4)}`;
-const label = (value) =>
-  value
-    .split("-")
-    .map((word) => word[0].toUpperCase() + word.slice(1))
-    .join(" ");
 const arrow = '<span aria-hidden="true">↗</span>';
 /**
  * A content hash on every stylesheet and script URL.
@@ -311,8 +306,8 @@ function page(
   return `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>${e(title)} | Glasgow Theatre</title><meta name="description" content="${e(description)}"><link rel="canonical" href="${SITE}${url}">
 <meta property="og:title" content="${e(title)}"><meta property="og:description" content="${e(description)}"><meta property="og:url" content="${SITE}${url}"><meta property="og:type" content="website"><meta property="og:site_name" content="Glasgow Theatre"><meta property="og:image" content="${SITE}/images/thrice.webp"><meta name="twitter:card" content="summary_large_image"><meta name="theme-color" content="#303fce">
-<link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="${asset("css/fonts.css")}"><link rel="stylesheet" href="${asset("css/style.css")}">${hero ? `<link rel="preload" as="image" href="${e(hero)}" fetchpriority="high">` : ""}
-<script defer src="${asset("js/listings.js")}"></script><script defer src="${asset("js/main.js")}"></script><script defer src="${asset("js/track.js")}"></script></head><body>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="${asset("css/fonts.css")}"><link rel="stylesheet" href="${asset("css/style.css")}"><link rel="stylesheet" href="${asset("css/sponsors.css")}">${hero ? `<link rel="preload" as="image" href="${e(hero)}" fetchpriority="high">` : ""}
+<script defer src="${asset("js/listings.js")}"></script><script defer src="${asset("js/main.js")}"></script><script defer src="${asset("js/sponsor-core.js")}"></script><script defer src="${asset("js/sponsors.js")}"></script><script defer src="${asset("js/track.js")}"></script></head><body>
 <a class="skip-link" href="#main">Skip to content</a><header class="site-header"><div class="container header-inner"><a class="brand" href="/" aria-label="Glasgow Theatre home">GLASGOW<span>THEATRE<span class="brand-dot">●</span></span></a>
 <details class="nav-menu" open><summary class="nav-toggle"><span class="nav-bars" aria-hidden="true"></span><span class="nav-toggle-label">Menu</span></summary><nav aria-label="Main navigation">${nav.map(([key, href, text]) => `<a href="${href}"${active === key ? ' aria-current="page"' : ""}>${text}</a>`).join("")}</nav></details></div></header>
 <main id="main">${body}</main>
@@ -366,6 +361,7 @@ write(
         "",
       )}</select></label><label>From<input id="filter-date-from" type="date"></label><label>To<input id="filter-date-to" type="date"></label></div><div class="filter-pills-group" aria-label="Filter by art form"><button class="filter-pill active" data-form="" aria-pressed="true">All shows <span class="filter-pill-count">${events.length}</span></button>${forms.map((form) => `<button class="filter-pill" data-form="${e(form)}" aria-pressed="false">${e(label(form))} <span class="filter-pill-count">${formCounts[form]}</span></button>`).join("")}</div></details>
 <div class="results-bar"><span id="results-count" role="status" aria-live="polite">${events.length} shows</span><button class="text-button" data-reset>Clear filters <span aria-hidden="true">×</span></button></div>
+<div id="sponsored-slot" data-placement="home" hidden></div>
 <div class="events-grid" id="events-grid">${events.map(card).join("")}</div><div class="no-results" id="no-results" hidden><h3>A different night, perhaps?</h3><p>No shows match these filters. Try another date, venue or art form.</p><button class="btn" data-reset>Clear filters</button></div></div></section>
 <section class="listing-invite"><div class="container"><div><p class="eyebrow">Are you a theatre maker?</p><h2>Tell us about<br>your show.</h2><p>Let the city know about your production, free.</p></div><a class="btn" href="/submit.html">List your show — it’s free ${arrow}</a></div></section>`,
   ),
@@ -644,6 +640,7 @@ ${performancePanel(event)}
 </div>
 <aside class="show-aside">${ticketPanel(event)}${concessionPanel(event)}</aside>
 </div></section>
+<div class="container detail-sponsor" id="sponsored-slot" data-placement="detail" data-current-show-url="${e(event.ticketUrl)}" hidden></div>
 <script type="application/ld+json">${json(eventData(event))}</script>`,
     "events",
     [event],
@@ -671,9 +668,10 @@ write(
 <h2>What is recorded</h2>
 <p>When you select a ticket link, or open a show page, the site records the show identifier, the part of the site the link appeared on, the page path, the country Cloudflare reports for the request, and the time.</p>
 <p>The record contains no cookie, IP address or other identifier. It cannot be linked to an individual, and separate records cannot be combined to reconstruct a visit.</p>
-<p>The purpose is to measure which listings result in bookings. The lawful basis is legitimate interests: understanding how the site is used.</p>
+<p>The purpose is to measure outbound interest in listings and sponsored shows. These counts do not tell us whether a ticket was purchased. The lawful basis is legitimate interests: understanding how the site is used.</p>
 <h2>What is not recorded</h2>
-<p>The site does not use third-party analytics, advertising or cross-site tracking. It sets no cookies of its own, does not store IP addresses, and has no user accounts. Fonts and images are served from this site rather than a third party. Requests to the public API are not counted.</p>
+<p>The site does not use third-party analytics or cross-site tracking. Sponsored shows are clearly labelled and their outbound clicks are counted separately using the same anonymous records. Public visitors receive no analytics or advertising cookies. Fonts and images are served from this site. Requests to the public API are not counted.</p>
+<h2>Admin sign-in</h2><p>The private sponsorship panel uses a secure sign-in cookie lasting up to eight hours. Failed sign-in attempts are rate limited using a short-lived hashed network address; these counters expire after 15 minutes, are cleared on later sign-in attempts, and are never combined with audience analytics.</p>
 <h2>Hosting</h2>
 <p>Cloudflare serves the site and processes each request. It keeps its own security and performance logs under Cloudflare’s privacy policy. The site operator does not receive or retain visitor-level logs. Cloudflare may set a security cookie when it checks whether a request is automated.</p>
 <h2>Email</h2>
@@ -785,7 +783,9 @@ write(
     [],
   ),
 );
-write("robots.txt", `User-agent: *\nAllow: /\nDisallow: /track\nDisallow: /analytics\nSitemap: ${SITE}/sitemap.xml\n`);
+write("data/sponsor-listings.json", json(Object.fromEntries(events.map(event => [event.ticketUrl.replace(/\/$/, ""), { id: event.id, form: event.form, formLabel: label(event.form), tags: event.tags }]))));
+write("admin/sponsorships/index.html", require("./scripts/sponsorship-admin").adminPage(asset));
+write("robots.txt", `User-agent: *\nAllow: /\nDisallow: /track\nDisallow: /analytics\nDisallow: /admin/\nSitemap: ${SITE}/sitemap.xml\n`);
 write("CNAME", "glasgowtheatre.com\n");
 write(".nojekyll", "");
 write(

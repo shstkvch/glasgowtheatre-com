@@ -256,12 +256,12 @@
     "taggedAt": "2026-10-18"
   },
   "7a8ee446d412d9be": {
-    "form": "play",
+    "form": "scratch",
     "inScope": true,
     "scopeReason": "",
-    "provider": "deepseek",
-    "model": "deepseek-flash",
-    "taggedAt": "2026-10-18"
+    "provider": "editorial",
+    "model": "editorial-correction",
+    "taggedAt": "2026-10-30"
   },
   "e22463a59561eba2": {
     "form": "physical-theatre",
@@ -464,12 +464,12 @@
     "taggedAt": "2026-10-18"
   },
   "1a90ee10bd3c2c5b": {
-    "form": "cabaret",
+    "form": "scratch",
     "inScope": true,
     "scopeReason": "",
-    "provider": "deepseek",
-    "model": "deepseek-flash",
-    "taggedAt": "2026-10-18"
+    "provider": "editorial",
+    "model": "editorial-correction",
+    "taggedAt": "2026-10-30"
   },
   "12fc12b50384c035": {
     "form": "pantomime",

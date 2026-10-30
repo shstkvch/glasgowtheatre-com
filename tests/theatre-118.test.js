@@ -107,6 +107,14 @@ test("a workshop is community, with its own art form", () => {
   assert.ok(ALLOWED.has(workshop.form));
 });
 
+test("a scratch type from the venue maps to the scratch category", () => {
+  for (const type of ["Scratch", "Scratch Night", "New Material"]) {
+    const scratchFeed = structuredClone(feed);
+    scratchFeed.shows[0].type = type;
+    assert.equal(theatre118Events(scratchFeed)[0].form, "scratch", type);
+  }
+});
+
 test("Pay What You Can with no fixed price is still a price", () => {
   const pricing = theatre118Pricing({ pay_what_you_can: true, ticket_types: [] });
   assert.equal(pricing.from, null);

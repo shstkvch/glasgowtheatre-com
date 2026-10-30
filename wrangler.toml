@@ -1,0 +1,13 @@
+name = "glasgowtheatre-com"
+pages_build_output_dir = "dist"
+compatibility_date = "2026-09-09"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "glasgowtheatre-sponsorship-preview"
+database_id = "bf3eb5d5-ca9a-415c-8610-f0a1097d515b"
+
+[[env.production.d1_databases]]
+binding = "DB"
+database_name = "glasgowtheatre-events"
+database_id = "9bab9568-334c-4bdc-b244-dbaa2276bec4"

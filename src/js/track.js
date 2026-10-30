@@ -60,7 +60,9 @@
     true,
   );
 
-  const show = location.pathname.match(/^\/shows\/([^/]+)\.html$/);
+  // Pages canonicalises .html links to extensionless URLs; both forms occur
+  // in local previews and must record the same show-page view.
+  const show = location.pathname.match(/^\/shows\/([a-z0-9-]+)(?:\.html)?\/?$/);
   if (show) {
     const event = (window.EVENTS || [])[0] || {};
     send({

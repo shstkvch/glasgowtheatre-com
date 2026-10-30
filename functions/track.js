@@ -81,6 +81,22 @@ export async function onRequestPost({ request, env, waitUntil }) {
            venue_id = COALESCE(excluded.venue_id, venue_id),
            title = COALESCE(excluded.title, title)`,
       ).bind(row.show, row.kind, row.venue, row.title),
+      env.DB.prepare(
+        `INSERT INTO daily_surface_counts (day, show_id, kind, surface, venue_id, title, n)
+         VALUES (?1, ?2, ?3, ?4, ?5, ?6, 1)
+         ON CONFLICT(day, show_id, kind, surface) DO UPDATE SET
+           n = n + 1,
+           venue_id = COALESCE(excluded.venue_id, venue_id),
+           title = COALESCE(excluded.title, title)`,
+      ).bind(row.day, row.show, row.kind, row.surface, row.venue, row.title),
+      env.DB.prepare(
+        `INSERT INTO surface_totals (show_id, kind, surface, venue_id, title, n)
+         VALUES (?1, ?2, ?3, ?4, ?5, 1)
+         ON CONFLICT(show_id, kind, surface) DO UPDATE SET
+           n = n + 1,
+           venue_id = COALESCE(excluded.venue_id, venue_id),
+           title = COALESCE(excluded.title, title)`,
+      ).bind(row.show, row.kind, row.surface, row.venue, row.title),
     ]).catch(() => {}),
   );
 

@@ -131,8 +131,12 @@ Rules:
 - A pantomime is "pantomime", not "musical" and not "stand-up", however funny
   or however many songs it has.
 - "workshop" is for sessions the audience takes part in: classes, auditions,
-  recruitment calls. A scratch night or work-in-progress that people sit and
-  watch is a performance - use the form of the work being shown.
+  recruitment calls. A scratch or new-material night that people sit and watch
+  is "scratch", including a mixed bill of play extracts, stand-up, poetry or
+  music. Classify the night, rather than one of the forms featured in it.
+- "scratch" is for nights or showcases of unfinished work being tried out.
+  New writing alone does not make a finished play "scratch", and a comedian's
+  ordinary stand-up show stays "stand-up" just because it contains new jokes.
 - A discussion, panel or Q&A about a play is "talk", even when extracts are
   performed during it. An event whose purpose is to look round the building is
   "tour".
@@ -148,7 +152,7 @@ than theatre, and for those you must also decide whether the event belongs on a
 theatre and live performance listings site at all.
 
 In scope: plays, musicals, opera, dance, pantomime, comedy and stand-up,
-cabaret, variety, drag, burlesque, spoken word, poetry and storytelling,
+cabaret, variety, scratch and new-material nights, drag, burlesque, spoken word, poetry and storytelling,
 physical theatre, clown, circus and puppetry, and the talks, tours and
 workshops a venue runs alongside that work.
 

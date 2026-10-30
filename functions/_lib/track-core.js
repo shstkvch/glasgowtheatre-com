@@ -9,7 +9,8 @@
 "use strict";
 
 const KINDS = new Set(["click", "view"]);
-const SURFACES = new Set(["card", "show-hero", "show-panel", "show", "other"]);
+const SPONSORED_SURFACES = new Set(["sponsored-home", "sponsored-detail"]);
+const SURFACES = new Set(["card", "show-hero", "show-panel", "show", "other", ...SPONSORED_SURFACES]);
 const SHOW_RE = /^[a-z0-9][a-z0-9-]{0,119}$/;
 const VENUE_RE = /^[a-z0-9][a-z0-9-]{0,59}$/;
 const PATH_RE = /^\/[^\u0000-\u001f\u007f?#]{0,159}$/;
@@ -89,10 +90,10 @@ function safeEqual(a, b) {
  * Merge the daily counters and the lifetime counters into one report.
  *
  * `daily` is one row per day, show and kind; `totals` is one row per show and
- * kind. Summing in JavaScript keeps the dashboard to three small indexed
+ * kind. Summing in JavaScript keeps the dashboard to small indexed
  * queries however many raw events there are.
  */
-function summarise({ daily = [], totals = [], today }) {
+function summariseCounts({ daily = [], totals = [], today }) {
   const weekStart = shiftDay(today, -6);
   const monthStart = shiftDay(today, -29);
   const shows = new Map();
@@ -158,6 +159,24 @@ function summarise({ daily = [], totals = [], today }) {
     },
     shows: list,
   };
+}
+
+/** Placement counters supplement the existing totals; they are subsets, not
+ * extra clicks. Keep the original report shape intact for existing clients. */
+function summarise({ daily = [], totals = [], surfaceDaily = [], surfaceTotals = [], today }) {
+  const report = summariseCounts({ daily, totals, today });
+  const breakdown = surfaces => {
+    const result = summariseCounts({
+      daily: surfaceDaily.filter(row => surfaces.has(row.surface)),
+      totals: surfaceTotals.filter(row => surfaces.has(row.surface)),
+      today,
+    });
+    return { totals: result.totals, shows: result.shows };
+  };
+  report.sponsored = breakdown(SPONSORED_SURFACES);
+  const surfaces = new Set([...SPONSORED_SURFACES, ...surfaceDaily.map(row => row.surface), ...surfaceTotals.map(row => row.surface)]);
+  report.surfaces = Object.fromEntries([...surfaces].filter(surface => SURFACES.has(surface)).map(surface => [surface, breakdown(new Set([surface]))]));
+  return report;
 }
 
 module.exports = {

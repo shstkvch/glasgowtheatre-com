@@ -1,0 +1,41 @@
+/* An editorial placement using Glasgow Theatre's existing design tokens. */
+.sponsored-show{margin:0 0 29px;display:block;border:1px solid var(--line);border-radius:5px;background:#eeebf7;overflow:hidden}
+.sponsor-disclosure{display:flex;align-items:center;gap:14px;padding:9px 20px;border-bottom:1px solid var(--line);font-size:10px;color:var(--muted);line-height:1.5}
+.sponsor-label{font-size:10px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--ink)}
+.sponsor-disclosure>span+span{padding-left:14px;border-left:1px solid var(--line)}
+.sponsor-layout{display:grid;grid-template-columns:260px minmax(0,1fr) 205px;gap:27px;align-items:center;padding:20px}
+.sponsor-art{display:block;background:var(--ink);border-radius:3px;overflow:hidden;aspect-ratio:764/510}
+.sponsor-art img{width:100%;height:100%;object-fit:contain}
+.sponsor-copy{min-width:0}
+.sponsor-venue{font-size:11px;font-weight:700;color:var(--blue);margin-bottom:8px}
+.sponsor-venue span{font-weight:400;color:var(--muted)}
+.sponsored-show h2{font-family:var(--display);font-weight:700;font-size:35px;line-height:1.06;letter-spacing:-.015em;margin-bottom:12px;max-width:440px}
+.sponsored-show h2 a:hover{color:var(--blue);text-decoration:none}
+.sponsor-facts{display:flex;flex-wrap:wrap;gap:5px 17px;font-size:11px;font-weight:600;margin-bottom:10px}
+.sponsor-facts>span+span{color:var(--muted);font-weight:400}
+.sponsor-description{font-size:12px;line-height:1.7;color:var(--muted);max-width:465px}
+.sponsor-booking{align-self:stretch;display:flex;flex-direction:column;justify-content:center;gap:23px;border-left:1px solid var(--line);padding-left:25px}
+.sponsor-price{font-size:17px;font-weight:700;line-height:1.4}
+.sponsor-fee{font-size:10px;line-height:1.6;color:var(--muted);margin-top:3px}
+.sponsor-pwyc{font-size:10px;color:var(--blue);font-weight:600;margin-top:10px}
+.sponsor-ticket{font-size:12px;gap:12px;padding:11px 13px;justify-content:space-between;white-space:nowrap}
+.sponsor-ticket span{font-size:18px}
+.preview-note{font-size:10px;color:var(--muted)}
+.detail-sponsor{padding-bottom:64px}
+.detail-sponsor .sponsored-show{margin-bottom:0}
+@media(min-width:1400px){.sponsor-layout{grid-template-columns:285px minmax(0,1fr) 225px}.sponsored-show h2{font-size:39px}}
+@media(max-width:1050px) and (min-width:721px){.sponsor-layout{grid-template-columns:200px minmax(0,1fr);gap:13px 23px;align-items:start}.sponsor-art{grid-row:1 / span 2;align-self:center}.sponsor-booking{grid-column:2;border-left:0;border-top:1px solid var(--line);padding:12px 0 0;flex-direction:row;align-items:center;justify-content:space-between;gap:12px}.sponsor-pwyc{margin-top:4px}.sponsored-show h2{font-size:32px}.sponsor-price{font-size:14px}.sponsor-description{display:none}.sponsor-facts{margin-bottom:0}.sponsor-ticket{padding:10px;gap:10px}}
+@media(max-width:720px){
+ .sponsored-show{margin-bottom:24px}
+ .sponsor-disclosure{padding:9px 13px;gap:9px;font-size:8px}.sponsor-label{font-size:9px;letter-spacing:.055em}.sponsor-disclosure>span+span{padding-left:9px}
+ .sponsor-layout{grid-template-columns:110px minmax(0,1fr);gap:16px 13px;padding:15px;align-items:start}
+ .sponsor-art{margin-top:1px;aspect-ratio:764/510}
+ .sponsor-venue{font-size:10px;line-height:1.5;margin-bottom:7px}.sponsor-venue span{display:block}
+ .sponsored-show h2{font-size:27px;line-height:1.05;margin-bottom:10px}
+ .sponsor-facts{font-size:10px;gap:4px;display:flex;flex-direction:column;margin:0}
+ .sponsor-description{display:none}
+ .sponsor-booking{grid-column:1/-1;border:0;border-top:1px solid var(--line);padding:13px 0 0;display:flex;flex-direction:row;justify-content:space-between;align-items:center;gap:10px}
+ .sponsor-price{font-size:15px}.sponsor-fee{font-size:8px}.sponsor-pwyc{font-size:9px;margin-top:5px}
+ .sponsor-ticket{font-size:10px;gap:10px;padding:12px 10px;min-height:44px}
+}
+@media(max-width:365px){.sponsor-layout{grid-template-columns:90px minmax(0,1fr);padding:12px;gap:13px 11px}.sponsored-show h2{font-size:25px}.sponsor-booking{align-items:stretch;flex-direction:column;gap:12px}.sponsor-ticket{font-size:12px}.sponsor-disclosure{gap:6px;padding-inline:11px}.sponsor-disclosure>span+span{padding-left:6px}}

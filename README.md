@@ -4,7 +4,7 @@ Independent listings for [glasgowtheatre.com](https://glasgowtheatre.com), built
 
 ## Develop and check
 
-Requires Node 22+, npm and Python 3 for the local preview server.
+Requires Node 22.13+, npm and Python 3 for the static preview server.
 
 ```sh
 npm ci
@@ -70,11 +70,31 @@ serves the aggregate report at `/analytics`, protected by `ANALYTICS_TOKEN`.
 `theatre analytics` in the [theatre-cli](https://github.com/shstkvch/theatre-cli)
 package polls that endpoint and redraws the table every three seconds.
 
-The write is one transaction of three statements: the raw row in `events`, the
-day's counter in `daily_counts`, and the lifetime counter in `show_totals`. The
-dashboard only reads the two counter tables, so polling never scans the raw
-table. A sweep in `/track` deletes raw rows older than 13 months; the counters
-keep the history.
+The write is one transaction of five statements: the raw row in `events`, the
+day's and lifetime counters in `daily_counts` and `show_totals`, and the same
+counters split by placement in `daily_surface_counts` and `surface_totals`.
+The dashboard reads the counter tables, so polling never scans the raw table.
+A sweep in `/track` deletes raw rows older than 13 months; the counters keep
+the history.
+
+Sponsored outbound links use `sponsored-home` or `sponsored-detail` as their
+`data-track-surface`, including the artwork, title and booking button. The
+private `/analytics` response adds `sponsored` (the combined paid-placement
+subset) and `surfaces` (each placement's own totals and shows). The existing
+overall totals still include each click exactly once; an ordinary ticket
+link for the same show remains outside the sponsored subset. These are
+outbound clicks, not ticket purchases or unique visitors.
+
+Before deploying these tracking Functions to an existing database, apply:
+
+```sh
+npx wrangler d1 execute glasgowtheatre-events --remote --file=db/migrations/0001_surface_counts.sql
+```
+
+The migration is additive and safe to rerun. Placement history starts when
+the new counters are enabled; older all-time totals are preserved without
+inventing a placement breakdown. The terminal CLI's existing table remains
+compatible; its renderer would need an update to display the new breakdown.
 
 Nothing in a row identifies a visitor. There is no cookie and no IP address;
 the only request-derived field is the country Cloudflare reports. Clicks made
@@ -95,6 +115,80 @@ Locally, `npx wrangler pages dev dist --config wrangler.toml` with a D1 binding
 named `DB` and `ANALYTICS_TOKEN` set. `_routes.json` lists `/track` and
 `/analytics`; a new Function under another path will not run until it is added
 there by `scripts/api.js`.
+
+## Manage sponsored shows
+
+The private manager is at **https://glasgowtheatre.com/admin/sponsorships/**.
+It controls Theatre 118’s native Sponsored Show card, on the homepage and at
+the bottom of show detail pages. Sign in with the private admin password.
+
+The panel can pause or enable the sponsorship, set inclusive Glasgow start/end
+dates, choose either or both placements, automatically pick the next bookable
+show or pin one particular show, and edit up to 280 characters of promotional
+copy. An empty description uses the venue’s current show description. The
+preview reflects unsaved edits; **Save changes** publishes the settings. A
+revision check prevents one editor from silently overwriting another window.
+**Refresh shows** rechecks the venue; **Refresh counts** updates the click table
+without discarding an edit. Counts include sponsored links only, split by
+homepage and detail pages, with per-show totals underneath.
+
+Show titles, artwork, times, prices and stock come from Theatre 118’s public API.
+The full paginated feed is cached in D1 for five minutes, with ETag revalidation
+for a complete single-page feed. The next show is chosen by its next future,
+non-cancelled, non-sold-out, bookable performance, rather than by its run’s
+opening date. Specific-show selection never falls through to a different show.
+External box-office inventory and unknown availability are excluded. A venue
+outage hides the public placement rather than advertising stale stock; the
+admin panel can still pause or schedule the sponsorship during an outage.
+
+Public cards request `/sponsorship?placement=home` or `detail`, check for settings
+changes every minute, and recheck when the tab becomes visible. Homepage cards
+use the same filter function as the listings and additionally require a
+bookable performance in the chosen date range. Excluding filters remove the
+whole slot. A detail page never advertises its own show. The current category
+and existing site identifier are matched by stable booking URL; new API shows
+can appear before the next daily listings build. Images are cached through
+`/sponsor-image` on this domain, restricted to Theatre 118’s public image paths.
+No third-party ad network, R2 bucket or separate server is needed.
+
+### Local development and verification
+
+```sh
+npm run dev:sponsorships
+# http://127.0.0.1:4190/admin/sponsorships/
+# The first run creates a local password in ignored .dev.vars.
+npm run test:sponsorships
+```
+
+The development command builds into ignored `.wrangler/sponsorship-dist` and
+uses local D1. The browser suite starts a separate Pages runtime and local
+D1 database, seeds a public API fixture, and tests the real save/authentication,
+selection, placement, filter and click-counter paths on desktop and mobile.
+Unit tests also exercise signed sessions, rate limiting, CSRF checks, cache
+expiry, pagination and inventory failures. Auth traces are disabled.
+
+`wrangler.toml` binds preview deployments to a separate preview database and
+production to `glasgowtheatre-events`. It contains no credentials. Apply the
+additive migrations before deploying the corresponding Functions:
+
+```sh
+npx wrangler d1 execute DB --env production --remote --file=db/migrations/0001_surface_counts.sql
+npx wrangler d1 execute DB --env production --remote --file=db/migrations/0002_sponsorship.sql
+# New preview database: initialise with the full schema.
+npx wrangler d1 execute DB --remote --file=db/schema.sql
+npx wrangler pages secret put SPONSOR_ADMIN_PASSWORD --project-name glasgowtheatre-com
+# Use --env preview to set the preview environment’s password as well.
+```
+
+Use a randomly generated password of at least 20 characters. The panel uses an
+eight-hour signed HttpOnly, Secure, SameSite=Strict cookie on HTTPS. Writes
+require a matching Origin, login attempts are rate limited, and missing
+configuration fails closed. Changing the password invalidates existing
+sessions. Keep `.dev.vars` and credential exports outside Git. Existing Pages
+service keys are encrypted secrets rather than plaintext configuration vars.
+
+The `experiments/` mockups remain as design references; production uses the
+shared code in `src/js/sponsor-core.js`, the Pages Functions and the normal build.
 
 ## Add or correct a listing
 
@@ -160,7 +254,7 @@ A reply that skips a listing now counts as a failure rather than a success with 
 
 What the keyword fallback guesses when it cannot place a listing follows the venue. At a dedicated theatre everything staged is theatre, so `play` is a fair last resort; at a venue that programmes more than theatre most of what it puts on is a gig, so the same guess is wrong the other way round and the last resort is `music`. It is still a guess — which is why the daily email now names every listing that took one, alongside the exclusions, and says how many of the listings put to the model it actually answered about.
 
-`talk`, `workshop` and `tour` are forms for events that are not performances to watch: a discussion about a play is a talk. `a-play-a-pie-a-pint`, `lunchtime` and `scratch` remain searchable source metadata, but do not appear as art-form filters.
+`talk`, `workshop` and `tour` are forms for events that are not performances to watch: a discussion about a play is a talk. `scratch`, shown as **Scratch / new material**, is for nights and showcases where an audience watches artists try out unfinished work, including mixed bills such as Working it Out. A finished new play remains a play, and a participatory session remains a workshop. `a-play-a-pie-a-pint` and `lunchtime` remain searchable source metadata, rather than art-form filters.
 
 Both model passes, and the artwork reader, ask `scripts/llm.js`, which calls DeepSeek directly first and OpenRouter second. Set `DEEPSEEK_API_KEY` and/or `OPENROUTER_API_KEY` in `.env` (see `.env.example`). A provider with no key is skipped; if DeepSeek times out, rate-limits or answers something unreadable, the same prompt and schema go to OpenRouter and the pass carries on. With neither key, tagging falls back to keyword matching and exits successfully — it never breaks a build. Run `npm run tag -- --dry-run` to preview changes, or `--retag` to ignore the cache.
 

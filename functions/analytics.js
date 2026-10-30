@@ -33,7 +33,7 @@ export async function onRequestGet({ request, env }) {
 
   const today = londonDay();
   const monthStart = shiftDay(today, -29);
-  const [daily, totals] = await env.DB.batch([
+  const [daily, totals, surfaceDaily, surfaceTotals] = await env.DB.batch([
     env.DB.prepare(
       `SELECT day, show_id, kind, venue_id, title, n
        FROM daily_counts WHERE day >= ?1`,
@@ -41,11 +41,20 @@ export async function onRequestGet({ request, env }) {
     env.DB.prepare(
       "SELECT show_id, kind, venue_id, title, n FROM show_totals",
     ),
+    env.DB.prepare(
+      `SELECT day, show_id, kind, surface, venue_id, title, n
+       FROM daily_surface_counts WHERE day >= ?1`,
+    ).bind(monthStart),
+    env.DB.prepare(
+      "SELECT show_id, kind, surface, venue_id, title, n FROM surface_totals",
+    ),
   ]);
 
   const report = summarise({
     daily: daily.results || [],
     totals: totals.results || [],
+    surfaceDaily: surfaceDaily.results || [],
+    surfaceTotals: surfaceTotals.results || [],
     today,
   });
 

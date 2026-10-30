@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Theatre 118 · Ad experiment</title>
+  <style>
+    @font-face{font-family:Bricolage;src:url('assets/bricolage-bold.ttf') format('truetype');font-weight:700;font-display:swap}
+    *{box-sizing:border-box}body{margin:0;background:#efedf2;color:#282331;font:700 14px Bricolage,Arial,sans-serif}button{font:inherit;cursor:pointer}button:focus-visible,a:focus-visible{outline:3px solid #7028bb;outline-offset:5px}
+    header{height:88px;display:flex;justify-content:space-between;align-items:center;padding:0 5%;border-bottom:1px solid #28233118}.wordmark{font-size:17px;letter-spacing:-.7px}.wordmark span{color:#807788;font-weight:700}.experiment{font:11px monospace;letter-spacing:1px;color:#6c6376}
+    main{max-width:1100px;margin:70px auto;padding:0 40px}.intro{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:47px}.eyebrow{font:11px monospace;letter-spacing:1.5px;color:#73667d;margin:0 0 19px}h1{font-size:clamp(35px,5vw,57px);line-height:1.04;letter-spacing:-2.6px;margin:0}.intro p:last-child{color:#766c7e;font-size:13px;line-height:1.7;max-width:260px;margin:0 0 3px}
+    .toolbar{display:flex;align-items:center;justify-content:space-between;gap:15px;margin-bottom:15px}.formats{display:flex;padding:4px;background:#e3dfe9;border-radius:7px;gap:3px}.formats button{border:0;background:none;color:#72667c;font-size:11px;padding:9px 15px;border-radius:4px}.formats button[aria-pressed=true]{background:white;color:#282331;box-shadow:0 1px 4px #28233113}.replay{border:0;background:transparent;color:#51435e;font-size:11px;padding:10px 0}.replay span{font-size:17px;vertical-align:-1px;margin-right:5px}
+    .canvas{min-height:346px;display:flex;justify-content:center;align-items:center;padding:35px 0;background-image:radial-gradient(#82758f33 .7px,transparent .7px);background-size:9px 9px;border:1px solid #28233112;border-radius:4px;overflow:hidden}.frame-shell{width:970px;max-width:100%;height:250px;box-shadow:0 17px 30px -18px #21132d8c;transition:width .5s cubic-bezier(.25,.8,.25,1),height .3s}iframe{display:block;border:0;width:100%;height:100%;background:#ff5619}.frame-shell.mobile{width:360px;height:300px}
+    .caption{display:flex;justify-content:space-between;margin:14px 0 0;font:10px monospace;color:#82768b;gap:20px}.caption a{color:inherit;text-underline-offset:3px}.notes{display:grid;grid-template-columns:repeat(3,1fr);gap:35px;border-top:1px solid #28233120;margin-top:54px;padding-top:25px}.notes h2{font-size:12px;margin:0 0 8px}.notes p{font-size:12px;line-height:1.7;color:#82768b;margin:0;max-width:255px}.dot{display:inline-block;width:7px;height:7px;background:#ff5619;border-radius:50%;margin-right:7px}.dot.purple{background:#7028bb}.dot.dark{background:#282331}
+    footer{font:10px monospace;color:#998da3;margin-top:55px;padding-bottom:20px}
+    @media(max-width:700px){header{height:70px;padding:0 22px}.experiment{font-size:9px}.wordmark{font-size:15px}main{margin:40px auto;padding:0 20px}.intro{display:block;margin-bottom:28px}.intro p:last-child{margin-top:20px;max-width:100%}h1{letter-spacing:-1.5px}.canvas{min-height:350px;padding:20px 0}.frame-shell{height:300px}.notes{grid-template-columns:1fr;gap:22px;margin-top:35px}.notes p{max-width:100%}.caption{font-size:9px}.formats button{padding:9px 12px}}
+    @media(prefers-reduced-motion:reduce){*{transition:none!important}}
+  </style>
+</head>
+<body>
+  <header><div class="wordmark">glasgow<span>theatre</span></div><div class="experiment">EXPERIMENTS / THEATRE 118</div></header>
+  <main>
+    <div class="intro"><div><p class="eyebrow">AN INTERACTIVE AD FOR THEATRE 118</p><h1>Small stage.<br>Big presence.</h1></div><p>A curtain call for Glasgow’s fringe theatre.<br>Move your pointer. Pick your scene.<br>Find your next night out.</p></div>
+    <div class="toolbar"><div class="formats" role="group" aria-label="Preview size"><button data-format="desktop" aria-pressed="true">Desktop</button><button data-format="mobile" aria-pressed="false">Mobile</button></div><button class="replay"><span aria-hidden="true">↻</span> Replay the entrance</button></div>
+    <div class="canvas"><div class="frame-shell"><iframe src="ad.html" title="Interactive Theatre 118 advertisement"></iframe></div></div>
+    <div class="caption"><span class="dimensions">RESPONSIVE BILLBOARD · 970 × 250</span><a href="ad.html" target="_blank" rel="noopener">Open ad on its own ↗</a></div>
+    <div class="notes"><div><h2><span class="dot purple"></span>The curtain goes up</h2><p>A short opening reveal gives the ad its own little moment on stage.</p></div><div><h2><span class="dot"></span>You set the scene</h2><p>Choose theatre, comedy or live performance. The spotlight follows your pointer.</p></div><div><h2><span class="dot dark"></span>A real next step</h2><p>The ticket takes you straight to Theatre 118’s current programme.</p></div></div>
+    <footer>CREATIVE CONCEPT · LOCAL PREVIEW · NO TRACKING</footer>
+  </main>
+  <script>
+    const shell = document.querySelector('.frame-shell');
+    const frame = document.querySelector('iframe');
+    const formatButtons = [...document.querySelectorAll('[data-format]')];
+    function setFormat(format) {
+      shell.classList.toggle('mobile', format === 'mobile');
+      formatButtons.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.format === format)));
+      document.querySelector('.dimensions').textContent = format === 'mobile' ? 'MOBILE BILLBOARD · 360 × 300' : 'RESPONSIVE BILLBOARD · 970 × 250';
+    }
+    formatButtons.forEach(button => button.addEventListener('click', () => setFormat(button.dataset.format)));
+    document.querySelector('.replay').addEventListener('click', () => frame.contentWindow.postMessage('replay-ad', location.origin));
+    if (matchMedia('(max-width: 700px)').matches) setFormat('mobile');
+  </script>
+</body>
+</html>
