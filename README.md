@@ -73,7 +73,8 @@ package polls that endpoint and redraws the table every three seconds.
 The write is one transaction of three statements: the raw row in `events`, the
 day's counter in `daily_counts`, and the lifetime counter in `show_totals`. The
 dashboard only reads the two counter tables, so polling never scans the raw
-table.
+table. A sweep in `/track` deletes raw rows older than 13 months; the counters
+keep the history.
 
 Nothing in a row identifies a visitor. There is no cookie and no IP address;
 the only request-derived field is the country Cloudflare reports. Clicks made
