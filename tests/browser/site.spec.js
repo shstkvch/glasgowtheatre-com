@@ -729,3 +729,52 @@ test("without JavaScript every nav link is still reachable", async ({
   await expect(page.locator(".nav-menu")).toHaveAttribute("open", "");
   await context.close();
 });
+
+test("ticket links name the show and send one beacon", async ({ page }) => {
+  const bodies = [];
+  await page.route("**/track", async (route) => {
+    bodies.push(route.request().postData());
+    await route.fulfill({ status: 204 });
+  });
+  await page.goto("/");
+  const link = page.locator(".ticket-link").first();
+  await expect(link).toHaveAttribute("data-track-show", /.+/);
+  await expect(link).toHaveAttribute("data-track-venue", /.+/);
+  await expect(link).toHaveAttribute("data-track-surface", "card");
+  // Keep the test on this page: the click still counts, the venue does not open.
+  await link.evaluate((anchor) =>
+    anchor.addEventListener("click", (event) => event.preventDefault(), {
+      once: true,
+    }),
+  );
+  await link.click();
+  await expect.poll(() => bodies.length).toBe(1);
+  const payload = JSON.parse(bodies[0]);
+  expect(payload.kind).toBe("click");
+  expect(payload.surface).toBe("card");
+  expect(payload.show).toBe(await link.getAttribute("data-track-show"));
+});
+
+test("a show page records one view", async ({ page }) => {
+  const bodies = [];
+  await page.route("**/track", async (route) => {
+    bodies.push(route.request().postData());
+    await route.fulfill({ status: 204 });
+  });
+  await page.goto("/");
+  const href = await page.locator(".event-card h3 a").first().getAttribute("href");
+  await page.goto(href);
+  await expect.poll(() => bodies.length).toBe(1);
+  const payload = JSON.parse(bodies[0]);
+  expect(payload.kind).toBe("view");
+  expect(payload.show).toBe(href.match(/\/shows\/(.+)\.html/)[1]);
+  expect(payload.venue).toBeTruthy();
+});
+
+test("the privacy policy is linked from every page", async ({ page }) => {
+  await page.goto("/");
+  await page.locator('.site-footer a[href="/privacy.html"]').click();
+  await expect(page).toHaveTitle(/Privacy/);
+  await expect(page.locator("h1")).toContainText("Privacy");
+  await expect(page.locator("h2").first()).toContainText("What is recorded");
+});

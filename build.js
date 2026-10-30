@@ -230,6 +230,9 @@ function art(event) {
 const scheme = (event) => concessions[event.venueId] || null;
 /** Every show has a page of its own, and this is where it lives. */
 const showPath = (event) => `/shows/${event.id}.html`;
+/** The outbound links carry what /track needs to name the show in a report. */
+const trackAttrs = (event, surface) =>
+  ` data-track-show="${e(event.id)}" data-track-venue="${e(event.venueId)}" data-track-title="${e(event.title)}" data-track-surface="${surface}"`;
 /** "From £18 (conc. from £5)", or nothing at all when nobody published a price. */
 const price = (event) => priceLabel(event.pricing, scheme(event));
 /**
@@ -309,11 +312,11 @@ function page(
 <title>${e(title)} | Glasgow Theatre</title><meta name="description" content="${e(description)}"><link rel="canonical" href="${SITE}${url}">
 <meta property="og:title" content="${e(title)}"><meta property="og:description" content="${e(description)}"><meta property="og:url" content="${SITE}${url}"><meta property="og:type" content="website"><meta property="og:site_name" content="Glasgow Theatre"><meta property="og:image" content="${SITE}/images/thrice.webp"><meta name="twitter:card" content="summary_large_image"><meta name="theme-color" content="#303fce">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="${asset("css/fonts.css")}"><link rel="stylesheet" href="${asset("css/style.css")}">${hero ? `<link rel="preload" as="image" href="${e(hero)}" fetchpriority="high">` : ""}
-<script defer src="${asset("js/listings.js")}"></script><script defer src="${asset("js/main.js")}"></script></head><body>
+<script defer src="${asset("js/listings.js")}"></script><script defer src="${asset("js/main.js")}"></script><script defer src="${asset("js/track.js")}"></script></head><body>
 <a class="skip-link" href="#main">Skip to content</a><header class="site-header"><div class="container header-inner"><a class="brand" href="/" aria-label="Glasgow Theatre home">GLASGOW<span>THEATRE<span class="brand-dot">●</span></span></a>
 <details class="nav-menu" open><summary class="nav-toggle"><span class="nav-bars" aria-hidden="true"></span><span class="nav-toggle-label">Menu</span></summary><nav aria-label="Main navigation">${nav.map(([key, href, text]) => `<a href="${href}"${active === key ? ' aria-current="page"' : ""}>${text}</a>`).join("")}</nav></details></div></header>
 <main id="main">${body}</main>
-<footer class="site-footer"><div class="container"><div class="footer-top"><div><a class="brand" href="/">GLASGOW<span>THEATRE<span class="brand-dot">●</span></span></a><p>Explore Glasgow’s bustling theatre scene.</p></div><div><p class="eyebrow">Made for the audience</p><a href="/about.html">About this independent guide ${arrow}</a><a href="/submit.html">Get your show listed ${arrow}</a><a href="/api/">API for developers ${arrow}</a><a href="mailto:info@glasgowtheatre.com">Get in touch ${arrow}</a></div></div><div class="footer-bottom"><span>© ${today.slice(0, 4)} Glasgow Theatre</span><span>Listings refreshed ${date(londonDate(new Date(status.refreshedAt)), true)} · Always check details with the venue.</span></div></div></footer>
+<footer class="site-footer"><div class="container"><div class="footer-top"><div><a class="brand" href="/">GLASGOW<span>THEATRE<span class="brand-dot">●</span></span></a><p>Explore Glasgow’s bustling theatre scene.</p></div><div><p class="eyebrow">Made for the audience</p><a href="/about.html">About this independent guide ${arrow}</a><a href="/submit.html">Get your show listed ${arrow}</a><a href="/privacy.html">Privacy ${arrow}</a><a href="/api/">API for developers ${arrow}</a><a href="mailto:info@glasgowtheatre.com">Get in touch ${arrow}</a></div></div><div class="footer-bottom"><span>© ${today.slice(0, 4)} Glasgow Theatre</span><span>Listings refreshed ${date(londonDate(new Date(status.refreshedAt)), true)} · Always check details with the venue.</span></div></div></footer>
 <script type="application/ld+json">${json({ "@context": "https://schema.org", "@type": "WebSite", name: "Glasgow Theatre", url: SITE })}</script>${active === "events" ? `<script type="application/ld+json">${json(pageEvents.map(eventData))}</script>` : ""}
 <script>window.EVENTS = ${json(pageEvents)};</script></body></html>`;
 }
@@ -341,7 +344,7 @@ function card(event, index = 0) {
 <p class="card-when">${times ? `<span class="fact-time">${e(times)}</span>` : ""}${cost ? `<span class="fact-price">${e(cost)}</span>` : `<span class="fact-unknown">Prices at the venue</span>`}</p>
 <p class="event-description">${e(event.description)}</p>
 ${event.accessibility ? `<p class="accessibility"><span aria-hidden="true">✳</span> ${e(event.accessibility)}</p>` : ""}
-<div class="event-card-footer"><a class="detail-link" href="${e(showPath(event))}">Prices &amp; times</a><a class="ticket-link" href="${e(event.ticketUrl)}" aria-label="Tickets for ${e(event.title)}">Tickets ${arrow}</a></div></div></article>`;
+<div class="event-card-footer"><a class="detail-link" href="${e(showPath(event))}">Prices &amp; times</a><a class="ticket-link" href="${e(event.ticketUrl)}"${trackAttrs(event, "card")} aria-label="Tickets for ${e(event.title)}">Tickets ${arrow}</a></div></div></article>`;
 }
 const venueCount = new Set(events.map((event) => event.venueId)).size;
 const formCounts = countArtForms(events);
@@ -543,7 +546,7 @@ ${pricing && pricing.live ? `<p class="ticket-live">A live price: the cheapest s
 ${source ? `<p class="ticket-source">The ${e(money(source.price))} is ${e(event.venue)}’s ${e(source.schemes.join(" and "))}, not a price set for this show. Eligibility is below.</p>` : ""}
 ${pricing && pricing.notes ? paras(pricing.notes, "ticket-note") : ""}
 ${!cost ? `<p class="ticket-note">${e(event.venue)} does not publish a price on its listing for this show. The booking page will have it.</p>` : ""}
-<a class="btn" href="${e(event.ticketUrl)}">Book at ${e(event.venue)} ${arrow}</a>
+<a class="btn" href="${e(event.ticketUrl)}"${trackAttrs(event, "show-panel")}>Book at ${e(event.venue)} ${arrow}</a>
 </div>`;
 }
 /**
@@ -630,7 +633,7 @@ function showPage(event) {
 <div class="show-hero-text"><p class="eyebrow"><a href="/venues/${e(event.venueId)}.html">${e(event.season || event.venue)}</a> · ${e(label(event.form))}</p>
 <h1>${e(event.title)}</h1>
 <dl class="show-facts">${facts.map(([term, value]) => `<div><dt>${e(term)}</dt><dd>${e(value)}</dd></div>`).join("")}</dl>
-<a class="btn" href="${e(event.ticketUrl)}">Book at ${e(event.venue)} ${arrow}</a></div>
+<a class="btn" href="${e(event.ticketUrl)}"${trackAttrs(event, "show-hero")}>Book at ${e(event.venue)} ${arrow}</a></div>
 ${event.image ? `<figure class="show-hero-image"><img src="${e(event.image)}" alt="${e(event.imageAlt || event.title)}" width="${hero.width}" height="${hero.height}" fetchpriority="high" decoding="async">${event.imageCredit ? `<figcaption>${e(event.imageCredit)}</figcaption>` : ""}</figure>` : ""}
 </div></div></section>
 <section class="show-body"><div class="container show-columns">
@@ -659,6 +662,36 @@ write(
   ),
 );
 write(
+  "privacy.html",
+  page(
+    "Privacy",
+    "What glasgowtheatre.com records, why, and for how long.",
+    "/privacy.html",
+    `<section class="page-hero container"><p class="eyebrow">Your data</p><h1>Privacy.</h1><p>What this site records, why it is recorded, and how long it is kept.</p></section><section class="prose container">
+<h2>What is recorded</h2>
+<p>When you select a ticket link, or open a show page, the site records the show identifier, the part of the site the link appeared on, the page path, the country Cloudflare reports for the request, and the time.</p>
+<p>The record contains no cookie, IP address or other identifier. It cannot be linked to an individual, and separate records cannot be combined to reconstruct a visit.</p>
+<p>The purpose is to measure which listings result in bookings. The lawful basis is legitimate interests: understanding how the site is used.</p>
+<h2>What is not recorded</h2>
+<p>The site does not use third-party analytics, advertising or cross-site tracking. It sets no cookies of its own, does not store IP addresses, and has no user accounts. Fonts and images are served from this site rather than a third party. Requests to the public API are not counted.</p>
+<h2>Hosting</h2>
+<p>Cloudflare serves the site and processes each request. It keeps its own security and performance logs under Cloudflare’s privacy policy. The site operator does not receive or retain visitor-level logs. Cloudflare may set a security cookie when it checks whether a request is automated.</p>
+<h2>Email</h2>
+<p>Messages sent to <a href="mailto:info@glasgowtheatre.com">info@glasgowtheatre.com</a> are kept, together with the sender’s address, in order to reply and to correct listings.</p>
+<h2>Links to venues</h2>
+<p>Ticket links lead to venue booking pages. Once followed, the venue’s privacy policy applies.</p>
+<h2>Retention</h2>
+<p>Click and page-view records are kept for up to 13 months. After that they are reduced to aggregate totals, which are retained for comparison over time.</p>
+<h2>Your rights</h2>
+<p>The click records do not identify individuals, so individual records cannot be retrieved or deleted on request. Where personal data is held for another reason, such as correspondence, you can ask to see it or have it deleted under UK GDPR by writing to <a href="mailto:info@glasgowtheatre.com">info@glasgowtheatre.com</a>.</p>
+<h2>Changes</h2>
+<p>Material changes to this policy will be reflected in the date below.</p>
+<p class="ticket-note">Last updated: 30 October 2026.</p>
+</section>`,
+    "privacy",
+  ),
+);
+write(
   "submit.html",
   page(
     "List your show",
@@ -673,6 +706,7 @@ const paths = [
   "/calendar.html",
   "/venues.html",
   "/about.html",
+  "/privacy.html",
   "/submit.html",
   "/api/",
   "/api/examples.html",
@@ -751,7 +785,7 @@ write(
     [],
   ),
 );
-write("robots.txt", `User-agent: *\nAllow: /\nSitemap: ${SITE}/sitemap.xml\n`);
+write("robots.txt", `User-agent: *\nAllow: /\nDisallow: /track\nDisallow: /analytics\nSitemap: ${SITE}/sitemap.xml\n`);
 write("CNAME", "glasgowtheatre.com\n");
 write(".nojekyll", "");
 write(

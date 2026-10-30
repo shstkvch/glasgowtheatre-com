@@ -57,6 +57,44 @@ curl -s 'https://glasgowtheatre.com/api/v1/shows?limit=5' | node examples/javasc
 
 `format=txt` (or `/shows.txt`) gives a tab-separated view for shell scripts and C. Dates are Europe/London calendar dates; prices are a guide, not a quote; credit Glasgow Theatre when reusing the data.
 
+## Measuring outbound clicks
+
+The site counts how many people leave it for a venue's booking page, per show.
+Every ticket link carries `data-track-show`, and `src/js/track.js` sends a
+beacon to `/track` as the link is followed. The booking link itself is
+untouched: the browser goes straight to the venue, and a failed beacon cannot
+cost somebody a ticket. A show page also sends one `view` for the same list.
+
+`functions/track.js` validates the body and writes it to D1. `functions/analytics.js`
+serves the aggregate report at `/analytics`, protected by `ANALYTICS_TOKEN`.
+`theatre analytics` in the [theatre-cli](https://github.com/shstkvch/theatre-cli)
+package polls that endpoint and redraws the table every three seconds.
+
+The write is one transaction of three statements: the raw row in `events`, the
+day's counter in `daily_counts`, and the lifetime counter in `show_totals`. The
+dashboard only reads the two counter tables, so polling never scans the raw
+table.
+
+Nothing in a row identifies a visitor. There is no cookie and no IP address;
+the only request-derived field is the country Cloudflare reports. Clicks made
+through the API or the daily email are not counted, because they never touch
+this site. The privacy policy is at `/privacy.html`.
+
+Set it up once:
+
+```sh
+npx wrangler d1 create glasgowtheatre-events
+npx wrangler d1 execute glasgowtheatre-events --remote --file=db/schema.sql
+
+# Bind it to the Pages project as DB (dashboard: Settings > Bindings > D1),
+# then set ANALYTICS_TOKEN in the project's environment variables.
+```
+
+Locally, `npx wrangler pages dev dist --config wrangler.toml` with a D1 binding
+named `DB` and `ANALYTICS_TOKEN` set. `_routes.json` lists `/track` and
+`/analytics`; a new Function under another path will not run until it is added
+there by `scripts/api.js`.
+
 ## Add or correct a listing
 
 Listings that arrive by email are added by hand to `data/manual-events.json`. There is no database: the file is the record, and it is version controlled with everything else.

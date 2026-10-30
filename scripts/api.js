@@ -700,7 +700,12 @@ function buildApiFiles({
     "  X-Content-Type-Options: nosniff\n";
   files["_routes.json"] = pretty({
     version: 1,
-    include: ["/api/v1/shows", "/api/v1/venues/*/shows"],
+    include: [
+      "/api/v1/shows",
+      "/api/v1/venues/*/shows",
+      "/track",
+      "/analytics",
+    ],
     exclude: [],
   });
 
