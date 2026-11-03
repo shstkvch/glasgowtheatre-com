@@ -227,6 +227,14 @@ eligible shows it displays only those available. The shared renderer in
 Existing sponsored click surfaces and the private manager remain in use; no
 database migration is needed for this change.
 
+The public placement uses neutral CSS hooks (`show-placement`,
+`highlighted-show`, `listing-note`). EasyList’s generic `##.sponsored-slot`
+rule, used by uBlock Origin, hid the previous wrapper. The card and its visible
+**Sponsored** label are inserted together; delaying or hiding the label is
+unnecessary. Paid links retain `rel="sponsored"`, and analytics placement
+names remain unchanged. A browser regression check applies that exact
+EasyList rule to verify the card and disclosure remain visible.
+
 ## Add or correct a listing
 
 Listings that arrive by email are added by hand to `data/manual-events.json`. There is no database: the file is the record, and it is version controlled with everything else.

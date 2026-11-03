@@ -104,7 +104,7 @@ test("the homepage leads with listings, not a masthead", async ({ page }) => {
   await expect(page.getByRole("heading", { level: 1 })).toHaveText("What’s on.");
   await expect(page.locator(".hero, .featured, .spotlight")).toHaveCount(0);
   // The first card must be reachable without hunting for it.
-  const card = page.locator("#sponsored-slot:not([hidden]), #events-grid .event-card:visible").first();
+  const card = page.locator("#show-placement:not([hidden]), #events-grid .event-card:visible").first();
   await expect(card).toBeInViewport();
 });
 

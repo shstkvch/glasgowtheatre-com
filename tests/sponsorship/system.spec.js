@@ -91,10 +91,10 @@ test('public cards follow filters, appear below details, omit self-promotion and
   const errors = []; page.on('pageerror', error => errors.push(error.message));
   await signIn(page);
   await page.goto('/');
-  const slot = page.locator('#sponsored-slot');
+  const slot = page.locator('#show-placement');
   await expect(slot).toBeVisible();
   await expect(slot).toContainText('Scratch / new material');
-  await expect(page.locator('#events-grid .event-card:visible').first()).toHaveClass(/sponsored-show/);
+  await expect(page.locator('#events-grid .event-card:visible').first()).toHaveClass(/highlighted-show/);
   const paidId = await slot.locator('.event-card').getAttribute('data-id');
   await expect(page.locator(`#events-grid [data-id="${paidId}"]:visible`)).toHaveCount(1);
   await slot.locator('h3 a').focus();
@@ -117,7 +117,7 @@ test('public cards follow filters, appear below details, omit self-promotion and
   await expect(slot).toBeVisible();
   await page.screenshot({ path: `test-results/sponsor-live-home-${info.project.name}.png` });
   async function clickPaid(surface) {
-    const ticket = slot.locator('.sponsor-ticket');
+    const ticket = slot.locator('.priority-ticket');
     const before = (await (await context.request.get('/admin/api/sponsorship')).json()).report.surfaces[surface].totals.all.clicks;
     const sent = page.waitForResponse(response => response.url().endsWith('/track') && response.request().method() === 'POST');
     await ticket.evaluate(link => link.addEventListener('click', event => event.preventDefault(), { once: true }));
@@ -129,15 +129,15 @@ test('public cards follow filters, appear below details, omit self-promotion and
   await page.goto('/shows/citizens-othello.html');
   await expect(slot).toBeVisible();
   await expect(page.locator('#you-may-also-like .event-card:visible')).toHaveCount(3);
-  await expect(page.locator('#you-may-also-like .event-card:visible').first()).toHaveClass(/sponsored-show/);
-  await slot.locator('.sponsored-show').scrollIntoViewIfNeeded();
-  const position = await page.evaluate(() => ({ before: document.querySelector('.show-body').getBoundingClientRect().bottom, start: document.querySelector('#sponsored-slot .sponsored-show').getBoundingClientRect().top, end: document.querySelector('#sponsored-slot .sponsored-show').getBoundingClientRect().bottom, after: document.querySelector('.site-footer').getBoundingClientRect().top }));
+  await expect(page.locator('#you-may-also-like .event-card:visible').first()).toHaveClass(/highlighted-show/);
+  await slot.locator('.highlighted-show').scrollIntoViewIfNeeded();
+  const position = await page.evaluate(() => ({ before: document.querySelector('.show-body').getBoundingClientRect().bottom, start: document.querySelector('#show-placement .highlighted-show').getBoundingClientRect().top, end: document.querySelector('#show-placement .highlighted-show').getBoundingClientRect().bottom, after: document.querySelector('.site-footer').getBoundingClientRect().top }));
   expect(position.start).toBeGreaterThanOrEqual(position.before);
   expect(position.end).toBeLessThanOrEqual(position.after);
   await expect.poll(() => slot.locator('img').evaluate(img => img.complete && img.naturalWidth > 0)).toBe(true);
   await clickPaid('sponsored-detail');
   await page.screenshot({ path: `test-results/sponsor-live-detail-${info.project.name}.png` });
-  const violations = (await new AxeBuilder({ page }).include('#sponsored-slot').withTags(['wcag2a', 'wcag2aa', 'wcag21aa']).analyze()).violations;
+  const violations = (await new AxeBuilder({ page }).include('#show-placement').withTags(['wcag2a', 'wcag2aa', 'wcag21aa']).analyze()).violations;
   expect(violations.map(v => v.id)).toEqual([]);
   expect(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth)).toBe(false);
   await page.goto('/shows/theatre-118-working-it-out-october-2026.html');

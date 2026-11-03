@@ -344,7 +344,7 @@ function recommendationsSection(event) {
   const ranked = recommend(event, events, { today, limit: events.length }).map(result => ({
     ...cardData(result.event), reason: result.reason,
   }));
-  return `<section class="recommendations container" id="you-may-also-like" aria-labelledby="recommendations-title"><div class="section-heading"><h2 id="recommendations-title">You may also like</h2><a class="text-button" href="/">All shows ${arrow}</a></div><div class="events-grid"><div class="sponsored-slot" id="sponsored-slot" data-placement="detail" data-current-show-url="${e(event.ticketUrl)}" hidden></div><div id="recommendation-list">${ranked.slice(0, 3).map(show => renderCard(show, { recommendation: true, reason: show.reason })).join("")}</div></div><script type="application/json" id="recommendation-data">${json(ranked)}</script></section>`;
+  return `<section class="recommendations container" id="you-may-also-like" aria-labelledby="recommendations-title"><div class="section-heading"><h2 id="recommendations-title">You may also like</h2><a class="text-button" href="/">All shows ${arrow}</a></div><div class="events-grid"><div class="show-placement" id="show-placement" data-placement="detail" data-current-show-url="${e(event.ticketUrl)}" hidden></div><div id="recommendation-list">${ranked.slice(0, 3).map(show => renderCard(show, { recommendation: true, reason: show.reason })).join("")}</div></div><script type="application/json" id="recommendation-data">${json(ranked)}</script></section>`;
 }
 
 const venueCount = new Set(events.map((event) => event.venueId)).size;
@@ -367,7 +367,7 @@ write(
         "",
       )}</select></label><label>From<input id="filter-date-from" type="date"></label><label>To<input id="filter-date-to" type="date"></label></div><div class="filter-pills-group" aria-label="Filter by art form"><button class="filter-pill active" data-form="" aria-pressed="true">All shows <span class="filter-pill-count">${events.length}</span></button>${forms.map((form) => `<button class="filter-pill" data-form="${e(form)}" aria-pressed="false">${e(label(form))} <span class="filter-pill-count">${formCounts[form]}</span></button>`).join("")}</div></details>
 <div class="results-bar"><span id="results-count" role="status" aria-live="polite">${events.length} shows</span><button class="text-button" data-reset>Clear filters <span aria-hidden="true">×</span></button></div>
-<div class="events-grid" id="events-grid"><div class="sponsored-slot" id="sponsored-slot" data-placement="home" hidden></div>${events.map(card).join("")}</div><div class="no-results" id="no-results" hidden><h3>A different night, perhaps?</h3><p>No shows match these filters. Try another date, venue or art form.</p><button class="btn" data-reset>Clear filters</button></div></div></section>
+<div class="events-grid" id="events-grid"><div class="show-placement" id="show-placement" data-placement="home" hidden></div>${events.map(card).join("")}</div><div class="no-results" id="no-results" hidden><h3>A different night, perhaps?</h3><p>No shows match these filters. Try another date, venue or art form.</p><button class="btn" data-reset>Clear filters</button></div></div></section>
 <section class="listing-invite"><div class="container"><div><p class="eyebrow">Are you a theatre maker?</p><h2>Tell us about<br>your show.</h2><p>Let the city know about your production, free.</p></div><a class="btn" href="/submit.html">List your show — it’s free ${arrow}</a></div></section>`,
   ),
 );

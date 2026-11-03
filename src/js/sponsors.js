@@ -1,6 +1,6 @@
 (() => {
   'use strict';
-  const slot = document.getElementById('sponsored-slot');
+  const slot = document.getElementById('show-placement');
   if (!slot || !window.SponsoredShow || !window.Listings || !window.ShowCard) return;
   const core = window.SponsoredShow;
   const placement = slot.dataset.placement;

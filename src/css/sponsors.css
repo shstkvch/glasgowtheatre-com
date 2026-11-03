@@ -1,5 +1,5 @@
 /* Reuse the ordinary listing's dimensions, typography and responsive layout. */
-.sponsored-show.event-card {
+.highlighted-show.event-card {
   position: relative;
   isolation: isolate;
   display: flex;
@@ -11,7 +11,7 @@
   overflow: visible;
 }
 /* A faint wash extends into the gutter without moving any card content. */
-.sponsored-show::before {
+.highlighted-show::before {
   content: '';
   position: absolute;
   inset: -10px -10px 0;
@@ -19,17 +19,17 @@
   border-radius: 5px;
   background: #eeebf7;
 }
-.sponsor-venue {
+.listing-venue {
   display: flex;
   flex-wrap: wrap;
   align-items: baseline;
   gap: 3px 9px;
 }
-.sponsor-venue a {
+.listing-venue a {
   color: var(--blue);
   font-weight: 700;
 }
-.sponsor-label {
+.listing-note {
   color: var(--muted);
   font-size: 10px;
   font-weight: 400;
@@ -54,4 +54,4 @@
   .recommendations .section-heading h2 { font-size: 36px; }
   .recommendations .section-heading > .text-button { white-space: nowrap; }
 }
-.sponsored-slot:not([hidden]), #recommendation-list { display: contents; }
+.show-placement:not([hidden]), #recommendation-list { display: contents; }

@@ -20,8 +20,8 @@ test('recommendations show the sponsor first, two ranked shows and normal intern
   await mockSponsor(page);
   await page.goto(current);
   await expect(visible(page)).toHaveCount(3);
-  await expect(visible(page).first()).toHaveClass(/sponsored-show/);
-  await expect(visible(page).first().locator('.sponsor-label')).toHaveText('Sponsored');
+  await expect(visible(page).first()).toHaveClass(/highlighted-show/);
+  await expect(visible(page).first().locator('.listing-note')).toHaveText('Sponsored');
   await expect(visible(page).nth(1).locator('h3')).toHaveText('Do Not Pass Go');
   expect(await visible(page).evaluateAll(cards => new Set(cards.map(card => card.dataset.id)).size)).toBe(3);
   await expect(page.locator('#you-may-also-like [data-id="citizens-othello"]')).toHaveCount(0);
@@ -48,11 +48,11 @@ test('unavailable sponsorship leaves three organic cards, and the sponsor never 
   await mockSponsor(page, null, 503);
   await page.goto(current);
   await expect(visible(page)).toHaveCount(3);
-  await expect(page.locator('#sponsored-slot')).toBeHidden();
+  await expect(page.locator('#show-placement')).toBeHidden();
   await page.unroute('**/sponsorship?placement=*');
   await mockSponsor(page);
   await page.goto(sponsor.detailUrl);
-  await expect(page.locator('#sponsored-slot')).toBeHidden();
+  await expect(page.locator('#show-placement')).toBeHidden();
   await expect(visible(page)).toHaveCount(3);
   await expect(page.locator(`#you-may-also-like [data-id="${sponsor.id}"]`)).toHaveCount(0);
 });
@@ -71,7 +71,7 @@ test('changing sponsorship excludes duplicate recommendations and pausing restor
   await expect(page.locator('#you-may-also-like [data-id="citizens-do-not-pass-go"]')).toHaveCount(1);
   selected = null;
   await page.evaluate(() => document.dispatchEvent(new Event('visibilitychange')));
-  await expect(page.locator('#sponsored-slot')).toBeHidden();
+  await expect(page.locator('#show-placement')).toBeHidden();
   await expect(visible(page)).toHaveCount(3);
   await expect(visible(page).first().locator('h3')).toHaveText('Do Not Pass Go');
 });
@@ -79,10 +79,10 @@ test('changing sponsorship excludes duplicate recommendations and pausing restor
 test('homepage uses a regular grid card without duplicating the sponsored show', async ({ page }) => {
   await mockSponsor(page);
   await page.goto('/');
-  const slot = page.locator('#sponsored-slot');
+  const slot = page.locator('#show-placement');
   await expect(slot).not.toHaveAttribute('hidden');
   await expect(page.locator(`#events-grid [data-id="${sponsor.id}"]:visible`)).toHaveCount(1);
-  await expect(page.locator('#events-grid .event-card:visible').first()).toHaveClass(/sponsored-show/);
+  await expect(page.locator('#events-grid .event-card:visible').first()).toHaveClass(/highlighted-show/);
   await slot.locator('h3 a').focus();
   await page.evaluate(() => document.dispatchEvent(new Event('change')));
   await expect(slot.locator('h3 a')).toBeFocused();
@@ -97,11 +97,11 @@ test('homepage uses a regular grid card without duplicating the sponsored show',
   await expect(page.locator('#results-count')).toHaveText(`${count} shows`);
 });
 
-test('three recommendations are rendered without JavaScript', async ({ browser }) => {
+test('three recommendations are rendered without JavaScript', async ({ browser, baseURL }) => {
   const context = await browser.newContext({ javaScriptEnabled: false });
   try {
     const page = await context.newPage();
-    await page.goto(`${test.info().project.use.baseURL || 'http://127.0.0.1:4173'}${current}`);
+    await page.goto(`${baseURL}${current}`);
     await expect(visible(page)).toHaveCount(3);
   } finally { await context.close(); }
 });
@@ -110,8 +110,29 @@ test('three recommendations are rendered without JavaScript', async ({ browser }
 test('a sponsored show arriving before the daily build counts as one result', async ({ page }) => {
   await mockSponsor(page, { ...sponsor, id: 'theatre-118-new-show', title: 'New sponsored discovery', description: 'A unique sponsored discovery', detailUrl: null, ticketUrl: 'https://theatre118.com/whats-on/new-show' });
   await page.goto('/?q=unique sponsored discovery');
-  await expect(page.locator('#sponsored-slot')).not.toHaveAttribute('hidden');
+  await expect(page.locator('#show-placement')).not.toHaveAttribute('hidden');
   await expect(page.locator('#events-grid .event-card:visible')).toHaveCount(1);
   await expect(page.locator('#results-count')).toHaveText('1 show');
   await expect(page.locator('#no-results')).toBeHidden();
+});
+
+test('the EasyList rule used by uBlock cannot hide the listing wrapper or its disclosure', async ({ page }) => {
+  await mockSponsor(page);
+  await page.goto(current);
+  await page.addStyleTag({ content: '.sponsored-slot { display: none !important; }' });
+  await page.evaluate(() => {
+    const control = document.createElement('div');
+    control.id = 'blocking-control';
+    control.className = 'sponsored-slot';
+    control.textContent = 'Old listing wrapper';
+    document.body.append(control);
+  });
+  // EasyList's generic ##.sponsored-slot rule must hide the old control while
+  // leaving the real listing and its visible disclosure intact.
+  await expect(page.locator('#blocking-control')).toBeHidden();
+  await expect(visible(page)).toHaveCount(3);
+  await expect(visible(page).first().locator('.listing-note')).toHaveText('Sponsored');
+  await expect(visible(page).first().locator('.listing-note')).toBeVisible();
+  await expect(page.locator('#you-may-also-like [class*="sponsor"], #you-may-also-like [id*="sponsor"]')).toHaveCount(0);
+  await expect(visible(page).first().locator('.ticket-link')).toHaveAttribute('rel', 'sponsored');
 });

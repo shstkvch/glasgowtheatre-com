@@ -118,7 +118,7 @@ test('renderer escapes editorial copy and preserves separate placement attribute
     assert(html.includes('&lt;img onerror=&quot;bad()&quot;&gt; &amp; more'));
     assert(!html.includes('<img onerror='));
     assert(html.includes('>Sponsored</span>'));
-    assert(html.includes('event-card sponsored-show'));
+    assert(html.includes('event-card highlighted-show'));
     assert(html.includes('<h3'));
   }
   assert.equal(core.safeUrl('javascript:alert(1)'), null);
