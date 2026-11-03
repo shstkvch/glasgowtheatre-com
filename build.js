@@ -7,6 +7,8 @@ const {
   countArtForms,
   mergeListings,
 } = require("./src/js/listings");
+const { renderCard } = require("./src/js/show-card");
+const { recommend } = require("./scripts/recommendations");
 const { buildTimeline } = require("./scripts/calendar");
 const { FORMS, fallbackForm, combine, formLabel: label } = require("./scripts/art-forms");
 const {
@@ -307,7 +309,7 @@ function page(
 <title>${e(title)} | Glasgow Theatre</title><meta name="description" content="${e(description)}"><link rel="canonical" href="${SITE}${url}">
 <meta property="og:title" content="${e(title)}"><meta property="og:description" content="${e(description)}"><meta property="og:url" content="${SITE}${url}"><meta property="og:type" content="website"><meta property="og:site_name" content="Glasgow Theatre"><meta property="og:image" content="${SITE}/images/thrice.webp"><meta name="twitter:card" content="summary_large_image"><meta name="theme-color" content="#303fce">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="${asset("css/fonts.css")}"><link rel="stylesheet" href="${asset("css/style.css")}"><link rel="stylesheet" href="${asset("css/sponsors.css")}">${hero ? `<link rel="preload" as="image" href="${e(hero)}" fetchpriority="high">` : ""}
-<script defer src="${asset("js/listings.js")}"></script><script defer src="${asset("js/main.js")}"></script><script defer src="${asset("js/sponsor-core.js")}"></script><script defer src="${asset("js/sponsors.js")}"></script><script defer src="${asset("js/track.js")}"></script></head><body>
+<script defer src="${asset("js/listings.js")}"></script><script defer src="${asset("js/main.js")}"></script><script defer src="${asset("js/show-card.js")}"></script><script defer src="${asset("js/sponsor-core.js")}"></script><script defer src="${asset("js/sponsors.js")}"></script><script defer src="${asset("js/track.js")}"></script></head><body>
 <a class="skip-link" href="#main">Skip to content</a><header class="site-header"><div class="container header-inner"><a class="brand" href="/" aria-label="Glasgow Theatre home">GLASGOW<span>THEATRE<span class="brand-dot">●</span></span></a>
 <details class="nav-menu" open><summary class="nav-toggle"><span class="nav-bars" aria-hidden="true"></span><span class="nav-toggle-label">Menu</span></summary><nav aria-label="Main navigation">${nav.map(([key, href, text]) => `<a href="${href}"${active === key ? ' aria-current="page"' : ""}>${text}</a>`).join("")}</nav></details></div></header>
 <main id="main">${body}</main>
@@ -323,24 +325,28 @@ function page(
  * straight to the venue, so nobody who only wants to book is made to travel
  * through us to do it.
  */
-function card(event, index = 0) {
-  // The first row is what a visitor sees, and one of its thumbnails is the
-  // largest thing painted on the page. Lazy-loading those deferred the fetch
-  // until after layout and then ran it at low priority; below the first row
-  // lazy is still right.
-  const eager = index < 3;
-  const cost = price(event);
-  const times = when(event);
+function cardData(event) {
   const picture = art(event);
-  return `<article class="event-card" id="${e(event.id)}" data-id="${e(event.id)}" data-date="${e(event.date)}" data-end-date="${e(event.endDate || event.date)}">
-<div class="event-card-image${event.image ? "" : " image-unavailable"}${picture.whole ? " artwork-whole" : ""}"><a class="event-card-thumb" href="${e(showPath(event))}" tabindex="-1"><div class="image-fallback" aria-hidden="true"><span>ON STAGE AT</span><strong>${e(event.venue)}</strong></div>${event.image ? `<img src="${e(event.image)}" alt="${e(event.imageAlt || event.title)}" width="${picture.width}" height="${picture.height}" style="object-position: ${picture.position}"${eager ? ` fetchpriority="high"` : ` loading="lazy"`} decoding="async">` : ""}</a><span class="date-stamp">${e(range(event))}</span></div>
-<div class="event-card-body"><div class="card-topline"><a href="/venues/${e(event.venueId)}.html">${e(event.season || event.venue)}</a><span>${e(label(event.form))}</span></div>
-<h3><a href="${e(showPath(event))}">${e(event.title)}</a></h3>
-<p class="card-when">${times ? `<span class="fact-time">${e(times)}</span>` : ""}${cost ? `<span class="fact-price">${e(cost)}</span>` : `<span class="fact-unknown">Prices at the venue</span>`}</p>
-<p class="event-description">${e(event.description)}</p>
-${event.accessibility ? `<p class="accessibility"><span aria-hidden="true">✳</span> ${e(event.accessibility)}</p>` : ""}
-<div class="event-card-footer"><a class="detail-link" href="${e(showPath(event))}">Prices &amp; times</a><a class="ticket-link" href="${e(event.ticketUrl)}"${trackAttrs(event, "card")} aria-label="Tickets for ${e(event.title)}">Tickets ${arrow}</a></div></div></article>`;
+  return {
+    id: event.id, title: event.title, venue: event.venue, venueId: event.venueId,
+    season: event.season, date: event.date, endDate: event.endDate,
+    dateLabel: range(event), detailUrl: showPath(event), ticketUrl: event.ticketUrl,
+    formLabel: label(event.form), timesLabel: when(event), priceLabel: price(event),
+    description: event.description, accessibility: event.accessibility,
+    image: event.image, imageAlt: event.imageAlt, imageWidth: picture.width,
+    imageHeight: picture.height, imagePosition: picture.position, artworkWhole: picture.whole,
+  };
 }
+function card(event, index = 0) {
+  return renderCard(cardData(event), { eager: index < 3 });
+}
+function recommendationsSection(event) {
+  const ranked = recommend(event, events, { today, limit: events.length }).map(result => ({
+    ...cardData(result.event), reason: result.reason,
+  }));
+  return `<section class="recommendations container" id="you-may-also-like" aria-labelledby="recommendations-title"><div class="section-heading"><h2 id="recommendations-title">You may also like</h2><a class="text-button" href="/">All shows ${arrow}</a></div><div class="events-grid"><div class="sponsored-slot" id="sponsored-slot" data-placement="detail" data-current-show-url="${e(event.ticketUrl)}" hidden></div><div id="recommendation-list">${ranked.slice(0, 3).map(show => renderCard(show, { recommendation: true, reason: show.reason })).join("")}</div></div><script type="application/json" id="recommendation-data">${json(ranked)}</script></section>`;
+}
+
 const venueCount = new Set(events.map((event) => event.venueId)).size;
 const formCounts = countArtForms(events);
 const forms = Object.keys(formCounts).sort(
@@ -361,8 +367,7 @@ write(
         "",
       )}</select></label><label>From<input id="filter-date-from" type="date"></label><label>To<input id="filter-date-to" type="date"></label></div><div class="filter-pills-group" aria-label="Filter by art form"><button class="filter-pill active" data-form="" aria-pressed="true">All shows <span class="filter-pill-count">${events.length}</span></button>${forms.map((form) => `<button class="filter-pill" data-form="${e(form)}" aria-pressed="false">${e(label(form))} <span class="filter-pill-count">${formCounts[form]}</span></button>`).join("")}</div></details>
 <div class="results-bar"><span id="results-count" role="status" aria-live="polite">${events.length} shows</span><button class="text-button" data-reset>Clear filters <span aria-hidden="true">×</span></button></div>
-<div id="sponsored-slot" data-placement="home" hidden></div>
-<div class="events-grid" id="events-grid">${events.map(card).join("")}</div><div class="no-results" id="no-results" hidden><h3>A different night, perhaps?</h3><p>No shows match these filters. Try another date, venue or art form.</p><button class="btn" data-reset>Clear filters</button></div></div></section>
+<div class="events-grid" id="events-grid"><div class="sponsored-slot" id="sponsored-slot" data-placement="home" hidden></div>${events.map(card).join("")}</div><div class="no-results" id="no-results" hidden><h3>A different night, perhaps?</h3><p>No shows match these filters. Try another date, venue or art form.</p><button class="btn" data-reset>Clear filters</button></div></div></section>
 <section class="listing-invite"><div class="container"><div><p class="eyebrow">Are you a theatre maker?</p><h2>Tell us about<br>your show.</h2><p>Let the city know about your production, free.</p></div><a class="btn" href="/submit.html">List your show — it’s free ${arrow}</a></div></section>`,
   ),
 );
@@ -640,7 +645,7 @@ ${performancePanel(event)}
 </div>
 <aside class="show-aside">${ticketPanel(event)}${concessionPanel(event)}</aside>
 </div></section>
-<div class="container detail-sponsor" id="sponsored-slot" data-placement="detail" data-current-show-url="${e(event.ticketUrl)}" hidden></div>
+${recommendationsSection(event)}
 <script type="application/ld+json">${json(eventData(event))}</script>`,
     "events",
     [event],

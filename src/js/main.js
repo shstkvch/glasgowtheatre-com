@@ -43,7 +43,7 @@
         menu.open = false;
     });
   }
-  const cards = [...document.querySelectorAll(".event-card")];
+  const cards = [...document.querySelectorAll(".event-card:not(.recommended-show)")];
   const events = window.EVENTS || [];
   const search = document.getElementById("filter-search");
   const venue = document.getElementById("filter-venue");

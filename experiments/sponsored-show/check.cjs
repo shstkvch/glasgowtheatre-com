@@ -41,8 +41,17 @@ fs.mkdirSync(artifacts, { recursive: true });
       const slot = page.locator('#sponsored-show');
       await expect(slot).toBeVisible();
       await expect(slot.getByRole('heading')).toHaveText('Working it Out - November 2026');
-      await expect(slot).toContainText('Sponsored Show');
-      await expect(slot).toContainText('Paid placement by Theatre 118');
+      await expect(slot.locator('.sponsor-label')).toHaveText('Sponsored');
+      await expect(page.locator('#events-grid > .event-card').first()).toHaveAttribute('id', 'sponsored-show');
+      const peer = page.locator('#events-grid > .event-card:not(.sponsored-show):visible').first();
+      const geometry = await slot.evaluate((card, peer) => {
+        const other = document.querySelector(peer);
+        return { width: card.getBoundingClientRect().width, peerWidth: other.getBoundingClientRect().width,
+          titleSize: getComputedStyle(card.querySelector('h3')).fontSize,
+          peerTitleSize: getComputedStyle(other.querySelector('h3')).fontSize };
+      }, '#events-grid > .event-card:not(.sponsored-show):not([hidden])');
+      assert(Math.abs(geometry.width - geometry.peerWidth) < 1);
+      assert.equal(geometry.titleSize, geometry.peerTitleSize);
       await expect(slot).toContainText('Scratch / new material');
       assert.equal(await slot.locator('img').evaluate(image => image.complete && image.naturalWidth > 0), true);
       assert.equal(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth), false, `Overflow at ${width}px`);
@@ -98,24 +107,32 @@ fs.mkdirSync(artifacts, { recursive: true });
       const ticket = slot.getByRole('link', { name: 'Tickets for Working it Out - November 2026' });
       await expect(ticket).toHaveAttribute('href', 'https://theatre118.com/whats-on/working-it-out');
       await expect(ticket).toHaveAttribute('rel', 'sponsored');
-      await slot.locator('h2 a').focus();
+      await slot.locator('.detail-link').focus();
       await page.keyboard.press('Tab');
       assert(await ticket.evaluate(el => el === document.activeElement));
       assert.equal(await ticket.evaluate(el => getComputedStyle(el).outlineStyle), 'solid');
 
-      // All three sponsored destinations count once; keyboard and middle
-      // clicks retain the paid-placement attribution too.
-      await outboundClick(slot.locator('.sponsor-art'), 'sponsored-home');
-      await outboundClick(slot.locator('h2 a'), 'sponsored-home', 'middle');
+      // Normal title and artwork navigation, with paid attribution on tickets.
+      await expect(slot.locator('h3 a')).toHaveAttribute('href', /\/shows\/.+\.html$/);
+      await expect(slot.locator('.event-card-thumb')).toHaveAttribute('href', await slot.locator('h3 a').getAttribute('href'));
+      await outboundClick(ticket, 'sponsored-home');
+      await outboundClick(ticket, 'sponsored-home', 'middle');
       await outboundClick(ticket, 'sponsored-home', 'keyboard');
       const sponsoredId = await ticket.getAttribute('data-track-show');
-      await outboundClick(page.locator(`#events-grid [data-id="${sponsoredId}"] .ticket-link`), 'card');
+      await expect(page.locator(`#events-grid [data-id="${sponsoredId}"]`)).toHaveCount(1);
+      await outboundClick(peer.locator('.ticket-link'), 'card');
 
       // Navigate through a real homepage link into the detail-page mockup.
       await page.locator('#citizens-othello h3 a').click();
       await expect(page).toHaveURL(/\/shows\/citizens-othello\.html$/);
       await expect(page.locator('.show-hero h1')).toHaveText('Othello');
       await expect(page.locator('.sponsored-show')).toHaveCount(1);
+      const recommendations = page.locator('#you-may-also-like');
+      await expect(recommendations.getByRole('heading', { name: 'You may also like' })).toBeVisible();
+      await expect(recommendations.locator('.event-card:visible')).toHaveCount(3);
+      await expect(recommendations.locator('.event-card').first()).toHaveAttribute('id', 'sponsored-show');
+      await expect(recommendations.locator('[data-id="citizens-othello"]')).toHaveCount(0);
+      await expect(recommendations.locator('.recommended-show:visible .recommendation-reason')).toHaveText(['Also at Citizens Theatre', 'Also at Citizens Theatre']);
       await slot.scrollIntoViewIfNeeded();
       await expect(slot).toBeVisible();
       await expect(slot).toContainText('Working it Out - November 2026');
@@ -128,10 +145,11 @@ fs.mkdirSync(artifacts, { recursive: true });
       }));
       assert(position.slotTop >= position.bodyBottom && position.slotBottom <= position.footerTop, `Detail slot placement at ${width}px`);
       assert.equal(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth), false, `Detail overflow at ${width}px`);
+      await recommendations.screenshot({ path: path.join(artifacts, `recommendations-${width}.png`) });
       await page.screenshot({ path: path.join(artifacts, `sponsored-detail-${width}.png`) });
-      const detailViolations = (await new AxeBuilder({ page }).include('.detail-sponsor').withTags(['wcag2a', 'wcag2aa', 'wcag21aa']).analyze()).violations;
+      const detailViolations = (await new AxeBuilder({ page }).include('#you-may-also-like').withTags(['wcag2a', 'wcag2aa', 'wcag21aa']).analyze()).violations;
       assert.deepEqual(detailViolations.map(v => v.id), []);
-      for (const selector of ['.sponsor-art', 'h2 a', '.sponsor-ticket']) {
+      for (const selector of ['.ticket-link']) {
         const event = await outboundClick(slot.locator(selector), 'sponsored-detail');
         assert.equal(event.show, sponsoredId); // Credit WIO, not the host show.
         assert.equal(event.venue, 'theatre-118');
@@ -141,13 +159,22 @@ fs.mkdirSync(artifacts, { recursive: true });
       await expect(slot).toBeVisible(); // The site's periodic filter pass must not hide it.
       await page.clock.setFixedTime(new Date('2026-11-16T21:00:00Z'));
       await page.evaluate(() => document.dispatchEvent(new Event('visibilitychange')));
-      await expect(page.locator('.detail-sponsor')).toBeHidden();
+      await expect(slot).toBeHidden();
+      await expect(recommendations.locator('.event-card:visible')).toHaveCount(3);
       await page.clock.setFixedTime(new Date('2026-10-30T12:00:00Z'));
 
       await page.goto(`${origin}/shows/theatre-118-sleeping-beauty-the-new-republic-of-port-dundas.html`);
       await expect(slot).toBeVisible(); // Other shows at the same venue still carry it.
       await page.goto(`${origin}/shows/${sponsoredId}.html`);
-      await expect(page.locator('#sponsored-show, .detail-sponsor')).toHaveCount(0);
+      await expect(page.locator('#sponsored-show')).toHaveCount(0);
+      await expect(recommendations.locator('.event-card:visible')).toHaveCount(3);
+      await expect(recommendations.locator(`[data-id="${sponsoredId}"]`)).toHaveCount(0);
+      const destination = await recommendations.locator('.recommended-show h3 a').first().getAttribute('href');
+      await recommendations.locator('.recommended-show h3 a').first().click();
+      await expect(page).toHaveURL(origin + destination);
+      await expect(recommendations.locator('.event-card:visible')).toHaveCount(3);
+      await expect(recommendations.locator('.event-card').first()).toHaveAttribute('id', 'sponsored-show');
+      await page.goto(`${origin}/shows/${sponsoredId}.html`);
       await expect(page.locator('.show-hero h1')).toHaveText('Working it Out - November 2026');
       await page.locator('.back-link').click();
       await expect(page).toHaveURL(origin + '/');
@@ -155,6 +182,6 @@ fs.mkdirSync(artifacts, { recursive: true });
       await context.close();
     }
     assert.deepEqual(errors, []);
-    console.log('PASS: homepage and detail placement at 4 widths; filter combinations; availability expiry; no self-promotion; local page navigation; separate sponsored/organic click beacons; mouse, keyboard and middle clicks; WCAG AA checks; no browser/resource errors.');
+    console.log('PASS: three recommendations with sponsored first at 4 widths; ranking-card navigation and self-exclusion; sponsored expiry fallback; homepage and detail placement; filter combinations; availability expiry; no self-promotion; local page navigation; separate sponsored/organic click beacons; mouse, keyboard and middle clicks; WCAG AA checks; no browser/resource errors.');
   } finally { await browser.close(); }
 })().catch(error => { console.error(error); process.exitCode = 1; });

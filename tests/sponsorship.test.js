@@ -101,6 +101,7 @@ test('normalisation uses current API content, a stable local ID and the scratch 
   assert.equal(listing.id, 'stable-id');
   assert.equal(listing.title, 'Working it Out - November 2026');
   assert.equal(listing.form, 'scratch');
+  assert.equal(listing.detailUrl, '/shows/stable-id.html');
   assert.equal(listing.price, 300);
   assert.equal(listing.fee, 150);
   assert(listing.image.startsWith('/sponsor-image?path='));
@@ -116,9 +117,23 @@ test('renderer escapes editorial copy and preserves separate placement attribute
     assert(html.includes(`data-track-surface="sponsored-${placement}"`));
     assert(html.includes('&lt;img onerror=&quot;bad()&quot;&gt; &amp; more'));
     assert(!html.includes('<img onerror='));
-    assert(html.includes('Paid placement by Theatre 118'));
+    assert(html.includes('>Sponsored</span>'));
+    assert(html.includes('event-card sponsored-show'));
+    assert(html.includes('<h3'));
   }
   assert.equal(core.safeUrl('javascript:alert(1)'), null);
   assert.equal(core.safeUrl('https://theatre118.com.evil.test/show'), null);
   assert.equal(core.safeUrl('https://user:secret@theatre118.com/show'), null);
+});
+
+
+test('sponsored cards use local details only for existing listings and retain outbound attribution', () => {
+  const candidate = core.choose(feed, settings, now);
+  const external = core.normalise(candidate, {}, settings);
+  assert.equal(external.detailUrl, null);
+  assert.equal((core.renderSponsor(external, 'home').match(/data-track-surface="sponsored-home"/g) || []).length, 4);
+  const local = core.normalise(candidate, { [candidate.show.url.replace(/\/$/, '')]: { id: 'theatre-118-existing' } }, settings);
+  const html = core.renderSponsor(local, 'detail');
+  assert.equal((html.match(/data-track-surface="sponsored-detail"/g) || []).length, 1);
+  assert(html.includes('href="/shows/theatre-118-existing.html"'));
 });

@@ -3,6 +3,7 @@ const path = require('node:path');
 const cheerio = require('cheerio');
 const { selectSponsoredShow } = require('./sponsor-core');
 const renderSponsor = require('./render-sponsor.cjs');
+const { recommend } = require('./recommendations.cjs');
 const { formLabel: label } = require('../../scripts/art-forms');
 const { filterEvents, countArtForms } = require('../../src/js/listings');
 
@@ -43,8 +44,22 @@ organic.find('h3 a').text(show.title);
 organic.find('.event-description').text(show.description);
 organic.find('img').attr('src', '/assets/working-it-out.webp');
 
+// Preserve the real card markup and artwork treatment for recommendations.
+const normalCards = new Map($('.event-card').toArray().map(card => [$(card).attr('data-id'), $.html(card)]));
+
+function renderRecommendation(result, hidden = false) {
+  const card = cheerio.load(normalCards.get(result.event.id), null, false);
+  const article = card('article');
+  article.removeAttr('id').addClass('recommended-show');
+  if (hidden) article.attr('hidden', '');
+  const reason = card('<p class="recommendation-reason">').text(result.reason);
+  card('.event-card-footer').before(reason);
+  return card.html();
+}
+
 function preparePreview(doc, title, context) {
   doc('title').text(title + ' | Glasgow Theatre preview');
+  doc('#sponsored-slot, script[src*="/js/sponsors.js"], script[src*="/js/sponsor-core.js"]').remove();
   doc('head').append('<meta name="robots" content="noindex,nofollow"><link rel="stylesheet" href="/sponsored.css">');
   doc('script[src*="track.js"],script[type="application/ld+json"],link[rel="canonical"]').remove();
   doc('a[href^="/"]').each((i, element) => {
@@ -63,13 +78,13 @@ function preparePreview(doc, title, context) {
   });
   doc('.event-card').each((i, card) => {
     const event = pageEvents.find(event => event.id === doc(card).attr('data-id'));
-    if (event) trackLink(doc(card).find('.ticket-link'), event, 'card');
+    if (event && !doc(card).hasClass('sponsored-show')) trackLink(doc(card).find('.ticket-link'), event, 'card');
   });
   if (doc('.show-hero').length) {
     trackLink(doc('.show-hero .btn'), pageEvents[0], 'show-hero');
     trackLink(doc('.ticket-panel .btn'), pageEvents[0], 'show-panel');
   }
-  doc('.footer-bottom').append('<span class="preview-note">Sponsored Show design preview · API snapshot 30 October 2026</span>');
+  doc('.footer-bottom').append('<span class="preview-note">Design preview · API snapshot 30 October 2026</span>');
   if (context) {
     const config = JSON.stringify({ feed, listing, context }).replace(/</g, '\\u003c');
     doc('body').append(`<script>window.SPONSOR_PREVIEW = ${config};</script><script defer src="/sponsor-core.js"></script><script defer src="/sponsored.js"></script>`);
@@ -80,13 +95,16 @@ function preparePreview(doc, title, context) {
 }
 
 const sponsor = renderSponsor(selected, listing, 'sponsored-home');
-$('.results-bar').after(sponsor);
+// Show it once, in the same grid as the other listings.
+organic.remove();
+$('#events-grid').prepend(sponsor);
 preparePreview($, 'Sponsored Show — homepage', 'home');
 fs.writeFileSync(path.join(__dirname, 'index.html'), $.html());
 console.log(`Preview prepared: ${show.title} / ${selected.performances[0].date} ${selected.performances[0].time}`);
 
 function renderShowPreview(html) {
   const doc = cheerio.load(html);
+  doc('#you-may-also-like').remove();
   const script = doc('script').filter((i, element) => doc(element).html().trim().startsWith('window.EVENTS ='));
   const pageEvents = JSON.parse(script.html().trim().replace(/^window\.EVENTS\s*=\s*/, '').replace(/;$/, ''));
   const current = pageEvents[0];
@@ -105,13 +123,16 @@ function renderShowPreview(html) {
     current.description = show.description;
     doc('.show-hero h1').text(show.title);
     doc('.show-description').text(show.description);
-  } else {
-    // Outside both detail columns: always below the description, performance
-    // table, prices and concessions, and before the site footer.
-    doc('#main').append(`<div class="container detail-sponsor" hidden>${renderSponsor(selected, listing, 'sponsored-detail')}</div>`);
   }
+  const recommendations = recommend(current, events, { excludeUrls: [show.url], limit: events.length });
+  const sponsored = !isSponsoredShow ? renderSponsor(selected, listing, 'sponsored-detail') : '';
+  const cards = recommendations.map((result, index) => renderRecommendation(result, index >= (sponsored ? 2 : 3))).join('');
+  doc('#main').append(`<section class="recommendations container" id="you-may-also-like" aria-labelledby="recommendations-title"><div class="section-heading"><h2 id="recommendations-title">You may also like</h2><a class="text-button" href="/">All shows <span aria-hidden="true">↗</span></a></div><div class="events-grid">${sponsored}${cards}</div></section>`);
+  // The shared filter script must know these cards are still upcoming. Keep
+  // the host first so page-view attribution continues to refer to this show.
+  pageEvents.push(...recommendations.map(result => result.event));
   script.text(`window.EVENTS = ${JSON.stringify(pageEvents).replace(/</g, '\\u003c')};`);
-  preparePreview(doc, current.title, isSponsoredShow ? null : 'detail');
+  preparePreview(doc, current.title, 'detail');
   return doc.html();
 }
 

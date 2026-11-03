@@ -1,13 +1,17 @@
 (() => {
   'use strict';
   const slot = document.getElementById('sponsored-slot');
-  if (!slot || !window.SponsoredShow || !window.Listings) return;
+  if (!slot || !window.SponsoredShow || !window.Listings || !window.ShowCard) return;
   const core = window.SponsoredShow;
   const placement = slot.dataset.placement;
+  const recommendationList = document.getElementById('recommendation-list');
+  const recommendationData = document.getElementById('recommendation-data');
+  const recommendations = recommendationData ? JSON.parse(recommendationData.textContent) : [];
+  const canonical = url => (url || '').replace(/\/$/, '');
   let payload = null;
   let expiry;
   let loading = false;
-  let rendered = '';
+  const rendered = new WeakMap();
   function filters() {
     return placement === 'home' ? {
       query: document.getElementById('filter-search')?.value || '',
@@ -17,29 +21,56 @@
       form: document.querySelector('.filter-pill.active')?.dataset.form || '',
     } : {};
   }
-  function hide() { slot.hidden = true; slot.replaceChildren(); rendered = ''; }
+  function setContent(container, html) {
+    if (rendered.get(container) === html) return;
+    const active = container.contains(document.activeElement) ? document.activeElement : null;
+    const href = active?.getAttribute('href');
+    const label = active?.textContent;
+    container.innerHTML = html;
+    rendered.set(container, html);
+    container.querySelectorAll('img').forEach(image => {
+      const repair = () => { image.hidden = true; image.closest('.event-card-image').classList.add('image-unavailable'); };
+      image.addEventListener('error', repair, { once: true });
+      if (image.complete && !image.naturalWidth) repair();
+    });
+    if (href) [...container.querySelectorAll('a')].find(link => link.getAttribute('href') === href && link.textContent === label)?.focus({ preventScroll: true });
+  }
   function render() {
-    const listing = payload?.sponsor;
     const today = core.londonClock().date;
-    if (!listing || payload.expiresAt <= Date.now() || (payload.endsOn && today > payload.endsOn) || slot.dataset.currentShowUrl?.replace(/\/$/, '') === listing.ticketUrl.replace(/\/$/, '')) return hide();
     const active = filters();
-    if (!window.Listings.filterEvents([listing], active).length) return hide();
-    const performances = core.availablePerformances({ ticketing: { on_sale: true }, performances: listing.performances });
-    const html = core.renderSponsor({ ...listing, performances }, placement, active);
-    if (!html) return hide();
-    // Every interpolated field is escaped by the shared renderer. Links and
-    // image URLs have already been restricted by the server-side normaliser.
-    const focused = [...slot.querySelectorAll('a')].indexOf(document.activeElement);
-    if (rendered !== html) {
-      slot.innerHTML = html;
-      rendered = html;
-      slot.querySelector('img')?.addEventListener('error', event => {
-        event.target.hidden = true;
-        slot.querySelector('.sponsor-art').classList.add('sponsor-image-missing');
-      }, { once: true });
-      if (focused >= 0) slot.querySelectorAll('a')[focused]?.focus({ preventScroll: true });
+    let listing = payload?.sponsor;
+    if (!listing || payload.expiresAt <= Date.now() || (payload.endsOn && today > payload.endsOn) || canonical(slot.dataset.currentShowUrl) === canonical(listing.ticketUrl)) listing = null;
+    if (listing && !window.Listings.filterEvents([listing], active).length) listing = null;
+    const performances = listing ? core.availablePerformances({ ticketing: { on_sale: true }, performances: listing.performances }) : [];
+    const html = listing ? core.renderSponsor({ ...listing, performances }, placement, active) : '';
+    slot.hidden = !html;
+    setContent(slot, html);
+    if (!html) listing = null;
+
+    if (placement === 'home') {
+      // Keep the original listing available when sponsorship is paused or
+      // filtered out. The paid position never duplicates a show or its count.
+      const matches = window.Listings.filterEvents(window.EVENTS, active);
+      const eligible = new Set(matches.map(event => event.id));
+      document.querySelectorAll('#events-grid > .event-card').forEach(card => {
+        const duplicate = listing && (card.dataset.id === listing.id || canonical(card.querySelector('.ticket-link')?.getAttribute('href')) === canonical(listing.ticketUrl));
+        card.hidden = !eligible.has(card.dataset.id) || Boolean(duplicate);
+      });
+      const additional = listing && !matches.some(event => event.id === listing.id || canonical(event.ticketUrl) === canonical(listing.ticketUrl));
+      const total = matches.length + (additional ? 1 : 0);
+      document.getElementById('results-count').textContent = `${total} show${total === 1 ? '' : 's'}`;
+      document.getElementById('no-results').hidden = total > 0;
+    } else if (recommendationList) {
+      const seen = new Set([canonical(slot.dataset.currentShowUrl), ...(listing ? [canonical(listing.ticketUrl)] : [])]);
+      const organic = recommendations.filter(show => {
+        const url = canonical(show.ticketUrl);
+        if ((show.endDate || show.date) < today || seen.has(url) || (listing && show.id === listing.id)) return false;
+        seen.add(url);
+        return true;
+      }).slice(0, listing ? 2 : 3);
+      setContent(recommendationList, organic.map(show => window.ShowCard.renderCard(show, { recommendation: true, reason: show.reason })).join(''));
+      document.getElementById('you-may-also-like').hidden = !listing && !organic.length;
     }
-    slot.hidden = false;
   }
   async function refresh() {
     if (loading || document.hidden) return;
@@ -49,15 +80,15 @@
       if (!response.ok) throw new Error('Unavailable');
       payload = await response.json();
       clearTimeout(expiry);
-      if (payload.expiresAt) expiry = setTimeout(() => { hide(); refresh(); }, Math.max(0, payload.expiresAt - Date.now()));
-      render();
-    } catch { payload = null; hide(); }
-    finally { loading = false; }
+      if (payload.expiresAt) expiry = setTimeout(() => { payload = null; render(); refresh(); }, Math.max(0, payload.expiresAt - Date.now()));
+    } catch { payload = null; }
+    finally { loading = false; render(); }
   }
   document.addEventListener('input', render);
   document.addEventListener('change', render);
   document.addEventListener('click', event => { if (event.target.closest('.filter-pill,[data-reset],#this-week')) render(); });
   document.addEventListener('visibilitychange', () => { if (!document.hidden) { render(); refresh(); } });
   setInterval(() => { render(); refresh(); }, 60_000);
+  render();
   refresh();
 })();

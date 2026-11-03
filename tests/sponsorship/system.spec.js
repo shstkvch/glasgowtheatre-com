@@ -55,9 +55,9 @@ test('admin edits persist, placements and schedules control the actual public en
     await expect(page.locator('#creative-preview')).toContainText('Sleeping Beauty');
     await page.getByRole('radio', { name: /^Random show in next 30 days/ }).check();
     await expect(page.locator('#preview-status')).toContainText('Random pick from the next 30 days');
-    const randomTitle = await page.locator('#creative-preview h2').innerText();
+    const randomTitle = await page.locator('#creative-preview h3').innerText();
     await page.locator('[name=description]').fill('A daily pick from Theatre 118.');
-    await expect(page.locator('#creative-preview h2')).toHaveText(randomTitle);
+    await expect(page.locator('#creative-preview h3')).toHaveText(randomTitle);
     await save(page);
     for (const placement of ['home', 'detail']) {
       const selected = await (await context.request.get(`/sponsorship?placement=${placement}`)).json();
@@ -65,7 +65,7 @@ test('admin edits persist, placements and schedules control the actual public en
     }
     await page.reload();
     await expect(page.getByRole('radio', { name: /^Random show in next 30 days/ })).toBeChecked();
-    await expect(page.locator('#creative-preview h2')).toHaveText(randomTitle);
+    await expect(page.locator('#creative-preview h3')).toHaveText(randomTitle);
     await expect(page.locator('[name=showSlug]')).toBeDisabled();
     const violations = (await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa', 'wcag21aa']).analyze()).violations;
     expect(violations.map(v => v.id)).toEqual([]);
@@ -94,9 +94,12 @@ test('public cards follow filters, appear below details, omit self-promotion and
   const slot = page.locator('#sponsored-slot');
   await expect(slot).toBeVisible();
   await expect(slot).toContainText('Scratch / new material');
-  await slot.locator('h2 a').focus();
+  await expect(page.locator('#events-grid .event-card:visible').first()).toHaveClass(/sponsored-show/);
+  const paidId = await slot.locator('.event-card').getAttribute('data-id');
+  await expect(page.locator(`#events-grid [data-id="${paidId}"]:visible`)).toHaveCount(1);
+  await slot.locator('h3 a').focus();
   await page.evaluate(() => document.dispatchEvent(new Event('change')));
-  await expect(slot.locator('h2 a')).toBeFocused();
+  await expect(slot.locator('h3 a')).toBeFocused();
   if (info.project.name === 'mobile') await page.locator('.filter-summary').click();
   await page.locator('[data-form=scratch]').click();
   await expect(slot).toBeVisible();
@@ -125,8 +128,10 @@ test('public cards follow filters, appear below details, omit self-promotion and
   await clickPaid('sponsored-home');
   await page.goto('/shows/citizens-othello.html');
   await expect(slot).toBeVisible();
-  await slot.scrollIntoViewIfNeeded();
-  const position = await page.evaluate(() => ({ before: document.querySelector('.show-body').getBoundingClientRect().bottom, start: document.querySelector('#sponsored-slot').getBoundingClientRect().top, end: document.querySelector('#sponsored-slot').getBoundingClientRect().bottom, after: document.querySelector('.site-footer').getBoundingClientRect().top }));
+  await expect(page.locator('#you-may-also-like .event-card:visible')).toHaveCount(3);
+  await expect(page.locator('#you-may-also-like .event-card:visible').first()).toHaveClass(/sponsored-show/);
+  await slot.locator('.sponsored-show').scrollIntoViewIfNeeded();
+  const position = await page.evaluate(() => ({ before: document.querySelector('.show-body').getBoundingClientRect().bottom, start: document.querySelector('#sponsored-slot .sponsored-show').getBoundingClientRect().top, end: document.querySelector('#sponsored-slot .sponsored-show').getBoundingClientRect().bottom, after: document.querySelector('.site-footer').getBoundingClientRect().top }));
   expect(position.start).toBeGreaterThanOrEqual(position.before);
   expect(position.end).toBeLessThanOrEqual(position.after);
   await expect.poll(() => slot.locator('img').evaluate(img => img.complete && img.naturalWidth > 0)).toBe(true);
@@ -137,6 +142,7 @@ test('public cards follow filters, appear below details, omit self-promotion and
   expect(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth)).toBe(false);
   await page.goto('/shows/theatre-118-working-it-out-october-2026.html');
   await expect(slot).toBeHidden();
+  await expect(page.locator('#you-may-also-like .event-card:visible')).toHaveCount(3);
   await page.goto('/admin/sponsorships/');
   await expect.poll(async () => {
     const report = await (await context.request.get('/admin/api/sponsorship')).json();

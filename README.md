@@ -119,8 +119,12 @@ there by `scripts/api.js`.
 ## Manage sponsored shows
 
 The private manager is at **https://glasgowtheatre.com/admin/sponsorships/**.
-It controls Theatre 118’s native Sponsored Show card, on the homepage and at
-the bottom of show detail pages. Sign in with the private admin password.
+It controls Theatre 118’s sponsored listing card, first in the homepage grid
+and first in **You may also like** on show detail pages. The card uses the
+ordinary listing layout, a faint lilac background and a small Sponsored label.
+A promoted show appears once in the homepage grid, with its ordinary position
+restored when sponsorship is paused. Titles and artwork open the local show
+page when one exists; new API shows link directly to the venue until built. Sign in with the private admin password.
 
 The panel can pause or enable the sponsorship, set inclusive Glasgow start/end
 dates, choose either or both placements, automatically pick the next bookable
@@ -197,6 +201,31 @@ service keys are encrypted secrets rather than plaintext configuration vars.
 
 The `experiments/` mockups remain as design references; production uses the
 shared code in `src/js/sponsor-core.js`, the Pages Functions and the normal build.
+
+## Similar-show recommendations
+
+Each show detail page ends with **You may also like**, containing three cards:
+the active sponsored show first, followed by two ranked recommendations.
+Without an eligible sponsor, including on its own page, it shows three organic
+recommendations. Suggestions render in the HTML and remain available without
+JavaScript or when the sponsorship service is unavailable.
+
+`scripts/recommendations.js` scores candidates using the same art form (+6),
+same theatre (+3), other shared tags (+2 each, capped at +4), keyword cosine
+similarity with inverse document frequency (up to +8), and nearby run dates
+(up to +0.5). Common words and listing boilerplate are ignored. Ties use earliest
+opening date then stable ID. The current show, ended runs and duplicate IDs or
+booking URLs are excluded. The live sponsor is also excluded from the organic
+cards. This uses show content, without visitor profiles or cookies.
+
+The build ranks the upcoming pool and prepares compact card data; the browser
+shows only the best two or three still-current entries. Changing, pausing or
+expiring a sponsorship refills the section, and expired runs are skipped when
+the tab becomes visible or its minute timer fires. With fewer than three
+eligible shows it displays only those available. The shared renderer in
+`src/js/show-card.js` keeps ordinary, recommended and sponsored cards aligned.
+Existing sponsored click surfaces and the private manager remain in use; no
+database migration is needed for this change.
 
 ## Add or correct a listing
 

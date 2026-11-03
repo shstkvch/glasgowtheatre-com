@@ -106,6 +106,7 @@
     const imagePath = image && new URL(image).pathname;
     return {
       id: meta.id || `theatre-118-${String(show.id).replace(/[^a-z0-9-]/gi, '').toLowerCase()}`,
+      detailUrl: /^[a-z0-9][a-z0-9-]*$/.test(meta.id || '') ? `/shows/${meta.id}.html` : null,
       title: show.title, venue: 'Theatre 118', venueId: 'theatre-118', area: 'Port Dundas',
       date: show.start_date || candidate.performances[0].date, endDate: show.end_date || show.start_date || candidate.performances.at(-1).date,
       form, formLabel: meta.formLabel || (form === 'scratch' ? 'Scratch / new material' : form.split('-').map(word => word[0].toUpperCase() + word.slice(1)).join(' ')),
@@ -121,15 +122,18 @@
     };
   }
   function money(pence) { return new Intl.NumberFormat('en-GB', { style: 'currency', currency: 'GBP', minimumFractionDigits: pence % 100 ? 2 : 0 }).format(pence / 100); }
+  const cards = typeof module !== 'undefined' ? require('./show-card') : root.ShowCard;
   function renderSponsor(listing, placement, filters = {}) {
     const performance = listing.performances.find(p => (!filters.from || p.date >= filters.from) && (!filters.to || p.date <= filters.to));
     if (!performance) return '';
     const day = new Intl.DateTimeFormat('en-GB', { weekday: 'short', day: 'numeric', month: 'short', timeZone: 'Europe/London' }).format(new Date(performance.date + 'T12:00:00Z'));
     let time = '';
-    if (performance.time) { const [h, m] = performance.time.split(':').map(Number); time = ` · ${h % 12 || 12}${m ? '.' + String(m).padStart(2, '0') : ''}${h >= 12 ? 'pm' : 'am'}`; }
-    const track = `data-track-show="${escape(listing.id)}" data-track-venue="theatre-118" data-track-title="${escape(listing.title)}" data-track-surface="sponsored-${placement}"`;
-    const price = listing.price != null ? `${money(listing.price)} tickets` : listing.minimum != null ? `Pay What You Can from ${money(listing.minimum)}` : 'Prices at the venue';
-    return `<article class="sponsored-show" aria-labelledby="sponsor-title"><div class="sponsor-disclosure"><span class="sponsor-label">Sponsored Show</span><span>Paid placement by Theatre 118</span></div><div class="sponsor-layout"><a class="sponsor-art" href="${escape(listing.ticketUrl)}" rel="sponsored" ${track} tabindex="-1" aria-hidden="true">${listing.image ? `<img src="${escape(listing.image)}" alt="" width="764" height="510" loading="lazy">` : '<span class="sponsor-image-fallback">THEATRE<br>118</span>'}</a><div class="sponsor-copy"><p class="sponsor-venue">Theatre 118 <span>· Port Dundas</span></p><h2 id="sponsor-title"><a href="${escape(listing.ticketUrl)}" rel="sponsored" ${track}>${escape(listing.title)}</a></h2><p class="sponsor-facts"><span>${escape(day + time)}</span><span>${escape(listing.formLabel)}${listing.runtime ? ` · ${listing.runtime} minutes` : ''}</span></p><p class="sponsor-description">${escape(listing.promotionalDescription)}</p></div><div class="sponsor-booking"><div><p class="sponsor-price">${escape(price)}</p>${listing.fee != null ? `<p class="sponsor-fee">+ ${escape(money(listing.fee))} booking fee per order</p>` : ''}${listing.payWhatYouCan ? `<p class="sponsor-pwyc">Pay What You Can${listing.minimum != null ? ' from ' + escape(money(listing.minimum)) : ' available'}</p>` : ''}</div><a class="btn sponsor-ticket" href="${escape(listing.ticketUrl)}" rel="sponsored" ${track} aria-label="Tickets for ${escape(listing.title)}">See show &amp; book <span aria-hidden="true">↗</span></a></div></div></article>`;
+    if (performance.time) { const [h, m] = performance.time.split(':').map(Number); time = `${h % 12 || 12}${m ? '.' + String(m).padStart(2, '0') : ''}${h >= 12 ? 'pm' : 'am'}`; }
+    const price = listing.price != null ? `From ${money(listing.price)}` : listing.minimum != null ? `Pay What You Can from ${money(listing.minimum)}` : '';
+    return cards.renderCard({ ...listing, description: listing.promotionalDescription,
+      dateLabel: day, timesLabel: time, priceLabel: price,
+      imageWidth: 764, imageHeight: 510, artworkWhole: true,
+    }, { sponsored: true, surface: `sponsored-${placement}` });
   }
   const api = { londonClock, availablePerformances, selectSponsoredShow, selectRandomSponsoredShow, matchesSponsor, DEFAULTS, safeUrl, validateSettings, isActive, choose, normalise, renderSponsor };
   if (typeof module !== 'undefined') module.exports = api;
