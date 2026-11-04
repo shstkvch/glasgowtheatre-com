@@ -13,3 +13,6 @@ shot*.tmp.js
 logs/
 
 .wrangler/
+
+# Share cards are cut from the cached artwork at refresh time.
+/src/images/og/

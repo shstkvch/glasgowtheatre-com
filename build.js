@@ -223,6 +223,30 @@ function art(event) {
 }
 
 /* ------------------------------------------------- tickets, times, prices */
+/**
+ * The page's link-preview card, cut from its artwork at refresh time. Null
+ * when there is no such card, and the template falls back to the site's own.
+ */
+function shareImage(event) {
+  const file = event.image?.startsWith("/images/")
+    ? path.basename(event.image)
+    : null;
+  if (!file) return null;
+  const card = path.join(
+    __dirname,
+    "src",
+    "images",
+    "og",
+    file.replace(/\.webp$/, ".jpg"),
+  );
+  return fs.existsSync(card) ? `/images/og/${path.basename(card)}` : null;
+}
+/**
+ * Stands in for pages that have no artwork of their own — the calendar, the
+ * venues, this page — so a shared link shows today's listings rather than one
+ * photograph kept from an old production.
+ */
+const defaultShare = shareImage(events[0] || {});
 /** The venue's own concession schemes, where it publishes any. */
 const scheme = (event) => concessions[event.venueId] || null;
 /** Every show has a page of its own, and this is where it lives. */
@@ -288,6 +312,9 @@ function eventData(event) {
  * @param hero The image this page will paint largest, if it has one. The
  *   browser otherwise finds it only after the stylesheet has arrived and the
  *   layout has run, which is what made the hero the slowest paint on the site.
+ * @param share The page's own link-preview card, in `src/images/og`. Without
+ *   one every page claimed to be the same old show, so a shared panto link
+ *   arrived as a photograph of something else entirely.
  */
 function page(
   title,
@@ -297,6 +324,7 @@ function page(
   active = "events",
   pageEvents = events,
   hero = null,
+  share = null,
 ) {
   const nav = [
     ["events", "/", "What’s on"],
@@ -305,9 +333,11 @@ function page(
     ["about", "/about.html", "About"],
     ["submit", "/submit.html", "List your show ↗"],
   ];
+  const card = share || defaultShare;
+  const preview = SITE + (card || "/images/thrice.webp");
   return `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>${e(title)} | Glasgow Theatre</title><meta name="description" content="${e(description)}"><link rel="canonical" href="${SITE}${url}">
-<meta property="og:title" content="${e(title)}"><meta property="og:description" content="${e(description)}"><meta property="og:url" content="${SITE}${url}"><meta property="og:type" content="website"><meta property="og:site_name" content="Glasgow Theatre"><meta property="og:image" content="${SITE}/images/thrice.webp"><meta name="twitter:card" content="summary_large_image"><meta name="theme-color" content="#303fce">
+<meta property="og:title" content="${e(title)}"><meta property="og:description" content="${e(description)}"><meta property="og:url" content="${SITE}${url}"><meta property="og:type" content="website"><meta property="og:site_name" content="Glasgow Theatre"><meta property="og:image" content="${e(preview)}"><meta property="og:image:alt" content="${e(title)}">${card ? `<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:type" content="image/jpeg">` : ""}<meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="${e(preview)}"><meta name="twitter:image:alt" content="${e(title)}"><meta name="theme-color" content="#303fce">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="${asset("css/fonts.css")}"><link rel="stylesheet" href="${asset("css/style.css")}"><link rel="stylesheet" href="${asset("css/sponsors.css")}">${hero ? `<link rel="preload" as="image" href="${e(hero)}" fetchpriority="high">` : ""}
 <script defer src="${asset("js/listings.js")}"></script><script defer src="${asset("js/main.js")}"></script><script defer src="${asset("js/show-card.js")}"></script><script defer src="${asset("js/sponsor-core.js")}"></script><script defer src="${asset("js/sponsors.js")}"></script><script defer src="${asset("js/track.js")}"></script></head><body>
 <a class="skip-link" href="#main">Skip to content</a><header class="site-header"><div class="container header-inner"><a class="brand" href="/" aria-label="Glasgow Theatre home">GLASGOW<span>THEATRE<span class="brand-dot">●</span></span></a>
@@ -651,6 +681,7 @@ ${recommendationsSection(event)}
     "events",
     [event],
     event.image || null,
+    shareImage(event),
   );
 }
 for (const event of events) write(`shows/${event.id}.html`, showPage(event));

@@ -4,9 +4,48 @@ const crypto = require("crypto");
 const sharp = require("sharp");
 const { mergeListings, filterEvents } = require("../src/js/listings");
 const dir = path.join(__dirname, "..", "src", "images");
+const ogDir = path.join(dir, "og");
 const manifestPath = path.join(__dirname, "..", "data", "image-cache.json");
+// What each piece of artwork looks like, from scripts/read-artwork.js. Absent
+// on a first run, and absent for artwork that arrived since; the crop then
+// falls back to the middle and is corrected on the next pass.
+const readings = (() => {
+  try {
+    return JSON.parse(
+      fs.readFileSync(path.join(__dirname, "..", "data", "crop-cache.json"), "utf8"),
+    );
+  } catch {
+    return {};
+  }
+})();
+/**
+ * The picture a link preview shows, cut from the same artwork as the card.
+ *
+ * Facebook and LinkedIn still drop WebP previews, so this is a JPEG at the
+ * 1.91:1 size a large preview wants, rather than the 16:10 card image. A
+ * poster is cropped from the top, where its title is, and anything wider
+ * from the middle — which is the focus the artwork reading already chose.
+ * Built here because this is the pass that already has the artwork in hand;
+ * the page falls back to the site card when it is missing.
+ */
+async function shareImage(source, name) {
+  const dest = path.join(ogDir, name.replace(/\.webp$/, ".jpg"));
+  const reading = readings[name] || {};
+  const position =
+    reading.focus === "upper" || reading.text === "title"
+      ? "north"
+      : reading.focus === "lower"
+        ? "south"
+        : "centre";
+  await sharp(source)
+    .rotate()
+    .resize({ width: 1200, height: 630, fit: "cover", position })
+    .jpeg({ quality: 80, mozjpeg: true })
+    .toFile(dest);
+}
 async function main() {
   fs.mkdirSync(dir, { recursive: true });
+  fs.mkdirSync(ogDir, { recursive: true });
   const manifest = fs.existsSync(manifestPath)
     ? JSON.parse(fs.readFileSync(manifestPath))
     : {};
@@ -28,6 +67,8 @@ async function main() {
         const dest = path.join(dir, name);
         if (fs.existsSync(dest)) {
           manifest[url] = "/images/" + name;
+          // The cached artwork may predate share cards; fill them in.
+          await shareImage(dest, name);
           return;
         }
         try {
@@ -41,6 +82,7 @@ async function main() {
             .resize({ width: 1100, withoutEnlargement: true })
             .webp({ quality: 82 })
             .toFile(dest);
+          await shareImage(buffer, name);
           manifest[url] = "/images/" + name;
         } catch (error) {
           failed++;
