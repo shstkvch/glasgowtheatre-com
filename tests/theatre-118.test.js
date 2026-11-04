@@ -115,6 +115,31 @@ test("a scratch type from the venue maps to the scratch category", () => {
   }
 });
 
+test("the venue's age sentence becomes the number the page prints", () => {
+  const cases = [
+    ["Suitable for audiences aged 14+", "14+"],
+    ["Recommended Age Guide: 12A", "12A"],
+    ["Age guidance 8-12", "8-12"],
+    ["14+", "14+"],
+  ];
+  for (const [age_rating, expected] of cases) {
+    const withAge = structuredClone(feed);
+    withAge.shows[0].age_rating = age_rating;
+    assert.equal(theatre118Events(withAge)[0].ageGuidance, expected, age_rating);
+  }
+});
+
+test("guidance that is not a short token is kept as written", () => {
+  const withAge = structuredClone(feed);
+  withAge.shows[0].age_rating =
+    "Suitable for ages 12 and over; contains loud noises and flashing lights";
+  assert.match(theatre118Events(withAge)[0].ageGuidance, /^Suitable for ages 12 and over/);
+});
+
+test("a show with no age rating gets no age row", () => {
+  assert.equal(theatre118Events(feed)[0].ageGuidance, null);
+});
+
 test("Pay What You Can with no fixed price is still a price", () => {
   const pricing = theatre118Pricing({ pay_what_you_can: true, ticket_types: [] });
   assert.equal(pricing.from, null);

@@ -2417,6 +2417,25 @@ function theatre118Pricing(ticketing) {
 }
 
 /**
+ * The feed's age guidance as the one line the show page prints. 118 writes it
+ * as a sentence — "Suitable for audiences aged 14+" — so the boilerplate is
+ * dropped and the age itself kept. Anything that does not reduce to a short
+ * token is passed through as written rather than guessed at.
+ */
+function theatre118AgeGuidance(value) {
+  const text = cleanText(value || '');
+  if (!text) return null;
+  const short = text
+    .replace(/^(recommended\s+|advisory\s+)?age\s+(guide|guidance|recommendation|advisory)\s*:?\s*/i, '')
+    .replace(/^(suitable|recommended)\s+for\s+(audiences?\s+)?(aged?\s+|ages?\s+)?/i, '')
+    .replace(/^audiences?\s+aged?\s+/i, '')
+    .trim();
+  // "14+", "12A", "8-12", "PG": a value, not a sentence.
+  if (/^[A-Za-z0-9+–\-,\s]{1,20}$/.test(short)) return short;
+  return truncateDesc(text, 120);
+}
+
+/**
  * A show's sittings, each with whatever the venue says about it. 118 sells
  * through its own box office, so a performance's booking link is the one to
  * send a visitor to.
@@ -2462,6 +2481,9 @@ function theatre118Events(feed) {
       ticketUrl: show.url,
       image: (show.image && show.image.url) || null,
       accessibility: cleanText(show.accessibility || '') || null,
+      // The only venue whose feed carries age guidance as a field rather than
+      // buried in the blurb, so the only one that gets its own fact row.
+      ageGuidance: theatre118AgeGuidance(show.age_rating),
     };
 
     const form = THEATRE_118_FORMS[String(show.type || '').toLowerCase().trim()];

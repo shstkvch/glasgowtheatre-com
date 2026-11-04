@@ -621,6 +621,7 @@ function showPage(event) {
     ["Dates", range(event)],
     ["Times", times],
     ["Running time", durationLabel(event.duration)],
+    ["Age guidance", event.ageGuidance],
     ["Tickets", cost],
     ["Art form", label(event.form)],
   ].filter(([, value]) => value);
