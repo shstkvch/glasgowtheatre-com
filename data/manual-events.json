@@ -31,5 +31,41 @@
     "accessibility": "Sat 17 Oct, 7.30pm · BSL interpreted by Lisa Li",
     "checkedAt": "2026-09-09",
     "form": "dance"
+  },
+  {
+    "id": "jingle-bell-rock-2026",
+    "title": "Jingle Bell Rock",
+    "producer": "Interact Productions",
+    "venue": "18 Candleriggs",
+    "venueId": "18-candleriggs",
+    "date": "2026-12-11",
+    "time": "20:00",
+    "description": "Get ready to rock around the Christmas tree: a festive Christmas cabaret from Interact Productions, raising funds for the company’s final university projects. An evening of Christmas and musical entertainment, festive sparkle and cabaret magic, with doors at 7.30pm for an 8pm start.",
+    "ticketUrl": "https://www.ticketsource.co.uk/interactproductions",
+    "pricing": {
+      "from": 10,
+      "to": null,
+      "concession": 8,
+      "concessionTo": null,
+      "free": false,
+      "payWhatYouLike": false,
+      "text": "Adults £10 · Students and concessions £8",
+      "read": "supplied"
+    },
+    "image": "/images/jingle-bell-rock.webp",
+    "imageAlt": "Jingle Bell Rock poster: comedy and tragedy masks on a red background, framed by Christmas trees, presents and baubles, with the show’s title in white.",
+    "imageCredit": "Aria Weir",
+    "performances": [
+      {
+        "date": "2026-12-11",
+        "time": "20:00"
+      }
+    ],
+    "accessibility": "Access information and any special performance provisions are to be confirmed with the venue and the production team.",
+    "checkedAt": "2026-11-13",
+    "tags": [
+      "cabaret"
+    ],
+    "form": "cabaret"
   }
 ]
